@@ -1,3 +1,5 @@
+import 'package:dittobox_mobile/user_and_profile/ui/screens/login_screen.dart';
+import 'package:dittobox_mobile/user_and_profile/ui/screens/register_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,11 +12,8 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+      title: 'DittoBox',
+      home: RegisterScreen(),
       debugShowCheckedModeBanner: false,
     );
     
