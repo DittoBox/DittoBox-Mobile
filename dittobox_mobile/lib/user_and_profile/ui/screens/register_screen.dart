@@ -106,7 +106,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    TextButton(
+                    FilledButton(
                       onPressed: () {
                         if (userType == 'Owner') {
                           //Navigator.pushNamed(context, AppRoutes.companyInfo);
@@ -114,9 +114,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           // Navigator.pushNamed(context, AppRoutes.home);
                         }
                       },
-                      style: ElevatedButton.styleFrom(
-                        foregroundColor: Colors.white,
-                        backgroundColor: Colors.primaries.last,
+                      style: FilledButton.styleFrom(
                         padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
                       ),
                       child: Text(userType == 'Owner' ? 'Continue' : 'Register'),
