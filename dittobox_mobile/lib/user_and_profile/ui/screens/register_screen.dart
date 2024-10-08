@@ -1,3 +1,4 @@
+import 'package:dittobox_mobile/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -109,7 +110,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     FilledButton(
                       onPressed: () {
                         if (userType == 'Owner') {
-                          //Navigator.pushNamed(context, AppRoutes.companyInfo);
+                          Navigator.pushNamed(context, AppRoutes.companyInfo);
                         } else {
                           // Navigator.pushNamed(context, AppRoutes.home);
                         }
@@ -124,7 +125,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 const SizedBox(height: 20),
                 TextButton(
                   onPressed: () {
-                    // Navigator.pushNamed(context, AppRoutes.login);
+                    Navigator.pushNamed(context, AppRoutes.login);
                   },
                   child: const Text('Already have an account? Login instead'),
                 ),

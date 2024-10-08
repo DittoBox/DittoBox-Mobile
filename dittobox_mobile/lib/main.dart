@@ -1,3 +1,4 @@
+import 'package:dittobox_mobile/routes/app_routes.dart';
 import 'package:dittobox_mobile/user_and_profile/ui/screens/login_screen.dart';
 import 'package:dittobox_mobile/user_and_profile/ui/screens/register_screen.dart';
 import 'package:flutter/material.dart';
@@ -11,10 +12,11 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'DittoBox',
-      home: RegisterScreen(),
+      initialRoute: AppRoutes.register,
       debugShowCheckedModeBanner: false,
+      routes: appRoutes,
     );
     
   }
