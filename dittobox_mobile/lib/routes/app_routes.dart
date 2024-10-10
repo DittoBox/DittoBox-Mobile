@@ -9,6 +9,8 @@ final Map<String, Widget Function(BuildContext)> appRoutes = {
   '/register': (context) => RegisterScreen(),
   '/company_info': (context) => const CompanyInfoScreen(),
   '/facilities': (context) => const FacilitiesListScreen(),
+
+
 };
 
 class AppRoutes {
@@ -16,4 +18,5 @@ class AppRoutes {
   static const String register = '/register';
   static const String companyInfo = '/company_info';
   static const String facilities = '/facilities';
+  
 }

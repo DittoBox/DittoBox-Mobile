@@ -1,4 +1,6 @@
 import 'package:dittobox_mobile/goups/models/facilities.dart';
+import 'package:dittobox_mobile/routes/app_routes.dart';
+import 'package:dittobox_mobile/shared/widgets/custom_navigator_drawer.dart';
 import 'package:flutter/material.dart';
 
 // Facilities List Screen
@@ -14,9 +16,25 @@ class _FacilitiesListScreenState extends State<FacilitiesListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Facilities List'),
+        title: const Text('Facilities'),
       ),
-      body: const FacilitiesList(),
+      drawer: CustomNavigationDrawer(currentRoute: AppRoutes.facilities),
+      body: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Column(
+          children: [
+            Expanded(
+              child: FacilitiesList(),
+            ),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // Acción del botón
+        },
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }
@@ -30,7 +48,7 @@ class FacilitiesList extends StatefulWidget {
 }
 
 class _FacilitiesListState extends State<FacilitiesList> {
-  final List<Facility> _facilities =  [
+  final List<Facility> _facilities = [
     Facility(
       title: 'Gran Vía',
       location: 'Madrid, Spain',
@@ -54,13 +72,66 @@ class _FacilitiesListState extends State<FacilitiesList> {
     ),
   ];
 
+  List<Facility> _filteredFacilities = [];
+  TextEditingController _searchController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    _filteredFacilities = _facilities;
+    _searchController.addListener(_filterFacilities);
+  }
+
+  @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
+  }
+
+  void _filterFacilities() {
+    final query = _searchController.text.toLowerCase();
+    setState(() {
+      _filteredFacilities = _facilities.where((facility) {
+        return facility.title.toLowerCase().contains(query) ||
+            facility.location.toLowerCase().contains(query);
+      }).toList();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: _facilities.length,
-      itemBuilder: (context, index) {
-        return FacilitiesCard(facility: _facilities[index]);
-      },
+    return Scaffold(
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              controller: _searchController,
+              decoration: InputDecoration(
+                labelText: 'Search',
+                prefixIcon: Icon(Icons.search),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+              ),
+            ),
+          ),
+          Expanded(
+            child: CustomScrollView(
+              slivers: [
+                SliverList(
+                  delegate: SliverChildBuilderDelegate(
+                    (context, index) {
+                      return FacilitiesCard(facility: _filteredFacilities[index]);
+                    },
+                    childCount: _filteredFacilities.length,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
@@ -129,7 +200,7 @@ class _FacilitiesCardState extends State<FacilitiesCard> {
                       padding: const EdgeInsets.all(4.0),
                       child: _buildInfoRowWithIcon(Icons.person_2_outlined, 'Workers', widget.facility.workers),
                     ),
-                  ],  
+                  ],
                 ),
                 const SizedBox(height: 20),
                 Align(
@@ -154,82 +225,80 @@ class _FacilitiesCardState extends State<FacilitiesCard> {
     );
   }
 
-void _showFacilityDetailsBottomSheet(BuildContext context, Facility facility) {
-  showModalBottomSheet(
-    context: context,
-    shape: const RoundedRectangleBorder(
-      borderRadius: BorderRadius.vertical(top: Radius.circular(25.0)),
-    ),
-    builder: (context) {
-      return Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Indicador de deslizamiento (handle)
-            Center(
-              child: Container(
-                width: 40,
-                height: 5,
-                decoration: BoxDecoration(
-                  color: Colors.grey[400],
-                  borderRadius: BorderRadius.circular(10),
+  void _showFacilityDetailsBottomSheet(BuildContext context, Facility facility) {
+    showModalBottomSheet(
+      context: context,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(25.0)),
+      ),
+      builder: (context) {
+        return Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Indicador de deslizamiento (handle)
+              Center(
+                child: Container(
+                  width: 40,
+                  height: 5,
+                  decoration: BoxDecoration(
+                    color: Colors.grey[300], // Color del indicador
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                 ),
               ),
-            ),
-            const SizedBox(height: 16),
+              const SizedBox(height: 16),
 
-            // Encabezado del BottomSheet
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  facility.title,
-                  style: const TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
+              // Encabezado del BottomSheet
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    facility.title,
+                    style: const TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-                const Text(
-                  'restaurant',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.grey,
+                  const Text(
+                    'restaurant',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 16),
+                ],
+              ),
+              const SizedBox(height: 16),
 
-            // Contenido del BottomSheet
-            _buildInfoRowWithIcon(Icons.widgets_outlined, 'Containers', facility.containers),
-            TextButton(
-              onPressed: () {},
-              child: const Text('Add containers', style: TextStyle(color: Colors.green)),
-            ),
-            const SizedBox(height: 8),
+              // Contenido del BottomSheet
+              _buildInfoRowWithIcon(Icons.widgets_outlined, 'Containers', facility.containers),
+              TextButton(
+                onPressed: () {},
+                child: const Text('Add containers'),
+              ),
+              const SizedBox(height: 8),
 
-            _buildInfoRowWithIcon(Icons.person_2_outlined, 'Workers', facility.workers),
-            TextButton(
-              onPressed: () {},
-              child: const Text('Add workers', style: TextStyle(color: Colors.green)),
-            ),
-            const SizedBox(height: 8),
+              _buildInfoRowWithIcon(Icons.person_2_outlined, 'Workers', facility.workers),
+              TextButton(
+                onPressed: () {},
+                child: const Text('Add workers'),
+              ),
+              const SizedBox(height: 8),
 
-            _buildInfoRowWithIcon(Icons.notifications_none_outlined, 'Pending Alerts', facility.alerts),
-            TextButton(
-              onPressed: () {},
-              child: const Text('Check alerts', style: TextStyle(color: Colors.green)),
-            ),
-          ],
-        ),
-      );
-    },
-  );
-}
-
+              _buildInfoRowWithIcon(Icons.notifications_none_outlined, 'Pending Alerts', facility.alerts),
+              TextButton(
+                onPressed: () {},
+                child: const Text('Check alerts'),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
 
   Widget _buildInfoRowWithIcon(IconData icon, String label, int value) {
     return Row(
