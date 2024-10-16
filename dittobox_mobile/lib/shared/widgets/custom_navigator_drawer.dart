@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class CustomNavigationDrawer extends StatefulWidget {
   final String currentRoute;
 
-  CustomNavigationDrawer({required this.currentRoute});
+  const CustomNavigationDrawer({super.key, required this.currentRoute});
 
   @override
   // ignore: library_private_types_in_public_api
@@ -19,7 +19,7 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.close),
+          icon: const Icon(Icons.close),
           onPressed: () {
             Navigator.of(context).pop();
           },
@@ -29,7 +29,7 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
         children: [
           Expanded(
             child: Center(
-              child: Container(
+              child: SizedBox(
                 width: 380,
                 height: 750, // Ajusta el ancho según tus necesidades
                 child: NavigationDrawer(
@@ -40,8 +40,8 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
                     });
                     _navigateTo(index);
                   },
-                  children: [
-                    const Padding(
+                  children: const [
+                    Padding(
                       padding: EdgeInsets.all(16.0),
                       child: Text(
                         'Menu',
@@ -64,8 +64,8 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
                       icon: Icon(Icons.text_snippet_outlined),
                       label: Text('Templates'),
                     ),
-                    const Divider(),
-                    const Padding(
+                    Divider(),
+                    Padding(
                       padding: EdgeInsets.all(16.0),
                       child: Text(
                         'Settings',
@@ -84,7 +84,7 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
                       icon: Icon(Icons.notifications_none),
                       label: Text('Notifications'),
                     ),
-                    const Divider(),
+                    Divider(),
                     NavigationDrawerDestination(
                       icon: Icon(Icons.logout),
                       label: Text('Log out'),

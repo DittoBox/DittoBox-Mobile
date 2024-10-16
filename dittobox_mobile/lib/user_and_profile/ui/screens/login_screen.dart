@@ -49,7 +49,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 40),
+            const SizedBox(height: 40),
             TextField(
               controller: _usernameController,
               decoration: const InputDecoration(
@@ -57,13 +57,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 border: OutlineInputBorder(),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             TextField(
               controller: _passwordController,
               obscureText: !isPasswordVisible,
               decoration: InputDecoration(
                 labelText: 'Password',
-                border: OutlineInputBorder(),
+                border: const OutlineInputBorder(),
                 suffixIcon: IconButton(
                   icon: Icon(
                     isPasswordVisible ? Icons.visibility : Icons.visibility_off,
@@ -76,7 +76,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -86,28 +86,28 @@ class _LoginScreenState extends State<LoginScreen> {
                     //   navigateTo(AppRoutes.home);
                     // }
                   },
-                  child: Text('Login'),
                   style: TextButton.styleFrom(
                     foregroundColor: Colors.white,
                     backgroundColor: Colors.primaries.last,
                     padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
                 
                   ),
+                  child: const Text('Login'),
                 ),
               ],
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             TextButton(
               onPressed: () {
                // Navigator.pushNamed(context, AppRoutes.forgotPassword);
               },
-              child: Text('Forgot your password?'),
+              child: const Text('Forgot your password?'),
             ),
             TextButton(
               onPressed: () {
 
               },
-              child: Text('Register instead'),
+              child: const Text('Register instead'),
             ),
           ],
         ),

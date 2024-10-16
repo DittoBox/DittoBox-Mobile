@@ -5,8 +5,8 @@ import 'package:dittobox_mobile/user_and_profile/ui/screens/register_screen.dart
 import 'package:flutter/material.dart';
 
 final Map<String, Widget Function(BuildContext)> appRoutes = {
-  '/login': (context) => LoginScreen(),
-  '/register': (context) => RegisterScreen(),
+  '/login': (context) => const LoginScreen(),
+  '/register': (context) => const RegisterScreen(),
   '/company_info': (context) => const CompanyInfoScreen(),
   '/facilities': (context) => const FacilitiesListScreen(),
 

@@ -19,12 +19,12 @@ class _CompanyInfoScreenState extends State<CompanyInfoScreen> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.pop(context);
           },
         ),
-        title: Text('About your company'),
+        title: const Text('About your company'),
         elevation: 0,
       ),
       body: Padding(
