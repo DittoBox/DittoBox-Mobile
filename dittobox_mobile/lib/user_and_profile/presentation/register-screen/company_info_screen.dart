@@ -1,3 +1,4 @@
+import 'package:dittobox_mobile/generated/l10n.dart';
 import 'package:dittobox_mobile/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +25,7 @@ class _CompanyInfoScreenState extends State<CompanyInfoScreen> {
             Navigator.pop(context);
           },
         ),
-        title: const Text('About your company'),
+        title: Text(S.of(context).aboutYourCompany),
         elevation: 0,
       ),
       body: Padding(
@@ -34,10 +35,10 @@ class _CompanyInfoScreenState extends State<CompanyInfoScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const Text(
-                'About your company',
+              Text(
+                S.of(context).aboutYourCompany,
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 32,
                   fontWeight: FontWeight.normal,
                 ),
@@ -45,33 +46,33 @@ class _CompanyInfoScreenState extends State<CompanyInfoScreen> {
               const SizedBox(height: 20),
               TextField(
                 controller: _companyNameController,
-                decoration: const InputDecoration(
-                  labelText: 'Company name',
-                  border: OutlineInputBorder(),
+                decoration: InputDecoration(
+                  labelText: S.of(context).companyName,
+                  border: const OutlineInputBorder(),
                 ),
               ),
               const SizedBox(height: 20),
               TextField(
                 controller: _identificationNumberController,
-                decoration: const InputDecoration(
-                  labelText: 'Identification number',
-                  border: OutlineInputBorder(),
+                decoration: InputDecoration(
+                  labelText: S.of(context).identificationNumber,
+                  border: const OutlineInputBorder(),
                 ),
               ),
               const SizedBox(height: 20),
               TextField(
                 controller: _countryController,
-                decoration: const InputDecoration(
-                  labelText: 'Country',
-                  border: OutlineInputBorder(),
+                decoration: InputDecoration(
+                  labelText: S.of(context).country,
+                  border: const OutlineInputBorder(),
                 ),
               ),
               const SizedBox(height: 20),
               TextField(
                 controller: _cityController,
-                decoration: const InputDecoration(
-                  labelText: 'City',
-                  border: OutlineInputBorder(),
+                decoration: InputDecoration(
+                  labelText: S.of(context).city,
+                  border: const OutlineInputBorder(),
                 ),
               ),
               const SizedBox(height: 30),
@@ -85,7 +86,7 @@ class _CompanyInfoScreenState extends State<CompanyInfoScreen> {
                     style: FilledButton.styleFrom(
                         padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
                     ),
-                    child: const Text('Register'),
+                    child: Text(S.of(context).register),
                   ),
                 ],
               ),

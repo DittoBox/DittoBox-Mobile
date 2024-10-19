@@ -1,3 +1,4 @@
+import 'package:dittobox_mobile/generated/l10n.dart';
 import 'package:dittobox_mobile/goups/infrastructure/models/facilities.dart';
 import 'package:dittobox_mobile/goups/presentation/widgets/add_facilities_sheet.dart';
 import 'package:dittobox_mobile/routes/app_routes.dart';
@@ -19,11 +20,11 @@ class _FacilitiesListScreenState extends State<FacilitiesListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Facilities'),
+        title: Text(S.of(context).facilities),
       ),
       drawer: const CustomNavigationDrawer(currentRoute: AppRoutes.facilities),
-      body: const Padding(
-        padding: EdgeInsets.all(10.0),
+      body: Padding(
+        padding: const EdgeInsets.all(10.0),
         child: Column(
           children: [
             Expanded(
@@ -79,7 +80,7 @@ class _FacilitiesListState extends State<FacilitiesList> {
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text('Failed to fetch facilities: $e'),
+          content: Text('${S.of(context).failedToFetchFacilities}: $e'),
         ),
       );
     }
@@ -105,7 +106,7 @@ class _FacilitiesListState extends State<FacilitiesList> {
             child: TextField(
               controller: _searchController,
               decoration: InputDecoration(
-                labelText: 'Search',
+                labelText: S.of(context).search,
                 prefixIcon: const Icon(Icons.search),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8.0),
@@ -198,15 +199,15 @@ class _FacilitiesCardState extends State<FacilitiesCard> {
                   children: [
                     Padding(
                       padding: const EdgeInsets.all(4.0),
-                      child: buildInfoRowWithIcon(Icons.widgets_outlined, 'Containers', widget.facility.containers),
+                      child: buildInfoRowWithIcon(Icons.widgets_outlined, S.of(context).containers, widget.facility.containers),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(4.0),
-                      child: buildInfoRowWithIcon(Icons.notifications_none_outlined, 'Alerts', widget.facility.alerts),
+                      child: buildInfoRowWithIcon(Icons.notifications_none_outlined, S.of(context).alerts, widget.facility.alerts),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(4.0),
-                      child: buildInfoRowWithIcon(Icons.person_2_outlined, 'Workers', widget.facility.workers),
+                      child: buildInfoRowWithIcon(Icons.person_2_outlined, S.of(context).workers, widget.facility.workers),
                     ),
                   ],
                 ),
@@ -217,10 +218,10 @@ class _FacilitiesCardState extends State<FacilitiesCard> {
                     onPressed: () {
                       showFacilityDetailsBottomSheet(context, widget.facility); // Usa el nuevo archivo
                     },
-                    child: const Row(
+                    child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Text('More'),
+                        Text(S.of(context).more),
                       ],
                     ),
                   ),

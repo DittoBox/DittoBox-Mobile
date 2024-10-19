@@ -1,3 +1,4 @@
+import 'package:dittobox_mobile/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class AddFacilitySheet extends StatefulWidget {
@@ -31,33 +32,33 @@ class _AddFacilitySheetState extends State<AddFacilitySheet> {
             ),
           ),
           // Ruta de navegación
-          const Column(
+          Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
                 children: [
                   Text(
-                    'Facilities',
-                    style: TextStyle(
+                    S.of(context).facilities,
+                    style: const TextStyle(
                       fontSize: 16,
                     ),
                   ),
-                  Icon(Icons.chevron_right_outlined),
+                  const Icon(Icons.chevron_right_outlined),
                   Text(
-                    'New facility',
-                    style: TextStyle(
+                    S.of(context).newFacility,
+                    style: const TextStyle(
                       fontSize: 16,
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'New facility',
-                    style: TextStyle(
+                    S.of(context).newFacility,
+                    style: const TextStyle(
                       fontSize: 32,
                     ),
                   ),
@@ -70,14 +71,14 @@ class _AddFacilitySheetState extends State<AddFacilitySheet> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SegmentedButton<String>(
-                segments: const <ButtonSegment<String>>[
+                segments: <ButtonSegment<String>>[
                   ButtonSegment<String>(
                     value: 'Restaurant',
-                    label: Text('Restaurant'),
+                    label: Text(S.of(context).restaurant),
                   ),
                   ButtonSegment<String>(
                     value: 'Warehouse',
-                    label: Text('Warehouse'),
+                    label: Text(S.of(context).warehouse),
                   ),
                 ],
                 selected: <String>{facilityType},
@@ -92,25 +93,25 @@ class _AddFacilitySheetState extends State<AddFacilitySheet> {
           const SizedBox(height: 26),
           TextField(
             controller: _facilityNameController,
-            decoration: const InputDecoration(
-              labelText: 'Facility name',
-              border: OutlineInputBorder(),
+            decoration: InputDecoration(
+              labelText: S.of(context).facilityName,
+              border: const OutlineInputBorder(),
             ),
           ),
           const SizedBox(height: 26),
           TextField(
             controller: _cityController,
-            decoration: const InputDecoration(
-              labelText: 'City',
-              border: OutlineInputBorder(),
+            decoration: InputDecoration(
+              labelText: S.of(context).city,
+              border: const OutlineInputBorder(),
             ),
           ),
           const SizedBox(height: 26),
           TextField(
             controller: _regionController,
-            decoration: const InputDecoration(
-              labelText: 'Region',
-              border: OutlineInputBorder(),
+            decoration: InputDecoration(
+              labelText: S.of(context).region,
+              border: const OutlineInputBorder(),
             ),
           ),
           const SizedBox(height: 16),
@@ -121,14 +122,14 @@ class _AddFacilitySheetState extends State<AddFacilitySheet> {
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                child: const Text('Cancel'),
+                child: Text(S.of(context).cancel),
               ),
               const SizedBox(width: 8),
               FilledButton(
                 onPressed: () {
-                 
+                  // Acción para guardar la instalación
                 },
-                child: const Text('Save'),
+                child: Text(S.of(context).save),
               ),
             ],
           ),

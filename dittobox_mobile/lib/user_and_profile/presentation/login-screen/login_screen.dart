@@ -1,4 +1,4 @@
-
+import 'package:dittobox_mobile/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -41,10 +41,10 @@ class _LoginScreenState extends State<LoginScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const Text(
-              'Login',
+            Text(
+              S.of(context).login,
               textAlign: TextAlign.center,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 32,
                 fontWeight: FontWeight.bold,
               ),
@@ -52,9 +52,9 @@ class _LoginScreenState extends State<LoginScreen> {
             const SizedBox(height: 40),
             TextField(
               controller: _usernameController,
-              decoration: const InputDecoration(
-               labelText: 'Username',
-                border: OutlineInputBorder(),
+              decoration: InputDecoration(
+                labelText: S.of(context).username,
+                border: const OutlineInputBorder(),
               ),
             ),
             const SizedBox(height: 20),
@@ -62,7 +62,7 @@ class _LoginScreenState extends State<LoginScreen> {
               controller: _passwordController,
               obscureText: !isPasswordVisible,
               decoration: InputDecoration(
-                labelText: 'Password',
+                labelText: S.of(context).password,
                 border: const OutlineInputBorder(),
                 suffixIcon: IconButton(
                   icon: Icon(
@@ -88,24 +88,23 @@ class _LoginScreenState extends State<LoginScreen> {
                   },
                   style: TextButton.styleFrom(
                     padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-                
                   ),
-                  child: const Text('Login'),
+                  child: Text(S.of(context).login),
                 ),
               ],
             ),
             const SizedBox(height: 10),
             TextButton(
               onPressed: () {
-               // Navigator.pushNamed(context, AppRoutes.forgotPassword);
+                // Navigator.pushNamed(context, AppRoutes.forgotPassword);
               },
-              child: const Text('Forgot your password?'),
+              child: Text(S.of(context).forgotPassword),
             ),
             TextButton(
               onPressed: () {
-
+                // Navigator.pushNamed(context, AppRoutes.register);
               },
-              child: const Text('Register instead'),
+              child: Text(S.of(context).registerInstead),
             ),
           ],
         ),

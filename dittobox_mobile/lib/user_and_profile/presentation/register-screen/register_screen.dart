@@ -1,3 +1,4 @@
+import 'package:dittobox_mobile/generated/l10n.dart';
 import 'package:dittobox_mobile/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 
@@ -28,10 +29,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 const SizedBox(height: 40),
-                const Text(
-                  'Register',
+                Text(
+                  S.of(context).register,
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 32,
                     fontWeight: FontWeight.bold,
                   ),
@@ -40,16 +41,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 80),
                   child: SegmentedButton<String>(
-                    segments: const <ButtonSegment<String>>[
-
+                    segments: <ButtonSegment<String>>[
                       ButtonSegment<String>(
                         value: 'Worker',
-                        label: Text('Worker'),
+                        label: Text(S.of(context).worker),
                         enabled: true,
                       ),
                       ButtonSegment<String>(
                         value: 'Owner',
-                        label: Text('Owner'),
+                        label: Text(S.of(context).owner),
                       ),
                     ],
                     selected: <String>{userType},
@@ -63,25 +63,25 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 const SizedBox(height: 20),
                 TextField(
                   controller: _nameController,
-                  decoration: const InputDecoration(
-                    labelText: 'Name',
-                    border: OutlineInputBorder(),
+                  decoration: InputDecoration(
+                    labelText: S.of(context).name,
+                    border: const OutlineInputBorder(),
                   ),
                 ),
                 const SizedBox(height: 20),
                 TextField(
                   controller: _usernameController,
-                  decoration: const InputDecoration(
-                    labelText: 'Username',
-                    border: OutlineInputBorder(),
+                  decoration: InputDecoration(
+                    labelText: S.of(context).username,
+                    border: const OutlineInputBorder(),
                   ),
                 ),
                 const SizedBox(height: 20),
                 TextField(
                   controller: _emailController,
-                  decoration: const InputDecoration(
-                    labelText: 'Email',
-                    border: OutlineInputBorder(),
+                  decoration: InputDecoration(
+                    labelText: S.of(context).email,
+                    border: const OutlineInputBorder(),
                   ),
                 ),
                 const SizedBox(height: 20),
@@ -89,7 +89,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   controller: _passwordController,
                   obscureText: !isPasswordVisible,
                   decoration: InputDecoration(
-                    labelText: 'Password',
+                    labelText: S.of(context).password,
                     border: const OutlineInputBorder(),
                     suffixIcon: IconButton(
                       icon: Icon(
@@ -118,7 +118,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       style: FilledButton.styleFrom(
                         padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
                       ),
-                      child: Text(userType == 'Owner' ? 'Continue' : 'Register'),
+                      child: Text(userType == 'Owner' ? "Continue" : S.of(context).register),
                     ),
                   ],
                 ),
@@ -127,7 +127,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   onPressed: () {
                     Navigator.pushNamed(context, AppRoutes.login);
                   },
-                  child: const Text('Already have an account? Login instead'),
+                  child: Text(S.of(context).alreadyHaveAccount),
                 ),
               ],
             ),

@@ -1,0 +1,187 @@
+{
+    "@@locale": "en",
+    "title": "DittoBox",
+    "@title": {
+      "description": "The title of the application"
+    },
+    "welcome": "Welcome",
+    "@welcome": {
+      "description": "Welcome message for the user"
+    },
+    "facilities": "Facilities",
+    "@facilities": {
+      "description": "Label for facilities section"
+    },
+    "newFacility": "New facility",
+    "@newFacility": {
+      "description": "Label for adding a new facility"
+    },
+    "containers": "Containers",
+    "@containers": {
+      "description": "Label for containers section"
+    },
+    "workers": "Workers",
+    "@workers": {
+      "description": "Label for workers section"
+    },
+    "pendingAlerts": "Pending Alerts",
+    "@pendingAlerts": {
+      "description": "Label for pending alerts section"
+    },
+    "addContainers": "Add containers",
+    "@addContainers": {
+      "description": "Button label for adding containers"
+    },
+    "addWorkers": "Add workers",
+    "@addWorkers": {
+      "description": "Button label for adding workers"
+    },
+    "checkAlerts": "Check alerts",
+    "@checkAlerts": {
+      "description": "Button label for checking alerts"
+    },
+    "menu": "Menu",
+    "@menu": {
+      "description": "Label for menu"
+    },
+    "settings": "Settings",
+    "@settings": {
+      "description": "Label for settings"
+    },
+    "account": "Account",
+    "@account": {
+      "description": "Label for account section"
+    },
+    "subscription": "Subscription",
+    "@subscription": {
+      "description": "Label for subscription section"
+    },
+    "notifications": "Notifications",
+    "@notifications": {
+      "description": "Label for notifications section"
+    },
+    "logOut": "Log out",
+    "@logOut": {
+      "description": "Button label for logging out"
+    },
+    "facilityName": "Facility name",
+    "@facilityName": {
+      "description": "Label for facility name input field"
+    },
+    "city": "City",
+    "@city": {
+      "description": "Label for city input field"
+    },
+    "region": "Region",
+    "@region": {
+      "description": "Label for region input field"
+    },
+    "cancel": "Cancel",
+    "@cancel": {
+      "description": "Button label for canceling an action"
+    },
+    "save": "Save",
+    "@save": {
+      "description": "Button label for saving an action"
+    },
+    "aboutYourCompany": "About your company",
+    "@aboutYourCompany": {
+      "description": "Label for company information section"
+    },
+    "companyName": "Company name",
+    "@companyName": {
+      "description": "Label for company name input field"
+    },
+    "identificationNumber": "Identification number",
+    "@identificationNumber": {
+      "description": "Label for company identification number input field"
+    },
+    "country": "Country",
+    "@country": {
+      "description": "Label for country input field"
+    },
+    "register": "Register",
+    "@register": {
+      "description": "Button label for registering"
+    },
+    "login": "Login",
+    "@login": {
+      "description": "Button label for logging in"
+    },
+    "username": "Username",
+    "@username": {
+      "description": "Label for username input field"
+    },
+    "password": "Password",
+    "@password": {
+      "description": "Label for password input field"
+    },
+    "forgotPassword": "Forgot your password?",
+    "@forgotPassword": {
+      "description": "Link text for forgotten password"
+    },
+    "registerInstead": "Register instead",
+    "@registerInstead": {
+      "description": "Link text for switching to registration"
+    },
+    "search": "Search",
+    "@search": {
+      "description": "Button label for searching"
+    },
+    "more": "More",
+    "@more": {
+      "description": "Label for more options"
+    },
+    "failedToFetchFacilities": "Failed to fetch facilities",
+    "@failedToFetchFacilities": {
+      "description": "Error message when failing to fetch facilities"
+    },
+    "alerts": "Alerts",
+    "@alerts": {
+      "description": "Label for alerts"
+    },
+    "warehouse": "Warehouse",
+    "@warehouse": {
+      "description": "Label for werehouse section"
+    },
+    "restaurant": "Restaurant",
+    "@restaurant": {
+      "description": "Label for restaurant section"
+    },
+    "name": "Name",
+    "email": "Email",
+    "worker": "Worker",
+    "owner": "Owner",
+    "alreadyHaveAccount": "Already have an account? Login instead",
+    "@name": {
+        "description": "Label for name input field"
+    },
+    "@email": {
+        "description": "Label for email input field"
+    },
+    "@worker": {
+        "description": "Label for worker user type"
+    },
+    "@owner": {
+        "description": "Label for owner user type"
+    },
+    "@alreadyHaveAccount": {
+        "description": "Text for already have an account link"
+    },
+    "changeToSpanish": "Change to Spanish",
+    "@changeToSpanish": {
+      "description": "Button label for changing the language to Spanish"
+    },
+    "templates": "Templates",
+    "@templates": {
+      "description": "Label for templates section"
+    },
+    "template": "Template",
+    "@template": {
+      "description": "Label for template section"
+    },
+    "changeToEnglish": "Change to English",
+    "@changeToEnglish": {
+      "description": "Button label for changing the language to English"
+    }
+  }

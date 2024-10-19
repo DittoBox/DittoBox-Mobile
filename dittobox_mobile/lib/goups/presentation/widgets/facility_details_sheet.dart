@@ -1,3 +1,4 @@
+import 'package:dittobox_mobile/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:dittobox_mobile/goups/infrastructure/models/facilities.dart';
 
@@ -33,9 +34,9 @@ void showFacilityDetailsBottomSheet(BuildContext context, Facility facility) {
               children: [
                 Row(
                   children: [
-                    const Text(
-                      'Facilities',
-                      style: TextStyle(
+                    Text(
+                      S.of(context).facilities,
+                      style: const TextStyle(
                         fontSize: 16,
                       ),
                     ),
@@ -66,7 +67,7 @@ void showFacilityDetailsBottomSheet(BuildContext context, Facility facility) {
                         fontSize: 24,
                       ),
                     ),
-                     Text(
+                    Text(
                       facility.type,
                       style: const TextStyle(
                         fontSize: 16,
@@ -79,24 +80,24 @@ void showFacilityDetailsBottomSheet(BuildContext context, Facility facility) {
             const SizedBox(height: 16),
 
             // Contenido del BottomSheet
-            buildInfoRowWithIcon(Icons.widgets_outlined, 'Containers', facility.containers),
+            buildInfoRowWithIcon(Icons.widgets_outlined, S.of(context).containers, facility.containers),
             TextButton(
               onPressed: () {},
-              child: const Text('Add containers'),
+              child: Text(S.of(context).addContainers),
             ),
             const SizedBox(height: 8),
 
-            buildInfoRowWithIcon(Icons.person_2_outlined, 'Workers', facility.workers),
+            buildInfoRowWithIcon(Icons.person_2_outlined, S.of(context).workers, facility.workers),
             TextButton(
               onPressed: () {},
-              child: const Text('Add workers'),
+              child: Text(S.of(context).addWorkers),
             ),
             const SizedBox(height: 8),
 
-            buildInfoRowWithIcon(Icons.notifications_none_outlined, 'Pending Alerts', facility.alerts),
+            buildInfoRowWithIcon(Icons.notifications_none_outlined, S.of(context).pendingAlerts, facility.alerts),
             TextButton(
               onPressed: () {},
-              child: const Text('Check alerts'),
+              child: Text(S.of(context).checkAlerts),
             ),
           ],
         ),
