@@ -14,7 +14,6 @@ class CustomNavigationDrawer extends StatefulWidget {
 }
 
 class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
-  int _selectedIndex = 0;
   Locale _locale = const Locale('en');
   bool _isChangingLanguage = false;
 
@@ -36,7 +35,11 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
               child: SizedBox(
                 width: 380,
                 height: 750, // Ajusta el ancho según tus necesidades
-                child: ListView(
+                child: NavigationDrawer(
+                  selectedIndex: _getSelectedIndex(),
+                  onDestinationSelected: (int index) {
+                    _navigateTo(_getRouteFromIndex(index));
+                  },
                   children: [
                     Padding(
                       padding: const EdgeInsets.all(16.0),
@@ -45,25 +48,21 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
                         style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                       ),
                     ),
-                    ListTile(
-                      leading: const Icon(Icons.home_work_outlined),
-                      title: Text(S.of(context).facilities),
-                      onTap: () => _navigateTo(AppRoutes.facilities),
+                    NavigationDrawerDestination(
+                      icon: const Icon(Icons.home_work_outlined),
+                      label: Text(S.of(context).facilities),
                     ),
-                    ListTile(
-                      leading: const Icon(Icons.widgets_outlined),
-                      title: Text(S.of(context).containers),
-                      onTap: () => _navigateTo('/containers'),
+                    NavigationDrawerDestination(
+                      icon: const Icon(Icons.widgets_outlined),
+                      label: Text(S.of(context).containers),
                     ),
-                    ListTile(
-                      leading: const Icon(Icons.person_2_outlined),
-                      title: Text(S.of(context).workers),
-                      onTap: () => _navigateTo('/workers'),
+                    NavigationDrawerDestination(
+                      icon: const Icon(Icons.person_2_outlined),
+                      label: Text(S.of(context).workers),
                     ),
-                    ListTile(
-                      leading: const Icon(Icons.text_snippet_outlined),
-                      title: Text(S.of(context).templates),
-                      onTap: () => _navigateTo('/templates'),
+                    NavigationDrawerDestination(
+                      icon: const Icon(Icons.text_snippet_outlined),
+                      label: Text(S.of(context).templates),
                     ),
                     const Divider(),
                     Padding(
@@ -73,20 +72,17 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
                         style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                       ),
                     ),
-                    ListTile(
-                      leading: const Icon(Icons.account_circle),
-                      title: Text(S.of(context).account),
-                      onTap: () => _navigateTo('/account'),
+                    NavigationDrawerDestination(
+                      icon: const Icon(Icons.account_circle),
+                      label: Text(S.of(context).account),
                     ),
-                    ListTile(
-                      leading: const Icon(Icons.payment),
-                      title: Text(S.of(context).subscription),
-                      onTap: () => _navigateTo('/subscription'),
+                    NavigationDrawerDestination(
+                      icon: const Icon(Icons.payment),
+                      label: Text(S.of(context).subscription),
                     ),
-                    ListTile(
-                      leading: const Icon(Icons.notifications_none),
-                      title: Text(S.of(context).notifications),
-                      onTap: () => _navigateTo('/notifications'),
+                    NavigationDrawerDestination(
+                      icon: const Icon(Icons.notifications_none),
+                      label: Text(S.of(context).notifications),
                     ),
                     ListTile(
                       leading: const Icon(Icons.language),
@@ -105,12 +101,9 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
                       onTap: _isChangingLanguage ? null : _changeLanguage,
                     ),
                     const Divider(),
-                    ListTile(
-                      leading: const Icon(Icons.logout),
-                      title: Text(S.of(context).logOut),
-                      onTap: () {
-                        // Lógica para cerrar sesión
-                      },
+                    NavigationDrawerDestination(
+                      icon: const Icon(Icons.logout),
+                      label: Text(S.of(context).logOut),
                     ),
                   ],
                 ),
@@ -122,8 +115,52 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
     );
   }
 
+  int _getSelectedIndex() {
+    switch (widget.currentRoute) {
+      case AppRoutes.facilities:
+        return 0;
+      case '/containers':
+        return 1;
+      case '/workers':
+        return 2;
+      case AppRoutes.templates:
+        return 3;
+      case '/account':
+        return 4;
+      case '/subscription':
+        return 5;
+      case '/notifications':
+        return 6;
+      default:
+        return -1;
+    }
+  }
+
+  String _getRouteFromIndex(int index) {
+    switch (index) {
+      case 0:
+        return AppRoutes.facilities;
+      case 1:
+        return '/containers';
+      case 2:
+        return '/workers';
+      case 3:
+        return AppRoutes.templates;
+      case 4:
+        return '/account';
+      case 5:
+        return '/subscription';
+      case 6:
+        return '/notifications';
+      default:
+        return '';
+    }
+  }
+
   void _navigateTo(String route) {
-    Navigator.of(context).pushNamed(route);
+    if (route.isNotEmpty) {
+      Navigator.of(context).pushNamed(route);
+    }
   }
 
   void _changeLanguage() {

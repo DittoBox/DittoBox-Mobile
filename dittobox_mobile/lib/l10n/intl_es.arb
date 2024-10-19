@@ -1,179 +1,319 @@
 {
-    "@@locale": "es",
-    "title": "DittoBox",
-    "@title": {
-      "description": "El título de la aplicación"
-    },
-    "welcome": "Bienvenido",
-    "@welcome": {
-      "description": "Mensaje de bienvenida para el usuario"
-    },
-    "facilities": "Instalaciones",
-    "@facilities": {
-      "description": "Etiqueta para la sección de instalaciones"
-    },
-    "newFacility": "Nueva instalación",
-    "@newFacility": {
-      "description": "Etiqueta para agregar una nueva instalación"
-    },
-    "containers": "Contenedores",
-    "@containers": {
-      "description": "Etiqueta para la sección de contenedores"
-    },
-    "workers": "Trabajadores",
-    "@workers": {
-      "description": "Etiqueta para la sección de trabajadores"
-    },
-    "pendingAlerts": "Alertas pendientes",
-    "@pendingAlerts": {
-      "description": "Etiqueta para la sección de alertas pendientes"
-    },
-    "addContainers": "Agregar contenedores",
-    "@addContainers": {
-      "description": "Etiqueta del botón para agregar contenedores"
-    },
-    "addWorkers": "Agregar trabajadores",
-    "@addWorkers": {
-      "description": "Etiqueta del botón para agregar trabajadores"
-    },
-    "checkAlerts": "Revisar alertas",
-    "@checkAlerts": {
-      "description": "Etiqueta del botón para revisar alertas"
-    },
-    "menu": "Menú",
-    "@menu": {
-      "description": "Etiqueta para el menú"
-    },
-    "settings": "Configuraciones",
-    "@settings": {
-      "description": "Etiqueta para configuraciones"
-    },
-    "account": "Cuenta",
-    "@account": {
-      "description": "Etiqueta para la sección de cuenta"
-    },
-    "subscription": "Suscripción",
-    "@subscription": {
-      "description": "Etiqueta para la sección de suscripción"
-    },
-    "notifications": "Notificaciones",
-    "@notifications": {
-      "description": "Etiqueta para la sección de notificaciones"
-    },
-    "logOut": "Cerrar sesión",
-    "@logOut": {
-      "description": "Etiqueta del botón para cerrar sesión"
-    },
-    "facilityName": "Nombre de la instalación",
-    "@facilityName": {
-      "description": "Etiqueta para el campo de nombre de la instalación"
-    },
-    "city": "Ciudad",
-    "@city": {
-      "description": "Etiqueta para el campo de ciudad"
-    },
-    "region": "Región",
-    "@region": {
-      "description": "Etiqueta para el campo de región"
-    },
-    "cancel": "Cancelar",
-    "@cancel": {
-      "description": "Etiqueta del botón para cancelar una acción"
-    },
-    "save": "Guardar",
-    "@save": {
-      "description": "Etiqueta del botón para guardar una acción"
-    },
-    "aboutYourCompany": "Sobre tu empresa",
-    "@aboutYourCompany": {
-      "description": "Etiqueta para la sección de información de la empresa"
-    },
-    "companyName": "Nombre de la empresa",
-    "@companyName": {
-      "description": "Etiqueta para el campo de nombre de la empresa"
-    },
-    "identificationNumber": "Número de identificación",
-    "@identificationNumber": {
-      "description": "Etiqueta para el campo de número de identificación de la empresa"
-    },
-    "country": "País",
-    "@country": {
-      "description": "Etiqueta para el campo de país"
-    },
-    "register": "Registrar",
-    "@register": {
-      "description": "Etiqueta del botón para registrar"
-    },
-    "login": "Iniciar sesión",
-    "@login": {
-      "description": "Etiqueta del botón para iniciar sesión"
-    },
-    "username": "Nombre de usuario",
-    "@username": {
-      "description": "Etiqueta para el campo de nombre de usuario"
-    },
-    "password": "Contraseña",
-    "@password": {
-      "description": "Etiqueta para el campo de contraseña"
-    },
-    "forgotPassword": "¿Olvidaste tu contraseña?",
-    "@forgotPassword": {
-      "description": "Texto del enlace para contraseña olvidada"
-    },
-    "registerInstead": "Registrarse en su lugar",
-    "@registerInstead": {
-      "description": "Texto del enlace para cambiar a registro"
-    },
-    "search": "Buscar",
-    "@search": {
-      "description": "Etiqueta del botón para buscar"
-    },
-    "more": "Más",
-    "@more": {
-      "description": "Etiqueta para más opciones"
-    },
-    "failedToFetchFacilities": "Error al obtener las instalaciones",
-    "@failedToFetchFacilities": {
-      "description": "Mensaje de error al no poder obtener las instalaciones"
-    },
-    "alerts": "Alertas",
-    "@alerts": {
-      "description": "Etiqueta para alertas"
-    },
-    "warehouse": "Almacén",
-    "@warehouse": {
-      "description": "Etiqueta para la sección de almacén"
-    },
-    "restaurant": "Restaurante",
-    "@restaurant": {
-      "description": "Etiqueta para la sección de restaurante"
-    },
-    "name": "Nombre",
-    "email": "Correo electrónico",
-    "worker": "Trabajador",
-    "owner": "Propietario",
-    "alreadyHaveAccount": "¿Ya tienes una cuenta? Inicia sesión en su lugar",
-    "@name": {
-        "description": "Etiqueta para el campo de nombre"
-    },
-    "@email": {
-        "description": "Etiqueta para el campo de correo electrónico"
-    },
-    "@worker": {
-        "description": "Etiqueta para el tipo de usuario trabajador"
-    },
-    "@owner": {
-        "description": "Etiqueta para el tipo de usuario propietario"
-    },
-    "@alreadyHaveAccount": {
-        "description": "Texto para el enlace de ya tener una cuenta"
-    },
-    "changeToSpanish": "Cambiar a inglés",
-    "@changeToSpanish": {
-      "description": "Texto para cambiar a español"
-    },
-    "changeToEnglish": "Change to Spanish",
-    "@changeToEnglish": {
-      "description": "Texto para cambiar a inglés"
-    }
+  "@@locale": "es",
+  "title": "DittoBox",
+  "@title": {
+    "description": "El título de la aplicación"
+  },
+  "welcome": "Bienvenido",
+  "@welcome": {
+    "description": "Mensaje de bienvenida para el usuario"
+  },
+  "facilities": "Instalaciones",
+  "@facilities": {
+    "description": "Etiqueta para la sección de instalaciones"
+  },
+  "newFacility": "Nueva instalación",
+  "@newFacility": {
+    "description": "Etiqueta para agregar una nueva instalación"
+  },
+  "containers": "Contenedores",
+  "@containers": {
+    "description": "Etiqueta para la sección de contenedores"
+  },
+  "workers": "Trabajadores",
+  "@workers": {
+    "description": "Etiqueta para la sección de trabajadores"
+  },
+  "pendingAlerts": "Alertas pendientes",
+  "@pendingAlerts": {
+    "description": "Etiqueta para la sección de alertas pendientes"
+  },
+  "addContainers": "Agregar contenedores",
+  "@addContainers": {
+    "description": "Etiqueta del botón para agregar contenedores"
+  },
+  "addWorkers": "Agregar trabajadores",
+  "@addWorkers": {
+    "description": "Etiqueta del botón para agregar trabajadores"
+  },
+  "checkAlerts": "Revisar alertas",
+  "@checkAlerts": {
+    "description": "Etiqueta del botón para revisar alertas"
+  },
+  "menu": "Menú",
+  "@menu": {
+    "description": "Etiqueta para el menú"
+  },
+  "settings": "Configuraciones",
+  "@settings": {
+    "description": "Etiqueta para configuraciones"
+  },
+  "account": "Cuenta",
+  "@account": {
+    "description": "Etiqueta para la sección de cuenta"
+  },
+  "subscription": "Suscripción",
+  "@subscription": {
+    "description": "Etiqueta para la sección de suscripción"
+  },
+  "notifications": "Notificaciones",
+  "@notifications": {
+    "description": "Etiqueta para la sección de notificaciones"
+  },
+  "logOut": "Cerrar sesión",
+  "@logOut": {
+    "description": "Etiqueta del botón para cerrar sesión"
+  },
+  "facilityName": "Nombre de la instalación",
+  "@facilityName": {
+    "description": "Etiqueta para el campo de nombre de la instalación"
+  },
+  "city": "Ciudad",
+  "@city": {
+    "description": "Etiqueta para el campo de ciudad"
+  },
+  "region": "Región",
+  "@region": {
+    "description": "Etiqueta para el campo de región"
+  },
+  "cancel": "Cancelar",
+  "@cancel": {
+    "description": "Etiqueta del botón para cancelar una acción"
+  },
+  "save": "Guardar",
+  "@save": {
+    "description": "Etiqueta del botón para guardar una acción"
+  },
+  "aboutYourCompany": "Sobre tu empresa",
+  "@aboutYourCompany": {
+    "description": "Etiqueta para la sección de información de la empresa"
+  },
+  "companyName": "Nombre de la empresa",
+  "@companyName": {
+    "description": "Etiqueta para el campo de nombre de la empresa"
+  },
+  "identificationNumber": "Número de identificación",
+  "@identificationNumber": {
+    "description": "Etiqueta para el campo de número de identificación de la empresa"
+  },
+  "country": "País",
+  "@country": {
+    "description": "Etiqueta para el campo de país"
+  },
+  "register": "Registrar",
+  "@register": {
+    "description": "Etiqueta del botón para registrar"
+  },
+  "login": "Iniciar sesión",
+  "@login": {
+    "description": "Etiqueta del botón para iniciar sesión"
+  },
+  "username": "Nombre de usuario",
+  "@username": {
+    "description": "Etiqueta para el campo de nombre de usuario"
+  },
+  "password": "Contraseña",
+  "@password": {
+    "description": "Etiqueta para el campo de contraseña"
+  },
+  "forgotPassword": "¿Olvidaste tu contraseña?",
+  "@forgotPassword": {
+    "description": "Texto del enlace para contraseña olvidada"
+  },
+  "registerInstead": "Registrarse en su lugar",
+  "@registerInstead": {
+    "description": "Texto del enlace para cambiar a registro"
+  },
+  "search": "Buscar",
+  "@search": {
+    "description": "Etiqueta del botón para buscar"
+  },
+  "more": "Más",
+  "@more": {
+    "description": "Etiqueta para más opciones"
+  },
+  "failedToFetchFacilities": "Error al obtener las instalaciones",
+  "@failedToFetchFacilities": {
+    "description": "Mensaje de error al no poder obtener las instalaciones"
+  },
+  "alerts": "Alertas",
+  "@alerts": {
+    "description": "Etiqueta para alertas"
+  },
+  "warehouse": "Almacén",
+  "@warehouse": {
+    "description": "Etiqueta para la sección de almacén"
+  },
+  "restaurant": "Restaurante",
+  "@restaurant": {
+    "description": "Etiqueta para la sección de restaurante"
+  },
+  "name": "Nombre",
+  "email": "Correo electrónico",
+  "worker": "Trabajador",
+  "owner": "Propietario",
+  "alreadyHaveAccount": "¿Ya tienes una cuenta? Inicia sesión en su lugar",
+  "@name": {
+    "description": "Etiqueta para el campo de nombre"
+  },
+  "@email": {
+    "description": "Etiqueta para el campo de correo electrónico"
+  },
+  "@worker": {
+    "description": "Etiqueta para el tipo de usuario trabajador"
+  },
+  "@owner": {
+    "description": "Etiqueta para el tipo de usuario propietario"
+  },
+  "@alreadyHaveAccount": {
+    "description": "Texto para el enlace de ya tener una cuenta"
+  },
+  "changeToSpanish": "Cambiar a inglés",
+  "@changeToSpanish": {
+    "description": "Texto para cambiar a español"
+  },
+  "changeToEnglish": "Change to Spanish",
+  "@changeToEnglish": {
+    "description": "Texto para cambiar a inglés"
+  },
+  "templateLibrary": "Biblioteca de plantillas",
+  "@templateLibrary": {
+    "description": "Etiqueta para la sección de biblioteca de plantillas"
+  },
+  "template": "Plantilla",
+  "@template": {
+    "description": "Etiqueta para la sección de plantilla"
+  },
+  "applyTemplate": "Aplicar",
+  "@applyTemplate": {
+    "description": "Texto para aplicar una plantilla"
+  },
+  "pleaseEnterName": "Por favor, ingrese un nombre",
+  "@pleaseEnterName": {
+    "description": "Mensaje de error cuando no se ingresa un nombre"
+  },
+  "pleaseEnterDescription": "Por favor, ingrese una descripción",
+  "@pleaseEnterDescription": {
+    "description": "Mensaje de error cuando no se ingresa una descripción"
+  },
+  "pleaseEnterCategory": "Por favor, ingrese una categoría",
+  "@pleaseEnterCategory": {
+    "description": "Mensaje de error cuando no se ingresa una categoría"
+  },
+  "pleaseEnterTempMin": "Por favor, ingrese una temperatura mínima",
+  "@pleaseEnterTempMin": {
+    "description": "Mensaje de error cuando no se ingresa una temperatura mínima"
+  },
+  "pleaseEnterTempMax": "Por favor, ingrese una temperatura máxima",
+  "@pleaseEnterTempMax": {
+    "description": "Mensaje de error cuando no se ingresa una temperatura máxima"
+  },
+  "pleaseEnterHumidityMin": "Por favor, ingrese una humedad mínima",
+  "@pleaseEnterHumidityMin": {
+    "description": "Mensaje de error cuando no se ingresa una humedad mínima"
+  },
+  "pleaseEnterHumidityMax": "Por favor, ingrese una humedad máxima",
+  "@pleaseEnterHumidityMax": {
+    "description": "Mensaje de error cuando no se ingresa una humedad máxima"
+  },
+  "pleaseEnterTemp": "Por favor, ingrese una temperatura",
+  "@pleaseEnterTemp": {
+    "description": "Mensaje de error cuando no se ingresa una temperatura"
+  },
+  "pleaseEnterHumidity": "Por favor, ingrese una humedad",
+  "@pleaseEnterHumidity": {
+    "description": "Mensaje de error cuando no se ingresa una humedad"
+  },
+  "pleaseEnterEthylene": "Por favor, ingrese un etileno",
+  "@pleaseEnterEthylene": {
+    "description": "Mensaje de error cuando no se ingresa un etileno"
+  },
+  "description": "Descripción",
+  "@description": {
+    "description": "Etiqueta para el campo de descripción"
+  },
+  "category": "Categoría",
+  "@category": {
+    "description": "Etiqueta para el campo de categoría"
+  },
+  "temperature": "Temperatura",
+  "@temperature": {
+    "description": "Etiqueta para el campo de temperatura"
+  },
+  "humidity": "Humedad",
+  "@humidity": {
+    "description": "Etiqueta para el campo de humedad"
+  },
+  "ethylene": "Etileno",
+  "@ethylene": {
+    "description": "Etiqueta para el campo de etileno"
+  },
+  "tempMin": "Temperatura mínima",
+  "@tempMin": {
+    "description": "Etiqueta para el campo de temperatura mínima"
+  },
+  "tempMax": "Temperatura máxima",
+  "@tempMax": {
+    "description": "Etiqueta para el campo de temperatura máxima"
+  },
+  "humidityMin": "Humedad mínima",
+  "@humidityMin": {
+    "description": "Etiqueta para el campo de humedad mínima"
+  },
+  "humidityMax": "Humedad máxima",
+  "@humidityMax": {
+    "description": "Etiqueta para el campo de humedad máxima"
+  },
+  "addTemplate": "Agregar plantilla",
+  "@addTemplate": {
+    "description": "Etiqueta del botón para agregar una plantilla"
+  },
+  "templateName": "Nombre de la plantilla",
+  "@templateName": {
+    "description": "Etiqueta para el campo de nombre de la plantilla"
+  },
+  "pleaseEnterTemplateName": "Por favor, ingrese el nombre de la plantilla",
+  "@pleaseEnterTemplateName": {
+    "description": "Mensaje de error cuando no se ingresa el nombre de la plantilla"
+  },
+  "pleaseSelectCategory": "Por favor, seleccione una categoría",
+  "@pleaseSelectCategory": {
+    "description": "Mensaje de error cuando no se selecciona una categoría"
+  },
+  "gasDetection": "Detección de gases",
+  "@gasDetection": {
+    "description": "Etiqueta para la sección de detección de gases"
+  },
+  "oxygen": "Oxígeno",
+  "@oxygen": {
+    "description": "Etiqueta para el campo de detección de oxígeno"
+  },
+  "carbonDioxide": "Dióxido de carbono",
+  "@carbonDioxide": {
+    "description": "Etiqueta para el campo de detección de dióxido de carbono"
+  },
+  "ammoniaAndSulfurDioxide": "Amoníaco y dióxido de azufre",
+  "@ammoniaAndSulfurDioxide": {
+    "description": "Etiqueta para el campo de detección de amoníaco y dióxido de azufre"
+  },
+  "discard": "Descartar",
+  "@discard": {
+    "description": "Etiqueta del botón para descartar una acción"
+  },
+  "produce": "Productos",
+  "@produce": {
+    "description": "Etiqueta para la categoría de productos"
+  },
+  "meats": "Carnes",
+  "@meats": {
+    "description": "Etiqueta para la categoría de carnes"
+  },
+  "animalDerived": "Derivados animales",
+  "@animalDerived": {
+    "description": "Etiqueta para la categoría de derivados animales"
+  },
+  "processedFoods": "Alimentos procesados",
+  "@processedFoods": {
+    "description": "Etiqueta para la categoría de alimentos procesados"
   }
+}

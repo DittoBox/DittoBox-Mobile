@@ -26,11 +26,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("About your company"),
         "account": MessageLookupByLibrary.simpleMessage("Account"),
         "addContainers": MessageLookupByLibrary.simpleMessage("Add containers"),
+        "addTemplate": MessageLookupByLibrary.simpleMessage("Add template"),
         "addWorkers": MessageLookupByLibrary.simpleMessage("Add workers"),
         "alerts": MessageLookupByLibrary.simpleMessage("Alerts"),
         "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
             "Already have an account? Login instead"),
+        "applyTemplate": MessageLookupByLibrary.simpleMessage("Apply"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+        "category": MessageLookupByLibrary.simpleMessage("Category"),
         "changeToEnglish":
             MessageLookupByLibrary.simpleMessage("Change to English"),
         "changeToSpanish":
@@ -40,13 +43,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "companyName": MessageLookupByLibrary.simpleMessage("Company name"),
         "containers": MessageLookupByLibrary.simpleMessage("Containers"),
         "country": MessageLookupByLibrary.simpleMessage("Country"),
+        "description": MessageLookupByLibrary.simpleMessage("Description"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "ethylene": MessageLookupByLibrary.simpleMessage("Ethylene"),
         "facilities": MessageLookupByLibrary.simpleMessage("Facilities"),
         "facilityName": MessageLookupByLibrary.simpleMessage("Facility name"),
         "failedToFetchFacilities":
             MessageLookupByLibrary.simpleMessage("Failed to fetch facilities"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot your password?"),
+        "humidityMax": MessageLookupByLibrary.simpleMessage("Maximum humidity"),
+        "humidityMin": MessageLookupByLibrary.simpleMessage("Minimum humidity"),
         "identificationNumber":
             MessageLookupByLibrary.simpleMessage("Identification number"),
         "logOut": MessageLookupByLibrary.simpleMessage("Log out"),
@@ -59,6 +66,26 @@ class MessageLookup extends MessageLookupByLibrary {
         "owner": MessageLookupByLibrary.simpleMessage("Owner"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "pendingAlerts": MessageLookupByLibrary.simpleMessage("Pending Alerts"),
+        "pleaseEnterCategory":
+            MessageLookupByLibrary.simpleMessage("Please enter a category"),
+        "pleaseEnterDescription":
+            MessageLookupByLibrary.simpleMessage("Please enter a description"),
+        "pleaseEnterEthylene":
+            MessageLookupByLibrary.simpleMessage("Pleasse enter an ethylene"),
+        "pleaseEnterHumidity":
+            MessageLookupByLibrary.simpleMessage("Please enter a humidity"),
+        "pleaseEnterHumidityMax": MessageLookupByLibrary.simpleMessage(
+            "Please enter a maximum humidity"),
+        "pleaseEnterHumidityMin": MessageLookupByLibrary.simpleMessage(
+            "Please enter a minimum humidity"),
+        "pleaseEnterName":
+            MessageLookupByLibrary.simpleMessage("Please enter a name"),
+        "pleaseEnterTemp":
+            MessageLookupByLibrary.simpleMessage("Please enter a temperature"),
+        "pleaseEnterTempMax": MessageLookupByLibrary.simpleMessage(
+            "Please enter a maximum temperature"),
+        "pleaseEnterTempMin": MessageLookupByLibrary.simpleMessage(
+            "Please enter a minimum temperature"),
         "region": MessageLookupByLibrary.simpleMessage("Region"),
         "register": MessageLookupByLibrary.simpleMessage("Register"),
         "registerInstead":
@@ -68,7 +95,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "subscription": MessageLookupByLibrary.simpleMessage("Subscription"),
+        "tempMax": MessageLookupByLibrary.simpleMessage("Maximum temperature"),
+        "tempMin": MessageLookupByLibrary.simpleMessage("Minimum temperature"),
         "template": MessageLookupByLibrary.simpleMessage("Template"),
+        "templateLibrary":
+            MessageLookupByLibrary.simpleMessage("Template Library"),
         "templates": MessageLookupByLibrary.simpleMessage("Templates"),
         "title": MessageLookupByLibrary.simpleMessage("DittoBox"),
         "username": MessageLookupByLibrary.simpleMessage("Username"),

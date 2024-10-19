@@ -23,8 +23,8 @@ class _FacilitiesListScreenState extends State<FacilitiesListScreen> {
         title: Text(S.of(context).facilities),
       ),
       drawer: const CustomNavigationDrawer(currentRoute: AppRoutes.facilities),
-      body: Padding(
-        padding: const EdgeInsets.all(10.0),
+      body: const Padding(
+        padding: EdgeInsets.all(10.0),
         child: Column(
           children: [
             Expanded(
@@ -78,8 +78,10 @@ class _FacilitiesListState extends State<FacilitiesList> {
         _filteredFacilities = facilities;
       });
     } catch (e) {
+      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
+          // ignore: use_build_context_synchronously
           content: Text('${S.of(context).failedToFetchFacilities}: $e'),
         ),
       );

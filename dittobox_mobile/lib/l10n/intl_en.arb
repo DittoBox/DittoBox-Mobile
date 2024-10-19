@@ -183,5 +183,129 @@
     "changeToEnglish": "Change to English",
     "@changeToEnglish": {
       "description": "Button label for changing the language to English"
+    },
+    "templateLibrary": "Template Library",
+    "@templateLibrary": {
+      "description": "Label for template library section"
+    },
+    "applyTemplate": "Apply",
+    "@applyTemplate": {
+      "description": "Button label for applying a template"
+    },
+    "addTemplate": "Add template",
+    "@addTemplate": {
+      "description": "Button label for adding a template"
+    },
+    "pleaseEnterName": "Please enter a name",
+    "@pleaseEnterName": {
+      "description": "Error message when name is not entered"
+    },
+    "pleaseEnterDescription": "Please enter a description",
+    "@pleaseEnterDescription": {
+      "description": "Error message when description is not entered"
+    },
+    "pleaseEnterCategory": "Please enter a category",
+    "@pleaseEnterCategory": {
+      "description": "Error message when category is not entered"
+    },
+    "pleaseEnterTempMin": "Please enter a minimum temperature",
+    "@pleaseEnterTempMin": {
+      "description": "Error message when minimum temperature is not entered"
+    },
+    "pleaseEnterTempMax": "Please enter a maximum temperature",
+    "@pleaseEnterTempMax": {
+      "description": "Error message when maximum temperature is not entered"
+    },
+    "pleaseEnterHumidityMin": "Please enter a minimum humidity",
+    "@pleaseEnterHumidityMin": {
+      "description": "Error message when minimum humidity is not entered"
+    },
+    "pleaseEnterHumidityMax": "Please enter a maximum humidity",
+    "@pleaseEnterHumidityMax": {
+      "description": "Error message when maximum humidity is not entered"
+    },
+    "pleaseEnterTemp": "Please enter a temperature",
+    "@pleaseEnterTemp": {
+      "description": "Error message when temperature is not entered"
+    },
+    "pleaseEnterHumidity": "Please enter a humidity",
+    "@pleaseEnterHumidity": {
+      "description": "Error message when humidity is not entered"
+    },
+    "pleaseEnterEthylene": "Pleasse enter an ethylene",
+    "@pleaseEnterEthylene": {
+      "description": "Error message when ethylene is not entered"
+    },
+    "description": "Description",
+    "@description": {
+      "description": "Label for description section"
+    },
+    "category": "Category",
+    "@category": {
+      "description": "Label for category section"
+    },
+    "tempMin": "Minimum temperature",
+    "@tempMin": {
+      "description": "Label for minimum temperature section"
+    },
+    "tempMax": "Maximum temperature",
+    "@tempMax": {
+      "description": "Label for maximum temperature section"
+    },
+    "humidityMin": "Minimum humidity",
+    "@humidityMin": {
+      "description": "Label for minimum humidity section"
+    },
+    "humidityMax": "Maximum humidity",
+    "@humidityMax": {
+      "description": "Label for maximum humidity section"
+    },
+    "ethylene": "Ethylene",
+    "@ethylene": {
+      "description": "Label for ethylene section"
+    },
+    "templateName": "Template name",
+    "@templateName": {
+      "description": "Label for template name section"
+    },
+    "produce": "Produce",
+    "@produce": {
+      "description": "Label for produce section"
+    },
+    "meat": "Meat",
+    "@meat": {
+      "description": "Label for meat section"
+    },
+    "animalDerived": "Animal derived",
+    "@animalDerived": {
+      "description": "Label for animal derived section"
+    },
+    "processedFood": "Processed food",
+    "@processedFood": {
+      "description": "Label for processed food section"
+    },
+    "pleaseSelectCategory": "Please select a category",
+    "@pleaseSelectCategory": {
+      "description": "Error message when category is not selected"
+    },
+    "pleaseEnterTemplateName": "Please enter a template name",
+    "@pleaseEnterTemplateName": {
+      "description": "Error message when template name is not entered"
+    },
+    "gasDetection": "Gas detection",
+    "@gasDetection": {
+      "description": "Label for gas detection section"
+    },
+    "oxygen": "Oxygen",
+    "@oxygen": {
+      "description": "Label for oxygen section"
+    },
+    "carbonDioxide": "Carbon dioxide",
+    "@carbonDioxide": {
+      "description": "Label for carbon dioxide section"
+    },
+    "ammoniaAndSulfurDioxide": "Ammonia and sulfur dioxide",
+    "@ammoniaAndSulfurDioxide": {
+      "description": "Label for ammonia and sulfur dioxide section"
     }
   }

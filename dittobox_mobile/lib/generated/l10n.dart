@@ -509,6 +509,206 @@ class S {
       args: [],
     );
   }
+
+  /// `Template Library`
+  String get templateLibrary {
+    return Intl.message(
+      'Template Library',
+      name: 'templateLibrary',
+      desc: 'Label for template library section',
+      args: [],
+    );
+  }
+
+  /// `Apply`
+  String get applyTemplate {
+    return Intl.message(
+      'Apply',
+      name: 'applyTemplate',
+      desc: 'Button label for applying a template',
+      args: [],
+    );
+  }
+
+  /// `Add template`
+  String get addTemplate {
+    return Intl.message(
+      'Add template',
+      name: 'addTemplate',
+      desc: 'Button label for adding a template',
+      args: [],
+    );
+  }
+
+  /// `Please enter a name`
+  String get pleaseEnterName {
+    return Intl.message(
+      'Please enter a name',
+      name: 'pleaseEnterName',
+      desc: 'Error message when name is not entered',
+      args: [],
+    );
+  }
+
+  /// `Please enter a description`
+  String get pleaseEnterDescription {
+    return Intl.message(
+      'Please enter a description',
+      name: 'pleaseEnterDescription',
+      desc: 'Error message when description is not entered',
+      args: [],
+    );
+  }
+
+  /// `Please enter a category`
+  String get pleaseEnterCategory {
+    return Intl.message(
+      'Please enter a category',
+      name: 'pleaseEnterCategory',
+      desc: 'Error message when category is not entered',
+      args: [],
+    );
+  }
+
+  /// `Please enter a minimum temperature`
+  String get pleaseEnterTempMin {
+    return Intl.message(
+      'Please enter a minimum temperature',
+      name: 'pleaseEnterTempMin',
+      desc: 'Error message when minimum temperature is not entered',
+      args: [],
+    );
+  }
+
+  /// `Please enter a maximum temperature`
+  String get pleaseEnterTempMax {
+    return Intl.message(
+      'Please enter a maximum temperature',
+      name: 'pleaseEnterTempMax',
+      desc: 'Error message when maximum temperature is not entered',
+      args: [],
+    );
+  }
+
+  /// `Please enter a minimum humidity`
+  String get pleaseEnterHumidityMin {
+    return Intl.message(
+      'Please enter a minimum humidity',
+      name: 'pleaseEnterHumidityMin',
+      desc: 'Error message when minimum humidity is not entered',
+      args: [],
+    );
+  }
+
+  /// `Please enter a maximum humidity`
+  String get pleaseEnterHumidityMax {
+    return Intl.message(
+      'Please enter a maximum humidity',
+      name: 'pleaseEnterHumidityMax',
+      desc: 'Error message when maximum humidity is not entered',
+      args: [],
+    );
+  }
+
+  /// `Please enter a temperature`
+  String get pleaseEnterTemp {
+    return Intl.message(
+      'Please enter a temperature',
+      name: 'pleaseEnterTemp',
+      desc: 'Error message when temperature is not entered',
+      args: [],
+    );
+  }
+
+  /// `Please enter a humidity`
+  String get pleaseEnterHumidity {
+    return Intl.message(
+      'Please enter a humidity',
+      name: 'pleaseEnterHumidity',
+      desc: 'Error message when humidity is not entered',
+      args: [],
+    );
+  }
+
+  /// `Pleasse enter an ethylene`
+  String get pleaseEnterEthylene {
+    return Intl.message(
+      'Pleasse enter an ethylene',
+      name: 'pleaseEnterEthylene',
+      desc: 'Error message when ethylene is not entered',
+      args: [],
+    );
+  }
+
+  /// `Description`
+  String get description {
+    return Intl.message(
+      'Description',
+      name: 'description',
+      desc: 'Label for description section',
+      args: [],
+    );
+  }
+
+  /// `Category`
+  String get category {
+    return Intl.message(
+      'Category',
+      name: 'category',
+      desc: 'Label for category section',
+      args: [],
+    );
+  }
+
+  /// `Minimum temperature`
+  String get tempMin {
+    return Intl.message(
+      'Minimum temperature',
+      name: 'tempMin',
+      desc: 'Label for minimum temperature section',
+      args: [],
+    );
+  }
+
+  /// `Maximum temperature`
+  String get tempMax {
+    return Intl.message(
+      'Maximum temperature',
+      name: 'tempMax',
+      desc: 'Label for maximum temperature section',
+      args: [],
+    );
+  }
+
+  /// `Minimum humidity`
+  String get humidityMin {
+    return Intl.message(
+      'Minimum humidity',
+      name: 'humidityMin',
+      desc: 'Label for minimum humidity section',
+      args: [],
+    );
+  }
+
+  /// `Maximum humidity`
+  String get humidityMax {
+    return Intl.message(
+      'Maximum humidity',
+      name: 'humidityMax',
+      desc: 'Label for maximum humidity section',
+      args: [],
+    );
+  }
+
+  /// `Ethylene`
+  String get ethylene {
+    return Intl.message(
+      'Ethylene',
+      name: 'ethylene',
+      desc: 'Label for ethylene section',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
