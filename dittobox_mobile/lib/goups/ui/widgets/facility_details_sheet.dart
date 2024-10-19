@@ -41,14 +41,14 @@ void showFacilityDetailsBottomSheet(BuildContext context, Facility facility) {
                     ),
                     const Icon(Icons.chevron_right_outlined),
                     Text(
-                      facility.location.split(', ')[1],
+                      facility.location.split(', ')[0],
                       style: const TextStyle(
                         fontSize: 16,
                       ),
                     ),
                     const Icon(Icons.chevron_right_outlined),
                     Text(
-                      facility.location.split(', ')[0],
+                      facility.location.split(', ')[1],
                       style: const TextStyle(
                         fontSize: 16,
                       ),

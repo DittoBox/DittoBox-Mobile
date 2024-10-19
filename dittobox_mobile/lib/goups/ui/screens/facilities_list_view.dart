@@ -3,7 +3,8 @@ import 'package:dittobox_mobile/routes/app_routes.dart';
 import 'package:dittobox_mobile/shared/widgets/custom_navigator_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:dittobox_mobile/goups/ui/widgets/add_facilities_sheet.dart';
-import 'package:dittobox_mobile/goups/ui/widgets/facility_details_sheet.dart'; // Importa el nuevo archivo
+import 'package:dittobox_mobile/goups/ui/widgets/facility_details_sheet.dart';
+import 'package:dittobox_mobile/goups/services/facilities_service.dart'; // Importa el servicio
 
 // Facilities List Screen
 class FacilitiesListScreen extends StatefulWidget {
@@ -50,37 +51,15 @@ class FacilitiesList extends StatefulWidget {
 }
 
 class _FacilitiesListState extends State<FacilitiesList> {
-  final List<Facility> _facilities = [
-    Facility(
-      title: 'Gran Vía',
-      location: 'Madrid, Spain',
-      containers: 24,
-      alerts: 3,
-      workers: 8,
-    ),
-    Facility(
-      title: 'Atocha',
-      location: 'Madrid, Spain',
-      containers: 24,
-      alerts: 3,
-      workers: 8,
-    ),
-    Facility(
-      title: 'Polígono Este',
-      location: 'Madrid, Spain',
-      containers: 24,
-      alerts: 3,
-      workers: 8,
-    ),
-  ];
-
+  List<Facility> _facilities = [];
   List<Facility> _filteredFacilities = [];
   final TextEditingController _searchController = TextEditingController();
+  final FacilitiesService _facilitiesService = FacilitiesService(); // Instancia del servicio
 
   @override
   void initState() {
     super.initState();
-    _filteredFacilities = _facilities;
+    _fetchFacilities();
     _searchController.addListener(_filterFacilities);
   }
 
@@ -88,6 +67,22 @@ class _FacilitiesListState extends State<FacilitiesList> {
   void dispose() {
     _searchController.dispose();
     super.dispose();
+  }
+
+  Future<void> _fetchFacilities() async {
+    try {
+      final facilities = await _facilitiesService.getFacilities();
+      setState(() {
+        _facilities = facilities;
+        _filteredFacilities = facilities;
+      });
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Failed to fetch facilities: $e'),
+        ),
+      );
+    }
   }
 
   void _filterFacilities() {

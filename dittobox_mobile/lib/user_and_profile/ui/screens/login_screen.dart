@@ -87,8 +87,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     // }
                   },
                   style: TextButton.styleFrom(
-                    foregroundColor: Colors.white,
-                    backgroundColor: Colors.primaries.last,
                     padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
                 
                   ),
