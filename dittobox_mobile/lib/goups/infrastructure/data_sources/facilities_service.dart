@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:dittobox_mobile/goups/models/facilities.dart';
+import 'package:dittobox_mobile/goups/infrastructure/models/facilities.dart';
 import 'package:dittobox_mobile/shared/services/base_service.dart';
 import 'package:http/http.dart' as http;
 

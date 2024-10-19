@@ -1,7 +1,7 @@
-import 'package:dittobox_mobile/goups/ui/screens/facilities_list_view.dart';
-import 'package:dittobox_mobile/user_and_profile/ui/screens/company_info_screen.dart';
-import 'package:dittobox_mobile/user_and_profile/ui/screens/login_screen.dart';
-import 'package:dittobox_mobile/user_and_profile/ui/screens/register_screen.dart';
+import 'package:dittobox_mobile/goups/presentation/facilities-list/facilities_list_view.dart';
+import 'package:dittobox_mobile/user_and_profile/presentation/login-screen/login_screen.dart';
+import 'package:dittobox_mobile/user_and_profile/presentation/register-screen/company_info_screen.dart';
+import 'package:dittobox_mobile/user_and_profile/presentation/register-screen/register_screen.dart';
 import 'package:flutter/material.dart';
 
 final Map<String, Widget Function(BuildContext)> appRoutes = {

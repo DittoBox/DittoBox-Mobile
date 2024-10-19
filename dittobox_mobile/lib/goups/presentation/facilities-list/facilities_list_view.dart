@@ -1,10 +1,10 @@
-import 'package:dittobox_mobile/goups/models/facilities.dart';
+import 'package:dittobox_mobile/goups/infrastructure/models/facilities.dart';
+import 'package:dittobox_mobile/goups/presentation/widgets/add_facilities_sheet.dart';
 import 'package:dittobox_mobile/routes/app_routes.dart';
 import 'package:dittobox_mobile/shared/widgets/custom_navigator_drawer.dart';
 import 'package:flutter/material.dart';
-import 'package:dittobox_mobile/goups/ui/widgets/add_facilities_sheet.dart';
-import 'package:dittobox_mobile/goups/ui/widgets/facility_details_sheet.dart';
-import 'package:dittobox_mobile/goups/services/facilities_service.dart'; // Importa el servicio
+import 'package:dittobox_mobile/goups/presentation/widgets/facility_details_sheet.dart'; // Importa el archivo
+import 'package:dittobox_mobile/goups/infrastructure/data_sources/facilities_service.dart'; // Importa el servicio
 
 // Facilities List Screen
 class FacilitiesListScreen extends StatefulWidget {
@@ -144,6 +144,17 @@ class FacilitiesCard extends StatefulWidget {
 }
 
 class _FacilitiesCardState extends State<FacilitiesCard> {
+  IconData getFacilityIcon(String type) {
+    switch (type) {
+      case 'restaurant':
+        return Icons.restaurant;
+      case 'warehouse':
+        return Icons.warehouse_outlined;
+      default:
+        return Icons.help_outline; // Icono por defecto
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -178,7 +189,7 @@ class _FacilitiesCardState extends State<FacilitiesCard> {
                         Text(widget.facility.location),
                       ],
                     ),
-                    const Icon(Icons.restaurant), // Icono agregado en la parte superior derecha
+                    Icon(getFacilityIcon(widget.facility.type)), // Icono dinámico
                   ],
                 ),
                 const SizedBox(height: 16),

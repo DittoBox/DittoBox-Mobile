@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:dittobox_mobile/goups/models/facilities.dart';
+import 'package:dittobox_mobile/goups/infrastructure/models/facilities.dart';
 
 void showFacilityDetailsBottomSheet(BuildContext context, Facility facility) {
   showModalBottomSheet(
@@ -66,9 +66,9 @@ void showFacilityDetailsBottomSheet(BuildContext context, Facility facility) {
                         fontSize: 24,
                       ),
                     ),
-                    const Text(
-                      'restaurant',
-                      style: TextStyle(
+                     Text(
+                      facility.type,
+                      style: const TextStyle(
                         fontSize: 16,
                       ),
                     ),
