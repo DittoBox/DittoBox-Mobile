@@ -315,5 +315,21 @@
   "processedFoods": "Alimentos procesados",
   "@processedFoods": {
     "description": "Etiqueta para la categoría de alimentos procesados"
+  },
+  "pleaseEnterOxygen": "Por favor, ingrese un oxígeno",
+  "@pleaseEnterOxygen": {
+    "description": "Mensaje de error cuando no se ingresa un oxígeno"
+  },
+  "pleaseEnterCarbonDioxide": "Por favor, ingrese un dióxido de carbono",
+  "@pleaseEnterCarbonDioxide": {
+    "description": "Mensaje de error cuando no se ingresa un dióxido de carbono"
+  },
+  "pleaseEnterAmmoniaAndSulfurDioxide": "Por favor, ingrese un amoníaco y dióxido de azufre",
+  "@pleaseEnterAmmoniaAndSulfurDioxide": {
+    "description": "Mensaje de error cuando no se ingresan amoníaco y dióxido de azufre"
+  },
+  "type": "Tipo",
+  "@type": {
+    "description": "Etiqueta para el campo de tipo"
   }
 }

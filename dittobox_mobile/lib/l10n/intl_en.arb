@@ -307,5 +307,25 @@
     "ammoniaAndSulfurDioxide": "Ammonia and sulfur dioxide",
     "@ammoniaAndSulfurDioxide": {
       "description": "Label for ammonia and sulfur dioxide section"
+    },
+    "discard": "Discard",
+    "@discard": {
+      "description": "Button label for discarding an action"
+    },
+    "proccessedFood": "Processed food",
+    "@proccessedFood": {
+      "description": "Label for processed food section"
+    },
+    "meats": "Meats",
+    "@meats": {
+      "description": "Label for meats section"
+    },
+    "processedFoods": "Processed foods",
+    "@processedFoods": {
+      "description": "Label for processed foods section"
+    },
+    "type": "Type",
+    "@type": {
+      "description": "Label for type section"
     }
   }

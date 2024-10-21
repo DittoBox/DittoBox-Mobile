@@ -31,8 +31,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "alerts": MessageLookupByLibrary.simpleMessage("Alerts"),
         "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
             "Already have an account? Login instead"),
+        "ammoniaAndSulfurDioxide":
+            MessageLookupByLibrary.simpleMessage("Ammonia and sulfur dioxide"),
+        "animalDerived": MessageLookupByLibrary.simpleMessage("Animal derived"),
         "applyTemplate": MessageLookupByLibrary.simpleMessage("Apply"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+        "carbonDioxide": MessageLookupByLibrary.simpleMessage("Carbon dioxide"),
         "category": MessageLookupByLibrary.simpleMessage("Category"),
         "changeToEnglish":
             MessageLookupByLibrary.simpleMessage("Change to English"),
@@ -44,6 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "containers": MessageLookupByLibrary.simpleMessage("Containers"),
         "country": MessageLookupByLibrary.simpleMessage("Country"),
         "description": MessageLookupByLibrary.simpleMessage("Description"),
+        "discard": MessageLookupByLibrary.simpleMessage("Discard"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "ethylene": MessageLookupByLibrary.simpleMessage("Ethylene"),
         "facilities": MessageLookupByLibrary.simpleMessage("Facilities"),
@@ -52,18 +57,22 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Failed to fetch facilities"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot your password?"),
+        "gasDetection": MessageLookupByLibrary.simpleMessage("Gas detection"),
         "humidityMax": MessageLookupByLibrary.simpleMessage("Maximum humidity"),
         "humidityMin": MessageLookupByLibrary.simpleMessage("Minimum humidity"),
         "identificationNumber":
             MessageLookupByLibrary.simpleMessage("Identification number"),
         "logOut": MessageLookupByLibrary.simpleMessage("Log out"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
+        "meat": MessageLookupByLibrary.simpleMessage("Meat"),
+        "meats": MessageLookupByLibrary.simpleMessage("Meats"),
         "menu": MessageLookupByLibrary.simpleMessage("Menu"),
         "more": MessageLookupByLibrary.simpleMessage("More"),
         "name": MessageLookupByLibrary.simpleMessage("Name"),
         "newFacility": MessageLookupByLibrary.simpleMessage("New facility"),
         "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
         "owner": MessageLookupByLibrary.simpleMessage("Owner"),
+        "oxygen": MessageLookupByLibrary.simpleMessage("Oxygen"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "pendingAlerts": MessageLookupByLibrary.simpleMessage("Pending Alerts"),
         "pleaseEnterCategory":
@@ -86,6 +95,16 @@ class MessageLookup extends MessageLookupByLibrary {
             "Please enter a maximum temperature"),
         "pleaseEnterTempMin": MessageLookupByLibrary.simpleMessage(
             "Please enter a minimum temperature"),
+        "pleaseEnterTemplateName": MessageLookupByLibrary.simpleMessage(
+            "Please enter a template name"),
+        "pleaseSelectCategory":
+            MessageLookupByLibrary.simpleMessage("Please select a category"),
+        "proccessedFood":
+            MessageLookupByLibrary.simpleMessage("Processed food"),
+        "processedFood": MessageLookupByLibrary.simpleMessage("Processed food"),
+        "processedFoods":
+            MessageLookupByLibrary.simpleMessage("Processed foods"),
+        "produce": MessageLookupByLibrary.simpleMessage("Produce"),
         "region": MessageLookupByLibrary.simpleMessage("Region"),
         "register": MessageLookupByLibrary.simpleMessage("Register"),
         "registerInstead":
@@ -100,8 +119,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "template": MessageLookupByLibrary.simpleMessage("Template"),
         "templateLibrary":
             MessageLookupByLibrary.simpleMessage("Template Library"),
+        "templateName": MessageLookupByLibrary.simpleMessage("Template name"),
         "templates": MessageLookupByLibrary.simpleMessage("Templates"),
         "title": MessageLookupByLibrary.simpleMessage("DittoBox"),
+        "type": MessageLookupByLibrary.simpleMessage("Type"),
         "username": MessageLookupByLibrary.simpleMessage("Username"),
         "warehouse": MessageLookupByLibrary.simpleMessage("Warehouse"),
         "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),

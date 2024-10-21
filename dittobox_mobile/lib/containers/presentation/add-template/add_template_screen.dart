@@ -161,20 +161,20 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
                 children: [
                   ElevatedButton(
                     onPressed: _saveTemplate,
-                    child: Text(S.of(context).save),
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                     ),
+                    child: Text(S.of(context).save),
                   ),
                   const SizedBox(width: 20),
                   OutlinedButton(
                     onPressed: () {
                       Navigator.of(context).pop();
                     },
-                    child: Text(S.of(context).discard),
                     style: OutlinedButton.styleFrom(
                       padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                     ),
+                    child: Text(S.of(context).discard),
                   ),
                 ],
               ),

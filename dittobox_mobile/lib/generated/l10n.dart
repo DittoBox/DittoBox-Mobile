@@ -709,6 +709,166 @@ class S {
       args: [],
     );
   }
+
+  /// `Template name`
+  String get templateName {
+    return Intl.message(
+      'Template name',
+      name: 'templateName',
+      desc: 'Label for template name section',
+      args: [],
+    );
+  }
+
+  /// `Produce`
+  String get produce {
+    return Intl.message(
+      'Produce',
+      name: 'produce',
+      desc: 'Label for produce section',
+      args: [],
+    );
+  }
+
+  /// `Meat`
+  String get meat {
+    return Intl.message(
+      'Meat',
+      name: 'meat',
+      desc: 'Label for meat section',
+      args: [],
+    );
+  }
+
+  /// `Animal derived`
+  String get animalDerived {
+    return Intl.message(
+      'Animal derived',
+      name: 'animalDerived',
+      desc: 'Label for animal derived section',
+      args: [],
+    );
+  }
+
+  /// `Processed food`
+  String get processedFood {
+    return Intl.message(
+      'Processed food',
+      name: 'processedFood',
+      desc: 'Label for processed food section',
+      args: [],
+    );
+  }
+
+  /// `Please select a category`
+  String get pleaseSelectCategory {
+    return Intl.message(
+      'Please select a category',
+      name: 'pleaseSelectCategory',
+      desc: 'Error message when category is not selected',
+      args: [],
+    );
+  }
+
+  /// `Please enter a template name`
+  String get pleaseEnterTemplateName {
+    return Intl.message(
+      'Please enter a template name',
+      name: 'pleaseEnterTemplateName',
+      desc: 'Error message when template name is not entered',
+      args: [],
+    );
+  }
+
+  /// `Gas detection`
+  String get gasDetection {
+    return Intl.message(
+      'Gas detection',
+      name: 'gasDetection',
+      desc: 'Label for gas detection section',
+      args: [],
+    );
+  }
+
+  /// `Oxygen`
+  String get oxygen {
+    return Intl.message(
+      'Oxygen',
+      name: 'oxygen',
+      desc: 'Label for oxygen section',
+      args: [],
+    );
+  }
+
+  /// `Carbon dioxide`
+  String get carbonDioxide {
+    return Intl.message(
+      'Carbon dioxide',
+      name: 'carbonDioxide',
+      desc: 'Label for carbon dioxide section',
+      args: [],
+    );
+  }
+
+  /// `Ammonia and sulfur dioxide`
+  String get ammoniaAndSulfurDioxide {
+    return Intl.message(
+      'Ammonia and sulfur dioxide',
+      name: 'ammoniaAndSulfurDioxide',
+      desc: 'Label for ammonia and sulfur dioxide section',
+      args: [],
+    );
+  }
+
+  /// `Discard`
+  String get discard {
+    return Intl.message(
+      'Discard',
+      name: 'discard',
+      desc: 'Button label for discarding an action',
+      args: [],
+    );
+  }
+
+  /// `Processed food`
+  String get proccessedFood {
+    return Intl.message(
+      'Processed food',
+      name: 'proccessedFood',
+      desc: 'Label for processed food section',
+      args: [],
+    );
+  }
+
+  /// `Meats`
+  String get meats {
+    return Intl.message(
+      'Meats',
+      name: 'meats',
+      desc: 'Label for meats section',
+      args: [],
+    );
+  }
+
+  /// `Processed foods`
+  String get processedFoods {
+    return Intl.message(
+      'Processed foods',
+      name: 'processedFoods',
+      desc: 'Label for processed foods section',
+      args: [],
+    );
+  }
+
+  /// `Type`
+  String get type {
+    return Intl.message(
+      'Type',
+      name: 'type',
+      desc: 'Label for type section',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
