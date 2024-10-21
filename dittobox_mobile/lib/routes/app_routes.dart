@@ -9,10 +9,12 @@ import 'package:flutter/material.dart';
 final Map<String, Widget Function(BuildContext)> appRoutes = {
   '/login': (context) => const LoginScreen(),
   '/register': (context) => const RegisterScreen(),
-  '/company_info': (context) => const CompanyInfoScreen(),
+  '/company_info': (context) => const CompanyInfoScreen(), // Proporciona un usuario predeterminado
   '/facilities': (context) => const FacilitiesListScreen(),
   '/templates': (context) => const TemplateListScreen(),
   '/addTemplate': (context) => const AddTemplateScreen(),
+  '/': (context) => const LoginScreen(),
+  "/home": (context) => const TemplateListScreen(),
 };
 
 class AppRoutes {
@@ -21,5 +23,6 @@ class AppRoutes {
   static const String companyInfo = '/company_info';
   static const String facilities = '/facilities';
   static const String templates = '/templates';
+  static const String home = '/';
   static const String addTemplate = '/addTemplate';
 }

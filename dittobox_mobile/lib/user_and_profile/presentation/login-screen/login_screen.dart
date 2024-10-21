@@ -80,15 +80,12 @@ class _LoginScreenState extends State<LoginScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                TextButton(
+                FilledButton(
                   onPressed: () async {
                     // if (await _login()) {
                     //   navigateTo(AppRoutes.home);
                     // }
                   },
-                  style: TextButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-                  ),
                   child: Text(S.of(context).login),
                 ),
               ],
