@@ -32,7 +32,7 @@ class _MainAppState extends State<MainApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'DittoBox',
-      initialRoute: AppRoutes.facilities,
+      initialRoute: AppRoutes.templates,
       debugShowCheckedModeBanner: false,
       routes: appRoutes,
       locale: _locale,

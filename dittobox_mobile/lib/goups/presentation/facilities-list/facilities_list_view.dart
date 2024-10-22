@@ -165,11 +165,7 @@ class _FacilitiesCardState extends State<FacilitiesCard> {
         showFacilityDetailsBottomSheet(context, widget.facility); // Usa el nuevo archivo
       },
       child: Center(
-        child: Card(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10.0),
-            side: const BorderSide(color: Colors.black, width: 1),
-          ),
+        child: Card.outlined  (
           margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 30.0),
           child: Padding(
             padding: const EdgeInsets.all(16.0),

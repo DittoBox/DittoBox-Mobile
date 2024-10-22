@@ -108,11 +108,7 @@ class TemplateCard extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 5.0),
       child: ClipRRect(
-        child: Card(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(15.0),
-            side: const BorderSide(color: Colors.black, width: 1),
-          ),
+        child: Card.outlined(
           child: SizedBox(
             height: 120, // Ajusta la altura según tus necesidades
             child: Center(
