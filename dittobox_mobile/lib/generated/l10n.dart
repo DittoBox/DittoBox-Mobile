@@ -1039,6 +1039,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Humidity`
+  String get humidity {
+    return Intl.message(
+      'Humidity',
+      name: 'humidity',
+      desc: 'Label for humidity section',
+      args: [],
+    );
+  }
+
+  /// `Temperature`
+  String get temperature {
+    return Intl.message(
+      'Temperature',
+      name: 'temperature',
+      desc: 'Label for temperature section',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

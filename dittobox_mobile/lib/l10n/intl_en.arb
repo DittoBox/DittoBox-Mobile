@@ -395,5 +395,13 @@
     "newTemplate": "New template",
     "@newTemplate": {
       "description": "Label for adding a new template"
+    },
+    "humidity": "Humidity",
+    "@humidity": {
+      "description": "Label for humidity section"
+    },
+    "temperature": "Temperature",
+    "@temperature": {
+      "description": "Label for temperature section"
     }
   }

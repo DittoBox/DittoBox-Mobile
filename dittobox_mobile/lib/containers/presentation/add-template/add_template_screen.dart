@@ -59,150 +59,154 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
     }
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(S.of(context).newTemplate),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(32.0),
-        child: Form(
-          key: _formKey,
-          child: ListView(
-            children: [
-              TextFormField(
-                controller: _nameController,
-                decoration: InputDecoration(
-                  labelText: S.of(context).templateName,
-                  border: const OutlineInputBorder(),
+@override
+Widget build(BuildContext context) {
+  return Scaffold(
+    appBar: AppBar(
+      title: Text(S.of(context).newTemplate),
+    ),
+    body: Padding(
+      padding: const EdgeInsets.all(32.0),
+      child: Form(
+        key: _formKey,
+        child: ListView(
+          children: [
+            TextFormField(
+              controller: _nameController,
+              decoration: InputDecoration(
+                labelText: S.of(context).templateName,
+                border: const OutlineInputBorder(),
+              ),
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return S.of(context).pleaseEnterTemplateName;
+                }
+                return null;
+              },
+            ),
+            const SizedBox(height: 16),
+            TextFormField(
+              controller: _descriptionController,
+              decoration: InputDecoration(
+                labelText: S.of(context).description,
+                border: const OutlineInputBorder(),
+              ),
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return S.of(context).pleaseEnterDescription;
+                }
+                return null;
+              },
+              maxLines: 3,
+            ),
+            const SizedBox(height: 16),
+            DropdownButtonFormField<String>(
+              value: _selectedCategory,
+              decoration: InputDecoration(
+                labelText: S.of(context).category,
+                border: const OutlineInputBorder(),
+              ),
+              items: [
+                DropdownMenuItem(
+                  value: 'Produce',
+                  child: Text(S.of(context).produce),
                 ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return S.of(context).pleaseEnterTemplateName;
-                  }
-                  return null;
-                },
-              ),
-              const SizedBox(height: 16),
-              TextFormField(
-                controller: _descriptionController,
-                decoration: InputDecoration(
-                  labelText: S.of(context).description,
-                  border: const OutlineInputBorder(),
+                DropdownMenuItem(
+                  value: 'Meats',
+                  child: Text(S.of(context).meats),
                 ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return S.of(context).pleaseEnterDescription;
-                  }
-                  return null;
-                },
-                maxLines: 3,
-              ),
-              const SizedBox(height: 16),
-              DropdownButtonFormField<String>(
-                value: _selectedCategory,
-                decoration: InputDecoration(
-                  labelText: S.of(context).category,
-                  border: const OutlineInputBorder(),
+                DropdownMenuItem(
+                  value: 'Animal derived',
+                  child: Text(S.of(context).animalDerived),
                 ),
-                items: [
-                  DropdownMenuItem(
-                    value: 'Produce',
-                    child: Text(S.of(context).produce),
-                  ),
-                  DropdownMenuItem(
-                    value: 'Meats',
-                    child: Text(S.of(context).meats),
-                  ),
-                  DropdownMenuItem(
-                    value: 'Animal derived',
-                    child: Text(S.of(context).animalDerived),
-                  ),
-                  DropdownMenuItem(
-                    value: 'Processed foods',
-                    child: Text(S.of(context).processedFoods),
-                  ),
-                ],
-                onChanged: (value) {
-                  setState(() {
-                    _selectedCategory = value;
-                  });
-                },
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return S.of(context).pleaseSelectCategory;
-                  }
-                  return null;
-                },
-              ),
-              const SizedBox(height: 16),
-              Row(
-                children: [
-                  Expanded(
-                    child: TextFormField(
-                      controller: _tempMinController,
-                      decoration: InputDecoration(
-                        labelText: S.of(context).tempMin,
-                        border: const OutlineInputBorder(),
-                      ),
-                      keyboardType: TextInputType.number,
+                DropdownMenuItem(
+                  value: 'Processed foods',
+                  child: Text(S.of(context).processedFoods),
+                ),
+              ],
+              onChanged: (value) {
+                setState(() {
+                  _selectedCategory = value;
+                });
+              },
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return S.of(context).pleaseSelectCategory;
+                }
+                return null;
+              },
+            ),
+            const SizedBox(height: 16),
+            Text(S.of(context).temperature, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)), 
+            const SizedBox(height: 16),
+            Row(
+              children: [
+                Expanded(
+                  child: TextFormField(
+                    controller: _tempMinController,
+                    decoration: InputDecoration(
+                      labelText: S.of(context).tempMin,
+                      border: const OutlineInputBorder(),
                     ),
+                    keyboardType: TextInputType.number,
                   ),
-                  const SizedBox(width: 8),
-                  Expanded(
-                    child: TextFormField(
-                      controller: _tempMaxController,
-                      decoration: InputDecoration(
-                        labelText: S.of(context).tempMax,
-                        border: const OutlineInputBorder(),
-                      ),
-                      keyboardType: TextInputType.number,
+                ),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: TextFormField(
+                    controller: _tempMaxController,
+                    decoration: InputDecoration(
+                      labelText: S.of(context).tempMax,
+                      border: const OutlineInputBorder(),
                     ),
+                    keyboardType: TextInputType.number,
                   ),
-                ],
-              ),
-              const SizedBox(height: 16),
-              Row(
-                children: [
-                  Expanded(
-                    child: TextFormField(
-                      controller: _humidityMinController,
-                      decoration: InputDecoration(
-                        labelText: S.of(context).humidityMin,
-                        border: const OutlineInputBorder(),
-                      ),
-                      keyboardType: TextInputType.number,
+                ),
+              ],
+            ),
+            const SizedBox(height: 16),
+            Text(S.of(context).humidity, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+            const SizedBox(height: 16),
+            Row(
+              children: [
+                Expanded(
+                  child: TextFormField(
+                    controller: _humidityMinController,
+                    decoration: InputDecoration(
+                      labelText: S.of(context).humidityMin,
+                      border: const OutlineInputBorder(),
                     ),
+                    keyboardType: TextInputType.number,
                   ),
-                  const SizedBox(width: 8),
-                  Expanded(
-                    child: TextFormField(
-                      controller: _humidityMaxController,
-                      decoration: InputDecoration(
-                        labelText: S.of(context).humidityMax,
-                        border: const OutlineInputBorder(),
-                      ),
-                      keyboardType: TextInputType.number,
+                ),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: TextFormField(
+                    controller: _humidityMaxController,
+                    decoration: InputDecoration(
+                      labelText: S.of(context).humidityMax,
+                      border: const OutlineInputBorder(),
                     ),
+                    keyboardType: TextInputType.number,
                   ),
-                ],
-              ),
-              const SizedBox(height: 16),
-              Text(S.of(context).gasDetection, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-              SwitchListTile(
-                title: Text(S.of(context).detectAllGases),
-                value: _detectAllGases,
-                onChanged: (bool value) {
-                  setState(() {
-                    _detectAllGases = value;
-                    _detectOxygen = value;
-                    _detectCO2 = value;
-                    _detectEthylene = value;
-                    _detectAmmonia = value;
-                  });
-                },
-              ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 16),
+            Text(S.of(context).gasDetection, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+            SwitchListTile(
+              title: Text(S.of(context).detectAllGases),
+              value: _detectAllGases,
+              onChanged: (bool value) {
+                setState(() {
+                  _detectAllGases = value;
+                  _detectOxygen = value;
+                  _detectCO2 = value;
+                  _detectEthylene = value;
+                  _detectAmmonia = value;
+                });
+              },
+            ),
               SwitchListTile(
                 title: Text(S.of(context).oxygen),
                 value: _detectOxygen && _detectAllGases,

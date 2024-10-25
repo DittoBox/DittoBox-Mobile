@@ -81,6 +81,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("¿Olvidaste tu contraseña?"),
         "gasDetection":
             MessageLookupByLibrary.simpleMessage("Detección de gases"),
+        "humidity": MessageLookupByLibrary.simpleMessage("Humedad"),
         "humidityMax": MessageLookupByLibrary.simpleMessage("Humedad máxima"),
         "humidityMin": MessageLookupByLibrary.simpleMessage("Humedad mínima"),
         "identificationNumber":
@@ -144,6 +145,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "subscription": MessageLookupByLibrary.simpleMessage("Suscripción"),
         "tempMax": MessageLookupByLibrary.simpleMessage("Temperatura máxima"),
         "tempMin": MessageLookupByLibrary.simpleMessage("Temperatura mínima"),
+        "temperature": MessageLookupByLibrary.simpleMessage("Temperatura"),
         "template": MessageLookupByLibrary.simpleMessage("Plantilla"),
         "templateLibrary":
             MessageLookupByLibrary.simpleMessage("Biblioteca de plantillas"),
