@@ -327,5 +327,21 @@
     "type": "Type",
     "@type": {
       "description": "Label for type section"
+    },
+    "language": "Language",
+    "@language": {
+      "description": "Label for language section"
+    },
+    "english": "English",
+    "@english": {
+      "description": "Label for English language"
+    },
+    "spanish": "Spanish",
+    "@spanish": {
+      "description": "Label for Spanish language"
+    },
+    "selectLanguage": "Select language",
+    "@selectLanguage": {
+      "description": "Label for selecting language"
     }
   }

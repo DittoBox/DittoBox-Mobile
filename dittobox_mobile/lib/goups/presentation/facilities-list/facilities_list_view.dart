@@ -2,7 +2,7 @@ import 'package:dittobox_mobile/generated/l10n.dart';
 import 'package:dittobox_mobile/goups/infrastructure/models/facilities.dart';
 import 'package:dittobox_mobile/goups/presentation/widgets/add_facilities_sheet.dart';
 import 'package:dittobox_mobile/routes/app_routes.dart';
-import 'package:dittobox_mobile/shared/widgets/custom_navigator_drawer.dart';
+import 'package:dittobox_mobile/shared/presentation/widgets/custom_navigator_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:dittobox_mobile/goups/presentation/widgets/facility_details_sheet.dart'; // Importa el archivo
 import 'package:dittobox_mobile/goups/infrastructure/data_sources/facilities_service.dart'; // Importa el servicio

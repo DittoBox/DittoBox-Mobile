@@ -331,5 +331,29 @@
   "type": "Tipo",
   "@type": {
     "description": "Etiqueta para el campo de tipo"
+  },
+  "language": "Idioma",
+  "@language": {
+    "description": "Etiqueta para el campo de idioma"
+  },
+  "english": "Inglés",
+  "@english": {
+    "description": "Etiqueta para el idioma inglés"
+  },
+  "spanish": "Español",
+  "@spanish": {
+    "description": "Etiqueta para el idioma español"
+  },
+  "selectledLanguage": "Idioma seleccionado",
+  "@selectledLanguage": {
+    "description": "Etiqueta para el idioma seleccionado"
+  },
+  "selectLanguage": "Seleccionar idioma",
+  "@selectLanguage": {
+    "description": "Etiqueta para seleccionar idioma"
+  },
+  "templates": "Plantillas",
+  "@templates": {
+    "description": "Etiqueta para la sección de plantillas"
   }
 }

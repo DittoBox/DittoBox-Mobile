@@ -56,6 +56,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "description": MessageLookupByLibrary.simpleMessage("Descripción"),
         "discard": MessageLookupByLibrary.simpleMessage("Descartar"),
         "email": MessageLookupByLibrary.simpleMessage("Correo electrónico"),
+        "english": MessageLookupByLibrary.simpleMessage("Inglés"),
         "ethylene": MessageLookupByLibrary.simpleMessage("Etileno"),
         "facilities": MessageLookupByLibrary.simpleMessage("Instalaciones"),
         "facilityName":
@@ -70,6 +71,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "humidityMin": MessageLookupByLibrary.simpleMessage("Humedad mínima"),
         "identificationNumber":
             MessageLookupByLibrary.simpleMessage("Número de identificación"),
+        "language": MessageLookupByLibrary.simpleMessage("Idioma"),
         "logOut": MessageLookupByLibrary.simpleMessage("Cerrar sesión"),
         "login": MessageLookupByLibrary.simpleMessage("Iniciar sesión"),
         "meats": MessageLookupByLibrary.simpleMessage("Carnes"),
@@ -118,7 +120,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "restaurant": MessageLookupByLibrary.simpleMessage("Restaurante"),
         "save": MessageLookupByLibrary.simpleMessage("Guardar"),
         "search": MessageLookupByLibrary.simpleMessage("Buscar"),
+        "selectLanguage":
+            MessageLookupByLibrary.simpleMessage("Seleccionar idioma"),
         "settings": MessageLookupByLibrary.simpleMessage("Configuraciones"),
+        "spanish": MessageLookupByLibrary.simpleMessage("Español"),
         "subscription": MessageLookupByLibrary.simpleMessage("Suscripción"),
         "tempMax": MessageLookupByLibrary.simpleMessage("Temperatura máxima"),
         "tempMin": MessageLookupByLibrary.simpleMessage("Temperatura mínima"),
@@ -127,6 +132,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Biblioteca de plantillas"),
         "templateName":
             MessageLookupByLibrary.simpleMessage("Nombre de la plantilla"),
+        "templates": MessageLookupByLibrary.simpleMessage("Plantillas"),
         "title": MessageLookupByLibrary.simpleMessage("DittoBox"),
         "type": MessageLookupByLibrary.simpleMessage("Tipo"),
         "username": MessageLookupByLibrary.simpleMessage("Nombre de usuario"),

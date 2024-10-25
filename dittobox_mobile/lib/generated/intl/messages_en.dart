@@ -50,6 +50,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "description": MessageLookupByLibrary.simpleMessage("Description"),
         "discard": MessageLookupByLibrary.simpleMessage("Discard"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "english": MessageLookupByLibrary.simpleMessage("English"),
         "ethylene": MessageLookupByLibrary.simpleMessage("Ethylene"),
         "facilities": MessageLookupByLibrary.simpleMessage("Facilities"),
         "facilityName": MessageLookupByLibrary.simpleMessage("Facility name"),
@@ -62,6 +63,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "humidityMin": MessageLookupByLibrary.simpleMessage("Minimum humidity"),
         "identificationNumber":
             MessageLookupByLibrary.simpleMessage("Identification number"),
+        "language": MessageLookupByLibrary.simpleMessage("Language"),
         "logOut": MessageLookupByLibrary.simpleMessage("Log out"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "meat": MessageLookupByLibrary.simpleMessage("Meat"),
@@ -112,7 +114,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "restaurant": MessageLookupByLibrary.simpleMessage("Restaurant"),
         "save": MessageLookupByLibrary.simpleMessage("Save"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
+        "selectLanguage":
+            MessageLookupByLibrary.simpleMessage("Select language"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
+        "spanish": MessageLookupByLibrary.simpleMessage("Spanish"),
         "subscription": MessageLookupByLibrary.simpleMessage("Subscription"),
         "tempMax": MessageLookupByLibrary.simpleMessage("Maximum temperature"),
         "tempMin": MessageLookupByLibrary.simpleMessage("Minimum temperature"),
