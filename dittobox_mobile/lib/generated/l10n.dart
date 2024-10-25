@@ -909,6 +909,136 @@ class S {
       args: [],
     );
   }
+
+  /// `Minimum carbon dioxide`
+  String get carbonDioxideMin {
+    return Intl.message(
+      'Minimum carbon dioxide',
+      name: 'carbonDioxideMin',
+      desc: 'Label for minimum carbon dioxide section',
+      args: [],
+    );
+  }
+
+  /// `Maximum carbon dioxide`
+  String get carbonDioxideMax {
+    return Intl.message(
+      'Maximum carbon dioxide',
+      name: 'carbonDioxideMax',
+      desc: 'Label for maximum carbon dioxide section',
+      args: [],
+    );
+  }
+
+  /// `Minimum ammonia and sulfur dioxide`
+  String get ammoniaAndSulfurDioxideMin {
+    return Intl.message(
+      'Minimum ammonia and sulfur dioxide',
+      name: 'ammoniaAndSulfurDioxideMin',
+      desc: 'Label for minimum ammonia and sulfur dioxide section',
+      args: [],
+    );
+  }
+
+  /// `Maximum ammonia and sulfur dioxide`
+  String get ammoniaAndSulfurDioxideMax {
+    return Intl.message(
+      'Maximum ammonia and sulfur dioxide',
+      name: 'ammoniaAndSulfurDioxideMax',
+      desc: 'Label for maximum ammonia and sulfur dioxide section',
+      args: [],
+    );
+  }
+
+  /// `Please enter a minimum oxygen`
+  String get pleaseEnterOxygenMin {
+    return Intl.message(
+      'Please enter a minimum oxygen',
+      name: 'pleaseEnterOxygenMin',
+      desc: 'Error message when minimum oxygen is not entered',
+      args: [],
+    );
+  }
+
+  /// `Minimum ethylene`
+  String get ethyleneMin {
+    return Intl.message(
+      'Minimum ethylene',
+      name: 'ethyleneMin',
+      desc: 'Label for minimum ethylene section',
+      args: [],
+    );
+  }
+
+  /// `Maximum ethylene`
+  String get ethyleneMax {
+    return Intl.message(
+      'Maximum ethylene',
+      name: 'ethyleneMax',
+      desc: 'Label for maximum ethylene section',
+      args: [],
+    );
+  }
+
+  /// `Minimum ammonia`
+  String get ammoniaMin {
+    return Intl.message(
+      'Minimum ammonia',
+      name: 'ammoniaMin',
+      desc: 'Label for minimum ammonia section',
+      args: [],
+    );
+  }
+
+  /// `Maximum ammonia`
+  String get ammoniaMax {
+    return Intl.message(
+      'Maximum ammonia',
+      name: 'ammoniaMax',
+      desc: 'Label for maximum ammonia section',
+      args: [],
+    );
+  }
+
+  /// `Minimum oxygen`
+  String get oxygenMin {
+    return Intl.message(
+      'Minimum oxygen',
+      name: 'oxygenMin',
+      desc: 'Label for minimum oxygen section',
+      args: [],
+    );
+  }
+
+  /// `Maximum oxygen`
+  String get oxygenMax {
+    return Intl.message(
+      'Maximum oxygen',
+      name: 'oxygenMax',
+      desc: 'Label for maximum oxygen section',
+      args: [],
+    );
+  }
+
+  /// `Detect all gases`
+  String get detectAllGases {
+    return Intl.message(
+      'Detect all gases',
+      name: 'detectAllGases',
+      desc: 'Label for detecting all gases',
+      args: [],
+    );
+  }
+
+  /// `New template`
+  String get newTemplate {
+    return Intl.message(
+      'New template',
+      name: 'newTemplate',
+      desc: 'Label for adding a new template',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

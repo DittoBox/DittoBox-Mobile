@@ -355,5 +355,53 @@
   "templates": "Plantillas",
   "@templates": {
     "description": "Etiqueta para la sección de plantillas"
+  },
+  "carbonDioxideMin": "Dióxido de carbono mínimo",
+  "@carbonDioxideMin": {
+    "description": "Etiqueta para el campo de dióxido de carbono mínimo"
+  },
+  "carbonDioxideMax": "Dióxido de carbono máximo",
+  "@carbonDioxideMax": {
+    "description": "Etiqueta para el campo de dióxido de carbono máximo"
+  },
+  "ammoniaAndSulfurDioxideMin": "Amoníaco y dióxido de azufre mínimo",
+  "@ammoniaAndSulfurDioxideMin": {
+    "description": "Etiqueta para el campo de amoníaco y dióxido de azufre mínimo"
+  },
+  "ammoniaAndSulfurDioxideMax": "Amoníaco y dióxido de azufre máximo",
+  "@ammoniaAndSulfurDioxideMax": {
+    "description": "Etiqueta para el campo de amoníaco y dióxido de azufre máximo"
+  },
+  "ethyleneMin": "Etileno mínimo",
+  "@ethyleneMin": {
+    "description": "Etiqueta para el campo de etileno mínimo"
+  },
+  "ethyleneMax": "Etileno máximo",
+  "@ethyleneMax": {
+    "description": "Etiqueta para el campo de etileno máximo"
+  },
+  "ammoniaMin": "Amoníaco mínimo",
+  "@ammoniaMin": {
+    "description": "Etiqueta para el campo de amoníaco mínimo"
+  },
+  "ammoniaMax": "Amoníaco máximo",
+  "@ammoniaMax": {
+    "description": "Etiqueta para el campo de amoníaco máximo"
+  },
+  "oxygenMin": "Oxígeno mínimo",
+  "@oxygenMin": {
+    "description": "Etiqueta para el campo de oxígeno mínimo"
+  },
+  "oxygenMax": "Oxígeno máximo",
+  "@oxygenMax": {
+    "description": "Etiqueta para el campo de oxígeno máximo"
+  },
+  "detectAllGases": "Detectar todos los gases",
+  "@detectAllGases": {
+    "description": "Etiqueta para detectar todos los gases"
+  },
+  "newTemplate": "Nueva plantilla",
+  "@newTemplate": {
+    "description": "Etiqueta para agregar una nueva plantilla"
   }
 }

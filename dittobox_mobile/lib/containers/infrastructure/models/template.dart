@@ -6,11 +6,16 @@ class Template {
   final double tempMax;
   final double humidityMin;
   final double humidityMax;
-  final double? oxygen;
-  final double? carbonDioxide;
-  final double? ethylene;
-  final double? ammonia;
-  final double? sulfurDioxide;
+  final double? oxygenMin;
+  final double? oxygenMax;
+  final double? carbonDioxideMin;
+  final double? carbonDioxideMax;
+  final double? ethyleneMin;
+  final double? ethyleneMax;
+  final double? ammoniaMin;
+  final double? ammoniaMax;
+  final double? sulfurDioxideMin;
+  final double? sulfurDioxideMax;
 
   Template({
     required this.name,
@@ -20,11 +25,16 @@ class Template {
     required this.tempMax,
     required this.humidityMin,
     required this.humidityMax,
-    this.oxygen,
-    this.carbonDioxide,
-    this.ethylene,
-    this.ammonia,
-    this.sulfurDioxide,
+    this.oxygenMin,
+    this.oxygenMax,
+    this.carbonDioxideMin,
+    this.carbonDioxideMax,
+    this.ethyleneMin,
+    this.ethyleneMax,
+    this.ammoniaMin,
+    this.ammoniaMax,
+    this.sulfurDioxideMin,
+    this.sulfurDioxideMax,
   });
 
   factory Template.fromJson(Map<String, dynamic> json) {
@@ -36,11 +46,16 @@ class Template {
       tempMax: json['tempMax'],
       humidityMin: json['humidityMin'],
       humidityMax: json['humidityMax'],
-      oxygen: json['oxygen'],
-      carbonDioxide: json['carbonDioxide'],
-      ethylene: json['ethylene'],
-      ammonia: json['ammonia'],
-      sulfurDioxide: json['sulfurDioxide'],
+      oxygenMin: json['oxygenMin'],
+      oxygenMax: json['oxygenMax'],
+      carbonDioxideMin: json['carbonDioxideMin'],
+      carbonDioxideMax: json['carbonDioxideMax'],
+      ethyleneMin: json['ethyleneMin'],
+      ethyleneMax: json['ethyleneMax'],
+      ammoniaMin: json['ammoniaMin'],
+      ammoniaMax: json['ammoniaMax'],
+      sulfurDioxideMin: json['sulfurDioxideMin'],
+      sulfurDioxideMax: json['sulfurDioxideMax'],
     );
   }
 
@@ -53,11 +68,16 @@ class Template {
       'tempMax': tempMax,
       'humidityMin': humidityMin,
       'humidityMax': humidityMax,
-      'oxygen': oxygen,
-      'carbonDioxide': carbonDioxide,
-      'ethylene': ethylene,
-      'ammonia': ammonia,
-      'sulfurDioxide': sulfurDioxide,
+      'oxygenMin': oxygenMin,
+      'oxygenMax': oxygenMax,
+      'carbonDioxideMin': carbonDioxideMin,
+      'carbonDioxideMax': carbonDioxideMax,
+      'ethyleneMin': ethyleneMin,
+      'ethyleneMax': ethyleneMax,
+      'ammoniaMin': ammoniaMin,
+      'ammoniaMax': ammoniaMax,
+      'sulfurDioxideMin': sulfurDioxideMin,
+      'sulfurDioxideMax': sulfurDioxideMax,
     };
   }
 }

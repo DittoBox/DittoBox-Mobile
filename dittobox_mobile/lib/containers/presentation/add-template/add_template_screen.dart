@@ -12,7 +12,20 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
   final _formKey = GlobalKey<FormState>();
   final _nameController = TextEditingController();
   final _descriptionController = TextEditingController();
+  final _tempMinController = TextEditingController();
+  final _tempMaxController = TextEditingController();
+  final _humidityMinController = TextEditingController();
+  final _humidityMaxController = TextEditingController();
+  final _oxygenMinController = TextEditingController();
+  final _oxygenMaxController = TextEditingController();
+  final _co2MinController = TextEditingController();
+  final _co2MaxController = TextEditingController();
+  final _ethyleneMinController = TextEditingController();
+  final _ethyleneMaxController = TextEditingController();
+  final _ammoniaMinController = TextEditingController();
+  final _ammoniaMaxController = TextEditingController();
   String? _selectedCategory;
+  bool _detectAllGases = true;
   bool _detectOxygen = true;
   bool _detectCO2 = true;
   bool _detectEthylene = true;
@@ -22,6 +35,18 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
   void dispose() {
     _nameController.dispose();
     _descriptionController.dispose();
+    _tempMinController.dispose();
+    _tempMaxController.dispose();
+    _humidityMinController.dispose();
+    _humidityMaxController.dispose();
+    _oxygenMinController.dispose();
+    _oxygenMaxController.dispose();
+    _co2MinController.dispose();
+    _co2MaxController.dispose();
+    _ethyleneMinController.dispose();
+    _ethyleneMaxController.dispose();
+    _ammoniaMinController.dispose();
+    _ammoniaMaxController.dispose();
     super.dispose();
   }
 
@@ -38,13 +63,7 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Row(
-          children: [
-            Text(S.of(context).templateLibrary),
-            const Icon(Icons.chevron_right),
-            const Text('New Template'),
-          ],
-        ),
+        title: Text(S.of(context).newTemplate),
       ),
       body: Padding(
         padding: const EdgeInsets.all(32.0),
@@ -118,51 +137,224 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
                 },
               ),
               const SizedBox(height: 16),
+              Row(
+                children: [
+                  Expanded(
+                    child: TextFormField(
+                      controller: _tempMinController,
+                      decoration: InputDecoration(
+                        labelText: S.of(context).tempMin,
+                        border: const OutlineInputBorder(),
+                      ),
+                      keyboardType: TextInputType.number,
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: TextFormField(
+                      controller: _tempMaxController,
+                      decoration: InputDecoration(
+                        labelText: S.of(context).tempMax,
+                        border: const OutlineInputBorder(),
+                      ),
+                      keyboardType: TextInputType.number,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 16),
+              Row(
+                children: [
+                  Expanded(
+                    child: TextFormField(
+                      controller: _humidityMinController,
+                      decoration: InputDecoration(
+                        labelText: S.of(context).humidityMin,
+                        border: const OutlineInputBorder(),
+                      ),
+                      keyboardType: TextInputType.number,
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: TextFormField(
+                      controller: _humidityMaxController,
+                      decoration: InputDecoration(
+                        labelText: S.of(context).humidityMax,
+                        border: const OutlineInputBorder(),
+                      ),
+                      keyboardType: TextInputType.number,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 16),
               Text(S.of(context).gasDetection, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
               SwitchListTile(
-                title: Text(S.of(context).oxygen),
-                value: _detectOxygen,
+                title: Text(S.of(context).detectAllGases),
+                value: _detectAllGases,
                 onChanged: (bool value) {
                   setState(() {
+                    _detectAllGases = value;
                     _detectOxygen = value;
-                  });
-                },
-              ),
-              SwitchListTile(
-                title: Text(S.of(context).carbonDioxide),
-                value: _detectCO2,
-                onChanged: (bool value) {
-                  setState(() {
                     _detectCO2 = value;
-                  });
-                },
-              ),
-              SwitchListTile(
-                title: Text(S.of(context).ethylene),
-                value: _detectEthylene,
-                onChanged: (bool value) {
-                  setState(() {
                     _detectEthylene = value;
-                  });
-                },
-              ),
-              SwitchListTile(
-                title: Text(S.of(context).ammoniaAndSulfurDioxide),
-                value: _detectAmmonia,
-                onChanged: (bool value) {
-                  setState(() {
                     _detectAmmonia = value;
                   });
                 },
               ),
+              SwitchListTile(
+                title: Text(S.of(context).oxygen),
+                value: _detectOxygen && _detectAllGases,
+                onChanged: _detectAllGases ? (bool value) {
+                  setState(() {
+                    _detectOxygen = value;
+                  });
+                } : null,
+              ),
+              if (_detectOxygen && _detectAllGases) ...[
+                Row(
+                  children: [
+                    Expanded(
+                      child: TextFormField(
+                        controller: _oxygenMinController,
+                        decoration: InputDecoration(
+                          labelText: S.of(context).oxygenMin,
+                          border: const OutlineInputBorder(),
+                        ),
+                        keyboardType: TextInputType.number,
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: TextFormField(
+                        controller: _oxygenMaxController,
+                        decoration: InputDecoration(
+                          labelText: S.of(context).oxygenMax,
+                          border: const OutlineInputBorder(),
+                        ),
+                        keyboardType: TextInputType.number,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+              SwitchListTile(
+                title: Text(S.of(context).carbonDioxide),
+                value: _detectCO2 && _detectAllGases,
+                onChanged: _detectAllGases ? (bool value) {
+                  setState(() {
+                    _detectCO2 = value;
+                  });
+                } : null,
+              ),
+              if (_detectCO2 && _detectAllGases) ...[
+                Row(
+                  children: [
+                    Expanded(
+                      child: TextFormField(
+                        controller: _co2MinController,
+                        decoration: InputDecoration(
+                          labelText: S.of(context).carbonDioxideMin,
+                          border: const OutlineInputBorder(),
+                        ),
+                        keyboardType: TextInputType.number,
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: TextFormField(
+                        controller: _co2MaxController,
+                        decoration: InputDecoration(
+                          labelText: S.of(context).carbonDioxideMax,
+                          border: const OutlineInputBorder(),
+                        ),
+                        keyboardType: TextInputType.number,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+              SwitchListTile(
+                title: Text(S.of(context).ethylene),
+                value: _detectEthylene && _detectAllGases,
+                onChanged: _detectAllGases ? (bool value) {
+                  setState(() {
+                    _detectEthylene = value;
+                  });
+                } : null,
+              ),
+              if (_detectEthylene && _detectAllGases) ...[
+                Row(
+                  children: [
+                    Expanded(
+                      child: TextFormField(
+                        controller: _ethyleneMinController,
+                        decoration: InputDecoration(
+                          labelText: S.of(context).ethyleneMin,
+                          border: const OutlineInputBorder(),
+                        ),
+                        keyboardType: TextInputType.number,
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: TextFormField(
+                        controller: _ethyleneMaxController,
+                        decoration: InputDecoration(
+                          labelText: S.of(context).ethyleneMax,
+                          border: const OutlineInputBorder(),
+                        ),
+                        keyboardType: TextInputType.number,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+              SwitchListTile(
+                title: Text(S.of(context).ammoniaAndSulfurDioxide),
+                value: _detectAmmonia && _detectAllGases,
+                onChanged: _detectAllGases ? (bool value) {
+                  setState(() {
+                    _detectAmmonia = value;
+                  });
+                } : null,
+              ),
+              if (_detectAmmonia && _detectAllGases) ...[
+                Row(
+                  children: [
+                    Expanded(
+                      child: TextFormField(
+                        controller: _ammoniaMinController,
+                        decoration: InputDecoration(
+                          labelText: S.of(context).ammoniaMin,
+                          border: const OutlineInputBorder(),
+                        ),
+                        keyboardType: TextInputType.number,
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: TextFormField(
+                        controller: _ammoniaMaxController,
+                        decoration: InputDecoration(
+                          labelText: S.of(context).ammoniaMax,
+                          border: const OutlineInputBorder(),
+                        ),
+                        keyboardType: TextInputType.number,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
               const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  ElevatedButton(
+                  FilledButton(
                     onPressed: _saveTemplate,
                     style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                      padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
                     ),
                     child: Text(S.of(context).save),
                   ),
@@ -172,7 +364,7 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
                       Navigator.of(context).pop();
                     },
                     style: OutlinedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                      padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
                     ),
                     child: Text(S.of(context).discard),
                   ),

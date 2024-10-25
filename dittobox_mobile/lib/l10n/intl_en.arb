@@ -343,5 +343,57 @@
     "selectLanguage": "Select language",
     "@selectLanguage": {
       "description": "Label for selecting language"
+    },
+    "carbonDioxideMin": "Minimum carbon dioxide",
+    "@carbonDioxideMin": {
+      "description": "Label for minimum carbon dioxide section"
+    },
+    "carbonDioxideMax": "Maximum carbon dioxide",
+    "@carbonDioxideMax": {
+      "description": "Label for maximum carbon dioxide section"
+    },
+    "ammoniaAndSulfurDioxideMin": "Minimum ammonia and sulfur dioxide",
+    "@ammoniaAndSulfurDioxideMin": {
+      "description": "Label for minimum ammonia and sulfur dioxide section"
+    },
+    "ammoniaAndSulfurDioxideMax": "Maximum ammonia and sulfur dioxide",
+    "@ammoniaAndSulfurDioxideMax": {
+      "description": "Label for maximum ammonia and sulfur dioxide section"
+    },
+    "pleaseEnterOxygenMin": "Please enter a minimum oxygen",
+    "@pleaseEnterOxygenMin": {
+      "description": "Error message when minimum oxygen is not entered"
+    },
+    "ethyleneMin": "Minimum ethylene",
+    "@ethyleneMin": {
+      "description": "Label for minimum ethylene section"
+    },
+    "ethyleneMax": "Maximum ethylene",
+    "@ethyleneMax": {
+      "description": "Label for maximum ethylene section"
+    },
+    "ammoniaMin": "Minimum ammonia",
+    "@ammoniaMin": {
+      "description": "Label for minimum ammonia section"
+    },
+    "ammoniaMax": "Maximum ammonia",
+    "@ammoniaMax": {
+      "description": "Label for maximum ammonia section"
+    },
+    "oxygenMin": "Minimum oxygen",
+    "@oxygenMin": {
+      "description": "Label for minimum oxygen section"
+    },
+    "oxygenMax": "Maximum oxygen",
+    "@oxygenMax": {
+      "description": "Label for maximum oxygen section"
+    },
+    "detectAllGases": "Detect all gases",
+    "@detectAllGases": {
+      "description": "Label for detecting all gases"
+    },
+    "newTemplate": "New template",
+    "@newTemplate": {
+      "description": "Label for adding a new template"
     }
   }

@@ -53,7 +53,8 @@ class _TemplateListState extends State<TemplateList> {
       tempMax: 4.0,
       humidityMin: 85.0,
       humidityMax: 90.0,
-      ethylene: 1.0,
+      ethyleneMin: 0.5,
+      ethyleneMax: 1.5,
     ),
     Template(
       name: 'Fresh tenderloin',
@@ -110,12 +111,27 @@ class TemplateCard extends StatelessWidget {
       child: ClipRRect(
         child: Card.outlined(
           child: SizedBox(
-            height: 120, // Ajusta la altura según tus necesidades
+            height: 150, // Ajusta la altura según tus necesidades
             child: Center(
               child: ListTile(
                 contentPadding: const EdgeInsets.all(16.0),
                 title: Text(template.name, style: const TextStyle(fontSize: 25.0)),
-                subtitle: Text(template.description),
+                subtitle: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(template.description),
+                    if (template.oxygenMin != null && template.oxygenMax != null)
+                      Text('Oxygen: ${template.oxygenMin} - ${template.oxygenMax}'),
+                    if (template.carbonDioxideMin != null && template.carbonDioxideMax != null)
+                      Text('CO2: ${template.carbonDioxideMin} - ${template.carbonDioxideMax}'),
+                    if (template.ethyleneMin != null && template.ethyleneMax != null)
+                      Text('Ethylene: ${template.ethyleneMin} - ${template.ethyleneMax}'),
+                    if (template.ammoniaMin != null && template.ammoniaMax != null)
+                      Text('Ammonia: ${template.ammoniaMin} - ${template.ammoniaMax}'),
+                    if (template.sulfurDioxideMin != null && template.sulfurDioxideMax != null)
+                      Text('Sulfur Dioxide: ${template.sulfurDioxideMin} - ${template.sulfurDioxideMax}'),
+                  ],
+                ),
                 trailing: OutlinedButton(
                   onPressed: () {},
                   child: Text(S.of(context).applyTemplate),

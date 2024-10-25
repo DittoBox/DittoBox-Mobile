@@ -36,12 +36,22 @@ class MessageLookup extends MessageLookupByLibrary {
             "¿Ya tienes una cuenta? Inicia sesión en su lugar"),
         "ammoniaAndSulfurDioxide": MessageLookupByLibrary.simpleMessage(
             "Amoníaco y dióxido de azufre"),
+        "ammoniaAndSulfurDioxideMax": MessageLookupByLibrary.simpleMessage(
+            "Amoníaco y dióxido de azufre máximo"),
+        "ammoniaAndSulfurDioxideMin": MessageLookupByLibrary.simpleMessage(
+            "Amoníaco y dióxido de azufre mínimo"),
+        "ammoniaMax": MessageLookupByLibrary.simpleMessage("Amoníaco máximo"),
+        "ammoniaMin": MessageLookupByLibrary.simpleMessage("Amoníaco mínimo"),
         "animalDerived":
             MessageLookupByLibrary.simpleMessage("Derivados animales"),
         "applyTemplate": MessageLookupByLibrary.simpleMessage("Aplicar"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancelar"),
         "carbonDioxide":
             MessageLookupByLibrary.simpleMessage("Dióxido de carbono"),
+        "carbonDioxideMax":
+            MessageLookupByLibrary.simpleMessage("Dióxido de carbono máximo"),
+        "carbonDioxideMin":
+            MessageLookupByLibrary.simpleMessage("Dióxido de carbono mínimo"),
         "category": MessageLookupByLibrary.simpleMessage("Categoría"),
         "changeToEnglish":
             MessageLookupByLibrary.simpleMessage("Change to Spanish"),
@@ -54,10 +64,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "containers": MessageLookupByLibrary.simpleMessage("Contenedores"),
         "country": MessageLookupByLibrary.simpleMessage("País"),
         "description": MessageLookupByLibrary.simpleMessage("Descripción"),
+        "detectAllGases":
+            MessageLookupByLibrary.simpleMessage("Detectar todos los gases"),
         "discard": MessageLookupByLibrary.simpleMessage("Descartar"),
         "email": MessageLookupByLibrary.simpleMessage("Correo electrónico"),
         "english": MessageLookupByLibrary.simpleMessage("Inglés"),
         "ethylene": MessageLookupByLibrary.simpleMessage("Etileno"),
+        "ethyleneMax": MessageLookupByLibrary.simpleMessage("Etileno máximo"),
+        "ethyleneMin": MessageLookupByLibrary.simpleMessage("Etileno mínimo"),
         "facilities": MessageLookupByLibrary.simpleMessage("Instalaciones"),
         "facilityName":
             MessageLookupByLibrary.simpleMessage("Nombre de la instalación"),
@@ -80,9 +94,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "name": MessageLookupByLibrary.simpleMessage("Nombre"),
         "newFacility":
             MessageLookupByLibrary.simpleMessage("Nueva instalación"),
+        "newTemplate": MessageLookupByLibrary.simpleMessage("Nueva plantilla"),
         "notifications": MessageLookupByLibrary.simpleMessage("Notificaciones"),
         "owner": MessageLookupByLibrary.simpleMessage("Propietario"),
         "oxygen": MessageLookupByLibrary.simpleMessage("Oxígeno"),
+        "oxygenMax": MessageLookupByLibrary.simpleMessage("Oxígeno máximo"),
+        "oxygenMin": MessageLookupByLibrary.simpleMessage("Oxígeno mínimo"),
         "password": MessageLookupByLibrary.simpleMessage("Contraseña"),
         "pendingAlerts":
             MessageLookupByLibrary.simpleMessage("Alertas pendientes"),
