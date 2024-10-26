@@ -29,6 +29,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Agregar contenedores"),
         "addTemplate":
             MessageLookupByLibrary.simpleMessage("Agregar plantilla"),
+        "addWorker": MessageLookupByLibrary.simpleMessage("Agregar trabajador"),
         "addWorkers":
             MessageLookupByLibrary.simpleMessage("Agregar trabajadores"),
         "alerts": MessageLookupByLibrary.simpleMessage("Alertas"),
@@ -37,11 +38,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "ammoniaAndSulfurDioxide": MessageLookupByLibrary.simpleMessage(
             "Amoníaco y dióxido de azufre"),
         "ammoniaAndSulfurDioxideMax": MessageLookupByLibrary.simpleMessage(
-            "Amoníaco y dióxido de azufre máximo"),
+            "Amoníaco y dióxido de azufre Máx"),
         "ammoniaAndSulfurDioxideMin": MessageLookupByLibrary.simpleMessage(
-            "Amoníaco y dióxido de azufre mínimo"),
-        "ammoniaMax": MessageLookupByLibrary.simpleMessage("Amoníaco máximo"),
-        "ammoniaMin": MessageLookupByLibrary.simpleMessage("Amoníaco mínimo"),
+            "Amoníaco y dióxido de azufre Min"),
+        "ammoniaMax": MessageLookupByLibrary.simpleMessage("Amoníaco Máx"),
+        "ammoniaMin": MessageLookupByLibrary.simpleMessage("Amoníaco Min"),
         "animalDerived":
             MessageLookupByLibrary.simpleMessage("Derivados animales"),
         "applyTemplate": MessageLookupByLibrary.simpleMessage("Aplicar"),
@@ -49,9 +50,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "carbonDioxide":
             MessageLookupByLibrary.simpleMessage("Dióxido de carbono"),
         "carbonDioxideMax":
-            MessageLookupByLibrary.simpleMessage("Dióxido de carbono máximo"),
+            MessageLookupByLibrary.simpleMessage("Dióxido de carbono Máx"),
         "carbonDioxideMin":
-            MessageLookupByLibrary.simpleMessage("Dióxido de carbono mínimo"),
+            MessageLookupByLibrary.simpleMessage("Dióxido de carbono Min"),
         "category": MessageLookupByLibrary.simpleMessage("Categoría"),
         "changeToEnglish":
             MessageLookupByLibrary.simpleMessage("Change to Spanish"),
@@ -59,8 +60,13 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Cambiar a inglés"),
         "checkAlerts": MessageLookupByLibrary.simpleMessage("Revisar alertas"),
         "city": MessageLookupByLibrary.simpleMessage("Ciudad"),
+        "code": MessageLookupByLibrary.simpleMessage("Código"),
         "companyName":
             MessageLookupByLibrary.simpleMessage("Nombre de la empresa"),
+        "containerName":
+            MessageLookupByLibrary.simpleMessage("Nombre del contenedor"),
+        "containerSelectionModal": MessageLookupByLibrary.simpleMessage(
+            "Este cambio quedará registrado en el historial de este contenedor."),
         "containers": MessageLookupByLibrary.simpleMessage("Contenedores"),
         "country": MessageLookupByLibrary.simpleMessage("País"),
         "description": MessageLookupByLibrary.simpleMessage("Descripción"),
@@ -70,8 +76,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "email": MessageLookupByLibrary.simpleMessage("Correo electrónico"),
         "english": MessageLookupByLibrary.simpleMessage("Inglés"),
         "ethylene": MessageLookupByLibrary.simpleMessage("Etileno"),
-        "ethyleneMax": MessageLookupByLibrary.simpleMessage("Etileno máximo"),
-        "ethyleneMin": MessageLookupByLibrary.simpleMessage("Etileno mínimo"),
+        "ethyleneMax": MessageLookupByLibrary.simpleMessage("Etileno Máx"),
+        "ethyleneMin": MessageLookupByLibrary.simpleMessage("Etileno Min"),
         "facilities": MessageLookupByLibrary.simpleMessage("Instalaciones"),
         "facilityName":
             MessageLookupByLibrary.simpleMessage("Nombre de la instalación"),
@@ -93,14 +99,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "menu": MessageLookupByLibrary.simpleMessage("Menú"),
         "more": MessageLookupByLibrary.simpleMessage("Más"),
         "name": MessageLookupByLibrary.simpleMessage("Nombre"),
+        "newContainer":
+            MessageLookupByLibrary.simpleMessage("Nuevo contenedor"),
         "newFacility":
             MessageLookupByLibrary.simpleMessage("Nueva instalación"),
         "newTemplate": MessageLookupByLibrary.simpleMessage("Nueva plantilla"),
         "notifications": MessageLookupByLibrary.simpleMessage("Notificaciones"),
         "owner": MessageLookupByLibrary.simpleMessage("Propietario"),
         "oxygen": MessageLookupByLibrary.simpleMessage("Oxígeno"),
-        "oxygenMax": MessageLookupByLibrary.simpleMessage("Oxígeno máximo"),
-        "oxygenMin": MessageLookupByLibrary.simpleMessage("Oxígeno mínimo"),
+        "oxygenMax": MessageLookupByLibrary.simpleMessage("Oxígeno Máx"),
+        "oxygenMin": MessageLookupByLibrary.simpleMessage("Oxígeno Min"),
         "password": MessageLookupByLibrary.simpleMessage("Contraseña"),
         "pendingAlerts":
             MessageLookupByLibrary.simpleMessage("Alertas pendientes"),
@@ -136,8 +144,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "registerInstead":
             MessageLookupByLibrary.simpleMessage("Registrarse en su lugar"),
         "restaurant": MessageLookupByLibrary.simpleMessage("Restaurante"),
+        "role": MessageLookupByLibrary.simpleMessage("Rol"),
         "save": MessageLookupByLibrary.simpleMessage("Guardar"),
         "search": MessageLookupByLibrary.simpleMessage("Buscar"),
+        "selectContainers":
+            MessageLookupByLibrary.simpleMessage("Seleccionar contenedores"),
+        "selectFacility":
+            MessageLookupByLibrary.simpleMessage("Seleccionar instalación"),
         "selectLanguage":
             MessageLookupByLibrary.simpleMessage("Seleccionar idioma"),
         "settings": MessageLookupByLibrary.simpleMessage("Configuraciones"),
@@ -158,6 +171,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "warehouse": MessageLookupByLibrary.simpleMessage("Almacén"),
         "welcome": MessageLookupByLibrary.simpleMessage("Bienvenido"),
         "worker": MessageLookupByLibrary.simpleMessage("Trabajador"),
+        "workerList":
+            MessageLookupByLibrary.simpleMessage("Lista de Trabajadores"),
         "workers": MessageLookupByLibrary.simpleMessage("Trabajadores")
       };
 }

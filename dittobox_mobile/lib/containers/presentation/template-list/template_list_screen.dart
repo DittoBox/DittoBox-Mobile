@@ -3,6 +3,7 @@ import 'package:dittobox_mobile/generated/l10n.dart';
 import 'package:dittobox_mobile/routes/app_routes.dart';
 import 'package:dittobox_mobile/shared/presentation/widgets/custom_navigator_drawer.dart';
 import 'package:dittobox_mobile/containers/infrastructure/models/template.dart';
+import 'package:dittobox_mobile/containers/presentation/widgets/container_selection_modal.dart';
 
 class TemplateListScreen extends StatefulWidget {
   const TemplateListScreen({super.key});
@@ -12,6 +13,8 @@ class TemplateListScreen extends StatefulWidget {
 }
 
 class _TemplateListScreenState extends State<TemplateListScreen> {
+  final List<String> _containers = ['Container 1', 'Container 2', 'Container 3'];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,9 +22,9 @@ class _TemplateListScreenState extends State<TemplateListScreen> {
         title: Text(S.of(context).templateLibrary),
       ),
       drawer: const CustomNavigationDrawer(currentRoute: AppRoutes.templates),
-      body: const Padding(
-        padding: EdgeInsets.all(16.0),
-        child: TemplateList(),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: TemplateList(containers: _containers),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _addTemplate,
@@ -37,7 +40,9 @@ class _TemplateListScreenState extends State<TemplateListScreen> {
 
 // Template List Widget
 class TemplateList extends StatefulWidget {
-  const TemplateList({super.key});
+  final List<String> containers;
+
+  const TemplateList({super.key, required this.containers});
 
   @override
   State<TemplateList> createState() => _TemplateListState();
@@ -85,6 +90,15 @@ class _TemplateListState extends State<TemplateList> {
     ),
   ];
 
+  void _showContainerSelectionModal(Template template) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return ContainerSelectionModal(containers: widget.containers);
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -92,6 +106,7 @@ class _TemplateListState extends State<TemplateList> {
       itemBuilder: (context, index) {
         return TemplateCard(
           template: _templates[index],
+          onApply: () => _showContainerSelectionModal(_templates[index]),
         );
       },
     );
@@ -101,8 +116,9 @@ class _TemplateListState extends State<TemplateList> {
 // Template Card Widget
 class TemplateCard extends StatelessWidget {
   final Template template;
+  final VoidCallback onApply;
 
-  const TemplateCard({super.key, required this.template});
+  const TemplateCard({super.key, required this.template, required this.onApply});
 
   @override
   Widget build(BuildContext context) {
@@ -133,7 +149,7 @@ class TemplateCard extends StatelessWidget {
                   ],
                 ),
                 trailing: OutlinedButton(
-                  onPressed: () {},
+                  onPressed: onApply,
                   child: Text(S.of(context).applyTemplate),
                 ),
               ),

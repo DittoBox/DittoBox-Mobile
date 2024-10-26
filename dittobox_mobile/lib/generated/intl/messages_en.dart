@@ -27,6 +27,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "account": MessageLookupByLibrary.simpleMessage("Account"),
         "addContainers": MessageLookupByLibrary.simpleMessage("Add containers"),
         "addTemplate": MessageLookupByLibrary.simpleMessage("Add template"),
+        "addWorker": MessageLookupByLibrary.simpleMessage("Add worker"),
         "addWorkers": MessageLookupByLibrary.simpleMessage("Add workers"),
         "alerts": MessageLookupByLibrary.simpleMessage("Alerts"),
         "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
@@ -34,19 +35,19 @@ class MessageLookup extends MessageLookupByLibrary {
         "ammoniaAndSulfurDioxide":
             MessageLookupByLibrary.simpleMessage("Ammonia and sulfur dioxide"),
         "ammoniaAndSulfurDioxideMax": MessageLookupByLibrary.simpleMessage(
-            "Maximum ammonia and sulfur dioxide"),
+            "Max ammonia and sulfur dioxide"),
         "ammoniaAndSulfurDioxideMin": MessageLookupByLibrary.simpleMessage(
-            "Minimum ammonia and sulfur dioxide"),
-        "ammoniaMax": MessageLookupByLibrary.simpleMessage("Maximum ammonia"),
-        "ammoniaMin": MessageLookupByLibrary.simpleMessage("Minimum ammonia"),
+            "Min ammonia and sulfur dioxide"),
+        "ammoniaMax": MessageLookupByLibrary.simpleMessage("Max ammonia"),
+        "ammoniaMin": MessageLookupByLibrary.simpleMessage("Min ammonia"),
         "animalDerived": MessageLookupByLibrary.simpleMessage("Animal derived"),
         "applyTemplate": MessageLookupByLibrary.simpleMessage("Apply"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "carbonDioxide": MessageLookupByLibrary.simpleMessage("Carbon dioxide"),
         "carbonDioxideMax":
-            MessageLookupByLibrary.simpleMessage("Maximum carbon dioxide"),
+            MessageLookupByLibrary.simpleMessage("Max carbon dioxide"),
         "carbonDioxideMin":
-            MessageLookupByLibrary.simpleMessage("Minimum carbon dioxide"),
+            MessageLookupByLibrary.simpleMessage("Min carbon dioxide"),
         "category": MessageLookupByLibrary.simpleMessage("Category"),
         "changeToEnglish":
             MessageLookupByLibrary.simpleMessage("Change to English"),
@@ -54,7 +55,11 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Change to Spanish"),
         "checkAlerts": MessageLookupByLibrary.simpleMessage("Check alerts"),
         "city": MessageLookupByLibrary.simpleMessage("City"),
+        "code": MessageLookupByLibrary.simpleMessage("Code"),
         "companyName": MessageLookupByLibrary.simpleMessage("Company name"),
+        "containerName": MessageLookupByLibrary.simpleMessage("Container name"),
+        "containerSelectionModal": MessageLookupByLibrary.simpleMessage(
+            "This change will be recorded in this container’s historial."),
         "containers": MessageLookupByLibrary.simpleMessage("Containers"),
         "country": MessageLookupByLibrary.simpleMessage("Country"),
         "description": MessageLookupByLibrary.simpleMessage("Description"),
@@ -64,8 +69,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "english": MessageLookupByLibrary.simpleMessage("English"),
         "ethylene": MessageLookupByLibrary.simpleMessage("Ethylene"),
-        "ethyleneMax": MessageLookupByLibrary.simpleMessage("Maximum ethylene"),
-        "ethyleneMin": MessageLookupByLibrary.simpleMessage("Minimum ethylene"),
+        "ethyleneMax": MessageLookupByLibrary.simpleMessage("Max ethylene"),
+        "ethyleneMin": MessageLookupByLibrary.simpleMessage("Min ethylene"),
         "facilities": MessageLookupByLibrary.simpleMessage("Facilities"),
         "facilityName": MessageLookupByLibrary.simpleMessage("Facility name"),
         "failedToFetchFacilities":
@@ -74,8 +79,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Forgot your password?"),
         "gasDetection": MessageLookupByLibrary.simpleMessage("Gas detection"),
         "humidity": MessageLookupByLibrary.simpleMessage("Humidity"),
-        "humidityMax": MessageLookupByLibrary.simpleMessage("Maximum humidity"),
-        "humidityMin": MessageLookupByLibrary.simpleMessage("Minimum humidity"),
+        "humidityMax": MessageLookupByLibrary.simpleMessage("Max humidity"),
+        "humidityMin": MessageLookupByLibrary.simpleMessage("Min humidity"),
         "identificationNumber":
             MessageLookupByLibrary.simpleMessage("Identification number"),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
@@ -86,37 +91,40 @@ class MessageLookup extends MessageLookupByLibrary {
         "menu": MessageLookupByLibrary.simpleMessage("Menu"),
         "more": MessageLookupByLibrary.simpleMessage("More"),
         "name": MessageLookupByLibrary.simpleMessage("Name"),
+        "newContainer": MessageLookupByLibrary.simpleMessage("New container"),
         "newFacility": MessageLookupByLibrary.simpleMessage("New facility"),
         "newTemplate": MessageLookupByLibrary.simpleMessage("New template"),
         "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
         "owner": MessageLookupByLibrary.simpleMessage("Owner"),
         "oxygen": MessageLookupByLibrary.simpleMessage("Oxygen"),
-        "oxygenMax": MessageLookupByLibrary.simpleMessage("Maximum oxygen"),
-        "oxygenMin": MessageLookupByLibrary.simpleMessage("Minimum oxygen"),
+        "oxygenMax": MessageLookupByLibrary.simpleMessage("Max oxygen"),
+        "oxygenMin": MessageLookupByLibrary.simpleMessage("Min oxygen"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "pendingAlerts": MessageLookupByLibrary.simpleMessage("Pending Alerts"),
         "pleaseEnterCategory":
             MessageLookupByLibrary.simpleMessage("Please enter a category"),
+        "pleaseEnterContainerName": MessageLookupByLibrary.simpleMessage(
+            "Please enter a container name"),
         "pleaseEnterDescription":
             MessageLookupByLibrary.simpleMessage("Please enter a description"),
         "pleaseEnterEthylene":
             MessageLookupByLibrary.simpleMessage("Pleasse enter an ethylene"),
         "pleaseEnterHumidity":
             MessageLookupByLibrary.simpleMessage("Please enter a humidity"),
-        "pleaseEnterHumidityMax": MessageLookupByLibrary.simpleMessage(
-            "Please enter a maximum humidity"),
-        "pleaseEnterHumidityMin": MessageLookupByLibrary.simpleMessage(
-            "Please enter a minimum humidity"),
+        "pleaseEnterHumidityMax":
+            MessageLookupByLibrary.simpleMessage("Please enter a Max humidity"),
+        "pleaseEnterHumidityMin":
+            MessageLookupByLibrary.simpleMessage("Please enter a Min humidity"),
         "pleaseEnterName":
             MessageLookupByLibrary.simpleMessage("Please enter a name"),
-        "pleaseEnterOxygenMin": MessageLookupByLibrary.simpleMessage(
-            "Please enter a minimum oxygen"),
+        "pleaseEnterOxygenMin":
+            MessageLookupByLibrary.simpleMessage("Please enter a Min oxygen"),
         "pleaseEnterTemp":
             MessageLookupByLibrary.simpleMessage("Please enter a temperature"),
         "pleaseEnterTempMax": MessageLookupByLibrary.simpleMessage(
-            "Please enter a maximum temperature"),
+            "Please enter a Max temperature"),
         "pleaseEnterTempMin": MessageLookupByLibrary.simpleMessage(
-            "Please enter a minimum temperature"),
+            "Please enter a Min temperature"),
         "pleaseEnterTemplateName": MessageLookupByLibrary.simpleMessage(
             "Please enter a template name"),
         "pleaseSelectCategory":
@@ -132,15 +140,20 @@ class MessageLookup extends MessageLookupByLibrary {
         "registerInstead":
             MessageLookupByLibrary.simpleMessage("Register instead"),
         "restaurant": MessageLookupByLibrary.simpleMessage("Restaurant"),
+        "role": MessageLookupByLibrary.simpleMessage("Role"),
         "save": MessageLookupByLibrary.simpleMessage("Save"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
+        "selectContainers":
+            MessageLookupByLibrary.simpleMessage("Select containers"),
+        "selectFacility":
+            MessageLookupByLibrary.simpleMessage("Select facility"),
         "selectLanguage":
             MessageLookupByLibrary.simpleMessage("Select language"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "spanish": MessageLookupByLibrary.simpleMessage("Spanish"),
         "subscription": MessageLookupByLibrary.simpleMessage("Subscription"),
-        "tempMax": MessageLookupByLibrary.simpleMessage("Maximum temperature"),
-        "tempMin": MessageLookupByLibrary.simpleMessage("Minimum temperature"),
+        "tempMax": MessageLookupByLibrary.simpleMessage("Max temperature"),
+        "tempMin": MessageLookupByLibrary.simpleMessage("Min temperature"),
         "temperature": MessageLookupByLibrary.simpleMessage("Temperature"),
         "template": MessageLookupByLibrary.simpleMessage("Template"),
         "templateLibrary":
@@ -153,6 +166,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "warehouse": MessageLookupByLibrary.simpleMessage("Warehouse"),
         "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
         "worker": MessageLookupByLibrary.simpleMessage("Worker"),
+        "workerList": MessageLookupByLibrary.simpleMessage("Worker List"),
         "workers": MessageLookupByLibrary.simpleMessage("Workers")
       };
 }

@@ -570,42 +570,42 @@ class S {
     );
   }
 
-  /// `Please enter a minimum temperature`
+  /// `Please enter a Min temperature`
   String get pleaseEnterTempMin {
     return Intl.message(
-      'Please enter a minimum temperature',
+      'Please enter a Min temperature',
       name: 'pleaseEnterTempMin',
-      desc: 'Error message when minimum temperature is not entered',
+      desc: 'Error message when Min temperature is not entered',
       args: [],
     );
   }
 
-  /// `Please enter a maximum temperature`
+  /// `Please enter a Max temperature`
   String get pleaseEnterTempMax {
     return Intl.message(
-      'Please enter a maximum temperature',
+      'Please enter a Max temperature',
       name: 'pleaseEnterTempMax',
-      desc: 'Error message when maximum temperature is not entered',
+      desc: 'Error message when Max temperature is not entered',
       args: [],
     );
   }
 
-  /// `Please enter a minimum humidity`
+  /// `Please enter a Min humidity`
   String get pleaseEnterHumidityMin {
     return Intl.message(
-      'Please enter a minimum humidity',
+      'Please enter a Min humidity',
       name: 'pleaseEnterHumidityMin',
-      desc: 'Error message when minimum humidity is not entered',
+      desc: 'Error message when Min humidity is not entered',
       args: [],
     );
   }
 
-  /// `Please enter a maximum humidity`
+  /// `Please enter a Max humidity`
   String get pleaseEnterHumidityMax {
     return Intl.message(
-      'Please enter a maximum humidity',
+      'Please enter a Max humidity',
       name: 'pleaseEnterHumidityMax',
-      desc: 'Error message when maximum humidity is not entered',
+      desc: 'Error message when Max humidity is not entered',
       args: [],
     );
   }
@@ -660,42 +660,42 @@ class S {
     );
   }
 
-  /// `Minimum temperature`
+  /// `Min temperature`
   String get tempMin {
     return Intl.message(
-      'Minimum temperature',
+      'Min temperature',
       name: 'tempMin',
-      desc: 'Label for minimum temperature section',
+      desc: 'Label for Min temperature section',
       args: [],
     );
   }
 
-  /// `Maximum temperature`
+  /// `Max temperature`
   String get tempMax {
     return Intl.message(
-      'Maximum temperature',
+      'Max temperature',
       name: 'tempMax',
-      desc: 'Label for maximum temperature section',
+      desc: 'Label for Max temperature section',
       args: [],
     );
   }
 
-  /// `Minimum humidity`
+  /// `Min humidity`
   String get humidityMin {
     return Intl.message(
-      'Minimum humidity',
+      'Min humidity',
       name: 'humidityMin',
-      desc: 'Label for minimum humidity section',
+      desc: 'Label for Min humidity section',
       args: [],
     );
   }
 
-  /// `Maximum humidity`
+  /// `Max humidity`
   String get humidityMax {
     return Intl.message(
-      'Maximum humidity',
+      'Max humidity',
       name: 'humidityMax',
-      desc: 'Label for maximum humidity section',
+      desc: 'Label for Max humidity section',
       args: [],
     );
   }
@@ -910,112 +910,112 @@ class S {
     );
   }
 
-  /// `Minimum carbon dioxide`
+  /// `Min carbon dioxide`
   String get carbonDioxideMin {
     return Intl.message(
-      'Minimum carbon dioxide',
+      'Min carbon dioxide',
       name: 'carbonDioxideMin',
-      desc: 'Label for minimum carbon dioxide section',
+      desc: 'Label for Min carbon dioxide section',
       args: [],
     );
   }
 
-  /// `Maximum carbon dioxide`
+  /// `Max carbon dioxide`
   String get carbonDioxideMax {
     return Intl.message(
-      'Maximum carbon dioxide',
+      'Max carbon dioxide',
       name: 'carbonDioxideMax',
-      desc: 'Label for maximum carbon dioxide section',
+      desc: 'Label for Max carbon dioxide section',
       args: [],
     );
   }
 
-  /// `Minimum ammonia and sulfur dioxide`
+  /// `Min ammonia and sulfur dioxide`
   String get ammoniaAndSulfurDioxideMin {
     return Intl.message(
-      'Minimum ammonia and sulfur dioxide',
+      'Min ammonia and sulfur dioxide',
       name: 'ammoniaAndSulfurDioxideMin',
-      desc: 'Label for minimum ammonia and sulfur dioxide section',
+      desc: 'Label for Min ammonia and sulfur dioxide section',
       args: [],
     );
   }
 
-  /// `Maximum ammonia and sulfur dioxide`
+  /// `Max ammonia and sulfur dioxide`
   String get ammoniaAndSulfurDioxideMax {
     return Intl.message(
-      'Maximum ammonia and sulfur dioxide',
+      'Max ammonia and sulfur dioxide',
       name: 'ammoniaAndSulfurDioxideMax',
-      desc: 'Label for maximum ammonia and sulfur dioxide section',
+      desc: 'Label for Max ammonia and sulfur dioxide section',
       args: [],
     );
   }
 
-  /// `Please enter a minimum oxygen`
+  /// `Please enter a Min oxygen`
   String get pleaseEnterOxygenMin {
     return Intl.message(
-      'Please enter a minimum oxygen',
+      'Please enter a Min oxygen',
       name: 'pleaseEnterOxygenMin',
-      desc: 'Error message when minimum oxygen is not entered',
+      desc: 'Error message when Min oxygen is not entered',
       args: [],
     );
   }
 
-  /// `Minimum ethylene`
+  /// `Min ethylene`
   String get ethyleneMin {
     return Intl.message(
-      'Minimum ethylene',
+      'Min ethylene',
       name: 'ethyleneMin',
-      desc: 'Label for minimum ethylene section',
+      desc: 'Label for Min ethylene section',
       args: [],
     );
   }
 
-  /// `Maximum ethylene`
+  /// `Max ethylene`
   String get ethyleneMax {
     return Intl.message(
-      'Maximum ethylene',
+      'Max ethylene',
       name: 'ethyleneMax',
-      desc: 'Label for maximum ethylene section',
+      desc: 'Label for Max ethylene section',
       args: [],
     );
   }
 
-  /// `Minimum ammonia`
+  /// `Min ammonia`
   String get ammoniaMin {
     return Intl.message(
-      'Minimum ammonia',
+      'Min ammonia',
       name: 'ammoniaMin',
-      desc: 'Label for minimum ammonia section',
+      desc: 'Label for Min ammonia section',
       args: [],
     );
   }
 
-  /// `Maximum ammonia`
+  /// `Max ammonia`
   String get ammoniaMax {
     return Intl.message(
-      'Maximum ammonia',
+      'Max ammonia',
       name: 'ammoniaMax',
-      desc: 'Label for maximum ammonia section',
+      desc: 'Label for Max ammonia section',
       args: [],
     );
   }
 
-  /// `Minimum oxygen`
+  /// `Min oxygen`
   String get oxygenMin {
     return Intl.message(
-      'Minimum oxygen',
+      'Min oxygen',
       name: 'oxygenMin',
-      desc: 'Label for minimum oxygen section',
+      desc: 'Label for Min oxygen section',
       args: [],
     );
   }
 
-  /// `Maximum oxygen`
+  /// `Max oxygen`
   String get oxygenMax {
     return Intl.message(
-      'Maximum oxygen',
+      'Max oxygen',
       name: 'oxygenMax',
-      desc: 'Label for maximum oxygen section',
+      desc: 'Label for Max oxygen section',
       args: [],
     );
   }
@@ -1056,6 +1056,106 @@ class S {
       'Temperature',
       name: 'temperature',
       desc: 'Label for temperature section',
+      args: [],
+    );
+  }
+
+  /// `Select containers`
+  String get selectContainers {
+    return Intl.message(
+      'Select containers',
+      name: 'selectContainers',
+      desc: 'Label for selecting containers',
+      args: [],
+    );
+  }
+
+  /// `This change will be recorded in this container’s historial.`
+  String get containerSelectionModal {
+    return Intl.message(
+      'This change will be recorded in this container’s historial.',
+      name: 'containerSelectionModal',
+      desc: 'Modal message for container selection',
+      args: [],
+    );
+  }
+
+  /// `New container`
+  String get newContainer {
+    return Intl.message(
+      'New container',
+      name: 'newContainer',
+      desc: 'Label for adding a new container',
+      args: [],
+    );
+  }
+
+  /// `Container name`
+  String get containerName {
+    return Intl.message(
+      'Container name',
+      name: 'containerName',
+      desc: 'Label for container name section',
+      args: [],
+    );
+  }
+
+  /// `Code`
+  String get code {
+    return Intl.message(
+      'Code',
+      name: 'code',
+      desc: 'Label for code section',
+      args: [],
+    );
+  }
+
+  /// `Please enter a container name`
+  String get pleaseEnterContainerName {
+    return Intl.message(
+      'Please enter a container name',
+      name: 'pleaseEnterContainerName',
+      desc: 'Error message when container name is not entered',
+      args: [],
+    );
+  }
+
+  /// `Select facility`
+  String get selectFacility {
+    return Intl.message(
+      'Select facility',
+      name: 'selectFacility',
+      desc: 'Label for selecting facility',
+      args: [],
+    );
+  }
+
+  /// `Role`
+  String get role {
+    return Intl.message(
+      'Role',
+      name: 'role',
+      desc: 'Label for role section',
+      args: [],
+    );
+  }
+
+  /// `Add worker`
+  String get addWorker {
+    return Intl.message(
+      'Add worker',
+      name: 'addWorker',
+      desc: 'Button label for adding a worker',
+      args: [],
+    );
+  }
+
+  /// `Worker List`
+  String get workerList {
+    return Intl.message(
+      'Worker List',
+      name: 'workerList',
+      desc: 'Label for Worker List',
       args: [],
     );
   }
