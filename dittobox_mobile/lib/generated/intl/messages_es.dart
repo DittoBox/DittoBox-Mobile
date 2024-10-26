@@ -25,6 +25,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "aboutYourCompany":
             MessageLookupByLibrary.simpleMessage("Sobre tu empresa"),
         "account": MessageLookupByLibrary.simpleMessage("Cuenta"),
+        "addContainer":
+            MessageLookupByLibrary.simpleMessage("Agregar contenedor"),
         "addContainers":
             MessageLookupByLibrary.simpleMessage("Agregar contenedores"),
         "addTemplate":

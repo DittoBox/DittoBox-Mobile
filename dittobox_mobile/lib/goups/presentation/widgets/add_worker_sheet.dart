@@ -18,12 +18,13 @@ class _AddWorkerSheetState extends State<AddWorkerSheet> {
   String? selectedFacility;
   List<Facility> facilities = [];
   final FacilitiesService _facilitiesService = FacilitiesService();
+  bool isLoading = true; // Indicador de carga
 
   @override
   void initState() {
     super.initState();
-    _loadFacilities();
     selectedFacility = widget.facility.title; // Selecciona automáticamente la instalación
+    _loadFacilities();
   }
 
   Future<void> _loadFacilities() async {
@@ -31,8 +32,12 @@ class _AddWorkerSheetState extends State<AddWorkerSheet> {
       final facilitiesList = await _facilitiesService.getFacilities();
       setState(() {
         facilities = facilitiesList;
+        isLoading = false; // Finaliza la carga
       });
     } catch (e) {
+      setState(() {
+        isLoading = false; // Finaliza la carga incluso si hay un error
+      });
       // Manejo de errores
     }
   }
@@ -120,24 +125,26 @@ class _AddWorkerSheetState extends State<AddWorkerSheet> {
             ),
             const SizedBox(height: 26),
             // Facility Dropdown
-            DropdownButtonFormField<String>(
-              value: selectedFacility,
-              items: facilities.map((Facility facility) {
-                return DropdownMenuItem<String>(
-                  value: facility.title,
-                  child: Text(facility.title),
-                );
-              }).toList(),
-              onChanged: (String? newValue) {
-                setState(() {
-                  selectedFacility = newValue;
-                });
-              },
-              decoration: InputDecoration(
-                labelText: S.of(context).selectFacility,
-                border: const OutlineInputBorder(),
-              ),
-            ),
+            isLoading
+                ? CircularProgressIndicator() // Muestra un indicador de carga mientras se cargan las instalaciones
+                : DropdownButtonFormField<String>(
+                    value: selectedFacility,
+                    items: facilities.map((Facility facility) {
+                      return DropdownMenuItem<String>(
+                        value: facility.title,
+                        child: Text(facility.title),
+                      );
+                    }).toList(),
+                    onChanged: (String? newValue) {
+                      setState(() {
+                        selectedFacility = newValue;
+                      });
+                    },
+                    decoration: InputDecoration(
+                      labelText: S.of(context).selectFacility,
+                      border: const OutlineInputBorder(),
+                    ),
+                  ),
             const SizedBox(height: 16),
             // Action Buttons
             Row(

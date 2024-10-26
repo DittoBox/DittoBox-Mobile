@@ -1,4 +1,5 @@
 import 'package:dittobox_mobile/generated/l10n.dart';
+import 'package:dittobox_mobile/goups/infrastructure/models/facilities.dart';
 import 'package:dittobox_mobile/goups/presentation/widgets/add_worker_sheet.dart';
 import 'package:dittobox_mobile/routes/app_routes.dart';
 import 'package:dittobox_mobile/shared/presentation/widgets/custom_navigator_drawer.dart';
@@ -28,7 +29,7 @@ class WorkerListView extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          showAddWorkerSheet(context, null);
+          showAddWorkerSheet(context, null); // Pasa null como instalación
         },
         child: const Icon(Icons.add),
       ),
@@ -82,6 +83,10 @@ class WorkerItem extends StatelessWidget {
               Text(user.location),
             ],
           ),
+          onTap: () {
+            // Aquí puedes pasar la instalación correspondiente
+            showAddWorkerSheet(context, Facility(title: user.location, location: user.location, type: 'unknown', containers: 0, alerts: 0, workers: 0));
+          },
         ),
         const Divider(),
       ],

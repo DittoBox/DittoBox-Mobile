@@ -443,5 +443,9 @@
     "workerList" : "Worker List",
     "@workerList" : {
       "description": "Label for Worker List"
+    },
+    "addContainer": "Add container",
+    "@addContainer": {
+      "description": "Button label for adding a container"
     }
   }

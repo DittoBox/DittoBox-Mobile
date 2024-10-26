@@ -5,7 +5,6 @@ import 'package:dittobox_mobile/routes/app_routes.dart';
 import 'package:dittobox_mobile/shared/presentation/widgets/custom_navigator_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:dittobox_mobile/goups/presentation/widgets/facility_details_sheet.dart'; // Importa el archivo
-import 'package:dittobox_mobile/goups/infrastructure/data_sources/facilities_service.dart'; // Importa el servicio
 
 // Facilities List Screen
 class FacilitiesListScreen extends StatefulWidget {
@@ -55,7 +54,7 @@ class _FacilitiesListState extends State<FacilitiesList> {
   List<Facility> _facilities = [];
   List<Facility> _filteredFacilities = [];
   final TextEditingController _searchController = TextEditingController();
-  final FacilitiesService _facilitiesService = FacilitiesService(); // Instancia del servicio
+// Instancia del servicio
 
   @override
   void initState() {
@@ -72,7 +71,25 @@ class _FacilitiesListState extends State<FacilitiesList> {
 
   Future<void> _fetchFacilities() async {
     try {
-      final facilities = await _facilitiesService.getFacilities();
+      // Datos provisionales
+      final facilities = [
+        Facility(
+          title: 'Restaurante A',
+          location: 'Ubicación A',
+          type: 'restaurant',
+          containers: 10,
+          alerts: 2,
+          workers: 5,
+        ),
+        Facility(
+          title: 'Almacén B',
+          location: 'Ubicación B',
+          type: 'warehouse',
+          containers: 20,
+          alerts: 1,
+          workers: 8,
+        ),
+      ];
       setState(() {
         _facilities = facilities;
         _filteredFacilities = facilities;

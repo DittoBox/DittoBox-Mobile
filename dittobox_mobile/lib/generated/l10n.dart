@@ -1159,6 +1159,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Add container`
+  String get addContainer {
+    return Intl.message(
+      'Add container',
+      name: 'addContainer',
+      desc: 'Button label for adding a container',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

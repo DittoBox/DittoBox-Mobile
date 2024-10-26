@@ -439,5 +439,9 @@
   "workerList": "Lista de Trabajadores",
   "@workerList": {
     "description": "Etiqueta para la lista de trabajadores"
+  },
+  "addContainer": "Agregar contenedor",
+  "@addContainer": {
+    "description": "Etiqueta para agregar un contenedor"
   }
 }

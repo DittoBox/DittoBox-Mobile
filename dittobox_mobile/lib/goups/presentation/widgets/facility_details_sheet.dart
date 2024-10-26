@@ -43,20 +43,29 @@ void showFacilityDetailsBottomSheet(BuildContext context, Facility facility) {
                       ),
                     ),
                     const Icon(Icons.chevron_right_outlined),
-                    Text(
-                      facility.location.split(', ')[0],
-                      style: const TextStyle(
-                        fontSize: 16,
+                    if (facility.location.split(', ').length > 1) ...[
+                      Text(
+                        facility.location.split(', ')[0],
+                        style: const TextStyle(
+                          fontSize: 16,
+                        ),
                       ),
-                    ),
-                    const Icon(Icons.chevron_right_outlined),
-                    Text(
-                      facility.location.split(', ')[1],
-                      style: const TextStyle(
-                        fontSize: 16,
+                      const Icon(Icons.chevron_right_outlined),
+                      Text(
+                        facility.location.split(', ')[1],
+                        style: const TextStyle(
+                          fontSize: 16,
+                        ),
                       ),
-                    ),
-                    const Icon(Icons.chevron_right_outlined),
+                      const Icon(Icons.chevron_right_outlined),
+                    ] else ...[
+                      Text(
+                        facility.location,
+                        style: const TextStyle(
+                          fontSize: 16,
+                        ),
+                      ),
+                    ],
                   ],
                 ),
                 const SizedBox(height: 8),
@@ -85,7 +94,7 @@ void showFacilityDetailsBottomSheet(BuildContext context, Facility facility) {
             buildInfoRowWithIcon(Icons.widgets_outlined, S.of(context).containers, facility.containers),
             TextButton(
               onPressed: () {
-                showAddContainerSheet(context);
+                showAddContainerSheet(context, facility); // Pasa la instalación seleccionada
               },
               child: Text(S.of(context).addContainers),
             ),
