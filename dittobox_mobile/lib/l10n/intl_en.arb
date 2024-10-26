@@ -447,5 +447,25 @@
     "addContainer": "Add container",
     "@addContainer": {
       "description": "Button label for adding a container"
+    },
+    "delete": "Delete",
+    "@delete": {
+      "description": "Button label for deleting"
+    },
+    "areYouSureDelete": "Are you sure you want to delete this?",
+    "@areYouSureDelete": {
+      "description": "Confirmation message for deleting"
+    },
+    "confirmDelete": "Confirm delete",
+    "@confirmDelete": {
+      "description": "Button label for confirming deletion"
+    },
+    "all": "All",
+    "@all": {
+      "description": "Label for all section"
+    },
+    "edit": "Edit",
+    "@edit": {
+      "description": "Button label for editing"
     }
   }

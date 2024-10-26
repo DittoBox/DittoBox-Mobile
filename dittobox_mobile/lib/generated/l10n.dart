@@ -1169,6 +1169,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Delete`
+  String get delete {
+    return Intl.message(
+      'Delete',
+      name: 'delete',
+      desc: 'Button label for deleting',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to delete this?`
+  String get areYouSureDelete {
+    return Intl.message(
+      'Are you sure you want to delete this?',
+      name: 'areYouSureDelete',
+      desc: 'Confirmation message for deleting',
+      args: [],
+    );
+  }
+
+  /// `Confirm delete`
+  String get confirmDelete {
+    return Intl.message(
+      'Confirm delete',
+      name: 'confirmDelete',
+      desc: 'Button label for confirming deletion',
+      args: [],
+    );
+  }
+
+  /// `All`
+  String get all {
+    return Intl.message(
+      'All',
+      name: 'all',
+      desc: 'Label for all section',
+      args: [],
+    );
+  }
+
+  /// `Edit`
+  String get edit {
+    return Intl.message(
+      'Edit',
+      name: 'edit',
+      desc: 'Button label for editing',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

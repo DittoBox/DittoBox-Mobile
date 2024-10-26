@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:dittobox_mobile/goups/infrastructure/models/facilities.dart';
 import 'package:dittobox_mobile/goups/presentation/widgets/add_worker_sheet.dart';
 
-void showFacilityDetailsBottomSheet(BuildContext context, Facility facility) {
+void showFacilityDetailsBottomSheet(BuildContext context, Facility facility, VoidCallback onDelete) {
   showModalBottomSheet(
     context: context,
     shape: const RoundedRectangleBorder(
@@ -113,6 +113,29 @@ void showFacilityDetailsBottomSheet(BuildContext context, Facility facility) {
             TextButton(
               onPressed: () {},
               child: Text(S.of(context).checkAlerts),
+            ),
+            const SizedBox(height: 16),
+
+            // Botones de editar y eliminar
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end, // Alinea los botones al extremo derecho
+              children: [
+                FilledButton(
+                  onPressed: () {
+                    // Lógica para editar la instalación
+                  },
+                  child: Text(S.of(context).edit),
+                ),
+                const SizedBox(width: 8), // Espacio entre los botones
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop(); // Cierra el BottomSheet
+                    onDelete(); // Llama a la función de eliminación
+                  },
+                  child: Text(
+                    S.of(context).delete                  ),
+                ),
+              ],
             ),
           ],
         ),

@@ -35,6 +35,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "addWorkers":
             MessageLookupByLibrary.simpleMessage("Agregar trabajadores"),
         "alerts": MessageLookupByLibrary.simpleMessage("Alertas"),
+        "all": MessageLookupByLibrary.simpleMessage("Todos"),
         "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
             "¿Ya tienes una cuenta? Inicia sesión en su lugar"),
         "ammoniaAndSulfurDioxide": MessageLookupByLibrary.simpleMessage(
@@ -48,6 +49,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "animalDerived":
             MessageLookupByLibrary.simpleMessage("Derivados animales"),
         "applyTemplate": MessageLookupByLibrary.simpleMessage("Aplicar"),
+        "areYouSureDelete": MessageLookupByLibrary.simpleMessage(
+            "¿Estás seguro de que deseas eliminar este elemento?"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancelar"),
         "carbonDioxide":
             MessageLookupByLibrary.simpleMessage("Dióxido de carbono"),
@@ -65,16 +68,20 @@ class MessageLookup extends MessageLookupByLibrary {
         "code": MessageLookupByLibrary.simpleMessage("Código"),
         "companyName":
             MessageLookupByLibrary.simpleMessage("Nombre de la empresa"),
+        "confirmDelete":
+            MessageLookupByLibrary.simpleMessage("Confirmar eliminación"),
         "containerName":
             MessageLookupByLibrary.simpleMessage("Nombre del contenedor"),
         "containerSelectionModal": MessageLookupByLibrary.simpleMessage(
             "Este cambio quedará registrado en el historial de este contenedor."),
         "containers": MessageLookupByLibrary.simpleMessage("Contenedores"),
         "country": MessageLookupByLibrary.simpleMessage("País"),
+        "delete": MessageLookupByLibrary.simpleMessage("Eliminar"),
         "description": MessageLookupByLibrary.simpleMessage("Descripción"),
         "detectAllGases":
             MessageLookupByLibrary.simpleMessage("Detectar todos los gases"),
         "discard": MessageLookupByLibrary.simpleMessage("Descartar"),
+        "edit": MessageLookupByLibrary.simpleMessage("Editar"),
         "email": MessageLookupByLibrary.simpleMessage("Correo electrónico"),
         "english": MessageLookupByLibrary.simpleMessage("Inglés"),
         "ethylene": MessageLookupByLibrary.simpleMessage("Etileno"),

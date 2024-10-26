@@ -31,6 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "addWorker": MessageLookupByLibrary.simpleMessage("Add worker"),
         "addWorkers": MessageLookupByLibrary.simpleMessage("Add workers"),
         "alerts": MessageLookupByLibrary.simpleMessage("Alerts"),
+        "all": MessageLookupByLibrary.simpleMessage("All"),
         "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
             "Already have an account? Login instead"),
         "ammoniaAndSulfurDioxide":
@@ -43,6 +44,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ammoniaMin": MessageLookupByLibrary.simpleMessage("Min ammonia"),
         "animalDerived": MessageLookupByLibrary.simpleMessage("Animal derived"),
         "applyTemplate": MessageLookupByLibrary.simpleMessage("Apply"),
+        "areYouSureDelete": MessageLookupByLibrary.simpleMessage(
+            "Are you sure you want to delete this?"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "carbonDioxide": MessageLookupByLibrary.simpleMessage("Carbon dioxide"),
         "carbonDioxideMax":
@@ -58,15 +61,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "city": MessageLookupByLibrary.simpleMessage("City"),
         "code": MessageLookupByLibrary.simpleMessage("Code"),
         "companyName": MessageLookupByLibrary.simpleMessage("Company name"),
+        "confirmDelete": MessageLookupByLibrary.simpleMessage("Confirm delete"),
         "containerName": MessageLookupByLibrary.simpleMessage("Container name"),
         "containerSelectionModal": MessageLookupByLibrary.simpleMessage(
             "This change will be recorded in this container’s historial."),
         "containers": MessageLookupByLibrary.simpleMessage("Containers"),
         "country": MessageLookupByLibrary.simpleMessage("Country"),
+        "delete": MessageLookupByLibrary.simpleMessage("Delete"),
         "description": MessageLookupByLibrary.simpleMessage("Description"),
         "detectAllGases":
             MessageLookupByLibrary.simpleMessage("Detect all gases"),
         "discard": MessageLookupByLibrary.simpleMessage("Discard"),
+        "edit": MessageLookupByLibrary.simpleMessage("Edit"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "english": MessageLookupByLibrary.simpleMessage("English"),
         "ethylene": MessageLookupByLibrary.simpleMessage("Ethylene"),

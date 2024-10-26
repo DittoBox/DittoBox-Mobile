@@ -443,5 +443,25 @@
   "addContainer": "Agregar contenedor",
   "@addContainer": {
     "description": "Etiqueta para agregar un contenedor"
+  },
+  "delete": "Eliminar",
+  "@delete": {
+    "description": "Etiqueta para eliminar"
+  },
+  "confirmDelete": "Confirmar eliminación",
+  "@confirmDelete": {
+    "description": "Mensaje de confirmación para eliminar un elemento"
+  },
+  "areYouSureDelete": "¿Estás seguro de que deseas eliminar este elemento?",
+  "@areYouSureDelete": {
+    "description": "Mensaje de confirmación para eliminar un elemento"
+  },
+  "all": "Todos",
+  "@all": {
+    "description": "Etiqueta para todos"
+  },
+  "edit": "Editar",
+  "@edit": {
+    "description": "Etiqueta para editar"
   }
 }

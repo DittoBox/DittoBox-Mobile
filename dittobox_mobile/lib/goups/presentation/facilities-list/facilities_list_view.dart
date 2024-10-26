@@ -54,7 +54,9 @@ class _FacilitiesListState extends State<FacilitiesList> {
   List<Facility> _facilities = [];
   List<Facility> _filteredFacilities = [];
   final TextEditingController _searchController = TextEditingController();
-// Instancia del servicio
+  bool _showAll = true;
+  bool _showWarehouse = true;
+  bool _showRestaurant = true;
 
   @override
   void initState() {
@@ -109,9 +111,20 @@ class _FacilitiesListState extends State<FacilitiesList> {
     final query = _searchController.text.toLowerCase();
     setState(() {
       _filteredFacilities = _facilities.where((facility) {
-        return facility.title.toLowerCase().contains(query) ||
+        final matchesQuery = facility.title.toLowerCase().contains(query) ||
             facility.location.toLowerCase().contains(query);
+        final matchesType = _showAll ||
+            (facility.type == 'warehouse' && _showWarehouse) ||
+            (facility.type == 'restaurant' && _showRestaurant);
+        return matchesQuery && matchesType;
       }).toList();
+    });
+  }
+
+  void _deleteFacility(Facility facility) {
+    setState(() {
+      _facilities.remove(facility);
+      _filteredFacilities.remove(facility);
     });
   }
 
@@ -133,13 +146,67 @@ class _FacilitiesListState extends State<FacilitiesList> {
               ),
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+               // Alinea los chips a la izquierda
+              children: [
+                FilterChip(
+                  label: Text(S.of(context).all),
+                  selected: _showAll,
+                  onSelected: (bool selected) {
+                    setState(() {
+                      _showAll = selected;
+                      if (_showAll) {
+                        _showWarehouse = false;
+                        _showRestaurant = false;
+                      }
+                      _filterFacilities();
+                    });
+                  },
+                ),
+                const SizedBox(width: 10),
+                FilterChip(
+                  label: Text(S.of(context).warehouse),
+                  selected: _showWarehouse,
+                  onSelected: (bool selected) {
+                    setState(() {
+                      _showWarehouse = selected;
+                      if (_showWarehouse || _showRestaurant) {
+                        _showAll = false;
+                      }
+                      _filterFacilities();
+                    });
+                  },
+                ),
+                const SizedBox(width: 10),
+                FilterChip(
+                  label: Text(S.of(context).restaurant),
+                  selected: _showRestaurant,
+                  onSelected: (bool selected) {
+                    setState(() {
+                      _showRestaurant = selected;
+                      if (_showWarehouse || _showRestaurant) {
+                        _showAll = false;
+                      }
+                      _filterFacilities();
+                    });
+                  },
+                ),
+              ],
+            ),
+          ),
           Expanded(
             child: CustomScrollView(
               slivers: [
                 SliverList(
                   delegate: SliverChildBuilderDelegate(
                     (context, index) {
-                      return FacilitiesCard(facility: _filteredFacilities[index]);
+                      return FacilitiesCard(
+                        facility: _filteredFacilities[index],
+                        onDelete: () => _deleteFacility(_filteredFacilities[index]),
+                      );
                     },
                     childCount: _filteredFacilities.length,
                   ),
@@ -156,8 +223,9 @@ class _FacilitiesListState extends State<FacilitiesList> {
 // Facility Card Widget
 class FacilitiesCard extends StatefulWidget {
   final Facility facility;
+  final VoidCallback onDelete;
 
-  const FacilitiesCard({super.key, required this.facility});
+  const FacilitiesCard({super.key, required this.facility, required this.onDelete});
 
   @override
   State<FacilitiesCard> createState() => _FacilitiesCardState();
@@ -179,11 +247,11 @@ class _FacilitiesCardState extends State<FacilitiesCard> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        showFacilityDetailsBottomSheet(context, widget.facility); // Usa el nuevo archivo
+        showFacilityDetailsBottomSheet(context, widget.facility, widget.onDelete); // Usa el nuevo archivo
       },
       child: Center(
-        child: Card.outlined  (
-          margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 30.0),
+        child: Card.outlined(
+          margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0), // Ajusta el margen horizontal a 0
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
@@ -227,19 +295,21 @@ class _FacilitiesCardState extends State<FacilitiesCard> {
                   ],
                 ),
                 const SizedBox(height: 20),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: OutlinedButton(
-                    onPressed: () {
-                      showFacilityDetailsBottomSheet(context, widget.facility); // Usa el nuevo archivo
-                    },
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(S.of(context).more),
-                      ],
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end, // Mueve el botón al extremo derecho
+                  children: [
+                    OutlinedButton(
+                      onPressed: () {
+                        showFacilityDetailsBottomSheet(context, widget.facility, widget.onDelete); // Usa el nuevo archivo
+                      },
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(S.of(context).more),
+                        ],
+                      ),
                     ),
-                  ),
+                  ],
                 ),
               ],
             ),
@@ -248,4 +318,20 @@ class _FacilitiesCardState extends State<FacilitiesCard> {
       ),
     );
   }
+}
+
+Widget buildInfoRowWithIcon(IconData icon, String label, int value) {
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween, // Alinea los elementos a los extremos
+    children: [
+      Row(
+        children: [
+          Icon(icon, size: 20),
+          const SizedBox(width: 8),
+          Text(label),
+        ],
+      ),
+      Text('$value'), // Mueve el valor al extremo derecho
+    ],
+  );
 }
