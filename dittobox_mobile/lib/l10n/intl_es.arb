@@ -356,45 +356,45 @@
   "@templates": {
     "description": "Etiqueta para la sección de plantillas"
   },
-  "carbonDioxideMin": "Dióxido de carbono mínimo",
+  "carbonDioxideMin": "Dióxido de carbono Min",
   "@carbonDioxideMin": {
-    "description": "Etiqueta para el campo de dióxido de carbono mínimo"
+    "description": "Etiqueta para el campo de dióxido de carbono Min"
   },
-  "carbonDioxideMax": "Dióxido de carbono máximo",
+  "carbonDioxideMax": "Dióxido de carbono Máx",
   "@carbonDioxideMax": {
-    "description": "Etiqueta para el campo de dióxido de carbono máximo"
+    "description": "Etiqueta para el campo de dióxido de carbono Máx"
   },
-  "ammoniaAndSulfurDioxideMin": "Amoníaco y dióxido de azufre mínimo",
+  "ammoniaAndSulfurDioxideMin": "Amoníaco y dióxido de azufre Min",
   "@ammoniaAndSulfurDioxideMin": {
-    "description": "Etiqueta para el campo de amoníaco y dióxido de azufre mínimo"
+    "description": "Etiqueta para el campo de amoníaco y dióxido de azufre Min"
   },
-  "ammoniaAndSulfurDioxideMax": "Amoníaco y dióxido de azufre máximo",
+  "ammoniaAndSulfurDioxideMax": "Amoníaco y dióxido de azufre Máx",
   "@ammoniaAndSulfurDioxideMax": {
-    "description": "Etiqueta para el campo de amoníaco y dióxido de azufre máximo"
+    "description": "Etiqueta para el campo de amoníaco y dióxido de azufre Máx"
   },
-  "ethyleneMin": "Etileno mínimo",
+  "ethyleneMin": "Etileno Min",
   "@ethyleneMin": {
-    "description": "Etiqueta para el campo de etileno mínimo"
+    "description": "Etiqueta para el campo de etileno Min"
   },
-  "ethyleneMax": "Etileno máximo",
+  "ethyleneMax": "Etileno Máx",
   "@ethyleneMax": {
-    "description": "Etiqueta para el campo de etileno máximo"
+    "description": "Etiqueta para el campo de etileno Máx"
   },
-  "ammoniaMin": "Amoníaco mínimo",
+  "ammoniaMin": "Amoníaco Min",
   "@ammoniaMin": {
-    "description": "Etiqueta para el campo de amoníaco mínimo"
+    "description": "Etiqueta para el campo de amoníaco Min"
   },
-  "ammoniaMax": "Amoníaco máximo",
+  "ammoniaMax": "Amoníaco Máx",
   "@ammoniaMax": {
-    "description": "Etiqueta para el campo de amoníaco máximo"
+    "description": "Etiqueta para el campo de amoníaco Máx"
   },
-  "oxygenMin": "Oxígeno mínimo",
+  "oxygenMin": "Oxígeno Min",
   "@oxygenMin": {
-    "description": "Etiqueta para el campo de oxígeno mínimo"
+    "description": "Etiqueta para el campo de oxígeno Min"
   },
-  "oxygenMax": "Oxígeno máximo",
+  "oxygenMax": "Oxígeno Máx",
   "@oxygenMax": {
-    "description": "Etiqueta para el campo de oxígeno máximo"
+    "description": "Etiqueta para el campo de oxígeno Máx"
   },
   "detectAllGases": "Detectar todos los gases",
   "@detectAllGases": {
@@ -403,5 +403,41 @@
   "newTemplate": "Nueva plantilla",
   "@newTemplate": {
     "description": "Etiqueta para agregar una nueva plantilla"
+  },
+  "selectContainers": "Seleccionar contenedores",
+  "@selectContainers": {
+    "description": "Etiqueta para seleccionar contenedores"
+  },
+  "containerSelectionModal": "Este cambio quedará registrado en el historial de este contenedor.",
+  "@containerSelectionModal": {
+    "description": "Mensaje para el modal de selección de contenedores"
+  },
+  "newContainer": "Nuevo contenedor",
+  "@newContainer": {
+    "description": "Etiqueta para agregar un nuevo contenedor"
+  },
+  "containerName": "Nombre del contenedor",
+  "@containerName": {
+    "description": "Etiqueta para el campo de nombre del contenedor"
+  },
+  "code": "Código",
+  "@code": {
+    "description": "Etiqueta para el campo de código"
+  },
+  "selectFacility": "Seleccionar instalación",
+  "@selectFacility": {
+    "description": "Etiqueta para seleccionar instalación"
+  },
+  "role": "Rol",
+  "@role": {
+    "description": "Etiqueta para el campo de rol"
+  },
+  "addWorker": "Agregar trabajador",
+  "@addWorker": {
+    "description": "Etiqueta para agregar un trabajador"
+  },
+  "workerList": "Lista de Trabajadores",
+  "@workerList": {
+    "description": "Etiqueta para la lista de trabajadores"
   }
 }

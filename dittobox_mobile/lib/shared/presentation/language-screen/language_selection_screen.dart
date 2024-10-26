@@ -70,8 +70,9 @@ class _LanguageSelectionScreenState extends State<LanguageSelectionScreen> {
     _isChangingLanguage = false;
   });
 
+  // ignore: use_build_context_synchronously
   MainApp.setLocale(context, locale);
-  print('Idioma cambiado a: ${locale.languageCode}'); // Agrega esta línea para verificar el cambio de idioma
+  // ignore: use_build_context_synchronously
   Navigator.of(context).pop();
 }
 }

@@ -208,21 +208,21 @@
     "@pleaseEnterCategory": {
       "description": "Error message when category is not entered"
     },
-    "pleaseEnterTempMin": "Please enter a minimum temperature",
+    "pleaseEnterTempMin": "Please enter a Min temperature",
     "@pleaseEnterTempMin": {
-      "description": "Error message when minimum temperature is not entered"
+      "description": "Error message when Min temperature is not entered"
     },
-    "pleaseEnterTempMax": "Please enter a maximum temperature",
+    "pleaseEnterTempMax": "Please enter a Max temperature",
     "@pleaseEnterTempMax": {
-      "description": "Error message when maximum temperature is not entered"
+      "description": "Error message when Max temperature is not entered"
     },
-    "pleaseEnterHumidityMin": "Please enter a minimum humidity",
+    "pleaseEnterHumidityMin": "Please enter a Min humidity",
     "@pleaseEnterHumidityMin": {
-      "description": "Error message when minimum humidity is not entered"
+      "description": "Error message when Min humidity is not entered"
     },
-    "pleaseEnterHumidityMax": "Please enter a maximum humidity",
+    "pleaseEnterHumidityMax": "Please enter a Max humidity",
     "@pleaseEnterHumidityMax": {
-      "description": "Error message when maximum humidity is not entered"
+      "description": "Error message when Max humidity is not entered"
     },
     "pleaseEnterTemp": "Please enter a temperature",
     "@pleaseEnterTemp": {
@@ -244,21 +244,21 @@
     "@category": {
       "description": "Label for category section"
     },
-    "tempMin": "Minimum temperature",
+    "tempMin": "Min temperature",
     "@tempMin": {
-      "description": "Label for minimum temperature section"
+      "description": "Label for Min temperature section"
     },
-    "tempMax": "Maximum temperature",
+    "tempMax": "Max temperature",
     "@tempMax": {
-      "description": "Label for maximum temperature section"
+      "description": "Label for Max temperature section"
     },
-    "humidityMin": "Minimum humidity",
+    "humidityMin": "Min humidity",
     "@humidityMin": {
-      "description": "Label for minimum humidity section"
+      "description": "Label for Min humidity section"
     },
-    "humidityMax": "Maximum humidity",
+    "humidityMax": "Max humidity",
     "@humidityMax": {
-      "description": "Label for maximum humidity section"
+      "description": "Label for Max humidity section"
     },
     "ethylene": "Ethylene",
     "@ethylene": {
@@ -344,49 +344,49 @@
     "@selectLanguage": {
       "description": "Label for selecting language"
     },
-    "carbonDioxideMin": "Minimum carbon dioxide",
+    "carbonDioxideMin": "Min carbon dioxide",
     "@carbonDioxideMin": {
-      "description": "Label for minimum carbon dioxide section"
+      "description": "Label for Min carbon dioxide section"
     },
-    "carbonDioxideMax": "Maximum carbon dioxide",
+    "carbonDioxideMax": "Max carbon dioxide",
     "@carbonDioxideMax": {
-      "description": "Label for maximum carbon dioxide section"
+      "description": "Label for Max carbon dioxide section"
     },
-    "ammoniaAndSulfurDioxideMin": "Minimum ammonia and sulfur dioxide",
+    "ammoniaAndSulfurDioxideMin": "Min ammonia and sulfur dioxide",
     "@ammoniaAndSulfurDioxideMin": {
-      "description": "Label for minimum ammonia and sulfur dioxide section"
+      "description": "Label for Min ammonia and sulfur dioxide section"
     },
-    "ammoniaAndSulfurDioxideMax": "Maximum ammonia and sulfur dioxide",
+    "ammoniaAndSulfurDioxideMax": "Max ammonia and sulfur dioxide",
     "@ammoniaAndSulfurDioxideMax": {
-      "description": "Label for maximum ammonia and sulfur dioxide section"
+      "description": "Label for Max ammonia and sulfur dioxide section"
     },
-    "pleaseEnterOxygenMin": "Please enter a minimum oxygen",
+    "pleaseEnterOxygenMin": "Please enter a Min oxygen",
     "@pleaseEnterOxygenMin": {
-      "description": "Error message when minimum oxygen is not entered"
+      "description": "Error message when Min oxygen is not entered"
     },
-    "ethyleneMin": "Minimum ethylene",
+    "ethyleneMin": "Min ethylene",
     "@ethyleneMin": {
-      "description": "Label for minimum ethylene section"
+      "description": "Label for Min ethylene section"
     },
-    "ethyleneMax": "Maximum ethylene",
+    "ethyleneMax": "Max ethylene",
     "@ethyleneMax": {
-      "description": "Label for maximum ethylene section"
+      "description": "Label for Max ethylene section"
     },
-    "ammoniaMin": "Minimum ammonia",
+    "ammoniaMin": "Min ammonia",
     "@ammoniaMin": {
-      "description": "Label for minimum ammonia section"
+      "description": "Label for Min ammonia section"
     },
-    "ammoniaMax": "Maximum ammonia",
+    "ammoniaMax": "Max ammonia",
     "@ammoniaMax": {
-      "description": "Label for maximum ammonia section"
+      "description": "Label for Max ammonia section"
     },
-    "oxygenMin": "Minimum oxygen",
+    "oxygenMin": "Min oxygen",
     "@oxygenMin": {
-      "description": "Label for minimum oxygen section"
+      "description": "Label for Min oxygen section"
     },
-    "oxygenMax": "Maximum oxygen",
+    "oxygenMax": "Max oxygen",
     "@oxygenMax": {
-      "description": "Label for maximum oxygen section"
+      "description": "Label for Max oxygen section"
     },
     "detectAllGases": "Detect all gases",
     "@detectAllGases": {
@@ -403,5 +403,45 @@
     "temperature": "Temperature",
     "@temperature": {
       "description": "Label for temperature section"
+    },
+    "selectContainers": "Select containers",
+    "@selectContainers": {
+      "description": "Label for selecting containers"
+    },
+    "containerSelectionModal": "This change will be recorded in this container’s historial.",
+    "@containerSelectionModal": {
+      "description": "Modal message for container selection"
+    },
+    "newContainer": "New container",
+    "@newContainer": {
+      "description": "Label for adding a new container"
+    },
+    "containerName": "Container name",
+    "@containerName": {
+      "description": "Label for container name section"
+    },
+    "code": "Code",
+    "@code": {
+      "description": "Label for code section"
+    },
+    "pleaseEnterContainerName": "Please enter a container name",
+    "@pleaseEnterContainerName": {
+      "description": "Error message when container name is not entered"
+    },
+    "selectFacility": "Select facility",
+    "@selectFacility": {
+      "description": "Label for selecting facility"
+    },
+    "role": "Role",
+    "@role": {
+      "description": "Label for role section"
+    },
+    "addWorker": "Add worker",
+    "@addWorker": {
+      "description": "Button label for adding a worker"
+    },
+    "workerList" : "Worker List",
+    "@workerList" : {
+      "description": "Label for Worker List"
     }
   }

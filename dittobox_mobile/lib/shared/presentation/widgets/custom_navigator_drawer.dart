@@ -108,7 +108,7 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
         return 0;
       case '/containers':
         return 1;
-      case '/workers':
+      case AppRoutes.workerlist:
         return 2;
       case AppRoutes.templates:
         return 3;
@@ -132,7 +132,7 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
       case 1:
         return '/containers';
       case 2:
-        return '/workers';
+        return AppRoutes.workerlist;
       case 3:
         return AppRoutes.templates;
       case 4:

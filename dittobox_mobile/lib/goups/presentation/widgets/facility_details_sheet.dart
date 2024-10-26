@@ -1,6 +1,8 @@
+import 'package:dittobox_mobile/containers/presentation/widgets/add_container_sheet.dart';
 import 'package:dittobox_mobile/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:dittobox_mobile/goups/infrastructure/models/facilities.dart';
+import 'package:dittobox_mobile/goups/presentation/widgets/add_worker_sheet.dart';
 
 void showFacilityDetailsBottomSheet(BuildContext context, Facility facility) {
   showModalBottomSheet(
@@ -82,14 +84,18 @@ void showFacilityDetailsBottomSheet(BuildContext context, Facility facility) {
             // Contenido del BottomSheet
             buildInfoRowWithIcon(Icons.widgets_outlined, S.of(context).containers, facility.containers),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                showAddContainerSheet(context);
+              },
               child: Text(S.of(context).addContainers),
             ),
             const SizedBox(height: 8),
 
             buildInfoRowWithIcon(Icons.person_2_outlined, S.of(context).workers, facility.workers),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                showAddWorkerSheet(context);
+              },
               child: Text(S.of(context).addWorkers),
             ),
             const SizedBox(height: 8),
