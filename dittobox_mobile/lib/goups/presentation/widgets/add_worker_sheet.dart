@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:dittobox_mobile/goups/infrastructure/models/facilities.dart';
 
 class AddWorkerSheet extends StatefulWidget {
-  const AddWorkerSheet({super.key});
+  final Facility facility;
+
+  const AddWorkerSheet({super.key, required this.facility});
 
   @override
   _AddWorkerSheetState createState() => _AddWorkerSheetState();
@@ -21,6 +23,7 @@ class _AddWorkerSheetState extends State<AddWorkerSheet> {
   void initState() {
     super.initState();
     _loadFacilities();
+    selectedFacility = widget.facility.title; // Selecciona automáticamente la instalación
   }
 
   Future<void> _loadFacilities() async {
@@ -162,7 +165,7 @@ class _AddWorkerSheetState extends State<AddWorkerSheet> {
   }
 }
 
-void showAddWorkerSheet(BuildContext context) {
+void showAddWorkerSheet(BuildContext context, Facility? facility) {
   showModalBottomSheet(
     context: context,
     isScrollControlled: true,
@@ -175,7 +178,7 @@ void showAddWorkerSheet(BuildContext context) {
           padding: EdgeInsets.only(
             bottom: MediaQuery.of(context).viewInsets.bottom,
           ),
-          child: const AddWorkerSheet(),
+          child: AddWorkerSheet(facility: facility!),
         ),
       );
     },

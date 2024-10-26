@@ -1,8 +1,8 @@
 import 'package:dittobox_mobile/generated/l10n.dart';
+import 'package:dittobox_mobile/goups/presentation/widgets/add_worker_sheet.dart';
 import 'package:dittobox_mobile/routes/app_routes.dart';
 import 'package:dittobox_mobile/shared/presentation/widgets/custom_navigator_drawer.dart';
 import 'package:flutter/material.dart';
-import 'package:dittobox_mobile/goups/presentation/widgets/add_worker_sheet.dart'; // Importa el AddWorkerSheet
 
 class User {
   final String name;
@@ -28,7 +28,7 @@ class WorkerListView extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          showAddWorkerSheet(context);
+          showAddWorkerSheet(context, null);
         },
         child: const Icon(Icons.add),
       ),
