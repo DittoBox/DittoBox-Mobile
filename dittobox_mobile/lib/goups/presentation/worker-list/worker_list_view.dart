@@ -2,6 +2,7 @@ import 'package:dittobox_mobile/generated/l10n.dart';
 import 'package:dittobox_mobile/routes/app_routes.dart';
 import 'package:dittobox_mobile/shared/presentation/widgets/custom_navigator_drawer.dart';
 import 'package:flutter/material.dart';
+import 'package:dittobox_mobile/goups/presentation/widgets/add_worker_sheet.dart'; // Importa el AddWorkerSheet
 
 class User {
   final String name;
@@ -25,13 +26,18 @@ class WorkerListView extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: WorkerList(),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showAddWorkerSheet(context);
+        },
+        child: const Icon(Icons.add),
+      ),
     );
-    
   }
 }
 
 class WorkerList extends StatelessWidget {
-    WorkerList({super.key});
+  WorkerList({super.key});
 
   final List<User> workers = [
     User(name: 'Candice Merle', role: 'Manager', location: 'Gran Vía, Madrid'),
@@ -42,7 +48,6 @@ class WorkerList extends StatelessWidget {
     User(name: 'Alexander Smith', role: 'Manager', location: 'Atocha, Madrid'),
     User(name: 'Troy Willfort', role: 'Worker', location: 'Atocha, Madrid'),
   ];
-
 
   @override
   Widget build(BuildContext context) {
