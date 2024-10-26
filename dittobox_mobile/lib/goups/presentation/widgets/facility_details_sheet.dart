@@ -94,7 +94,7 @@ void showFacilityDetailsBottomSheet(BuildContext context, Facility facility) {
             buildInfoRowWithIcon(Icons.person_2_outlined, S.of(context).workers, facility.workers),
             TextButton(
               onPressed: () {
-                showAddWorkerSheet(context);
+                showAddWorkerSheet(context, facility); // Pasa la instalación seleccionada
               },
               child: Text(S.of(context).addWorkers),
             ),

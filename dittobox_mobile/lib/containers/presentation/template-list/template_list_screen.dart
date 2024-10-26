@@ -90,24 +90,98 @@ class _TemplateListState extends State<TemplateList> {
     ),
   ];
 
+  List<Template> _filteredTemplates = [];
+  final TextEditingController _searchController = TextEditingController();
+  final List<String> _categories = ['All', 'Produce', 'Meats', 'Animal derived', 'Processed Food'];
+  String _selectedCategory = 'All';
+
+  @override
+  void initState() {
+    super.initState();
+    _filteredTemplates = _templates;
+    _searchController.addListener(_filterTemplates);
+  }
+
+  @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
+  }
+
+  void _filterTemplates() {
+    final query = _searchController.text.toLowerCase();
+    setState(() {
+      _filteredTemplates = _templates.where((template) {
+        final matchesCategory = _selectedCategory == 'All' || template.category == _selectedCategory;
+        final matchesQuery = template.name.toLowerCase().contains(query) || template.description.toLowerCase().contains(query);
+        return matchesCategory && matchesQuery;
+      }).toList();
+    });
+  }
+
+  void _selectCategory(String category) {
+    setState(() {
+      _selectedCategory = category;
+      _filterTemplates();
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: TextField(
+            controller: _searchController,
+            decoration: InputDecoration(
+              labelText: S.of(context).search,
+              prefixIcon: const Icon(Icons.search),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(8.0),
+              ),
+            ),
+          ),
+        ),
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: _categories.map((category) {
+              return Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                child: ChoiceChip(
+                  label: Text(category),
+                  selected: _selectedCategory == category,
+                  onSelected: (selected) {
+                    if (selected) {
+                      _selectCategory(category);
+                    }
+                  },
+                ),
+              );
+            }).toList(),
+          ),
+        ),
+        Expanded(
+          child: ListView.builder(
+            itemCount: _filteredTemplates.length,
+            itemBuilder: (context, index) {
+              return TemplateCard(
+                template: _filteredTemplates[index],
+                onApply: () => _showContainerSelectionModal(_filteredTemplates[index]),
+              );
+            },
+          ),
+        ),
+      ],
+    );
+  }
+
   void _showContainerSelectionModal(Template template) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return ContainerSelectionModal(containers: widget.containers);
-      },
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: _templates.length,
-      itemBuilder: (context, index) {
-        return TemplateCard(
-          template: _templates[index],
-          onApply: () => _showContainerSelectionModal(_templates[index]),
-        );
       },
     );
   }
