@@ -66,7 +66,7 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
         title: Text(S.of(context).newTemplate),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(32.0),
+        padding: const EdgeInsets.all(30.0),
         child: Form(
           key: _formKey,
           child: ListView(
