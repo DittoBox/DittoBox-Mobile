@@ -1,3 +1,4 @@
+import 'package:dittobox_mobile/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class WorkerDetailScreen extends StatefulWidget {
@@ -40,7 +41,7 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
             Row(
               children: [
                 Text(
-                  'Workers',
+                  S.of(context).workers,
                   style: TextStyle(fontSize: 16),
                 ),
                 Icon(Icons.chevron_right_outlined),
@@ -53,7 +54,7 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
             ),
             SizedBox(height: 16),
             Text(
-              'Worker info:',
+              S.of(context).workerDetails,
               style: TextStyle(fontSize: 18),
             ),
             SizedBox(height: 24),
@@ -69,14 +70,13 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
                       _showRoleManagement = !_showRoleManagement;
                     });
                   },
-                  child: Text('Manage roles'),
+                  child: Text(S.of(context).roleManagement),
                 ),
                 SizedBox(width: 16),
                 TextButton(
                   onPressed: () {},
                   child: Text(
-                    'Reassign',
-                  ),
+                    S.of(context).reassign),
                 ),
               ],
             ),

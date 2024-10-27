@@ -463,5 +463,17 @@
   "edit": "Editar",
   "@edit": {
     "description": "Etiqueta para editar"
+  },
+  "workerDetails": "Detalles del trabajador",
+  "@workerDetails": {
+    "description": "Etiqueta para los detalles del trabajador"
+  },
+  "roleManagement": "Gestión de roles",
+  "@roleManagement": {
+    "description": "Etiqueta para la gestión de roles"
+  },
+  "reassign": "Reasignar",
+  "@reassign": {
+    "description": "Etiqueta para reasignar"
   }
 }

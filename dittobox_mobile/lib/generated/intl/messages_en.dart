@@ -142,12 +142,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "processedFoods":
             MessageLookupByLibrary.simpleMessage("Processed foods"),
         "produce": MessageLookupByLibrary.simpleMessage("Produce"),
+        "reassign": MessageLookupByLibrary.simpleMessage("Reassign"),
         "region": MessageLookupByLibrary.simpleMessage("Region"),
         "register": MessageLookupByLibrary.simpleMessage("Register"),
         "registerInstead":
             MessageLookupByLibrary.simpleMessage("Register instead"),
         "restaurant": MessageLookupByLibrary.simpleMessage("Restaurant"),
         "role": MessageLookupByLibrary.simpleMessage("Role"),
+        "roleManagement":
+            MessageLookupByLibrary.simpleMessage("Role management"),
         "save": MessageLookupByLibrary.simpleMessage("Save"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "selectContainers":
@@ -173,6 +176,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "warehouse": MessageLookupByLibrary.simpleMessage("Warehouse"),
         "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
         "worker": MessageLookupByLibrary.simpleMessage("Worker"),
+        "workerDetails": MessageLookupByLibrary.simpleMessage("Worker details"),
         "workerList": MessageLookupByLibrary.simpleMessage("Worker List"),
         "workers": MessageLookupByLibrary.simpleMessage("Workers")
       };

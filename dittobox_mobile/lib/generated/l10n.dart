@@ -1219,6 +1219,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Worker details`
+  String get workerDetails {
+    return Intl.message(
+      'Worker details',
+      name: 'workerDetails',
+      desc: 'Label for worker details section',
+      args: [],
+    );
+  }
+
+  /// `Role management`
+  String get roleManagement {
+    return Intl.message(
+      'Role management',
+      name: 'roleManagement',
+      desc: 'Label for role management section',
+      args: [],
+    );
+  }
+
+  /// `Reassign`
+  String get reassign {
+    return Intl.message(
+      'Reassign',
+      name: 'reassign',
+      desc: 'Button label for reassigning',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

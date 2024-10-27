@@ -467,5 +467,17 @@
     "edit": "Edit",
     "@edit": {
       "description": "Button label for editing"
+    },
+    "workerDetails": "Worker details",
+    "@workerDetails": {
+      "description": "Label for worker details section"
+    },
+    "roleManagement": "Role management",
+    "@roleManagement": {
+      "description": "Label for role management section"
+    },
+    "reassign": "Reassign",
+    "@reassign": {
+      "description": "Button label for reassigning"
     }
   }
