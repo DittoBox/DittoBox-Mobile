@@ -52,6 +52,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "areYouSureDelete": MessageLookupByLibrary.simpleMessage(
             "¿Estás seguro de que deseas eliminar este elemento?"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancelar"),
+        "cancelSubscription":
+            MessageLookupByLibrary.simpleMessage("Cancelar suscripción"),
         "carbonDioxide":
             MessageLookupByLibrary.simpleMessage("Dióxido de carbono"),
         "carbonDioxideMax":
@@ -119,6 +121,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "oxygenMax": MessageLookupByLibrary.simpleMessage("Oxígeno Máx"),
         "oxygenMin": MessageLookupByLibrary.simpleMessage("Oxígeno Min"),
         "password": MessageLookupByLibrary.simpleMessage("Contraseña"),
+        "paymentInformation":
+            MessageLookupByLibrary.simpleMessage("Información de pago"),
         "pendingAlerts":
             MessageLookupByLibrary.simpleMessage("Alertas pendientes"),
         "pleaseEnterCategory": MessageLookupByLibrary.simpleMessage(
@@ -168,6 +172,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "settings": MessageLookupByLibrary.simpleMessage("Configuraciones"),
         "spanish": MessageLookupByLibrary.simpleMessage("Español"),
         "subscription": MessageLookupByLibrary.simpleMessage("Suscripción"),
+        "subscriptionDetails":
+            MessageLookupByLibrary.simpleMessage("Detalles de la suscripción"),
         "tempMax": MessageLookupByLibrary.simpleMessage("Temperatura máxima"),
         "tempMin": MessageLookupByLibrary.simpleMessage("Temperatura mínima"),
         "temperature": MessageLookupByLibrary.simpleMessage("Temperatura"),
@@ -179,6 +185,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "templates": MessageLookupByLibrary.simpleMessage("Plantillas"),
         "title": MessageLookupByLibrary.simpleMessage("DittoBox"),
         "type": MessageLookupByLibrary.simpleMessage("Tipo"),
+        "upgradePlan": MessageLookupByLibrary.simpleMessage("Actualizar plan"),
         "username": MessageLookupByLibrary.simpleMessage("Nombre de usuario"),
         "warehouse": MessageLookupByLibrary.simpleMessage("Almacén"),
         "welcome": MessageLookupByLibrary.simpleMessage("Bienvenido"),

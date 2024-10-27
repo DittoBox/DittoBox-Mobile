@@ -479,5 +479,21 @@
     "reassign": "Reassign",
     "@reassign": {
       "description": "Button label for reassigning"
+    },
+    "subscriptionDetails": "Subscription details",
+    "@subscriptionDetails": {
+      "description": "Label for subscription details section"
+    },
+    "upgradePlan": "Upgrade plan",
+    "@upgradePlan": {
+      "description": "Button label for upgrading plan"
+    },
+    "paymentInformation": "Payment information",
+    "@paymentInformation": {
+      "description": "Label for payment information section"
+    },
+    "cancelSubscription": "Cancel subscription",
+    "@cancelSubscription": {
+      "description": "Button label for canceling subscription"
     }
   }

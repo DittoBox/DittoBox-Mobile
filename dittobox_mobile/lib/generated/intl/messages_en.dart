@@ -47,6 +47,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "areYouSureDelete": MessageLookupByLibrary.simpleMessage(
             "Are you sure you want to delete this?"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+        "cancelSubscription":
+            MessageLookupByLibrary.simpleMessage("Cancel subscription"),
         "carbonDioxide": MessageLookupByLibrary.simpleMessage("Carbon dioxide"),
         "carbonDioxideMax":
             MessageLookupByLibrary.simpleMessage("Max carbon dioxide"),
@@ -107,6 +109,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "oxygenMax": MessageLookupByLibrary.simpleMessage("Max oxygen"),
         "oxygenMin": MessageLookupByLibrary.simpleMessage("Min oxygen"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "paymentInformation":
+            MessageLookupByLibrary.simpleMessage("Payment information"),
         "pendingAlerts": MessageLookupByLibrary.simpleMessage("Pending Alerts"),
         "pleaseEnterCategory":
             MessageLookupByLibrary.simpleMessage("Please enter a category"),
@@ -162,6 +166,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "spanish": MessageLookupByLibrary.simpleMessage("Spanish"),
         "subscription": MessageLookupByLibrary.simpleMessage("Subscription"),
+        "subscriptionDetails":
+            MessageLookupByLibrary.simpleMessage("Subscription details"),
         "tempMax": MessageLookupByLibrary.simpleMessage("Max temperature"),
         "tempMin": MessageLookupByLibrary.simpleMessage("Min temperature"),
         "temperature": MessageLookupByLibrary.simpleMessage("Temperature"),
@@ -172,6 +178,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "templates": MessageLookupByLibrary.simpleMessage("Templates"),
         "title": MessageLookupByLibrary.simpleMessage("DittoBox"),
         "type": MessageLookupByLibrary.simpleMessage("Type"),
+        "upgradePlan": MessageLookupByLibrary.simpleMessage("Upgrade plan"),
         "username": MessageLookupByLibrary.simpleMessage("Username"),
         "warehouse": MessageLookupByLibrary.simpleMessage("Warehouse"),
         "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),

@@ -126,7 +126,7 @@ class _AddWorkerSheetState extends State<AddWorkerSheet> {
             const SizedBox(height: 26),
             // Facility Dropdown
             isLoading
-                ? CircularProgressIndicator() // Muestra un indicador de carga mientras se cargan las instalaciones
+                ? const CircularProgressIndicator() // Muestra un indicador de carga mientras se cargan las instalaciones
                 : DropdownButtonFormField<String>(
                     value: selectedFacility,
                     items: facilities.map((Facility facility) {

@@ -1249,6 +1249,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Subscription details`
+  String get subscriptionDetails {
+    return Intl.message(
+      'Subscription details',
+      name: 'subscriptionDetails',
+      desc: 'Label for subscription details section',
+      args: [],
+    );
+  }
+
+  /// `Upgrade plan`
+  String get upgradePlan {
+    return Intl.message(
+      'Upgrade plan',
+      name: 'upgradePlan',
+      desc: 'Button label for upgrading plan',
+      args: [],
+    );
+  }
+
+  /// `Payment information`
+  String get paymentInformation {
+    return Intl.message(
+      'Payment information',
+      name: 'paymentInformation',
+      desc: 'Label for payment information section',
+      args: [],
+    );
+  }
+
+  /// `Cancel subscription`
+  String get cancelSubscription {
+    return Intl.message(
+      'Cancel subscription',
+      name: 'cancelSubscription',
+      desc: 'Button label for canceling subscription',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

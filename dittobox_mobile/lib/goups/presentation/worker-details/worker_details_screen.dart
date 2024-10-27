@@ -27,7 +27,7 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
       appBar: AppBar(
         title: Text(widget.worker.name),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.pop(context);
           },
@@ -42,25 +42,25 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
               children: [
                 Text(
                   S.of(context).workers,
-                  style: TextStyle(fontSize: 16),
+                  style: const TextStyle(fontSize: 16),
                 ),
-                Icon(Icons.chevron_right_outlined),
+                const Icon(Icons.chevron_right_outlined),
               ],
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Text(
               widget.worker.name,
-              style: TextStyle(fontSize: 32),
+              style: const TextStyle(fontSize: 32),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Text(
               S.of(context).workerDetails,
-              style: TextStyle(fontSize: 18),
+              style: const TextStyle(fontSize: 18),
             ),
-            SizedBox(height: 24),
+            const SizedBox(height: 24),
             _buildWorkerInfoRow('Category', widget.worker.role),
             _buildWorkerInfoRow('Location', widget.worker.location),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
@@ -72,7 +72,7 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
                   },
                   child: Text(S.of(context).roleManagement),
                 ),
-                SizedBox(width: 16),
+                const SizedBox(width: 16),
                 TextButton(
                   onPressed: () {},
                   child: Text(
@@ -81,18 +81,18 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
               ],
             ),
             if (_showRoleManagement) ...[
-              SizedBox(height: 24),
-              Text(
+              const SizedBox(height: 24),
+              const Text(
                 'Role management',
                 style: TextStyle(fontSize: 18),
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               Expanded(
                 child: ListView.builder(
                   itemCount: 5,
                   itemBuilder: (context, index) {
                     return SwitchListTile(
-                      title: Text('Privilege assignment'),
+                      title: const Text('Privilege assignment'),
                       value: _switchStates[index],
                       onChanged: (bool value) {
                         setState(() {
@@ -118,11 +118,11 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
         children: [
           Text(
             title,
-            style: TextStyle(fontSize: 16),
+            style: const TextStyle(fontSize: 16),
           ),
           Text(
             value,
-            style: TextStyle(fontSize: 16),
+            style: const TextStyle(fontSize: 16),
           ),
         ],
       ),

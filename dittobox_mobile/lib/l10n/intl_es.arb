@@ -475,5 +475,21 @@
   "reassign": "Reasignar",
   "@reassign": {
     "description": "Etiqueta para reasignar"
+  },
+  "subscriptionDetails": "Detalles de la suscripción",
+  "@subscriptionDetails": {
+    "description": "Etiqueta para los detalles de la suscripción"
+  },
+  "upgradePlan": "Actualizar plan",
+  "@upgradePlan": {
+    "description": "Etiqueta para actualizar plan"
+  },
+  "paymentInformation": "Información de pago",
+  "@paymentInformation": {
+    "description": "Etiqueta para la información de pago"
+  },
+  "cancelSubscription": "Cancelar suscripción",
+  "@cancelSubscription": {
+    "description": "Etiqueta para cancelar suscripción"
   }
 }

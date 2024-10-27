@@ -114,7 +114,7 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
         return 3;
       case '/account':
         return 4;
-      case '/subscription':
+      case AppRoutes.subscriptionDetails:
         return 5;
       case '/notifications':
         return 6;
@@ -138,7 +138,7 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
       case 4:
         return '/account';
       case 5:
-        return '/subscription';
+        return AppRoutes.subscriptionDetails;
       case 6:
         return '/notifications';
       case 7:
