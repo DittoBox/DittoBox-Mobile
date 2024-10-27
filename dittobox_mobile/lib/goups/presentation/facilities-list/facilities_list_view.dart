@@ -84,7 +84,7 @@ class _FacilitiesListState extends State<FacilitiesList> {
           workers: 5,
         ),
         Facility(
-          title: 'Almacén B',
+          title: 'Almacén C',
           location: 'Ubicación B',
           type: 'warehouse',
           containers: 20,
