@@ -1,17 +1,9 @@
 import 'package:dittobox_mobile/generated/l10n.dart';
-import 'package:dittobox_mobile/goups/infrastructure/models/facilities.dart';
 import 'package:dittobox_mobile/goups/presentation/widgets/add_worker_sheet.dart';
+import 'package:dittobox_mobile/goups/presentation/worker-details/worker_details_screen.dart';
 import 'package:dittobox_mobile/routes/app_routes.dart';
 import 'package:dittobox_mobile/shared/presentation/widgets/custom_navigator_drawer.dart';
 import 'package:flutter/material.dart';
-
-class User {
-  final String name;
-  final String role;
-  final String location;
-
-  User({required this.name, required this.role, required this.location});
-}
 
 class WorkerListView extends StatelessWidget {
   const WorkerListView({super.key});
@@ -24,7 +16,7 @@ class WorkerListView extends StatelessWidget {
       ),
       drawer: const CustomNavigationDrawer(currentRoute: AppRoutes.workerlist),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(32.0),
         child: WorkerList(),
       ),
       floatingActionButton: FloatingActionButton(
@@ -84,8 +76,12 @@ class WorkerItem extends StatelessWidget {
             ],
           ),
           onTap: () {
-            // Aquí puedes pasar la instalación correspondiente
-            showAddWorkerSheet(context, Facility(title: user.location, location: user.location, type: 'unknown', containers: 0, alerts: 0, workers: 0));
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => WorkerDetailScreen(worker: user),
+              ),
+            );
           },
         ),
         const Divider(),
