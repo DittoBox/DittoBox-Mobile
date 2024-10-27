@@ -82,9 +82,7 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
             ),
             if (_showRoleManagement) ...[
               const SizedBox(height: 24),
-              const Text(
-                'Role management',
-                style: TextStyle(fontSize: 18),
+              Text(S.of(context).roleManagement, style: const TextStyle(fontSize: 18),
               ),
               const SizedBox(height: 8),
               Expanded(
