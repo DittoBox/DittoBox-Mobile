@@ -93,6 +93,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "identificationNumber":
             MessageLookupByLibrary.simpleMessage("Identification number"),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
+        "lastSync": MessageLookupByLibrary.simpleMessage("Last sync"),
         "logOut": MessageLookupByLibrary.simpleMessage("Log out"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "meat": MessageLookupByLibrary.simpleMessage("Meat"),
@@ -165,6 +166,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Select language"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "spanish": MessageLookupByLibrary.simpleMessage("Spanish"),
+        "statusContainer": MessageLookupByLibrary.simpleMessage("Status"),
         "subscription": MessageLookupByLibrary.simpleMessage("Subscription"),
         "subscriptionDetails":
             MessageLookupByLibrary.simpleMessage("Subscription details"),
@@ -180,6 +182,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "type": MessageLookupByLibrary.simpleMessage("Type"),
         "upgradePlan": MessageLookupByLibrary.simpleMessage("Upgrade plan"),
         "username": MessageLookupByLibrary.simpleMessage("Username"),
+        "viewContainers":
+            MessageLookupByLibrary.simpleMessage("View containers"),
+        "viewWorkers": MessageLookupByLibrary.simpleMessage("View workers"),
         "warehouse": MessageLookupByLibrary.simpleMessage("Warehouse"),
         "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
         "worker": MessageLookupByLibrary.simpleMessage("Worker"),
