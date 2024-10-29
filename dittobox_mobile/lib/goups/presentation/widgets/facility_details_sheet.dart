@@ -92,34 +92,42 @@ void showFacilityDetailsBottomSheet(BuildContext context, Facility facility, Voi
 
             // Contenido del BottomSheet
             buildInfoRowWithIcon(Icons.widgets_outlined, S.of(context).containers, facility.containers),
-            TextButton(
-              onPressed: () {
-                showAddContainerSheet(context, facility); // Pasa la instalación seleccionada
-              },
-              child: Text(S.of(context).addContainers),
-            ),
-            TextButton(
-              onPressed: () {
-                // Navegar a la vista de contenedores del facility
-                Navigator.pushNamed(context, '/containers', arguments: facility);
-              },
-              child: Text(S.of(context).viewContainers),
+            Row(
+              children: [
+                TextButton(
+                  onPressed: () {
+                    showAddContainerSheet(context, facility); // Pasa la instalación seleccionada
+                  },
+                  child: Text(S.of(context).addContainers),
+                ),
+                TextButton(
+                  onPressed: () {
+                    // Navegar a la vista de contenedores del facility
+                    Navigator.pushNamed(context, '/containers', arguments: facility);
+                  },
+                  child: Text(S.of(context).viewContainers),
+                ),
+              ],
             ),
             const SizedBox(height: 8),
 
             buildInfoRowWithIcon(Icons.person_2_outlined, S.of(context).workers, facility.workers),
-            TextButton(
-              onPressed: () {
-                showAddWorkerSheet(context, facility); // Pasa la instalación seleccionada
-              },
-              child: Text(S.of(context).addWorkers),
-            ),
-            TextButton(
-              onPressed: () {
-                // Navegar a la vista de trabajadores del facility
-                Navigator.pushNamed(context, '/workers', arguments: facility);
-              },
-              child: Text(S.of(context).viewWorkers),
+            Row(
+              children: [
+                TextButton(
+                  onPressed: () {
+                    showAddWorkerSheet(context, facility); // Pasa la instalación seleccionada
+                  },
+                  child: Text(S.of(context).addWorkers),
+                ),
+                TextButton(
+                  onPressed: () {
+                    // Navegar a la vista de trabajadores del facility
+                    Navigator.pushNamed(context, '/workers', arguments: facility);
+                  },
+                  child: Text(S.of(context).viewWorkers),
+                ),
+              ],
             ),
             const SizedBox(height: 8),
 
