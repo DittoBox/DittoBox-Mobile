@@ -1289,6 +1289,46 @@ class S {
       args: [],
     );
   }
+
+  /// `View workers`
+  String get viewWorkers {
+    return Intl.message(
+      'View workers',
+      name: 'viewWorkers',
+      desc: 'Button label for viewing workers',
+      args: [],
+    );
+  }
+
+  /// `View containers`
+  String get viewContainers {
+    return Intl.message(
+      'View containers',
+      name: 'viewContainers',
+      desc: 'Button label for viewing containers',
+      args: [],
+    );
+  }
+
+  /// `Last sync`
+  String get lastSync {
+    return Intl.message(
+      'Last sync',
+      name: 'lastSync',
+      desc: 'Label for last sync section',
+      args: [],
+    );
+  }
+
+  /// `Status`
+  String get statusContainer {
+    return Intl.message(
+      'Status',
+      name: 'statusContainer',
+      desc: 'Label for status section',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

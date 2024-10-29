@@ -495,5 +495,21 @@
     "cancelSubscription": "Cancel subscription",
     "@cancelSubscription": {
       "description": "Button label for canceling subscription"
+    },
+    "viewWorkers": "View workers",
+    "@viewWorkers": {
+      "description": "Button label for viewing workers"
+    },
+    "viewContainers": "View containers",
+    "@viewContainers": {
+      "description": "Button label for viewing containers"
+    },
+    "lastSync": "Last sync",
+    "@lastSync": {
+      "description": "Label for last sync section"
+    },
+    "statusContainer": "Status",
+    "@statusContainer": {
+      "description": "Label for status section"
     }
   }

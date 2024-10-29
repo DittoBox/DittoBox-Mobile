@@ -1,5 +1,6 @@
 import 'package:dittobox_mobile/account_and_subscription/presentation/subscription-details/subscription_details_screen.dart';
 import 'package:dittobox_mobile/containers/presentation/add-template/add_template_screen.dart';
+import 'package:dittobox_mobile/containers/presentation/container-list/container_list_view.dart';
 import 'package:dittobox_mobile/containers/presentation/template-list/template_list_screen.dart';
 import 'package:dittobox_mobile/goups/presentation/facilities-list/facilities_list_view.dart';
 import 'package:dittobox_mobile/goups/presentation/worker-details/worker_details_screen.dart';
@@ -21,6 +22,7 @@ final Map<String, Widget Function(BuildContext)> appRoutes = {
   "/workers": (context) => const WorkerListView(),
   "/workerDetails": (context) => WorkerDetailScreen(worker: User(name: '', role: '', location: '')), // Provide a valid User object
   "/subscriptionDetails": (context) => const SubscriptionDetailsScreen(),
+  "/containers": (context) => const ContainerListScreen(),
 };
 
 class AppRoutes {
@@ -34,5 +36,5 @@ class AppRoutes {
   static const String workerlist = '/workers';
   static const String workerDetails = '/workerDetails';
   static const String subscriptionDetails = '/subscriptionDetails';
-  
+  static const String containers = '/containers';
 }

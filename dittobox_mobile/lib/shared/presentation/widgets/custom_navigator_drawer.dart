@@ -106,7 +106,7 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
     switch (widget.currentRoute) {
       case AppRoutes.facilities:
         return 0;
-      case '/containers':
+      case AppRoutes.containers:
         return 1;
       case AppRoutes.workerlist:
         return 2;
@@ -130,7 +130,7 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
       case 0:
         return AppRoutes.facilities;
       case 1:
-        return '/containers';
+        return AppRoutes.containers;
       case 2:
         return AppRoutes.workerlist;
       case 3:

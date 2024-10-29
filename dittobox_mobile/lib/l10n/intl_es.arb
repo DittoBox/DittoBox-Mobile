@@ -491,5 +491,21 @@
   "cancelSubscription": "Cancelar suscripción",
   "@cancelSubscription": {
     "description": "Etiqueta para cancelar suscripción"
+  },
+  "viewWorkers": "Ver trabajadores",
+  "@viewWorkers": {
+    "description": "Etiqueta para ver trabajadores"
+  },
+  "viewContainers": "Ver contenedores",
+  "@viewContainers": {
+    "description": "Etiqueta para ver contenedores"
+  },
+  "lastSync": "Última sincronización",
+  "@lastSync": {
+    "description": "Etiqueta para la última sincronización"
+  },
+  "statusContainer": "Estado",
+  "@statusContainer": {
+    "description": "Etiqueta para el estado del contenedor"
   }
 }
