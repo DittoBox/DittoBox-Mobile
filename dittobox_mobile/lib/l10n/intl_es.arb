@@ -519,5 +519,9 @@
   "usernameCannotBeEmpty": "El nombre de usuario no puede estar vacío",
   "@usernameCannotBeEmpty": {
     "description": "Mensaje de error cuando el nombre de usuario está vacío"
+  },
+  "requiredField": "Campo requerido",
+  "@requiredField": {
+	"description": "Mensaje de error para campo requerido"
   }
 }

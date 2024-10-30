@@ -523,5 +523,9 @@
   "usernameCannotBeEmpty": "Username cannot be empty",
   "@usernameCannotBeEmpty": {
     "description": "Error message when username is empty"
+  },
+  "requiredField": "This is a required field",
+  "@requiredField": {
+	"description": "Error message when field is required"
   }
 }

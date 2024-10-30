@@ -11,9 +11,10 @@ class ContainerListScreen extends StatefulWidget {
   State<ContainerListScreen> createState() => _ContainerListScreenState();
 }
 
-class _ContainerListScreenState extends State<ContainerListScreen> with SingleTickerProviderStateMixin {
+class _ContainerListScreenState extends State<ContainerListScreen>
+    with SingleTickerProviderStateMixin {
   List<ContainerItem> _containers = [];
-  List<ContainerItem> _filteredContainers = [];
+  // List<ContainerItem> _filteredContainers = [];
   late TabController _tabController;
 
   @override
@@ -26,20 +27,37 @@ class _ContainerListScreenState extends State<ContainerListScreen> with SingleTi
   Future<void> _fetchContainers() async {
     // Datos provisionales
     final containers = [
-      ContainerItem(title: 'Beef and tenderloin', status: 'Active', temperature: '4°C', humidity: '48%', lastSync: '1 minute ago'),
-      ContainerItem(title: 'Frozen cod', status: 'Active', temperature: '0°C', humidity: '15%', lastSync: '2 minutes ago'),
-      ContainerItem(title: 'Smoked salmon', status: 'Idle', temperature: '--°C', humidity: '--%', lastSync: 'Last connection'),
+      ContainerItem(
+          title: 'Beef and tenderloin',
+          status: 'Active',
+          temperature: '4°C',
+          humidity: '48%',
+          lastSync: '1 minute ago'),
+      ContainerItem(
+          title: 'Frozen cod',
+          status: 'Active',
+          temperature: '0°C',
+          humidity: '15%',
+          lastSync: '2 minutes ago'),
+      ContainerItem(
+          title: 'Smoked salmon',
+          status: 'Idle',
+          temperature: '--°C',
+          humidity: '--%',
+          lastSync: 'Last connection'),
     ];
 
     setState(() {
       _containers = containers;
-      _filteredContainers = containers;
+      // _filteredContainers = containers;
     });
   }
 
   List<ContainerItem> _getFilteredContainers(bool showActive) {
     if (showActive) {
-      return _containers.where((container) => container.status == 'Active').toList();
+      return _containers
+          .where((container) => container.status == 'Active')
+          .toList();
     }
     return _containers;
   }
@@ -154,8 +172,8 @@ class ContainerCard extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Icon(Icons.water_drop_outlined, size: 20),
-                    SizedBox(width: 8),
+                    const Icon(Icons.water_drop_outlined, size: 20),
+                    const SizedBox(width: 8),
                     Text(S.of(context).humidity),
                   ],
                 ),
@@ -167,9 +185,9 @@ class ContainerCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
-                  children:  [
-                    Icon(Icons.hourglass_empty, size: 20),
-                    SizedBox(width: 8),
+                  children: [
+                    const Icon(Icons.hourglass_empty, size: 20),
+                    const SizedBox(width: 8),
                     Text(S.of(context).lastSync),
                   ],
                 ),

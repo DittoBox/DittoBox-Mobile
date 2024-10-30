@@ -164,6 +164,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "register": MessageLookupByLibrary.simpleMessage("Registrar"),
         "registerInstead":
             MessageLookupByLibrary.simpleMessage("Registrarse en su lugar"),
+        "requiredField":
+            MessageLookupByLibrary.simpleMessage("Campo requerido"),
         "restaurant": MessageLookupByLibrary.simpleMessage("Restaurante"),
         "role": MessageLookupByLibrary.simpleMessage("Rol"),
         "roleManagement":
