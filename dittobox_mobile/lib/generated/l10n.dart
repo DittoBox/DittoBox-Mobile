@@ -1329,6 +1329,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Password cannot be empty`
+  String get passwordCannotBeEmpty {
+    return Intl.message(
+      'Password cannot be empty',
+      name: 'passwordCannotBeEmpty',
+      desc: 'Error message when password is empty',
+      args: [],
+    );
+  }
+
+  /// `Password must be at least 8 characters`
+  String get passwordMustBeAtLeast8Characters {
+    return Intl.message(
+      'Password must be at least 8 characters',
+      name: 'passwordMustBeAtLeast8Characters',
+      desc: 'Error message when password is less than 8 characters',
+      args: [],
+    );
+  }
+
+  /// `Username cannot be empty`
+  String get usernameCannotBeEmpty {
+    return Intl.message(
+      'Username cannot be empty',
+      name: 'usernameCannotBeEmpty',
+      desc: 'Error message when username is empty',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -507,5 +507,17 @@
   "statusContainer": "Estado",
   "@statusContainer": {
     "description": "Etiqueta para el estado del contenedor"
+  },
+  "passwordCannotBeEmpty": "La contraseña no puede estar vacía",
+  "@passwordCannotBeEmpty": {
+    "description": "Mensaje de error cuando la contraseña está vacía"
+  },
+  "passwordMustBeAtLeast8Characters": "La contraseña debe tener al menos 8 caracteres",
+  "@passwordMustBeAtLeast8Characters": {
+    "description": "Mensaje de error cuando la contraseña tiene menos de 8 caracteres"
+  },
+  "usernameCannotBeEmpty": "El nombre de usuario no puede estar vacío",
+  "@usernameCannotBeEmpty": {
+    "description": "Mensaje de error cuando el nombre de usuario está vacío"
   }
 }

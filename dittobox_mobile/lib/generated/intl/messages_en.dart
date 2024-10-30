@@ -110,6 +110,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "oxygenMax": MessageLookupByLibrary.simpleMessage("Max oxygen"),
         "oxygenMin": MessageLookupByLibrary.simpleMessage("Min oxygen"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "passwordCannotBeEmpty":
+            MessageLookupByLibrary.simpleMessage("Password cannot be empty"),
+        "passwordMustBeAtLeast8Characters":
+            MessageLookupByLibrary.simpleMessage(
+                "Password must be at least 8 characters"),
         "paymentInformation":
             MessageLookupByLibrary.simpleMessage("Payment information"),
         "pendingAlerts": MessageLookupByLibrary.simpleMessage("Pending Alerts"),
@@ -182,6 +187,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "type": MessageLookupByLibrary.simpleMessage("Type"),
         "upgradePlan": MessageLookupByLibrary.simpleMessage("Upgrade plan"),
         "username": MessageLookupByLibrary.simpleMessage("Username"),
+        "usernameCannotBeEmpty":
+            MessageLookupByLibrary.simpleMessage("Username cannot be empty"),
         "viewContainers":
             MessageLookupByLibrary.simpleMessage("View containers"),
         "viewWorkers": MessageLookupByLibrary.simpleMessage("View workers"),
