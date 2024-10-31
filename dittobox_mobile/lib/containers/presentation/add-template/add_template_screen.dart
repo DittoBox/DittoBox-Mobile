@@ -155,6 +155,12 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
                         border: const OutlineInputBorder(),
                       ),
                       keyboardType: TextInputType.number,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return S.of(context).requiredField;
+                        }
+                        return null;
+                      },
                     ),
                   ),
                   const SizedBox(width: 8),
@@ -166,6 +172,12 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
                         border: const OutlineInputBorder(),
                       ),
                       keyboardType: TextInputType.number,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return S.of(context).requiredField;
+                        }
+                        return null;
+                      },
                     ),
                   ),
                 ],
@@ -189,6 +201,12 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
                         border: const OutlineInputBorder(),
                       ),
                       keyboardType: TextInputType.number,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return S.of(context).requiredField;
+                        }
+                        return null;
+                      },
                     ),
                   ),
                   const SizedBox(width: 8),
@@ -200,6 +218,12 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
                         border: const OutlineInputBorder(),
                       ),
                       keyboardType: TextInputType.number,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return S.of(context).requiredField;
+                        }
+                        return null;
+                      },
                     ),
                   ),
                 ],
@@ -244,6 +268,12 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
                           border: const OutlineInputBorder(),
                         ),
                         keyboardType: TextInputType.number,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return S.of(context).requiredField;
+                          }
+                          return null;
+                        },
                       ),
                     ),
                     const SizedBox(width: 8),
@@ -255,6 +285,12 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
                           border: const OutlineInputBorder(),
                         ),
                         keyboardType: TextInputType.number,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return S.of(context).requiredField;
+                          }
+                          return null;
+                        },
                       ),
                     ),
                   ],
@@ -280,6 +316,12 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
                           border: const OutlineInputBorder(),
                         ),
                         keyboardType: TextInputType.number,
+                        validator: (value) {
+                          if (_detectCO2 && (value == null || value.isEmpty)) {
+                            return S.of(context).requiredField;
+                          }
+                          return null;
+                        },
                       ),
                     ),
                     const SizedBox(width: 8),
@@ -291,6 +333,12 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
                           border: const OutlineInputBorder(),
                         ),
                         keyboardType: TextInputType.number,
+                        validator: (value) {
+                          if (_detectCO2 && (value == null || value.isEmpty)) {
+                            return S.of(context).requiredField;
+                          }
+                          return null;
+                        },
                       ),
                     ),
                   ],
@@ -316,6 +364,12 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
                           border: const OutlineInputBorder(),
                         ),
                         keyboardType: TextInputType.number,
+                        validator: (value) {
+                          if (_detectEthylene && (value == null || value.isEmpty)) {
+                            return S.of(context).requiredField;
+                          }
+                          return null;
+                        },
                       ),
                     ),
                     const SizedBox(width: 8),
@@ -327,6 +381,12 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
                           border: const OutlineInputBorder(),
                         ),
                         keyboardType: TextInputType.number,
+                        validator: (value) {
+                          if (_detectEthylene && (value == null || value.isEmpty)) {
+                            return S.of(context).requiredField;
+                          }
+                          return null;
+                        },
                       ),
                     ),
                   ],
@@ -352,6 +412,12 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
                           border: const OutlineInputBorder(),
                         ),
                         keyboardType: TextInputType.number,
+                        validator: (value) {
+                          if (_detectAmmonia && (value == null || value.isEmpty)) {
+                            return S.of(context).requiredField;
+                          }
+                          return null;
+                        },
                       ),
                     ),
                     const SizedBox(width: 8),
@@ -363,6 +429,12 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
                           border: const OutlineInputBorder(),
                         ),
                         keyboardType: TextInputType.number,
+                        validator: (value) {
+                          if (_detectAmmonia && (value == null || value.isEmpty)) {
+                            return S.of(context).requiredField;
+                          }
+                          return null;
+                        },
                       ),
                     ),
                   ],
