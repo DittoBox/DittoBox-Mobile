@@ -91,28 +91,46 @@ class _AddFacilitySheetState extends State<AddFacilitySheet> {
             ],
           ),
           const SizedBox(height: 26),
-          TextField(
+          TextFormField(
             controller: _facilityNameController,
             decoration: InputDecoration(
               labelText: S.of(context).facilityName,
               border: const OutlineInputBorder(),
             ),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return S.of(context).requiredField;
+              }
+              return null;
+            },
           ),
           const SizedBox(height: 26),
-          TextField(
+          TextFormField(
             controller: _cityController,
             decoration: InputDecoration(
               labelText: S.of(context).city,
               border: const OutlineInputBorder(),
             ),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return S.of(context).requiredField;
+              }
+              return null;
+            },
           ),
           const SizedBox(height: 26),
-          TextField(
+          TextFormField(
             controller: _regionController,
             decoration: InputDecoration(
               labelText: S.of(context).region,
               border: const OutlineInputBorder(),
             ),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return S.of(context).requiredField;
+              }
+              return null;
+            },
           ),
           const SizedBox(height: 16),
           Row(

@@ -523,5 +523,9 @@
   "requiredField": "Campo requerido",
   "@requiredField": {
 	"description": "Mensaje de error para campo requerido"
+  },
+  "invalidEmail": "Correo electrónico inválido",
+  "@invalidEmail": {
+	"description": "Mensaje de error para correo electrónico inválido"
   }
 }

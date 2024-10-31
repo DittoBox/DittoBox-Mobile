@@ -103,6 +103,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "humidityMin": MessageLookupByLibrary.simpleMessage("Humedad mínima"),
         "identificationNumber":
             MessageLookupByLibrary.simpleMessage("Número de identificación"),
+        "invalidEmail":
+            MessageLookupByLibrary.simpleMessage("Correo electrónico inválido"),
         "language": MessageLookupByLibrary.simpleMessage("Idioma"),
         "lastSync":
             MessageLookupByLibrary.simpleMessage("Última sincronización"),

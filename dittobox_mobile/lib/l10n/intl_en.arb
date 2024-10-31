@@ -527,5 +527,9 @@
   "requiredField": "This is a required field",
   "@requiredField": {
 	"description": "Error message when field is required"
+  },
+  "invalidEmail": "Invalid email",
+  "@invalidEmail": {
+	"description": "Error message when email is invalid"
   }
 }

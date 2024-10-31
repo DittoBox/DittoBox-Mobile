@@ -96,12 +96,21 @@ class _AddWorkerSheetState extends State<AddWorkerSheet> {
             ),
             const SizedBox(height: 26),
             // Email Field
-            TextField(
+            TextFormField(
               controller: _emailController,
               decoration: InputDecoration(
                 labelText: S.of(context).email,
                 border: const OutlineInputBorder(),
               ),
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return S.of(context).requiredField;
+                }
+                if (!value.contains('@')) {
+                  return S.of(context).invalidEmail;
+                }
+                return null;
+              },
             ),
             const SizedBox(height: 26),
             // Role Dropdown
