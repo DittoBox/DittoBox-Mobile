@@ -1,3 +1,4 @@
+import 'package:dittobox_mobile/goups/presentation/widgets/confirm_assign_worker_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:dittobox_mobile/generated/l10n.dart';
 
@@ -70,7 +71,22 @@ class _ReassignWorkerSheetState extends State<ReassignWorkerSheet> {
               const SizedBox(width: 8),
               ElevatedButton(
                 onPressed: () {
-                  widget.onSave(selectedFacility!);
+                  showDialog(
+                      context: context, 
+                      builder: (BuildContext context) {
+                        return ConfirmAssignWorkerDialog(
+                          facilityName: selectedFacility ?? '',
+                          onConfirm: () {
+                            // Lógica para reasignar trabajador
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text(S.of(context).workerReassigned),
+                              ),
+                            );
+                          },
+                        );
+                      }
+                    );
                 },
                 child: Text(S.of(context).save),
               ),
