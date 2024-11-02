@@ -2,6 +2,8 @@ import 'package:dittobox_mobile/generated/l10n.dart';
 import 'package:dittobox_mobile/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import './styles/dittobox_theme.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MainApp());
@@ -28,12 +30,17 @@ class _MainAppState extends State<MainApp> {
     });
   }
 
+  final textTheme = GoogleFonts.poppinsTextTheme();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'DittoBox',
       initialRoute: AppRoutes.templates,
       debugShowCheckedModeBanner: false,
+      theme: MediaQuery.of(context).platformBrightness == Brightness.dark
+          ? DittoBoxTheme(textTheme).dark()
+          : DittoBoxTheme(textTheme).light(),
       routes: appRoutes,
       locale: _locale,
       localizationsDelegates: const [
