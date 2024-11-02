@@ -3,40 +3,41 @@ import 'package:dittobox_mobile/routes/app_routes.dart';
 import 'package:dittobox_mobile/shared/presentation/widgets/custom_navigator_drawer.dart';
 import 'package:flutter/material.dart';
 
-class SubscriptionDetailsScreen extends StatefulWidget {
-  const SubscriptionDetailsScreen({super.key});
+class AccountDetailsScreen extends StatefulWidget {
+  const AccountDetailsScreen({super.key});
 
   @override
-  _SubscriptionDetailsScreenState createState() => _SubscriptionDetailsScreenState();
+  State<AccountDetailsScreen> createState() => _AccountDetailsScreenState();
 }
 
-class _SubscriptionDetailsScreenState extends State<SubscriptionDetailsScreen> {
+class _AccountDetailsScreenState extends State<AccountDetailsScreen> {
   @override
-  Widget build(BuildContext context) {
+ Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(S.of(context).subscriptionDetails),
+        title: Text(S.of(context).accountDetails),
       ),
-      drawer: const CustomNavigationDrawer(currentRoute: AppRoutes.subscriptionDetails),
+      drawer: const CustomNavigationDrawer(currentRoute: AppRoutes.accountDetails),
       body: const Padding(
         padding: EdgeInsets.all(32.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SubscriptionDetails(),
+            UserInformation(),
             SizedBox(height: 32),
             Divider(),
             SizedBox(height: 32),
-            PaymentInformation(),
+            AccountInformation(),
           ],
         ),
       ),
     );
   }
+
 }
 
-class SubscriptionDetails extends StatelessWidget {
-  const SubscriptionDetails({super.key});
+class UserInformation extends StatelessWidget {
+  const UserInformation({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -46,31 +47,38 @@ class SubscriptionDetails extends StatelessWidget {
         Row(
           children: [
             Text(
-             S.of(context).subscription,
+              S.of(context).userInformation,
               style: const TextStyle(fontSize: 16),
             ),
             const Icon(Icons.chevron_right_outlined),
           ],
         ),
-        const SizedBox(height: 8),
         const SizedBox(height: 16),
-         Text(S.of(context).subscriptionDetails,
+        Text(
+          S.of(context).userInformationDetails,
           style: const TextStyle(fontSize: 22),
         ),
         const SizedBox(height: 24),
-        _buildInfoRow('Current tier', 'Advance'),
-        _buildInfoRow('Facilities', 'Used 5 out of 5'),
-        _buildInfoRow('Containers', 'Used 4 out of 25'),
-        _buildInfoRow('Users', 'Used 7 out of 20'),
+        _buildInfoRow(S.of(context).username, 'A warm place'),
+        _buildInfoRow(S.of(context).name, 'Advance'),
+        _buildInfoRow(S.of(context).identificationNumber, '20124578963'),
+        _buildInfoRow(S.of(context).bankAccountOwner, 'Sofía Pérez'),
         const SizedBox(height: 16),
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            FilledButton(
+            TextButton(
               onPressed: () {
-                // Lógica para actualizar el plan
+                // Lógica para editar datos
               },
-              child: Text(S.of(context).upgradePlan),
+              child: Text(S.of(context).editData),
+            ),
+            const SizedBox(width: 8),
+            TextButton(
+              onPressed: () {
+                // Lógica para cambiar contraseña
+              },
+              child: Text(S.of(context).changePassword),
             ),
           ],
         ),
@@ -98,39 +106,41 @@ class SubscriptionDetails extends StatelessWidget {
   }
 }
 
-class PaymentInformation extends StatelessWidget {
-  const PaymentInformation({super.key});
+class AccountInformation extends StatelessWidget {
+  const AccountInformation({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-       Text(
-          S.of(context).paymentInformation,
+        Row(
+          children: [
+            Text(
+              S.of(context).accountInformation,
+              style: const TextStyle(fontSize: 16),
+            ),
+            const Icon(Icons.chevron_right_outlined),
+          ],
+        ),
+        const SizedBox(height: 16),
+        Text(
+          S.of(context).accountInformationDetails,
           style: const TextStyle(fontSize: 22),
         ),
         const SizedBox(height: 24),
-        _buildInfoRow('Status', 'Active'),
-        _buildInfoRow('Next Payment Day', '2023-12-01'),
-        _buildInfoRow('Identification Number', '123456789'),
-        _buildInfoRow('Bank Account Owner', 'John Doe'),
+        _buildInfoRow(S.of(context).businessName, 'A warm place'),
+        _buildInfoRow(S.of(context).subscriptionTier, 'Advance'),
+        _buildInfoRow(S.of(context).identificationNumber, '20124578963'),
         const SizedBox(height: 16),
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             FilledButton(
               onPressed: () {
-                // Lógica para actualizar la información de pago
+                // Lógica para gestionar la suscripción
               },
-              child: const Text('Update'),
-            ),
-            const SizedBox(width: 8),
-            TextButton(
-              onPressed: () {
-                // Lógica para cancelar la suscripción
-              },
-              child: Text(S.of(context).cancelSubscription),
+              child: Text(S.of(context).manageSubscription),
             ),
           ],
         ),

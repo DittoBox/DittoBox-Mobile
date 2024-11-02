@@ -112,7 +112,7 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
         return 2;
       case AppRoutes.templates:
         return 3;
-      case '/account':
+      case AppRoutes.accountDetails:
         return 4;
       case AppRoutes.subscriptionDetails:
         return 5;
@@ -136,7 +136,7 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
       case 3:
         return AppRoutes.templates;
       case 4:
-        return '/account';
+        return AppRoutes.accountDetails;
       case 5:
         return AppRoutes.subscriptionDetails;
       case 6:
