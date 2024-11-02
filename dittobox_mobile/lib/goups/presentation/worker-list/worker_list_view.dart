@@ -33,13 +33,13 @@ class WorkerList extends StatelessWidget {
   WorkerList({super.key});
 
   final List<User> workers = [
-    User(name: 'Candice Merle', role: 'Manager', location: 'Gran Vía, Madrid'),
-    User(name: 'Andrea Kirsch', role: 'Worker', location: 'Gran Vía, Madrid'),
-    User(name: 'Angelo Fray', role: 'Manager', location: 'Polígono Este, Madrid'),
-    User(name: 'Manuel Ruiz', role: 'Manager', location: 'M-30, Madrid'),
-    User(name: 'Ivonne Black', role: 'Manager', location: 'Recoletos, Madrid'),
-    User(name: 'Alexander Smith', role: 'Manager', location: 'Atocha, Madrid'),
-    User(name: 'Troy Willfort', role: 'Worker', location: 'Atocha, Madrid'),
+    User(name: 'Candice Merle', role: 'Manager', location: 'Restaurante A'),
+    User(name: 'Andrea Kirsch', role: 'Worker', location: 'Restaurante A'),
+    User(name: 'Angelo Fray', role: 'Manager', location: 'Restaurante A'),
+    User(name: 'Manuel Ruiz', role: 'Manager', location: 'Restaurante A'),
+    User(name: 'Ivonne Black', role: 'Manager', location: 'Restaurante A'),
+    User(name: 'Alexander Smith', role: 'Manager', location: 'Restaurante A'),
+    User(name: 'Troy Willfort', role: 'Worker', location: 'Restaurante A'),
   ];
 
   @override

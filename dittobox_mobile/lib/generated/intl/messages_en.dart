@@ -63,7 +63,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "city": MessageLookupByLibrary.simpleMessage("City"),
         "code": MessageLookupByLibrary.simpleMessage("Code"),
         "companyName": MessageLookupByLibrary.simpleMessage("Company name"),
+        "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
         "confirmDelete": MessageLookupByLibrary.simpleMessage("Confirm delete"),
+        "confirmAssignWorker":
+            MessageLookupByLibrary.simpleMessage("Confirm Assignment"),
+        "confirmAssignWorkerMessage": MessageLookupByLibrary.simpleMessage(
+            "Are you sure you want to assign the worker to"),
         "containerName": MessageLookupByLibrary.simpleMessage("Container name"),
         "containerSelectionModal": MessageLookupByLibrary.simpleMessage(
             "This change will be recorded in this container’s historial."),
@@ -154,6 +159,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Processed foods"),
         "produce": MessageLookupByLibrary.simpleMessage("Produce"),
         "reassign": MessageLookupByLibrary.simpleMessage("Reassign"),
+        "reassignWorker": MessageLookupByLibrary.simpleMessage("Reassign worker"),
         "region": MessageLookupByLibrary.simpleMessage("Region"),
         "register": MessageLookupByLibrary.simpleMessage("Register"),
         "registerInstead":
@@ -198,8 +204,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "warehouse": MessageLookupByLibrary.simpleMessage("Warehouse"),
         "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
         "worker": MessageLookupByLibrary.simpleMessage("Worker"),
+        "workerAssignedSuccessfully": MessageLookupByLibrary.simpleMessage(
+            "Worker assigned successfully"),
         "workerDetails": MessageLookupByLibrary.simpleMessage("Worker details"),
         "workerList": MessageLookupByLibrary.simpleMessage("Worker List"),
+        "workerReassigned": MessageLookupByLibrary.simpleMessage(
+            "Worker reassigned successfully"),
         "workers": MessageLookupByLibrary.simpleMessage("Workers")
       };
 }

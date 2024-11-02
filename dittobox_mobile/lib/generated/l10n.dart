@@ -1190,12 +1190,52 @@ class S {
     );
   }
 
+  /// `Confirm`
+  String get confirm {
+    return Intl.message(
+      'Confirm',
+      name: 'confirm',
+      desc: 'Button label for confirming',
+      args: [],
+    );
+  }
+
   /// `Confirm delete`
   String get confirmDelete {
     return Intl.message(
       'Confirm delete',
       name: 'confirmDelete',
       desc: 'Button label for confirming deletion',
+      args: [],
+    );
+  }
+
+  /// `Confirm assign worker`
+  String get confirmAssignWorker {
+    return Intl.message(
+      'Confirm assign worker',
+      name: 'confirmAssignWorker',
+      desc: 'Label for confirming assigning worker',
+      args: [],
+    );
+  }
+
+  /// `Confirm assign woker message`
+  String get confirmAssignWorkerMessage {
+    return Intl.message(
+      'Confirm assign woker message',
+      name: 'confirmAssignWorkerMessage',
+      desc: 'Message for confirming assigning worker',
+      args: [],
+    );
+  }
+
+  /// `Worker assigned successfully`
+  String get workerAssignedSuccessfully {
+    return Intl.message(
+      'Worker assigned successfully',
+      name: 'workerAssignedSuccessfully',
+      desc: 'Success message for assigning worker',
       args: [],
     );
   }
@@ -1246,6 +1286,26 @@ class S {
       'Reassign',
       name: 'reassign',
       desc: 'Button label for reassigning',
+      args: [],
+    );
+  }
+
+  /// `Reassing worker`
+  String get reassignWorker {
+    return Intl.message(
+      'Reassing worker',
+      name: 'reassignWorker',
+      desc: 'Label for reassigning worker',
+      args: [],
+    );
+  }
+
+  /// `Worker reassigned`
+  String get workerReassigned {
+    return Intl.message(
+      'Worker reassigned',
+      name: 'workerReassigned',
+      desc: 'Message for worker reassigned',
       args: [],
     );
   }

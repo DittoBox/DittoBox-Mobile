@@ -1,4 +1,5 @@
 import 'package:dittobox_mobile/generated/l10n.dart';
+import 'package:dittobox_mobile/goups/presentation/widgets/reassign_worker_sheet.dart';
 import 'package:flutter/material.dart';
 
 class WorkerDetailScreen extends StatefulWidget {
@@ -74,7 +75,26 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
                 ),
                 const SizedBox(width: 16),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    showModalBottomSheet(
+                      context: context,
+                      builder: (context) {
+                        return ReassignWorkerSheet(
+                          facilities: ['Restaurante A', 'Almacén B'], // facilities example list
+                          currentFacility: widget.worker.location,
+                          onSave: (newFacility) {
+                            Navigator.pop(context); 
+
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text(S.of(context).workerReassigned),
+                              ),
+                            );
+                          },
+                        );
+                      },
+                    );
+                  },
                   child: Text(
                     S.of(context).reassign),
                 ),
