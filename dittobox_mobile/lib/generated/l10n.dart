@@ -1379,108 +1379,116 @@ class S {
       args: [],
     );
   }
+
   /// `User Information`
-String get userInformation {
-  return Intl.message(
-    'User Information',
-    name: 'userInformation',
-    desc: 'Label for user information section',
-    args: [],
-  );
-}
+  String get userInformation {
+    return Intl.message(
+      'User Information',
+      name: 'userInformation',
+      desc: 'Label for user information section',
+      args: [],
+    );
+  }
 
-/// `User Information Details`
-String get userInformationDetails {
-  return Intl.message(
-    'User Information Details',
-    name: 'userInformationDetails',
-    desc: 'Label for user information details section',
-    args: [],
-  );
-}
+  /// `User Information Details`
+  String get userInformationDetails {
+    return Intl.message(
+      'User Information Details',
+      name: 'userInformationDetails',
+      desc: 'Label for user information details section',
+      args: [],
+    );
+  }
 
-/// `Bank Account Owner`
-String get bankAccountOwner {
-  return Intl.message(
-    'Bank Account Owner',
-    name: 'bankAccountOwner',
-    desc: 'Label for bank account owner in user information section',
-    args: [],
-  );
-}
+  /// `Bank Account Owner`
+  String get bankAccountOwner {
+    return Intl.message(
+      'Bank Account Owner',
+      name: 'bankAccountOwner',
+      desc: 'Label for bank account owner in user information section',
+      args: [],
+    );
+  }
 
-/// `Edit Data`
-String get editData {
-  return Intl.message(
-    'Edit Data',
-    name: 'editData',
-    desc: 'Label for editing data button',
-    args: [],
-  );
-}
+  /// `Edit Data`
+  String get editData {
+    return Intl.message(
+      'Edit Data',
+      name: 'editData',
+      desc: 'Label for editing data button',
+      args: [],
+    );
+  }
 
-/// `Change Password`
-String get changePassword {
-  return Intl.message(
-    'Change Password',
-    name: 'changePassword',
-    desc: 'Label for changing password button',
-    args: [],
-  );
-}
+  /// `Change Password`
+  String get changePassword {
+    return Intl.message(
+      'Change Password',
+      name: 'changePassword',
+      desc: 'Label for changing password button',
+      args: [],
+    );
+  }
 
-/// `Account Information`
-String get accountInformation {
-  return Intl.message(
-    'Account Information',
-    name: 'accountInformation',
-    desc: 'Label for account information section',
-    args: [],
-  );
-}
+  /// `Account Information`
+  String get accountInformation {
+    return Intl.message(
+      'Account Information',
+      name: 'accountInformation',
+      desc: 'Label for account information section',
+      args: [],
+    );
+  }
 
-/// `Account Information Details`
-String get accountInformationDetails {
-  return Intl.message(
-    'Account Information Details',
-    name: 'accountInformationDetails',
-    desc: 'Label for account information details section',
-    args: [],
-  );
-}
+  /// `Account Information Details`
+  String get accountInformationDetails {
+    return Intl.message(
+      'Account Information Details',
+      name: 'accountInformationDetails',
+      desc: 'Label for account information details section',
+      args: [],
+    );
+  }
 
-/// `Business Name`
-String get businessName {
-  return Intl.message(
-    'Business Name',
-    name: 'businessName',
-    desc: 'Label for business name in account information section',
-    args: [],
-  );
-}
+  /// `Business Name`
+  String get businessName {
+    return Intl.message(
+      'Business Name',
+      name: 'businessName',
+      desc: 'Label for business name in account information section',
+      args: [],
+    );
+  }
 
-/// `Subscription Tier`
-String get subscriptionTier {
-  return Intl.message(
-    'Subscription Tier',
-    name: 'subscriptionTier',
-    desc: 'Label for subscription tier in account information section',
-    args: [],
-  );
-}
+  /// `Subscription Tier`
+  String get subscriptionTier {
+    return Intl.message(
+      'Subscription Tier',
+      name: 'subscriptionTier',
+      desc: 'Label for subscription tier in account information section',
+      args: [],
+    );
+  }
 
-/// `Manage Subscription`
-String get manageSubscription {
-  return Intl.message(
-    'Manage Subscription',
-    name: 'manageSubscription',
-    desc: 'Label for manage subscription button',
-    args: [],
-  );
-}
+  /// `Manage Subscription`
+  String get manageSubscription {
+    return Intl.message(
+      'Manage Subscription',
+      name: 'manageSubscription',
+      desc: 'Label for manage subscription button',
+      args: [],
+    );
+  }
 
-
-
+  /// `Account Details`
+  String get accountDetails {
+    return Intl.message(
+      'Account Details',
+      name: 'accountDetails',
+      desc: 'Label for account details section',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

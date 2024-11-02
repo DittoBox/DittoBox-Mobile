@@ -25,6 +25,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "aboutYourCompany":
             MessageLookupByLibrary.simpleMessage("About your company"),
         "account": MessageLookupByLibrary.simpleMessage("Account"),
+        "accountDetails":
+            MessageLookupByLibrary.simpleMessage("Account Details"),
+        "accountInformation":
+            MessageLookupByLibrary.simpleMessage("Account Information"),
+        "accountInformationDetails":
+            MessageLookupByLibrary.simpleMessage("Account Information Details"),
         "addContainer": MessageLookupByLibrary.simpleMessage("Add container"),
         "addContainers": MessageLookupByLibrary.simpleMessage("Add containers"),
         "addTemplate": MessageLookupByLibrary.simpleMessage("Add template"),
@@ -46,6 +52,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "applyTemplate": MessageLookupByLibrary.simpleMessage("Apply"),
         "areYouSureDelete": MessageLookupByLibrary.simpleMessage(
             "Are you sure you want to delete this?"),
+        "bankAccountOwner":
+            MessageLookupByLibrary.simpleMessage("Bank Account Owner"),
+        "businessName": MessageLookupByLibrary.simpleMessage("Business Name"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "cancelSubscription":
             MessageLookupByLibrary.simpleMessage("Cancel subscription"),
@@ -55,6 +64,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "carbonDioxideMin":
             MessageLookupByLibrary.simpleMessage("Min carbon dioxide"),
         "category": MessageLookupByLibrary.simpleMessage("Category"),
+        "changePassword":
+            MessageLookupByLibrary.simpleMessage("Change Password"),
         "changeToEnglish":
             MessageLookupByLibrary.simpleMessage("Change to English"),
         "changeToSpanish":
@@ -75,6 +86,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Detect all gases"),
         "discard": MessageLookupByLibrary.simpleMessage("Discard"),
         "edit": MessageLookupByLibrary.simpleMessage("Edit"),
+        "editData": MessageLookupByLibrary.simpleMessage("Edit Data"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "english": MessageLookupByLibrary.simpleMessage("English"),
         "ethylene": MessageLookupByLibrary.simpleMessage("Ethylene"),
@@ -97,6 +109,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "lastSync": MessageLookupByLibrary.simpleMessage("Last sync"),
         "logOut": MessageLookupByLibrary.simpleMessage("Log out"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
+        "manageSubscription":
+            MessageLookupByLibrary.simpleMessage("Manage Subscription"),
         "meat": MessageLookupByLibrary.simpleMessage("Meat"),
         "meats": MessageLookupByLibrary.simpleMessage("Meats"),
         "menu": MessageLookupByLibrary.simpleMessage("Menu"),
@@ -178,6 +192,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "subscription": MessageLookupByLibrary.simpleMessage("Subscription"),
         "subscriptionDetails":
             MessageLookupByLibrary.simpleMessage("Subscription details"),
+        "subscriptionTier":
+            MessageLookupByLibrary.simpleMessage("Subscription Tier"),
         "tempMax": MessageLookupByLibrary.simpleMessage("Max temperature"),
         "tempMin": MessageLookupByLibrary.simpleMessage("Min temperature"),
         "temperature": MessageLookupByLibrary.simpleMessage("Temperature"),
@@ -189,6 +205,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "title": MessageLookupByLibrary.simpleMessage("DittoBox"),
         "type": MessageLookupByLibrary.simpleMessage("Type"),
         "upgradePlan": MessageLookupByLibrary.simpleMessage("Upgrade plan"),
+        "userInformation":
+            MessageLookupByLibrary.simpleMessage("User Information"),
+        "userInformationDetails":
+            MessageLookupByLibrary.simpleMessage("User Information Details"),
         "username": MessageLookupByLibrary.simpleMessage("Username"),
         "usernameCannotBeEmpty":
             MessageLookupByLibrary.simpleMessage("Username cannot be empty"),

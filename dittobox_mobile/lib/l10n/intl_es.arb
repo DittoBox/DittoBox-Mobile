@@ -527,7 +527,7 @@
   "invalidEmail": "Correo electrónico inválido",
   "@invalidEmail": {
 	"description": "Mensaje de error para correo electrónico inválido"
-  }},
+  },
    "userInformation": "Información del Usuario",
   "@userInformation": {
     "description": "Etiqueta para la sección de información del usuario"
@@ -567,5 +567,13 @@
   "manageSubscription": "Administrar Suscripción",
   "@manageSubscription": {
     "description": "Etiqueta para el botón de administrar suscripción"
+  },
+  "accountDetails": "Detalles de la Cuenta",
+  "@accountDetails": {
+    "description": "Etiqueta para la sección de detalles de la cuenta"
+  },
+  "userDetails": "Detalles del Usuario",
+  "@userDetails": {
+    "description": "Etiqueta para la sección de detalles del usuario"
   }
 }

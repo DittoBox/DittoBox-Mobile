@@ -15,7 +15,7 @@ class _AccountDetailsScreenState extends State<AccountDetailsScreen> {
  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Account Details'),
+        title: Text(S.of(context).accountDetails),
       ),
       drawer: const CustomNavigationDrawer(currentRoute: AppRoutes.accountDetails),
       body: const Padding(

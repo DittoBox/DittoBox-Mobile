@@ -571,5 +571,9 @@
   "manageSubscription": "Manage Subscription",
   "@manageSubscription": {
     "description": "Label for manage subscription button"
+  },
+  "accountDetails": "Account Details",
+  "@accountDetails": {
+    "description": "Label for account details section"
   }
 }

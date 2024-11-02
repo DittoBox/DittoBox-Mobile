@@ -15,7 +15,7 @@ class _SubscriptionDetailsScreenState extends State<SubscriptionDetailsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Subscription Details'),
+        title: Text(S.of(context).subscriptionDetails),
       ),
       drawer: const CustomNavigationDrawer(currentRoute: AppRoutes.subscriptionDetails),
       body: const Padding(
