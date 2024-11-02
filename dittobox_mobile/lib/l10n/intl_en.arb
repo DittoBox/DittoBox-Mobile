@@ -531,5 +531,49 @@
   "invalidEmail": "Invalid email",
   "@invalidEmail": {
 	"description": "Error message when email is invalid"
+  },
+   "userInformation": "User Information",
+  "@userInformation": {
+    "description": "Label for user information section"
+  },
+  "userInformationDetails": "User Information Details",
+  "@userInformationDetails": {
+    "description": "Label for user information details section"
+  },
+  "bankAccountOwner": "Bank Account Owner",
+  "@bankAccountOwner": {
+    "description": "Label for bank account owner in user information section"
+  },
+  "editData": "Edit Data",
+  "@editData": {
+    "description": "Label for editing data button"
+  },
+  "changePassword": "Change Password",
+  "@changePassword": {
+    "description": "Label for changing password button"
+  },
+  "accountInformation": "Account Information",
+  "@accountInformation": {
+    "description": "Label for account information section"
+  },
+  "accountInformationDetails": "Account Information Details",
+  "@accountInformationDetails": {
+    "description": "Label for account information details section"
+  },
+  "businessName": "Business Name",
+  "@businessName": {
+    "description": "Label for business name in account information section"
+  },
+  "subscriptionTier": "Subscription Tier",
+  "@subscriptionTier": {
+    "description": "Label for subscription tier in account information section"
+  },
+  "manageSubscription": "Manage Subscription",
+  "@manageSubscription": {
+    "description": "Label for manage subscription button"
+  },
+  "accountDetails": "Account Details",
+  "@accountDetails": {
+    "description": "Label for account details section"
   }
 }

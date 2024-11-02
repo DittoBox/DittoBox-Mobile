@@ -25,6 +25,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "aboutYourCompany":
             MessageLookupByLibrary.simpleMessage("Sobre tu empresa"),
         "account": MessageLookupByLibrary.simpleMessage("Cuenta"),
+        "accountDetails":
+            MessageLookupByLibrary.simpleMessage("Detalles de la Cuenta"),
+        "accountInformation":
+            MessageLookupByLibrary.simpleMessage("Información de la Cuenta"),
+        "accountInformationDetails": MessageLookupByLibrary.simpleMessage(
+            "Detalles de Información de la Cuenta"),
         "addContainer":
             MessageLookupByLibrary.simpleMessage("Agregar contenedor"),
         "addContainers":
@@ -51,6 +57,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "applyTemplate": MessageLookupByLibrary.simpleMessage("Aplicar"),
         "areYouSureDelete": MessageLookupByLibrary.simpleMessage(
             "¿Estás seguro de que deseas eliminar este elemento?"),
+        "bankAccountOwner": MessageLookupByLibrary.simpleMessage(
+            "Propietario de la Cuenta Bancaria"),
+        "businessName":
+            MessageLookupByLibrary.simpleMessage("Nombre del Negocio"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancelar"),
         "cancelSubscription":
             MessageLookupByLibrary.simpleMessage("Cancelar suscripción"),
@@ -61,6 +71,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "carbonDioxideMin":
             MessageLookupByLibrary.simpleMessage("Dióxido de carbono Min"),
         "category": MessageLookupByLibrary.simpleMessage("Categoría"),
+        "changePassword":
+            MessageLookupByLibrary.simpleMessage("Cambiar Contraseña"),
         "changeToEnglish":
             MessageLookupByLibrary.simpleMessage("Change to Spanish"),
         "changeToSpanish":
@@ -89,6 +101,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Detectar todos los gases"),
         "discard": MessageLookupByLibrary.simpleMessage("Descartar"),
         "edit": MessageLookupByLibrary.simpleMessage("Editar"),
+        "editData": MessageLookupByLibrary.simpleMessage("Editar Datos"),
         "email": MessageLookupByLibrary.simpleMessage("Correo electrónico"),
         "english": MessageLookupByLibrary.simpleMessage("Inglés"),
         "ethylene": MessageLookupByLibrary.simpleMessage("Etileno"),
@@ -115,6 +128,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Última sincronización"),
         "logOut": MessageLookupByLibrary.simpleMessage("Cerrar sesión"),
         "login": MessageLookupByLibrary.simpleMessage("Iniciar sesión"),
+        "manageSubscription":
+            MessageLookupByLibrary.simpleMessage("Administrar Suscripción"),
         "meats": MessageLookupByLibrary.simpleMessage("Carnes"),
         "menu": MessageLookupByLibrary.simpleMessage("Menú"),
         "more": MessageLookupByLibrary.simpleMessage("Más"),
@@ -193,6 +208,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "subscription": MessageLookupByLibrary.simpleMessage("Suscripción"),
         "subscriptionDetails":
             MessageLookupByLibrary.simpleMessage("Detalles de la suscripción"),
+        "subscriptionTier":
+            MessageLookupByLibrary.simpleMessage("Nivel de Suscripción"),
         "tempMax": MessageLookupByLibrary.simpleMessage("Temperatura máxima"),
         "tempMin": MessageLookupByLibrary.simpleMessage("Temperatura mínima"),
         "temperature": MessageLookupByLibrary.simpleMessage("Temperatura"),
@@ -205,6 +222,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "title": MessageLookupByLibrary.simpleMessage("DittoBox"),
         "type": MessageLookupByLibrary.simpleMessage("Tipo"),
         "upgradePlan": MessageLookupByLibrary.simpleMessage("Actualizar plan"),
+        "userInformation":
+            MessageLookupByLibrary.simpleMessage("Información del Usuario"),
+        "userInformationDetails": MessageLookupByLibrary.simpleMessage(
+            "Detalles de Información del Usuario"),
         "username": MessageLookupByLibrary.simpleMessage("Nombre de usuario"),
         "usernameCannotBeEmpty": MessageLookupByLibrary.simpleMessage(
             "El nombre de usuario no puede estar vacío"),
