@@ -527,5 +527,45 @@
   "invalidEmail": "Correo electrónico inválido",
   "@invalidEmail": {
 	"description": "Mensaje de error para correo electrónico inválido"
+  }},
+   "userInformation": "Información del Usuario",
+  "@userInformation": {
+    "description": "Etiqueta para la sección de información del usuario"
+  },
+  "userInformationDetails": "Detalles de Información del Usuario",
+  "@userInformationDetails": {
+    "description": "Etiqueta para la sección de detalles de información del usuario"
+  },
+  "bankAccountOwner": "Propietario de la Cuenta Bancaria",
+  "@bankAccountOwner": {
+    "description": "Etiqueta para el propietario de la cuenta bancaria en la sección de información del usuario"
+  },
+  "editData": "Editar Datos",
+  "@editData": {
+    "description": "Etiqueta para el botón de editar datos"
+  },
+  "changePassword": "Cambiar Contraseña",
+  "@changePassword": {
+    "description": "Etiqueta para el botón de cambio de contraseña"
+  },
+  "accountInformation": "Información de la Cuenta",
+  "@accountInformation": {
+    "description": "Etiqueta para la sección de información de la cuenta"
+  },
+  "accountInformationDetails": "Detalles de Información de la Cuenta",
+  "@accountInformationDetails": {
+    "description": "Etiqueta para la sección de detalles de información de la cuenta"
+  },
+  "businessName": "Nombre del Negocio",
+  "@businessName": {
+    "description": "Etiqueta para el nombre del negocio en la sección de información de la cuenta"
+  },
+  "subscriptionTier": "Nivel de Suscripción",
+  "@subscriptionTier": {
+    "description": "Etiqueta para el nivel de suscripción en la sección de información de la cuenta"
+  },
+  "manageSubscription": "Administrar Suscripción",
+  "@manageSubscription": {
+    "description": "Etiqueta para el botón de administrar suscripción"
   }
 }
