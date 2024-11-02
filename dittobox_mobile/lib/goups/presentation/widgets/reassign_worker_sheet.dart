@@ -8,11 +8,11 @@ class ReassignWorkerSheet extends StatefulWidget {
   final Function(String) onSave; // Callback para enviar el nuevo facility seleccionado
 
   const ReassignWorkerSheet({
-    Key? key,
+    super.key,
     required this.facilities,
     required this.currentFacility,
     required this.onSave,
-  }) : super(key: key);
+  });
 
   @override
   _ReassignWorkerSheetState createState() => _ReassignWorkerSheetState();

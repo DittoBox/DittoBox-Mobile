@@ -1,5 +1,4 @@
 import 'package:dittobox_mobile/generated/l10n.dart';
-import 'package:dittobox_mobile/goups/infrastructure/data_sources/facilities_service.dart';
 import 'package:dittobox_mobile/goups/presentation/widgets/confirm_assign_worker_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:dittobox_mobile/goups/infrastructure/models/facilities.dart';
