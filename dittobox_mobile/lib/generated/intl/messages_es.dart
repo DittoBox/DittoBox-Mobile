@@ -70,8 +70,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "code": MessageLookupByLibrary.simpleMessage("Código"),
         "companyName":
             MessageLookupByLibrary.simpleMessage("Nombre de la empresa"),
+        "confirm": MessageLookupByLibrary.simpleMessage("Confirmar"),
         "confirmDelete":
             MessageLookupByLibrary.simpleMessage("Confirmar eliminación"),
+        "confirmAssignWorker":
+            MessageLookupByLibrary.simpleMessage("Confirmar asignación"),
+        "confirmAssignWokerMessage": MessageLookupByLibrary.simpleMessage(
+            "¿Estás seguro de que deseas asignar al trabajador a"),
         "containerName":
             MessageLookupByLibrary.simpleMessage("Nombre del contenedor"),
         "containerSelectionModal": MessageLookupByLibrary.simpleMessage(
@@ -207,6 +212,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "warehouse": MessageLookupByLibrary.simpleMessage("Almacén"),
         "welcome": MessageLookupByLibrary.simpleMessage("Bienvenido"),
         "worker": MessageLookupByLibrary.simpleMessage("Trabajador"),
+        "workerAssignedSuccessfully" : MessageLookupByLibrary.simpleMessage("Trabajador asignado con éxito"),
         "workerDetails":
             MessageLookupByLibrary.simpleMessage("Detalles del trabajador"),
         "workerList":

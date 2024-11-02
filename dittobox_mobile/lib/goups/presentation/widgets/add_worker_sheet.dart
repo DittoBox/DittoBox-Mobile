@@ -1,12 +1,13 @@
 import 'package:dittobox_mobile/generated/l10n.dart';
 import 'package:dittobox_mobile/goups/infrastructure/data_sources/facilities_service.dart';
+import 'package:dittobox_mobile/goups/presentation/widgets/confirm_assign_worker_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:dittobox_mobile/goups/infrastructure/models/facilities.dart';
 
 class AddWorkerSheet extends StatefulWidget {
-  final Facility facility;
+  final Facility? facility;
 
-  const AddWorkerSheet({super.key, required this.facility});
+  const AddWorkerSheet({super.key, this.facility});
 
   @override
   _AddWorkerSheetState createState() => _AddWorkerSheetState();
@@ -17,19 +18,39 @@ class _AddWorkerSheetState extends State<AddWorkerSheet> {
   String? selectedRole;
   String? selectedFacility;
   List<Facility> facilities = [];
-  final FacilitiesService _facilitiesService = FacilitiesService();
+  // final FacilitiesService _facilitiesService = FacilitiesService();
   bool isLoading = true; // Indicador de carga
 
   @override
   void initState() {
     super.initState();
-    selectedFacility = widget.facility.title; // Selecciona automáticamente la instalación
+    selectedFacility = widget.facility?.title; // Selecciona automáticamente la instalación
     _loadFacilities();
   }
 
   Future<void> _loadFacilities() async {
     try {
-      final facilitiesList = await _facilitiesService.getFacilities();
+      // final facilitiesList = await _facilitiesService.getFacilities();
+
+      // provitional data
+      final facilitiesList = [
+        Facility(
+          title: 'Restaurante A',
+          location: 'Ubicación A',
+          type: 'restaurant',
+          containers: 10,
+          alerts: 2,
+          workers: 5,
+        ),
+        Facility(
+          title: 'Almacén B',
+          location: 'Ubicación B',
+          type: 'warehouse',
+          containers: 20,
+          alerts: 1,
+          workers: 8,
+        ),
+      ];
       setState(() {
         facilities = facilitiesList;
         isLoading = false; // Finaliza la carga
@@ -168,7 +189,22 @@ class _AddWorkerSheetState extends State<AddWorkerSheet> {
                 const SizedBox(width: 8),
                 FilledButton(
                   onPressed: () {
-                    // Acción para guardar el trabajador
+                    showDialog(
+                      context: context, 
+                      builder: (BuildContext context) {
+                        return ConfirmAssignWorkerDialog(
+                          facilityName: selectedFacility ?? '',
+                          onConfirm: () {
+                            // Lógica para asignar trabajador
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text(S.of(context).workerAssignedSuccessfully),
+                              ),
+                            );
+                          },
+                        );
+                      }
+                    );
                   },
                   child: Text(S.of(context).save),
                 ),
@@ -194,7 +230,7 @@ void showAddWorkerSheet(BuildContext context, Facility? facility) {
           padding: EdgeInsets.only(
             bottom: MediaQuery.of(context).viewInsets.bottom,
           ),
-          child: AddWorkerSheet(facility: facility!),
+          child: AddWorkerSheet(facility: facility),
         ),
       );
     },
