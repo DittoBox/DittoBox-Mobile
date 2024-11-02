@@ -1,515 +1,535 @@
 {
-    "@@locale": "en",
-    "title": "DittoBox",
-    "@title": {
-      "description": "The title of the application"
-    },
-    "welcome": "Welcome",
-    "@welcome": {
-      "description": "Welcome message for the user"
-    },
-    "facilities": "Facilities",
-    "@facilities": {
-      "description": "Label for facilities section"
-    },
-    "newFacility": "New facility",
-    "@newFacility": {
-      "description": "Label for adding a new facility"
-    },
-    "containers": "Containers",
-    "@containers": {
-      "description": "Label for containers section"
-    },
-    "workers": "Workers",
-    "@workers": {
-      "description": "Label for workers section"
-    },
-    "pendingAlerts": "Pending Alerts",
-    "@pendingAlerts": {
-      "description": "Label for pending alerts section"
-    },
-    "addContainers": "Add containers",
-    "@addContainers": {
-      "description": "Button label for adding containers"
-    },
-    "addWorkers": "Add workers",
-    "@addWorkers": {
-      "description": "Button label for adding workers"
-    },
-    "checkAlerts": "Check alerts",
-    "@checkAlerts": {
-      "description": "Button label for checking alerts"
-    },
-    "menu": "Menu",
-    "@menu": {
-      "description": "Label for menu"
-    },
-    "settings": "Settings",
-    "@settings": {
-      "description": "Label for settings"
-    },
-    "account": "Account",
-    "@account": {
-      "description": "Label for account section"
-    },
-    "subscription": "Subscription",
-    "@subscription": {
-      "description": "Label for subscription section"
-    },
-    "notifications": "Notifications",
-    "@notifications": {
-      "description": "Label for notifications section"
-    },
-    "logOut": "Log out",
-    "@logOut": {
-      "description": "Button label for logging out"
-    },
-    "facilityName": "Facility name",
-    "@facilityName": {
-      "description": "Label for facility name input field"
-    },
-    "city": "City",
-    "@city": {
-      "description": "Label for city input field"
-    },
-    "region": "Region",
-    "@region": {
-      "description": "Label for region input field"
-    },
-    "cancel": "Cancel",
-    "@cancel": {
-      "description": "Button label for canceling an action"
-    },
-    "save": "Save",
-    "@save": {
-      "description": "Button label for saving an action"
-    },
-    "aboutYourCompany": "About your company",
-    "@aboutYourCompany": {
-      "description": "Label for company information section"
-    },
-    "companyName": "Company name",
-    "@companyName": {
-      "description": "Label for company name input field"
-    },
-    "identificationNumber": "Identification number",
-    "@identificationNumber": {
-      "description": "Label for company identification number input field"
-    },
-    "country": "Country",
-    "@country": {
-      "description": "Label for country input field"
-    },
-    "register": "Register",
-    "@register": {
-      "description": "Button label for registering"
-    },
-    "login": "Login",
-    "@login": {
-      "description": "Button label for logging in"
-    },
-    "username": "Username",
-    "@username": {
-      "description": "Label for username input field"
-    },
-    "password": "Password",
-    "@password": {
-      "description": "Label for password input field"
-    },
-    "forgotPassword": "Forgot your password?",
-    "@forgotPassword": {
-      "description": "Link text for forgotten password"
-    },
-    "registerInstead": "Register instead",
-    "@registerInstead": {
-      "description": "Link text for switching to registration"
-    },
-    "search": "Search",
-    "@search": {
-      "description": "Button label for searching"
-    },
-    "more": "More",
-    "@more": {
-      "description": "Label for more options"
-    },
-    "failedToFetchFacilities": "Failed to fetch facilities",
-    "@failedToFetchFacilities": {
-      "description": "Error message when failing to fetch facilities"
-    },
-    "alerts": "Alerts",
-    "@alerts": {
-      "description": "Label for alerts"
-    },
-    "warehouse": "Warehouse",
-    "@warehouse": {
-      "description": "Label for werehouse section"
-    },
-    "restaurant": "Restaurant",
-    "@restaurant": {
-      "description": "Label for restaurant section"
-    },
-    "name": "Name",
-    "email": "Email",
-    "worker": "Worker",
-    "owner": "Owner",
-    "alreadyHaveAccount": "Already have an account? Login instead",
-    "@name": {
-        "description": "Label for name input field"
-    },
-    "@email": {
-        "description": "Label for email input field"
-    },
-    "@worker": {
-        "description": "Label for worker user type"
-    },
-    "@owner": {
-        "description": "Label for owner user type"
-    },
-    "@alreadyHaveAccount": {
-        "description": "Text for already have an account link"
-    },
-    "changeToSpanish": "Change to Spanish",
-    "@changeToSpanish": {
-      "description": "Button label for changing the language to Spanish"
-    },
-    "templates": "Templates",
-    "@templates": {
-      "description": "Label for templates section"
-    },
-    "template": "Template",
-    "@template": {
-      "description": "Label for template section"
-    },
-    "changeToEnglish": "Change to English",
-    "@changeToEnglish": {
-      "description": "Button label for changing the language to English"
-    },
-    "templateLibrary": "Template Library",
-    "@templateLibrary": {
-      "description": "Label for template library section"
-    },
-    "applyTemplate": "Apply",
-    "@applyTemplate": {
-      "description": "Button label for applying a template"
-    },
-    "addTemplate": "Add template",
-    "@addTemplate": {
-      "description": "Button label for adding a template"
-    },
-    "pleaseEnterName": "Please enter a name",
-    "@pleaseEnterName": {
-      "description": "Error message when name is not entered"
-    },
-    "pleaseEnterDescription": "Please enter a description",
-    "@pleaseEnterDescription": {
-      "description": "Error message when description is not entered"
-    },
-    "pleaseEnterCategory": "Please enter a category",
-    "@pleaseEnterCategory": {
-      "description": "Error message when category is not entered"
-    },
-    "pleaseEnterTempMin": "Please enter a Min temperature",
-    "@pleaseEnterTempMin": {
-      "description": "Error message when Min temperature is not entered"
-    },
-    "pleaseEnterTempMax": "Please enter a Max temperature",
-    "@pleaseEnterTempMax": {
-      "description": "Error message when Max temperature is not entered"
-    },
-    "pleaseEnterHumidityMin": "Please enter a Min humidity",
-    "@pleaseEnterHumidityMin": {
-      "description": "Error message when Min humidity is not entered"
-    },
-    "pleaseEnterHumidityMax": "Please enter a Max humidity",
-    "@pleaseEnterHumidityMax": {
-      "description": "Error message when Max humidity is not entered"
-    },
-    "pleaseEnterTemp": "Please enter a temperature",
-    "@pleaseEnterTemp": {
-      "description": "Error message when temperature is not entered"
-    },
-    "pleaseEnterHumidity": "Please enter a humidity",
-    "@pleaseEnterHumidity": {
-      "description": "Error message when humidity is not entered"
-    },
-    "pleaseEnterEthylene": "Pleasse enter an ethylene",
-    "@pleaseEnterEthylene": {
-      "description": "Error message when ethylene is not entered"
-    },
-    "description": "Description",
-    "@description": {
-      "description": "Label for description section"
-    },
-    "category": "Category",
-    "@category": {
-      "description": "Label for category section"
-    },
-    "tempMin": "Min temperature",
-    "@tempMin": {
-      "description": "Label for Min temperature section"
-    },
-    "tempMax": "Max temperature",
-    "@tempMax": {
-      "description": "Label for Max temperature section"
-    },
-    "humidityMin": "Min humidity",
-    "@humidityMin": {
-      "description": "Label for Min humidity section"
-    },
-    "humidityMax": "Max humidity",
-    "@humidityMax": {
-      "description": "Label for Max humidity section"
-    },
-    "ethylene": "Ethylene",
-    "@ethylene": {
-      "description": "Label for ethylene section"
-    },
-    "templateName": "Template name",
-    "@templateName": {
-      "description": "Label for template name section"
-    },
-    "produce": "Produce",
-    "@produce": {
-      "description": "Label for produce section"
-    },
-    "meat": "Meat",
-    "@meat": {
-      "description": "Label for meat section"
-    },
-    "animalDerived": "Animal derived",
-    "@animalDerived": {
-      "description": "Label for animal derived section"
-    },
-    "processedFood": "Processed food",
-    "@processedFood": {
-      "description": "Label for processed food section"
-    },
-    "pleaseSelectCategory": "Please select a category",
-    "@pleaseSelectCategory": {
-      "description": "Error message when category is not selected"
-    },
-    "pleaseEnterTemplateName": "Please enter a template name",
-    "@pleaseEnterTemplateName": {
-      "description": "Error message when template name is not entered"
-    },
-    "gasDetection": "Gas detection",
-    "@gasDetection": {
-      "description": "Label for gas detection section"
-    },
-    "oxygen": "Oxygen",
-    "@oxygen": {
-      "description": "Label for oxygen section"
-    },
-    "carbonDioxide": "Carbon dioxide",
-    "@carbonDioxide": {
-      "description": "Label for carbon dioxide section"
-    },
-    "ammoniaAndSulfurDioxide": "Ammonia and sulfur dioxide",
-    "@ammoniaAndSulfurDioxide": {
-      "description": "Label for ammonia and sulfur dioxide section"
-    },
-    "discard": "Discard",
-    "@discard": {
-      "description": "Button label for discarding an action"
-    },
-    "proccessedFood": "Processed food",
-    "@proccessedFood": {
-      "description": "Label for processed food section"
-    },
-    "meats": "Meats",
-    "@meats": {
-      "description": "Label for meats section"
-    },
-    "processedFoods": "Processed foods",
-    "@processedFoods": {
-      "description": "Label for processed foods section"
-    },
-    "type": "Type",
-    "@type": {
-      "description": "Label for type section"
-    },
-    "language": "Language",
-    "@language": {
-      "description": "Label for language section"
-    },
-    "english": "English",
-    "@english": {
-      "description": "Label for English language"
-    },
-    "spanish": "Spanish",
-    "@spanish": {
-      "description": "Label for Spanish language"
-    },
-    "selectLanguage": "Select language",
-    "@selectLanguage": {
-      "description": "Label for selecting language"
-    },
-    "carbonDioxideMin": "Min carbon dioxide",
-    "@carbonDioxideMin": {
-      "description": "Label for Min carbon dioxide section"
-    },
-    "carbonDioxideMax": "Max carbon dioxide",
-    "@carbonDioxideMax": {
-      "description": "Label for Max carbon dioxide section"
-    },
-    "ammoniaAndSulfurDioxideMin": "Min ammonia and sulfur dioxide",
-    "@ammoniaAndSulfurDioxideMin": {
-      "description": "Label for Min ammonia and sulfur dioxide section"
-    },
-    "ammoniaAndSulfurDioxideMax": "Max ammonia and sulfur dioxide",
-    "@ammoniaAndSulfurDioxideMax": {
-      "description": "Label for Max ammonia and sulfur dioxide section"
-    },
-    "pleaseEnterOxygenMin": "Please enter a Min oxygen",
-    "@pleaseEnterOxygenMin": {
-      "description": "Error message when Min oxygen is not entered"
-    },
-    "ethyleneMin": "Min ethylene",
-    "@ethyleneMin": {
-      "description": "Label for Min ethylene section"
-    },
-    "ethyleneMax": "Max ethylene",
-    "@ethyleneMax": {
-      "description": "Label for Max ethylene section"
-    },
-    "ammoniaMin": "Min ammonia",
-    "@ammoniaMin": {
-      "description": "Label for Min ammonia section"
-    },
-    "ammoniaMax": "Max ammonia",
-    "@ammoniaMax": {
-      "description": "Label for Max ammonia section"
-    },
-    "oxygenMin": "Min oxygen",
-    "@oxygenMin": {
-      "description": "Label for Min oxygen section"
-    },
-    "oxygenMax": "Max oxygen",
-    "@oxygenMax": {
-      "description": "Label for Max oxygen section"
-    },
-    "detectAllGases": "Detect all gases",
-    "@detectAllGases": {
-      "description": "Label for detecting all gases"
-    },
-    "newTemplate": "New template",
-    "@newTemplate": {
-      "description": "Label for adding a new template"
-    },
-    "humidity": "Humidity",
-    "@humidity": {
-      "description": "Label for humidity section"
-    },
-    "temperature": "Temperature",
-    "@temperature": {
-      "description": "Label for temperature section"
-    },
-    "selectContainers": "Select containers",
-    "@selectContainers": {
-      "description": "Label for selecting containers"
-    },
-    "containerSelectionModal": "This change will be recorded in this container’s historial.",
-    "@containerSelectionModal": {
-      "description": "Modal message for container selection"
-    },
-    "newContainer": "New container",
-    "@newContainer": {
-      "description": "Label for adding a new container"
-    },
-    "containerName": "Container name",
-    "@containerName": {
-      "description": "Label for container name section"
-    },
-    "code": "Code",
-    "@code": {
-      "description": "Label for code section"
-    },
-    "pleaseEnterContainerName": "Please enter a container name",
-    "@pleaseEnterContainerName": {
-      "description": "Error message when container name is not entered"
-    },
-    "selectFacility": "Select facility",
-    "@selectFacility": {
-      "description": "Label for selecting facility"
-    },
-    "role": "Role",
-    "@role": {
-      "description": "Label for role section"
-    },
-    "addWorker": "Add worker",
-    "@addWorker": {
-      "description": "Button label for adding a worker"
-    },
-    "workerList" : "Worker List",
-    "@workerList" : {
-      "description": "Label for Worker List"
-    },
-    "addContainer": "Add container",
-    "@addContainer": {
-      "description": "Button label for adding a container"
-    },
-    "delete": "Delete",
-    "@delete": {
-      "description": "Button label for deleting"
-    },
-    "areYouSureDelete": "Are you sure you want to delete this?",
-    "@areYouSureDelete": {
-      "description": "Confirmation message for deleting"
-    },
-    "confirmDelete": "Confirm delete",
-    "@confirmDelete": {
-      "description": "Button label for confirming deletion"
-    },
-    "all": "All",
-    "@all": {
-      "description": "Label for all section"
-    },
-    "edit": "Edit",
-    "@edit": {
-      "description": "Button label for editing"
-    },
-    "workerDetails": "Worker details",
-    "@workerDetails": {
-      "description": "Label for worker details section"
-    },
-    "roleManagement": "Role management",
-    "@roleManagement": {
-      "description": "Label for role management section"
-    },
-    "reassign": "Reassign",
-    "@reassign": {
-      "description": "Button label for reassigning"
-    },
-    "subscriptionDetails": "Subscription details",
-    "@subscriptionDetails": {
-      "description": "Label for subscription details section"
-    },
-    "upgradePlan": "Upgrade plan",
-    "@upgradePlan": {
-      "description": "Button label for upgrading plan"
-    },
-    "paymentInformation": "Payment information",
-    "@paymentInformation": {
-      "description": "Label for payment information section"
-    },
-    "cancelSubscription": "Cancel subscription",
-    "@cancelSubscription": {
-      "description": "Button label for canceling subscription"
-    },
-    "viewWorkers": "View workers",
-    "@viewWorkers": {
-      "description": "Button label for viewing workers"
-    },
-    "viewContainers": "View containers",
-    "@viewContainers": {
-      "description": "Button label for viewing containers"
-    },
-    "lastSync": "Last sync",
-    "@lastSync": {
-      "description": "Label for last sync section"
-    },
-    "statusContainer": "Status",
-    "@statusContainer": {
-      "description": "Label for status section"
-    }
+  "@@locale": "en",
+  "title": "DittoBox",
+  "@title": {
+    "description": "The title of the application"
+  },
+  "welcome": "Welcome",
+  "@welcome": {
+    "description": "Welcome message for the user"
+  },
+  "facilities": "Facilities",
+  "@facilities": {
+    "description": "Label for facilities section"
+  },
+  "newFacility": "New facility",
+  "@newFacility": {
+    "description": "Label for adding a new facility"
+  },
+  "containers": "Containers",
+  "@containers": {
+    "description": "Label for containers section"
+  },
+  "workers": "Workers",
+  "@workers": {
+    "description": "Label for workers section"
+  },
+  "pendingAlerts": "Pending Alerts",
+  "@pendingAlerts": {
+    "description": "Label for pending alerts section"
+  },
+  "addContainers": "Add containers",
+  "@addContainers": {
+    "description": "Button label for adding containers"
+  },
+  "addWorkers": "Add workers",
+  "@addWorkers": {
+    "description": "Button label for adding workers"
+  },
+  "checkAlerts": "Check alerts",
+  "@checkAlerts": {
+    "description": "Button label for checking alerts"
+  },
+  "menu": "Menu",
+  "@menu": {
+    "description": "Label for menu"
+  },
+  "settings": "Settings",
+  "@settings": {
+    "description": "Label for settings"
+  },
+  "account": "Account",
+  "@account": {
+    "description": "Label for account section"
+  },
+  "subscription": "Subscription",
+  "@subscription": {
+    "description": "Label for subscription section"
+  },
+  "notifications": "Notifications",
+  "@notifications": {
+    "description": "Label for notifications section"
+  },
+  "logOut": "Log out",
+  "@logOut": {
+    "description": "Button label for logging out"
+  },
+  "facilityName": "Facility name",
+  "@facilityName": {
+    "description": "Label for facility name input field"
+  },
+  "city": "City",
+  "@city": {
+    "description": "Label for city input field"
+  },
+  "region": "Region",
+  "@region": {
+    "description": "Label for region input field"
+  },
+  "cancel": "Cancel",
+  "@cancel": {
+    "description": "Button label for canceling an action"
+  },
+  "save": "Save",
+  "@save": {
+    "description": "Button label for saving an action"
+  },
+  "aboutYourCompany": "About your company",
+  "@aboutYourCompany": {
+    "description": "Label for company information section"
+  },
+  "companyName": "Company name",
+  "@companyName": {
+    "description": "Label for company name input field"
+  },
+  "identificationNumber": "Identification number",
+  "@identificationNumber": {
+    "description": "Label for company identification number input field"
+  },
+  "country": "Country",
+  "@country": {
+    "description": "Label for country input field"
+  },
+  "register": "Register",
+  "@register": {
+    "description": "Button label for registering"
+  },
+  "login": "Login",
+  "@login": {
+    "description": "Button label for logging in"
+  },
+  "username": "Username",
+  "@username": {
+    "description": "Label for username input field"
+  },
+  "password": "Password",
+  "@password": {
+    "description": "Label for password input field"
+  },
+  "forgotPassword": "Forgot your password?",
+  "@forgotPassword": {
+    "description": "Link text for forgotten password"
+  },
+  "registerInstead": "Register instead",
+  "@registerInstead": {
+    "description": "Link text for switching to registration"
+  },
+  "search": "Search",
+  "@search": {
+    "description": "Button label for searching"
+  },
+  "more": "More",
+  "@more": {
+    "description": "Label for more options"
+  },
+  "failedToFetchFacilities": "Failed to fetch facilities",
+  "@failedToFetchFacilities": {
+    "description": "Error message when failing to fetch facilities"
+  },
+  "alerts": "Alerts",
+  "@alerts": {
+    "description": "Label for alerts"
+  },
+  "warehouse": "Warehouse",
+  "@warehouse": {
+    "description": "Label for werehouse section"
+  },
+  "restaurant": "Restaurant",
+  "@restaurant": {
+    "description": "Label for restaurant section"
+  },
+  "name": "Name",
+  "email": "Email",
+  "worker": "Worker",
+  "owner": "Owner",
+  "alreadyHaveAccount": "Already have an account? Login instead",
+  "@name": {
+    "description": "Label for name input field"
+  },
+  "@email": {
+    "description": "Label for email input field"
+  },
+  "@worker": {
+    "description": "Label for worker user type"
+  },
+  "@owner": {
+    "description": "Label for owner user type"
+  },
+  "@alreadyHaveAccount": {
+    "description": "Text for already have an account link"
+  },
+  "changeToSpanish": "Change to Spanish",
+  "@changeToSpanish": {
+    "description": "Button label for changing the language to Spanish"
+  },
+  "templates": "Templates",
+  "@templates": {
+    "description": "Label for templates section"
+  },
+  "template": "Template",
+  "@template": {
+    "description": "Label for template section"
+  },
+  "changeToEnglish": "Change to English",
+  "@changeToEnglish": {
+    "description": "Button label for changing the language to English"
+  },
+  "templateLibrary": "Template Library",
+  "@templateLibrary": {
+    "description": "Label for template library section"
+  },
+  "applyTemplate": "Apply",
+  "@applyTemplate": {
+    "description": "Button label for applying a template"
+  },
+  "addTemplate": "Add template",
+  "@addTemplate": {
+    "description": "Button label for adding a template"
+  },
+  "pleaseEnterName": "Please enter a name",
+  "@pleaseEnterName": {
+    "description": "Error message when name is not entered"
+  },
+  "pleaseEnterDescription": "Please enter a description",
+  "@pleaseEnterDescription": {
+    "description": "Error message when description is not entered"
+  },
+  "pleaseEnterCategory": "Please enter a category",
+  "@pleaseEnterCategory": {
+    "description": "Error message when category is not entered"
+  },
+  "pleaseEnterTempMin": "Please enter a Min temperature",
+  "@pleaseEnterTempMin": {
+    "description": "Error message when Min temperature is not entered"
+  },
+  "pleaseEnterTempMax": "Please enter a Max temperature",
+  "@pleaseEnterTempMax": {
+    "description": "Error message when Max temperature is not entered"
+  },
+  "pleaseEnterHumidityMin": "Please enter a Min humidity",
+  "@pleaseEnterHumidityMin": {
+    "description": "Error message when Min humidity is not entered"
+  },
+  "pleaseEnterHumidityMax": "Please enter a Max humidity",
+  "@pleaseEnterHumidityMax": {
+    "description": "Error message when Max humidity is not entered"
+  },
+  "pleaseEnterTemp": "Please enter a temperature",
+  "@pleaseEnterTemp": {
+    "description": "Error message when temperature is not entered"
+  },
+  "pleaseEnterHumidity": "Please enter a humidity",
+  "@pleaseEnterHumidity": {
+    "description": "Error message when humidity is not entered"
+  },
+  "pleaseEnterEthylene": "Pleasse enter an ethylene",
+  "@pleaseEnterEthylene": {
+    "description": "Error message when ethylene is not entered"
+  },
+  "description": "Description",
+  "@description": {
+    "description": "Label for description section"
+  },
+  "category": "Category",
+  "@category": {
+    "description": "Label for category section"
+  },
+  "tempMin": "Min temperature",
+  "@tempMin": {
+    "description": "Label for Min temperature section"
+  },
+  "tempMax": "Max temperature",
+  "@tempMax": {
+    "description": "Label for Max temperature section"
+  },
+  "humidityMin": "Min humidity",
+  "@humidityMin": {
+    "description": "Label for Min humidity section"
+  },
+  "humidityMax": "Max humidity",
+  "@humidityMax": {
+    "description": "Label for Max humidity section"
+  },
+  "ethylene": "Ethylene",
+  "@ethylene": {
+    "description": "Label for ethylene section"
+  },
+  "templateName": "Template name",
+  "@templateName": {
+    "description": "Label for template name section"
+  },
+  "produce": "Produce",
+  "@produce": {
+    "description": "Label for produce section"
+  },
+  "meat": "Meat",
+  "@meat": {
+    "description": "Label for meat section"
+  },
+  "animalDerived": "Animal derived",
+  "@animalDerived": {
+    "description": "Label for animal derived section"
+  },
+  "processedFood": "Processed food",
+  "@processedFood": {
+    "description": "Label for processed food section"
+  },
+  "pleaseSelectCategory": "Please select a category",
+  "@pleaseSelectCategory": {
+    "description": "Error message when category is not selected"
+  },
+  "pleaseEnterTemplateName": "Please enter a template name",
+  "@pleaseEnterTemplateName": {
+    "description": "Error message when template name is not entered"
+  },
+  "gasDetection": "Gas detection",
+  "@gasDetection": {
+    "description": "Label for gas detection section"
+  },
+  "oxygen": "Oxygen",
+  "@oxygen": {
+    "description": "Label for oxygen section"
+  },
+  "carbonDioxide": "Carbon dioxide",
+  "@carbonDioxide": {
+    "description": "Label for carbon dioxide section"
+  },
+  "ammoniaAndSulfurDioxide": "Ammonia and sulfur dioxide",
+  "@ammoniaAndSulfurDioxide": {
+    "description": "Label for ammonia and sulfur dioxide section"
+  },
+  "discard": "Discard",
+  "@discard": {
+    "description": "Button label for discarding an action"
+  },
+  "proccessedFood": "Processed food",
+  "@proccessedFood": {
+    "description": "Label for processed food section"
+  },
+  "meats": "Meats",
+  "@meats": {
+    "description": "Label for meats section"
+  },
+  "processedFoods": "Processed foods",
+  "@processedFoods": {
+    "description": "Label for processed foods section"
+  },
+  "type": "Type",
+  "@type": {
+    "description": "Label for type section"
+  },
+  "language": "Language",
+  "@language": {
+    "description": "Label for language section"
+  },
+  "english": "English",
+  "@english": {
+    "description": "Label for English language"
+  },
+  "spanish": "Spanish",
+  "@spanish": {
+    "description": "Label for Spanish language"
+  },
+  "selectLanguage": "Select language",
+  "@selectLanguage": {
+    "description": "Label for selecting language"
+  },
+  "carbonDioxideMin": "Min carbon dioxide",
+  "@carbonDioxideMin": {
+    "description": "Label for Min carbon dioxide section"
+  },
+  "carbonDioxideMax": "Max carbon dioxide",
+  "@carbonDioxideMax": {
+    "description": "Label for Max carbon dioxide section"
+  },
+  "ammoniaAndSulfurDioxideMin": "Min ammonia and sulfur dioxide",
+  "@ammoniaAndSulfurDioxideMin": {
+    "description": "Label for Min ammonia and sulfur dioxide section"
+  },
+  "ammoniaAndSulfurDioxideMax": "Max ammonia and sulfur dioxide",
+  "@ammoniaAndSulfurDioxideMax": {
+    "description": "Label for Max ammonia and sulfur dioxide section"
+  },
+  "pleaseEnterOxygenMin": "Please enter a Min oxygen",
+  "@pleaseEnterOxygenMin": {
+    "description": "Error message when Min oxygen is not entered"
+  },
+  "ethyleneMin": "Min ethylene",
+  "@ethyleneMin": {
+    "description": "Label for Min ethylene section"
+  },
+  "ethyleneMax": "Max ethylene",
+  "@ethyleneMax": {
+    "description": "Label for Max ethylene section"
+  },
+  "ammoniaMin": "Min ammonia",
+  "@ammoniaMin": {
+    "description": "Label for Min ammonia section"
+  },
+  "ammoniaMax": "Max ammonia",
+  "@ammoniaMax": {
+    "description": "Label for Max ammonia section"
+  },
+  "oxygenMin": "Min oxygen",
+  "@oxygenMin": {
+    "description": "Label for Min oxygen section"
+  },
+  "oxygenMax": "Max oxygen",
+  "@oxygenMax": {
+    "description": "Label for Max oxygen section"
+  },
+  "detectAllGases": "Detect all gases",
+  "@detectAllGases": {
+    "description": "Label for detecting all gases"
+  },
+  "newTemplate": "New template",
+  "@newTemplate": {
+    "description": "Label for adding a new template"
+  },
+  "humidity": "Humidity",
+  "@humidity": {
+    "description": "Label for humidity section"
+  },
+  "temperature": "Temperature",
+  "@temperature": {
+    "description": "Label for temperature section"
+  },
+  "selectContainers": "Select containers",
+  "@selectContainers": {
+    "description": "Label for selecting containers"
+  },
+  "containerSelectionModal": "This change will be recorded in this container’s historial.",
+  "@containerSelectionModal": {
+    "description": "Modal message for container selection"
+  },
+  "newContainer": "New container",
+  "@newContainer": {
+    "description": "Label for adding a new container"
+  },
+  "containerName": "Container name",
+  "@containerName": {
+    "description": "Label for container name section"
+  },
+  "code": "Code",
+  "@code": {
+    "description": "Label for code section"
+  },
+  "pleaseEnterContainerName": "Please enter a container name",
+  "@pleaseEnterContainerName": {
+    "description": "Error message when container name is not entered"
+  },
+  "selectFacility": "Select facility",
+  "@selectFacility": {
+    "description": "Label for selecting facility"
+  },
+  "role": "Role",
+  "@role": {
+    "description": "Label for role section"
+  },
+  "addWorker": "Add worker",
+  "@addWorker": {
+    "description": "Button label for adding a worker"
+  },
+  "workerList": "Worker List",
+  "@workerList": {
+    "description": "Label for Worker List"
+  },
+  "addContainer": "Add container",
+  "@addContainer": {
+    "description": "Button label for adding a container"
+  },
+  "delete": "Delete",
+  "@delete": {
+    "description": "Button label for deleting"
+  },
+  "areYouSureDelete": "Are you sure you want to delete this?",
+  "@areYouSureDelete": {
+    "description": "Confirmation message for deleting"
+  },
+  "confirmDelete": "Confirm delete",
+  "@confirmDelete": {
+    "description": "Button label for confirming deletion"
+  },
+  "all": "All",
+  "@all": {
+    "description": "Label for all section"
+  },
+  "edit": "Edit",
+  "@edit": {
+    "description": "Button label for editing"
+  },
+  "workerDetails": "Worker details",
+  "@workerDetails": {
+    "description": "Label for worker details section"
+  },
+  "roleManagement": "Role management",
+  "@roleManagement": {
+    "description": "Label for role management section"
+  },
+  "reassign": "Reassign",
+  "@reassign": {
+    "description": "Button label for reassigning"
+  },
+  "subscriptionDetails": "Subscription details",
+  "@subscriptionDetails": {
+    "description": "Label for subscription details section"
+  },
+  "upgradePlan": "Upgrade plan",
+  "@upgradePlan": {
+    "description": "Button label for upgrading plan"
+  },
+  "paymentInformation": "Payment information",
+  "@paymentInformation": {
+    "description": "Label for payment information section"
+  },
+  "cancelSubscription": "Cancel subscription",
+  "@cancelSubscription": {
+    "description": "Button label for canceling subscription"
+  },
+  "viewWorkers": "View workers",
+  "@viewWorkers": {
+    "description": "Button label for viewing workers"
+  },
+  "viewContainers": "View containers",
+  "@viewContainers": {
+    "description": "Button label for viewing containers"
+  },
+  "lastSync": "Last sync",
+  "@lastSync": {
+    "description": "Label for last sync section"
+  },
+  "statusContainer": "Status",
+  "@statusContainer": {
+    "description": "Label for status section"
+  },
+  "passwordCannotBeEmpty": "Password cannot be empty",
+  "@passwordCannotBeEmpty": {
+    "description": "Error message when password is empty"
+  },
+  "passwordMustBeAtLeast8Characters": "Password must be at least 8 characters",
+  "@passwordMustBeAtLeast8Characters": {
+    "description": "Error message when password is less than 8 characters"
+  },
+  "usernameCannotBeEmpty": "Username cannot be empty",
+  "@usernameCannotBeEmpty": {
+    "description": "Error message when username is empty"
+  },
+  "requiredField": "This is a required field",
+  "@requiredField": {
+	"description": "Error message when field is required"
+  },
+  "invalidEmail": "Invalid email",
+  "@invalidEmail": {
+	"description": "Error message when email is invalid"
   }
+}

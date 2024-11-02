@@ -61,7 +61,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                 ),
                 const SizedBox(height: 20),
-                TextField(
+                TextFormField(
                   controller: _nameController,
                   decoration: InputDecoration(
                     labelText: S.of(context).name,
@@ -69,23 +69,38 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                 ),
                 const SizedBox(height: 20),
-                TextField(
+                TextFormField(
                   controller: _usernameController,
                   decoration: InputDecoration(
                     labelText: S.of(context).username,
                     border: const OutlineInputBorder(),
                   ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return S.of(context).usernameCannotBeEmpty;
+                    }
+                    return null;
+                  },
                 ),
                 const SizedBox(height: 20),
-                TextField(
+                TextFormField(
                   controller: _emailController,
                   decoration: InputDecoration(
                     labelText: S.of(context).email,
                     border: const OutlineInputBorder(),
                   ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return S.of(context).requiredField;
+                    }
+                    if (!value.contains('@')) {
+                      return S.of(context).invalidEmail;
+                    }
+                    return null;
+                  },
                 ),
                 const SizedBox(height: 20),
-                TextField(
+                TextFormField(
                   controller: _passwordController,
                   obscureText: !isPasswordVisible,
                   decoration: InputDecoration(
@@ -102,6 +117,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       },
                     ),
                   ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return S.of(context).requiredField;
+                    }
+                    if (value.length < 8) {
+                      return S.of(context).passwordMustBeAtLeast8Characters;
+                    }
+                    return null;
+                  },
                 ),
                 const SizedBox(height: 30),
                 Row(

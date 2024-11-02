@@ -92,6 +92,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "humidityMin": MessageLookupByLibrary.simpleMessage("Min humidity"),
         "identificationNumber":
             MessageLookupByLibrary.simpleMessage("Identification number"),
+        "invalidEmail": MessageLookupByLibrary.simpleMessage("Invalid email"),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
         "lastSync": MessageLookupByLibrary.simpleMessage("Last sync"),
         "logOut": MessageLookupByLibrary.simpleMessage("Log out"),
@@ -110,6 +111,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "oxygenMax": MessageLookupByLibrary.simpleMessage("Max oxygen"),
         "oxygenMin": MessageLookupByLibrary.simpleMessage("Min oxygen"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "passwordCannotBeEmpty":
+            MessageLookupByLibrary.simpleMessage("Password cannot be empty"),
+        "passwordMustBeAtLeast8Characters":
+            MessageLookupByLibrary.simpleMessage(
+                "Password must be at least 8 characters"),
         "paymentInformation":
             MessageLookupByLibrary.simpleMessage("Payment information"),
         "pendingAlerts": MessageLookupByLibrary.simpleMessage("Pending Alerts"),
@@ -152,6 +158,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "register": MessageLookupByLibrary.simpleMessage("Register"),
         "registerInstead":
             MessageLookupByLibrary.simpleMessage("Register instead"),
+        "requiredField":
+            MessageLookupByLibrary.simpleMessage("This is a required field"),
         "restaurant": MessageLookupByLibrary.simpleMessage("Restaurant"),
         "role": MessageLookupByLibrary.simpleMessage("Role"),
         "roleManagement":
@@ -182,6 +190,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "type": MessageLookupByLibrary.simpleMessage("Type"),
         "upgradePlan": MessageLookupByLibrary.simpleMessage("Upgrade plan"),
         "username": MessageLookupByLibrary.simpleMessage("Username"),
+        "usernameCannotBeEmpty":
+            MessageLookupByLibrary.simpleMessage("Username cannot be empty"),
         "viewContainers":
             MessageLookupByLibrary.simpleMessage("View containers"),
         "viewWorkers": MessageLookupByLibrary.simpleMessage("View workers"),

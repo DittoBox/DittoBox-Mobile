@@ -96,12 +96,18 @@ class _AddContainerSheetState extends State<AddContainerSheet> {
               ],
             ),
             const SizedBox(height: 26),
-            TextField(
+            TextFormField(
               controller: _containerNameController,
               decoration: InputDecoration(
                 labelText: S.of(context).containerName,
                 border: const OutlineInputBorder(),
               ),
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return S.of(context).requiredField;
+                }
+                return null;
+              },
             ),
             const SizedBox(height: 26),
             // Separador para el código

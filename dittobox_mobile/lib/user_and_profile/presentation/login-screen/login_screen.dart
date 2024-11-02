@@ -9,6 +9,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final formKey = GlobalKey<FormState>();
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   bool isPasswordVisible = false;
@@ -37,73 +38,92 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Text(
-              S.of(context).login,
-              textAlign: TextAlign.center,
-              style: const TextStyle(
-                fontSize: 32,
-                fontWeight: FontWeight.bold,
+        child: Form(
+          key: formKey,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(
+                S.of(context).login,
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  fontSize: 32,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-            const SizedBox(height: 40),
-            TextField(
-              controller: _usernameController,
-              decoration: InputDecoration(
-                labelText: S.of(context).username,
-                border: const OutlineInputBorder(),
+              const SizedBox(height: 40),
+              TextFormField(
+                controller: _usernameController,
+                decoration: InputDecoration(
+                  labelText: S.of(context).username,
+                  border: const OutlineInputBorder(),
+                ),
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return S.of(context).usernameCannotBeEmpty;
+                  }
+                  return null;
+                },
               ),
-            ),
-            const SizedBox(height: 20),
-            TextField(
-              controller: _passwordController,
-              obscureText: !isPasswordVisible,
-              decoration: InputDecoration(
-                labelText: S.of(context).password,
-                border: const OutlineInputBorder(),
-                suffixIcon: IconButton(
-                  icon: Icon(
-                    isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+              const SizedBox(height: 20),
+              TextFormField(
+                controller: _passwordController,
+                obscureText: !isPasswordVisible,
+                decoration: InputDecoration(
+                  labelText: S.of(context).password,
+                  border: const OutlineInputBorder(),
+                  suffixIcon: IconButton(
+                    icon: Icon(
+                      isPasswordVisible
+                          ? Icons.visibility
+                          : Icons.visibility_off,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        isPasswordVisible = !isPasswordVisible;
+                      });
+                    },
                   ),
-                  onPressed: () {
-                    setState(() {
-                      isPasswordVisible = !isPasswordVisible;
-                    });
-                  },
                 ),
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return S.of(context).passwordCannotBeEmpty;
+                  }
+                  return null;
+                },
               ),
-            ),
-            const SizedBox(height: 30),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                FilledButton(
-                  onPressed: () async {
-                    // if (await _login()) {
-                    //   navigateTo(AppRoutes.home);
-                    // }
-                  },
-                  child: Text(S.of(context).login),
-                ),
-              ],
-            ),
-            const SizedBox(height: 10),
-            TextButton(
-              onPressed: () {
-                // Navigator.pushNamed(context, AppRoutes.forgotPassword);
-              },
-              child: Text(S.of(context).forgotPassword),
-            ),
-            TextButton(
-              onPressed: () {
-                // Navigator.pushNamed(context, AppRoutes.register);
-              },
-              child: Text(S.of(context).registerInstead),
-            ),
-          ],
+              const SizedBox(height: 30),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  FilledButton(
+                    onPressed: () async {
+                      // if (formKey.currentState!.validate()) {
+                      // if (await _login()) {
+                      //   navigateTo(AppRoutes.home);
+                      // }
+                      // }
+                    },
+                    child: Text(S.of(context).login),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 10),
+              TextButton(
+                onPressed: () {
+                  // Navigator.pushNamed(context, AppRoutes.forgotPassword);
+                },
+                child: Text(S.of(context).forgotPassword),
+              ),
+              TextButton(
+                onPressed: () {
+                  // Navigator.pushNamed(context, AppRoutes.register);
+                },
+                child: Text(S.of(context).registerInstead),
+              ),
+            ],
+          ),
         ),
       ),
     );
