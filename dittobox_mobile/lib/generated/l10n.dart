@@ -1290,6 +1290,26 @@ class S {
     );
   }
 
+  /// `Reassing worker`
+  String get reassignWorker {
+    return Intl.message(
+      'Reassing worker',
+      name: 'reassignWorker',
+      desc: 'Label for reassigning worker',
+      args: [],
+    );
+  }
+
+  /// `Worker reassigned`
+  String get workerReassigned {
+    return Intl.message(
+      'Worker reassigned',
+      name: 'workerReassigned',
+      desc: 'Message for worker reassigned',
+      args: [],
+    );
+  }
+
   /// `Subscription details`
   String get subscriptionDetails {
     return Intl.message(

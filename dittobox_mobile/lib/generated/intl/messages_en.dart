@@ -159,6 +159,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Processed foods"),
         "produce": MessageLookupByLibrary.simpleMessage("Produce"),
         "reassign": MessageLookupByLibrary.simpleMessage("Reassign"),
+        "reassignWorker": MessageLookupByLibrary.simpleMessage("Reassign worker"),
         "region": MessageLookupByLibrary.simpleMessage("Region"),
         "register": MessageLookupByLibrary.simpleMessage("Register"),
         "registerInstead":
@@ -207,6 +208,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Worker assigned successfully"),
         "workerDetails": MessageLookupByLibrary.simpleMessage("Worker details"),
         "workerList": MessageLookupByLibrary.simpleMessage("Worker List"),
+        "workerReassigned": MessageLookupByLibrary.simpleMessage(
+            "Worker reassigned successfully"),
         "workers": MessageLookupByLibrary.simpleMessage("Workers")
       };
 }
