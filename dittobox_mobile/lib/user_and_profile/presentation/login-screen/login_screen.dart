@@ -1,5 +1,6 @@
 import 'package:dittobox_mobile/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:dittobox_mobile/routes/app_routes.dart'; 
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -60,8 +61,12 @@ class _LoginScreenState extends State<LoginScreen> {
                   border: const OutlineInputBorder(),
                 ),
                 validator: (value) {
-                  if (value!.isEmpty) {
+                  if (value == null || value.isEmpty) {
                     return S.of(context).usernameCannotBeEmpty;
+                  } else if (!RegExp(r'^[a-zA-Z0-9]+$').hasMatch(value)) {
+                    return 'The username can only contain letters and numbers.';
+                  } else if (value.length < 4) {
+                    return 'The username must be at least 4 characters.';
                   }
                   return null;
                 },
@@ -87,8 +92,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
                 validator: (value) {
-                  if (value!.isEmpty) {
+                  if (value == null || value.isEmpty) {
                     return S.of(context).passwordCannotBeEmpty;
+                  } else if (value.length < 6) {
+                    return 'The password must be at least 6 characters.';
+                  } else if (!RegExp(r'[A-Z]').hasMatch(value)) {
+                    return 'The password must contain at least one capital letter.';
+                  } else if (!RegExp(r'[0-9]').hasMatch(value)) {
+                    return 'The password must contain at least one number.';
                   }
                   return null;
                 },
@@ -99,11 +110,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: [
                   FilledButton(
                     onPressed: () async {
-                      // if (formKey.currentState!.validate()) {
-                      // if (await _login()) {
-                      //   navigateTo(AppRoutes.home);
-                      // }
-                      // }
+                      if (formKey.currentState!.validate()) {
+                        Navigator.pushNamed(context, AppRoutes.facilities);
+                      }
                     },
                     child: Text(S.of(context).login),
                   ),
@@ -118,7 +127,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               TextButton(
                 onPressed: () {
-                  // Navigator.pushNamed(context, AppRoutes.register);
+                  Navigator.pushNamed(context, AppRoutes.register);
                 },
                 child: Text(S.of(context).registerInstead),
               ),

@@ -10,6 +10,7 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
+  final formKey = GlobalKey<FormState>();
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
@@ -24,136 +25,160 @@ class _RegisterScreenState extends State<RegisterScreen> {
         padding: const EdgeInsets.symmetric(horizontal: 24.0),
         child: Center(
           child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                const SizedBox(height: 40),
-                Text(
-                  S.of(context).register,
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(
-                    fontSize: 32,
-                    fontWeight: FontWeight.bold,
+            child: Form(
+              key: formKey,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  const SizedBox(height: 40),
+                  Text(
+                    S.of(context).register,
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                      fontSize: 32,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-                const SizedBox(height: 20, width: 20),
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 80),
-                  child: SegmentedButton<String>(
-                    segments: <ButtonSegment<String>>[
-                      ButtonSegment<String>(
-                        value: 'Worker',
-                        label: Text(S.of(context).worker),
-                        enabled: true,
-                      ),
-                      ButtonSegment<String>(
-                        value: 'Owner',
-                        label: Text(S.of(context).owner),
-                      ),
-                    ],
-                    selected: <String>{userType},
-                    onSelectionChanged: (Set<String> newSelection) {
-                      setState(() {
-                        userType = newSelection.first;
-                      });
-                    },
-                  ),
-                ),
-                const SizedBox(height: 20),
-                TextFormField(
-                  controller: _nameController,
-                  decoration: InputDecoration(
-                    labelText: S.of(context).name,
-                    border: const OutlineInputBorder(),
-                  ),
-                ),
-                const SizedBox(height: 20),
-                TextFormField(
-                  controller: _usernameController,
-                  decoration: InputDecoration(
-                    labelText: S.of(context).username,
-                    border: const OutlineInputBorder(),
-                  ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return S.of(context).usernameCannotBeEmpty;
-                    }
-                    return null;
-                  },
-                ),
-                const SizedBox(height: 20),
-                TextFormField(
-                  controller: _emailController,
-                  decoration: InputDecoration(
-                    labelText: S.of(context).email,
-                    border: const OutlineInputBorder(),
-                  ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return S.of(context).requiredField;
-                    }
-                    if (!value.contains('@')) {
-                      return S.of(context).invalidEmail;
-                    }
-                    return null;
-                  },
-                ),
-                const SizedBox(height: 20),
-                TextFormField(
-                  controller: _passwordController,
-                  obscureText: !isPasswordVisible,
-                  decoration: InputDecoration(
-                    labelText: S.of(context).password,
-                    border: const OutlineInputBorder(),
-                    suffixIcon: IconButton(
-                      icon: Icon(
-                        isPasswordVisible ? Icons.visibility : Icons.visibility_off,
-                      ),
-                      onPressed: () {
+                  const SizedBox(height: 20, width: 20),
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 80),
+                    child: SegmentedButton<String>(
+                      segments: <ButtonSegment<String>>[
+                        ButtonSegment<String>(
+                          value: 'Worker',
+                          label: Text(S.of(context).worker),
+                          enabled: true,
+                        ),
+                        ButtonSegment<String>(
+                          value: 'Owner',
+                          label: Text(S.of(context).owner),
+                        ),
+                      ],
+                      selected: <String>{userType},
+                      onSelectionChanged: (Set<String> newSelection) {
                         setState(() {
-                          isPasswordVisible = !isPasswordVisible;
+                          userType = newSelection.first;
                         });
                       },
                     ),
                   ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return S.of(context).requiredField;
-                    }
-                    if (value.length < 8) {
-                      return S.of(context).passwordMustBeAtLeast8Characters;
-                    }
-                    return null;
-                  },
-                ),
-                const SizedBox(height: 30),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    FilledButton(
-                      onPressed: () {
-                        if (userType == 'Owner') {
-                          Navigator.pushNamed(context, AppRoutes.companyInfo);
-                        } else {
-                          // Navigator.pushNamed(context, AppRoutes.home);
-                        }
-                      },
-                      style: FilledButton.styleFrom(
-                        padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-                      ),
-                      child: Text(userType == 'Owner' ? "Continue" : S.of(context).register),
+                  const SizedBox(height: 20),
+                  TextFormField(
+                    controller: _nameController,
+                    decoration: InputDecoration(
+                      labelText: S.of(context).name,
+                      border: const OutlineInputBorder(),
                     ),
-                  ],
-                ),
-                const SizedBox(height: 20),
-                TextButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, AppRoutes.login);
-                  },
-                  child: Text(S.of(context).alreadyHaveAccount),
-                ),
-              ],
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Name cannot be empty.';
+                      } else if (!RegExp(r'^[a-zA-Z\s]+$').hasMatch(value)) {
+                        return 'The name can only contain letters and spaces.';
+                      }
+                      return null;
+                    },
+                  ),
+                  const SizedBox(height: 20),
+                  TextFormField(
+                    controller: _usernameController,
+                    decoration: InputDecoration(
+                      labelText: S.of(context).username,
+                      border: const OutlineInputBorder(),
+                    ),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return S.of(context).usernameCannotBeEmpty;
+                      } else if (!RegExp(r'^[a-zA-Z0-9]+$').hasMatch(value)) {
+                        return 'The username can only contain letters and numbers.';
+                      } else if (value.length < 4) {
+                        return 'The username must be at least 4 characters.';
+                      }
+                      return null;
+                    },
+                  ),
+                  const SizedBox(height: 20),
+                  TextFormField(
+                    controller: _emailController,
+                    decoration: InputDecoration(
+                      labelText: S.of(context).email,
+                      border: const OutlineInputBorder(),
+                    ),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return S.of(context).requiredField;
+                      }
+                      final emailRegex = RegExp(
+                          r'^[^@]+@[^@]+\.[^@]+');
+                      if (!emailRegex.hasMatch(value)) {
+                        return S.of(context).invalidEmail;
+                      }
+                      return null;
+                    },
+                  ),
+                  const SizedBox(height: 20),
+                  TextFormField(
+                    controller: _passwordController,
+                    obscureText: !isPasswordVisible,
+                    decoration: InputDecoration(
+                      labelText: S.of(context).password,
+                      border: const OutlineInputBorder(),
+                      suffixIcon: IconButton(
+                        icon: Icon(
+                          isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            isPasswordVisible = !isPasswordVisible;
+                          });
+                        },
+                      ),
+                    ),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return S.of(context).requiredField;
+                      } else if (value.length < 8) {
+                        return 'The password must be at least 8 characters.';
+                      } else if (!RegExp(r'[A-Z]').hasMatch(value)) {
+                        return 'The password must contain at least one capital letter.';
+                      } else if (!RegExp(r'[0-9]').hasMatch(value)) {
+                        return 'The password must contain at least one number.';
+                      } else if (!RegExp(r'[!@#$%^&*(),.?":{}|<>]').hasMatch(value)) {
+                        return 'The password must contain at least one special character.';
+                      }
+                      return null;
+                    },
+                  ),
+                  const SizedBox(height: 30),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      FilledButton(
+                        onPressed: () {
+                          if (formKey.currentState!.validate()) {
+                            if (userType == 'Owner') {
+                              Navigator.pushNamed(context, AppRoutes.companyInfo);
+                            } else {
+                              // Navigator.pushNamed(context, AppRoutes.home);
+                            }
+                          }
+                        },
+                        style: FilledButton.styleFrom(
+                          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+                        ),
+                        child: Text(userType == 'Owner' ? "Continue" : S.of(context).register),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 20),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, AppRoutes.login);
+                    },
+                    child: Text(S.of(context).alreadyHaveAccount),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
