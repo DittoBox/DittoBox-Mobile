@@ -627,5 +627,21 @@
   "forgotPasswordTitle": "¿Olvidaste tu Contraseña?",
   "@forgotPasswordTitle": {
     "description": "Título para contraseña olvidada"
+  },
+  "setNewPasswordTitle": "Establecer Nueva Contraseña",
+  "@setNewPasswordTitle": {
+    "description": "Título para establecer nueva contraseña"
+  },
+  "newPassword": "Nueva Contraseña",
+  "@newPassword": {
+    "description": "Etiqueta para nueva contraseña"
+  },
+  "confirmPassword": "Confirmar Contraseña",
+  "@confirmPassword": {
+    "description": "Etiqueta para confirmar contraseña"
+  },
+  "setNewPassword": "Establecer Nueva Contraseña",
+  "@setNewPassword": {
+    "description": "Etiqueta para establecer nueva contraseña"
   }
 }

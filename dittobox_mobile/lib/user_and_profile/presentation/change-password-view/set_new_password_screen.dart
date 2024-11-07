@@ -1,8 +1,8 @@
 import 'package:dittobox_mobile/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
-class ForgotPasswordScreen extends StatelessWidget {
-  const ForgotPasswordScreen({super.key});
+class SetNewPasswordScreen extends StatelessWidget {
+  const SetNewPasswordScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,22 +13,34 @@ class ForgotPasswordScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(S.of(context).forgotPasswordTitle, style: const TextStyle(fontSize: 32)),
+              Text(
+                S.of(context).setNewPasswordTitle,
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
               const SizedBox(height: 24),
-              const TextField(
+               TextField(
+                obscureText: true,
                 decoration: InputDecoration(
-                  labelText: 'Email',
+                  labelText: S.of(context).newPassword,
+                  border: OutlineInputBorder(),
+                ),
+              ),
+              SizedBox(height: 16),
+              TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  labelText: S.of(context).confirmPassword,
                   border: OutlineInputBorder(),
                 ),
               ),
               const SizedBox(height: 24),
               FilledButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/password_reset_code');
+                  // Handle password reset completion logic
                 },
-                child: Text(S.of(context).resetPassword),
+                child: Text(S.of(context).setNewPassword),
               ),
-              const SizedBox(height: 16),
+              SizedBox(height: 16),
               TextButton(
                 onPressed: () {
                   Navigator.pop(context); // Go back to login

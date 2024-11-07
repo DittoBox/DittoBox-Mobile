@@ -627,5 +627,21 @@
   "verifyCode": "Verify Code",
   "@verifyCode": {
     "description": "Label for verify code button"
+  },
+  "setNewPasswordTitle": "Set New Password",
+  "@setNewPasswordTitle": {
+    "description": "Title for set new password section"
+  },
+  "newPassword": "New Password",
+  "@newPassword": {
+    "description": "Label for new password section"
+  },
+  "confirmPassword": "Confirm Password",
+  "@confirmPassword": {
+    "description": "Label for confirm password section"
+  },
+  "setNewPassword": "Set New Password",
+  "@setNewPassword": {
+    "description": "Label for set new password button"
   }
 }

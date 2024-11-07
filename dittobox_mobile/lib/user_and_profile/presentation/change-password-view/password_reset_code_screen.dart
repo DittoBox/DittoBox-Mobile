@@ -45,7 +45,7 @@ class PasswordResetCodeScreen extends StatelessWidget {
               const SizedBox(height: 24),
               FilledButton(
                 onPressed: () {
-                  // Handle code verification logic
+                  Navigator.pushNamed(context, AppRoutes.setNewPassword); // Go to set new password
                 },
                 child: Text(S.of(context).verifyCode),
               ),

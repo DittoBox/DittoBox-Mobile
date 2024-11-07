@@ -1619,6 +1619,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Set New Password`
+  String get setNewPasswordTitle {
+    return Intl.message(
+      'Set New Password',
+      name: 'setNewPasswordTitle',
+      desc: 'Title for set new password section',
+      args: [],
+    );
+  }
+
+  /// `New Password`
+  String get newPassword {
+    return Intl.message(
+      'New Password',
+      name: 'newPassword',
+      desc: 'Label for new password section',
+      args: [],
+    );
+  }
+
+  /// `Confirm Password`
+  String get confirmPassword {
+    return Intl.message(
+      'Confirm Password',
+      name: 'confirmPassword',
+      desc: 'Label for confirm password section',
+      args: [],
+    );
+  }
+
+  /// `Set New Password`
+  String get setNewPassword {
+    return Intl.message(
+      'Set New Password',
+      name: 'setNewPassword',
+      desc: 'Label for set new password button',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

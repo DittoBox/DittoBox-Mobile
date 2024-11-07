@@ -90,6 +90,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Este cambio quedará registrado en el historial de este contenedor."),
         "confirmDelete":
             MessageLookupByLibrary.simpleMessage("Confirmar eliminación"),
+        "confirmPassword":
+            MessageLookupByLibrary.simpleMessage("Confirmar Contraseña"),
         "containerName":
             MessageLookupByLibrary.simpleMessage("Nombre del contenedor"),
         "containerSelectionModal": MessageLookupByLibrary.simpleMessage(
@@ -141,6 +143,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Nuevo contenedor"),
         "newFacility":
             MessageLookupByLibrary.simpleMessage("Nueva instalación"),
+        "newPassword": MessageLookupByLibrary.simpleMessage("Nueva Contraseña"),
         "newTemplate": MessageLookupByLibrary.simpleMessage("Nueva plantilla"),
         "notifications": MessageLookupByLibrary.simpleMessage("Notificaciones"),
         "owner": MessageLookupByLibrary.simpleMessage("Propietario"),
@@ -211,6 +214,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Seleccionar instalación"),
         "selectLanguage":
             MessageLookupByLibrary.simpleMessage("Seleccionar idioma"),
+        "setNewPassword":
+            MessageLookupByLibrary.simpleMessage("Establecer Nueva Contraseña"),
+        "setNewPasswordTitle":
+            MessageLookupByLibrary.simpleMessage("Establecer Nueva Contraseña"),
         "settings": MessageLookupByLibrary.simpleMessage("Configuraciones"),
         "spanish": MessageLookupByLibrary.simpleMessage("Español"),
         "statusContainer": MessageLookupByLibrary.simpleMessage("Estado"),

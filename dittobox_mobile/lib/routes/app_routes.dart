@@ -8,6 +8,7 @@ import 'package:dittobox_mobile/goups/presentation/worker-details/worker_details
 import 'package:dittobox_mobile/goups/presentation/worker-list/worker_list_view.dart';
 import 'package:dittobox_mobile/user_and_profile/presentation/change-password-view/forgot_password_screen.dart';
 import 'package:dittobox_mobile/user_and_profile/presentation/change-password-view/password_reset_code_screen.dart';
+import 'package:dittobox_mobile/user_and_profile/presentation/change-password-view/set_new_password_screen.dart';
 import 'package:dittobox_mobile/user_and_profile/presentation/login-screen/login_screen.dart';
 import 'package:dittobox_mobile/user_and_profile/presentation/register-screen/company_info_screen.dart';
 import 'package:dittobox_mobile/user_and_profile/presentation/register-screen/register_screen.dart';
@@ -29,6 +30,7 @@ final Map<String, Widget Function(BuildContext)> appRoutes = {
   "/containers": (context) => const ContainerListScreen(),
   "/forgotPassword": (context) => const ForgotPasswordScreen(),
   '/password_reset_code': (context) => const PasswordResetCodeScreen(),
+  "/set_new_password": (context) => const SetNewPasswordScreen(),
 };
 
 class AppRoutes {
@@ -46,4 +48,5 @@ class AppRoutes {
   static const String containers = '/containers';
   static const String forgotPassword = '/forgotPassword';
   static const String passwordResetCode = '/password_reset_code';
+  static const String setNewPassword = '/set_new_password';
 }

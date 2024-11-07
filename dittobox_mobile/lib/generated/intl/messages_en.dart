@@ -80,6 +80,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "confirmAssignWorkerMessage": MessageLookupByLibrary.simpleMessage(
             "This change will be recorded in this worker’s historial."),
         "confirmDelete": MessageLookupByLibrary.simpleMessage("Confirm delete"),
+        "confirmPassword":
+            MessageLookupByLibrary.simpleMessage("Confirm Password"),
         "containerName": MessageLookupByLibrary.simpleMessage("Container name"),
         "containerSelectionModal": MessageLookupByLibrary.simpleMessage(
             "This change will be recorded in this container’s historial."),
@@ -125,6 +127,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "name": MessageLookupByLibrary.simpleMessage("Name"),
         "newContainer": MessageLookupByLibrary.simpleMessage("New container"),
         "newFacility": MessageLookupByLibrary.simpleMessage("New facility"),
+        "newPassword": MessageLookupByLibrary.simpleMessage("New Password"),
         "newTemplate": MessageLookupByLibrary.simpleMessage("New template"),
         "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
         "owner": MessageLookupByLibrary.simpleMessage("Owner"),
@@ -200,6 +203,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Select facility"),
         "selectLanguage":
             MessageLookupByLibrary.simpleMessage("Select language"),
+        "setNewPassword":
+            MessageLookupByLibrary.simpleMessage("Set New Password"),
+        "setNewPasswordTitle":
+            MessageLookupByLibrary.simpleMessage("Set New Password"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "spanish": MessageLookupByLibrary.simpleMessage("Spanish"),
         "statusContainer": MessageLookupByLibrary.simpleMessage("Status"),
