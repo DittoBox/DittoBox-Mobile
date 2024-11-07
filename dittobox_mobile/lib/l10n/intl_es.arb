@@ -575,5 +575,57 @@
   "userDetails": "Detalles del Usuario",
   "@userDetails": {
     "description": "Etiqueta para la sección de detalles del usuario"
+  },
+  "workerAssignedSuccessfully": "Trabajador asignado exitosamente",
+  "@workerAssignedSuccessfully": {
+    "description": "Mensaje de éxito cuando el trabajador es asignado exitosamente"
+  },
+  "confirmAssignWorker": "¿Estás seguro de que deseas asignar este trabajador?",
+  "@confirmAssignWorker": {
+    "description": "Mensaje de confirmación para asignar trabajador"
+  },
+  "confirmAssignWorkerMessage": "Este cambio quedará registrado en el historial de este contenedor.",
+  "@confirmAssignWorkerMessage": {
+    "description": "Mensaje de confirmación para asignar trabajador"
+  },
+  "workerUnassignedSuccessfully": "Trabajador desasignado exitosamente",
+  "@workerUnassignedSuccessfully": {
+    "description": "Mensaje de éxito cuando el trabajador es desasignado exitosamente"
+  },
+  "workerAssignConfirm": "¿Estás seguro de que deseas desasignar este trabajador?",
+  "@workerAssignConfirm": {
+    "description": "Mensaje de confirmación para desasignar trabajador"
+  },
+  "reassignWorker": "Reasignar trabajador",
+  "@reassignWorker": {
+    "description": "Etiqueta para reasignar trabajador"
+  },
+  "workerReassigned": "Trabajador reasignado",
+  "@workerReassigned": {
+    "description": "Mensaje de éxito cuando el trabajador es reasignado"
+  },
+  "resetPassword": "Restablecer Contraseña",
+  "@resetPassword": {
+    "description": "Etiqueta para restablecer contraseña"
+  },
+  "backToLogin": "Volver al Inicio de Sesión",
+  "@backToLogin": {
+    "description": "Texto para volver al inicio de sesión"
+  },
+  "passwordResetCodeTitle": "Código de Restablecimiento de Contraseña",
+  "@passwordResetCodeTitle": {
+    "description": "Título para el código de restablecimiento de contraseña"
+  },
+  "passwordResetCode": "Código de Restablecimiento",
+  "@passwordResetCode": {
+    "description": "Etiqueta para el código de restablecimiento"
+  },
+  "verifyCode": "Verificar Código",
+  "@verifyCode": {
+    "description": "Etiqueta para verificar código"
+  },
+  "forgotPasswordTitle": "¿Olvidaste tu Contraseña?",
+  "@forgotPasswordTitle": {
+    "description": "Título para contraseña olvidada"
   }
 }

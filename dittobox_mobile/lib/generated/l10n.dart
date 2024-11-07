@@ -1190,52 +1190,12 @@ class S {
     );
   }
 
-  /// `Confirm`
-  String get confirm {
-    return Intl.message(
-      'Confirm',
-      name: 'confirm',
-      desc: 'Button label for confirming',
-      args: [],
-    );
-  }
-
   /// `Confirm delete`
   String get confirmDelete {
     return Intl.message(
       'Confirm delete',
       name: 'confirmDelete',
       desc: 'Button label for confirming deletion',
-      args: [],
-    );
-  }
-
-  /// `Confirm assign worker`
-  String get confirmAssignWorker {
-    return Intl.message(
-      'Confirm assign worker',
-      name: 'confirmAssignWorker',
-      desc: 'Label for confirming assigning worker',
-      args: [],
-    );
-  }
-
-  /// `Confirm assign woker message`
-  String get confirmAssignWorkerMessage {
-    return Intl.message(
-      'Confirm assign woker message',
-      name: 'confirmAssignWorkerMessage',
-      desc: 'Message for confirming assigning worker',
-      args: [],
-    );
-  }
-
-  /// `Worker assigned successfully`
-  String get workerAssignedSuccessfully {
-    return Intl.message(
-      'Worker assigned successfully',
-      name: 'workerAssignedSuccessfully',
-      desc: 'Success message for assigning worker',
       args: [],
     );
   }
@@ -1286,26 +1246,6 @@ class S {
       'Reassign',
       name: 'reassign',
       desc: 'Button label for reassigning',
-      args: [],
-    );
-  }
-
-  /// `Reassing worker`
-  String get reassignWorker {
-    return Intl.message(
-      'Reassing worker',
-      name: 'reassignWorker',
-      desc: 'Label for reassigning worker',
-      args: [],
-    );
-  }
-
-  /// `Worker reassigned`
-  String get workerReassigned {
-    return Intl.message(
-      'Worker reassigned',
-      name: 'workerReassigned',
-      desc: 'Message for worker reassigned',
       args: [],
     );
   }
@@ -1546,6 +1486,136 @@ class S {
       'Account Details',
       name: 'accountDetails',
       desc: 'Label for account details section',
+      args: [],
+    );
+  }
+
+  /// `Forgot Password?`
+  String get forgotPasswordTitle {
+    return Intl.message(
+      'Forgot Password?',
+      name: 'forgotPasswordTitle',
+      desc: 'Title for forgot password section',
+      args: [],
+    );
+  }
+
+  /// `Worker assigned successfully`
+  String get workerAssignedSuccessfully {
+    return Intl.message(
+      'Worker assigned successfully',
+      name: 'workerAssignedSuccessfully',
+      desc: 'Success message when worker is assigned successfully',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to assign this worker?`
+  String get confirmAssignWorker {
+    return Intl.message(
+      'Are you sure you want to assign this worker?',
+      name: 'confirmAssignWorker',
+      desc: 'Confirmation message for assigning worker',
+      args: [],
+    );
+  }
+
+  /// `This change will be recorded in this worker’s historial.`
+  String get confirmAssignWorkerMessage {
+    return Intl.message(
+      'This change will be recorded in this worker’s historial.',
+      name: 'confirmAssignWorkerMessage',
+      desc: 'Confirmation message for assigning worker',
+      args: [],
+    );
+  }
+
+  /// `Worker unassigned successfully`
+  String get workerUnassignedSuccessfully {
+    return Intl.message(
+      'Worker unassigned successfully',
+      name: 'workerUnassignedSuccessfully',
+      desc: 'Success message when worker is unassigned successfully',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to unassign this worker?`
+  String get workerAssignConfirm {
+    return Intl.message(
+      'Are you sure you want to unassign this worker?',
+      name: 'workerAssignConfirm',
+      desc: 'Confirmation message for unassigning worker',
+      args: [],
+    );
+  }
+
+  /// `Reassign worker`
+  String get reassignWorker {
+    return Intl.message(
+      'Reassign worker',
+      name: 'reassignWorker',
+      desc: 'Label for reassigning worker',
+      args: [],
+    );
+  }
+
+  /// `Worker reassigned successfully`
+  String get workerReassigned {
+    return Intl.message(
+      'Worker reassigned successfully',
+      name: 'workerReassigned',
+      desc: 'Success message when worker is reassigned successfully',
+      args: [],
+    );
+  }
+
+  /// `Reset Password`
+  String get resetPassword {
+    return Intl.message(
+      'Reset Password',
+      name: 'resetPassword',
+      desc: 'Label for reset password button',
+      args: [],
+    );
+  }
+
+  /// `Back to login`
+  String get backToLogin {
+    return Intl.message(
+      'Back to login',
+      name: 'backToLogin',
+      desc: 'Label for back to login button',
+      args: [],
+    );
+  }
+
+  /// `Password Reset Code`
+  String get passwordResetCodeTitle {
+    return Intl.message(
+      'Password Reset Code',
+      name: 'passwordResetCodeTitle',
+      desc: 'Title for password reset code section',
+      args: [],
+    );
+  }
+
+  /// `Password Reset Code`
+  String get passwordResetCode {
+    return Intl.message(
+      'Password Reset Code',
+      name: 'passwordResetCode',
+      desc: 'Label for password reset code section',
+      args: [],
+    );
+  }
+
+  /// `Verify Code`
+  String get verifyCode {
+    return Intl.message(
+      'Verify Code',
+      name: 'verifyCode',
+      desc: 'Label for verify code button',
       args: [],
     );
   }

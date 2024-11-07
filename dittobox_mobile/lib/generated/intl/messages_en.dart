@@ -52,6 +52,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "applyTemplate": MessageLookupByLibrary.simpleMessage("Apply"),
         "areYouSureDelete": MessageLookupByLibrary.simpleMessage(
             "Are you sure you want to delete this?"),
+        "backToLogin": MessageLookupByLibrary.simpleMessage("Back to login"),
         "bankAccountOwner":
             MessageLookupByLibrary.simpleMessage("Bank Account Owner"),
         "businessName": MessageLookupByLibrary.simpleMessage("Business Name"),
@@ -74,12 +75,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "city": MessageLookupByLibrary.simpleMessage("City"),
         "code": MessageLookupByLibrary.simpleMessage("Code"),
         "companyName": MessageLookupByLibrary.simpleMessage("Company name"),
-        "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
-        "confirmDelete": MessageLookupByLibrary.simpleMessage("Confirm delete"),
-        "confirmAssignWorker":
-            MessageLookupByLibrary.simpleMessage("Confirm Assignment"),
+        "confirmAssignWorker": MessageLookupByLibrary.simpleMessage(
+            "Are you sure you want to assign this worker?"),
         "confirmAssignWorkerMessage": MessageLookupByLibrary.simpleMessage(
-            "Are you sure you want to assign the worker to"),
+            "This change will be recorded in this worker’s historial."),
+        "confirmDelete": MessageLookupByLibrary.simpleMessage("Confirm delete"),
         "containerName": MessageLookupByLibrary.simpleMessage("Container name"),
         "containerSelectionModal": MessageLookupByLibrary.simpleMessage(
             "This change will be recorded in this container’s historial."),
@@ -103,6 +103,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Failed to fetch facilities"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot your password?"),
+        "forgotPasswordTitle":
+            MessageLookupByLibrary.simpleMessage("Forgot Password?"),
         "gasDetection": MessageLookupByLibrary.simpleMessage("Gas detection"),
         "humidity": MessageLookupByLibrary.simpleMessage("Humidity"),
         "humidityMax": MessageLookupByLibrary.simpleMessage("Max humidity"),
@@ -135,6 +137,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "passwordMustBeAtLeast8Characters":
             MessageLookupByLibrary.simpleMessage(
                 "Password must be at least 8 characters"),
+        "passwordResetCode":
+            MessageLookupByLibrary.simpleMessage("Password Reset Code"),
+        "passwordResetCodeTitle":
+            MessageLookupByLibrary.simpleMessage("Password Reset Code"),
         "paymentInformation":
             MessageLookupByLibrary.simpleMessage("Payment information"),
         "pendingAlerts": MessageLookupByLibrary.simpleMessage("Pending Alerts"),
@@ -173,13 +179,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Processed foods"),
         "produce": MessageLookupByLibrary.simpleMessage("Produce"),
         "reassign": MessageLookupByLibrary.simpleMessage("Reassign"),
-        "reassignWorker": MessageLookupByLibrary.simpleMessage("Reassign worker"),
+        "reassignWorker":
+            MessageLookupByLibrary.simpleMessage("Reassign worker"),
         "region": MessageLookupByLibrary.simpleMessage("Region"),
         "register": MessageLookupByLibrary.simpleMessage("Register"),
         "registerInstead":
             MessageLookupByLibrary.simpleMessage("Register instead"),
         "requiredField":
             MessageLookupByLibrary.simpleMessage("This is a required field"),
+        "resetPassword": MessageLookupByLibrary.simpleMessage("Reset Password"),
         "restaurant": MessageLookupByLibrary.simpleMessage("Restaurant"),
         "role": MessageLookupByLibrary.simpleMessage("Role"),
         "roleManagement":
@@ -218,18 +226,23 @@ class MessageLookup extends MessageLookupByLibrary {
         "username": MessageLookupByLibrary.simpleMessage("Username"),
         "usernameCannotBeEmpty":
             MessageLookupByLibrary.simpleMessage("Username cannot be empty"),
+        "verifyCode": MessageLookupByLibrary.simpleMessage("Verify Code"),
         "viewContainers":
             MessageLookupByLibrary.simpleMessage("View containers"),
         "viewWorkers": MessageLookupByLibrary.simpleMessage("View workers"),
         "warehouse": MessageLookupByLibrary.simpleMessage("Warehouse"),
         "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
         "worker": MessageLookupByLibrary.simpleMessage("Worker"),
+        "workerAssignConfirm": MessageLookupByLibrary.simpleMessage(
+            "Are you sure you want to unassign this worker?"),
         "workerAssignedSuccessfully": MessageLookupByLibrary.simpleMessage(
             "Worker assigned successfully"),
         "workerDetails": MessageLookupByLibrary.simpleMessage("Worker details"),
         "workerList": MessageLookupByLibrary.simpleMessage("Worker List"),
         "workerReassigned": MessageLookupByLibrary.simpleMessage(
             "Worker reassigned successfully"),
+        "workerUnassignedSuccessfully": MessageLookupByLibrary.simpleMessage(
+            "Worker unassigned successfully"),
         "workers": MessageLookupByLibrary.simpleMessage("Workers")
       };
 }

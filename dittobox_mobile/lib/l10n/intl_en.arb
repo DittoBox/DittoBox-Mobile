@@ -575,5 +575,57 @@
   "accountDetails": "Account Details",
   "@accountDetails": {
     "description": "Label for account details section"
+  },
+  "forgotPasswordTitle": "Forgot Password?",
+  "@forgotPasswordTitle": {
+    "description": "Title for forgot password section"
+  },
+  "workerAssignedSuccessfully": "Worker assigned successfully",
+  "@workerAssignedSuccessfully": {
+    "description": "Success message when worker is assigned successfully"
+  },
+  "confirmAssignWorker": "Are you sure you want to assign this worker?",
+  "@confirmAssignWorker": {
+    "description": "Confirmation message for assigning worker"
+  },
+  "confirmAssignWorkerMessage": "This change will be recorded in this worker’s historial.",
+  "@confirmAssignWorkerMessage": {
+    "description": "Confirmation message for assigning worker"
+  },
+  "workerUnassignedSuccessfully": "Worker unassigned successfully",
+  "@workerUnassignedSuccessfully": {
+    "description": "Success message when worker is unassigned successfully"
+  },
+  "workerAssignConfirm": "Are you sure you want to unassign this worker?",
+  "@workerAssignConfirm": {
+    "description": "Confirmation message for unassigning worker"
+  },
+  "reassignWorker": "Reassign worker",
+  "@reassignWorker": {
+    "description": "Label for reassigning worker"
+  },
+  "workerReassigned": "Worker reassigned successfully",
+  "@workerReassigned": {
+    "description": "Success message when worker is reassigned successfully"
+  },
+  "resetPassword": "Reset Password",
+  "@resetPassword": {
+    "description": "Label for reset password button"
+  },
+  "backToLogin": "Back to login",
+  "@backToLogin": {
+    "description": "Label for back to login button"
+  },
+  "passwordResetCodeTitle": "Password Reset Code",
+  "@passwordResetCodeTitle": {
+    "description": "Title for password reset code section"
+  },
+  "passwordResetCode": "Password Reset Code",
+  "@passwordResetCode": {
+    "description": "Label for password reset code section"
+  },
+  "verifyCode": "Verify Code",
+  "@verifyCode": {
+    "description": "Label for verify code button"
   }
 }

@@ -24,7 +24,7 @@ class ConfirmAssignWorkerDialog extends StatelessWidget {
             Navigator.of(context).pop(),
             onConfirm()
           }, 
-          child: Text(S.of(context).confirm)
+          child: Text(S.of(context).workerAssignConfirm),
         )
       ],
     );
