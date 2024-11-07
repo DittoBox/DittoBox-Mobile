@@ -1659,6 +1659,76 @@ class S {
       args: [],
     );
   }
+
+  /// `Email is required`
+  String get emailRequired {
+    return Intl.message(
+      'Email is required',
+      name: 'emailRequired',
+      desc: 'Error message when email is required',
+      args: [],
+    );
+  }
+
+  /// `Code must be 5 characters long`
+  String get codeLength {
+    return Intl.message(
+      'Code must be 5 characters long',
+      name: 'codeLength',
+      desc: 'Error message when code is not 5 characters long',
+      args: [],
+    );
+  }
+
+  /// `Code is required`
+  String get codeRequired {
+    return Intl.message(
+      'Code is required',
+      name: 'codeRequired',
+      desc: 'Error message when code is required',
+      args: [],
+    );
+  }
+
+  /// `New password is required`
+  String get newPasswordRequired {
+    return Intl.message(
+      'New password is required',
+      name: 'newPasswordRequired',
+      desc: 'Error message when new password is required',
+      args: [],
+    );
+  }
+
+  /// `Password must be at least 8 characters long`
+  String get passwordLength {
+    return Intl.message(
+      'Password must be at least 8 characters long',
+      name: 'passwordLength',
+      desc: 'Error message when password is less than 8 characters long',
+      args: [],
+    );
+  }
+
+  /// `Passwords do not match`
+  String get passwordsDoNotMatch {
+    return Intl.message(
+      'Passwords do not match',
+      name: 'passwordsDoNotMatch',
+      desc: 'Error message when passwords do not match',
+      args: [],
+    );
+  }
+
+  /// `Confirm password is required`
+  String get confirmPasswordRequired {
+    return Intl.message(
+      'Confirm password is required',
+      name: 'confirmPasswordRequired',
+      desc: 'Error message when confirm password is required',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

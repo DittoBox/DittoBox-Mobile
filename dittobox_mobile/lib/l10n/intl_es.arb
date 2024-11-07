@@ -643,5 +643,33 @@
   "setNewPassword": "Establecer Nueva Contraseña",
   "@setNewPassword": {
     "description": "Etiqueta para establecer nueva contraseña"
+  },
+  "emailRequired": "Correo electrónico requerido",
+  "@emailRequired": {
+    "description": "Mensaje de error para correo electrónico requerido"
+  },
+  "codeRequired": "Código requerido",
+  "@codeRequired": {
+    "description": "Mensaje de error para código requerido"
+  },
+  "codeLength": "El código debe tener 5 dígitos",
+  "@codeLength": {
+    "description": "Mensaje de error para longitud de código"
+  },
+  "newPasswordRequired": "Nueva contraseña requerida",
+  "@newPasswordRequired": {
+    "description": "Mensaje de error para nueva contraseña requerida"
+  },
+  "passwordLength": "La contraseña debe tener al menos 8 caracteres",
+  "@passwordLength": {
+    "description": "Mensaje de error para longitud de contraseña"
+  },
+  "passwordsDoNotMatch": "Las contraseñas no coinciden",
+  "@passwordsDoNotMatch": {
+    "description": "Mensaje de error para contraseñas no coinciden"
+  },
+  "confirmPasswordRequired": "Confirmar contraseña requerida",
+  "@confirmPasswordRequired": {
+    "description": "Mensaje de error para confirmar contraseña requerida"
   }
 }

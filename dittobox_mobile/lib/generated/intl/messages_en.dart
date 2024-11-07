@@ -74,6 +74,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "checkAlerts": MessageLookupByLibrary.simpleMessage("Check alerts"),
         "city": MessageLookupByLibrary.simpleMessage("City"),
         "code": MessageLookupByLibrary.simpleMessage("Code"),
+        "codeLength": MessageLookupByLibrary.simpleMessage(
+            "Code must be 5 characters long"),
+        "codeRequired":
+            MessageLookupByLibrary.simpleMessage("Code is required"),
         "companyName": MessageLookupByLibrary.simpleMessage("Company name"),
         "confirmAssignWorker": MessageLookupByLibrary.simpleMessage(
             "Are you sure you want to assign this worker?"),
@@ -82,6 +86,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "confirmDelete": MessageLookupByLibrary.simpleMessage("Confirm delete"),
         "confirmPassword":
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
+        "confirmPasswordRequired": MessageLookupByLibrary.simpleMessage(
+            "Confirm password is required"),
         "containerName": MessageLookupByLibrary.simpleMessage("Container name"),
         "containerSelectionModal": MessageLookupByLibrary.simpleMessage(
             "This change will be recorded in this container’s historial."),
@@ -95,6 +101,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "edit": MessageLookupByLibrary.simpleMessage("Edit"),
         "editData": MessageLookupByLibrary.simpleMessage("Edit Data"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "emailRequired":
+            MessageLookupByLibrary.simpleMessage("Email is required"),
         "english": MessageLookupByLibrary.simpleMessage("English"),
         "ethylene": MessageLookupByLibrary.simpleMessage("Ethylene"),
         "ethyleneMax": MessageLookupByLibrary.simpleMessage("Max ethylene"),
@@ -128,6 +136,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "newContainer": MessageLookupByLibrary.simpleMessage("New container"),
         "newFacility": MessageLookupByLibrary.simpleMessage("New facility"),
         "newPassword": MessageLookupByLibrary.simpleMessage("New Password"),
+        "newPasswordRequired":
+            MessageLookupByLibrary.simpleMessage("New password is required"),
         "newTemplate": MessageLookupByLibrary.simpleMessage("New template"),
         "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
         "owner": MessageLookupByLibrary.simpleMessage("Owner"),
@@ -137,6 +147,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "passwordCannotBeEmpty":
             MessageLookupByLibrary.simpleMessage("Password cannot be empty"),
+        "passwordLength": MessageLookupByLibrary.simpleMessage(
+            "Password must be at least 8 characters long"),
         "passwordMustBeAtLeast8Characters":
             MessageLookupByLibrary.simpleMessage(
                 "Password must be at least 8 characters"),
@@ -144,6 +156,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Password Reset Code"),
         "passwordResetCodeTitle":
             MessageLookupByLibrary.simpleMessage("Password Reset Code"),
+        "passwordsDoNotMatch":
+            MessageLookupByLibrary.simpleMessage("Passwords do not match"),
         "paymentInformation":
             MessageLookupByLibrary.simpleMessage("Payment information"),
         "pendingAlerts": MessageLookupByLibrary.simpleMessage("Pending Alerts"),
