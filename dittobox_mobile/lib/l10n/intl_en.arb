@@ -575,5 +575,101 @@
   "accountDetails": "Account Details",
   "@accountDetails": {
     "description": "Label for account details section"
+  },
+  "forgotPasswordTitle": "Forgot Password?",
+  "@forgotPasswordTitle": {
+    "description": "Title for forgot password section"
+  },
+  "workerAssignedSuccessfully": "Worker assigned successfully",
+  "@workerAssignedSuccessfully": {
+    "description": "Success message when worker is assigned successfully"
+  },
+  "confirmAssignWorker": "Are you sure you want to assign this worker?",
+  "@confirmAssignWorker": {
+    "description": "Confirmation message for assigning worker"
+  },
+  "confirmAssignWorkerMessage": "This change will be recorded in this worker’s historial.",
+  "@confirmAssignWorkerMessage": {
+    "description": "Confirmation message for assigning worker"
+  },
+  "workerUnassignedSuccessfully": "Worker unassigned successfully",
+  "@workerUnassignedSuccessfully": {
+    "description": "Success message when worker is unassigned successfully"
+  },
+  "workerAssignConfirm": "Confirm",
+  "@workerAssignConfirm": {
+    "description": "Confirmation message for unassigning worker"
+  },
+  "reassignWorker": "Reassign worker",
+  "@reassignWorker": {
+    "description": "Label for reassigning worker"
+  },
+  "workerReassigned": "Worker reassigned successfully",
+  "@workerReassigned": {
+    "description": "Success message when worker is reassigned successfully"
+  },
+  "resetPassword": "Reset Password",
+  "@resetPassword": {
+    "description": "Label for reset password button"
+  },
+  "backToLogin": "Back to login",
+  "@backToLogin": {
+    "description": "Label for back to login button"
+  },
+  "passwordResetCodeTitle": "Password Reset Code",
+  "@passwordResetCodeTitle": {
+    "description": "Title for password reset code section"
+  },
+  "passwordResetCode": "Password Reset Code",
+  "@passwordResetCode": {
+    "description": "Label for password reset code section"
+  },
+  "verifyCode": "Verify Code",
+  "@verifyCode": {
+    "description": "Label for verify code button"
+  },
+  "setNewPasswordTitle": "Set New Password",
+  "@setNewPasswordTitle": {
+    "description": "Title for set new password section"
+  },
+  "newPassword": "New Password",
+  "@newPassword": {
+    "description": "Label for new password section"
+  },
+  "confirmPassword": "Confirm Password",
+  "@confirmPassword": {
+    "description": "Label for confirm password section"
+  },
+  "setNewPassword": "Set New Password",
+  "@setNewPassword": {
+    "description": "Label for set new password button"
+  },
+  "emailRequired": "Email is required",
+  "@emailRequired": {
+    "description": "Error message when email is required"
+  },
+  "codeLength": "Code must be 5 characters long",
+  "@codeLength": {
+    "description": "Error message when code is not 5 characters long"
+  },
+  "codeRequired": "Code is required",
+  "@codeRequired": {
+    "description": "Error message when code is required"
+  },
+  "newPasswordRequired": "New password is required",
+  "@newPasswordRequired": {
+    "description": "Error message when new password is required"
+  },
+  "passwordLength": "Password must be at least 8 characters long",
+  "@passwordLength": {
+    "description": "Error message when password is less than 8 characters long"
+  },
+  "passwordsDoNotMatch": "Passwords do not match",
+  "@passwordsDoNotMatch": {
+    "description": "Error message when passwords do not match"
+  },
+  "confirmPasswordRequired": "Confirm password is required",
+  "@confirmPasswordRequired": {
+    "description": "Error message when confirm password is required"
   }
 }

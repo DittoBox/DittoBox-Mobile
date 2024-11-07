@@ -57,6 +57,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "applyTemplate": MessageLookupByLibrary.simpleMessage("Aplicar"),
         "areYouSureDelete": MessageLookupByLibrary.simpleMessage(
             "¿Estás seguro de que deseas eliminar este elemento?"),
+        "backToLogin":
+            MessageLookupByLibrary.simpleMessage("Volver al Inicio de Sesión"),
         "bankAccountOwner": MessageLookupByLibrary.simpleMessage(
             "Propietario de la Cuenta Bancaria"),
         "businessName":
@@ -80,15 +82,22 @@ class MessageLookup extends MessageLookupByLibrary {
         "checkAlerts": MessageLookupByLibrary.simpleMessage("Revisar alertas"),
         "city": MessageLookupByLibrary.simpleMessage("Ciudad"),
         "code": MessageLookupByLibrary.simpleMessage("Código"),
+        "codeLength": MessageLookupByLibrary.simpleMessage(
+            "El código debe tener 5 dígitos"),
+        "codeRequired":
+            MessageLookupByLibrary.simpleMessage("Código requerido"),
         "companyName":
             MessageLookupByLibrary.simpleMessage("Nombre de la empresa"),
-        "confirm": MessageLookupByLibrary.simpleMessage("Confirmar"),
+        "confirmAssignWorker": MessageLookupByLibrary.simpleMessage(
+            "¿Estás seguro de que deseas asignar este trabajador?"),
+        "confirmAssignWorkerMessage": MessageLookupByLibrary.simpleMessage(
+            "Este cambio quedará registrado en el historial de este contenedor."),
         "confirmDelete":
             MessageLookupByLibrary.simpleMessage("Confirmar eliminación"),
-        "confirmAssignWorker":
-            MessageLookupByLibrary.simpleMessage("Confirmar asignación"),
-        "confirmAssignWokerMessage": MessageLookupByLibrary.simpleMessage(
-            "¿Estás seguro de que deseas asignar al trabajador a"),
+        "confirmPassword":
+            MessageLookupByLibrary.simpleMessage("Confirmar Contraseña"),
+        "confirmPasswordRequired": MessageLookupByLibrary.simpleMessage(
+            "Confirmar contraseña requerida"),
         "containerName":
             MessageLookupByLibrary.simpleMessage("Nombre del contenedor"),
         "containerSelectionModal": MessageLookupByLibrary.simpleMessage(
@@ -103,6 +112,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "edit": MessageLookupByLibrary.simpleMessage("Editar"),
         "editData": MessageLookupByLibrary.simpleMessage("Editar Datos"),
         "email": MessageLookupByLibrary.simpleMessage("Correo electrónico"),
+        "emailRequired": MessageLookupByLibrary.simpleMessage(
+            "Correo electrónico requerido"),
         "english": MessageLookupByLibrary.simpleMessage("Inglés"),
         "ethylene": MessageLookupByLibrary.simpleMessage("Etileno"),
         "ethyleneMax": MessageLookupByLibrary.simpleMessage("Etileno Máx"),
@@ -114,6 +125,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Error al obtener las instalaciones"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("¿Olvidaste tu contraseña?"),
+        "forgotPasswordTitle":
+            MessageLookupByLibrary.simpleMessage("¿Olvidaste tu Contraseña?"),
         "gasDetection":
             MessageLookupByLibrary.simpleMessage("Detección de gases"),
         "humidity": MessageLookupByLibrary.simpleMessage("Humedad"),
@@ -138,6 +151,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Nuevo contenedor"),
         "newFacility":
             MessageLookupByLibrary.simpleMessage("Nueva instalación"),
+        "newPassword": MessageLookupByLibrary.simpleMessage("Nueva Contraseña"),
+        "newPasswordRequired":
+            MessageLookupByLibrary.simpleMessage("Nueva contraseña requerida"),
         "newTemplate": MessageLookupByLibrary.simpleMessage("Nueva plantilla"),
         "notifications": MessageLookupByLibrary.simpleMessage("Notificaciones"),
         "owner": MessageLookupByLibrary.simpleMessage("Propietario"),
@@ -147,9 +163,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "password": MessageLookupByLibrary.simpleMessage("Contraseña"),
         "passwordCannotBeEmpty": MessageLookupByLibrary.simpleMessage(
             "La contraseña no puede estar vacía"),
+        "passwordLength": MessageLookupByLibrary.simpleMessage(
+            "La contraseña debe tener al menos 8 caracteres"),
         "passwordMustBeAtLeast8Characters":
             MessageLookupByLibrary.simpleMessage(
                 "La contraseña debe tener al menos 8 caracteres"),
+        "passwordResetCode":
+            MessageLookupByLibrary.simpleMessage("Código de Restablecimiento"),
+        "passwordResetCodeTitle": MessageLookupByLibrary.simpleMessage(
+            "Código de Restablecimiento de Contraseña"),
+        "passwordsDoNotMatch": MessageLookupByLibrary.simpleMessage(
+            "Las contraseñas no coinciden"),
         "paymentInformation":
             MessageLookupByLibrary.simpleMessage("Información de pago"),
         "pendingAlerts":
@@ -190,6 +214,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Registrarse en su lugar"),
         "requiredField":
             MessageLookupByLibrary.simpleMessage("Campo requerido"),
+        "resetPassword":
+            MessageLookupByLibrary.simpleMessage("Restablecer Contraseña"),
         "restaurant": MessageLookupByLibrary.simpleMessage("Restaurante"),
         "role": MessageLookupByLibrary.simpleMessage("Rol"),
         "roleManagement":
@@ -202,6 +228,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Seleccionar instalación"),
         "selectLanguage":
             MessageLookupByLibrary.simpleMessage("Seleccionar idioma"),
+        "setNewPassword":
+            MessageLookupByLibrary.simpleMessage("Establecer Nueva Contraseña"),
+        "setNewPasswordTitle":
+            MessageLookupByLibrary.simpleMessage("Establecer Nueva Contraseña"),
         "settings": MessageLookupByLibrary.simpleMessage("Configuraciones"),
         "spanish": MessageLookupByLibrary.simpleMessage("Español"),
         "statusContainer": MessageLookupByLibrary.simpleMessage("Estado"),
@@ -229,18 +259,25 @@ class MessageLookup extends MessageLookupByLibrary {
         "username": MessageLookupByLibrary.simpleMessage("Nombre de usuario"),
         "usernameCannotBeEmpty": MessageLookupByLibrary.simpleMessage(
             "El nombre de usuario no puede estar vacío"),
+        "verifyCode": MessageLookupByLibrary.simpleMessage("Verificar Código"),
         "viewContainers":
             MessageLookupByLibrary.simpleMessage("Ver contenedores"),
         "viewWorkers": MessageLookupByLibrary.simpleMessage("Ver trabajadores"),
         "warehouse": MessageLookupByLibrary.simpleMessage("Almacén"),
         "welcome": MessageLookupByLibrary.simpleMessage("Bienvenido"),
         "worker": MessageLookupByLibrary.simpleMessage("Trabajador"),
-        "workerAssignedSuccessfully" : MessageLookupByLibrary.simpleMessage("Trabajador asignado con éxito"),
+        "workerAssignConfirm":
+            MessageLookupByLibrary.simpleMessage("Confirmar"),
+        "workerAssignedSuccessfully": MessageLookupByLibrary.simpleMessage(
+            "Trabajador asignado exitosamente"),
         "workerDetails":
             MessageLookupByLibrary.simpleMessage("Detalles del trabajador"),
         "workerList":
             MessageLookupByLibrary.simpleMessage("Lista de Trabajadores"),
-        "workerReassigned": MessageLookupByLibrary.simpleMessage("Trabajador reasignado con éxito"),
+        "workerReassigned":
+            MessageLookupByLibrary.simpleMessage("Trabajador reasignado"),
+        "workerUnassignedSuccessfully": MessageLookupByLibrary.simpleMessage(
+            "Trabajador desasignado exitosamente"),
         "workers": MessageLookupByLibrary.simpleMessage("Trabajadores")
       };
 }

@@ -575,5 +575,101 @@
   "userDetails": "Detalles del Usuario",
   "@userDetails": {
     "description": "Etiqueta para la sección de detalles del usuario"
+  },
+  "workerAssignedSuccessfully": "Trabajador asignado exitosamente",
+  "@workerAssignedSuccessfully": {
+    "description": "Mensaje de éxito cuando el trabajador es asignado exitosamente"
+  },
+  "confirmAssignWorker": "¿Estás seguro de que deseas asignar este trabajador?",
+  "@confirmAssignWorker": {
+    "description": "Mensaje de confirmación para asignar trabajador"
+  },
+  "confirmAssignWorkerMessage": "Este cambio quedará registrado en el historial de este contenedor.",
+  "@confirmAssignWorkerMessage": {
+    "description": "Mensaje de confirmación para asignar trabajador"
+  },
+  "workerUnassignedSuccessfully": "Trabajador desasignado exitosamente",
+  "@workerUnassignedSuccessfully": {
+    "description": "Mensaje de éxito cuando el trabajador es desasignado exitosamente"
+  },
+  "workerAssignConfirm": "Confirmar",
+  "@workerAssignConfirm": {
+    "description": "Mensaje de confirmación para desasignar trabajador"
+  },
+  "reassignWorker": "Reasignar trabajador",
+  "@reassignWorker": {
+    "description": "Etiqueta para reasignar trabajador"
+  },
+  "workerReassigned": "Trabajador reasignado",
+  "@workerReassigned": {
+    "description": "Mensaje de éxito cuando el trabajador es reasignado"
+  },
+  "resetPassword": "Restablecer Contraseña",
+  "@resetPassword": {
+    "description": "Etiqueta para restablecer contraseña"
+  },
+  "backToLogin": "Volver al Inicio de Sesión",
+  "@backToLogin": {
+    "description": "Texto para volver al inicio de sesión"
+  },
+  "passwordResetCodeTitle": "Código de Restablecimiento de Contraseña",
+  "@passwordResetCodeTitle": {
+    "description": "Título para el código de restablecimiento de contraseña"
+  },
+  "passwordResetCode": "Código de Restablecimiento",
+  "@passwordResetCode": {
+    "description": "Etiqueta para el código de restablecimiento"
+  },
+  "verifyCode": "Verificar Código",
+  "@verifyCode": {
+    "description": "Etiqueta para verificar código"
+  },
+  "forgotPasswordTitle": "¿Olvidaste tu Contraseña?",
+  "@forgotPasswordTitle": {
+    "description": "Título para contraseña olvidada"
+  },
+  "setNewPasswordTitle": "Establecer Nueva Contraseña",
+  "@setNewPasswordTitle": {
+    "description": "Título para establecer nueva contraseña"
+  },
+  "newPassword": "Nueva Contraseña",
+  "@newPassword": {
+    "description": "Etiqueta para nueva contraseña"
+  },
+  "confirmPassword": "Confirmar Contraseña",
+  "@confirmPassword": {
+    "description": "Etiqueta para confirmar contraseña"
+  },
+  "setNewPassword": "Establecer Nueva Contraseña",
+  "@setNewPassword": {
+    "description": "Etiqueta para establecer nueva contraseña"
+  },
+  "emailRequired": "Correo electrónico requerido",
+  "@emailRequired": {
+    "description": "Mensaje de error para correo electrónico requerido"
+  },
+  "codeRequired": "Código requerido",
+  "@codeRequired": {
+    "description": "Mensaje de error para código requerido"
+  },
+  "codeLength": "El código debe tener 5 dígitos",
+  "@codeLength": {
+    "description": "Mensaje de error para longitud de código"
+  },
+  "newPasswordRequired": "Nueva contraseña requerida",
+  "@newPasswordRequired": {
+    "description": "Mensaje de error para nueva contraseña requerida"
+  },
+  "passwordLength": "La contraseña debe tener al menos 8 caracteres",
+  "@passwordLength": {
+    "description": "Mensaje de error para longitud de contraseña"
+  },
+  "passwordsDoNotMatch": "Las contraseñas no coinciden",
+  "@passwordsDoNotMatch": {
+    "description": "Mensaje de error para contraseñas no coinciden"
+  },
+  "confirmPasswordRequired": "Confirmar contraseña requerida",
+  "@confirmPasswordRequired": {
+    "description": "Mensaje de error para confirmar contraseña requerida"
   }
 }

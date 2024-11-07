@@ -42,7 +42,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                   const SizedBox(height: 20, width: 20),
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 80),
+                    padding: const EdgeInsets.symmetric(horizontal: 70),
                     child: SegmentedButton<String>(
                       segments: <ButtonSegment<String>>[
                         ButtonSegment<String>(
