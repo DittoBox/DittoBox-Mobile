@@ -69,7 +69,7 @@ class _ReassignWorkerSheetState extends State<ReassignWorkerSheet> {
                 child: Text(S.of(context).cancel),
               ),
               const SizedBox(width: 8),
-              ElevatedButton(
+              FilledButton(
                 onPressed: () {
                   showDialog(
                       context: context, 

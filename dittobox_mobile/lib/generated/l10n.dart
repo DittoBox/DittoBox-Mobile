@@ -1540,10 +1540,10 @@ class S {
     );
   }
 
-  /// `Are you sure you want to unassign this worker?`
+  /// `Confirm`
   String get workerAssignConfirm {
     return Intl.message(
-      'Are you sure you want to unassign this worker?',
+      'Confirm',
       name: 'workerAssignConfirm',
       desc: 'Confirmation message for unassigning worker',
       args: [],

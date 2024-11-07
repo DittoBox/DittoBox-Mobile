@@ -240,8 +240,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "warehouse": MessageLookupByLibrary.simpleMessage("Warehouse"),
         "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
         "worker": MessageLookupByLibrary.simpleMessage("Worker"),
-        "workerAssignConfirm": MessageLookupByLibrary.simpleMessage(
-            "Are you sure you want to unassign this worker?"),
+        "workerAssignConfirm": MessageLookupByLibrary.simpleMessage("Confirm"),
         "workerAssignedSuccessfully": MessageLookupByLibrary.simpleMessage(
             "Worker assigned successfully"),
         "workerDetails": MessageLookupByLibrary.simpleMessage("Worker details"),

@@ -596,7 +596,7 @@
   "@workerUnassignedSuccessfully": {
     "description": "Success message when worker is unassigned successfully"
   },
-  "workerAssignConfirm": "Are you sure you want to unassign this worker?",
+  "workerAssignConfirm": "Confirm",
   "@workerAssignConfirm": {
     "description": "Confirmation message for unassigning worker"
   },

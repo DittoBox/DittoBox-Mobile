@@ -592,7 +592,7 @@
   "@workerUnassignedSuccessfully": {
     "description": "Mensaje de éxito cuando el trabajador es desasignado exitosamente"
   },
-  "workerAssignConfirm": "¿Estás seguro de que deseas desasignar este trabajador?",
+  "workerAssignConfirm": "Confirmar",
   "@workerAssignConfirm": {
     "description": "Mensaje de confirmación para desasignar trabajador"
   },
