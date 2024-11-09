@@ -260,7 +260,7 @@
   "@humidityMax": {
     "description": "Label for Max humidity section"
   },
-  "ethylene": "Ethylene",
+  "ethylene": "Ethylene (C₂H₄)",
   "@ethylene": {
     "description": "Label for ethylene section"
   },
@@ -296,11 +296,11 @@
   "@gasDetection": {
     "description": "Label for gas detection section"
   },
-  "oxygen": "Oxygen",
+  "oxygen": "Oxygen (O₂)",
   "@oxygen": {
     "description": "Label for oxygen section"
   },
-  "carbonDioxide": "Carbon dioxide",
+  "carbonDioxide": "Carbon dioxide (CO₂)",
   "@carbonDioxide": {
     "description": "Label for carbon dioxide section"
   },
@@ -671,5 +671,29 @@
   "confirmPasswordRequired": "Confirm password is required",
   "@confirmPasswordRequired": {
     "description": "Error message when confirm password is required"
+  },
+  "changeTemplate": "Change template",
+  "@changeTemplate": {
+    "description": "Label for changing template"
+  },
+  "ammoniaAndSulferDioxide": "Ammonia (NH₃) and sulfur dioxide (SO₂)",
+  "@ammoniaAndSulferDioxide": {
+    "description": "Label for ammonia and sulfer dioxide"
+  },
+  "templateConfiguration": "Template Configuration",
+  "@templateConfiguration": {
+    "description": "Label for template configuration"
+  },
+  "editContainer": "Edit container",
+  "@editContainer": {
+    "description": "Label for editing container"
+  },
+  "containerDescription": "Container description",
+  "@containerDescription": {
+    "description": "Label for container description"
+  },
+  "detectGases": "Detect gases",
+  "@detectGases": {
+    "description": "Label for detecting gases"
   }
 }
