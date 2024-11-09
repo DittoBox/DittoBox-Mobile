@@ -40,6 +40,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "all": MessageLookupByLibrary.simpleMessage("All"),
         "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
             "Already have an account? Login instead"),
+        "ammoniaAndSulferDioxide": MessageLookupByLibrary.simpleMessage(
+            "Ammonia (NH₃) and sulfur dioxide (SO₂)"),
         "ammoniaAndSulfurDioxide":
             MessageLookupByLibrary.simpleMessage("Ammonia and sulfur dioxide"),
         "ammoniaAndSulfurDioxideMax": MessageLookupByLibrary.simpleMessage(
@@ -59,7 +61,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "cancelSubscription":
             MessageLookupByLibrary.simpleMessage("Cancel subscription"),
-        "carbonDioxide": MessageLookupByLibrary.simpleMessage("Carbon dioxide"),
+        "carbonDioxide":
+            MessageLookupByLibrary.simpleMessage("Carbon dioxide (CO₂)"),
         "carbonDioxideMax":
             MessageLookupByLibrary.simpleMessage("Max carbon dioxide"),
         "carbonDioxideMin":
@@ -67,6 +70,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "category": MessageLookupByLibrary.simpleMessage("Category"),
         "changePassword":
             MessageLookupByLibrary.simpleMessage("Change Password"),
+        "changeTemplate":
+            MessageLookupByLibrary.simpleMessage("Change template"),
         "changeToEnglish":
             MessageLookupByLibrary.simpleMessage("Change to English"),
         "changeToSpanish":
@@ -88,6 +93,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
         "confirmPasswordRequired": MessageLookupByLibrary.simpleMessage(
             "Confirm password is required"),
+        "containerDescription":
+            MessageLookupByLibrary.simpleMessage("Container description"),
         "containerName": MessageLookupByLibrary.simpleMessage("Container name"),
         "containerSelectionModal": MessageLookupByLibrary.simpleMessage(
             "This change will be recorded in this container’s historial."),
@@ -97,14 +104,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "description": MessageLookupByLibrary.simpleMessage("Description"),
         "detectAllGases":
             MessageLookupByLibrary.simpleMessage("Detect all gases"),
+        "detectGases": MessageLookupByLibrary.simpleMessage("Detect gases"),
         "discard": MessageLookupByLibrary.simpleMessage("Discard"),
         "edit": MessageLookupByLibrary.simpleMessage("Edit"),
+        "editContainer": MessageLookupByLibrary.simpleMessage("Edit container"),
         "editData": MessageLookupByLibrary.simpleMessage("Edit Data"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "emailRequired":
             MessageLookupByLibrary.simpleMessage("Email is required"),
         "english": MessageLookupByLibrary.simpleMessage("English"),
-        "ethylene": MessageLookupByLibrary.simpleMessage("Ethylene"),
+        "ethylene": MessageLookupByLibrary.simpleMessage("Ethylene (C₂H₄)"),
         "ethyleneMax": MessageLookupByLibrary.simpleMessage("Max ethylene"),
         "ethyleneMin": MessageLookupByLibrary.simpleMessage("Min ethylene"),
         "facilities": MessageLookupByLibrary.simpleMessage("Facilities"),
@@ -141,7 +150,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "newTemplate": MessageLookupByLibrary.simpleMessage("New template"),
         "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
         "owner": MessageLookupByLibrary.simpleMessage("Owner"),
-        "oxygen": MessageLookupByLibrary.simpleMessage("Oxygen"),
+        "oxygen": MessageLookupByLibrary.simpleMessage("Oxygen (O₂)"),
         "oxygenMax": MessageLookupByLibrary.simpleMessage("Max oxygen"),
         "oxygenMin": MessageLookupByLibrary.simpleMessage("Min oxygen"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
@@ -233,6 +242,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "tempMin": MessageLookupByLibrary.simpleMessage("Min temperature"),
         "temperature": MessageLookupByLibrary.simpleMessage("Temperature"),
         "template": MessageLookupByLibrary.simpleMessage("Template"),
+        "templateConfiguration":
+            MessageLookupByLibrary.simpleMessage("Template Configuration"),
         "templateLibrary":
             MessageLookupByLibrary.simpleMessage("Template Library"),
         "templateName": MessageLookupByLibrary.simpleMessage("Template name"),

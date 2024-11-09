@@ -44,6 +44,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "all": MessageLookupByLibrary.simpleMessage("Todos"),
         "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
             "¿Ya tienes una cuenta? Inicia sesión en su lugar"),
+        "ammoniaAndSulferDioxide": MessageLookupByLibrary.simpleMessage(
+            "Amoníaco (NH₃) y Dióxido de Azufre (SO₂)"),
         "ammoniaAndSulfurDioxide": MessageLookupByLibrary.simpleMessage(
             "Amoníaco y dióxido de azufre"),
         "ammoniaAndSulfurDioxideMax": MessageLookupByLibrary.simpleMessage(
@@ -75,6 +77,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "category": MessageLookupByLibrary.simpleMessage("Categoría"),
         "changePassword":
             MessageLookupByLibrary.simpleMessage("Cambiar Contraseña"),
+        "changeTemplate":
+            MessageLookupByLibrary.simpleMessage("Cambiar Plantilla"),
         "changeToEnglish":
             MessageLookupByLibrary.simpleMessage("Change to Spanish"),
         "changeToSpanish":
@@ -98,6 +102,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Confirmar Contraseña"),
         "confirmPasswordRequired": MessageLookupByLibrary.simpleMessage(
             "Confirmar contraseña requerida"),
+        "containerDescription":
+            MessageLookupByLibrary.simpleMessage("Descripción del Contenedor"),
         "containerName":
             MessageLookupByLibrary.simpleMessage("Nombre del contenedor"),
         "containerSelectionModal": MessageLookupByLibrary.simpleMessage(
@@ -108,8 +114,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "description": MessageLookupByLibrary.simpleMessage("Descripción"),
         "detectAllGases":
             MessageLookupByLibrary.simpleMessage("Detectar todos los gases"),
+        "detectGases": MessageLookupByLibrary.simpleMessage("Detectar Gases"),
         "discard": MessageLookupByLibrary.simpleMessage("Descartar"),
         "edit": MessageLookupByLibrary.simpleMessage("Editar"),
+        "editContainer":
+            MessageLookupByLibrary.simpleMessage("Editar Contenedor"),
         "editData": MessageLookupByLibrary.simpleMessage("Editar Datos"),
         "email": MessageLookupByLibrary.simpleMessage("Correo electrónico"),
         "emailRequired": MessageLookupByLibrary.simpleMessage(
@@ -244,6 +253,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "tempMin": MessageLookupByLibrary.simpleMessage("Temperatura mínima"),
         "temperature": MessageLookupByLibrary.simpleMessage("Temperatura"),
         "template": MessageLookupByLibrary.simpleMessage("Plantilla"),
+        "templateConfiguration":
+            MessageLookupByLibrary.simpleMessage("Configuración de Plantilla"),
         "templateLibrary":
             MessageLookupByLibrary.simpleMessage("Biblioteca de plantillas"),
         "templateName":

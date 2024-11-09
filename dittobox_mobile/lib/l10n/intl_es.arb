@@ -671,5 +671,29 @@
   "confirmPasswordRequired": "Confirmar contraseña requerida",
   "@confirmPasswordRequired": {
     "description": "Mensaje de error para confirmar contraseña requerida"
+  },
+  "changeTemplate": "Cambiar Plantilla",
+  "@changeTemplate": {
+    "description": "Etiqueta para cambiar plantilla"
+  },
+  "ammoniaAndSulferDioxide": "Amoníaco (NH₃) y Dióxido de Azufre (SO₂)",
+  "@ammoniaAndSulferDioxide": {
+    "description": "Etiqueta para amoníaco y dióxido de azufre"
+  },
+  "templateConfiguration": "Configuración de Plantilla",
+  "@templateConfiguration": {
+    "description": "Etiqueta para configuración de plantilla"
+  },
+  "editContainer": "Editar Contenedor",
+  "@editContainer": {
+    "description": "Etiqueta para editar contenedor"
+  },
+  "containerDescription": "Descripción del Contenedor",
+  "@containerDescription": {
+    "description": "Etiqueta para descripción del contenedor"
+  },
+  "detectGases": "Detectar Gases",
+  "@detectGases": {
+    "description": "Etiqueta para detectar gases"
   }
 }

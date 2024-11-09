@@ -700,10 +700,10 @@ class S {
     );
   }
 
-  /// `Ethylene`
+  /// `Ethylene (C₂H₄)`
   String get ethylene {
     return Intl.message(
-      'Ethylene',
+      'Ethylene (C₂H₄)',
       name: 'ethylene',
       desc: 'Label for ethylene section',
       args: [],
@@ -790,20 +790,20 @@ class S {
     );
   }
 
-  /// `Oxygen`
+  /// `Oxygen (O₂)`
   String get oxygen {
     return Intl.message(
-      'Oxygen',
+      'Oxygen (O₂)',
       name: 'oxygen',
       desc: 'Label for oxygen section',
       args: [],
     );
   }
 
-  /// `Carbon dioxide`
+  /// `Carbon dioxide (CO₂)`
   String get carbonDioxide {
     return Intl.message(
-      'Carbon dioxide',
+      'Carbon dioxide (CO₂)',
       name: 'carbonDioxide',
       desc: 'Label for carbon dioxide section',
       args: [],
@@ -1726,6 +1726,66 @@ class S {
       'Confirm password is required',
       name: 'confirmPasswordRequired',
       desc: 'Error message when confirm password is required',
+      args: [],
+    );
+  }
+
+  /// `Change template`
+  String get changeTemplate {
+    return Intl.message(
+      'Change template',
+      name: 'changeTemplate',
+      desc: 'Label for changing template',
+      args: [],
+    );
+  }
+
+  /// `Ammonia (NH₃) and sulfur dioxide (SO₂)`
+  String get ammoniaAndSulferDioxide {
+    return Intl.message(
+      'Ammonia (NH₃) and sulfur dioxide (SO₂)',
+      name: 'ammoniaAndSulferDioxide',
+      desc: 'Label for ammonia and sulfer dioxide',
+      args: [],
+    );
+  }
+
+  /// `Template Configuration`
+  String get templateConfiguration {
+    return Intl.message(
+      'Template Configuration',
+      name: 'templateConfiguration',
+      desc: 'Label for template configuration',
+      args: [],
+    );
+  }
+
+  /// `Edit container`
+  String get editContainer {
+    return Intl.message(
+      'Edit container',
+      name: 'editContainer',
+      desc: 'Label for editing container',
+      args: [],
+    );
+  }
+
+  /// `Container description`
+  String get containerDescription {
+    return Intl.message(
+      'Container description',
+      name: 'containerDescription',
+      desc: 'Label for container description',
+      args: [],
+    );
+  }
+
+  /// `Detect gases`
+  String get detectGases {
+    return Intl.message(
+      'Detect gases',
+      name: 'detectGases',
+      desc: 'Label for detecting gases',
       args: [],
     );
   }

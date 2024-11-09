@@ -1,3 +1,4 @@
+import 'package:dittobox_mobile/containers/presentation/widgets/container_button_sheet.dart';
 import 'package:dittobox_mobile/generated/l10n.dart';
 import 'package:dittobox_mobile/routes/app_routes.dart';
 import 'package:dittobox_mobile/shared/presentation/widgets/custom_navigator_drawer.dart';
@@ -14,7 +15,6 @@ class ContainerListScreen extends StatefulWidget {
 class _ContainerListScreenState extends State<ContainerListScreen>
     with SingleTickerProviderStateMixin {
   List<ContainerItem> _containers = [];
-  // List<ContainerItem> _filteredContainers = [];
   late TabController _tabController;
 
   @override
@@ -32,24 +32,35 @@ class _ContainerListScreenState extends State<ContainerListScreen>
           status: 'Active',
           temperature: '4°C',
           humidity: '48%',
-          lastSync: '1 minute ago'),
+          lastSync: '1 minute ago',
+          oxygen: '21%',
+          carbonDioxide: '0.04%',
+          ethylene: '0.01%',
+          ammoniaAndSulferDioxide: '0.02%'),
       ContainerItem(
           title: 'Frozen cod',
           status: 'Active',
           temperature: '0°C',
           humidity: '15%',
-          lastSync: '2 minutes ago'),
+          lastSync: '2 minutes ago',
+          oxygen: '20%',
+          carbonDioxide: '0.03%',
+          ethylene: '0.02%',
+          ammoniaAndSulferDioxide: '0.01%'),
       ContainerItem(
           title: 'Smoked salmon',
           status: 'Idle',
           temperature: '--°C',
           humidity: '--%',
-          lastSync: 'Last connection'),
+          lastSync: 'Last connection',
+          oxygen: '--%',
+          carbonDioxide: '--%',
+          ethylene: '--%',
+          ammoniaAndSulferDioxide: '--%'),
     ];
 
     setState(() {
       _containers = containers;
-      // _filteredContainers = containers;
     });
   }
 
@@ -98,9 +109,23 @@ class _ContainerListScreenState extends State<ContainerListScreen>
       child: ListView.builder(
         itemCount: containers.length,
         itemBuilder: (context, index) {
-          return ContainerCard(container: containers[index]);
+          return ContainerCard(
+            container: containers[index],
+            onTap: () => showContainerBottomSheet(context, containers[index]),
+          );
         },
       ),
+    );
+  }
+
+  void showContainerBottomSheet(BuildContext context, ContainerItem container) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+      ),
+      builder: (context) => ContainerBottomSheet(container: container),
     );
   }
 }
@@ -112,6 +137,10 @@ class ContainerItem {
   final String temperature;
   final String humidity;
   final String lastSync;
+  final String oxygen;
+  final String carbonDioxide;
+  final String ethylene;
+  final String ammoniaAndSulferDioxide;
 
   ContainerItem({
     required this.title,
@@ -119,82 +148,82 @@ class ContainerItem {
     required this.temperature,
     required this.humidity,
     required this.lastSync,
+    required this.oxygen,
+    required this.carbonDioxide,
+    required this.ethylene,
+    required this.ammoniaAndSulferDioxide,
   });
 }
 
 // Container Card Widget
 class ContainerCard extends StatelessWidget {
   final ContainerItem container;
+  final VoidCallback onTap;
 
-  const ContainerCard({super.key, required this.container});
+  const ContainerCard({super.key, required this.container, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
-    return Card.outlined(
-      margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              container.title,
-              style: const TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
+    return GestureDetector(
+      onTap: onTap,
+      child: Card.outlined(
+        margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                container.title,
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-            const SizedBox(height: 8),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(S.of(context).statusContainer),
-                Text(container.status),
-              ],
-            ),
-            const SizedBox(height: 8),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    const Icon(Icons.thermostat_outlined, size: 20),
-                    const SizedBox(width: 8),
-                    Text(S.of(context).temperature),
-                  ],
-                ),
-                Text(container.temperature),
-              ],
-            ),
-            const SizedBox(height: 8),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    const Icon(Icons.water_drop_outlined, size: 20),
-                    const SizedBox(width: 8),
-                    Text(S.of(context).humidity),
-                  ],
-                ),
-                Text(container.humidity),
-              ],
-            ),
-            const SizedBox(height: 8),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    const Icon(Icons.hourglass_empty, size: 20),
-                    const SizedBox(width: 8),
-                    Text(S.of(context).lastSync),
-                  ],
-                ),
-                Text(container.lastSync),
-              ],
-            ),
-          ],
+              const SizedBox(height: 8),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      const Icon(Icons.thermostat_outlined, size: 20),
+                      const SizedBox(width: 8),
+                      Text(S.of(context).temperature),
+                    ],
+                  ),
+                  Text(container.temperature),
+                ],
+              ),
+              const SizedBox(height: 8),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      const Icon(Icons.water_drop_outlined, size: 20),
+                      const SizedBox(width: 8),
+                      Text(S.of(context).humidity),
+                    ],
+                  ),
+                  Text(container.humidity),
+                ],
+              ),
+              const SizedBox(height: 8),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      const Icon(Icons.hourglass_empty, size: 20),
+                      const SizedBox(width: 8),
+                      Text(S.of(context).lastSync),
+                    ],
+                  ),
+                  Text(container.lastSync),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
