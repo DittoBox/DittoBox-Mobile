@@ -1,6 +1,6 @@
+import 'package:dittobox_mobile/account_and_subscription/infrastructure/data_sources/account_service.dart';
 import 'package:dittobox_mobile/generated/l10n.dart';
 import 'package:dittobox_mobile/routes/app_routes.dart';
-import 'package:dittobox_mobile/user_and_profile/services/user_service.dart';
 import 'package:flutter/material.dart';
 
 class CompanyInfoScreen extends StatefulWidget {
@@ -17,7 +17,7 @@ class _CompanyInfoScreenState extends State<CompanyInfoScreen> {
       TextEditingController();
   final TextEditingController _countryController = TextEditingController();
   final TextEditingController _cityController = TextEditingController();
-  final userService = UserService();
+  final accountService = AccountService();
 
   @override
   Widget build(BuildContext context) {
@@ -124,7 +124,7 @@ class _CompanyInfoScreenState extends State<CompanyInfoScreen> {
                       FilledButton(
                         onPressed: () async {
                           if (formKey.currentState!.validate()) {
-                            var response = await userService.createAccount(_companyNameController.text, _identificationNumberController.text);
+                            var response = await accountService.createAccount(_companyNameController.text, _identificationNumberController.text);
 
                             if (response == 200) {
                               Navigator.pushNamed(context, AppRoutes.facilities);

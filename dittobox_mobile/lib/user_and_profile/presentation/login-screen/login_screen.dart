@@ -1,5 +1,5 @@
 import 'package:dittobox_mobile/generated/l10n.dart';
-import 'package:dittobox_mobile/user_and_profile/services/user_service.dart';
+import 'package:dittobox_mobile/user_and_profile/infrastructure/data_sources/user_service.dart';
 import 'package:flutter/material.dart';
 import 'package:dittobox_mobile/routes/app_routes.dart'; 
 
