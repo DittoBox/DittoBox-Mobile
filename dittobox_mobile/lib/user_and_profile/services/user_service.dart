@@ -14,7 +14,8 @@ class UserService extends BaseService {
   // "email": "string",
   // "password": "string"
   // }
-  Future registerUser(String firstName, String lastName, String username, String email, String password) async {
+  Future registerUser(String firstName, String lastName, String username,
+      String email, String password) async {
     final url = '$baseUrl/user';
     await http.post(
       Uri.parse(url),
@@ -35,8 +36,8 @@ class UserService extends BaseService {
   // "email": "string",
   // "password": "string"
   // }
-  Future<http.Response> loginUser(String email, String password) async {
-    final url = '$baseUrl/login';
+  Future<int> loginUser(String email, String password) async {
+    final url = '$baseUrl/user/login';
     final response = await http.post(
       Uri.parse(url),
       headers: {'Content-Type': 'application/json'},
@@ -45,7 +46,40 @@ class UserService extends BaseService {
         'password': password,
       }),
     );
-    return response;
+
+    if (response.statusCode == 200) {
+      final data = jsonDecode(response.body);
+
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setInt('userId', data['userId']);
+      await prefs.setString('username', data['username']);
+      await prefs.setString('token', data['token']);
+      await prefs.setInt('profileId', data['profileId']);
+
+      // Save nullable integers, handling null values
+      await prefs.setInt('accountId', data['accountId'] ?? -1);
+      await prefs.setInt('groupId', data['groupId'] ?? -1);
+
+      // Convert privileges to List<String>
+      List<String> privileges = List<String>.from(data['privileges']);
+
+      // Save privileges as boolean values
+      await prefs.setBool(
+        'hasWorkerManagementPrivilege',
+        privileges.contains('WorkerManagement'),
+      );
+      await prefs.setBool(
+        'hasGroupManagementPrivilege',
+        privileges.contains('GroupManagement'),
+      );
+      await prefs.setBool(
+        'hasAccountManagementPrivilege',
+        privileges.contains('AccountManagement'),
+      );
+
+      return 200;
+    }
+    return response.statusCode;
   }
 
   // Method to create a new account
@@ -56,9 +90,10 @@ class UserService extends BaseService {
   // "businessId": "string",
   // "representativeId": 0
   // }
-  Future<Map<String, dynamic>> createAccount(String businessName, String businessId) async {
+  Future<int> createAccount(
+      String businessName, String businessId) async {
     final prefs = await SharedPreferences.getInstance();
-    final representativeId = prefs.getInt('representativeId') ?? 0;
+    final representativeId = prefs.getInt('userId') ?? 0;
     final token = prefs.getString('token') ?? '';
 
     final url = '$baseUrl/account';
@@ -71,6 +106,13 @@ class UserService extends BaseService {
         'representativeId': representativeId,
       }),
     );
-    return jsonDecode(response.body);
+    var jsonResponse = jsonDecode(response.body);
+  
+    if (response.statusCode == 200) {
+      await prefs.setInt('accountId', jsonResponse['id']);
+      return 200;
+    }
+
+    return response.statusCode;
   }
 }

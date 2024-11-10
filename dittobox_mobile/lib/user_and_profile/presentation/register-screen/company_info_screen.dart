@@ -1,5 +1,6 @@
 import 'package:dittobox_mobile/generated/l10n.dart';
 import 'package:dittobox_mobile/routes/app_routes.dart';
+import 'package:dittobox_mobile/user_and_profile/services/user_service.dart';
 import 'package:flutter/material.dart';
 
 class CompanyInfoScreen extends StatefulWidget {
@@ -12,9 +13,11 @@ class CompanyInfoScreen extends StatefulWidget {
 class _CompanyInfoScreenState extends State<CompanyInfoScreen> {
   final formKey = GlobalKey<FormState>();
   final TextEditingController _companyNameController = TextEditingController();
-  final TextEditingController _identificationNumberController = TextEditingController();
+  final TextEditingController _identificationNumberController =
+      TextEditingController();
   final TextEditingController _countryController = TextEditingController();
   final TextEditingController _cityController = TextEditingController();
+  final userService = UserService();
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +41,9 @@ class _CompanyInfoScreenState extends State<CompanyInfoScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  const SizedBox(height: -100), // Ajusta este valor para mover el contenido hacia arriba o abajo
+                  const SizedBox(
+                      height:
+                          -100), // Ajusta este valor para mover el contenido hacia arriba o abajo
                   Text(
                     S.of(context).aboutYourCompany,
                     textAlign: TextAlign.center,
@@ -117,13 +122,24 @@ class _CompanyInfoScreenState extends State<CompanyInfoScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       FilledButton(
-                        onPressed: () {
+                        onPressed: () async {
                           if (formKey.currentState!.validate()) {
-                            Navigator.pushNamed(context, AppRoutes.facilities);
+                            var response = await userService.createAccount(_companyNameController.text, _identificationNumberController.text);
+
+                            if (response == 200) {
+                              Navigator.pushNamed(context, AppRoutes.facilities);
+                            } else {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                  content: Text('An error occurred. Please try again.'),
+                                ),
+                              );
+                            }
                           }
                         },
                         style: FilledButton.styleFrom(
-                          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 30, vertical: 10),
                         ),
                         child: Text(S.of(context).register),
                       ),

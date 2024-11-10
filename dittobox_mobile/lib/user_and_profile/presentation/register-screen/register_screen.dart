@@ -171,7 +171,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 _emailController.text,
                                 _passwordController.text,
                               );
-                              if (loginResponse.statusCode == 200) {
+                              if (loginResponse == 200) {
                                 if (userType == 'Owner') {
                                   Navigator.pushNamed(
                                       context, AppRoutes.companyInfo);
