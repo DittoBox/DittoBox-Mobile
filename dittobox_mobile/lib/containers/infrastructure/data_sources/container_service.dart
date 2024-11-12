@@ -1,10 +1,13 @@
 import 'package:dittobox_mobile/containers/infrastructure/models/container.dart';
 import 'package:dittobox_mobile/shared/services/base_service.dart';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 
 class ContainerService extends BaseService {
-  Future<List<Container>> getContainersByAccountId(int accountId) async {
+  Future<List<Container>> getContainersByAccountId() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    final String accountId = prefs.getString('accountId') ?? '';
     final response = await http.get(Uri.parse('/account/$accountId/containers'));
     final List<dynamic> data = json.decode(response.body);
     return data.map((container) => Container.fromJson(container)).toList();
@@ -16,7 +19,11 @@ class ContainerService extends BaseService {
     return Container.fromJson(data);
   }
 
-  Future<Container> getContainerByFacilityId(int facilityId) async {
+  Future<Container> getContainerByFacilityId(int? facilityId) async {
+    if (facilityId == null) {
+      final SharedPreferences prefs = await SharedPreferences.getInstance();
+      facilityId = prefs.getInt('groupId'); 
+    }
     final response = await http.get(Uri.parse('/group/$facilityId/containers'));
     final Map<String, dynamic> data = json.decode(response.body);
     return Container.fromJson(data);
