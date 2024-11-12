@@ -121,7 +121,7 @@ class PaymentInformation extends StatelessWidget {
           children: [
             FilledButton(
               onPressed: () {
-                // Lógica para actualizar la información de pago
+                Navigator.of(context).pushNamed(AppRoutes.payment);
               },
               child: const Text('Update'),
             ),

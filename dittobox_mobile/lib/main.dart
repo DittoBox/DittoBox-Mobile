@@ -2,11 +2,15 @@ import 'package:dittobox_mobile/generated/l10n.dart';
 import 'package:dittobox_mobile/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_stripe/flutter_stripe.dart';
 import './styles/dittobox_theme.dart';
 import 'package:google_fonts/google_fonts.dart';
-void main() async {
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  Stripe.publishableKey = 'pk_test_51QK7TMGr4GvZGeh3zotPdGR64PWDuFU6TYwD7P9eW3b3fwALMrs85TDD9tgIfRpzhk0yPikkVksab0kMkIqzQb5o002rRXHvus';
   runApp(const MainApp());
 }
+
 
 class MainApp extends StatefulWidget {
   const MainApp({super.key});
