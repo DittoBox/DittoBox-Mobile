@@ -6,8 +6,8 @@ import 'dart:convert';
 
 class ContainerService extends BaseService {
   Future<List<Container>> getContainersByAccountId() async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    final String accountId = prefs.getString('accountId') ?? '';
+	final SharedPreferencesAsync asyncPrefs = SharedPreferencesAsync();
+    final String accountId = await asyncPrefs.getString('accountId') ?? '';
     final response = await http.get(Uri.parse('/account/$accountId/containers'));
     final List<dynamic> data = json.decode(response.body);
     return data.map((container) => Container.fromJson(container)).toList();
@@ -21,8 +21,8 @@ class ContainerService extends BaseService {
 
   Future<Container> getContainerByFacilityId(int? facilityId) async {
     if (facilityId == null) {
-      final SharedPreferences prefs = await SharedPreferences.getInstance();
-      facilityId = prefs.getInt('groupId'); 
+      final SharedPreferencesAsync asyncPrefs = SharedPreferencesAsync();
+      facilityId = await asyncPrefs.getInt('groupId'); 
     }
     final response = await http.get(Uri.parse('/group/$facilityId/containers'));
     final Map<String, dynamic> data = json.decode(response.body);
