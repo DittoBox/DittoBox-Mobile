@@ -1,4 +1,5 @@
 import 'package:dittobox_mobile/generated/l10n.dart';
+import 'package:dittobox_mobile/user_and_profile/infrastructure/data_sources/user_service.dart';
 import 'package:flutter/material.dart';
 import 'package:dittobox_mobile/routes/app_routes.dart'; 
 
@@ -11,7 +12,7 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   final formKey = GlobalKey<FormState>();
-  final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   bool isPasswordVisible = false;
 
@@ -36,6 +37,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final userService = UserService(); 
+
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0),
@@ -55,7 +58,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               const SizedBox(height: 40),
               TextFormField(
-                controller: _usernameController,
+                controller: _emailController,
                 decoration: InputDecoration(
                   labelText: S.of(context).username,
                   border: const OutlineInputBorder(),
@@ -63,11 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return S.of(context).usernameCannotBeEmpty;
-                  } else if (!RegExp(r'^[a-zA-Z0-9]+$').hasMatch(value)) {
-                    return 'The username can only contain letters and numbers.';
-                  } else if (value.length < 4) {
-                    return 'The username must be at least 4 characters.';
-                  }
+                  } 
                   return null;
                 },
               ),
@@ -94,13 +93,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return S.of(context).passwordCannotBeEmpty;
-                  } else if (value.length < 6) {
-                    return 'The password must be at least 6 characters.';
-                  } else if (!RegExp(r'[A-Z]').hasMatch(value)) {
-                    return 'The password must contain at least one capital letter.';
-                  } else if (!RegExp(r'[0-9]').hasMatch(value)) {
-                    return 'The password must contain at least one number.';
-                  }
+                  } 
                   return null;
                 },
               ),
@@ -111,7 +104,16 @@ class _LoginScreenState extends State<LoginScreen> {
                   FilledButton(
                     onPressed: () async {
                       if (formKey.currentState!.validate()) {
-                        Navigator.pushNamed(context, AppRoutes.facilities);
+                        try {
+                          await userService.loginUser(_emailController.text, _passwordController.text);
+                          Navigator.pushNamed(context, AppRoutes.facilities);
+                        } catch (e) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text('Login failed: $e'),
+                            ),
+                          );
+                        }
                       }
                     },
                     child: Text(S.of(context).login),
