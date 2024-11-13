@@ -77,44 +77,6 @@ class UserService extends BaseService {
         'hasAccountManagementPrivilege',
         privileges.contains('AccountManagement'),
       );
-
-      // Validate if shared preferences are saved
-      final userId = await prefs.getInt('userId');
-      final username = await prefs.getString('username');
-      final token = await prefs.getString('token');
-      final profileId = await prefs.getInt('profileId');
-      final accountId = await prefs.getInt('accountId');
-      final groupId = await prefs.getInt('groupId');
-      final hasWorkerManagementPrivilege = await
-          prefs.getBool('hasWorkerManagementPrivilege');
-      final hasGroupManagementPrivilege = await
-          prefs.getBool('hasGroupManagementPrivilege');
-      final hasAccountManagementPrivilege = await
-          prefs.getBool('hasAccountManagementPrivilege');
-
-      // Check if any value is null and throw exception
-      if (userId == null ||
-          username == null ||
-          token == null ||
-          profileId == null ||
-          accountId == null ||
-          groupId == null ||
-          hasWorkerManagementPrivilege == null ||
-          hasGroupManagementPrivilege == null ||
-          hasAccountManagementPrivilege == null) {
-        throw Exception('Preferences not saved properly');
-      }
-
-      log('userId: $userId');
-      log('username: $username');
-      log('token: $token');
-      log('profileId: $profileId');
-      log('accountId: $accountId');
-      log('groupId: $groupId');
-      log('hasWorkerManagementPrivilege: $hasWorkerManagementPrivilege');
-      log('hasGroupManagementPrivilege: $hasGroupManagementPrivilege');
-      log('hasAccountManagementPrivilege: $hasAccountManagementPrivilege');
-
       return 200;
     }
     return response.statusCode;

@@ -1,40 +1,28 @@
+import 'location.dart';
+
 // Facility Model
 class Facility {
+  final int id;
   final String title;
-  final String location;
-  final int containers;
-  final int alerts;
-  final int workers;
-  final String type; // Nueva propiedad
+  final Location location;
+  final int accountId;
+  final int facilityType;
 
   Facility({
+    required this.id,
     required this.title,
     required this.location,
-    required this.containers,
-    required this.alerts,
-    required this.workers,
-    required this.type, // Nuevo parámetro
+    required this.accountId,
+    required this.facilityType,
   });
 
   factory Facility.fromJson(Map<String, dynamic> json) {
     return Facility(
-      title: json['title'],
-      location: json['location'],
-      containers: json['containers'],
-      alerts: json['alerts'],
-      workers: json['workers'],
-      type: json['type'], // Nuevo campo
+      id: json['id'],
+      title: json['name'],
+      location: Location.fromJson(json['location']),
+      accountId: json['accountId'],
+      facilityType: json['facilityType'],
     );
-  }
-
-  Map<String, dynamic> toJson() {
-    return {
-      'title': title,
-      'location': location,
-      'containers': containers,
-      'alerts': alerts,
-      'workers': workers,
-      'type': type, // Nuevo campo
-    };
   }
 }
