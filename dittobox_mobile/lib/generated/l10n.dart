@@ -1740,11 +1740,21 @@ class S {
     );
   }
 
-  /// `Ammonia (NH₃) and sulfur dioxide (SO₂)`
-  String get ammoniaAndSulferDioxide {
+  /// `Ammonia (NH₃)`
+  String get ammonia {
     return Intl.message(
-      'Ammonia (NH₃) and sulfur dioxide (SO₂)',
-      name: 'ammoniaAndSulferDioxide',
+      'Ammonia (NH₃)',
+      name: 'ammonia',
+      desc: 'Label for ammonia and sulfer dioxide',
+      args: [],
+    );
+  }
+
+  /// `Sulfur dioxide (SO₂)`
+  String get sulfurDioxide {
+    return Intl.message(
+      'Sulfur dioxide (SO₂)',
+      name: 'sulfurDioxide',
       desc: 'Label for ammonia and sulfer dioxide',
       args: [],
     );
@@ -1786,6 +1796,46 @@ class S {
       'Detect gases',
       name: 'detectGases',
       desc: 'Label for detecting gases',
+      args: [],
+    );
+  }
+
+  /// `Last known health status`
+  String get lastKnownHealthStatus {
+    return Intl.message(
+      'Last known health status',
+      name: 'lastKnownHealthStatus',
+      desc: 'Label for last known health status',
+      args: [],
+    );
+  }
+
+  /// `You don't have any Dittobox containers yet`
+  String get containersNotFound {
+    return Intl.message(
+      'You don\'t have any Dittobox containers yet',
+      name: 'containersNotFound',
+      desc: 'Error message when containers are not found',
+      args: [],
+    );
+  }
+
+  /// `No facilities available`
+  String get noFacilitiesAvailable {
+    return Intl.message(
+      'No facilities available',
+      name: 'noFacilitiesAvailable',
+      desc: 'Error message when no facilities are available',
+      args: [],
+    );
+  }
+
+  /// `Container created successfully`
+  String get containerCreatedSuccessfully {
+    return Intl.message(
+      'Container created successfully',
+      name: 'containerCreatedSuccessfully',
+      desc: 'Success message when container is created successfully',
       args: [],
     );
   }

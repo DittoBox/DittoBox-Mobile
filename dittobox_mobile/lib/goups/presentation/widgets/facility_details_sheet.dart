@@ -91,7 +91,7 @@ void showFacilityDetailsBottomSheet(BuildContext context, Facility facility, Voi
             const SizedBox(height: 16),
 
             // Contenido del BottomSheet
-            buildInfoRowWithIcon(Icons.widgets_outlined, S.of(context).containers, 3),
+            buildInfoRowWithIcon(Icons.widgets_outlined, S.of(context).containers, facility.containerCount),
             Row(
               children: [
                 TextButton(
@@ -111,7 +111,7 @@ void showFacilityDetailsBottomSheet(BuildContext context, Facility facility, Voi
             ),
             const SizedBox(height: 8),
 
-            buildInfoRowWithIcon(Icons.person_2_outlined, S.of(context).workers, 3),
+            buildInfoRowWithIcon(Icons.person_2_outlined, S.of(context).workers, facility.profileCount),
             Row(
               children: [
                 TextButton(

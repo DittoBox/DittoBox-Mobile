@@ -40,8 +40,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "all": MessageLookupByLibrary.simpleMessage("All"),
         "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
             "Already have an account? Login instead"),
-        "ammoniaAndSulferDioxide": MessageLookupByLibrary.simpleMessage(
-            "Ammonia (NH₃) and sulfur dioxide (SO₂)"),
+        "ammonia": MessageLookupByLibrary.simpleMessage("Ammonia (NH₃)"),
         "ammoniaAndSulfurDioxide":
             MessageLookupByLibrary.simpleMessage("Ammonia and sulfur dioxide"),
         "ammoniaAndSulfurDioxideMax": MessageLookupByLibrary.simpleMessage(
@@ -93,12 +92,16 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
         "confirmPasswordRequired": MessageLookupByLibrary.simpleMessage(
             "Confirm password is required"),
+        "containerCreatedSuccessfully": MessageLookupByLibrary.simpleMessage(
+            "Container created successfully"),
         "containerDescription":
             MessageLookupByLibrary.simpleMessage("Container description"),
         "containerName": MessageLookupByLibrary.simpleMessage("Container name"),
         "containerSelectionModal": MessageLookupByLibrary.simpleMessage(
             "This change will be recorded in this container’s historial."),
         "containers": MessageLookupByLibrary.simpleMessage("Containers"),
+        "containersNotFound": MessageLookupByLibrary.simpleMessage(
+            "You don\'t have any Dittobox containers yet"),
         "country": MessageLookupByLibrary.simpleMessage("Country"),
         "delete": MessageLookupByLibrary.simpleMessage("Delete"),
         "description": MessageLookupByLibrary.simpleMessage("Description"),
@@ -132,6 +135,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Identification number"),
         "invalidEmail": MessageLookupByLibrary.simpleMessage("Invalid email"),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
+        "lastKnownHealthStatus":
+            MessageLookupByLibrary.simpleMessage("Last known health status"),
         "lastSync": MessageLookupByLibrary.simpleMessage("Last sync"),
         "logOut": MessageLookupByLibrary.simpleMessage("Log out"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
@@ -148,6 +153,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "newPasswordRequired":
             MessageLookupByLibrary.simpleMessage("New password is required"),
         "newTemplate": MessageLookupByLibrary.simpleMessage("New template"),
+        "noFacilitiesAvailable":
+            MessageLookupByLibrary.simpleMessage("No facilities available"),
         "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
         "owner": MessageLookupByLibrary.simpleMessage("Owner"),
         "oxygen": MessageLookupByLibrary.simpleMessage("Oxygen (O₂)"),
@@ -238,6 +245,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Subscription details"),
         "subscriptionTier":
             MessageLookupByLibrary.simpleMessage("Subscription Tier"),
+        "sulfurDioxide":
+            MessageLookupByLibrary.simpleMessage("Sulfur dioxide (SO₂)"),
         "tempMax": MessageLookupByLibrary.simpleMessage("Max temperature"),
         "tempMin": MessageLookupByLibrary.simpleMessage("Min temperature"),
         "temperature": MessageLookupByLibrary.simpleMessage("Temperature"),
