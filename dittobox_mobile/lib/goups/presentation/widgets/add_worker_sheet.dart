@@ -1,4 +1,5 @@
 import 'package:dittobox_mobile/generated/l10n.dart';
+import 'package:dittobox_mobile/goups/infrastructure/data_sources/facilities_service.dart';
 import 'package:dittobox_mobile/goups/presentation/widgets/confirm_assign_worker_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:dittobox_mobile/goups/infrastructure/models/facilities.dart';
@@ -29,27 +30,8 @@ class _AddWorkerSheetState extends State<AddWorkerSheet> {
 
   Future<void> _loadFacilities() async {
     try {
-      // final facilitiesList = await _facilitiesService.getFacilities();
+      final facilitiesList = await FacilitiesService().getFacilities();
 
-      // provitional data
-      final facilitiesList = [
-        Facility(
-          title: 'Restaurante A',
-          location: 'Ubicación A',
-          type: 'restaurant',
-          containers: 10,
-          alerts: 2,
-          workers: 5,
-        ),
-        Facility(
-          title: 'Almacén B',
-          location: 'Ubicación B',
-          type: 'warehouse',
-          containers: 20,
-          alerts: 1,
-          workers: 8,
-        ),
-      ];
       setState(() {
         facilities = facilitiesList;
         isLoading = false; // Finaliza la carga
