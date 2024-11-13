@@ -35,7 +35,7 @@ class _MainAppState extends State<MainApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'DittoBox',
-      initialRoute: AppRoutes.facilities,
+      initialRoute: AppRoutes.login,
       debugShowCheckedModeBanner: false,
       theme: MediaQuery.of(context).platformBrightness == Brightness.dark
           ? DittoBoxTheme(textTheme).dark()
