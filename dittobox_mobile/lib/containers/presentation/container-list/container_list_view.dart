@@ -9,7 +9,6 @@ import 'package:dittobox_mobile/goups/infrastructure/models/facilities.dart';
 import 'package:dittobox_mobile/goups/infrastructure/data_sources/facilities_service.dart';
 import 'package:dittobox_mobile/containers/presentation/widgets/add_container_sheet.dart';
 
-// Container List Screen
 class ContainerListScreen extends StatefulWidget {
   const ContainerListScreen({super.key});
 
@@ -17,8 +16,7 @@ class ContainerListScreen extends StatefulWidget {
   State<ContainerListScreen> createState() => _ContainerListScreenState();
 }
 
-class _ContainerListScreenState extends State<ContainerListScreen>
-    with SingleTickerProviderStateMixin {
+class _ContainerListScreenState extends State<ContainerListScreen> with SingleTickerProviderStateMixin {
   List<model.Container> _containers = [];
   late TabController _tabController;
   final ContainerService _containerService = ContainerService();
@@ -180,7 +178,7 @@ class _ContainerListScreenState extends State<ContainerListScreen>
                 },
               ),
             );
-          }).toList(),
+          }),
         ],
       ),
     );
@@ -191,7 +189,7 @@ class _ContainerListScreenState extends State<ContainerListScreen>
       return Center(
         child: Text(
           S.of(context).containersNotFound,
-          style: TextStyle(fontSize: 18, color: Colors.grey),
+          style: const TextStyle(fontSize: 18, color: Colors.grey),
         ),
       );
     }
@@ -217,7 +215,34 @@ class _ContainerListScreenState extends State<ContainerListScreen>
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
       ),
-      builder: (context) => ContainerBottomSheet(container: container),
+      builder: (context) => ContainerBottomSheet(
+        container: container,
+        onTemplateAssigned: () {
+          Navigator.of(context).pop(); // Close the bottom sheet
+          _showSuccessDialog(context);
+        },
+      ),
+    );
+  }
+
+  void _showSuccessDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(S.of(context).success),
+          content: Text(S.of(context).templateAssignedSuccessfully),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(); // Close the success dialog
+                _fetchContainers(); // Reload the container list
+              },
+              child: Text(S.of(context).ok),
+            ),
+          ],
+        );
+      },
     );
   }
 }

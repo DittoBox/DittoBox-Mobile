@@ -55,9 +55,12 @@ class _AddContainerSheetState extends State<AddContainerSheet> {
       selectedFacilityObj.id,
       1, // Asumiendo que containerSizeId es 1, puedes cambiarlo según sea necesario
     );
+    // ignore: use_build_context_synchronously
     Navigator.pop(context);
+    // ignore: use_build_context_synchronously
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
+        // ignore: use_build_context_synchronously
         content: Text(S.of(context).containerCreatedSuccessfully),
       ),
     );

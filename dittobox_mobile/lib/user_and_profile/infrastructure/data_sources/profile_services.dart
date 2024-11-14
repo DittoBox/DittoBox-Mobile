@@ -7,7 +7,7 @@ import 'package:dittobox_mobile/shared/services/base_service.dart';
 class ProfileService extends BaseService {
   Future<Profile?> getProfileDetails() async {
     try {
-      final prefs = await SharedPreferencesAsync();
+      final prefs = SharedPreferencesAsync();
       final userId = await prefs.getInt('userId');
       print('User ID: $userId');
       final url = '$baseUrl/profile/$userId';

@@ -81,8 +81,10 @@ class _FacilitiesListState extends State<FacilitiesList> {
         _filteredFacilities = facilities;
       });
     } catch (e) {
+      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
+          // ignore: use_build_context_synchronously
           content: Text('${S.of(context).failedToFetchFacilities}: $e'),
         ),
       );

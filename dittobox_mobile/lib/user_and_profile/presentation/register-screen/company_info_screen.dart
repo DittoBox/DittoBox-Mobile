@@ -127,8 +127,10 @@ class _CompanyInfoScreenState extends State<CompanyInfoScreen> {
                             var response = await accountService.createAccount(_companyNameController.text, _identificationNumberController.text);
 
                             if (response == 200) {
+                              // ignore: use_build_context_synchronously
                               Navigator.pushNamed(context, AppRoutes.facilities);
                             } else {
+                              // ignore: use_build_context_synchronously
                               ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(
                                   content: Text('An error occurred. Please try again.'),

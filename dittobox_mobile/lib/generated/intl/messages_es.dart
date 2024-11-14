@@ -60,6 +60,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "applyTemplate": MessageLookupByLibrary.simpleMessage("Aplicar"),
         "areYouSureDelete": MessageLookupByLibrary.simpleMessage(
             "¿Estás seguro de que deseas eliminar este elemento?"),
+        "assignTemplate":
+            MessageLookupByLibrary.simpleMessage("Asignar Plantilla?"),
         "backToLogin":
             MessageLookupByLibrary.simpleMessage("Volver al Inicio de Sesión"),
         "bankAccountOwner": MessageLookupByLibrary.simpleMessage(
@@ -86,6 +88,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Cambiar a inglés"),
         "checkAlerts": MessageLookupByLibrary.simpleMessage("Revisar alertas"),
         "city": MessageLookupByLibrary.simpleMessage("Ciudad"),
+        "close": MessageLookupByLibrary.simpleMessage("Cerrar"),
         "code": MessageLookupByLibrary.simpleMessage("Código"),
         "codeLength": MessageLookupByLibrary.simpleMessage(
             "El código debe tener 5 dígitos"),
@@ -115,8 +118,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "containersNotFound": MessageLookupByLibrary.simpleMessage(
             "No posees ningún DittoBox por el momento"),
         "country": MessageLookupByLibrary.simpleMessage("País"),
+        "currentConfigs":
+            MessageLookupByLibrary.simpleMessage("Configuraciones Actuales"),
         "delete": MessageLookupByLibrary.simpleMessage("Eliminar"),
         "description": MessageLookupByLibrary.simpleMessage("Descripción"),
+        "details": MessageLookupByLibrary.simpleMessage("Detalles"),
         "detectAllGases":
             MessageLookupByLibrary.simpleMessage("Detectar todos los gases"),
         "detectGases": MessageLookupByLibrary.simpleMessage("Detectar Gases"),
@@ -173,7 +179,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "newTemplate": MessageLookupByLibrary.simpleMessage("Nueva plantilla"),
         "noFacilitiesAvailable": MessageLookupByLibrary.simpleMessage(
             "No hay instalaciones disponibles"),
+        "noTemplateAssigned":
+            MessageLookupByLibrary.simpleMessage("No hay plantilla asignada"),
         "notifications": MessageLookupByLibrary.simpleMessage("Notificaciones"),
+        "ok": MessageLookupByLibrary.simpleMessage("Aceptar"),
         "owner": MessageLookupByLibrary.simpleMessage("Propietario"),
         "oxygen": MessageLookupByLibrary.simpleMessage("Oxígeno"),
         "oxygenMax": MessageLookupByLibrary.simpleMessage("Oxígeno Máx"),
@@ -246,6 +255,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Seleccionar instalación"),
         "selectLanguage":
             MessageLookupByLibrary.simpleMessage("Seleccionar idioma"),
+        "selectTemplate":
+            MessageLookupByLibrary.simpleMessage("Seleccionar Plantilla"),
         "setNewPassword":
             MessageLookupByLibrary.simpleMessage("Establecer Nueva Contraseña"),
         "setNewPasswordTitle":
@@ -258,12 +269,19 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Detalles de la suscripción"),
         "subscriptionTier":
             MessageLookupByLibrary.simpleMessage("Nivel de Suscripción"),
+        "success": MessageLookupByLibrary.simpleMessage("Éxito"),
         "sulfurDioxide":
             MessageLookupByLibrary.simpleMessage("Dióxido de azufre (SO₂)"),
+        "sulfurDioxideMax":
+            MessageLookupByLibrary.simpleMessage("Dióxido de azufre Máx"),
+        "sulfurDioxideMin":
+            MessageLookupByLibrary.simpleMessage("Dióxido de azufre Min"),
         "tempMax": MessageLookupByLibrary.simpleMessage("Temperatura máxima"),
         "tempMin": MessageLookupByLibrary.simpleMessage("Temperatura mínima"),
         "temperature": MessageLookupByLibrary.simpleMessage("Temperatura"),
         "template": MessageLookupByLibrary.simpleMessage("Plantilla"),
+        "templateAssignedSuccessfully": MessageLookupByLibrary.simpleMessage(
+            "Plantilla asignada exitosamente"),
         "templateConfiguration":
             MessageLookupByLibrary.simpleMessage("Configuración de Plantilla"),
         "templateLibrary":
@@ -284,6 +302,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "verifyCode": MessageLookupByLibrary.simpleMessage("Verificar Código"),
         "viewContainers":
             MessageLookupByLibrary.simpleMessage("Ver contenedores"),
+        "viewCurrentConfigs":
+            MessageLookupByLibrary.simpleMessage("Ver Config Actuales"),
         "viewWorkers": MessageLookupByLibrary.simpleMessage("Ver trabajadores"),
         "warehouse": MessageLookupByLibrary.simpleMessage("Almacén"),
         "welcome": MessageLookupByLibrary.simpleMessage("Bienvenido"),

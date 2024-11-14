@@ -1849,6 +1849,126 @@ class S {
       args: [],
     );
   }
+
+  /// `Details`
+  String get details {
+    return Intl.message(
+      'Details',
+      name: 'details',
+      desc: 'Label for details',
+      args: [],
+    );
+  }
+
+  /// `Max sulfur dioxide`
+  String get sulfurDioxideMax {
+    return Intl.message(
+      'Max sulfur dioxide',
+      name: 'sulfurDioxideMax',
+      desc: 'Label for Max sulfur dioxide section',
+      args: [],
+    );
+  }
+
+  /// `Min sulfur dioxide`
+  String get sulfurDioxideMin {
+    return Intl.message(
+      'Min sulfur dioxide',
+      name: 'sulfurDioxideMin',
+      desc: 'Label for Min sulfur dioxide section',
+      args: [],
+    );
+  }
+
+  /// `View current configs`
+  String get viewCurrentConfigs {
+    return Intl.message(
+      'View current configs',
+      name: 'viewCurrentConfigs',
+      desc: 'Label for viewing current configurations',
+      args: [],
+    );
+  }
+
+  /// `Current configurations`
+  String get currentConfigs {
+    return Intl.message(
+      'Current configurations',
+      name: 'currentConfigs',
+      desc: 'Label for current configurations',
+      args: [],
+    );
+  }
+
+  /// `Close`
+  String get close {
+    return Intl.message(
+      'Close',
+      name: 'close',
+      desc: 'Button label for closing',
+      args: [],
+    );
+  }
+
+  /// `No template assigned`
+  String get noTemplateAssigned {
+    return Intl.message(
+      'No template assigned',
+      name: 'noTemplateAssigned',
+      desc: 'Error message when no template is assigned',
+      args: [],
+    );
+  }
+
+  /// `Assign template?`
+  String get assignTemplate {
+    return Intl.message(
+      'Assign template?',
+      name: 'assignTemplate',
+      desc: 'Label for assigning template',
+      args: [],
+    );
+  }
+
+  /// `Select template`
+  String get selectTemplate {
+    return Intl.message(
+      'Select template',
+      name: 'selectTemplate',
+      desc: 'Label for selecting template',
+      args: [],
+    );
+  }
+
+  /// `Template assigned successfully`
+  String get templateAssignedSuccessfully {
+    return Intl.message(
+      'Template assigned successfully',
+      name: 'templateAssignedSuccessfully',
+      desc: 'Success message when template is assigned successfully',
+      args: [],
+    );
+  }
+
+  /// `Success`
+  String get success {
+    return Intl.message(
+      'Success',
+      name: 'success',
+      desc: 'Label for success',
+      args: [],
+    );
+  }
+
+  /// `Ok`
+  String get ok {
+    return Intl.message(
+      'Ok',
+      name: 'ok',
+      desc: 'Button label for ok',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

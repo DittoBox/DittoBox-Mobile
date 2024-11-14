@@ -54,6 +54,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "applyTemplate": MessageLookupByLibrary.simpleMessage("Apply"),
         "areYouSureDelete": MessageLookupByLibrary.simpleMessage(
             "Are you sure you want to delete this?"),
+        "assignTemplate":
+            MessageLookupByLibrary.simpleMessage("Assign template?"),
         "backToLogin": MessageLookupByLibrary.simpleMessage("Back to login"),
         "bankAccountOwner":
             MessageLookupByLibrary.simpleMessage("Bank Account Owner"),
@@ -78,6 +80,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Change to Spanish"),
         "checkAlerts": MessageLookupByLibrary.simpleMessage("Check alerts"),
         "city": MessageLookupByLibrary.simpleMessage("City"),
+        "close": MessageLookupByLibrary.simpleMessage("Close"),
         "code": MessageLookupByLibrary.simpleMessage("Code"),
         "codeLength": MessageLookupByLibrary.simpleMessage(
             "Code must be 5 characters long"),
@@ -104,8 +107,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "containersNotFound": MessageLookupByLibrary.simpleMessage(
             "You don\'t have any Dittobox containers yet"),
         "country": MessageLookupByLibrary.simpleMessage("Country"),
+        "currentConfigs":
+            MessageLookupByLibrary.simpleMessage("Current configurations"),
         "delete": MessageLookupByLibrary.simpleMessage("Delete"),
         "description": MessageLookupByLibrary.simpleMessage("Description"),
+        "details": MessageLookupByLibrary.simpleMessage("Details"),
         "detectAllGases":
             MessageLookupByLibrary.simpleMessage("Detect all gases"),
         "detectGases": MessageLookupByLibrary.simpleMessage("Detect gases"),
@@ -156,7 +162,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "newTemplate": MessageLookupByLibrary.simpleMessage("New template"),
         "noFacilitiesAvailable":
             MessageLookupByLibrary.simpleMessage("No facilities available"),
+        "noTemplateAssigned":
+            MessageLookupByLibrary.simpleMessage("No template assigned"),
         "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
+        "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "owner": MessageLookupByLibrary.simpleMessage("Owner"),
         "oxygen": MessageLookupByLibrary.simpleMessage("Oxygen (O₂)"),
         "oxygenMax": MessageLookupByLibrary.simpleMessage("Max oxygen"),
@@ -234,6 +243,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Select facility"),
         "selectLanguage":
             MessageLookupByLibrary.simpleMessage("Select language"),
+        "selectTemplate":
+            MessageLookupByLibrary.simpleMessage("Select template"),
         "setNewPassword":
             MessageLookupByLibrary.simpleMessage("Set New Password"),
         "setNewPasswordTitle":
@@ -246,12 +257,19 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Subscription details"),
         "subscriptionTier":
             MessageLookupByLibrary.simpleMessage("Subscription Tier"),
+        "success": MessageLookupByLibrary.simpleMessage("Success"),
         "sulfurDioxide":
             MessageLookupByLibrary.simpleMessage("Sulfur dioxide (SO₂)"),
+        "sulfurDioxideMax":
+            MessageLookupByLibrary.simpleMessage("Max sulfur dioxide"),
+        "sulfurDioxideMin":
+            MessageLookupByLibrary.simpleMessage("Min sulfur dioxide"),
         "tempMax": MessageLookupByLibrary.simpleMessage("Max temperature"),
         "tempMin": MessageLookupByLibrary.simpleMessage("Min temperature"),
         "temperature": MessageLookupByLibrary.simpleMessage("Temperature"),
         "template": MessageLookupByLibrary.simpleMessage("Template"),
+        "templateAssignedSuccessfully": MessageLookupByLibrary.simpleMessage(
+            "Template assigned successfully"),
         "templateConfiguration":
             MessageLookupByLibrary.simpleMessage("Template Configuration"),
         "templateLibrary":
@@ -271,6 +289,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "verifyCode": MessageLookupByLibrary.simpleMessage("Verify Code"),
         "viewContainers":
             MessageLookupByLibrary.simpleMessage("View containers"),
+        "viewCurrentConfigs":
+            MessageLookupByLibrary.simpleMessage("View current configs"),
         "viewWorkers": MessageLookupByLibrary.simpleMessage("View workers"),
         "warehouse": MessageLookupByLibrary.simpleMessage("Warehouse"),
         "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),

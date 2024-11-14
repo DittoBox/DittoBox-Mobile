@@ -1,6 +1,5 @@
 import 'package:dittobox_mobile/account_and_subscription/infrastructure/data_sources/account_service.dart';
 import 'package:dittobox_mobile/account_and_subscription/infrastructure/data_sources/subscription_service.dart';
-import 'package:dittobox_mobile/account_and_subscription/infrastructure/model/subscription_model.dart';
 import 'package:dittobox_mobile/generated/l10n.dart';
 import 'package:dittobox_mobile/routes/app_routes.dart';
 import 'package:dittobox_mobile/shared/presentation/widgets/custom_navigator_drawer.dart';
@@ -17,31 +16,39 @@ class AccountDetailsScreen extends StatefulWidget {
 
 class _AccountDetailsScreenState extends State<AccountDetailsScreen> {
   String _businessName = '';
-  String _businessId = '';
   String identificationNumber = '';
   String _subscriptionTier = '';
   String _username = '';
   String _name = '';
+  bool _isLoading = true;
 
   @override
   void initState() {
     super.initState();
-    _loadAccountDetails();
-    _loadUserDetails();
-    _getProfileDetails();
-    _loadSubscriptionDetails();
+    _loadAllDetails();
   }
 
-Future<void> _loadAccountDetails() async {
-  final accountDetails = await AccountService().getAccountDetails();
-  if (accountDetails != null) {
+  Future<void> _loadAllDetails() async {
+    await Future.wait([
+      _loadAccountDetails(),
+      _loadUserDetails(),
+      _getProfileDetails(),
+      _loadSubscriptionDetails(),
+    ]);
     setState(() {
-      _businessName = accountDetails.businessName;
-      _businessId = accountDetails.businessId;
-      identificationNumber = accountDetails.businessId;
+      _isLoading = false;
     });
   }
-}
+
+  Future<void> _loadAccountDetails() async {
+    final accountDetails = await AccountService().getAccountDetails();
+    if (accountDetails != null) {
+      setState(() {
+        _businessName = accountDetails.businessName;
+        identificationNumber = accountDetails.businessId;
+      });
+    }
+  }
 
   Future<void> _getProfileDetails() async {
     final profileDetails = await ProfileService().getProfileDetails();
@@ -62,8 +69,8 @@ Future<void> _loadAccountDetails() async {
   }
 
   Future<void> _loadUserDetails() async {
-    final prefs = await SharedPreferencesAsync();
-    var username = await prefs.getString('username'); // Esperar el Future
+    final prefs = await SharedPreferences.getInstance();
+    var username = prefs.getString('username');
     setState(() {
       _username = username ?? '';
     });
@@ -76,23 +83,25 @@ Future<void> _loadAccountDetails() async {
         title: Text(S.of(context).accountDetails),
       ),
       drawer: const CustomNavigationDrawer(currentRoute: AppRoutes.accountDetails),
-      body: Padding(
-        padding: const EdgeInsets.all(32.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            UserInformation(username: _username, name: _name, subscriptionTier: _subscriptionTier),
-            const SizedBox(height: 32),
-            const Divider(),
-            const SizedBox(height: 32),
-            AccountInformation(
-              businessName: _businessName,
-              subscriptionTier: _subscriptionTier,
-              identificationNumber: identificationNumber,
+      body: _isLoading
+          ? const Center(child: CircularProgressIndicator())
+          : Padding(
+              padding: const EdgeInsets.all(32.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  UserInformation(username: _username, name: _name, subscriptionTier: _subscriptionTier),
+                  const SizedBox(height: 32),
+                  const Divider(),
+                  const SizedBox(height: 32),
+                  AccountInformation(
+                    businessName: _businessName,
+                    subscriptionTier: _subscriptionTier,
+                    identificationNumber: identificationNumber,
+                  ),
+                ],
+              ),
             ),
-          ],
-        ),
-      ),
     );
   }
 }

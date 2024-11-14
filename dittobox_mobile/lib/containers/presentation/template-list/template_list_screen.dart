@@ -1,9 +1,13 @@
+import 'package:dittobox_mobile/containers/infrastructure/data_sources/template_service.dart';
+import 'package:dittobox_mobile/containers/infrastructure/data_sources/container_service.dart';
 import 'package:flutter/material.dart';
 import 'package:dittobox_mobile/generated/l10n.dart';
 import 'package:dittobox_mobile/routes/app_routes.dart';
 import 'package:dittobox_mobile/shared/presentation/widgets/custom_navigator_drawer.dart';
 import 'package:dittobox_mobile/containers/infrastructure/models/template.dart';
+import 'package:dittobox_mobile/containers/infrastructure/models/container.dart' as model;
 import 'package:dittobox_mobile/containers/presentation/widgets/container_selection_modal.dart';
+import 'package:dittobox_mobile/containers/presentation/widgets/template_bottom_sheet.dart';
 
 class TemplateListScreen extends StatefulWidget {
   const TemplateListScreen({super.key});
@@ -13,7 +17,25 @@ class TemplateListScreen extends StatefulWidget {
 }
 
 class _TemplateListScreenState extends State<TemplateListScreen> {
-  final List<String> _containers = ['Container 1', 'Container 2', 'Container 3'];
+  List<model.Container> _containers = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _loadContainers();
+  }
+
+  Future<void> _loadContainers() async {
+    try {
+      final containerService = ContainerService();
+      final containers = await containerService.getContainersByAccountId();
+      setState(() {
+        _containers = containers;
+      });
+    } catch (e) {
+      print('Error loading containers: $e');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +62,7 @@ class _TemplateListScreenState extends State<TemplateListScreen> {
 
 // Template List Widget
 class TemplateList extends StatefulWidget {
-  final List<String> containers;
+  final List<model.Container> containers;
 
   const TemplateList({super.key, required this.containers});
 
@@ -49,56 +71,17 @@ class TemplateList extends StatefulWidget {
 }
 
 class _TemplateListState extends State<TemplateList> {
-  final List<Template> _templates = [
-    Template(
-      name: 'Apples',
-      description: 'Fruits and vegetables',
-      category: 'Produce',
-      tempMin: 0.0,
-      tempMax: 4.0,
-      humidityMin: 85.0,
-      humidityMax: 90.0,
-      ethyleneMin: 0.5,
-      ethyleneMax: 1.5,
-    ),
-    Template(
-      name: 'Fresh tenderloin',
-      description: 'Meats',
-      category: 'Meats',
-      tempMin: -2.0,
-      tempMax: 2.0,
-      humidityMin: 75.0,
-      humidityMax: 80.0,
-    ),
-    Template(
-      name: 'Parmesan cheese',
-      description: 'Animal derived',
-      category: 'Animal derived',
-      tempMin: 8.0,
-      tempMax: 15.0,
-      humidityMin: 85.0,
-      humidityMax: 95.0,
-    ),
-    Template(
-      name: 'Brined pickles',
-      description: 'Processed foods',
-      category: 'Processed Food',
-      tempMin: 1.0,
-      tempMax: 4.0,
-      humidityMin: 80.0,
-      humidityMax: 85.0,
-    ),
-  ];
-
+  final TemplateService _templateService = TemplateService();
+  List<Template> _templates = [];
   List<Template> _filteredTemplates = [];
   final TextEditingController _searchController = TextEditingController();
-  final List<String> _categories = ['All', 'Produce', 'Meats', 'Animal derived', 'Processed Food'];
+  final List<String> _categories = ['All', 'Produce', 'Meats', 'AnimalDerived', 'ProcessedFood'];
   String _selectedCategory = 'All';
 
   @override
   void initState() {
     super.initState();
-    _filteredTemplates = _templates;
+    _loadTemplates();
     _searchController.addListener(_filterTemplates);
   }
 
@@ -108,11 +91,24 @@ class _TemplateListState extends State<TemplateList> {
     super.dispose();
   }
 
+  Future<void> _loadTemplates() async {
+    try {
+      final templates = await _templateService.getTemplates();
+      setState(() {
+        _templates = templates;
+        _filteredTemplates = templates;
+      });
+    } catch (e) {
+      // Manejar el error de carga de templates
+      print('Error loading templates: $e');
+    }
+  }
+
   void _filterTemplates() {
     final query = _searchController.text.toLowerCase();
     setState(() {
       _filteredTemplates = _templates.where((template) {
-        final matchesCategory = _selectedCategory == 'All' || template.category == _selectedCategory;
+        final matchesCategory = _selectedCategory == 'All' || getCategoryName(template.category) == _selectedCategory;
         final matchesQuery = template.name.toLowerCase().contains(query) || template.description.toLowerCase().contains(query);
         return matchesCategory && matchesQuery;
       }).toList();
@@ -124,6 +120,21 @@ class _TemplateListState extends State<TemplateList> {
       _selectedCategory = category;
       _filterTemplates();
     });
+  }
+
+  String getCategoryName(String? category) {
+    switch (category) {
+      case '0':
+        return 'Produce';
+      case '1':
+        return 'Meats';
+      case '2':
+        return 'AnimalDerived';
+      case '3':
+        return 'ProcessedFood';
+      default:
+        return 'Unknown';
+    }
   }
 
   @override
@@ -169,6 +180,7 @@ class _TemplateListState extends State<TemplateList> {
               return TemplateCard(
                 template: _filteredTemplates[index],
                 onApply: () => _showContainerSelectionModal(_filteredTemplates[index]),
+                onTap: () => _showTemplateDetails(context, _filteredTemplates[index]),
               );
             },
           ),
@@ -181,7 +193,33 @@ class _TemplateListState extends State<TemplateList> {
     showDialog(
       context: context,
       builder: (BuildContext context) {
-        return ContainerSelectionModal(containers: widget.containers);
+        return ContainerSelectionModal(
+          containers: widget.containers,
+          onContainerSelected: (container) async {
+            try {
+              final containerService = ContainerService();
+              await containerService.assignTemplateToContainer(container.id, template.id);
+              // ignore: use_build_context_synchronously
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text('Template assigned to ${container.name}')),
+              );
+            } catch (e) {
+              // ignore: use_build_context_synchronously
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text('Failed to assign template: $e')),
+              );
+            }
+          },
+        );
+      },
+    );
+  }
+
+  void _showTemplateDetails(BuildContext context, Template template) {
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return TemplateBottomSheet(template: template);
       },
     );
   }
@@ -191,40 +229,51 @@ class _TemplateListState extends State<TemplateList> {
 class TemplateCard extends StatelessWidget {
   final Template template;
   final VoidCallback onApply;
+  final VoidCallback onTap;
 
-  const TemplateCard({super.key, required this.template, required this.onApply});
+  const TemplateCard({super.key, required this.template, required this.onApply, required this.onTap});
+
+  String getCategoryName(String? category) {
+    switch (category) {
+      case '0':
+        return 'Produce';
+      case '1':
+        return 'Meats';
+      case '2':
+        return 'AnimalDerived';
+      case '3':
+        return 'ProcessedFood';
+      default:
+        return 'Unknown';
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.symmetric(vertical: 5.0),
-      child: ClipRRect(
-        child: Card.outlined(
-          child: SizedBox(
-            height: 150, // Ajusta la altura según tus necesidades
-            child: Center(
-              child: ListTile(
-                contentPadding: const EdgeInsets.all(16.0),
-                title: Text(template.name, style: const TextStyle(fontSize: 25.0)),
-                subtitle: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(template.description),
-                    if (template.oxygenMin != null && template.oxygenMax != null)
-                      Text('Oxygen: ${template.oxygenMin} - ${template.oxygenMax}'),
-                    if (template.carbonDioxideMin != null && template.carbonDioxideMax != null)
-                      Text('CO2: ${template.carbonDioxideMin} - ${template.carbonDioxideMax}'),
-                    if (template.ethyleneMin != null && template.ethyleneMax != null)
-                      Text('Ethylene: ${template.ethyleneMin} - ${template.ethyleneMax}'),
-                    if (template.ammoniaMin != null && template.ammoniaMax != null)
-                      Text('Ammonia: ${template.ammoniaMin} - ${template.ammoniaMax}'),
-                    if (template.sulfurDioxideMin != null && template.sulfurDioxideMax != null)
-                      Text('Sulfur Dioxide: ${template.sulfurDioxideMin} - ${template.sulfurDioxideMax}'),
-                  ],
-                ),
-                trailing: OutlinedButton(
-                  onPressed: onApply,
-                  child: Text(S.of(context).applyTemplate),
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        margin: const EdgeInsets.symmetric(vertical: 5.0),
+        child: ClipRRect(
+          child: Card.outlined(
+            child: SizedBox(
+              height: 150, // Ajusta la altura según tus necesidades
+              child: Center(
+                child: ListTile(
+                  contentPadding: const EdgeInsets.all(16.0),
+                  title: Text(template.name, style: const TextStyle(fontSize: 25.0)),
+                  subtitle: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Category: ${getCategoryName(template.category)}'),
+                      Text('Temperature: ${template.tempMin} - ${template.tempMax}'),
+                      Text('Humidity: ${template.humidityMin} - ${template.humidityMax}')
+                    ],
+                  ),
+                  trailing: OutlinedButton(
+                    onPressed: onApply,
+                    child: Text(S.of(context).applyTemplate),
+                  ),
                 ),
               ),
             ),
