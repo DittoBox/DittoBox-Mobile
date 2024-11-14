@@ -117,6 +117,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "country": MessageLookupByLibrary.simpleMessage("País"),
         "delete": MessageLookupByLibrary.simpleMessage("Eliminar"),
         "description": MessageLookupByLibrary.simpleMessage("Descripción"),
+        "details": MessageLookupByLibrary.simpleMessage("Detalles"),
         "detectAllGases":
             MessageLookupByLibrary.simpleMessage("Detectar todos los gases"),
         "detectGases": MessageLookupByLibrary.simpleMessage("Detectar Gases"),
@@ -260,6 +261,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Nivel de Suscripción"),
         "sulfurDioxide":
             MessageLookupByLibrary.simpleMessage("Dióxido de azufre (SO₂)"),
+        "sulfurDioxideMax":
+            MessageLookupByLibrary.simpleMessage("Dióxido de azufre Máx"),
+        "sulfurDioxideMin":
+            MessageLookupByLibrary.simpleMessage("Dióxido de azufre Min"),
         "tempMax": MessageLookupByLibrary.simpleMessage("Temperatura máxima"),
         "tempMin": MessageLookupByLibrary.simpleMessage("Temperatura mínima"),
         "temperature": MessageLookupByLibrary.simpleMessage("Temperatura"),

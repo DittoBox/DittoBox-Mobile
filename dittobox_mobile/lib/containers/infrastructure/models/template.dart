@@ -1,7 +1,7 @@
 class Template {
   final String name;
   final String description;
-  final String category; // Produce, Meats, Animal derived, Processed Food
+  final String? category; // Produce, Meats, Animal derived, Processed Food
   final double tempMin;
   final double tempMax;
   final double humidityMin;
@@ -20,7 +20,7 @@ class Template {
   Template({
     required this.name,
     required this.description,
-    required this.category,
+    this.category,
     required this.tempMin,
     required this.tempMax,
     required this.humidityMin,
@@ -39,45 +39,23 @@ class Template {
 
   factory Template.fromJson(Map<String, dynamic> json) {
     return Template(
-      name: json['name'],
-      description: json['description'],
-      category: json['category'],
-      tempMin: json['tempMin'],
-      tempMax: json['tempMax'],
-      humidityMin: json['humidityMin'],
-      humidityMax: json['humidityMax'],
-      oxygenMin: json['oxygenMin'],
-      oxygenMax: json['oxygenMax'],
-      carbonDioxideMin: json['carbonDioxideMin'],
-      carbonDioxideMax: json['carbonDioxideMax'],
-      ethyleneMin: json['ethyleneMin'],
-      ethyleneMax: json['ethyleneMax'],
-      ammoniaMin: json['ammoniaMin'],
-      ammoniaMax: json['ammoniaMax'],
-      sulfurDioxideMin: json['sulfurDioxideMin'],
-      sulfurDioxideMax: json['sulfurDioxideMax'],
+      name: json['name'] ?? '',
+      description: json['description'] ?? '',
+      category: json['category']?.toString(),
+      tempMin: (json['minTemperatureThreshold'] as num?)?.toDouble() ?? 0.0,
+      tempMax: (json['maxTemperatureThreshold'] as num?)?.toDouble() ?? 0.0,
+      humidityMin: (json['minHumidityThreshold'] as num?)?.toDouble() ?? 0.0,
+      humidityMax: (json['maxHumidityThreshold'] as num?)?.toDouble() ?? 0.0,
+      oxygenMin: (json['minOxygenThreshold'] as num?)?.toDouble(),
+      oxygenMax: (json['maxOxygenThreshold'] as num?)?.toDouble(),
+      carbonDioxideMin: (json['minCarbonDioxideThreshold'] as num?)?.toDouble(),
+      carbonDioxideMax: (json['maxCarbonDioxideThreshold'] as num?)?.toDouble(),
+      ethyleneMin: (json['minEthyleneThreshold'] as num?)?.toDouble(),
+      ethyleneMax: (json['maxEthyleneThreshold'] as num?)?.toDouble(),
+      ammoniaMin: (json['minAmmoniaThreshold'] as num?)?.toDouble(),
+      ammoniaMax: (json['maxAmmoniaThreshold'] as num?)?.toDouble(),
+      sulfurDioxideMin: (json['minSulfurDioxideThreshold'] as num?)?.toDouble(),
+      sulfurDioxideMax: (json['maxSulfurDioxideThreshold'] as num?)?.toDouble(),
     );
-  }
-
-  Map<String, dynamic> toJson() {
-    return {
-      'name': name,
-      'description': description,
-      'category': category,
-      'tempMin': tempMin,
-      'tempMax': tempMax,
-      'humidityMin': humidityMin,
-      'humidityMax': humidityMax,
-      'oxygenMin': oxygenMin,
-      'oxygenMax': oxygenMax,
-      'carbonDioxideMin': carbonDioxideMin,
-      'carbonDioxideMax': carbonDioxideMax,
-      'ethyleneMin': ethyleneMin,
-      'ethyleneMax': ethyleneMax,
-      'ammoniaMin': ammoniaMin,
-      'ammoniaMax': ammoniaMax,
-      'sulfurDioxideMin': sulfurDioxideMin,
-      'sulfurDioxideMax': sulfurDioxideMax,
-    };
   }
 }

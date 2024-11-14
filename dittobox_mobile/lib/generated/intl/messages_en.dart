@@ -106,6 +106,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "country": MessageLookupByLibrary.simpleMessage("Country"),
         "delete": MessageLookupByLibrary.simpleMessage("Delete"),
         "description": MessageLookupByLibrary.simpleMessage("Description"),
+        "details": MessageLookupByLibrary.simpleMessage("Details"),
         "detectAllGases":
             MessageLookupByLibrary.simpleMessage("Detect all gases"),
         "detectGases": MessageLookupByLibrary.simpleMessage("Detect gases"),
@@ -248,6 +249,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Subscription Tier"),
         "sulfurDioxide":
             MessageLookupByLibrary.simpleMessage("Sulfur dioxide (SO₂)"),
+        "sulfurDioxideMax":
+            MessageLookupByLibrary.simpleMessage("Max sulfur dioxide"),
+        "sulfurDioxideMin":
+            MessageLookupByLibrary.simpleMessage("Min sulfur dioxide"),
         "tempMax": MessageLookupByLibrary.simpleMessage("Max temperature"),
         "tempMin": MessageLookupByLibrary.simpleMessage("Min temperature"),
         "temperature": MessageLookupByLibrary.simpleMessage("Temperature"),

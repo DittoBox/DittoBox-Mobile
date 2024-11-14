@@ -719,5 +719,17 @@
   "allContainers": "Todos los contenedores",
   "@allContainers": {
     "description": "Etiqueta para todos los contenedores"
+  },
+  "details": "Detalles",
+  "@details": {
+    "description": "Etiqueta para detalles"
+  },
+  "sulfurDioxideMax": "Dióxido de azufre Máx",
+  "@sulfurDioxideMax": {
+    "description": "Etiqueta para dióxido de azufre Máx"
+  },
+  "sulfurDioxideMin": "Dióxido de azufre Min",
+  "@sulfurDioxideMin": {
+    "description": "Etiqueta para dióxido de azufre Min"
   }
 }

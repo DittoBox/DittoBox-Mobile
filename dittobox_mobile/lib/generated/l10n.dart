@@ -1849,6 +1849,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Details`
+  String get details {
+    return Intl.message(
+      'Details',
+      name: 'details',
+      desc: 'Label for details',
+      args: [],
+    );
+  }
+
+  /// `Max sulfur dioxide`
+  String get sulfurDioxideMax {
+    return Intl.message(
+      'Max sulfur dioxide',
+      name: 'sulfurDioxideMax',
+      desc: 'Label for Max sulfur dioxide section',
+      args: [],
+    );
+  }
+
+  /// `Min sulfur dioxide`
+  String get sulfurDioxideMin {
+    return Intl.message(
+      'Min sulfur dioxide',
+      name: 'sulfurDioxideMin',
+      desc: 'Label for Min sulfur dioxide section',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

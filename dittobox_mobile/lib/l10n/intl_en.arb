@@ -719,5 +719,17 @@
   "allContainers": "All containers",
   "@allContainers": {
     "description": "Label for all containers"
+  },
+  "details": "Details",
+  "@details": {
+    "description": "Label for details"
+  },
+  "sulfurDioxideMax": "Max sulfur dioxide",
+  "@sulfurDioxideMax": {
+    "description": "Label for Max sulfur dioxide section"
+  },
+  "sulfurDioxideMin": "Min sulfur dioxide",
+  "@sulfurDioxideMin": {
+    "description": "Label for Min sulfur dioxide section"
   }
 }
