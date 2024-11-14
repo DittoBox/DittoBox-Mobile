@@ -1,3 +1,4 @@
+import 'package:dittobox_mobile/containers/infrastructure/data_sources/container_service.dart';
 import 'package:dittobox_mobile/generated/l10n.dart';
 import 'package:dittobox_mobile/goups/infrastructure/data_sources/facilities_service.dart';
 import 'package:flutter/material.dart';
@@ -15,10 +16,12 @@ class AddContainerSheet extends StatefulWidget {
 
 class _AddContainerSheetState extends State<AddContainerSheet> {
   final TextEditingController _containerNameController = TextEditingController();
+  final TextEditingController _descriptionController = TextEditingController();
   final TextEditingController _codeController = TextEditingController();
   String? selectedFacility; // Valor por defecto
   List<Facility> facilities = []; // Lista de instalaciones
   final FacilitiesService _facilitiesService = FacilitiesService();
+  final ContainerService _containerService = ContainerService();
   bool isLoading = true; // Indicador de carga
 
   @override
@@ -42,6 +45,27 @@ class _AddContainerSheetState extends State<AddContainerSheet> {
       // Manejar errores
     }
   }
+
+ Future<void> _createContainer() async {
+  try {
+    final selectedFacilityObj = facilities.firstWhere((facility) => facility.title == selectedFacility);
+    await _containerService.createContainer(
+      _containerNameController.text,
+      _descriptionController.text,
+      selectedFacilityObj.id,
+      1, // Asumiendo que containerSizeId es 1, puedes cambiarlo según sea necesario
+    );
+    Navigator.pop(context);
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(S.of(context).containerCreatedSuccessfully),
+      ),
+    );
+  } catch (e) {
+    // Manejar errores
+    print('Error creating container: $e');
+  }
+}
 
   @override
   Widget build(BuildContext context) {
@@ -100,6 +124,20 @@ class _AddContainerSheetState extends State<AddContainerSheet> {
               controller: _containerNameController,
               decoration: InputDecoration(
                 labelText: S.of(context).containerName,
+                border: const OutlineInputBorder(),
+              ),
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return S.of(context).requiredField;
+                }
+                return null;
+              },
+            ),
+            const SizedBox(height: 26),
+            TextFormField(
+              controller: _descriptionController,
+              decoration: InputDecoration(
+                labelText: S.of(context).description,
                 border: const OutlineInputBorder(),
               ),
               validator: (value) {
@@ -169,9 +207,7 @@ class _AddContainerSheetState extends State<AddContainerSheet> {
                 ),
                 const SizedBox(width: 8),
                 FilledButton(
-                  onPressed: () {
-                    // Acción para guardar el contenedor
-                  },
+                  onPressed: _createContainer,
                   child: Text(S.of(context).save),
                 ),
               ],

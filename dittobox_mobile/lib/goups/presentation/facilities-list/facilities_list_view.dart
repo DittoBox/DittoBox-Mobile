@@ -272,7 +272,7 @@ class _FacilitiesCardState extends State<FacilitiesCard> {
                     Padding(
                       padding: const EdgeInsets.all(4.0),
                       child: buildInfoRowWithIcon(Icons.widgets_outlined,
-                          S.of(context).containers, 3),
+                          S.of(context).containers, widget.facility.containerCount),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(4.0),
@@ -284,7 +284,7 @@ class _FacilitiesCardState extends State<FacilitiesCard> {
                     Padding(
                       padding: const EdgeInsets.all(4.0),
                       child: buildInfoRowWithIcon(Icons.person_2_outlined,
-                          S.of(context).workers, 3),
+                          S.of(context).workers, widget.facility.profileCount),
                     ),
                   ],
                 ),

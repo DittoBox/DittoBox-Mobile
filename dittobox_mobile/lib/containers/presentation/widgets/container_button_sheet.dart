@@ -1,9 +1,9 @@
-import 'package:dittobox_mobile/containers/presentation/container-list/container_list_view.dart';
+import 'package:dittobox_mobile/containers/infrastructure/models/container.dart' as model;
 import 'package:dittobox_mobile/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class ContainerBottomSheet extends StatelessWidget {
-  final ContainerItem container;
+  final model.Container container;
 
   const ContainerBottomSheet({super.key, required this.container});
 
@@ -38,125 +38,45 @@ class ContainerBottomSheet extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  container.title,
+                  container.name,
                   style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
-                  container.status,
+                  container.lastKnownContainerStatus,
                   style: TextStyle(
-                    color: container.status == 'Active' ? Colors.green : Colors.grey,
+                    color: container.lastKnownContainerStatus == 'Active' ? Colors.green : Colors.grey,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
               ],
             ),
             const SizedBox(height: 8),
-            Text(S.of(context).containerDescription),
-            const Text("Container with beef and tenderloin."),
+            Text(container.description),
             const SizedBox(height: 16),
             
             // Information Rows
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    const Icon(Icons.thermostat_outlined, size: 20),
-                    const SizedBox(width: 8),
-                    Text(S.of(context).temperature),
-                  ],
-                ),
-                Text(container.temperature),
-              ],
-            ),
+            buildInfoRowWithIcon(Icons.thermostat_outlined, S.of(context).temperature, container.temperature),
             const SizedBox(height: 8),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    const Icon(Icons.water_drop_outlined, size: 20),
-                    const SizedBox(width: 8),
-                    Text(S.of(context).humidity),
-                  ],
-                ),
-                Text(container.humidity),
-              ],
-            ),
+            buildInfoRowWithIcon(Icons.water_drop_outlined, S.of(context).humidity, container.humidity),
             const SizedBox(height: 8),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    const Icon(Icons.hourglass_empty, size: 20),
-                    const SizedBox(width: 8),
-                    Text(S.of(context).lastSync),
-                  ],
-                ),
-                Text(container.lastSync),
-              ],
-            ),
+            buildInfoRowWithIcon(Icons.air_outlined, S.of(context).oxygen, container.oxygen),
             const SizedBox(height: 8),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    const Icon(Icons.air, size: 20),
-                    const SizedBox(width: 8),
-                    Text(S.of(context).oxygen),
-                  ],
-                ),
-                Text(container.oxygen),
-              ],
-            ),
+            buildInfoRowWithIcon(Icons.cloud_outlined, S.of(context).carbonDioxide, container.dioxide),
             const SizedBox(height: 8),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    const Icon(Icons.air, size: 20),
-                    const SizedBox(width: 8),
-                    Text(S.of(context).carbonDioxide),
-                  ],
-                ),
-                Text(container.carbonDioxide),
-              ],
-            ),
+            buildInfoRowWithIcon(Icons.eco_outlined, S.of(context).ethylene, container.ethylene),
             const SizedBox(height: 8),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    const Icon(Icons.air, size: 20),
-                    const SizedBox(width: 8),
-                    Text(S.of(context).ethylene),
-                  ],
-                ),
-                Text(container.ethylene),
-              ],
-            ),
+            buildInfoRowWithIcon(Icons.science_outlined, S.of(context).ammonia, container.ammonia),
             const SizedBox(height: 8),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    const Icon(Icons.air, size: 20),
-                    const SizedBox(width: 8),
-                    Text(S.of(context).ammoniaAndSulferDioxide),
-                  ],
-                ),
-                Text(container.ammoniaAndSulferDioxide),
-              ],
-            ),
+            buildInfoRowWithIcon(Icons.warning_amber_outlined, S.of(context).sulfurDioxide, container.sulfurDioxide),
             const SizedBox(height: 16),
+            buildInfoRowWithIcon(Icons.health_and_safety_outlined, S.of(context).lastKnownHealthStatus, container.lastKnownHealthStatus),
+            const SizedBox(height: 8),
+            buildInfoRowWithIcon(Icons.sync_outlined, S.of(context).lastSync, container.lastSync.toString()),
+            const SizedBox(height: 16),
+
             
             // Manual Edit Button
             Align(
@@ -227,8 +147,16 @@ class ContainerBottomSheet extends StatelessWidget {
              Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(S.of(context).ammoniaAndSulferDioxide),
+                Text(S.of(context).ammonia),
                 const Text("0% - 0.02%"),
+              ],
+              ),
+              const SizedBox(height: 8),
+              Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(S.of(context).sulfurDioxide),
+                const Text("0% - 0.01%"),
               ],
             ),
             const SizedBox(height: 16),
@@ -244,6 +172,22 @@ class ContainerBottomSheet extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+
+  Widget buildInfoRowWithIcon(IconData icon, String label, dynamic value) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Row(
+          children: [
+            Icon(icon, size: 20),
+            const SizedBox(width: 8),
+            Text(label),
+          ],
+        ),
+        Text(value?.toString() ?? '--'),
+      ],
     );
   }
 }

@@ -15,21 +15,22 @@ class FacilitiesService extends BaseService {
 
   FacilitiesService._internal();
 
-  Future<List<Facility>> getFacilities() async {
-    try {
-      final prefs = SharedPreferencesAsync();
-      final accountId = await prefs.getInt('accountId');
-      final response = await http.get(Uri.parse('$baseUrl/account/$accountId/groups'));
-      if (response.statusCode == 200) {
-        final List<dynamic> data = json.decode(response.body);
-        return data.map((e) => Facility.fromJson(e)).toList();
-      } else {
-        throw Exception('Failed to load facilities');
+    Future<List<Facility>> getFacilities() async {
+      try {
+        final prefs = SharedPreferencesAsync();
+        final accountId = await prefs.getInt('accountId');
+        final response = await http.get(Uri.parse('$baseUrl/account/$accountId/groups'));
+        if (response.statusCode == 200) {
+          final List<dynamic> data = json.decode(response.body);
+          print(data); // Agrega esta línea para depurar
+          return data.map((e) => Facility.fromJson(e)).toList();
+        } else {
+          throw Exception('Failed to load facilities');
+        }
+      } catch (e) {
+        throw Exception('Failed to load facilities: $e');
       }
-    } catch (e) {
-      throw Exception('Failed to load facilities: $e');
     }
-  }
 
   Future<int> createFacility(
       String name, Location location, int facilityType) async {

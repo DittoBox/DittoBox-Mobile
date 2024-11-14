@@ -676,8 +676,12 @@
   "@changeTemplate": {
     "description": "Label for changing template"
   },
-  "ammoniaAndSulferDioxide": "Ammonia (NH₃) and sulfur dioxide (SO₂)",
-  "@ammoniaAndSulferDioxide": {
+  "ammonia": "Ammonia (NH₃)",
+  "@ammonia": {
+    "description": "Label for ammonia and sulfer dioxide"
+  },
+  "sulfurDioxide": "Sulfur dioxide (SO₂)",
+  "@sulfurDioxide": {
     "description": "Label for ammonia and sulfer dioxide"
   },
   "templateConfiguration": "Template Configuration",
@@ -695,5 +699,25 @@
   "detectGases": "Detect gases",
   "@detectGases": {
     "description": "Label for detecting gases"
+  },
+  "lastKnownHealthStatus": "Last known health status",
+  "@lastKnownHealthStatus": {
+    "description": "Label for last known health status"
+  },
+  "containersNotFound": "You don't have any Dittobox containers yet",
+  "@containersNotFound": {
+    "description": "Error message when containers are not found"
+  },
+  "noFacilitiesAvailable": "No facilities available",
+  "@noFacilitiesAvailable": {
+    "description": "Error message when no facilities are available"
+  },
+  "containerCreatedSuccessfully": "Container created successfully",
+  "@containerCreatedSuccessfully": {
+    "description": "Success message when container is created successfully"
+  },
+  "allContainers": "All containers",
+  "@allContainers": {
+    "description": "Label for all containers"
   }
 }

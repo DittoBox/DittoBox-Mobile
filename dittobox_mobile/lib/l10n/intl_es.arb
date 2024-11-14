@@ -676,9 +676,13 @@
   "@changeTemplate": {
     "description": "Etiqueta para cambiar plantilla"
   },
-  "ammoniaAndSulferDioxide": "Amoníaco (NH₃) y Dióxido de Azufre (SO₂)",
-  "@ammoniaAndSulferDioxide": {
+  "ammonia": "Amoníaco (NH₃)",
+  "@ammonia": {
     "description": "Etiqueta para amoníaco y dióxido de azufre"
+  },
+  "sulfurDioxide": "Dióxido de azufre (SO₂)",
+  "@sulfurDioxide": {
+    "description": "Etiqueta para dióxido de azufre"
   },
   "templateConfiguration": "Configuración de Plantilla",
   "@templateConfiguration": {
@@ -695,5 +699,25 @@
   "detectGases": "Detectar Gases",
   "@detectGases": {
     "description": "Etiqueta para detectar gases"
+  },
+  "lastKnownHealthStatus": "Último Estado de Salud Conocido",
+  "@lastKnownHealthStatus": {
+    "description": "Etiqueta para último estado de salud conocido"
+  },
+  "containersNotFound": "No posees ningún DittoBox por el momento",
+  "@containersNotFound": {
+    "description": "Mensaje de error cuando no se poseen contenedores"
+  },
+  "noFacilitiesAvailable": "No hay instalaciones disponibles",
+  "@noFacilitiesAvailable": {
+    "description": "Mensaje de error cuando no hay instalaciones disponibles"
+  },
+  "containerCreatedSuccessfully": "Contenedor creado exitosamente",
+  "@containerCreatedSuccessfully": {
+    "description": "Mensaje de éxito cuando el contenedor es creado exitosamente"
+  },
+  "allContainers": "Todos los contenedores",
+  "@allContainers": {
+    "description": "Etiqueta para todos los contenedores"
   }
 }

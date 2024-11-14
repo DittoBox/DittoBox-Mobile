@@ -1,7 +1,12 @@
+import 'package:dittobox_mobile/account_and_subscription/infrastructure/data_sources/account_service.dart';
+import 'package:dittobox_mobile/account_and_subscription/infrastructure/data_sources/subscription_service.dart';
+import 'package:dittobox_mobile/account_and_subscription/infrastructure/model/subscription_model.dart';
 import 'package:dittobox_mobile/generated/l10n.dart';
 import 'package:dittobox_mobile/routes/app_routes.dart';
 import 'package:dittobox_mobile/shared/presentation/widgets/custom_navigator_drawer.dart';
+import 'package:dittobox_mobile/user_and_profile/infrastructure/data_sources/profile_services.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class AccountDetailsScreen extends StatefulWidget {
   const AccountDetailsScreen({super.key});
@@ -11,33 +16,98 @@ class AccountDetailsScreen extends StatefulWidget {
 }
 
 class _AccountDetailsScreenState extends State<AccountDetailsScreen> {
+  String _businessName = '';
+  String _businessId = '';
+  String identificationNumber = '';
+  String _subscriptionTier = '';
+  String _username = '';
+  String _name = '';
+
   @override
- Widget build(BuildContext context) {
+  void initState() {
+    super.initState();
+    _loadAccountDetails();
+    _loadUserDetails();
+    _getProfileDetails();
+    _loadSubscriptionDetails();
+  }
+
+Future<void> _loadAccountDetails() async {
+  final accountDetails = await AccountService().getAccountDetails();
+  if (accountDetails != null) {
+    setState(() {
+      _businessName = accountDetails.businessName;
+      _businessId = accountDetails.businessId;
+      identificationNumber = accountDetails.businessId;
+    });
+  }
+}
+
+  Future<void> _getProfileDetails() async {
+    final profileDetails = await ProfileService().getProfileDetails();
+    if (profileDetails != null) {
+      setState(() {
+        _name = '${profileDetails.firstName} ${profileDetails.lastName}';
+      });
+    }
+  }
+
+  Future<void> _loadSubscriptionDetails() async {
+    final subscriptionDetails = await SubscriptionService().getSubscriptionDetails();
+    if (subscriptionDetails != null) {
+      setState(() {
+        _subscriptionTier = subscriptionDetails.tier;
+      });
+    }
+  }
+
+  Future<void> _loadUserDetails() async {
+    final prefs = await SharedPreferencesAsync();
+    var username = await prefs.getString('username'); // Esperar el Future
+    setState(() {
+      _username = username ?? '';
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(S.of(context).accountDetails),
       ),
       drawer: const CustomNavigationDrawer(currentRoute: AppRoutes.accountDetails),
-      body: const Padding(
-        padding: EdgeInsets.all(32.0),
+      body: Padding(
+        padding: const EdgeInsets.all(32.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            UserInformation(),
-            SizedBox(height: 32),
-            Divider(),
-            SizedBox(height: 32),
-            AccountInformation(),
+            UserInformation(username: _username, name: _name, subscriptionTier: _subscriptionTier),
+            const SizedBox(height: 32),
+            const Divider(),
+            const SizedBox(height: 32),
+            AccountInformation(
+              businessName: _businessName,
+              subscriptionTier: _subscriptionTier,
+              identificationNumber: identificationNumber,
+            ),
           ],
         ),
       ),
     );
   }
-
 }
 
 class UserInformation extends StatelessWidget {
-  const UserInformation({super.key});
+  final String username;
+  final String name;
+  final String subscriptionTier;
+
+  const UserInformation({
+    super.key,
+    required this.username,
+    required this.name,
+    required this.subscriptionTier,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -59,10 +129,10 @@ class UserInformation extends StatelessWidget {
           style: const TextStyle(fontSize: 22),
         ),
         const SizedBox(height: 24),
-        _buildInfoRow(S.of(context).username, 'A warm place'),
-        _buildInfoRow(S.of(context).name, 'Advance'),
+        _buildInfoRow(S.of(context).username, username),
+        _buildInfoRow(S.of(context).name, subscriptionTier),
         _buildInfoRow(S.of(context).identificationNumber, '20124578963'),
-        _buildInfoRow(S.of(context).bankAccountOwner, 'Sofía Pérez'),
+        _buildInfoRow(S.of(context).bankAccountOwner, name),
         const SizedBox(height: 16),
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
@@ -107,7 +177,16 @@ class UserInformation extends StatelessWidget {
 }
 
 class AccountInformation extends StatelessWidget {
-  const AccountInformation({super.key});
+  final String businessName;
+  final String subscriptionTier;
+  final String identificationNumber;
+
+  const AccountInformation({
+    super.key,
+    required this.businessName,
+    required this.subscriptionTier,
+    required this.identificationNumber,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -129,9 +208,9 @@ class AccountInformation extends StatelessWidget {
           style: const TextStyle(fontSize: 22),
         ),
         const SizedBox(height: 24),
-        _buildInfoRow(S.of(context).businessName, 'A warm place'),
-        _buildInfoRow(S.of(context).subscriptionTier, 'Advance'),
-        _buildInfoRow(S.of(context).identificationNumber, '20124578963'),
+        _buildInfoRow(S.of(context).businessName, businessName),
+        _buildInfoRow(S.of(context).subscriptionTier, subscriptionTier),
+        _buildInfoRow(S.of(context).identificationNumber, identificationNumber),
         const SizedBox(height: 16),
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
