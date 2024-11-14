@@ -31,11 +31,11 @@ class ContainerService extends BaseService {
 
   Future<void> createContainer(String name, String description, int groupId, int containerSizeId) async {
     try {
-      final prefs = SharedPreferencesAsync();
-      final accountId = await prefs.getInt('accountId');
-      if (accountId == null) {
-        throw Exception('Account ID not found');
-      }
+        final prefs = SharedPreferencesAsync();
+        final accountId = await prefs.getInt('accountId');
+        if (accountId == null) {
+          throw Exception('Account ID not found');
+        }
 
       final response = await http.post(
         Uri.parse('$baseUrl/container'),
@@ -57,6 +57,7 @@ class ContainerService extends BaseService {
       throw Exception('Failed to create container: $e');
     }
   }
+  
 
 
 
@@ -66,13 +67,9 @@ class ContainerService extends BaseService {
     return Container.fromJson(data);
   }
 
-  Future<Container> getContainerByFacilityId(int? facilityId) async {
-    if (facilityId == null) {
-      final SharedPreferencesAsync asyncPrefs = SharedPreferencesAsync();
-      facilityId = await asyncPrefs.getInt('groupId'); 
-    }
-    final response = await http.get(Uri.parse('/group/$facilityId/containers'));
-    final Map<String, dynamic> data = json.decode(response.body);
-    return Container.fromJson(data);
+  Future<List<Container>> getContainersByFacilityId(int facilityId) async {
+    final response = await http.get(Uri.parse('$baseUrl/group/$facilityId/containers'));
+    final List<dynamic> data = json.decode(response.body);
+    return data.map((json) => Container.fromJson(json)).toList();
   }
 }

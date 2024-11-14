@@ -715,5 +715,9 @@
   "containerCreatedSuccessfully": "Container created successfully",
   "@containerCreatedSuccessfully": {
     "description": "Success message when container is created successfully"
+  },
+  "allContainers": "All containers",
+  "@allContainers": {
+    "description": "Label for all containers"
   }
 }

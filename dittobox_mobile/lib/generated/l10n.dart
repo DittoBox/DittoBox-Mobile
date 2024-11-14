@@ -1839,6 +1839,16 @@ class S {
       args: [],
     );
   }
+
+  /// `All containers`
+  String get allContainers {
+    return Intl.message(
+      'All containers',
+      name: 'allContainers',
+      desc: 'Label for all containers',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

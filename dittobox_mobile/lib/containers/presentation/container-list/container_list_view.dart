@@ -16,6 +16,7 @@ class ContainerListScreen extends StatefulWidget {
   @override
   State<ContainerListScreen> createState() => _ContainerListScreenState();
 }
+
 class _ContainerListScreenState extends State<ContainerListScreen>
     with SingleTickerProviderStateMixin {
   List<model.Container> _containers = [];
@@ -23,25 +24,42 @@ class _ContainerListScreenState extends State<ContainerListScreen>
   final ContainerService _containerService = ContainerService();
   final FacilitiesService _facilitiesService = FacilitiesService();
   List<Facility> _facilities = [];
-  List<String> selectedFacilities = [];
+  List<int> selectedFacilityIds = [];
+  bool _isLoading = false;
 
   @override
   void initState() {
     super.initState();
     _tabController = TabController(length: 2, vsync: this);
-    _fetchContainers();
-    _fetchFacilities();
+    _fetchFacilities().then((_) {
+      _fetchContainers(); // Fetch all containers initially
+    });
   }
 
   Future<void> _fetchContainers() async {
+    setState(() {
+      _isLoading = true;
+    });
+
     try {
-      final containers = await _containerService.getContainersByAccountId();
+      List<model.Container> containers = [];
+      if (selectedFacilityIds.isEmpty) {
+        containers = await _containerService.getContainersByAccountId();
+      } else {
+        for (int facilityId in selectedFacilityIds) {
+          containers.addAll(await _containerService.getContainersByFacilityId(facilityId));
+        }
+      }
       setState(() {
         _containers = containers;
       });
     } catch (e) {
       // Manejo de errores
       print('Error fetching containers: $e');
+    } finally {
+      setState(() {
+        _isLoading = false;
+      });
     }
   }
 
@@ -66,12 +84,6 @@ class _ContainerListScreenState extends State<ContainerListScreen>
           .toList();
     }
 
-    if (selectedFacilities.isNotEmpty) {
-      filteredContainers = filteredContainers
-          .where((container) => selectedFacilities.contains(container.facilityId))
-          .toList();
-    }
-
     return filteredContainers;
   }
 
@@ -80,18 +92,27 @@ class _ContainerListScreenState extends State<ContainerListScreen>
     return Scaffold(
       appBar: AppBar(
         title: const Text('Containers'),
-        bottom: TabBar(
-          controller: _tabController,
-          tabs: const [
-            Tab(text: 'All'),
-            Tab(text: 'Active'),
-          ],
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(100.0),
+          child: Column(
+            children: [
+              _buildFacilityChips(),
+              TabBar(
+                controller: _tabController,
+                tabs: const [
+                  Tab(text: 'All'),
+                  Tab(text: 'Active'),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
       drawer: const CustomNavigationDrawer(currentRoute: AppRoutes.containers),
       body: Column(
         children: [
-          _buildFacilityChips(),
+          if (_isLoading)
+            const LinearProgressIndicator(),
           Expanded(
             child: TabBarView(
               controller: _tabController,
@@ -124,25 +145,43 @@ class _ContainerListScreenState extends State<ContainerListScreen>
       scrollDirection: Axis.horizontal,
       padding: const EdgeInsets.all(8.0),
       child: Row(
-        children: _facilities.map((facility) {
-          final isSelected = selectedFacilities.contains(facility.id);
-          return Padding(
+        children: [
+          Padding(
             padding: const EdgeInsets.symmetric(horizontal: 4.0),
             child: FilterChip(
-              label: Text(facility.title),
-              selected: isSelected,
+              label: Text(S.of(context).allContainers),
+              selected: selectedFacilityIds.isEmpty,
               onSelected: (bool selected) {
                 setState(() {
                   if (selected) {
-                    selectedFacilities.add(facility.id);
-                  } else {
-                    selectedFacilities.remove(facility.id);
+                    selectedFacilityIds.clear();
+                    _fetchContainers(); // Fetch all containers
                   }
                 });
               },
             ),
-          );
-        }).toList(),
+          ),
+          ..._facilities.map((facility) {
+            final isSelected = selectedFacilityIds.contains(facility.id);
+            return Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 4.0),
+              child: FilterChip(
+                label: Text(facility.title),
+                selected: isSelected,
+                onSelected: (bool selected) {
+                  setState(() {
+                    if (selected) {
+                      selectedFacilityIds.add(facility.id);
+                    } else {
+                      selectedFacilityIds.remove(facility.id);
+                    }
+                    _fetchContainers(); // Fetch containers for the selected facilities
+                  });
+                },
+              ),
+            );
+          }).toList(),
+        ],
       ),
     );
   }

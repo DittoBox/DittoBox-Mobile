@@ -81,4 +81,33 @@ class UserService extends BaseService {
     }
     return response.statusCode;
   }
+
+  // Method to get user details
+  // baseUrl/user/{userId}
+  // Parameter "userId" is retrieved from shared_preferences
+
+  Future<Map<String, dynamic>?> getUserDetails() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final userId = prefs.getInt('userId');
+      print('User ID: $userId');
+      if (userId == null) {
+        throw Exception('User ID not found');
+      }
+      final token = prefs.getString('token');
+      final url = '$baseUrl/user/$userId';
+      final response = await http.get(
+        Uri.parse(url),
+        headers: getHeaders(token!),
+      );
+      var jsonResponse = jsonDecode(response.body);
+      if (response.statusCode == 200) {
+        return jsonResponse;
+      }
+      return null;
+    } catch (e) {
+      log('Error: $e');
+      return null;
+    }
+  }
 }

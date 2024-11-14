@@ -42,6 +42,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Agregar trabajadores"),
         "alerts": MessageLookupByLibrary.simpleMessage("Alertas"),
         "all": MessageLookupByLibrary.simpleMessage("Todos"),
+        "allContainers":
+            MessageLookupByLibrary.simpleMessage("Todos los contenedores"),
         "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
             "¿Ya tienes una cuenta? Inicia sesión en su lugar"),
         "ammonia": MessageLookupByLibrary.simpleMessage("Amoníaco (NH₃)"),

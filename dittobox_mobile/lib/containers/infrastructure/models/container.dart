@@ -2,6 +2,7 @@ class Container {
   final int id;
   final String name;
   final String description;
+  final int groupId; // Nuevo campo
   final double? temperature;
   final double? humidity;
   final double? oxygen;
@@ -31,6 +32,7 @@ class Container {
     required this.id,
     required this.name,
     required this.description,
+    required this.groupId, // Nuevo campo
     this.temperature,
     this.humidity,
     this.oxygen,
@@ -62,6 +64,7 @@ class Container {
       id: json['id'],
       name: json['name'],
       description: json['description'],
+      groupId: json['groupId'], // Nuevo campo
       temperature: (json['temperature'] as num?)?.toDouble(),
       humidity: (json['humidity'] as num?)?.toDouble(),
       oxygen: (json['oxygen'] as num?)?.toDouble(),

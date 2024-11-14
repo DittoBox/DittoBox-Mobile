@@ -715,5 +715,9 @@
   "containerCreatedSuccessfully": "Contenedor creado exitosamente",
   "@containerCreatedSuccessfully": {
     "description": "Mensaje de éxito cuando el contenedor es creado exitosamente"
+  },
+  "allContainers": "Todos los contenedores",
+  "@allContainers": {
+    "description": "Etiqueta para todos los contenedores"
   }
 }
