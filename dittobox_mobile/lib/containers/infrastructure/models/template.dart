@@ -1,4 +1,5 @@
 class Template {
+  final int id;
   final String name;
   final String description;
   final String? category; // Produce, Meats, Animal derived, Processed Food
@@ -18,6 +19,7 @@ class Template {
   final double? sulfurDioxideMax;
 
   Template({
+    required this.id,
     required this.name,
     required this.description,
     this.category,
@@ -39,6 +41,7 @@ class Template {
 
   factory Template.fromJson(Map<String, dynamic> json) {
     return Template(
+      id: json['id'] as int,
       name: json['name'] ?? '',
       description: json['description'] ?? '',
       category: json['category']?.toString(),

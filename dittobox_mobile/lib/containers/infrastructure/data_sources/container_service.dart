@@ -73,6 +73,37 @@ class ContainerService extends BaseService {
     return data.map((json) => Container.fromJson(json)).toList();
   }
 
+    Future<void> updateContainerParameters(int containerId, Map<String, dynamic> parameters) async {
+    try {
+      final response = await http.put(
+        Uri.parse('$baseUrl/api/v1/container/$containerId/parameters'),
+        headers: {'Content-Type': 'application/json'},
+        body: jsonEncode(parameters),
+      );
 
-  
+      if (response.statusCode != 200) {
+        throw Exception('Failed to update container parameters');
+      }
+    } catch (e) {
+      print('Error: $e');
+      throw Exception('Failed to update container parameters: $e');
+    }
+  }
+    Future<void> assignTemplateToContainer(int containerId, int templateId) async {
+    try {
+      final response = await http.post(
+        Uri.parse('$baseUrl/container/$containerId/assign/$templateId'),
+        headers: {'Content-Type': 'text/plain'},
+      );
+
+      if (response.statusCode != 200) {
+        throw Exception('Failed to assign template to container');
+      }
+    } catch (e) {
+      print('Error: $e');
+      throw Exception('Failed to assign template to container: $e');
+    }
+  }
+
+
 }

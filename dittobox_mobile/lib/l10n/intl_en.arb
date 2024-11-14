@@ -731,5 +731,41 @@
   "sulfurDioxideMin": "Min sulfur dioxide",
   "@sulfurDioxideMin": {
     "description": "Label for Min sulfur dioxide section"
+  },
+  "viewCurrentConfigs": "View current configs",
+  "@viewCurrentConfigs": {
+    "description": "Label for viewing current configurations"
+  },
+  "currentConfigs": "Current configurations",
+  "@currentConfigs": {
+    "description": "Label for current configurations"
+  },
+  "close": "Close",
+  "@close": {
+    "description": "Button label for closing"
+  },
+  "noTemplateAssigned": "No template assigned",
+  "@noTemplateAssigned": {
+    "description": "Error message when no template is assigned"
+  },
+  "assignTemplate": "Assign template?",
+  "@assignTemplate": {
+    "description": "Label for assigning template"
+  },
+  "selectTemplate": "Select template",
+  "@selectTemplate": {
+    "description": "Label for selecting template"
+  },
+  "templateAssignedSuccessfully": "Template assigned successfully",
+  "@templateAssignedSuccessfully": {
+    "description": "Success message when template is assigned successfully"
+  },
+  "success": "Success",
+  "@success": {
+    "description": "Label for success"
+  },
+  "ok": "Ok",
+  "@ok": {
+    "description": "Button label for ok"
   }
 }

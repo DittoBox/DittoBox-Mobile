@@ -731,5 +731,41 @@
   "sulfurDioxideMin": "Dióxido de azufre Min",
   "@sulfurDioxideMin": {
     "description": "Etiqueta para dióxido de azufre Min"
+  },
+  "viewCurrentConfigs": "Ver Config Actuales",
+  "@viewCurrentConfigs": {
+    "description": "Etiqueta para ver configuraciones actuales"
+  },
+  "currentConfigs": "Configuraciones Actuales",
+  "@currentConfigs": {
+    "description": "Etiqueta para configuraciones actuales"
+  },
+  "close": "Cerrar",
+  "@close": {
+    "description": "Etiqueta para cerrar"
+  },
+  "noTemplateAssigned": "No hay plantilla asignada",
+  "@noTemplateAssigned": {
+    "description": "Mensaje de error cuando no hay plantilla asignada"
+  },
+  "assignTemplate": "Asignar Plantilla?",
+  "@assignTemplate": {
+    "description": "Etiqueta para asignar plantilla"
+  },
+  "selectTemplate": "Seleccionar Plantilla",
+  "@selectTemplate": {
+    "description": "Etiqueta para seleccionar plantilla"
+  },
+  "templateAssignedSuccessfully": "Plantilla asignada exitosamente",
+  "@templateAssignedSuccessfully": {
+    "description": "Mensaje de éxito cuando la plantilla es asignada exitosamente"
+  },
+  "success": "Éxito",
+  "@success": {
+    "description": "Mensaje de éxito"
+  },
+  "ok": "Aceptar",
+  "@ok": {
+    "description": "Etiqueta para aceptar"
   }
 }

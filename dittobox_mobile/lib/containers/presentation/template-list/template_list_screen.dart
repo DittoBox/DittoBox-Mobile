@@ -5,6 +5,7 @@ import 'package:dittobox_mobile/generated/l10n.dart';
 import 'package:dittobox_mobile/routes/app_routes.dart';
 import 'package:dittobox_mobile/shared/presentation/widgets/custom_navigator_drawer.dart';
 import 'package:dittobox_mobile/containers/infrastructure/models/template.dart';
+import 'package:dittobox_mobile/containers/infrastructure/models/container.dart' as model;
 import 'package:dittobox_mobile/containers/presentation/widgets/container_selection_modal.dart';
 import 'package:dittobox_mobile/containers/presentation/widgets/template_bottom_sheet.dart';
 
@@ -16,7 +17,7 @@ class TemplateListScreen extends StatefulWidget {
 }
 
 class _TemplateListScreenState extends State<TemplateListScreen> {
-  List<String> _containers = [];
+  List<model.Container> _containers = [];
 
   @override
   void initState() {
@@ -29,7 +30,7 @@ class _TemplateListScreenState extends State<TemplateListScreen> {
       final containerService = ContainerService();
       final containers = await containerService.getContainersByAccountId();
       setState(() {
-        _containers = containers.map((container) => container.name).toList();
+        _containers = containers;
       });
     } catch (e) {
       print('Error loading containers: $e');
@@ -61,7 +62,7 @@ class _TemplateListScreenState extends State<TemplateListScreen> {
 
 // Template List Widget
 class TemplateList extends StatefulWidget {
-  final List<String> containers;
+  final List<model.Container> containers;
 
   const TemplateList({super.key, required this.containers});
 
@@ -192,7 +193,22 @@ class _TemplateListState extends State<TemplateList> {
     showDialog(
       context: context,
       builder: (BuildContext context) {
-        return ContainerSelectionModal(containers: widget.containers);
+        return ContainerSelectionModal(
+          containers: widget.containers,
+          onContainerSelected: (container) async {
+            try {
+              final containerService = ContainerService();
+              await containerService.assignTemplateToContainer(container.id, template.id);
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text('Template assigned to ${container.name}')),
+              );
+            } catch (e) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text('Failed to assign template: $e')),
+              );
+            }
+          },
+        );
       },
     );
   }
