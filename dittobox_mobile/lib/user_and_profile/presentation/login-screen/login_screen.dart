@@ -106,8 +106,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       if (formKey.currentState!.validate()) {
                         try {
                           await userService.loginUser(_emailController.text, _passwordController.text);
+                          // ignore: use_build_context_synchronously
                           Navigator.pushNamed(context, AppRoutes.facilities);
                         } catch (e) {
+                          // ignore: use_build_context_synchronously
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
                               content: Text('Login failed: $e'),

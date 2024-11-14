@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'dart:convert';
 import 'package:dittobox_mobile/account_and_subscription/infrastructure/model/account_model.dart';
 import 'package:http/http.dart' as http;
@@ -44,14 +46,13 @@ class AccountService extends BaseService {
   // Parameter "accountId" is retrieved from shared_preferences
   Future<Account?> getAccountDetails() async {
     try {
-      final prefs = await SharedPreferencesAsync();
+      final prefs = SharedPreferencesAsync();
       final accountId = await prefs.getInt('accountId');
       if (accountId == null) {
         throw Exception('Account ID is null');
       }
-      if (baseUrl == null) {
-        throw Exception('Base URL is null');
-      }
+      // ignore: duplicate_ignore
+      // ignore: avoid_print
       print('Account ID: $accountId');
       final url = '$baseUrl/account/$accountId';
       final response = await http.get(
@@ -62,9 +63,6 @@ class AccountService extends BaseService {
       );
       if (response.statusCode == 200) {
         final responseBody = response.body;
-        if (responseBody == null) {
-          throw Exception('Response body is null');
-        }
         print('Response body: $responseBody');
         return Account.fromJson(jsonDecode(responseBody));
       } else {

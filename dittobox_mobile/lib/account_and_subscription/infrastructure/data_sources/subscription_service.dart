@@ -8,9 +8,8 @@ class SubscriptionService extends BaseService {
   
   Future<Subscription?> getSubscriptionDetails() async {
     try {
-      final prefs = await SharedPreferencesAsync();
+      final prefs = SharedPreferencesAsync();
       final accountId = await prefs.getInt('accountId');
-      print('Account ID: $accountId');
       final url = '$baseUrl/subscription/$accountId';
       final response = await http.get(
         Uri.parse(url),

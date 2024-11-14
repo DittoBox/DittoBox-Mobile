@@ -172,11 +172,11 @@ class _ContainerBottomSheetState extends State<ContainerBottomSheet> {
 
             // Progress Indicator
             if (_isLoading)
-              Center(
+              const Center(
                 child: CircularProgressIndicator(),
               )
             else if (_isSuccess)
-              Center(
+              const Center(
                 child: Icon(Icons.check_circle, color: Colors.green, size: 40),
               ),
           ],
@@ -210,6 +210,7 @@ void _showTemplateSelectionModal(BuildContext context) async {
   if (!mounted) return; // Verifica si el widget está montado antes de mostrar el diálogo
 
   showDialog(
+    // ignore: use_build_context_synchronously
     context: context,
     builder: (BuildContext context) {
       return StatefulBuilder(
@@ -218,7 +219,7 @@ void _showTemplateSelectionModal(BuildContext context) async {
             title: Text(S.of(context).templateConfiguration),
             content: _isLoading
                 ? const Center(child: CircularProgressIndicator())
-                : Container(
+                : SizedBox(
                     width: double.maxFinite,
                     child: TemplateSelectionModal(
                       templates: templates,
@@ -234,7 +235,7 @@ void _showTemplateSelectionModal(BuildContext context) async {
                             _isLoading = false;
                             _isSuccess = true;
                           });
-                          Future.delayed(Duration(seconds: 2), () {
+                          Future.delayed(const Duration(seconds: 2), () {
                             if (!mounted) return; // Verifica si el widget está montado antes de navegar
                             Navigator.of(context).pop(); // Cierra el modal
                             widget.onTemplateAssigned(); // Callback para recargar la lista de contenedores

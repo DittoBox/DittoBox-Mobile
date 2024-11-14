@@ -199,10 +199,12 @@ class _TemplateListState extends State<TemplateList> {
             try {
               final containerService = ContainerService();
               await containerService.assignTemplateToContainer(container.id, template.id);
+              // ignore: use_build_context_synchronously
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(content: Text('Template assigned to ${container.name}')),
               );
             } catch (e) {
+              // ignore: use_build_context_synchronously
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(content: Text('Failed to assign template: $e')),
               );

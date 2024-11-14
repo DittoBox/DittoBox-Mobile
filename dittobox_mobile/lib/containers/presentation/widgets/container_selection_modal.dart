@@ -12,7 +12,7 @@ class ContainerSelectionModal extends StatelessWidget {
   Widget build(BuildContext context) {
     return AlertDialog(
       title: Text(S.of(context).selectContainers),
-      content: Container(
+      content: SizedBox(
         width: MediaQuery.of(context).size.width * 0.8,
         child: ListView.builder(
           shrinkWrap: true,

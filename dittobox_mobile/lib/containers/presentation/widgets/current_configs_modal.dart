@@ -11,7 +11,7 @@ class CurrentConfigsModal extends StatelessWidget {
   Widget build(BuildContext context) {
     return AlertDialog(
       title: Text(S.of(context).currentConfigs),
-      content: Container(
+      content: SizedBox(
         width: MediaQuery.of(context).size.width * 0.8, // Ajusta el ancho del modal
         child: SingleChildScrollView(
           child: Column(

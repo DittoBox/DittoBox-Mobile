@@ -20,13 +20,23 @@ class _SubscriptionDetailsScreenState extends State<SubscriptionDetailsScreen> {
   String _nextPaymentDay = '';
   String _identificationNumber = '';
   String _bankAccountOwner = '';
+  bool _isLoading = true;
 
   @override
   void initState() {
     super.initState();
-    _loadSubscriptionDetails();
-    _loadProfileDetails();
-    _loadAccountDetails();
+    _loadAllDetails();
+  }
+
+  Future<void> _loadAllDetails() async {
+    await Future.wait([
+      _loadSubscriptionDetails(),
+      _loadProfileDetails(),
+      _loadAccountDetails(),
+    ]);
+    setState(() {
+      _isLoading = false;
+    });
   }
 
   Future<void> _loadSubscriptionDetails() async {
@@ -65,26 +75,28 @@ class _SubscriptionDetailsScreenState extends State<SubscriptionDetailsScreen> {
         title: Text(S.of(context).subscriptionDetails),
       ),
       drawer: const CustomNavigationDrawer(currentRoute: AppRoutes.subscriptionDetails),
-      body: Padding(
-        padding: const EdgeInsets.all(32.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SubscriptionDetails(
-              currentTier: _currentTier,
+      body: _isLoading
+          ? const Center(child: CircularProgressIndicator()) // Spinner de carga
+          : Padding(
+              padding: const EdgeInsets.all(32.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SubscriptionDetails(
+                    currentTier: _currentTier,
+                  ),
+                  const SizedBox(height: 32),
+                  const Divider(),
+                  const SizedBox(height: 32),
+                  PaymentInformation(
+                    status: _status,
+                    nextPaymentDay: _nextPaymentDay,
+                    identificationNumber: _identificationNumber,
+                    bankAccountOwner: _bankAccountOwner,
+                  ),
+                ],
+              ),
             ),
-            const SizedBox(height: 32),
-            const Divider(),
-            const SizedBox(height: 32),
-            PaymentInformation(
-              status: _status,
-              nextPaymentDay: _nextPaymentDay,
-              identificationNumber: _identificationNumber,
-              bankAccountOwner: _bankAccountOwner,
-            ),
-          ],
-        ),
-      ),
     );
   }
 }

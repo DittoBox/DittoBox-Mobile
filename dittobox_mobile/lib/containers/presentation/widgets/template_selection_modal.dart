@@ -7,14 +7,14 @@ class TemplateSelectionModal extends StatelessWidget {
   final Function(Template) onTemplateSelected;
 
   const TemplateSelectionModal({
-    Key? key,
+    super.key,
     required this.templates,
     required this.onTemplateSelected,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: double.maxFinite,
       child: ListView.builder(
         shrinkWrap: true,
@@ -36,7 +36,7 @@ class TemplateSelectionModal extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(template.name, style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                      Text(template.name, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                       OutlinedButton(
                         onPressed: () {
                           onTemplateSelected(template);

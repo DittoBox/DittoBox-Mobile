@@ -85,9 +85,11 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
 
       try {
         await _templateService.createTemplate(templateData);
+        // ignore: use_build_context_synchronously
         Navigator.of(context).pop();
       } catch (e) {
         // Manejar el error
+        // ignore: use_build_context_synchronously
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text('Failed to create template: $e')),
         );

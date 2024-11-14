@@ -174,9 +174,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               if (loginResponse == 200) {
                                 if (userType == 'Owner') {
                                   Navigator.pushNamed(
+                                      // ignore: use_build_context_synchronously
                                       context, AppRoutes.companyInfo);
                                 } else {
                                   Navigator.pushNamed(
+                                      // ignore: use_build_context_synchronously
                                       context, AppRoutes.facilities);
                                 }
                               } else {

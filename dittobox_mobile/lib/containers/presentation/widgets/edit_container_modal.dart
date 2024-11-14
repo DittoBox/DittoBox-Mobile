@@ -41,7 +41,7 @@ class _EditContainerModalState extends State<EditContainerModal> {
   Widget build(BuildContext context) {
     return AlertDialog(
       title: Text(S.of(context).editContainer),
-      content: Container(
+      content: SizedBox(
         width: MediaQuery.of(context).size.width * 0.8, // Ajusta el ancho del modal
         child: SingleChildScrollView(
           child: Form(
@@ -50,21 +50,21 @@ class _EditContainerModalState extends State<EditContainerModal> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 _buildTextFieldRow('Min Temperature', 'minTemp', 'Max Temperature', 'maxTemp'),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 _buildTextFieldRow('Min Humidity', 'minHumidity', 'Max Humidity', 'maxHumidity'),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
 
                 _buildTextFieldRow('Min Oxygen', 'oxygenMin', 'Max Oxygen', 'oxygenMax'),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
 
                 _buildTextFieldRow('Min Dioxide', 'dioxideMin', 'Max Dioxide', 'dioxideMax'),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
 
                 _buildTextFieldRow('Min Ethylene', 'ethyleneMin', 'Max Ethylene', 'ethyleneMax'),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
 
                 _buildTextFieldRow('Min Ammonia', 'ammoniaMin', 'Max Ammonia', 'ammoniaMax'),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 _buildTextFieldRow('Min Sulfur Dioxide', 'sulfurDioxideMin', 'Max Sulfur Dioxide', 'sulfurDioxideMax'),
               ],
             ),
@@ -99,7 +99,7 @@ class _EditContainerModalState extends State<EditContainerModal> {
       initialValue: _parameters[key]?.toString(),
       decoration: InputDecoration(
         labelText: label,
-        border: OutlineInputBorder(),
+        border: const OutlineInputBorder(),
       ),
       keyboardType: TextInputType.number,
       validator: (value) {
@@ -120,8 +120,10 @@ class _EditContainerModalState extends State<EditContainerModal> {
       try {
         final containerService = ContainerService();
         await containerService.updateContainerParameters(widget.container.id, _parameters);
+        // ignore: use_build_context_synchronously
         Navigator.of(context).pop();
       } catch (e) {
+        // ignore: use_build_context_synchronously
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text('Failed to update container parameters: $e')),
         );

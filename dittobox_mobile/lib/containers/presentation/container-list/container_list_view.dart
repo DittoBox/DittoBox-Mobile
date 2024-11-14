@@ -178,7 +178,7 @@ class _ContainerListScreenState extends State<ContainerListScreen> with SingleTi
                 },
               ),
             );
-          }).toList(),
+          }),
         ],
       ),
     );
@@ -189,7 +189,7 @@ class _ContainerListScreenState extends State<ContainerListScreen> with SingleTi
       return Center(
         child: Text(
           S.of(context).containersNotFound,
-          style: TextStyle(fontSize: 18, color: Colors.grey),
+          style: const TextStyle(fontSize: 18, color: Colors.grey),
         ),
       );
     }
