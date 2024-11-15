@@ -116,7 +116,7 @@ void showFacilityDetailsBottomSheet(BuildContext context, Facility facility, Voi
               children: [
                 TextButton(
                   onPressed: () {
-                    showAddWorkerSheet(context, facility); // Pasa la instalación seleccionada
+                    showAddWorkerSheet(context, facility as Function(String p1, int p2)?); // Pasa la instalación seleccionada
                   },
                   child: Text(S.of(context).addWorkers),
                 ),

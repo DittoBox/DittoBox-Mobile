@@ -62,5 +62,32 @@ class FacilitiesService extends BaseService {
       throw Exception('Failed to create facility: $e');
     }
   }
+
+  Future<void> registerUserInGroup(int groupId, String email) async {
+    final prefs = SharedPreferencesAsync();
+    final accountId = await prefs.getInt('accountId');
+    if (accountId == null) {
+      throw Exception('Account ID not found');
+    }
+    final url = '$baseUrl/group/$groupId/register-user';
+    final response = await http.post(
+      Uri.parse(url),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: jsonEncode({
+        'email': email,
+        'accountId': accountId,
+        'groupId': groupId,
+      }),
+    );
+
+    if (response.statusCode != 200 && response.statusCode != 201) {
+      print('Failed to register user: ${response.body}'); // Agrega esta línea para depurar
+      throw Exception('Failed to register user: ${response.body}');
+    } else {
+      print('User registered successfully: ${response.body}'); // Agrega esta línea para confirmar éxito
+    }
+  }
 }
 

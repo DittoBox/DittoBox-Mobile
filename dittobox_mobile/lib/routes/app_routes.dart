@@ -6,6 +6,7 @@ import 'package:dittobox_mobile/containers/presentation/template-list/template_l
 import 'package:dittobox_mobile/goups/presentation/facilities-list/facilities_list_view.dart';
 import 'package:dittobox_mobile/goups/presentation/worker-details/worker_details_screen.dart';
 import 'package:dittobox_mobile/goups/presentation/worker-list/worker_list_view.dart';
+import 'package:dittobox_mobile/user_and_profile/infrastructure/models/profile_model.dart';
 import 'package:dittobox_mobile/user_and_profile/presentation/change-password-view/forgot_password_screen.dart';
 import 'package:dittobox_mobile/user_and_profile/presentation/change-password-view/password_reset_code_screen.dart';
 import 'package:dittobox_mobile/user_and_profile/presentation/change-password-view/set_new_password_screen.dart';
@@ -24,7 +25,13 @@ final Map<String, Widget Function(BuildContext)> appRoutes = {
   '/': (context) => const LoginScreen(),
   "/home": (context) => const TemplateListScreen(),
   "/workers": (context) => const WorkerListView(),
-  "/workerDetails": (context) => WorkerDetailScreen(worker: User(name: '', role: '', location: '')), // Provide a valid User object
+  "/workerDetails": (context) => WorkerDetailScreen(worker: Profile(
+    firstName: 'John',
+    lastName: 'Doe',
+    accountId: -1,
+    groupId: -1,
+    privileges: ['read', 'write']
+  )), // Provide a valid User object
   "/subscriptionDetails": (context) => const SubscriptionDetailsScreen(),
   "/accountDetails": (context) => const AccountDetailsScreen(),
   "/containers": (context) => const ContainerListScreen(),

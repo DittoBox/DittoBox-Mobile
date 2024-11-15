@@ -1,9 +1,11 @@
+import 'package:dittobox_mobile/account_and_subscription/infrastructure/data_sources/account_service.dart';
 import 'package:dittobox_mobile/generated/l10n.dart';
 import 'package:dittobox_mobile/goups/presentation/widgets/reassign_worker_sheet.dart';
+import 'package:dittobox_mobile/user_and_profile/infrastructure/models/profile_model.dart';
 import 'package:flutter/material.dart';
 
 class WorkerDetailScreen extends StatefulWidget {
-  final User worker;
+  final Profile worker;
 
   const WorkerDetailScreen({super.key, required this.worker});
 
@@ -13,20 +15,37 @@ class WorkerDetailScreen extends StatefulWidget {
 
 class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
   bool _showRoleManagement = false;
-  List<bool> _switchStates = List.filled(5, false); // Inicializar con 5 elementos
+  List<bool> _switchStates = List.filled(3, false); // Inicializar con 3 elementos
+  String? _location;
 
   @override
   void initState() {
     super.initState();
-    // Inicializar _switchStates con el número de switches necesarios
-    _switchStates = List.filled(5, false);
+    _initializeSwitchStates();
+    _fetchGroupLocation();
+  }
+
+  void _initializeSwitchStates() {
+    _switchStates[0] = widget.worker.privileges.contains('WorkerManagement');
+    _switchStates[1] = widget.worker.privileges.contains('GroupManagement');
+    _switchStates[2] = widget.worker.privileges.contains('AccountManagement');
+  }
+
+  Future<void> _fetchGroupLocation() async {
+    final location = await AccountService().getGroupLocation(widget.worker.groupId);
+    if (location != null) {
+      setState(() {
+        final addressParts = location['address'].split(' ');
+        _location = addressParts.length > 1 ? '${addressParts[0]} ${addressParts[1]}' : location['address'];
+      });
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.worker.name),
+        title: Text('${widget.worker.firstName} ${widget.worker.lastName}'),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
@@ -50,7 +69,7 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
             ),
             const SizedBox(height: 8),
             Text(
-              widget.worker.name,
+              '${widget.worker.firstName} ${widget.worker.lastName}',
               style: const TextStyle(fontSize: 32),
             ),
             const SizedBox(height: 16),
@@ -59,8 +78,8 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
               style: const TextStyle(fontSize: 18),
             ),
             const SizedBox(height: 24),
-            _buildWorkerInfoRow('Category', widget.worker.role),
-            _buildWorkerInfoRow('Location', widget.worker.location),
+            _buildWorkerInfoRow('Category', ['WorkerManagement', 'GroupManagement', 'AccountManagement'].every((privilege) => widget.worker.privileges.contains(privilege)) ? 'Owner' : 'Worker'),
+            _buildWorkerInfoRow('Location', _location ?? 'Loading...'),
             const SizedBox(height: 16),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
@@ -81,7 +100,7 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
                       builder: (context) {
                         return ReassignWorkerSheet(
                           facilities: const ['Restaurante A', 'Almacén B'], // facilities example list
-                          currentFacility: widget.worker.location,
+                          currentFacility: _location ?? 'Loading...',
                           onSave: (newFacility) {
                             Navigator.pop(context); 
 
@@ -107,10 +126,10 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
               const SizedBox(height: 8),
               Expanded(
                 child: ListView.builder(
-                  itemCount: 5,
+                  itemCount: 3,
                   itemBuilder: (context, index) {
                     return SwitchListTile(
-                      title: const Text('Privilege assignment'),
+                      title: Text(_getPrivilegeName(index)),
                       value: _switchStates[index],
                       onChanged: (bool value) {
                         setState(() {
@@ -126,6 +145,19 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
         ),
       ),
     );
+  }
+
+  String _getPrivilegeName(int index) {
+    switch (index) {
+      case 0:
+        return 'WorkerManagement';
+      case 1:
+        return 'GroupManagement';
+      case 2:
+        return 'AccountManagement';
+      default:
+        return '';
+    }
   }
 
   Widget _buildWorkerInfoRow(String title, String value) {
@@ -146,12 +178,4 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
       ),
     );
   }
-}
-
-class User {
-  final String name;
-  final String role;
-  final String location;
-
-  User({required this.name, required this.role, required this.location});
 }
