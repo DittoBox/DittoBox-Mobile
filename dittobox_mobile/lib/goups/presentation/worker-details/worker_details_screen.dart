@@ -148,7 +148,7 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
               style: const TextStyle(fontSize: 18),
             ),
             const SizedBox(height: 24),
-            _buildWorkerInfoRow(S.of(context).category, _isManager() ? 'Manager' : 'Worker'),
+            _buildWorkerInfoRow(S.of(context).category, _isOwner() ? 'Owner' : _isManager() ? 'Manager' : 'Worker'),
             _buildWorkerInfoRow(S.of(context).location, _location ?? 'Loading...'),
             const SizedBox(height: 16),
             Row(
@@ -213,6 +213,12 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
         ),
       ),
     );
+  }
+
+  bool _isOwner() {
+    return widget.worker.privileges.contains('WorkerManagement') &&
+           widget.worker.privileges.contains('GroupManagement') &&
+           widget.worker.privileges.contains('AccountManagement');
   }
 
   bool _isManager() {
