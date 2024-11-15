@@ -127,7 +127,7 @@ class WorkerItem extends StatelessWidget {
           subtitle: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(_isOwner(profile) ? 'Owner' : _isManager(profile) ? 'Manager' : 'Worker'),
+                Text(_isOwner(profile) ? 'Owner' : (_isManager(profile) ? 'Manager' : 'Worker')),
               Text('Group: $groupName'),
             ],
           ),
@@ -145,6 +145,7 @@ class WorkerItem extends StatelessWidget {
     );
   }
 
+ 
   bool _isOwner(Profile profile) {
     return profile.privileges.contains('WorkerManagement') &&
            profile.privileges.contains('GroupManagement') &&
@@ -156,4 +157,4 @@ class WorkerItem extends StatelessWidget {
            profile.privileges.contains('GroupManagement') ||
            profile.privileges.contains('AccountManagement');
   }
-}
+} 
