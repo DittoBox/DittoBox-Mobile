@@ -1,13 +1,13 @@
 import 'package:dittobox_mobile/generated/l10n.dart';
 import 'package:dittobox_mobile/goups/infrastructure/data_sources/facilities_service.dart';
-import 'package:dittobox_mobile/goups/presentation/widgets/confirm_assign_worker_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:dittobox_mobile/goups/infrastructure/models/facilities.dart';
 
 class AddWorkerSheet extends StatefulWidget {
   final Facility? facility;
+  final Function(String, int)? onSave;
 
-  const AddWorkerSheet({super.key, this.facility});
+  const AddWorkerSheet({super.key, this.facility, this.onSave});
 
   @override
   _AddWorkerSheetState createState() => _AddWorkerSheetState();
@@ -15,16 +15,13 @@ class AddWorkerSheet extends StatefulWidget {
 
 class _AddWorkerSheetState extends State<AddWorkerSheet> {
   final TextEditingController _emailController = TextEditingController();
-  String? selectedRole;
-  String? selectedFacility;
+  int? selectedFacilityId;
   List<Facility> facilities = [];
-  // final FacilitiesService _facilitiesService = FacilitiesService();
   bool isLoading = true; // Indicador de carga
 
   @override
   void initState() {
     super.initState();
-    selectedFacility = widget.facility?.title; // Selecciona automáticamente la instalación
     _loadFacilities();
   }
 
@@ -35,6 +32,13 @@ class _AddWorkerSheetState extends State<AddWorkerSheet> {
       setState(() {
         facilities = facilitiesList;
         isLoading = false; // Finaliza la carga
+        if (widget.facility != null && facilities.any((facility) => facility.id == widget.facility!.id)) {
+          selectedFacilityId = widget.facility!.id;
+        } else if (facilities.isNotEmpty) {
+          selectedFacilityId = facilities.first.id;
+        }
+        print('Selected Facility ID: $selectedFacilityId'); // Agrega esta línea para depurar
+        print('Facilities: ${facilities.map((f) => f.title).toList()}'); // Agrega esta línea para depurar
       });
     } catch (e) {
       setState(() {
@@ -115,40 +119,20 @@ class _AddWorkerSheetState extends State<AddWorkerSheet> {
               },
             ),
             const SizedBox(height: 26),
-            // Role Dropdown
-            DropdownButtonFormField<String>(
-              value: selectedRole,
-              items: ['Manager', 'Worker'].map((String role) {
-                return DropdownMenuItem<String>(
-                  value: role,
-                  child: Text(role),
-                );
-              }).toList(),
-              onChanged: (String? newValue) {
-                setState(() {
-                  selectedRole = newValue;
-                });
-              },
-              decoration: InputDecoration(
-                labelText: S.of(context).role,
-                border: const OutlineInputBorder(),
-              ),
-            ),
-            const SizedBox(height: 26),
             // Facility Dropdown
             isLoading
                 ? const CircularProgressIndicator() // Muestra un indicador de carga mientras se cargan las instalaciones
-                : DropdownButtonFormField<String>(
-                    value: selectedFacility,
+                : DropdownButtonFormField<int>(
+                    value: selectedFacilityId,
                     items: facilities.map((Facility facility) {
-                      return DropdownMenuItem<String>(
-                        value: facility.title,
+                      return DropdownMenuItem<int>(
+                        value: facility.id,
                         child: Text(facility.title),
                       );
                     }).toList(),
-                    onChanged: (String? newValue) {
+                    onChanged: (int? newValue) {
                       setState(() {
-                        selectedFacility = newValue;
+                        selectedFacilityId = newValue;
                       });
                     },
                     decoration: InputDecoration(
@@ -170,22 +154,12 @@ class _AddWorkerSheetState extends State<AddWorkerSheet> {
                 const SizedBox(width: 8),
                 FilledButton(
                   onPressed: () {
-                    showDialog(
-                      context: context, 
-                      builder: (BuildContext context) {
-                        return ConfirmAssignWorkerDialog(
-                          facilityName: selectedFacility ?? '',
-                          onConfirm: () {
-                            // Lógica para asignar trabajador
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(
-                                content: Text(S.of(context).workerAssignedSuccessfully),
-                              ),
-                            );
-                          },
-                        );
-                      }
-                    );
+                    final email = _emailController.text;
+                    final facility = facilities.firstWhere((facility) => facility.id == selectedFacilityId);
+                    if (widget.onSave != null) {
+                      widget.onSave!(email, facility.id);
+                    }
+                    Navigator.pop(context);
                   },
                   child: Text(S.of(context).save),
                 ),
@@ -198,7 +172,7 @@ class _AddWorkerSheetState extends State<AddWorkerSheet> {
   }
 }
 
-void showAddWorkerSheet(BuildContext context, Facility? facility) {
+void showAddWorkerSheet(BuildContext context, Function(String, int)? onSave) {
   showModalBottomSheet(
     context: context,
     isScrollControlled: true,
@@ -211,7 +185,7 @@ void showAddWorkerSheet(BuildContext context, Facility? facility) {
           padding: EdgeInsets.only(
             bottom: MediaQuery.of(context).viewInsets.bottom,
           ),
-          child: AddWorkerSheet(facility: facility),
+          child: AddWorkerSheet(onSave: onSave),
         ),
       );
     },
