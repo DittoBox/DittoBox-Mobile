@@ -135,12 +135,12 @@ class SubscriptionDetails extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            FilledButton(
-              onPressed: () {
-                // Lógica para actualizar el plan
-              },
-              child: Text(S.of(context).upgradePlan),
-            ),
+          FilledButton(
+            onPressed: () {
+              Navigator.pushNamed(context, AppRoutes.subscriptionPlans);
+            },
+            child: Text(S.of(context).upgradePlan),
+          ),
           ],
         ),
       ],
@@ -191,10 +191,10 @@ class PaymentInformation extends StatelessWidget {
           style: const TextStyle(fontSize: 22),
         ),
         const SizedBox(height: 24),
-        _buildInfoRow('Status', status),
-        _buildInfoRow('Next Payment Day', nextPaymentDay),
-        _buildInfoRow('Identification Number', identificationNumber),
-        _buildInfoRow('Bank Account Owner', bankAccountOwner),
+        _buildInfoRow(S.of(context).status, status),
+        _buildInfoRow(S.of(context).nextPaymentDay, nextPaymentDay),
+        _buildInfoRow(S.of(context).identificationNumber, identificationNumber),
+        _buildInfoRow(S.of(context).bankAccountOwner, bankAccountOwner),
         const SizedBox(height: 16),
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
@@ -203,7 +203,7 @@ class PaymentInformation extends StatelessWidget {
               onPressed: () {
                 // Lógica para actualizar la información de pago
               },
-              child: const Text('Update'),
+              child: Text(S.of(context).updatePaymentInformation),
             ),
             const SizedBox(width: 8),
             TextButton(

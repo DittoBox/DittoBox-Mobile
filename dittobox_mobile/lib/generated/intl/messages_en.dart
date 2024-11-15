@@ -36,9 +36,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "addTemplate": MessageLookupByLibrary.simpleMessage("Add template"),
         "addWorker": MessageLookupByLibrary.simpleMessage("Add worker"),
         "addWorkers": MessageLookupByLibrary.simpleMessage("Add workers"),
+        "advancePlan": MessageLookupByLibrary.simpleMessage("Advance Plan"),
+        "advancedAutomaticTemplates": MessageLookupByLibrary.simpleMessage(
+            "Advanced automatic templates and adjustments for preserving various types of food."),
         "alerts": MessageLookupByLibrary.simpleMessage("Alerts"),
         "all": MessageLookupByLibrary.simpleMessage("All"),
         "allContainers": MessageLookupByLibrary.simpleMessage("All containers"),
+        "allFromAdvancePlan":
+            MessageLookupByLibrary.simpleMessage("All from Advance Plan"),
+        "allFromStarterPlan":
+            MessageLookupByLibrary.simpleMessage("All from Starter Plan"),
         "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
             "Already have an account? Login instead"),
         "ammonia": MessageLookupByLibrary.simpleMessage("Ammonia (NH₃)"),
@@ -62,6 +69,8 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Are you sure you want to revoke this privilege?"),
         "assignTemplate":
             MessageLookupByLibrary.simpleMessage("Assign template?"),
+        "automaticTemplates": MessageLookupByLibrary.simpleMessage(
+            "Automatic templates to adjust temperature and humidity according to the type of supply."),
         "backToLogin": MessageLookupByLibrary.simpleMessage("Back to login"),
         "bankAccountOwner":
             MessageLookupByLibrary.simpleMessage("Bank Account Owner"),
@@ -75,6 +84,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Max carbon dioxide"),
         "carbonDioxideMin":
             MessageLookupByLibrary.simpleMessage("Min carbon dioxide"),
+        "cardNumber": MessageLookupByLibrary.simpleMessage("Card number"),
         "category": MessageLookupByLibrary.simpleMessage("Category"),
         "changePassword":
             MessageLookupByLibrary.simpleMessage("Change Password"),
@@ -85,6 +95,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "changeToSpanish":
             MessageLookupByLibrary.simpleMessage("Change to Spanish"),
         "checkAlerts": MessageLookupByLibrary.simpleMessage("Check alerts"),
+        "choosePlan": MessageLookupByLibrary.simpleMessage("Choose plan"),
         "city": MessageLookupByLibrary.simpleMessage("City"),
         "close": MessageLookupByLibrary.simpleMessage("Close"),
         "code": MessageLookupByLibrary.simpleMessage("Code"),
@@ -133,12 +144,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "ethylene": MessageLookupByLibrary.simpleMessage("Ethylene (C₂H₄)"),
         "ethyleneMax": MessageLookupByLibrary.simpleMessage("Max ethylene"),
         "ethyleneMin": MessageLookupByLibrary.simpleMessage("Min ethylene"),
+        "expirationDate":
+            MessageLookupByLibrary.simpleMessage("Expiration date"),
         "facilities": MessageLookupByLibrary.simpleMessage("Facilities"),
         "facilityName": MessageLookupByLibrary.simpleMessage("Facility name"),
         "failedToFetchFacilities":
             MessageLookupByLibrary.simpleMessage("Failed to fetch facilities"),
         "failedToUpdatePrivileges":
             MessageLookupByLibrary.simpleMessage("Failed to update privileges"),
+        "fasterTechnicalSupport": MessageLookupByLibrary.simpleMessage(
+            "Faster and more personalized technical support."),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot your password?"),
         "forgotPasswordTitle":
@@ -149,7 +164,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "humidityMin": MessageLookupByLibrary.simpleMessage("Min humidity"),
         "identificationNumber":
             MessageLookupByLibrary.simpleMessage("Identification number"),
+        "invalidCardHolderName":
+            MessageLookupByLibrary.simpleMessage("Invalid card holder name"),
+        "invalidCardNumber":
+            MessageLookupByLibrary.simpleMessage("Invalid card number"),
+        "invalidCvv": MessageLookupByLibrary.simpleMessage("Invalid CVV"),
         "invalidEmail": MessageLookupByLibrary.simpleMessage("Invalid email"),
+        "invalidExpiryDate":
+            MessageLookupByLibrary.simpleMessage("Invalid expiry date"),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
         "lastKnownHealthStatus":
             MessageLookupByLibrary.simpleMessage("Last known health status"),
@@ -162,6 +184,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "meat": MessageLookupByLibrary.simpleMessage("Meat"),
         "meats": MessageLookupByLibrary.simpleMessage("Meats"),
         "menu": MessageLookupByLibrary.simpleMessage("Menu"),
+        "month": MessageLookupByLibrary.simpleMessage("Month"),
+        "monthlyPlans": MessageLookupByLibrary.simpleMessage("Monthly plans"),
         "more": MessageLookupByLibrary.simpleMessage("More"),
         "name": MessageLookupByLibrary.simpleMessage("Name"),
         "newContainer": MessageLookupByLibrary.simpleMessage("New container"),
@@ -170,6 +194,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "newPasswordRequired":
             MessageLookupByLibrary.simpleMessage("New password is required"),
         "newTemplate": MessageLookupByLibrary.simpleMessage("New template"),
+        "nextPaymentDay":
+            MessageLookupByLibrary.simpleMessage("Next payment day"),
         "noFacilitiesAvailable":
             MessageLookupByLibrary.simpleMessage("No facilities available"),
         "noTemplateAssigned":
@@ -194,8 +220,11 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Password Reset Code"),
         "passwordsDoNotMatch":
             MessageLookupByLibrary.simpleMessage("Passwords do not match"),
+        "pay": MessageLookupByLibrary.simpleMessage("Pay"),
         "paymentInformation":
             MessageLookupByLibrary.simpleMessage("Payment information"),
+        "paymentSuccessful":
+            MessageLookupByLibrary.simpleMessage("Payment successful"),
         "pendingAlerts": MessageLookupByLibrary.simpleMessage("Pending Alerts"),
         "pleaseEnterCategory":
             MessageLookupByLibrary.simpleMessage("Please enter a category"),
@@ -225,6 +254,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "Please enter a template name"),
         "pleaseSelectCategory":
             MessageLookupByLibrary.simpleMessage("Please select a category"),
+        "premiumPlan": MessageLookupByLibrary.simpleMessage("Premium Plan"),
+        "priorityTechnicalSupport":
+            MessageLookupByLibrary.simpleMessage("Priority technical support"),
         "privilegesUpdatedSuccessfully": MessageLookupByLibrary.simpleMessage(
             "Privileges updated successfully"),
         "proccessedFood":
@@ -244,6 +276,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("This is a required field"),
         "resetPassword": MessageLookupByLibrary.simpleMessage("Reset Password"),
         "restaurant": MessageLookupByLibrary.simpleMessage("Restaurant"),
+        "restaurants": MessageLookupByLibrary.simpleMessage("Restaurants"),
         "role": MessageLookupByLibrary.simpleMessage("Role"),
         "roleManagement":
             MessageLookupByLibrary.simpleMessage("Role management"),
@@ -262,11 +295,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "setNewPasswordTitle":
             MessageLookupByLibrary.simpleMessage("Set New Password"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
+        "simultaneousMonitoring": MessageLookupByLibrary.simpleMessage(
+            "Simultaneous monitoring of up to 5 DittoBoxes for multiple restaurants."),
         "spanish": MessageLookupByLibrary.simpleMessage("Spanish"),
+        "status": MessageLookupByLibrary.simpleMessage("Status"),
         "statusContainer": MessageLookupByLibrary.simpleMessage("Status"),
+        "subscribe": MessageLookupByLibrary.simpleMessage("Subscribe"),
         "subscription": MessageLookupByLibrary.simpleMessage("Subscription"),
         "subscriptionDetails":
             MessageLookupByLibrary.simpleMessage("Subscription details"),
+        "subscriptionPlans":
+            MessageLookupByLibrary.simpleMessage("Subscription Plans"),
         "subscriptionTier":
             MessageLookupByLibrary.simpleMessage("Subscription Tier"),
         "success": MessageLookupByLibrary.simpleMessage("Success"),
@@ -276,6 +315,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Max sulfur dioxide"),
         "sulfurDioxideMin":
             MessageLookupByLibrary.simpleMessage("Min sulfur dioxide"),
+        "supportForLargerChains": MessageLookupByLibrary.simpleMessage(
+            "Support for larger chains (up to 10 restaurants)."),
         "tempMax": MessageLookupByLibrary.simpleMessage("Max temperature"),
         "tempMin": MessageLookupByLibrary.simpleMessage("Min temperature"),
         "temperature": MessageLookupByLibrary.simpleMessage("Temperature"),
@@ -290,6 +331,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "templates": MessageLookupByLibrary.simpleMessage("Templates"),
         "title": MessageLookupByLibrary.simpleMessage("DittoBox"),
         "type": MessageLookupByLibrary.simpleMessage("Type"),
+        "upTo": MessageLookupByLibrary.simpleMessage("Up to"),
+        "updatePaymentInformation":
+            MessageLookupByLibrary.simpleMessage("Update"),
         "upgradePlan": MessageLookupByLibrary.simpleMessage("Upgrade plan"),
         "userInformation":
             MessageLookupByLibrary.simpleMessage("User Information"),
@@ -316,6 +360,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Worker reassigned successfully"),
         "workerUnassignedSuccessfully": MessageLookupByLibrary.simpleMessage(
             "Worker unassigned successfully"),
-        "workers": MessageLookupByLibrary.simpleMessage("Workers")
+        "workers": MessageLookupByLibrary.simpleMessage("Workers"),
+        "yearly": MessageLookupByLibrary.simpleMessage("Yearly"),
+        "yearlyPlans": MessageLookupByLibrary.simpleMessage("Yearly plans")
       };
 }

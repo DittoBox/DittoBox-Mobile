@@ -2029,6 +2029,309 @@ class S {
       args: [],
     );
   }
+
+  /// `Status`
+  String get status {
+    return Intl.message(
+      'Status',
+      name: 'status',
+      desc: 'Label for status',
+      args: [],
+    );
+  }
+
+  /// `Next payment day`
+  String get nextPaymentDay {
+    return Intl.message(
+      'Next payment day',
+      name: 'nextPaymentDay',
+      desc: 'Label for next payment day',
+      args: [],
+    );
+  }
+
+  /// `Update`
+  String get updatePaymentInformation {
+    return Intl.message(
+      'Update',
+      name: 'updatePaymentInformation',
+      desc: 'Button label for updating payment information',
+      args: [],
+    );
+  }
+
+  /// `Card number`
+  String get cardNumber {
+    return Intl.message(
+      'Card number',
+      name: 'cardNumber',
+      desc: 'Label for card number',
+      args: [],
+    );
+  }
+
+  /// `Expiration date`
+  String get expirationDate {
+    return Intl.message(
+      'Expiration date',
+      name: 'expirationDate',
+      desc: 'Label for expiration date',
+      args: [],
+    );
+  }
+
+  /// `Payment successful`
+  String get paymentSuccessful {
+    return Intl.message(
+      'Payment successful',
+      name: 'paymentSuccessful',
+      desc: 'Success message when payment is successful',
+      args: [],
+    );
+  }
+
+  /// `Advance Plan`
+  String get advancePlan {
+    return Intl.message(
+      'Advance Plan',
+      name: 'advancePlan',
+      desc: 'Label for Advance Plan',
+      args: [],
+    );
+  }
+
+  /// `Premium Plan`
+  String get premiumPlan {
+    return Intl.message(
+      'Premium Plan',
+      name: 'premiumPlan',
+      desc: 'Label for Premium Plan',
+      args: [],
+    );
+  }
+
+  /// `Up to`
+  String get upTo {
+    return Intl.message(
+      'Up to',
+      name: 'upTo',
+      desc: 'Label for up to',
+      args: [],
+    );
+  }
+
+  /// `Restaurants`
+  String get restaurants {
+    return Intl.message(
+      'Restaurants',
+      name: 'restaurants',
+      desc: 'Label for restaurants',
+      args: [],
+    );
+  }
+
+  /// `Month`
+  String get month {
+    return Intl.message(
+      'Month',
+      name: 'month',
+      desc: 'Label for month',
+      args: [],
+    );
+  }
+
+  /// `Yearly`
+  String get yearly {
+    return Intl.message(
+      'Yearly',
+      name: 'yearly',
+      desc: 'Label for yearly',
+      args: [],
+    );
+  }
+
+  /// `All from Starter Plan`
+  String get allFromStarterPlan {
+    return Intl.message(
+      'All from Starter Plan',
+      name: 'allFromStarterPlan',
+      desc: 'Label for all from Starter Plan',
+      args: [],
+    );
+  }
+
+  /// `Priority technical support`
+  String get priorityTechnicalSupport {
+    return Intl.message(
+      'Priority technical support',
+      name: 'priorityTechnicalSupport',
+      desc: 'Label for priority technical support',
+      args: [],
+    );
+  }
+
+  /// `Automatic templates to adjust temperature and humidity according to the type of supply.`
+  String get automaticTemplates {
+    return Intl.message(
+      'Automatic templates to adjust temperature and humidity according to the type of supply.',
+      name: 'automaticTemplates',
+      desc:
+          'Label for automatic templates to adjust temperature and humidity according to the type of supply',
+      args: [],
+    );
+  }
+
+  /// `Simultaneous monitoring of up to 5 DittoBoxes for multiple restaurants.`
+  String get simultaneousMonitoring {
+    return Intl.message(
+      'Simultaneous monitoring of up to 5 DittoBoxes for multiple restaurants.',
+      name: 'simultaneousMonitoring',
+      desc:
+          'Label for simultaneous monitoring of up to 5 DittoBoxes for multiple restaurants',
+      args: [],
+    );
+  }
+
+  /// `All from Advance Plan`
+  String get allFromAdvancePlan {
+    return Intl.message(
+      'All from Advance Plan',
+      name: 'allFromAdvancePlan',
+      desc: 'Label for all from Advance Plan',
+      args: [],
+    );
+  }
+
+  /// `Support for larger chains (up to 10 restaurants).`
+  String get supportForLargerChains {
+    return Intl.message(
+      'Support for larger chains (up to 10 restaurants).',
+      name: 'supportForLargerChains',
+      desc: 'Label for support for larger chains (up to 10 restaurants)',
+      args: [],
+    );
+  }
+
+  /// `Faster and more personalized technical support.`
+  String get fasterTechnicalSupport {
+    return Intl.message(
+      'Faster and more personalized technical support.',
+      name: 'fasterTechnicalSupport',
+      desc: 'Label for faster and more personalized technical support',
+      args: [],
+    );
+  }
+
+  /// `Advanced automatic templates and adjustments for preserving various types of food.`
+  String get advancedAutomaticTemplates {
+    return Intl.message(
+      'Advanced automatic templates and adjustments for preserving various types of food.',
+      name: 'advancedAutomaticTemplates',
+      desc:
+          'Label for advanced automatic templates and adjustments for preserving various types of food',
+      args: [],
+    );
+  }
+
+  /// `Pay`
+  String get pay {
+    return Intl.message(
+      'Pay',
+      name: 'pay',
+      desc: 'Button label for paying',
+      args: [],
+    );
+  }
+
+  /// `Subscription Plans`
+  String get subscriptionPlans {
+    return Intl.message(
+      'Subscription Plans',
+      name: 'subscriptionPlans',
+      desc: 'Label for subscription plans',
+      args: [],
+    );
+  }
+
+  /// `Subscribe`
+  String get subscribe {
+    return Intl.message(
+      'Subscribe',
+      name: 'subscribe',
+      desc: 'Button label for subscribing',
+      args: [],
+    );
+  }
+
+  /// `Choose plan`
+  String get choosePlan {
+    return Intl.message(
+      'Choose plan',
+      name: 'choosePlan',
+      desc: 'Label for choosing plan',
+      args: [],
+    );
+  }
+
+  /// `Yearly plans`
+  String get yearlyPlans {
+    return Intl.message(
+      'Yearly plans',
+      name: 'yearlyPlans',
+      desc: 'Label for yearly plans',
+      args: [],
+    );
+  }
+
+  /// `Monthly plans`
+  String get monthlyPlans {
+    return Intl.message(
+      'Monthly plans',
+      name: 'monthlyPlans',
+      desc: 'Label for monthly plans',
+      args: [],
+    );
+  }
+
+  /// `Invalid card number`
+  String get invalidCardNumber {
+    return Intl.message(
+      'Invalid card number',
+      name: 'invalidCardNumber',
+      desc: 'Error message when card number is invalid',
+      args: [],
+    );
+  }
+
+  /// `Invalid expiry date`
+  String get invalidExpiryDate {
+    return Intl.message(
+      'Invalid expiry date',
+      name: 'invalidExpiryDate',
+      desc: 'Error message when expiry date is invalid',
+      args: [],
+    );
+  }
+
+  /// `Invalid CVV`
+  String get invalidCvv {
+    return Intl.message(
+      'Invalid CVV',
+      name: 'invalidCvv',
+      desc: 'Error message when CVV is invalid',
+      args: [],
+    );
+  }
+
+  /// `Invalid card holder name`
+  String get invalidCardHolderName {
+    return Intl.message(
+      'Invalid card holder name',
+      name: 'invalidCardHolderName',
+      desc: 'Error message when card holder name is invalid',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

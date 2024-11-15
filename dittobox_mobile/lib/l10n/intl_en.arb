@@ -791,5 +791,127 @@
   "failedToUpdatePrivileges" : "Failed to update privileges",
   "@failedToUpdatePrivileges": {
     "description": "Error message when failing to update privileges"
+  },
+  "status": "Status",
+  "@status": {
+    "description": "Label for status"
+  },
+  "nextPaymentDay": "Next payment day",
+  "@nextPaymentDay": {
+    "description": "Label for next payment day"
+  },
+  "updatePaymentInformation": "Update",
+  "@updatePaymentInformation": {
+    "description": "Button label for updating payment information"
+  },
+  "cardNumber": "Card number",
+  "@cardNumber": {
+    "description": "Label for card number"
+  },
+  "expirationDate": "Expiration date",
+  "@expirationDate": {
+    "description": "Label for expiration date"
+  },
+  "paymentSuccessful": "Payment successful",
+  "@paymentSuccessful": {
+    "description": "Success message when payment is successful"
+  },
+  "advancePlan": "Advance Plan",
+  "@advancePlan": {
+    "description": "Label for Advance Plan"
+  },
+  "premiumPlan": "Premium Plan",
+  "@premiumPlan": {
+    "description": "Label for Premium Plan"
+  },
+  "upTo": "Up to",
+  "@upTo": {
+    "description": "Label for up to"
+  },
+  "restaurants": "Restaurants",
+  "@restaurants": {
+    "description": "Label for restaurants"
+  },
+  "month": "Month",
+  "@month": {
+    "description": "Label for month"
+  },
+  "yearly": "Yearly",
+  "@yearly": {
+    "description": "Label for yearly"
+  },
+  "allFromStarterPlan": "All from Starter Plan",
+  "@allFromStarterPlan": {
+    "description": "Label for all from Starter Plan"
+  },
+  "priorityTechnicalSupport": "Priority technical support",
+  "@priorityTechnicalSupport": {
+    "description": "Label for priority technical support"
+  },
+  "automaticTemplates": "Automatic templates to adjust temperature and humidity according to the type of supply.",
+  "@automaticTemplates": {
+    "description": "Label for automatic templates to adjust temperature and humidity according to the type of supply"
+  },
+  "simultaneousMonitoring": "Simultaneous monitoring of up to 5 DittoBoxes for multiple restaurants.",
+  "@simultaneousMonitoring": {
+    "description": "Label for simultaneous monitoring of up to 5 DittoBoxes for multiple restaurants"
+  },
+  "allFromAdvancePlan": "All from Advance Plan",
+  "@allFromAdvancePlan": {
+    "description": "Label for all from Advance Plan"
+  },
+  "supportForLargerChains": "Support for larger chains (up to 10 restaurants).",
+  "@supportForLargerChains": {
+    "description": "Label for support for larger chains (up to 10 restaurants)"
+  },
+  "fasterTechnicalSupport": "Faster and more personalized technical support.",
+  "@fasterTechnicalSupport": {
+    "description": "Label for faster and more personalized technical support"
+  },
+  "advancedAutomaticTemplates": "Advanced automatic templates and adjustments for preserving various types of food.",
+  "@advancedAutomaticTemplates": {
+    "description": "Label for advanced automatic templates and adjustments for preserving various types of food"
+  },
+  "pay": "Pay",
+  "@pay": {
+    "description": "Button label for paying"
+  },
+  "subscriptionPlans": "Subscription Plans",
+  "@subscriptionPlans": {
+    "description": "Label for subscription plans"
+  },
+  "subscribe": "Subscribe",
+  "@subscribe": {
+    "description": "Button label for subscribing"
+  },
+  "choosePlan": "Choose plan",
+  "@choosePlan": {
+    "description": "Label for choosing plan"
+  },
+  "yearlyPlans": "Yearly plans",
+  "@yearlyPlans": {
+    "description": "Label for yearly plans"
+  },
+  "monthlyPlans": "Monthly plans",
+  "@monthlyPlans": {
+    "description": "Label for monthly plans"
+  },
+  "invalidCardNumber": "Invalid card number",
+  "@invalidCardNumber": {
+    "description": "Error message when card number is invalid"
+  },
+  "invalidExpiryDate": "Invalid expiry date",
+  "@invalidExpiryDate": {
+    "description": "Error message when expiry date is invalid"
+  },
+  "invalidCvv": "Invalid CVV",
+  "@invalidCvv": {
+    "description": "Error message when CVV is invalid"
+  },
+  "invalidCardHolderName": "Invalid card holder name",
+  "@invalidCardHolderName": {
+    "description": "Error message when card holder name is invalid"
   }
+
+
 }

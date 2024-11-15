@@ -33,6 +33,7 @@ class _WorkerListViewState extends State<WorkerListView> {
         _profilesFuture = AccountService().getUsersByAccountId();
       });
     } catch (e) {
+      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Failed to add worker: $e')),
       );
@@ -95,7 +96,7 @@ class WorkerList extends StatelessWidget {
   final List<Profile> profiles;
   final Map<int, String> groupMap;
 
-  WorkerList({super.key, required this.profiles, required this.groupMap});
+  const WorkerList({super.key, required this.profiles, required this.groupMap});
 
   @override
   Widget build(BuildContext context) {

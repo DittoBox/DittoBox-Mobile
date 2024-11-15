@@ -40,10 +40,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "addWorker": MessageLookupByLibrary.simpleMessage("Agregar trabajador"),
         "addWorkers":
             MessageLookupByLibrary.simpleMessage("Agregar trabajadores"),
+        "advancePlan": MessageLookupByLibrary.simpleMessage("Plan Avanzado"),
+        "advancedAutomaticTemplates": MessageLookupByLibrary.simpleMessage(
+            "Plantillas y ajustes automáticos avanzados para preservar varios tipos de alimentos."),
         "alerts": MessageLookupByLibrary.simpleMessage("Alertas"),
         "all": MessageLookupByLibrary.simpleMessage("Todos"),
         "allContainers":
             MessageLookupByLibrary.simpleMessage("Todos los contenedores"),
+        "allFromAdvancePlan":
+            MessageLookupByLibrary.simpleMessage("Todo del Plan Avanzado."),
+        "allFromStarterPlan":
+            MessageLookupByLibrary.simpleMessage("Todo del Plan Inicial."),
         "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
             "¿Ya tienes una cuenta? Inicia sesión en su lugar"),
         "ammonia": MessageLookupByLibrary.simpleMessage("Amoníaco (NH₃)"),
@@ -68,6 +75,8 @@ class MessageLookup extends MessageLookupByLibrary {
                 "¿Estás seguro de que deseas revocar este privilegio?"),
         "assignTemplate":
             MessageLookupByLibrary.simpleMessage("Asignar Plantilla?"),
+        "automaticTemplates": MessageLookupByLibrary.simpleMessage(
+            "Plantillas automáticas para ajustar la temperatura y la humedad según el tipo de suministro."),
         "backToLogin":
             MessageLookupByLibrary.simpleMessage("Volver al Inicio de Sesión"),
         "bankAccountOwner": MessageLookupByLibrary.simpleMessage(
@@ -83,6 +92,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Dióxido de carbono Máx"),
         "carbonDioxideMin":
             MessageLookupByLibrary.simpleMessage("Dióxido de carbono Min"),
+        "cardNumber": MessageLookupByLibrary.simpleMessage("Número de Tarjeta"),
         "category": MessageLookupByLibrary.simpleMessage("Categoría"),
         "changePassword":
             MessageLookupByLibrary.simpleMessage("Cambiar Contraseña"),
@@ -93,6 +103,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "changeToSpanish":
             MessageLookupByLibrary.simpleMessage("Cambiar a inglés"),
         "checkAlerts": MessageLookupByLibrary.simpleMessage("Revisar alertas"),
+        "choosePlan": MessageLookupByLibrary.simpleMessage("Elegir Plan"),
         "city": MessageLookupByLibrary.simpleMessage("Ciudad"),
         "close": MessageLookupByLibrary.simpleMessage("Cerrar"),
         "code": MessageLookupByLibrary.simpleMessage("Código"),
@@ -145,6 +156,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ethylene": MessageLookupByLibrary.simpleMessage("Etileno"),
         "ethyleneMax": MessageLookupByLibrary.simpleMessage("Etileno Máx"),
         "ethyleneMin": MessageLookupByLibrary.simpleMessage("Etileno Min"),
+        "expirationDate":
+            MessageLookupByLibrary.simpleMessage("Fecha de Expiración"),
         "facilities": MessageLookupByLibrary.simpleMessage("Instalaciones"),
         "facilityName":
             MessageLookupByLibrary.simpleMessage("Nombre de la instalación"),
@@ -152,6 +165,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Error al obtener las instalaciones"),
         "failedToUpdatePrivileges": MessageLookupByLibrary.simpleMessage(
             "Error al actualizar los privilegios"),
+        "fasterTechnicalSupport": MessageLookupByLibrary.simpleMessage(
+            "Soporte técnico más rápido y personalizado."),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("¿Olvidaste tu contraseña?"),
         "forgotPasswordTitle":
@@ -163,6 +178,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "humidityMin": MessageLookupByLibrary.simpleMessage("Humedad mínima"),
         "identificationNumber":
             MessageLookupByLibrary.simpleMessage("Número de identificación"),
+        "invalidCardHolderName": MessageLookupByLibrary.simpleMessage(
+            "Nombre del titular de la tarjeta inválido"),
+        "invalidCardNumber":
+            MessageLookupByLibrary.simpleMessage("Número de tarjeta inválido"),
+        "invalidCvv": MessageLookupByLibrary.simpleMessage("CVV inválido"),
         "invalidEmail":
             MessageLookupByLibrary.simpleMessage("Correo electrónico inválido"),
         "language": MessageLookupByLibrary.simpleMessage("Idioma"),
@@ -177,6 +197,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Administrar Suscripción"),
         "meats": MessageLookupByLibrary.simpleMessage("Carnes"),
         "menu": MessageLookupByLibrary.simpleMessage("Menú"),
+        "month": MessageLookupByLibrary.simpleMessage("Mes"),
+        "monthlyPlans":
+            MessageLookupByLibrary.simpleMessage("Planes Mensuales"),
         "more": MessageLookupByLibrary.simpleMessage("Más"),
         "name": MessageLookupByLibrary.simpleMessage("Nombre"),
         "newContainer":
@@ -211,8 +234,11 @@ class MessageLookup extends MessageLookupByLibrary {
             "Código de Restablecimiento de Contraseña"),
         "passwordsDoNotMatch": MessageLookupByLibrary.simpleMessage(
             "Las contraseñas no coinciden"),
+        "pay": MessageLookupByLibrary.simpleMessage("Pagar"),
         "paymentInformation":
             MessageLookupByLibrary.simpleMessage("Información de pago"),
+        "paymentSuccessful":
+            MessageLookupByLibrary.simpleMessage("Pago exitoso"),
         "pendingAlerts":
             MessageLookupByLibrary.simpleMessage("Alertas pendientes"),
         "pleaseEnterCategory": MessageLookupByLibrary.simpleMessage(
@@ -239,6 +265,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "Por favor, ingrese el nombre de la plantilla"),
         "pleaseSelectCategory": MessageLookupByLibrary.simpleMessage(
             "Por favor, seleccione una categoría"),
+        "premiumPlan": MessageLookupByLibrary.simpleMessage("Plan Premium"),
+        "priorityTechnicalSupport": MessageLookupByLibrary.simpleMessage(
+            "Soporte técnico prioritario."),
         "privilegesUpdatedSuccessfully": MessageLookupByLibrary.simpleMessage(
             "Privilegios actualizados exitosamente"),
         "processedFoods":
@@ -256,6 +285,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "resetPassword":
             MessageLookupByLibrary.simpleMessage("Restablecer Contraseña"),
         "restaurant": MessageLookupByLibrary.simpleMessage("Restaurante"),
+        "restaurants": MessageLookupByLibrary.simpleMessage("restaurantes"),
         "role": MessageLookupByLibrary.simpleMessage("Rol"),
         "roleManagement":
             MessageLookupByLibrary.simpleMessage("Gestión de roles"),
@@ -274,11 +304,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "setNewPasswordTitle":
             MessageLookupByLibrary.simpleMessage("Establecer Nueva Contraseña"),
         "settings": MessageLookupByLibrary.simpleMessage("Configuraciones"),
+        "simultaneousMonitoring": MessageLookupByLibrary.simpleMessage(
+            "Monitoreo simultáneo de hasta 5 DittoBoxes para múltiples restaurantes."),
         "spanish": MessageLookupByLibrary.simpleMessage("Español"),
+        "status": MessageLookupByLibrary.simpleMessage("Estado"),
         "statusContainer": MessageLookupByLibrary.simpleMessage("Estado"),
+        "subscribe": MessageLookupByLibrary.simpleMessage("Suscribirse"),
         "subscription": MessageLookupByLibrary.simpleMessage("Suscripción"),
         "subscriptionDetails":
             MessageLookupByLibrary.simpleMessage("Detalles de la suscripción"),
+        "subscriptionPlans":
+            MessageLookupByLibrary.simpleMessage("Planes de Suscripción"),
         "subscriptionTier":
             MessageLookupByLibrary.simpleMessage("Nivel de Suscripción"),
         "success": MessageLookupByLibrary.simpleMessage("Éxito"),
@@ -288,6 +324,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Dióxido de azufre Máx"),
         "sulfurDioxideMin":
             MessageLookupByLibrary.simpleMessage("Dióxido de azufre Min"),
+        "supportForLargerChains": MessageLookupByLibrary.simpleMessage(
+            "Soporte para cadenas más grandes (hasta 10 restaurantes)."),
         "tempMax": MessageLookupByLibrary.simpleMessage("Temperatura máxima"),
         "tempMin": MessageLookupByLibrary.simpleMessage("Temperatura mínima"),
         "temperature": MessageLookupByLibrary.simpleMessage("Temperatura"),
@@ -303,6 +341,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "templates": MessageLookupByLibrary.simpleMessage("Plantillas"),
         "title": MessageLookupByLibrary.simpleMessage("DittoBox"),
         "type": MessageLookupByLibrary.simpleMessage("Tipo"),
+        "upTo": MessageLookupByLibrary.simpleMessage("Hasta"),
+        "updatePaymentInformation":
+            MessageLookupByLibrary.simpleMessage("Actualizar"),
         "upgradePlan": MessageLookupByLibrary.simpleMessage("Actualizar plan"),
         "userInformation":
             MessageLookupByLibrary.simpleMessage("Información del Usuario"),
@@ -332,6 +373,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Trabajador reasignado"),
         "workerUnassignedSuccessfully": MessageLookupByLibrary.simpleMessage(
             "Trabajador desasignado exitosamente"),
-        "workers": MessageLookupByLibrary.simpleMessage("Trabajadores")
+        "workers": MessageLookupByLibrary.simpleMessage("Trabajadores"),
+        "yearly": MessageLookupByLibrary.simpleMessage("Anual"),
+        "yearlyPlans": MessageLookupByLibrary.simpleMessage("Planes Anuales")
       };
 }
