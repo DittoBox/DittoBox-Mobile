@@ -700,10 +700,10 @@ class S {
     );
   }
 
-  /// `Ethylene`
+  /// `Ethylene (C₂H₄)`
   String get ethylene {
     return Intl.message(
-      'Ethylene',
+      'Ethylene (C₂H₄)',
       name: 'ethylene',
       desc: 'Label for ethylene section',
       args: [],
@@ -790,20 +790,20 @@ class S {
     );
   }
 
-  /// `Oxygen`
+  /// `Oxygen (O₂)`
   String get oxygen {
     return Intl.message(
-      'Oxygen',
+      'Oxygen (O₂)',
       name: 'oxygen',
       desc: 'Label for oxygen section',
       args: [],
     );
   }
 
-  /// `Carbon dioxide`
+  /// `Carbon dioxide (CO₂)`
   String get carbonDioxide {
     return Intl.message(
-      'Carbon dioxide',
+      'Carbon dioxide (CO₂)',
       name: 'carbonDioxide',
       desc: 'Label for carbon dioxide section',
       args: [],
@@ -1190,52 +1190,12 @@ class S {
     );
   }
 
-  /// `Confirm`
-  String get confirm {
-    return Intl.message(
-      'Confirm',
-      name: 'confirm',
-      desc: 'Button label for confirming',
-      args: [],
-    );
-  }
-
   /// `Confirm delete`
   String get confirmDelete {
     return Intl.message(
       'Confirm delete',
       name: 'confirmDelete',
       desc: 'Button label for confirming deletion',
-      args: [],
-    );
-  }
-
-  /// `Confirm assign worker`
-  String get confirmAssignWorker {
-    return Intl.message(
-      'Confirm assign worker',
-      name: 'confirmAssignWorker',
-      desc: 'Label for confirming assigning worker',
-      args: [],
-    );
-  }
-
-  /// `Confirm assign woker message`
-  String get confirmAssignWorkerMessage {
-    return Intl.message(
-      'Confirm assign woker message',
-      name: 'confirmAssignWorkerMessage',
-      desc: 'Message for confirming assigning worker',
-      args: [],
-    );
-  }
-
-  /// `Worker assigned successfully`
-  String get workerAssignedSuccessfully {
-    return Intl.message(
-      'Worker assigned successfully',
-      name: 'workerAssignedSuccessfully',
-      desc: 'Success message for assigning worker',
       args: [],
     );
   }
@@ -1286,26 +1246,6 @@ class S {
       'Reassign',
       name: 'reassign',
       desc: 'Button label for reassigning',
-      args: [],
-    );
-  }
-
-  /// `Reassing worker`
-  String get reassignWorker {
-    return Intl.message(
-      'Reassing worker',
-      name: 'reassignWorker',
-      desc: 'Label for reassigning worker',
-      args: [],
-    );
-  }
-
-  /// `Worker reassigned`
-  String get workerReassigned {
-    return Intl.message(
-      'Worker reassigned',
-      name: 'workerReassigned',
-      desc: 'Message for worker reassigned',
       args: [],
     );
   }
@@ -1546,6 +1486,486 @@ class S {
       'Account Details',
       name: 'accountDetails',
       desc: 'Label for account details section',
+      args: [],
+    );
+  }
+
+  /// `Forgot Password?`
+  String get forgotPasswordTitle {
+    return Intl.message(
+      'Forgot Password?',
+      name: 'forgotPasswordTitle',
+      desc: 'Title for forgot password section',
+      args: [],
+    );
+  }
+
+  /// `Worker assigned successfully`
+  String get workerAssignedSuccessfully {
+    return Intl.message(
+      'Worker assigned successfully',
+      name: 'workerAssignedSuccessfully',
+      desc: 'Success message when worker is assigned successfully',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to assign this worker?`
+  String get confirmAssignWorker {
+    return Intl.message(
+      'Are you sure you want to assign this worker?',
+      name: 'confirmAssignWorker',
+      desc: 'Confirmation message for assigning worker',
+      args: [],
+    );
+  }
+
+  /// `This change will be recorded in this worker’s historial.`
+  String get confirmAssignWorkerMessage {
+    return Intl.message(
+      'This change will be recorded in this worker’s historial.',
+      name: 'confirmAssignWorkerMessage',
+      desc: 'Confirmation message for assigning worker',
+      args: [],
+    );
+  }
+
+  /// `Worker unassigned successfully`
+  String get workerUnassignedSuccessfully {
+    return Intl.message(
+      'Worker unassigned successfully',
+      name: 'workerUnassignedSuccessfully',
+      desc: 'Success message when worker is unassigned successfully',
+      args: [],
+    );
+  }
+
+  /// `Confirm`
+  String get workerAssignConfirm {
+    return Intl.message(
+      'Confirm',
+      name: 'workerAssignConfirm',
+      desc: 'Confirmation message for unassigning worker',
+      args: [],
+    );
+  }
+
+  /// `Reassign worker`
+  String get reassignWorker {
+    return Intl.message(
+      'Reassign worker',
+      name: 'reassignWorker',
+      desc: 'Label for reassigning worker',
+      args: [],
+    );
+  }
+
+  /// `Worker reassigned successfully`
+  String get workerReassigned {
+    return Intl.message(
+      'Worker reassigned successfully',
+      name: 'workerReassigned',
+      desc: 'Success message when worker is reassigned successfully',
+      args: [],
+    );
+  }
+
+  /// `Reset Password`
+  String get resetPassword {
+    return Intl.message(
+      'Reset Password',
+      name: 'resetPassword',
+      desc: 'Label for reset password button',
+      args: [],
+    );
+  }
+
+  /// `Back to login`
+  String get backToLogin {
+    return Intl.message(
+      'Back to login',
+      name: 'backToLogin',
+      desc: 'Label for back to login button',
+      args: [],
+    );
+  }
+
+  /// `Password Reset Code`
+  String get passwordResetCodeTitle {
+    return Intl.message(
+      'Password Reset Code',
+      name: 'passwordResetCodeTitle',
+      desc: 'Title for password reset code section',
+      args: [],
+    );
+  }
+
+  /// `Password Reset Code`
+  String get passwordResetCode {
+    return Intl.message(
+      'Password Reset Code',
+      name: 'passwordResetCode',
+      desc: 'Label for password reset code section',
+      args: [],
+    );
+  }
+
+  /// `Verify Code`
+  String get verifyCode {
+    return Intl.message(
+      'Verify Code',
+      name: 'verifyCode',
+      desc: 'Label for verify code button',
+      args: [],
+    );
+  }
+
+  /// `Set New Password`
+  String get setNewPasswordTitle {
+    return Intl.message(
+      'Set New Password',
+      name: 'setNewPasswordTitle',
+      desc: 'Title for set new password section',
+      args: [],
+    );
+  }
+
+  /// `New Password`
+  String get newPassword {
+    return Intl.message(
+      'New Password',
+      name: 'newPassword',
+      desc: 'Label for new password section',
+      args: [],
+    );
+  }
+
+  /// `Confirm Password`
+  String get confirmPassword {
+    return Intl.message(
+      'Confirm Password',
+      name: 'confirmPassword',
+      desc: 'Label for confirm password section',
+      args: [],
+    );
+  }
+
+  /// `Set New Password`
+  String get setNewPassword {
+    return Intl.message(
+      'Set New Password',
+      name: 'setNewPassword',
+      desc: 'Label for set new password button',
+      args: [],
+    );
+  }
+
+  /// `Email is required`
+  String get emailRequired {
+    return Intl.message(
+      'Email is required',
+      name: 'emailRequired',
+      desc: 'Error message when email is required',
+      args: [],
+    );
+  }
+
+  /// `Code must be 5 characters long`
+  String get codeLength {
+    return Intl.message(
+      'Code must be 5 characters long',
+      name: 'codeLength',
+      desc: 'Error message when code is not 5 characters long',
+      args: [],
+    );
+  }
+
+  /// `Code is required`
+  String get codeRequired {
+    return Intl.message(
+      'Code is required',
+      name: 'codeRequired',
+      desc: 'Error message when code is required',
+      args: [],
+    );
+  }
+
+  /// `New password is required`
+  String get newPasswordRequired {
+    return Intl.message(
+      'New password is required',
+      name: 'newPasswordRequired',
+      desc: 'Error message when new password is required',
+      args: [],
+    );
+  }
+
+  /// `Password must be at least 8 characters long`
+  String get passwordLength {
+    return Intl.message(
+      'Password must be at least 8 characters long',
+      name: 'passwordLength',
+      desc: 'Error message when password is less than 8 characters long',
+      args: [],
+    );
+  }
+
+  /// `Passwords do not match`
+  String get passwordsDoNotMatch {
+    return Intl.message(
+      'Passwords do not match',
+      name: 'passwordsDoNotMatch',
+      desc: 'Error message when passwords do not match',
+      args: [],
+    );
+  }
+
+  /// `Confirm password is required`
+  String get confirmPasswordRequired {
+    return Intl.message(
+      'Confirm password is required',
+      name: 'confirmPasswordRequired',
+      desc: 'Error message when confirm password is required',
+      args: [],
+    );
+  }
+
+  /// `Change template`
+  String get changeTemplate {
+    return Intl.message(
+      'Change template',
+      name: 'changeTemplate',
+      desc: 'Label for changing template',
+      args: [],
+    );
+  }
+
+  /// `Ammonia (NH₃)`
+  String get ammonia {
+    return Intl.message(
+      'Ammonia (NH₃)',
+      name: 'ammonia',
+      desc: 'Label for ammonia and sulfer dioxide',
+      args: [],
+    );
+  }
+
+  /// `Sulfur dioxide (SO₂)`
+  String get sulfurDioxide {
+    return Intl.message(
+      'Sulfur dioxide (SO₂)',
+      name: 'sulfurDioxide',
+      desc: 'Label for ammonia and sulfer dioxide',
+      args: [],
+    );
+  }
+
+  /// `Template Configuration`
+  String get templateConfiguration {
+    return Intl.message(
+      'Template Configuration',
+      name: 'templateConfiguration',
+      desc: 'Label for template configuration',
+      args: [],
+    );
+  }
+
+  /// `Edit container`
+  String get editContainer {
+    return Intl.message(
+      'Edit container',
+      name: 'editContainer',
+      desc: 'Label for editing container',
+      args: [],
+    );
+  }
+
+  /// `Container description`
+  String get containerDescription {
+    return Intl.message(
+      'Container description',
+      name: 'containerDescription',
+      desc: 'Label for container description',
+      args: [],
+    );
+  }
+
+  /// `Detect gases`
+  String get detectGases {
+    return Intl.message(
+      'Detect gases',
+      name: 'detectGases',
+      desc: 'Label for detecting gases',
+      args: [],
+    );
+  }
+
+  /// `Last known health status`
+  String get lastKnownHealthStatus {
+    return Intl.message(
+      'Last known health status',
+      name: 'lastKnownHealthStatus',
+      desc: 'Label for last known health status',
+      args: [],
+    );
+  }
+
+  /// `You don't have any Dittobox containers yet`
+  String get containersNotFound {
+    return Intl.message(
+      'You don\'t have any Dittobox containers yet',
+      name: 'containersNotFound',
+      desc: 'Error message when containers are not found',
+      args: [],
+    );
+  }
+
+  /// `No facilities available`
+  String get noFacilitiesAvailable {
+    return Intl.message(
+      'No facilities available',
+      name: 'noFacilitiesAvailable',
+      desc: 'Error message when no facilities are available',
+      args: [],
+    );
+  }
+
+  /// `Container created successfully`
+  String get containerCreatedSuccessfully {
+    return Intl.message(
+      'Container created successfully',
+      name: 'containerCreatedSuccessfully',
+      desc: 'Success message when container is created successfully',
+      args: [],
+    );
+  }
+
+  /// `All containers`
+  String get allContainers {
+    return Intl.message(
+      'All containers',
+      name: 'allContainers',
+      desc: 'Label for all containers',
+      args: [],
+    );
+  }
+
+  /// `Details`
+  String get details {
+    return Intl.message(
+      'Details',
+      name: 'details',
+      desc: 'Label for details',
+      args: [],
+    );
+  }
+
+  /// `Max sulfur dioxide`
+  String get sulfurDioxideMax {
+    return Intl.message(
+      'Max sulfur dioxide',
+      name: 'sulfurDioxideMax',
+      desc: 'Label for Max sulfur dioxide section',
+      args: [],
+    );
+  }
+
+  /// `Min sulfur dioxide`
+  String get sulfurDioxideMin {
+    return Intl.message(
+      'Min sulfur dioxide',
+      name: 'sulfurDioxideMin',
+      desc: 'Label for Min sulfur dioxide section',
+      args: [],
+    );
+  }
+
+  /// `View current configs`
+  String get viewCurrentConfigs {
+    return Intl.message(
+      'View current configs',
+      name: 'viewCurrentConfigs',
+      desc: 'Label for viewing current configurations',
+      args: [],
+    );
+  }
+
+  /// `Current configurations`
+  String get currentConfigs {
+    return Intl.message(
+      'Current configurations',
+      name: 'currentConfigs',
+      desc: 'Label for current configurations',
+      args: [],
+    );
+  }
+
+  /// `Close`
+  String get close {
+    return Intl.message(
+      'Close',
+      name: 'close',
+      desc: 'Button label for closing',
+      args: [],
+    );
+  }
+
+  /// `No template assigned`
+  String get noTemplateAssigned {
+    return Intl.message(
+      'No template assigned',
+      name: 'noTemplateAssigned',
+      desc: 'Error message when no template is assigned',
+      args: [],
+    );
+  }
+
+  /// `Assign template?`
+  String get assignTemplate {
+    return Intl.message(
+      'Assign template?',
+      name: 'assignTemplate',
+      desc: 'Label for assigning template',
+      args: [],
+    );
+  }
+
+  /// `Select template`
+  String get selectTemplate {
+    return Intl.message(
+      'Select template',
+      name: 'selectTemplate',
+      desc: 'Label for selecting template',
+      args: [],
+    );
+  }
+
+  /// `Template assigned successfully`
+  String get templateAssignedSuccessfully {
+    return Intl.message(
+      'Template assigned successfully',
+      name: 'templateAssignedSuccessfully',
+      desc: 'Success message when template is assigned successfully',
+      args: [],
+    );
+  }
+
+  /// `Success`
+  String get success {
+    return Intl.message(
+      'Success',
+      name: 'success',
+      desc: 'Label for success',
+      args: [],
+    );
+  }
+
+  /// `Ok`
+  String get ok {
+    return Intl.message(
+      'Ok',
+      name: 'ok',
+      desc: 'Button label for ok',
       args: [],
     );
   }

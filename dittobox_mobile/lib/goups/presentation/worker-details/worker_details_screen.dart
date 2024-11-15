@@ -80,7 +80,7 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
                       context: context,
                       builder: (context) {
                         return ReassignWorkerSheet(
-                          facilities: ['Restaurante A', 'Almacén B'], // facilities example list
+                          facilities: const ['Restaurante A', 'Almacén B'], // facilities example list
                           currentFacility: widget.worker.location,
                           onSave: (newFacility) {
                             Navigator.pop(context); 

@@ -260,7 +260,7 @@
   "@humidityMax": {
     "description": "Label for Max humidity section"
   },
-  "ethylene": "Ethylene",
+  "ethylene": "Ethylene (C₂H₄)",
   "@ethylene": {
     "description": "Label for ethylene section"
   },
@@ -296,11 +296,11 @@
   "@gasDetection": {
     "description": "Label for gas detection section"
   },
-  "oxygen": "Oxygen",
+  "oxygen": "Oxygen (O₂)",
   "@oxygen": {
     "description": "Label for oxygen section"
   },
-  "carbonDioxide": "Carbon dioxide",
+  "carbonDioxide": "Carbon dioxide (CO₂)",
   "@carbonDioxide": {
     "description": "Label for carbon dioxide section"
   },
@@ -575,5 +575,197 @@
   "accountDetails": "Account Details",
   "@accountDetails": {
     "description": "Label for account details section"
+  },
+  "forgotPasswordTitle": "Forgot Password?",
+  "@forgotPasswordTitle": {
+    "description": "Title for forgot password section"
+  },
+  "workerAssignedSuccessfully": "Worker assigned successfully",
+  "@workerAssignedSuccessfully": {
+    "description": "Success message when worker is assigned successfully"
+  },
+  "confirmAssignWorker": "Are you sure you want to assign this worker?",
+  "@confirmAssignWorker": {
+    "description": "Confirmation message for assigning worker"
+  },
+  "confirmAssignWorkerMessage": "This change will be recorded in this worker’s historial.",
+  "@confirmAssignWorkerMessage": {
+    "description": "Confirmation message for assigning worker"
+  },
+  "workerUnassignedSuccessfully": "Worker unassigned successfully",
+  "@workerUnassignedSuccessfully": {
+    "description": "Success message when worker is unassigned successfully"
+  },
+  "workerAssignConfirm": "Confirm",
+  "@workerAssignConfirm": {
+    "description": "Confirmation message for unassigning worker"
+  },
+  "reassignWorker": "Reassign worker",
+  "@reassignWorker": {
+    "description": "Label for reassigning worker"
+  },
+  "workerReassigned": "Worker reassigned successfully",
+  "@workerReassigned": {
+    "description": "Success message when worker is reassigned successfully"
+  },
+  "resetPassword": "Reset Password",
+  "@resetPassword": {
+    "description": "Label for reset password button"
+  },
+  "backToLogin": "Back to login",
+  "@backToLogin": {
+    "description": "Label for back to login button"
+  },
+  "passwordResetCodeTitle": "Password Reset Code",
+  "@passwordResetCodeTitle": {
+    "description": "Title for password reset code section"
+  },
+  "passwordResetCode": "Password Reset Code",
+  "@passwordResetCode": {
+    "description": "Label for password reset code section"
+  },
+  "verifyCode": "Verify Code",
+  "@verifyCode": {
+    "description": "Label for verify code button"
+  },
+  "setNewPasswordTitle": "Set New Password",
+  "@setNewPasswordTitle": {
+    "description": "Title for set new password section"
+  },
+  "newPassword": "New Password",
+  "@newPassword": {
+    "description": "Label for new password section"
+  },
+  "confirmPassword": "Confirm Password",
+  "@confirmPassword": {
+    "description": "Label for confirm password section"
+  },
+  "setNewPassword": "Set New Password",
+  "@setNewPassword": {
+    "description": "Label for set new password button"
+  },
+  "emailRequired": "Email is required",
+  "@emailRequired": {
+    "description": "Error message when email is required"
+  },
+  "codeLength": "Code must be 5 characters long",
+  "@codeLength": {
+    "description": "Error message when code is not 5 characters long"
+  },
+  "codeRequired": "Code is required",
+  "@codeRequired": {
+    "description": "Error message when code is required"
+  },
+  "newPasswordRequired": "New password is required",
+  "@newPasswordRequired": {
+    "description": "Error message when new password is required"
+  },
+  "passwordLength": "Password must be at least 8 characters long",
+  "@passwordLength": {
+    "description": "Error message when password is less than 8 characters long"
+  },
+  "passwordsDoNotMatch": "Passwords do not match",
+  "@passwordsDoNotMatch": {
+    "description": "Error message when passwords do not match"
+  },
+  "confirmPasswordRequired": "Confirm password is required",
+  "@confirmPasswordRequired": {
+    "description": "Error message when confirm password is required"
+  },
+  "changeTemplate": "Change template",
+  "@changeTemplate": {
+    "description": "Label for changing template"
+  },
+  "ammonia": "Ammonia (NH₃)",
+  "@ammonia": {
+    "description": "Label for ammonia and sulfer dioxide"
+  },
+  "sulfurDioxide": "Sulfur dioxide (SO₂)",
+  "@sulfurDioxide": {
+    "description": "Label for ammonia and sulfer dioxide"
+  },
+  "templateConfiguration": "Template Configuration",
+  "@templateConfiguration": {
+    "description": "Label for template configuration"
+  },
+  "editContainer": "Edit container",
+  "@editContainer": {
+    "description": "Label for editing container"
+  },
+  "containerDescription": "Container description",
+  "@containerDescription": {
+    "description": "Label for container description"
+  },
+  "detectGases": "Detect gases",
+  "@detectGases": {
+    "description": "Label for detecting gases"
+  },
+  "lastKnownHealthStatus": "Last known health status",
+  "@lastKnownHealthStatus": {
+    "description": "Label for last known health status"
+  },
+  "containersNotFound": "You don't have any Dittobox containers yet",
+  "@containersNotFound": {
+    "description": "Error message when containers are not found"
+  },
+  "noFacilitiesAvailable": "No facilities available",
+  "@noFacilitiesAvailable": {
+    "description": "Error message when no facilities are available"
+  },
+  "containerCreatedSuccessfully": "Container created successfully",
+  "@containerCreatedSuccessfully": {
+    "description": "Success message when container is created successfully"
+  },
+  "allContainers": "All containers",
+  "@allContainers": {
+    "description": "Label for all containers"
+  },
+  "details": "Details",
+  "@details": {
+    "description": "Label for details"
+  },
+  "sulfurDioxideMax": "Max sulfur dioxide",
+  "@sulfurDioxideMax": {
+    "description": "Label for Max sulfur dioxide section"
+  },
+  "sulfurDioxideMin": "Min sulfur dioxide",
+  "@sulfurDioxideMin": {
+    "description": "Label for Min sulfur dioxide section"
+  },
+  "viewCurrentConfigs": "View current configs",
+  "@viewCurrentConfigs": {
+    "description": "Label for viewing current configurations"
+  },
+  "currentConfigs": "Current configurations",
+  "@currentConfigs": {
+    "description": "Label for current configurations"
+  },
+  "close": "Close",
+  "@close": {
+    "description": "Button label for closing"
+  },
+  "noTemplateAssigned": "No template assigned",
+  "@noTemplateAssigned": {
+    "description": "Error message when no template is assigned"
+  },
+  "assignTemplate": "Assign template?",
+  "@assignTemplate": {
+    "description": "Label for assigning template"
+  },
+  "selectTemplate": "Select template",
+  "@selectTemplate": {
+    "description": "Label for selecting template"
+  },
+  "templateAssignedSuccessfully": "Template assigned successfully",
+  "@templateAssignedSuccessfully": {
+    "description": "Success message when template is assigned successfully"
+  },
+  "success": "Success",
+  "@success": {
+    "description": "Label for success"
+  },
+  "ok": "Ok",
+  "@ok": {
+    "description": "Button label for ok"
   }
 }

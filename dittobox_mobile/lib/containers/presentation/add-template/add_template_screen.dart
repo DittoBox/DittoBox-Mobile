@@ -1,3 +1,4 @@
+import 'package:dittobox_mobile/containers/infrastructure/data_sources/template_service.dart';
 import 'package:flutter/material.dart';
 import 'package:dittobox_mobile/generated/l10n.dart';
 
@@ -11,7 +12,6 @@ class AddTemplateScreen extends StatefulWidget {
 class _AddTemplateScreenState extends State<AddTemplateScreen> {
   final _formKey = GlobalKey<FormState>();
   final _nameController = TextEditingController();
-  final _descriptionController = TextEditingController();
   final _tempMinController = TextEditingController();
   final _tempMaxController = TextEditingController();
   final _humidityMinController = TextEditingController();
@@ -24,17 +24,21 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
   final _ethyleneMaxController = TextEditingController();
   final _ammoniaMinController = TextEditingController();
   final _ammoniaMaxController = TextEditingController();
-  String? _selectedCategory;
+  final _sulfurDioxideMinController = TextEditingController();
+  final _sulfurDioxideMaxController = TextEditingController();
+  int? _selectedCategory;
   bool _detectAllGases = true;
   bool _detectOxygen = true;
   bool _detectCO2 = true;
   bool _detectEthylene = true;
   bool _detectAmmonia = false;
+  bool _detectSulfurDioxide = false;
+
+  final TemplateService _templateService = TemplateService();
 
   @override
   void dispose() {
     _nameController.dispose();
-    _descriptionController.dispose();
     _tempMinController.dispose();
     _tempMaxController.dispose();
     _humidityMinController.dispose();
@@ -47,15 +51,49 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
     _ethyleneMaxController.dispose();
     _ammoniaMinController.dispose();
     _ammoniaMaxController.dispose();
+    _sulfurDioxideMinController.dispose();
+    _sulfurDioxideMaxController.dispose();
     super.dispose();
   }
 
-  void _saveTemplate() {
+  void _saveTemplate() async {
     if (_formKey.currentState!.validate()) {
-      // Aquí puedes añadir la lógica para guardar el template
-      // Por ejemplo, añadirlo a una lista o enviarlo a un servidor
+      final templateData = {
+        'name': _nameController.text,
+        'category': _selectedCategory,
+        'tempMin': _tempMinController.text,
+        'tempMax': _tempMaxController.text,
+        'humidityMin': _humidityMinController.text,
+        'humidityMax': _humidityMaxController.text,
+        'detectAllGases': _detectAllGases,
+        'detectOxygen': _detectOxygen,
+        'detectCO2': _detectCO2,
+        'detectEthylene': _detectEthylene,
+        'detectAmmonia': _detectAmmonia,
+        'detectSulfurDioxide': _detectSulfurDioxide,
+        'oxygenMin': _oxygenMinController.text,
+        'oxygenMax': _oxygenMaxController.text,
+        'co2Min': _co2MinController.text,
+        'co2Max': _co2MaxController.text,
+        'ethyleneMin': _ethyleneMinController.text,
+        'ethyleneMax': _ethyleneMaxController.text,
+        'ammoniaMin': _ammoniaMinController.text,
+        'ammoniaMax': _ammoniaMaxController.text,
+        'sulfurDioxideMin': _sulfurDioxideMinController.text,
+        'sulfurDioxideMax': _sulfurDioxideMaxController.text,
+      };
 
-      Navigator.of(context).pop();
+      try {
+        await _templateService.createTemplate(templateData);
+        // ignore: use_build_context_synchronously
+        Navigator.of(context).pop();
+      } catch (e) {
+        // Manejar el error
+        // ignore: use_build_context_synchronously
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Failed to create template: $e')),
+        );
+      }
     }
   }
 
@@ -85,22 +123,7 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
                 },
               ),
               const SizedBox(height: 16),
-              TextFormField(
-                controller: _descriptionController,
-                decoration: InputDecoration(
-                  labelText: S.of(context).description,
-                  border: const OutlineInputBorder(),
-                ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return S.of(context).pleaseEnterDescription;
-                  }
-                  return null;
-                },
-                maxLines: 3,
-              ),
-              const SizedBox(height: 16),
-              DropdownButtonFormField<String>(
+              DropdownButtonFormField<int>(
                 value: _selectedCategory,
                 decoration: InputDecoration(
                   labelText: S.of(context).category,
@@ -108,19 +131,19 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
                 ),
                 items: [
                   DropdownMenuItem(
-                    value: 'Produce',
+                    value: 0,
                     child: Text(S.of(context).produce),
                   ),
                   DropdownMenuItem(
-                    value: 'Meats',
+                    value: 1,
                     child: Text(S.of(context).meats),
                   ),
                   DropdownMenuItem(
-                    value: 'Animal derived',
+                    value: 2,
                     child: Text(S.of(context).animalDerived),
                   ),
                   DropdownMenuItem(
-                    value: 'Processed foods',
+                    value: 3,
                     child: Text(S.of(context).processedFoods),
                   ),
                 ],
@@ -130,7 +153,7 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
                   });
                 },
                 validator: (value) {
-                  if (value == null || value.isEmpty) {
+                  if (value == null) {
                     return S.of(context).pleaseSelectCategory;
                   }
                   return null;
@@ -246,8 +269,10 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
                     _detectCO2 = value;
                     _detectEthylene = value;
                     _detectAmmonia = value;
+                    _detectSulfurDioxide = value;
                   });
-                },              ),
+                },
+              ),
               SwitchListTile(
                 title: Text(S.of(context).oxygen),
                 value: _detectOxygen && _detectAllGases,
@@ -393,7 +418,7 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
                 ),
               ],
               SwitchListTile(
-                title: Text(S.of(context).ammoniaAndSulfurDioxide),
+                title: Text(S.of(context).ammonia),
                 value: _detectAmmonia && _detectAllGases,
                 onChanged: _detectAllGases ? (bool value) {
                   setState(() {
@@ -431,6 +456,54 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
                         keyboardType: TextInputType.number,
                         validator: (value) {
                           if (_detectAmmonia && (value == null || value.isEmpty)) {
+                            return S.of(context).requiredField;
+                          }
+                          return null;
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+              SwitchListTile(
+                title: Text(S.of(context).sulfurDioxide),
+                value: _detectSulfurDioxide && _detectAllGases,
+                onChanged: _detectAllGases ? (bool value) {
+                  setState(() {
+                    _detectSulfurDioxide = value;
+                  });
+                } : null,
+              ),
+              if (_detectSulfurDioxide && _detectAllGases) ...[
+                Row(
+                  children: [
+                    Expanded(
+                      child: TextFormField(
+                        controller: _sulfurDioxideMinController,
+                        decoration: InputDecoration(
+                          labelText: '${S.of(context).sulfurDioxideMin} (%)',
+                          border: const OutlineInputBorder(),
+                        ),
+                        keyboardType: TextInputType.number,
+                        validator: (value) {
+                          if (_detectSulfurDioxide && (value == null || value.isEmpty)) {
+                            return S.of(context).requiredField;
+                          }
+                          return null;
+                        },
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: TextFormField(
+                        controller: _sulfurDioxideMaxController,
+                        decoration: InputDecoration(
+                          labelText: '${S.of(context).sulfurDioxideMax} (%)',
+                          border: const OutlineInputBorder(),
+                        ),
+                        keyboardType: TextInputType.number,
+                        validator: (value) {
+                          if (_detectSulfurDioxide && (value == null || value.isEmpty)) {
                             return S.of(context).requiredField;
                           }
                           return null;

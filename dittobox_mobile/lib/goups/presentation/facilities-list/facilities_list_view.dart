@@ -4,7 +4,8 @@ import 'package:dittobox_mobile/goups/presentation/widgets/add_facilities_sheet.
 import 'package:dittobox_mobile/routes/app_routes.dart';
 import 'package:dittobox_mobile/shared/presentation/widgets/custom_navigator_drawer.dart';
 import 'package:flutter/material.dart';
-import 'package:dittobox_mobile/goups/presentation/widgets/facility_details_sheet.dart'; // Importa el archivo
+import 'package:dittobox_mobile/goups/presentation/widgets/facility_details_sheet.dart';
+import 'package:dittobox_mobile/goups/infrastructure/data_sources/facilities_service.dart';
 
 // Facilities List Screen
 class FacilitiesListScreen extends StatefulWidget {
@@ -34,7 +35,8 @@ class _FacilitiesListScreenState extends State<FacilitiesListScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          showAddFacilitySheet(context); // Muestra el BottomSheet cuando se presiona el botón
+          showAddFacilitySheet(
+              context); // Muestra el BottomSheet cuando se presiona el botón
         },
         child: const Icon(Icons.add),
       ),
@@ -73,25 +75,7 @@ class _FacilitiesListState extends State<FacilitiesList> {
 
   Future<void> _fetchFacilities() async {
     try {
-      // Datos provisionales
-      final facilities = [
-        Facility(
-          title: 'Restaurante A',
-          location: 'Ubicación A',
-          type: 'restaurant',
-          containers: 10,
-          alerts: 2,
-          workers: 5,
-        ),
-        Facility(
-          title: 'Almacén B',
-          location: 'Ubicación B',
-          type: 'warehouse',
-          containers: 20,
-          alerts: 1,
-          workers: 8,
-        ),
-      ];
+      final facilities = await FacilitiesService().getFacilities();
       setState(() {
         _facilities = facilities;
         _filteredFacilities = facilities;
@@ -112,10 +96,10 @@ class _FacilitiesListState extends State<FacilitiesList> {
     setState(() {
       _filteredFacilities = _facilities.where((facility) {
         final matchesQuery = facility.title.toLowerCase().contains(query) ||
-            facility.location.toLowerCase().contains(query);
+            facility.location.city!.toLowerCase().contains(query);
         final matchesType = _showAll ||
-            (facility.type == 'warehouse' && _showWarehouse) ||
-            (facility.type == 'restaurant' && _showRestaurant);
+            (facility.facilityType == 1 && _showWarehouse) ||
+            (facility.facilityType == 0 && _showRestaurant);
         return matchesQuery && matchesType;
       }).toList();
     });
@@ -150,7 +134,7 @@ class _FacilitiesListState extends State<FacilitiesList> {
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
-               // Alinea los chips a la izquierda
+              // Alinea los chips a la izquierda
               children: [
                 FilterChip(
                   label: Text(S.of(context).all),
@@ -205,7 +189,8 @@ class _FacilitiesListState extends State<FacilitiesList> {
                     (context, index) {
                       return FacilitiesCard(
                         facility: _filteredFacilities[index],
-                        onDelete: () => _deleteFacility(_filteredFacilities[index]),
+                        onDelete: () =>
+                            _deleteFacility(_filteredFacilities[index]),
                       );
                     },
                     childCount: _filteredFacilities.length,
@@ -225,7 +210,8 @@ class FacilitiesCard extends StatefulWidget {
   final Facility facility;
   final VoidCallback onDelete;
 
-  const FacilitiesCard({super.key, required this.facility, required this.onDelete});
+  const FacilitiesCard(
+      {super.key, required this.facility, required this.onDelete});
 
   @override
   State<FacilitiesCard> createState() => _FacilitiesCardState();
@@ -247,11 +233,14 @@ class _FacilitiesCardState extends State<FacilitiesCard> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        showFacilityDetailsBottomSheet(context, widget.facility, widget.onDelete); // Usa el nuevo archivo
+        showFacilityDetailsBottomSheet(
+            context, widget.facility, widget.onDelete); // Usa el nuevo archivo
       },
       child: Center(
         child: Card.outlined(
-          margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0), // Ajusta el margen horizontal a 0
+          margin: const EdgeInsets.symmetric(
+              vertical: 10.0,
+              horizontal: 10.0), // Ajusta el margen horizontal a 0
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
@@ -270,10 +259,12 @@ class _FacilitiesCardState extends State<FacilitiesCard> {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        Text(widget.facility.location),
+                        Text(widget.facility.location.city ?? ''),
                       ],
                     ),
-                    Icon(getFacilityIcon(widget.facility.type)), // Icono dinámico
+                    Icon(getFacilityIcon(widget.facility.facilityType == 0
+                        ? 'restaurant'
+                        : 'warehouse')), // Icono dinámico
                   ],
                 ),
                 const SizedBox(height: 16),
@@ -282,25 +273,32 @@ class _FacilitiesCardState extends State<FacilitiesCard> {
                   children: [
                     Padding(
                       padding: const EdgeInsets.all(4.0),
-                      child: buildInfoRowWithIcon(Icons.widgets_outlined, S.of(context).containers, widget.facility.containers),
+                      child: buildInfoRowWithIcon(Icons.widgets_outlined,
+                          S.of(context).containers, widget.facility.containerCount),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(4.0),
-                      child: buildInfoRowWithIcon(Icons.notifications_none_outlined, S.of(context).alerts, widget.facility.alerts),
+                      child: buildInfoRowWithIcon(
+                          Icons.notifications_none_outlined,
+                          S.of(context).alerts,
+                          3),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(4.0),
-                      child: buildInfoRowWithIcon(Icons.person_2_outlined, S.of(context).workers, widget.facility.workers),
+                      child: buildInfoRowWithIcon(Icons.person_2_outlined,
+                          S.of(context).workers, widget.facility.profileCount),
                     ),
                   ],
                 ),
                 const SizedBox(height: 20),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.end, // Mueve el botón al extremo derecho
+                  mainAxisAlignment: MainAxisAlignment
+                      .end, // Mueve el botón al extremo derecho
                   children: [
                     OutlinedButton(
                       onPressed: () {
-                        showFacilityDetailsBottomSheet(context, widget.facility, widget.onDelete); // Usa el nuevo archivo
+                        showFacilityDetailsBottomSheet(context, widget.facility,
+                            widget.onDelete); // Usa el nuevo archivo
                       },
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
@@ -322,7 +320,8 @@ class _FacilitiesCardState extends State<FacilitiesCard> {
 
 Widget buildInfoRowWithIcon(IconData icon, String label, int value) {
   return Row(
-    mainAxisAlignment: MainAxisAlignment.spaceBetween, // Alinea los elementos a los extremos
+    mainAxisAlignment:
+        MainAxisAlignment.spaceBetween, // Alinea los elementos a los extremos
     children: [
       Row(
         children: [

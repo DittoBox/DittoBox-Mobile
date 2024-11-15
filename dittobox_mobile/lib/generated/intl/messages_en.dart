@@ -38,8 +38,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "addWorkers": MessageLookupByLibrary.simpleMessage("Add workers"),
         "alerts": MessageLookupByLibrary.simpleMessage("Alerts"),
         "all": MessageLookupByLibrary.simpleMessage("All"),
+        "allContainers": MessageLookupByLibrary.simpleMessage("All containers"),
         "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
             "Already have an account? Login instead"),
+        "ammonia": MessageLookupByLibrary.simpleMessage("Ammonia (NH₃)"),
         "ammoniaAndSulfurDioxide":
             MessageLookupByLibrary.simpleMessage("Ammonia and sulfur dioxide"),
         "ammoniaAndSulfurDioxideMax": MessageLookupByLibrary.simpleMessage(
@@ -52,13 +54,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "applyTemplate": MessageLookupByLibrary.simpleMessage("Apply"),
         "areYouSureDelete": MessageLookupByLibrary.simpleMessage(
             "Are you sure you want to delete this?"),
+        "assignTemplate":
+            MessageLookupByLibrary.simpleMessage("Assign template?"),
+        "backToLogin": MessageLookupByLibrary.simpleMessage("Back to login"),
         "bankAccountOwner":
             MessageLookupByLibrary.simpleMessage("Bank Account Owner"),
         "businessName": MessageLookupByLibrary.simpleMessage("Business Name"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "cancelSubscription":
             MessageLookupByLibrary.simpleMessage("Cancel subscription"),
-        "carbonDioxide": MessageLookupByLibrary.simpleMessage("Carbon dioxide"),
+        "carbonDioxide":
+            MessageLookupByLibrary.simpleMessage("Carbon dioxide (CO₂)"),
         "carbonDioxideMax":
             MessageLookupByLibrary.simpleMessage("Max carbon dioxide"),
         "carbonDioxideMin":
@@ -66,35 +72,58 @@ class MessageLookup extends MessageLookupByLibrary {
         "category": MessageLookupByLibrary.simpleMessage("Category"),
         "changePassword":
             MessageLookupByLibrary.simpleMessage("Change Password"),
+        "changeTemplate":
+            MessageLookupByLibrary.simpleMessage("Change template"),
         "changeToEnglish":
             MessageLookupByLibrary.simpleMessage("Change to English"),
         "changeToSpanish":
             MessageLookupByLibrary.simpleMessage("Change to Spanish"),
         "checkAlerts": MessageLookupByLibrary.simpleMessage("Check alerts"),
         "city": MessageLookupByLibrary.simpleMessage("City"),
+        "close": MessageLookupByLibrary.simpleMessage("Close"),
         "code": MessageLookupByLibrary.simpleMessage("Code"),
+        "codeLength": MessageLookupByLibrary.simpleMessage(
+            "Code must be 5 characters long"),
+        "codeRequired":
+            MessageLookupByLibrary.simpleMessage("Code is required"),
         "companyName": MessageLookupByLibrary.simpleMessage("Company name"),
-        "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
-        "confirmDelete": MessageLookupByLibrary.simpleMessage("Confirm delete"),
-        "confirmAssignWorker":
-            MessageLookupByLibrary.simpleMessage("Confirm Assignment"),
+        "confirmAssignWorker": MessageLookupByLibrary.simpleMessage(
+            "Are you sure you want to assign this worker?"),
         "confirmAssignWorkerMessage": MessageLookupByLibrary.simpleMessage(
-            "Are you sure you want to assign the worker to"),
+            "This change will be recorded in this worker’s historial."),
+        "confirmDelete": MessageLookupByLibrary.simpleMessage("Confirm delete"),
+        "confirmPassword":
+            MessageLookupByLibrary.simpleMessage("Confirm Password"),
+        "confirmPasswordRequired": MessageLookupByLibrary.simpleMessage(
+            "Confirm password is required"),
+        "containerCreatedSuccessfully": MessageLookupByLibrary.simpleMessage(
+            "Container created successfully"),
+        "containerDescription":
+            MessageLookupByLibrary.simpleMessage("Container description"),
         "containerName": MessageLookupByLibrary.simpleMessage("Container name"),
         "containerSelectionModal": MessageLookupByLibrary.simpleMessage(
             "This change will be recorded in this container’s historial."),
         "containers": MessageLookupByLibrary.simpleMessage("Containers"),
+        "containersNotFound": MessageLookupByLibrary.simpleMessage(
+            "You don\'t have any Dittobox containers yet"),
         "country": MessageLookupByLibrary.simpleMessage("Country"),
+        "currentConfigs":
+            MessageLookupByLibrary.simpleMessage("Current configurations"),
         "delete": MessageLookupByLibrary.simpleMessage("Delete"),
         "description": MessageLookupByLibrary.simpleMessage("Description"),
+        "details": MessageLookupByLibrary.simpleMessage("Details"),
         "detectAllGases":
             MessageLookupByLibrary.simpleMessage("Detect all gases"),
+        "detectGases": MessageLookupByLibrary.simpleMessage("Detect gases"),
         "discard": MessageLookupByLibrary.simpleMessage("Discard"),
         "edit": MessageLookupByLibrary.simpleMessage("Edit"),
+        "editContainer": MessageLookupByLibrary.simpleMessage("Edit container"),
         "editData": MessageLookupByLibrary.simpleMessage("Edit Data"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "emailRequired":
+            MessageLookupByLibrary.simpleMessage("Email is required"),
         "english": MessageLookupByLibrary.simpleMessage("English"),
-        "ethylene": MessageLookupByLibrary.simpleMessage("Ethylene"),
+        "ethylene": MessageLookupByLibrary.simpleMessage("Ethylene (C₂H₄)"),
         "ethyleneMax": MessageLookupByLibrary.simpleMessage("Max ethylene"),
         "ethyleneMin": MessageLookupByLibrary.simpleMessage("Min ethylene"),
         "facilities": MessageLookupByLibrary.simpleMessage("Facilities"),
@@ -103,6 +132,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Failed to fetch facilities"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot your password?"),
+        "forgotPasswordTitle":
+            MessageLookupByLibrary.simpleMessage("Forgot Password?"),
         "gasDetection": MessageLookupByLibrary.simpleMessage("Gas detection"),
         "humidity": MessageLookupByLibrary.simpleMessage("Humidity"),
         "humidityMax": MessageLookupByLibrary.simpleMessage("Max humidity"),
@@ -111,6 +142,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Identification number"),
         "invalidEmail": MessageLookupByLibrary.simpleMessage("Invalid email"),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
+        "lastKnownHealthStatus":
+            MessageLookupByLibrary.simpleMessage("Last known health status"),
         "lastSync": MessageLookupByLibrary.simpleMessage("Last sync"),
         "logOut": MessageLookupByLibrary.simpleMessage("Log out"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
@@ -123,18 +156,34 @@ class MessageLookup extends MessageLookupByLibrary {
         "name": MessageLookupByLibrary.simpleMessage("Name"),
         "newContainer": MessageLookupByLibrary.simpleMessage("New container"),
         "newFacility": MessageLookupByLibrary.simpleMessage("New facility"),
+        "newPassword": MessageLookupByLibrary.simpleMessage("New Password"),
+        "newPasswordRequired":
+            MessageLookupByLibrary.simpleMessage("New password is required"),
         "newTemplate": MessageLookupByLibrary.simpleMessage("New template"),
+        "noFacilitiesAvailable":
+            MessageLookupByLibrary.simpleMessage("No facilities available"),
+        "noTemplateAssigned":
+            MessageLookupByLibrary.simpleMessage("No template assigned"),
         "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
+        "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "owner": MessageLookupByLibrary.simpleMessage("Owner"),
-        "oxygen": MessageLookupByLibrary.simpleMessage("Oxygen"),
+        "oxygen": MessageLookupByLibrary.simpleMessage("Oxygen (O₂)"),
         "oxygenMax": MessageLookupByLibrary.simpleMessage("Max oxygen"),
         "oxygenMin": MessageLookupByLibrary.simpleMessage("Min oxygen"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "passwordCannotBeEmpty":
             MessageLookupByLibrary.simpleMessage("Password cannot be empty"),
+        "passwordLength": MessageLookupByLibrary.simpleMessage(
+            "Password must be at least 8 characters long"),
         "passwordMustBeAtLeast8Characters":
             MessageLookupByLibrary.simpleMessage(
                 "Password must be at least 8 characters"),
+        "passwordResetCode":
+            MessageLookupByLibrary.simpleMessage("Password Reset Code"),
+        "passwordResetCodeTitle":
+            MessageLookupByLibrary.simpleMessage("Password Reset Code"),
+        "passwordsDoNotMatch":
+            MessageLookupByLibrary.simpleMessage("Passwords do not match"),
         "paymentInformation":
             MessageLookupByLibrary.simpleMessage("Payment information"),
         "pendingAlerts": MessageLookupByLibrary.simpleMessage("Pending Alerts"),
@@ -173,13 +222,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Processed foods"),
         "produce": MessageLookupByLibrary.simpleMessage("Produce"),
         "reassign": MessageLookupByLibrary.simpleMessage("Reassign"),
-        "reassignWorker": MessageLookupByLibrary.simpleMessage("Reassign worker"),
+        "reassignWorker":
+            MessageLookupByLibrary.simpleMessage("Reassign worker"),
         "region": MessageLookupByLibrary.simpleMessage("Region"),
         "register": MessageLookupByLibrary.simpleMessage("Register"),
         "registerInstead":
             MessageLookupByLibrary.simpleMessage("Register instead"),
         "requiredField":
             MessageLookupByLibrary.simpleMessage("This is a required field"),
+        "resetPassword": MessageLookupByLibrary.simpleMessage("Reset Password"),
         "restaurant": MessageLookupByLibrary.simpleMessage("Restaurant"),
         "role": MessageLookupByLibrary.simpleMessage("Role"),
         "roleManagement":
@@ -192,6 +243,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Select facility"),
         "selectLanguage":
             MessageLookupByLibrary.simpleMessage("Select language"),
+        "selectTemplate":
+            MessageLookupByLibrary.simpleMessage("Select template"),
+        "setNewPassword":
+            MessageLookupByLibrary.simpleMessage("Set New Password"),
+        "setNewPasswordTitle":
+            MessageLookupByLibrary.simpleMessage("Set New Password"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "spanish": MessageLookupByLibrary.simpleMessage("Spanish"),
         "statusContainer": MessageLookupByLibrary.simpleMessage("Status"),
@@ -200,10 +257,21 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Subscription details"),
         "subscriptionTier":
             MessageLookupByLibrary.simpleMessage("Subscription Tier"),
+        "success": MessageLookupByLibrary.simpleMessage("Success"),
+        "sulfurDioxide":
+            MessageLookupByLibrary.simpleMessage("Sulfur dioxide (SO₂)"),
+        "sulfurDioxideMax":
+            MessageLookupByLibrary.simpleMessage("Max sulfur dioxide"),
+        "sulfurDioxideMin":
+            MessageLookupByLibrary.simpleMessage("Min sulfur dioxide"),
         "tempMax": MessageLookupByLibrary.simpleMessage("Max temperature"),
         "tempMin": MessageLookupByLibrary.simpleMessage("Min temperature"),
         "temperature": MessageLookupByLibrary.simpleMessage("Temperature"),
         "template": MessageLookupByLibrary.simpleMessage("Template"),
+        "templateAssignedSuccessfully": MessageLookupByLibrary.simpleMessage(
+            "Template assigned successfully"),
+        "templateConfiguration":
+            MessageLookupByLibrary.simpleMessage("Template Configuration"),
         "templateLibrary":
             MessageLookupByLibrary.simpleMessage("Template Library"),
         "templateName": MessageLookupByLibrary.simpleMessage("Template name"),
@@ -218,18 +286,24 @@ class MessageLookup extends MessageLookupByLibrary {
         "username": MessageLookupByLibrary.simpleMessage("Username"),
         "usernameCannotBeEmpty":
             MessageLookupByLibrary.simpleMessage("Username cannot be empty"),
+        "verifyCode": MessageLookupByLibrary.simpleMessage("Verify Code"),
         "viewContainers":
             MessageLookupByLibrary.simpleMessage("View containers"),
+        "viewCurrentConfigs":
+            MessageLookupByLibrary.simpleMessage("View current configs"),
         "viewWorkers": MessageLookupByLibrary.simpleMessage("View workers"),
         "warehouse": MessageLookupByLibrary.simpleMessage("Warehouse"),
         "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
         "worker": MessageLookupByLibrary.simpleMessage("Worker"),
+        "workerAssignConfirm": MessageLookupByLibrary.simpleMessage("Confirm"),
         "workerAssignedSuccessfully": MessageLookupByLibrary.simpleMessage(
             "Worker assigned successfully"),
         "workerDetails": MessageLookupByLibrary.simpleMessage("Worker details"),
         "workerList": MessageLookupByLibrary.simpleMessage("Worker List"),
         "workerReassigned": MessageLookupByLibrary.simpleMessage(
             "Worker reassigned successfully"),
+        "workerUnassignedSuccessfully": MessageLookupByLibrary.simpleMessage(
+            "Worker unassigned successfully"),
         "workers": MessageLookupByLibrary.simpleMessage("Workers")
       };
 }

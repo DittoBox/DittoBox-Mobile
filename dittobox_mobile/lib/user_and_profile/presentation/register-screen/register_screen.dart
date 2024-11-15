@@ -1,5 +1,6 @@
 import 'package:dittobox_mobile/generated/l10n.dart';
 import 'package:dittobox_mobile/routes/app_routes.dart';
+import 'package:dittobox_mobile/user_and_profile/infrastructure/data_sources/user_service.dart';
 import 'package:flutter/material.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -17,6 +18,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final TextEditingController _passwordController = TextEditingController();
   bool isPasswordVisible = false;
   String userType = 'Worker';
+  final userService = UserService();
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +44,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                   const SizedBox(height: 20, width: 20),
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 80),
+                    padding: const EdgeInsets.symmetric(horizontal: 70),
                     child: SegmentedButton<String>(
                       segments: <ButtonSegment<String>>[
                         ButtonSegment<String>(
@@ -108,8 +110,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       if (value == null || value.isEmpty) {
                         return S.of(context).requiredField;
                       }
-                      final emailRegex = RegExp(
-                          r'^[^@]+@[^@]+\.[^@]+');
+                      final emailRegex = RegExp(r'^[^@]+@[^@]+\.[^@]+');
                       if (!emailRegex.hasMatch(value)) {
                         return S.of(context).invalidEmail;
                       }
@@ -125,7 +126,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       border: const OutlineInputBorder(),
                       suffixIcon: IconButton(
                         icon: Icon(
-                          isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+                          isPasswordVisible
+                              ? Icons.visibility
+                              : Icons.visibility_off,
                         ),
                         onPressed: () {
                           setState(() {
@@ -143,7 +146,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         return 'The password must contain at least one capital letter.';
                       } else if (!RegExp(r'[0-9]').hasMatch(value)) {
                         return 'The password must contain at least one number.';
-                      } else if (!RegExp(r'[!@#$%^&*(),.?":{}|<>]').hasMatch(value)) {
+                      } else if (!RegExp(r'[!@#$%^&*(),.?":{}|<>]')
+                          .hasMatch(value)) {
                         return 'The password must contain at least one special character.';
                       }
                       return null;
@@ -154,19 +158,44 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       FilledButton(
-                        onPressed: () {
+                        onPressed: () async {
                           if (formKey.currentState!.validate()) {
-                            if (userType == 'Owner') {
-                              Navigator.pushNamed(context, AppRoutes.companyInfo);
-                            } else {
-                              // Navigator.pushNamed(context, AppRoutes.home);
+                            try {
+                              await userService.registerUser(
+                                  _nameController.text,
+                                  _nameController.text,
+                                  _usernameController.text,
+                                  _emailController.text,
+                                  _passwordController.text);
+                              final loginResponse = await userService.loginUser(
+                                _emailController.text,
+                                _passwordController.text,
+                              );
+                              if (loginResponse == 200) {
+                                if (userType == 'Owner') {
+                                  Navigator.pushNamed(
+                                      // ignore: use_build_context_synchronously
+                                      context, AppRoutes.companyInfo);
+                                } else {
+                                  Navigator.pushNamed(
+                                      // ignore: use_build_context_synchronously
+                                      context, AppRoutes.facilities);
+                                }
+                              } else {
+                                // Handle login error
+                              }
+                            } catch (e) {
+                              // Handle registration error
                             }
                           }
                         },
                         style: FilledButton.styleFrom(
-                          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 30, vertical: 10),
                         ),
-                        child: Text(userType == 'Owner' ? "Continue" : S.of(context).register),
+                        child: Text(userType == 'Owner'
+                            ? "Continue"
+                            : S.of(context).register),
                       ),
                     ],
                   ),

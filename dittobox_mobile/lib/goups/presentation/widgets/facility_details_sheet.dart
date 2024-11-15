@@ -43,16 +43,16 @@ void showFacilityDetailsBottomSheet(BuildContext context, Facility facility, Voi
                       ),
                     ),
                     const Icon(Icons.chevron_right_outlined),
-                    if (facility.location.split(', ').length > 1) ...[
+                    if (facility.location.city!.split(', ').length > 1) ...[
                       Text(
-                        facility.location.split(', ')[0],
+                        facility.location.city!.split(', ')[0],
                         style: const TextStyle(
                           fontSize: 16,
                         ),
                       ),
                       const Icon(Icons.chevron_right_outlined),
                       Text(
-                        facility.location.split(', ')[1],
+                        facility.location.city!.split(', ')[1],
                         style: const TextStyle(
                           fontSize: 16,
                         ),
@@ -60,7 +60,7 @@ void showFacilityDetailsBottomSheet(BuildContext context, Facility facility, Voi
                       const Icon(Icons.chevron_right_outlined),
                     ] else ...[
                       Text(
-                        facility.location,
+                        facility.location.city!,
                         style: const TextStyle(
                           fontSize: 16,
                         ),
@@ -79,7 +79,7 @@ void showFacilityDetailsBottomSheet(BuildContext context, Facility facility, Voi
                       ),
                     ),
                     Text(
-                      facility.type,
+                      facility.facilityType.toString(),
                       style: const TextStyle(
                         fontSize: 16,
                       ),
@@ -91,7 +91,7 @@ void showFacilityDetailsBottomSheet(BuildContext context, Facility facility, Voi
             const SizedBox(height: 16),
 
             // Contenido del BottomSheet
-            buildInfoRowWithIcon(Icons.widgets_outlined, S.of(context).containers, facility.containers),
+            buildInfoRowWithIcon(Icons.widgets_outlined, S.of(context).containers, facility.containerCount),
             Row(
               children: [
                 TextButton(
@@ -111,7 +111,7 @@ void showFacilityDetailsBottomSheet(BuildContext context, Facility facility, Voi
             ),
             const SizedBox(height: 8),
 
-            buildInfoRowWithIcon(Icons.person_2_outlined, S.of(context).workers, facility.workers),
+            buildInfoRowWithIcon(Icons.person_2_outlined, S.of(context).workers, facility.profileCount),
             Row(
               children: [
                 TextButton(
@@ -131,7 +131,7 @@ void showFacilityDetailsBottomSheet(BuildContext context, Facility facility, Voi
             ),
             const SizedBox(height: 8),
 
-            buildInfoRowWithIcon(Icons.notifications_none_outlined, S.of(context).pendingAlerts, facility.alerts),
+            buildInfoRowWithIcon(Icons.notifications_none_outlined, S.of(context).pendingAlerts, 3),
             TextButton(
               onPressed: () {},
               child: Text(S.of(context).checkAlerts),
