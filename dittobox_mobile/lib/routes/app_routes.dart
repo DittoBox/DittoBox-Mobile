@@ -26,10 +26,12 @@ final Map<String, Widget Function(BuildContext)> appRoutes = {
   "/home": (context) => const TemplateListScreen(),
   "/workers": (context) => const WorkerListView(),
   "/workerDetails": (context) => WorkerDetailScreen(worker: Profile(
+    id: -1,
     firstName: 'John',
     lastName: 'Doe',
     accountId: -1,
     groupId: -1,
+    userId: -1,
     privileges: ['read', 'write']
   )), // Provide a valid User object
   "/subscriptionDetails": (context) => const SubscriptionDetailsScreen(),
