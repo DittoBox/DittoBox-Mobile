@@ -767,5 +767,29 @@
   "ok": "Aceptar",
   "@ok": {
     "description": "Etiqueta para aceptar"
+  },
+  "areYouSureYouWantToGrantThisPrivilege": "¿Estás seguro de que deseas otorgar este privilegio?",
+  "@areYouSureYouWantToGrantThisPrivilege": {
+    "description": "Mensaje de confirmación para otorgar privilegio"
+  },
+  "areYouSureYouWantToRevokeThisPrivilege": "¿Estás seguro de que deseas revocar este privilegio?",
+  "@areYouSureYouWantToRevokeThisPrivilege": {
+    "description": "Mensaje de confirmación para revocar privilegio"
+  },
+  "confirm": "Confirmar",
+  "@confirm": {
+    "description": "Etiqueta para confirmar"
+  },
+  "location": "Ubicación",
+  "@location": {
+    "description": "Etiqueta para ubicación"
+  },
+  "privilegesUpdatedSuccessfully": "Privilegios actualizados exitosamente",
+  "@privilegesUpdatedSuccessfully": {
+    "description": "Mensaje de éxito cuando los privilegios son actualizados exitosamente"
+  },
+  "failedToUpdatePrivileges": "Error al actualizar los privilegios",
+  "@failedToUpdatePrivileges": {
+    "description": "Mensaje de error cuando no se pueden actualizar los privilegios"
   }
 }

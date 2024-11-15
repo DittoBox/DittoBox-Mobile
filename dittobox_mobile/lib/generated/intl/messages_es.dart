@@ -60,6 +60,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "applyTemplate": MessageLookupByLibrary.simpleMessage("Aplicar"),
         "areYouSureDelete": MessageLookupByLibrary.simpleMessage(
             "¿Estás seguro de que deseas eliminar este elemento?"),
+        "areYouSureYouWantToGrantThisPrivilege":
+            MessageLookupByLibrary.simpleMessage(
+                "¿Estás seguro de que deseas otorgar este privilegio?"),
+        "areYouSureYouWantToRevokeThisPrivilege":
+            MessageLookupByLibrary.simpleMessage(
+                "¿Estás seguro de que deseas revocar este privilegio?"),
         "assignTemplate":
             MessageLookupByLibrary.simpleMessage("Asignar Plantilla?"),
         "backToLogin":
@@ -96,6 +102,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Código requerido"),
         "companyName":
             MessageLookupByLibrary.simpleMessage("Nombre de la empresa"),
+        "confirm": MessageLookupByLibrary.simpleMessage("Confirmar"),
         "confirmAssignWorker": MessageLookupByLibrary.simpleMessage(
             "¿Estás seguro de que deseas asignar este trabajador?"),
         "confirmAssignWorkerMessage": MessageLookupByLibrary.simpleMessage(
@@ -143,6 +150,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Nombre de la instalación"),
         "failedToFetchFacilities": MessageLookupByLibrary.simpleMessage(
             "Error al obtener las instalaciones"),
+        "failedToUpdatePrivileges": MessageLookupByLibrary.simpleMessage(
+            "Error al actualizar los privilegios"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("¿Olvidaste tu contraseña?"),
         "forgotPasswordTitle":
@@ -161,6 +170,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Último Estado de Salud Conocido"),
         "lastSync":
             MessageLookupByLibrary.simpleMessage("Última sincronización"),
+        "location": MessageLookupByLibrary.simpleMessage("Ubicación"),
         "logOut": MessageLookupByLibrary.simpleMessage("Cerrar sesión"),
         "login": MessageLookupByLibrary.simpleMessage("Iniciar sesión"),
         "manageSubscription":
@@ -229,6 +239,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Por favor, ingrese el nombre de la plantilla"),
         "pleaseSelectCategory": MessageLookupByLibrary.simpleMessage(
             "Por favor, seleccione una categoría"),
+        "privilegesUpdatedSuccessfully": MessageLookupByLibrary.simpleMessage(
+            "Privilegios actualizados exitosamente"),
         "processedFoods":
             MessageLookupByLibrary.simpleMessage("Alimentos procesados"),
         "produce": MessageLookupByLibrary.simpleMessage("Productos"),

@@ -1,6 +1,7 @@
 import 'package:dittobox_mobile/account_and_subscription/infrastructure/data_sources/account_service.dart';
 import 'package:dittobox_mobile/generated/l10n.dart';
 import 'package:dittobox_mobile/goups/presentation/widgets/reassign_worker_sheet.dart';
+import 'package:dittobox_mobile/user_and_profile/infrastructure/data_sources/profile_services.dart';
 import 'package:dittobox_mobile/user_and_profile/infrastructure/models/profile_model.dart';
 import 'package:flutter/material.dart';
 
@@ -17,6 +18,7 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
   bool _showRoleManagement = false;
   List<bool> _switchStates = List.filled(3, false); // Inicializar con 3 elementos
   String? _location;
+  final ProfileService _profileService = ProfileService(); // Crea una instancia de ProfileService
 
   @override
   void initState() {
@@ -26,9 +28,11 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
   }
 
   void _initializeSwitchStates() {
-    _switchStates[0] = widget.worker.privileges.contains('WorkerManagement');
-    _switchStates[1] = widget.worker.privileges.contains('GroupManagement');
-    _switchStates[2] = widget.worker.privileges.contains('AccountManagement');
+    setState(() {
+      _switchStates[0] = widget.worker.privileges.contains('WorkerManagement');
+      _switchStates[1] = widget.worker.privileges.contains('GroupManagement');
+      _switchStates[2] = widget.worker.privileges.contains('AccountManagement');
+    });
   }
 
   Future<void> _fetchGroupLocation() async {
@@ -39,6 +43,68 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
         _location = addressParts.length > 1 ? '${addressParts[0]} ${addressParts[1]}' : location['address'];
       });
     }
+  }
+
+  Future<void> _updatePrivileges(int index, bool value) async {
+    final confirm = await _showConfirmationDialog(value);
+    if (!confirm) return;
+
+    try {
+      if (value) {
+        await _profileService.grantPrivileges(widget.worker.id, index);
+      } else {
+        await _profileService.revokePrivileges(widget.worker.id, index);
+      }
+      // Actualiza el estado del interruptor
+      setState(() {
+        _switchStates[index] = value;
+      });
+      // Vuelve a cargar los datos del perfil
+      await _reloadProfile();
+      print('Privileges updated');
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(S.of(context).privilegesUpdatedSuccessfully)),
+      );
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(S.of(context).failedToUpdatePrivileges)),
+      );
+      print('Failed to update privileges: $e');
+    }
+  }
+
+  Future<void> _reloadProfile() async {
+    final updatedProfile = await _profileService.getProfileDetailsById(widget.worker.id);
+    if (updatedProfile != null) {
+      setState(() {
+        widget.worker.privileges = updatedProfile.privileges;
+        _initializeSwitchStates();
+      });
+    }
+  }
+
+  Future<bool> _showConfirmationDialog(bool value) async {
+    return await showDialog<bool>(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text(value ? 'Grant Privilege' : 'Revoke Privilege'),
+          content: Text(value
+              ? S.of(context).areYouSureYouWantToGrantThisPrivilege
+              : S.of(context).areYouSureYouWantToRevokeThisPrivilege),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(false),
+              child: Text(S.of(context).cancel),
+            ),
+            FilledButton(
+              onPressed: () => Navigator.of(context).pop(true),
+              child: Text(S.of(context).confirm),
+            ),
+          ],
+        );
+      },
+    ) ?? false;
   }
 
   @override
@@ -78,8 +144,8 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
               style: const TextStyle(fontSize: 18),
             ),
             const SizedBox(height: 24),
-            _buildWorkerInfoRow('Category', ['WorkerManagement', 'GroupManagement', 'AccountManagement'].every((privilege) => widget.worker.privileges.contains(privilege)) ? 'Owner' : 'Worker'),
-            _buildWorkerInfoRow('Location', _location ?? 'Loading...'),
+            _buildWorkerInfoRow(S.of(context).category, _isManager() ? 'Manager' : 'Worker'),
+            _buildWorkerInfoRow(S.of(context).location, _location ?? 'Loading...'),
             const SizedBox(height: 16),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
@@ -132,9 +198,7 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
                       title: Text(_getPrivilegeName(index)),
                       value: _switchStates[index],
                       onChanged: (bool value) {
-                        setState(() {
-                          _switchStates[index] = value;
-                        });
+                        _updatePrivileges(index, value);
                       },
                     );
                   },
@@ -145,6 +209,12 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
         ),
       ),
     );
+  }
+
+  bool _isManager() {
+    return widget.worker.privileges.contains('WorkerManagement') ||
+           widget.worker.privileges.contains('GroupManagement') ||
+           widget.worker.privileges.contains('AccountManagement');
   }
 
   String _getPrivilegeName(int index) {

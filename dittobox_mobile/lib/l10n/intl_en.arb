@@ -767,5 +767,29 @@
   "ok": "Ok",
   "@ok": {
     "description": "Button label for ok"
+  },
+  "areYouSureYouWantToGrantThisPrivilege" : "Are you sure you want to grant this privilege?",
+  "@areYouSureYouWantToGrantThisPrivilege": {
+    "description": "Confirmation message for granting privilege"
+  },
+  "areYouSureYouWantToRevokeThisPrivilege" : "Are you sure you want to revoke this privilege?",
+  "@areYouSureYouWantToRevokeThisPrivilege": {
+    "description": "Confirmation message for revoking privilege"
+  },
+  "confirm": "Confirm",
+  "@confirm": {
+    "description": "Button label for confirming"
+  },
+  "location": "Location",
+  "@location": {
+    "description": "Label for location"
+  },
+  "privilegesUpdatedSuccessfully" : "Privileges updated successfully",
+  "@privilegesUpdatedSuccessfully": {
+    "description": "Success message when privileges are updated successfully"
+  },
+  "failedToUpdatePrivileges" : "Failed to update privileges",
+  "@failedToUpdatePrivileges": {
+    "description": "Error message when failing to update privileges"
   }
 }

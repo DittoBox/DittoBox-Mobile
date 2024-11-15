@@ -1969,6 +1969,66 @@ class S {
       args: [],
     );
   }
+
+  /// `Are you sure you want to grant this privilege?`
+  String get areYouSureYouWantToGrantThisPrivilege {
+    return Intl.message(
+      'Are you sure you want to grant this privilege?',
+      name: 'areYouSureYouWantToGrantThisPrivilege',
+      desc: 'Confirmation message for granting privilege',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to revoke this privilege?`
+  String get areYouSureYouWantToRevokeThisPrivilege {
+    return Intl.message(
+      'Are you sure you want to revoke this privilege?',
+      name: 'areYouSureYouWantToRevokeThisPrivilege',
+      desc: 'Confirmation message for revoking privilege',
+      args: [],
+    );
+  }
+
+  /// `Confirm`
+  String get confirm {
+    return Intl.message(
+      'Confirm',
+      name: 'confirm',
+      desc: 'Button label for confirming',
+      args: [],
+    );
+  }
+
+  /// `Location`
+  String get location {
+    return Intl.message(
+      'Location',
+      name: 'location',
+      desc: 'Label for location',
+      args: [],
+    );
+  }
+
+  /// `Privileges updated successfully`
+  String get privilegesUpdatedSuccessfully {
+    return Intl.message(
+      'Privileges updated successfully',
+      name: 'privilegesUpdatedSuccessfully',
+      desc: 'Success message when privileges are updated successfully',
+      args: [],
+    );
+  }
+
+  /// `Failed to update privileges`
+  String get failedToUpdatePrivileges {
+    return Intl.message(
+      'Failed to update privileges',
+      name: 'failedToUpdatePrivileges',
+      desc: 'Error message when failing to update privileges',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
