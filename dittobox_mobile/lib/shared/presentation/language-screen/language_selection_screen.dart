@@ -1,4 +1,5 @@
 import 'package:dittobox_mobile/generated/l10n.dart';
+import 'package:dittobox_mobile/shared/presentation/widgets/custom_navigator_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:dittobox_mobile/main.dart'; // Importa el archivo donde está definido MainApp
 
@@ -25,6 +26,7 @@ class _LanguageSelectionScreenState extends State<LanguageSelectionScreen> {
       appBar: AppBar(
         title: Text(S.of(context).selectLanguage),
       ),
+      drawer: const CustomNavigationDrawer(currentRoute: '/language-selection'), // Añade el CustomNavigationDrawer
       body: Stack(
         children: [
           Column(
@@ -59,20 +61,20 @@ class _LanguageSelectionScreenState extends State<LanguageSelectionScreen> {
   }
 
   void _changeLanguage(BuildContext context, Locale locale) async {
-  setState(() {
-    _isChangingLanguage = true;
-  });
+    setState(() {
+      _isChangingLanguage = true;
+    });
 
-  await Future.delayed(const Duration(seconds: 1)); // Simula un retraso para el cambio de idioma
+    await Future.delayed(const Duration(seconds: 1)); // Simula un retraso para el cambio de idioma
 
-  setState(() {
-    _selectedLocale = locale;
-    _isChangingLanguage = false;
-  });
+    setState(() {
+      _selectedLocale = locale;
+      _isChangingLanguage = false;
+    });
 
-  // ignore: use_build_context_synchronously
-  MainApp.setLocale(context, locale);
-  // ignore: use_build_context_synchronously
-  Navigator.of(context).pop();
-}
+    // ignore: use_build_context_synchronously
+    MainApp.setLocale(context, locale);
+    // ignore: use_build_context_synchronously
+    Navigator.of(context).pop();
+  }
 }
