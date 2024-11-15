@@ -46,6 +46,9 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
   }
 
   Future<void> _updatePrivileges(int index, bool value) async {
+    final confirm = await _showConfirmationDialog(value);
+    if (!confirm) return;
+
     try {
       if (value) {
         await _profileService.grantPrivileges(widget.worker.id, index);
@@ -59,9 +62,12 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
       // Vuelve a cargar los datos del perfil
       await _reloadProfile();
       print('Privileges updated');
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(S.of(context).privilegesUpdatedSuccessfully)),
+      );
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Failed to update privileges: $e')),
+        SnackBar(content: Text(S.of(context).failedToUpdatePrivileges)),
       );
       print('Failed to update privileges: $e');
     }
@@ -75,6 +81,30 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
         _initializeSwitchStates();
       });
     }
+  }
+
+  Future<bool> _showConfirmationDialog(bool value) async {
+    return await showDialog<bool>(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text(value ? 'Grant Privilege' : 'Revoke Privilege'),
+          content: Text(value
+              ? S.of(context).areYouSureYouWantToGrantThisPrivilege
+              : S.of(context).areYouSureYouWantToRevokeThisPrivilege),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(false),
+              child: Text(S.of(context).cancel),
+            ),
+            FilledButton(
+              onPressed: () => Navigator.of(context).pop(true),
+              child: Text(S.of(context).confirm),
+            ),
+          ],
+        );
+      },
+    ) ?? false;
   }
 
   @override
@@ -114,8 +144,8 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
               style: const TextStyle(fontSize: 18),
             ),
             const SizedBox(height: 24),
-            _buildWorkerInfoRow('Category', _isManager() ? 'Manager' : 'Worker'),
-            _buildWorkerInfoRow('Location', _location ?? 'Loading...'),
+            _buildWorkerInfoRow(S.of(context).category, _isManager() ? 'Manager' : 'Worker'),
+            _buildWorkerInfoRow(S.of(context).location, _location ?? 'Loading...'),
             const SizedBox(height: 16),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,

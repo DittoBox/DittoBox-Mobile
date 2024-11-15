@@ -54,6 +54,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "applyTemplate": MessageLookupByLibrary.simpleMessage("Apply"),
         "areYouSureDelete": MessageLookupByLibrary.simpleMessage(
             "Are you sure you want to delete this?"),
+        "areYouSureYouWantToGrantThisPrivilege":
+            MessageLookupByLibrary.simpleMessage(
+                "Are you sure you want to grant this privilege?"),
+        "areYouSureYouWantToRevokeThisPrivilege":
+            MessageLookupByLibrary.simpleMessage(
+                "Are you sure you want to revoke this privilege?"),
         "assignTemplate":
             MessageLookupByLibrary.simpleMessage("Assign template?"),
         "backToLogin": MessageLookupByLibrary.simpleMessage("Back to login"),
@@ -87,6 +93,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "codeRequired":
             MessageLookupByLibrary.simpleMessage("Code is required"),
         "companyName": MessageLookupByLibrary.simpleMessage("Company name"),
+        "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
         "confirmAssignWorker": MessageLookupByLibrary.simpleMessage(
             "Are you sure you want to assign this worker?"),
         "confirmAssignWorkerMessage": MessageLookupByLibrary.simpleMessage(
@@ -130,6 +137,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "facilityName": MessageLookupByLibrary.simpleMessage("Facility name"),
         "failedToFetchFacilities":
             MessageLookupByLibrary.simpleMessage("Failed to fetch facilities"),
+        "failedToUpdatePrivileges":
+            MessageLookupByLibrary.simpleMessage("Failed to update privileges"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot your password?"),
         "forgotPasswordTitle":
@@ -145,6 +154,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "lastKnownHealthStatus":
             MessageLookupByLibrary.simpleMessage("Last known health status"),
         "lastSync": MessageLookupByLibrary.simpleMessage("Last sync"),
+        "location": MessageLookupByLibrary.simpleMessage("Location"),
         "logOut": MessageLookupByLibrary.simpleMessage("Log out"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "manageSubscription":
@@ -215,6 +225,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Please enter a template name"),
         "pleaseSelectCategory":
             MessageLookupByLibrary.simpleMessage("Please select a category"),
+        "privilegesUpdatedSuccessfully": MessageLookupByLibrary.simpleMessage(
+            "Privileges updated successfully"),
         "proccessedFood":
             MessageLookupByLibrary.simpleMessage("Processed food"),
         "processedFood": MessageLookupByLibrary.simpleMessage("Processed food"),
