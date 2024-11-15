@@ -1,6 +1,7 @@
 import 'package:dittobox_mobile/generated/l10n.dart';
+import 'package:dittobox_mobile/user_and_profile/infrastructure/data_sources/user_service.dart';
 import 'package:flutter/material.dart';
-import 'package:dittobox_mobile/routes/app_routes.dart';
+import 'package:dittobox_mobile/routes/app_routes.dart'; 
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -15,8 +16,28 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _passwordController = TextEditingController();
   bool isPasswordVisible = false;
 
+  // Future<bool> _login() async {
+  //   final String username = _usernameController.text;
+  //   final String password = _passwordController.text;
+
+  //   try {
+  //     await AccountService().login(username, password);
+  //     return true;
+  //   } catch (e) {
+  //     if (mounted) {
+  //       ScaffoldMessenger.of(context).showSnackBar(
+  //         SnackBar(
+  //           content: Text('Inicio de sesión fallido: $e'),
+  //         ),
+  //       );
+  //     }
+  //     return false;
+  //   }
+  // }
+
   @override
   Widget build(BuildContext context) {
+    final userService = UserService(); 
 
     return Scaffold(
       body: Padding(
@@ -45,7 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return S.of(context).usernameCannotBeEmpty;
-                  }
+                  } 
                   return null;
                 },
               ),
@@ -72,7 +93,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return S.of(context).passwordCannotBeEmpty;
-                  }
+                  } 
                   return null;
                 },
               ),
@@ -84,7 +105,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     onPressed: () async {
                       if (formKey.currentState!.validate()) {
                         try {
-                          Navigator.pushNamed(context, AppRoutes.containers);
+                          await userService.loginUser(_emailController.text, _passwordController.text);
+                          // ignore: use_build_context_synchronously
+                          Navigator.pushNamed(context, AppRoutes.facilities);
                         } catch (e) {
                           // ignore: use_build_context_synchronously
                           ScaffoldMessenger.of(context).showSnackBar(
