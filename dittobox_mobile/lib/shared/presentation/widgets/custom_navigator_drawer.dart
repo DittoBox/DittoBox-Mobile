@@ -283,7 +283,7 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
       }
       index++;
     }
-    if (widget.currentRoute == '/notifications') {
+    if (widget.currentRoute == AppRoutes.notifications) {
       return index;
     }
     index++;
@@ -309,7 +309,7 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
     if (hasGroupManagementPrivilege) {
       routes.add(AppRoutes.subscriptionDetails);
     }
-    routes.add('/notifications');
+    routes.add(AppRoutes.notifications);
     routes.add('/language-selection');
     routes.add(AppRoutes.login); // Ruta para logout
 

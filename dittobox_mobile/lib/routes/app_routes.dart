@@ -7,6 +7,7 @@ import 'package:dittobox_mobile/containers/presentation/template-list/template_l
 import 'package:dittobox_mobile/goups/presentation/facilities-list/facilities_list_view.dart';
 import 'package:dittobox_mobile/goups/presentation/worker-details/worker_details_screen.dart';
 import 'package:dittobox_mobile/goups/presentation/worker-list/worker_list_view.dart';
+import 'package:dittobox_mobile/shared/presentation/notifications-screen/notification_list_view.dart';
 import 'package:dittobox_mobile/user_and_profile/infrastructure/models/profile_model.dart';
 import 'package:dittobox_mobile/user_and_profile/presentation/change-password-view/forgot_password_screen.dart';
 import 'package:dittobox_mobile/user_and_profile/presentation/change-password-view/password_reset_code_screen.dart';
@@ -42,6 +43,7 @@ final Map<String, Widget Function(BuildContext)> appRoutes = {
   '/password_reset_code': (context) => const PasswordResetCodeScreen(),
   '/set_new_password': (context) => const SetNewPasswordScreen(),
   '/subscription_plans': (context) => const SubscriptionPlansScreen(),
+  '/notifications': (context) => NotificationScreen(),
 };
 
 class AppRoutes {
@@ -61,4 +63,5 @@ class AppRoutes {
   static const String passwordResetCode = '/password_reset_code';
   static const String setNewPassword = '/set_new_password';
   static const String subscriptionPlans = '/subscription_plans';
+  static const String notifications = '/notifications';
 }
