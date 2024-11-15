@@ -791,5 +791,121 @@
   "failedToUpdatePrivileges": "Error al actualizar los privilegios",
   "@failedToUpdatePrivileges": {
     "description": "Mensaje de error cuando no se pueden actualizar los privilegios"
+  },
+  "status": "Estado",
+  "@status": {
+    "description": "Etiqueta para estado"
+  },
+  "updatePaymentInformation": "Actualizar",
+  "@updatePaymentInformation": {
+    "description": "Etiqueta para actualizar información de pago"
+  },
+  "cardNumber": "Número de Tarjeta",
+  "@cardNumber": {
+    "description": "Etiqueta para número de tarjeta"
+  },
+  "expirationDate": "Fecha de Expiración",
+  "@expirationDate": {
+    "description": "Etiqueta para fecha de expiración"
+  },
+  "paymentSuccessful": "Pago exitoso",
+  "@paymentSuccessful": {
+    "description": "Mensaje de éxito cuando el pago es exitoso"
+  },
+  "advancePlan": "Plan Avanzado",
+  "@advancePlan": {
+    "description": "Etiqueta para plan avanzado"
+  },
+  "premiumPlan": "Plan Premium",
+  "@premiumPlan": {
+    "description": "Etiqueta para plan premium"
+  },
+  "upTo": "Hasta",
+  "@upTo": {
+    "description": "Etiqueta para hasta"
+  },
+  "restaurants": "restaurantes",
+  "@restaurants": {
+    "description": "Etiqueta para restaurantes"
+  },
+  "month": "Mes",
+  "@month": {
+    "description": "Etiqueta para mes"
+  },
+  "yearly": "Anual",
+  "@yearly": {
+    "description": "Etiqueta para anual"
+  },
+  "allFromStarterPlan": "Todo del Plan Inicial.",
+  "@allFromStarterPlan": {
+    "description": "Etiqueta para todo del plan inicial"
+  },
+  "priorityTechnicalSupport": "Soporte técnico prioritario.",
+  "@priorityTechnicalSupport": {
+    "description": "Etiqueta para soporte técnico prioritario"
+  },
+  "automaticTemplates": "Plantillas automáticas para ajustar la temperatura y la humedad según el tipo de suministro.",
+  "@automaticTemplates": {
+    "description": "Etiqueta para plantillas automáticas"
+  },
+  "simultaneousMonitoring": "Monitoreo simultáneo de hasta 5 DittoBoxes para múltiples restaurantes.",
+  "@simultaneousMonitoring": {
+    "description": "Etiqueta para monitoreo simultáneo"
+  },
+  "allFromAdvancePlan": "Todo del Plan Avanzado.",
+  "@allFromAdvancePlan": {
+    "description": "Etiqueta para todo del plan avanzado"
+  },
+  "supportForLargerChains": "Soporte para cadenas más grandes (hasta 10 restaurantes).",
+  "@supportForLargerChains": {
+    "description": "Etiqueta para soporte para cadenas más grandes"
+  },
+  "fasterTechnicalSupport": "Soporte técnico más rápido y personalizado.",
+  "@fasterTechnicalSupport": {
+    "description": "Etiqueta para soporte técnico más rápido"
+  },
+  "advancedAutomaticTemplates": "Plantillas y ajustes automáticos avanzados para preservar varios tipos de alimentos.",
+  "@advancedAutomaticTemplates": {
+    "description": "Etiqueta para plantillas automáticas avanzadas"
+  },
+  "pay": "Pagar",
+  "@pay": {
+    "description": "Etiqueta para pagar"
+  },
+  "subscriptionPlans": "Planes de Suscripción",
+  "@subscriptionPlans": {
+    "description": "Etiqueta para planes de suscripción"
+  },
+  "subscribe": "Suscribirse",
+  "@subscribe": {
+    "description": "Etiqueta para suscribirse"
+  },
+  "choosePlan": "Elegir Plan",
+  "@choosePlan": {
+    "description": "Etiqueta para elegir plan"
+  },
+  "yearlyPlans": "Planes Anuales",
+  "@yearlyPlans": {
+    "description": "Etiqueta para planes anuales"
+  },
+  "monthlyPlans": "Planes Mensuales",
+  "@monthlyPlans": {
+    "description": "Etiqueta para planes mensuales"
+  },
+  "invalidCardNumber": "Número de tarjeta inválido",
+  "@invalidCardNumber": {
+    "description": "Mensaje de error para número de tarjeta inválido"
+  },
+  "InvalidExpirationDate": "Fecha de expiración inválida",
+  "@InvalidExpirationDate": {
+    "description": "Mensaje de error para fecha de expiración inválida"
+  },
+  "invalidCvv": "CVV inválido",
+  "@invalidCvv": {
+    "description": "Mensaje de error para CVV inválido"
+  },
+  "invalidCardHolderName": "Nombre del titular de la tarjeta inválido",
+  "@invalidCardHolderName": {
+    "description": "Mensaje de error para nombre del titular de la tarjeta inválido"
   }
 }

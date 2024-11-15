@@ -1,5 +1,6 @@
 import 'package:dittobox_mobile/account_and_subscription/presentation/account-details/account_details_screen.dart';
 import 'package:dittobox_mobile/account_and_subscription/presentation/subscription-details/subscription_details_screen.dart';
+import 'package:dittobox_mobile/account_and_subscription/presentation/subscription-plans/subscription_plans_screen.dart';
 import 'package:dittobox_mobile/containers/presentation/add-template/add_template_screen.dart';
 import 'package:dittobox_mobile/containers/presentation/container-list/container_list_view.dart';
 import 'package:dittobox_mobile/containers/presentation/template-list/template_list_screen.dart';
@@ -18,14 +19,14 @@ import 'package:flutter/material.dart';
 final Map<String, Widget Function(BuildContext)> appRoutes = {
   '/login': (context) => const LoginScreen(),
   '/register': (context) => const RegisterScreen(),
-  '/company_info': (context) => const CompanyInfoScreen(), // Proporciona un usuario predeterminado
+  '/company_info': (context) => const CompanyInfoScreen(),
   '/facilities': (context) => const FacilitiesListScreen(),
   '/templates': (context) => const TemplateListScreen(),
   '/addTemplate': (context) => const AddTemplateScreen(),
   '/': (context) => const LoginScreen(),
-  "/home": (context) => const TemplateListScreen(),
-  "/workers": (context) => const WorkerListView(),
-  "/workerDetails": (context) => WorkerDetailScreen(worker: Profile(
+  '/home': (context) => const TemplateListScreen(),
+  '/workers': (context) => const WorkerListView(),
+  '/workerDetails': (context) => WorkerDetailScreen(worker: Profile(
     id: -1,
     firstName: 'John',
     lastName: 'Doe',
@@ -33,13 +34,14 @@ final Map<String, Widget Function(BuildContext)> appRoutes = {
     groupId: -1,
     userId: -1,
     privileges: ['read', 'write']
-  )), // Provide a valid User object
-  "/subscriptionDetails": (context) => const SubscriptionDetailsScreen(),
-  "/accountDetails": (context) => const AccountDetailsScreen(),
-  "/containers": (context) => const ContainerListScreen(),
-  "/forgotPassword": (context) => const ForgotPasswordScreen(),
+  )),
+  '/subscriptionDetails': (context) => const SubscriptionDetailsScreen(),
+  '/accountDetails': (context) => const AccountDetailsScreen(),
+  '/containers': (context) => const ContainerListScreen(),
+  '/forgotPassword': (context) => const ForgotPasswordScreen(),
   '/password_reset_code': (context) => const PasswordResetCodeScreen(),
-  "/set_new_password": (context) => const SetNewPasswordScreen(),
+  '/set_new_password': (context) => const SetNewPasswordScreen(),
+  '/subscription_plans': (context) => const SubscriptionPlansScreen(),
 };
 
 class AppRoutes {
@@ -58,4 +60,5 @@ class AppRoutes {
   static const String forgotPassword = '/forgotPassword';
   static const String passwordResetCode = '/password_reset_code';
   static const String setNewPassword = '/set_new_password';
+  static const String subscriptionPlans = '/subscription_plans';
 }

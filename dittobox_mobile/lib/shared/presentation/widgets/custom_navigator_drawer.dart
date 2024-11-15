@@ -330,6 +330,7 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
 
   Future<void> _logout() async {
     await UserService().logoutUser();
+    // ignore: use_build_context_synchronously
     Navigator.of(context).pushNamedAndRemoveUntil(AppRoutes.login, (route) => false);
   }
 }

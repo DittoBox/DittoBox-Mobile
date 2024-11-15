@@ -16,7 +16,7 @@ class WorkerDetailScreen extends StatefulWidget {
 
 class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
   bool _showRoleManagement = false;
-  List<bool> _switchStates = List.filled(3, false); // Inicializar con 3 elementos
+  final List<bool> _switchStates = List.filled(3, false); // Inicializar con 3 elementos
   String? _location;
   final ProfileService _profileService = ProfileService(); // Crea una instancia de ProfileService
 
@@ -62,11 +62,15 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
       // Vuelve a cargar los datos del perfil
       await _reloadProfile();
       print('Privileges updated');
+      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
+        // ignore: use_build_context_synchronously
         SnackBar(content: Text(S.of(context).privilegesUpdatedSuccessfully)),
       );
     } catch (e) {
+      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
+        // ignore: use_build_context_synchronously
         SnackBar(content: Text(S.of(context).failedToUpdatePrivileges)),
       );
       print('Failed to update privileges: $e');
