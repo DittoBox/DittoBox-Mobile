@@ -64,14 +64,14 @@ class NotificationScreen extends StatelessWidget {
             background: Container(
               color: Colors.green,
               alignment: Alignment.centerLeft,
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Icon(Icons.visibility, color: Colors.white),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: const Icon(Icons.visibility, color: Colors.white),
             ),
             secondaryBackground: Container(
               color: Colors.red,
               alignment: Alignment.centerRight,
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Icon(Icons.delete, color: Colors.white),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: const Icon(Icons.delete, color: Colors.white),
             ),
             onDismissed: (direction) {
               if (direction == DismissDirection.startToEnd) {
@@ -81,22 +81,22 @@ class NotificationScreen extends StatelessWidget {
               }
             },
             child: Card(
-              margin: EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+              margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
               child: ListTile(
-                leading: CircleAvatar(
+                leading: const CircleAvatar(
                   child: Icon(Icons.info, color: Colors.white),
                 ),
                 title: Text(
                   notification["title"] ?? "",
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
                 subtitle: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(notification["time"] ?? ""),
-                    SizedBox(height: 4),
+                    const SizedBox(height: 4),
                     Text(notification["description"] ?? ""),
-                    SizedBox(height: 8), // Espacio adicional para separar el texto de los botones
+                    const SizedBox(height: 8), // Espacio adicional para separar el texto de los botones
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
@@ -107,7 +107,7 @@ class NotificationScreen extends StatelessWidget {
                             },
                             child: Text(
                               notification["viewAction"]!,
-                              style: TextStyle(color: Colors.green, fontSize: 12), // Tamaño de fuente reducido
+                              style: const TextStyle(color: Colors.green, fontSize: 12), // Tamaño de fuente reducido
                             ),
                           ),
                         TextButton(
@@ -116,7 +116,7 @@ class NotificationScreen extends StatelessWidget {
                           },
                           child: Text(
                             notification["dismissAction"]!,
-                            style: TextStyle(color: Colors.red, fontSize: 12), // Tamaño de fuente reducido
+                            style: const TextStyle(color: Colors.red, fontSize: 12), // Tamaño de fuente reducido
                           ),
                         ),
                       ],
