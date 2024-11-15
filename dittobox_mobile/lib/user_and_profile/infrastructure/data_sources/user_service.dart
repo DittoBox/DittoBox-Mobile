@@ -110,4 +110,25 @@ class UserService extends BaseService {
       return null;
     }
   }
+
+  // Method to logout a user
+  // baseUrl/user/logout
+  // Request body:
+  // {
+  // "userId": "string"
+  // }
+  Future logoutUser() async {
+    final prefs = await SharedPreferences.getInstance();
+    final userId = prefs.getInt('userId');
+    final url = '$baseUrl/user/logout';
+    final token = prefs.getString('token');
+    await http.post(
+      Uri.parse(url),
+      headers: getHeaders(token!),
+      body: jsonEncode({
+        'userId': userId,
+      }),
+    );
+    await prefs.clear();
+  }
 }
