@@ -69,14 +69,17 @@ class UserService extends BaseService {
         'hasWorkerManagementPrivilege',
         privileges.contains('WorkerManagement'),
       );
+      print('WorkerManagement: ${privileges.contains('WorkerManagement')}');
       await prefs.setBool(
         'hasGroupManagementPrivilege',
         privileges.contains('GroupManagement'),
       );
+      print('GroupManagement: ${privileges.contains('GroupManagement')}');
       await prefs.setBool(
         'hasAccountManagementPrivilege',
         privileges.contains('AccountManagement'),
       );
+      print('AccountManagement: ${privileges.contains('AccountManagement')}');
       return 200;
     }
     return response.statusCode;

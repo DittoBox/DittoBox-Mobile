@@ -27,11 +27,19 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
   }
 
   Future<void> _loadPrivileges() async {
-    final prefs = await SharedPreferences.getInstance();
+    final prefs =  SharedPreferencesAsync();
+    final workerPrivilege = await prefs.getBool('hasWorkerManagementPrivilege') ?? false;
+    final groupPrivilege = await prefs.getBool('hasGroupManagementPrivilege') ?? false;
+    final accountPrivilege = await prefs.getBool('hasAccountManagementPrivilege') ?? false;
+
+    print('Worker Management Privilege: $workerPrivilege');
+    print('Group Management Privilege: $groupPrivilege');
+    print('Account Management Privilege: $accountPrivilege');
+
     setState(() {
-      hasWorkerManagementPrivilege = prefs.getBool('hasWorkerManagementPrivilege') ?? false;
-      hasGroupManagementPrivilege = prefs.getBool('hasGroupManagementPrivilege') ?? false;
-      hasAccountManagementPrivilege = prefs.getBool('hasAccountManagementPrivilege') ?? false;
+      hasWorkerManagementPrivilege = workerPrivilege;
+      hasGroupManagementPrivilege = groupPrivilege;
+      hasAccountManagementPrivilege = accountPrivilege;
     });
   }
 
