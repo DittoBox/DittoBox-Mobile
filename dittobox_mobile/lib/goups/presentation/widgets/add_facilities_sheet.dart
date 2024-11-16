@@ -157,6 +157,13 @@ class _AddFacilitySheetState extends State<AddFacilitySheet> {
                     location,
                     facilityType == 'Restaurant' ? 0 : 1,
                   );
+
+                  Navigator.pop(context);
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(S.of(context).facilityCreatedSuccessfully),
+                    ),
+                  );
                 },
                 child: Text(S.of(context).save),
               ),

@@ -911,7 +911,17 @@
   "invalidCardHolderName": "Invalid card holder name",
   "@invalidCardHolderName": {
     "description": "Error message when card holder name is invalid"
+  },
+  "facilityCreatedSuccessfully": "Facility created successfully",
+  "@facilityCreatedSuccessfully": {
+    "description": "Success message when facility is created successfully"
+  },
+  "loginFailed": "Login failed",
+  "@loginFailed": {
+    "description": "Error message when login fails"
+  },
+  "registrationFailed": "Registration failed",
+  "@registrationFailed": {
+    "description": "Error message when registration fails"
   }
-
-
 }

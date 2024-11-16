@@ -18,7 +18,7 @@ class _AddContainerSheetState extends State<AddContainerSheet> {
   final TextEditingController _containerNameController = TextEditingController();
   final TextEditingController _descriptionController = TextEditingController();
   final TextEditingController _codeController = TextEditingController();
-  String? selectedFacility; // Valor por defecto
+  int? selectedFacilityId; // Valor por defecto
   List<Facility> facilities = []; // Lista de instalaciones
   final FacilitiesService _facilitiesService = FacilitiesService();
   final ContainerService _containerService = ContainerService();
@@ -27,7 +27,6 @@ class _AddContainerSheetState extends State<AddContainerSheet> {
   @override
   void initState() {
     super.initState();
-    selectedFacility = widget.facility.title; // Selecciona automáticamente la instalación
     _loadFacilities();
   }
 
@@ -36,6 +35,11 @@ class _AddContainerSheetState extends State<AddContainerSheet> {
       final facilitiesList = await _facilitiesService.getFacilities();
       setState(() {
         facilities = facilitiesList;
+        selectedFacilityId = facilities.any((facility) => facility.id == widget.facility.id)
+            ? widget.facility.id
+            : facilities.isNotEmpty
+                ? facilities.first.id
+                : null;
         isLoading = false; // Finaliza la carga
       });
     } catch (e) {
@@ -46,29 +50,29 @@ class _AddContainerSheetState extends State<AddContainerSheet> {
     }
   }
 
- Future<void> _createContainer() async {
-  try {
-    final selectedFacilityObj = facilities.firstWhere((facility) => facility.title == selectedFacility);
-    await _containerService.createContainer(
-      _containerNameController.text,
-      _descriptionController.text,
-      selectedFacilityObj.id,
-      1, // Asumiendo que containerSizeId es 1, puedes cambiarlo según sea necesario
-    );
-    // ignore: use_build_context_synchronously
-    Navigator.pop(context);
-    // ignore: use_build_context_synchronously
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        // ignore: use_build_context_synchronously
-        content: Text(S.of(context).containerCreatedSuccessfully),
-      ),
-    );
-  } catch (e) {
-    // Manejar errores
-    print('Error creating container: $e');
+  Future<void> _createContainer() async {
+    try {
+      final selectedFacilityObj = facilities.firstWhere((facility) => facility.id == selectedFacilityId);
+      await _containerService.createContainer(
+        _codeController.text, // Usar el código como deviceId
+        _containerNameController.text,
+        _descriptionController.text,
+        selectedFacilityObj.id,
+      );
+      // ignore: use_build_context_synchronously
+      Navigator.pop(context);
+      // ignore: use_build_context_synchronously
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          // ignore: use_build_context_synchronously
+          content: Text(S.of(context).containerCreatedSuccessfully),
+        ),
+      );
+    } catch (e) {
+      // Manejar errores
+      print('Error creating container: $e');
+    }
   }
-}
 
   @override
   Widget build(BuildContext context) {
@@ -180,17 +184,17 @@ class _AddContainerSheetState extends State<AddContainerSheet> {
             const SizedBox(height: 26),
             isLoading
                 ? const CircularProgressIndicator() // Muestra un indicador de carga mientras se cargan las instalaciones
-                : DropdownButtonFormField<String>(
-                    value: selectedFacility,
+                : DropdownButtonFormField<int>(
+                    value: selectedFacilityId,
                     items: facilities.map((Facility facility) {
-                      return DropdownMenuItem<String>(
-                        value: facility.title, // Asignar el valor del título
+                      return DropdownMenuItem<int>(
+                        value: facility.id, // Asignar el valor del id
                         child: Text(facility.title), // Mostrar el título
                       );
                     }).toList(),
-                    onChanged: (String? newValue) {
+                    onChanged: (int? newValue) {
                       setState(() {
-                        selectedFacility = newValue;
+                        selectedFacilityId = newValue;
                       });
                     },
                     decoration: InputDecoration(

@@ -16,25 +16,6 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _passwordController = TextEditingController();
   bool isPasswordVisible = false;
 
-  // Future<bool> _login() async {
-  //   final String username = _usernameController.text;
-  //   final String password = _passwordController.text;
-
-  //   try {
-  //     await AccountService().login(username, password);
-  //     return true;
-  //   } catch (e) {
-  //     if (mounted) {
-  //       ScaffoldMessenger.of(context).showSnackBar(
-  //         SnackBar(
-  //           content: Text('Inicio de sesión fallido: $e'),
-  //         ),
-  //       );
-  //     }
-  //     return false;
-  //   }
-  // }
-
   @override
   Widget build(BuildContext context) {
     final userService = UserService(); 
@@ -105,9 +86,18 @@ class _LoginScreenState extends State<LoginScreen> {
                     onPressed: () async {
                       if (formKey.currentState!.validate()) {
                         try {
-                          await userService.loginUser(_emailController.text, _passwordController.text);
-                          // ignore: use_build_context_synchronously
-                          Navigator.pushNamed(context, AppRoutes.facilities);
+                          final statusCode = await userService.loginUser(_emailController.text, _passwordController.text);
+                          if (statusCode == 200) {
+                            // ignore: use_build_context_synchronously
+                            Navigator.pushNamed(context, AppRoutes.facilities);
+                          } else {
+                            // ignore: use_build_context_synchronously
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text(S.of(context).loginFailed),
+                              ),
+                            );
+                          }
                         } catch (e) {
                           // ignore: use_build_context_synchronously
                           ScaffoldMessenger.of(context).showSnackBar(

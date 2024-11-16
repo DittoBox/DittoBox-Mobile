@@ -161,31 +161,51 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         onPressed: () async {
                           if (formKey.currentState!.validate()) {
                             try {
-                              await userService.registerUser(
-                                  _nameController.text,
-                                  _nameController.text,
-                                  _usernameController.text,
-                                  _emailController.text,
-                                  _passwordController.text);
-                              final loginResponse = await userService.loginUser(
+                              final registerResponse = await userService.registerUser(
+                                _nameController.text,
+                                _nameController.text,
+                                _usernameController.text,
                                 _emailController.text,
                                 _passwordController.text,
                               );
-                              if (loginResponse == 200) {
-                                if (userType == 'Owner') {
-                                  Navigator.pushNamed(
-                                      // ignore: use_build_context_synchronously
-                                      context, AppRoutes.companyInfo);
+                              if (registerResponse == 200) {
+                                final loginResponse = await userService.loginUser(
+                                  _emailController.text,
+                                  _passwordController.text,
+                                );
+                                if (loginResponse == 200) {
+                                  if (userType == 'Owner') {
+                                    Navigator.pushNamed(
+                                        // ignore: use_build_context_synchronously
+                                        context, AppRoutes.companyInfo);
+                                  } else {
+                                    Navigator.pushNamed(
+                                        // ignore: use_build_context_synchronously
+                                        context, AppRoutes.facilities);
+                                  }
                                 } else {
-                                  Navigator.pushNamed(
-                                      // ignore: use_build_context_synchronously
-                                      context, AppRoutes.facilities);
+                                  // ignore: use_build_context_synchronously
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      content: Text(S.of(context).loginFailed)
+                                    ),
+                                  );
                                 }
                               } else {
-                                // Handle login error
+                                // ignore: use_build_context_synchronously
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(S.of(context).registrationFailed),
+                                  ),
+                                );
                               }
                             } catch (e) {
-                              // Handle registration error
+                              // ignore: use_build_context_synchronously
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text(S.of(context).registrationFailed + ': $e'),
+                                ),
+                              );
                             }
                           }
                         },

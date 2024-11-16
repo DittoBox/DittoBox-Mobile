@@ -147,6 +147,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "expirationDate":
             MessageLookupByLibrary.simpleMessage("Expiration date"),
         "facilities": MessageLookupByLibrary.simpleMessage("Facilities"),
+        "facilityCreatedSuccessfully": MessageLookupByLibrary.simpleMessage(
+            "Facility created successfully"),
         "facilityName": MessageLookupByLibrary.simpleMessage("Facility name"),
         "failedToFetchFacilities":
             MessageLookupByLibrary.simpleMessage("Failed to fetch facilities"),
@@ -179,6 +181,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "location": MessageLookupByLibrary.simpleMessage("Location"),
         "logOut": MessageLookupByLibrary.simpleMessage("Log out"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
+        "loginFailed": MessageLookupByLibrary.simpleMessage("Login failed"),
         "manageSubscription":
             MessageLookupByLibrary.simpleMessage("Manage Subscription"),
         "meat": MessageLookupByLibrary.simpleMessage("Meat"),
@@ -272,6 +275,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "register": MessageLookupByLibrary.simpleMessage("Register"),
         "registerInstead":
             MessageLookupByLibrary.simpleMessage("Register instead"),
+        "registrationFailed":
+            MessageLookupByLibrary.simpleMessage("Registration failed"),
         "requiredField":
             MessageLookupByLibrary.simpleMessage("This is a required field"),
         "resetPassword": MessageLookupByLibrary.simpleMessage("Reset Password"),
