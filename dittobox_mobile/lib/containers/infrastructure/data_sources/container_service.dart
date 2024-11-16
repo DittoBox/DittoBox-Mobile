@@ -6,7 +6,8 @@ import 'dart:convert';
 
 class ContainerService extends BaseService {
 
-  
+  final String selfRegisterUrl = 'https://edge-dev-01-dittobox-f7a7ccd2hyadedad.eastus-01.azurewebsites.net/api/v1/cloud-service/self-register-container';
+
   Future<List<Container>> getContainersByAccountId() async {
     try {
       final prefs = SharedPreferencesAsync();
@@ -29,25 +30,49 @@ class ContainerService extends BaseService {
     }
   }
 
-  Future<void> createContainer(String name, String description, int groupId, int containerSizeId) async {
+  Future<void> createContainer(String deviceId ,String name, String description, int groupId) async {
     try {
         final prefs = SharedPreferencesAsync();
         final accountId = await prefs.getInt('accountId');
-        if (accountId == null) {
-          throw Exception('Account ID not found');
-        }
+       if (accountId == null) {
+        throw Exception('Account ID not found');
+      }
+
+      // Auto-register the container
+      final selfRegisterBody = jsonEncode({'uiid': deviceId});
+      print('Self-register request body: $selfRegisterBody');
+
+      final selfRegisterResponse = await http.post(
+        Uri.parse(selfRegisterUrl),
+        headers: {'Content-Type': 'application/json'},
+        body: selfRegisterBody,
+      );
+
+      print('Self-register response status: ${selfRegisterResponse.statusCode}');
+      print('Self-register response body: ${selfRegisterResponse.body}');
+
+      if (selfRegisterResponse.statusCode != 200) {
+        throw Exception('Failed to self-register container');
+      }
+
+      // Create the container
+      final createContainerBody = jsonEncode({
+        'deviceId': deviceId,
+        'name': name,
+        'description': description,
+        'accountId': accountId,
+        'groupId': groupId,
+      });
+      print('Create container request body: $createContainerBody');
 
       final response = await http.post(
         Uri.parse('$baseUrl/container'),
         headers: {'Content-Type': 'application/json'},
-        body: jsonEncode({
-          'name': name,
-          'description': description,
-          'accountId': accountId,
-          'groupId': groupId,
-          'containerSizeId': containerSizeId,
-        }),
+        body: createContainerBody,
       );
+
+      print('Response status: ${response.statusCode}');
+      print('Response body: ${response.body}');
 
       if (response.statusCode != 201) {
         throw Exception('Failed to create container');
@@ -57,7 +82,8 @@ class ContainerService extends BaseService {
       throw Exception('Failed to create container: $e');
     }
   }
-  
+
+
 
 
 
@@ -104,6 +130,4 @@ class ContainerService extends BaseService {
       throw Exception('Failed to assign template to container: $e');
     }
   }
-
-
 }

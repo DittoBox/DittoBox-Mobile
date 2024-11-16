@@ -2332,6 +2332,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Facility created successfully`
+  String get facilityCreatedSuccessfully {
+    return Intl.message(
+      'Facility created successfully',
+      name: 'facilityCreatedSuccessfully',
+      desc: 'Success message when facility is created successfully',
+      args: [],
+    );
+  }
+
+  /// `Login failed`
+  String get loginFailed {
+    return Intl.message(
+      'Login failed',
+      name: 'loginFailed',
+      desc: 'Error message when login fails',
+      args: [],
+    );
+  }
+
+  /// `Registration failed`
+  String get registrationFailed {
+    return Intl.message(
+      'Registration failed',
+      name: 'registrationFailed',
+      desc: 'Error message when registration fails',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

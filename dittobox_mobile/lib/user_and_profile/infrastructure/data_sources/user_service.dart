@@ -37,20 +37,22 @@ class UserService extends BaseService {
   // "email": "string",
   // "password": "string"
   // }
-  Future<int> loginUser(String email, String password) async {
-    final url = '$baseUrl/user/login';
-    final response = await http.post(
-      Uri.parse(url),
-      headers: {'Content-Type': 'application/json'},
-      body: jsonEncode({
-        'email': email,
-        'password': password,
-      }),
-    );
+Future<int> loginUser(String email, String password) async {
+  final url = '$baseUrl/user/login';
+  final response = await http.post(
+    Uri.parse(url),
+    headers: {'Content-Type': 'application/json'},
+    body: jsonEncode({
+      'email': email,
+      'password': password,
+    }),
+  );
 
-    if (response.statusCode == 200) {
-      final data = jsonDecode(response.body);
+  if (response.statusCode == 200) {
+    final data = jsonDecode(response.body);
 
+    // Verificar que los datos de la respuesta sean válidos
+    if (data['userId'] != null && data['token'] != null) {
       final prefs = SharedPreferencesAsync();
       await prefs.setInt('userId', data['userId']);
       await prefs.setString('username', data['username']);
@@ -81,9 +83,13 @@ class UserService extends BaseService {
       );
       print('AccountManagement: ${privileges.contains('AccountManagement')}');
       return 200;
+    } else {
+      // Datos inválidos en la respuesta
+      return 401; // Código de error para credenciales incorrectas
     }
-    return response.statusCode;
   }
+  return response.statusCode;
+}
 
   // Method to get user details
   // baseUrl/user/{userId}

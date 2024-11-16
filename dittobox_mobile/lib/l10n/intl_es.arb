@@ -907,5 +907,17 @@
   "invalidCardHolderName": "Nombre del titular de la tarjeta inválido",
   "@invalidCardHolderName": {
     "description": "Mensaje de error para nombre del titular de la tarjeta inválido"
+  },
+  "facilityCreatedSuccessfully": "Instalación creada exitosamente",
+  "@facilityCreatedSuccessfully": {
+    "description": "Mensaje de éxito cuando la instalación es creada exitosamente"
+  },
+  "loginFailed": "Inicio de sesión fallido",
+  "@loginFailed": {
+    "description": "Mensaje de error cuando el inicio de sesión falla"
+  },
+  "registrationFailed": "Registro fallido",
+  "@registrationFailed": {
+    "description": "Mensaje de error cuando el registro falla"
   }
 }

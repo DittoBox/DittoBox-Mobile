@@ -159,6 +159,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "expirationDate":
             MessageLookupByLibrary.simpleMessage("Fecha de Expiración"),
         "facilities": MessageLookupByLibrary.simpleMessage("Instalaciones"),
+        "facilityCreatedSuccessfully": MessageLookupByLibrary.simpleMessage(
+            "Instalación creada exitosamente"),
         "facilityName":
             MessageLookupByLibrary.simpleMessage("Nombre de la instalación"),
         "failedToFetchFacilities": MessageLookupByLibrary.simpleMessage(
@@ -193,6 +195,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "location": MessageLookupByLibrary.simpleMessage("Ubicación"),
         "logOut": MessageLookupByLibrary.simpleMessage("Cerrar sesión"),
         "login": MessageLookupByLibrary.simpleMessage("Iniciar sesión"),
+        "loginFailed":
+            MessageLookupByLibrary.simpleMessage("Inicio de sesión fallido"),
         "manageSubscription":
             MessageLookupByLibrary.simpleMessage("Administrar Suscripción"),
         "meats": MessageLookupByLibrary.simpleMessage("Carnes"),
@@ -280,6 +284,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "register": MessageLookupByLibrary.simpleMessage("Registrar"),
         "registerInstead":
             MessageLookupByLibrary.simpleMessage("Registrarse en su lugar"),
+        "registrationFailed":
+            MessageLookupByLibrary.simpleMessage("Registro fallido"),
         "requiredField":
             MessageLookupByLibrary.simpleMessage("Campo requerido"),
         "resetPassword":
