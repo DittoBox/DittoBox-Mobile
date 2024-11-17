@@ -1,10 +1,13 @@
-import 'package:dittobox_mobile/shared/services/base_service.dart';
+import 'dart:async';
+
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:dittobox_mobile/generated/l10n.dart';
+import 'package:dittobox_mobile/shared/services/base_service.dart';
 
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
 BaseService baseService = BaseService();
@@ -32,6 +35,22 @@ Future<void> showNotification(String title, String body) async {
     body,
     notificationDetails,
   );
+}
+
+Future<void> cancelNotification() async {
+  await flutterLocalNotificationsPlugin.cancel(0);
+}
+Future selectNotification(String payload) async {
+  if (payload != null) {
+    debugPrint('notification payload: $payload');
+  }
+}
+
+
+String getPeruTime() {
+  final now = DateTime.now().toUtc().subtract(Duration(hours: 5));
+  final formatter = DateFormat('dd-MM-yyyy HH:mm');
+  return formatter.format(now);
 }
 
 Future<String> getContainerName(int containerId) async {
@@ -112,44 +131,94 @@ String getAlertDescription(BuildContext context, String alertType, String name) 
       return S.of(context).unknownAlert(name);
   }
 }
+void startNotificationService(BuildContext context) {
+  Timer.periodic(const Duration(seconds: 1), (timer) async {
+    final prefs = await SharedPreferencesAsync();
+    final accountId = prefs.getInt('accountId');
+      // ignore: use_build_context_synchronously
+      await fetchAndShowNotification(context, '${baseService.baseUrl}/notification/account/1');
+    
+  });
+}
 
 Future<void> fetchAndShowNotification(BuildContext context, String endpoint) async {
+  print('Fetching notifications from endpoint: $endpoint');
   final response = await http.get(Uri.parse(endpoint));
+  print('Response status code: ${response.statusCode}');
 
   if (response.statusCode == 200) {
     List<dynamic> notifications = json.decode(response.body);
+    print('Notifications fetched: $notifications');
     for (var notification in notifications) {
-      String title = S.of(context).alert(notification['alertType']);
+      String alertType = notification['alertType'].toString();
+      String title = S.of(context).alert(alertType);
+      print('Notification title: $title');
       String body;
       if (notification.containsKey('containerId')) {
         String containerName = await getContainerName(notification['containerId']);
-        body = getAlertDescription(context, notification['alertType'], containerName);
+        print('Container name: $containerName');
+        body = getAlertDescription(context, alertType, containerName);
       } else if (notification.containsKey('groupId')) {
         String groupName = await getGroupName(notification['groupId']);
-        body = getAlertDescription(context, notification['alertType'], groupName);
+        print('Group name: $groupName');
+        body = getAlertDescription(context, alertType, groupName);
       } else {
-        body = S.of(context).issuedAt(notification['issuedAt']);
+        // Convertir la hora recibida del API al formato deseado
+        String issuedAt = notification['issuedAt'];
+        DateTime issuedAtDateTime = DateTime.parse(issuedAt).toUtc().subtract(Duration(hours: 5));
+        String formattedIssuedAt = DateFormat('dd-MM-yyyy HH:mm').format(issuedAtDateTime);
+        body = S.of(context).issuedAt(formattedIssuedAt);
       }
+      print('Notification body: $body');
       await showNotification(title, body);
     }
   } else {
+    print('Error fetching notifications: ${response.statusCode}');
     throw Exception('Error al cargar las notificaciones');
   }
 }
 
-Future<void> fetchAccountNotifications(BuildContext context) async {
+Future<List<Map<String, dynamic>>> fetchAccountNotifications(BuildContext context) async {
+  print('Fetching account notifications');
   final prefs = SharedPreferencesAsync();
   final accountId = prefs.getInt('accountId');
-  String endpoint = '${baseService.baseUrl}/notification/account/$accountId';
-  await fetchAndShowNotification(context, endpoint);
+  print('Account ID: $accountId');
+  
+  if (accountId == null) {
+    print('Error: Account ID is null');
+    throw Exception('Account ID is null');
+  }
+
+  String endpoint = '${baseService.baseUrl}/notification/account/1';
+  final response = await http.get(Uri.parse(endpoint));
+  print('Response status code: ${response.statusCode}');
+
+  if (response.statusCode == 200) {
+    List<dynamic> notifications = json.decode(response.body);
+    print('Notifications fetched: $notifications');
+    return notifications.map((notification) {
+      return {
+        "time": notification['issuedAt'],
+        "title": S.of(context).alert(notification['alertType'].toString()),
+        "description": notification['description'],
+        "viewAction": "View Details",
+        "dismissAction": "Dismiss",
+      };
+    }).toList();
+  } else {
+    print('Error fetching account notifications: ${response.statusCode}');
+    throw Exception('Error al cargar las notificaciones');
+  }
 }
 
 Future<void> fetchGroupNotifications(BuildContext context, int groupId) async {
+  print('Fetching group notifications for group ID: $groupId');
   String endpoint = '${baseService.baseUrl}/notification/group/$groupId';
   await fetchAndShowNotification(context, endpoint);
 }
 
 Future<void> fetchContainerNotifications(BuildContext context, int containerId) async {
+  print('Fetching container notifications for container ID: $containerId');
   String endpoint = '${baseService.baseUrl}/notification/container/$containerId';
   await fetchAndShowNotification(context, endpoint);
 }

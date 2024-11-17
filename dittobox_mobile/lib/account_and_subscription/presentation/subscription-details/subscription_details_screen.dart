@@ -57,6 +57,7 @@ class _SubscriptionDetailsScreenState extends State<SubscriptionDetailsScreen> {
         _bankAccountOwner = '${profileDetails.firstName} ${profileDetails.lastName}';
       });
     }
+    print('Bank account owner: $_bankAccountOwner');
   }
 
   Future<void> _loadAccountDetails() async {

@@ -1,10 +1,12 @@
+import 'dart:ui';
 import 'package:dittobox_mobile/generated/l10n.dart';
 import 'package:dittobox_mobile/routes/app_routes.dart';
 import 'package:dittobox_mobile/shared/services/flutter_notification_services.dart';
+import 'package:dittobox_mobile/styles/dittobox_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import './styles/dittobox_theme.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initNotifications();
@@ -33,6 +35,12 @@ class _MainAppState extends State<MainApp> {
   }
 
   final textTheme = GoogleFonts.poppinsTextTheme();
+
+  @override
+  void initState() {
+    super.initState();
+    startNotificationService(context);
+  }
 
   @override
   Widget build(BuildContext context) {

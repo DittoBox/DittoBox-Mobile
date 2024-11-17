@@ -6,8 +6,6 @@ import 'dart:convert';
 
 class ContainerService extends BaseService {
 
-  final String selfRegisterUrl = 'https://edge-dev-01-dittobox-f7a7ccd2hyadedad.eastus-01.azurewebsites.net/api/v1/cloud-service/self-register-container';
-
   Future<List<Container>> getContainersByAccountId() async {
     try {
       final prefs = SharedPreferencesAsync();
@@ -37,24 +35,6 @@ class ContainerService extends BaseService {
        if (accountId == null) {
         throw Exception('Account ID not found');
       }
-
-      // Auto-register the container
-      final selfRegisterBody = jsonEncode({'uiid': deviceId});
-      print('Self-register request body: $selfRegisterBody');
-
-      final selfRegisterResponse = await http.post(
-        Uri.parse(selfRegisterUrl),
-        headers: {'Content-Type': 'application/json'},
-        body: selfRegisterBody,
-      );
-
-      print('Self-register response status: ${selfRegisterResponse.statusCode}');
-      print('Self-register response body: ${selfRegisterResponse.body}');
-
-      if (selfRegisterResponse.statusCode != 200) {
-        throw Exception('Failed to self-register container');
-      }
-
       // Create the container
       final createContainerBody = jsonEncode({
         'deviceId': deviceId,

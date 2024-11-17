@@ -111,17 +111,15 @@ Future<int> loginUser(String email, String password) async {
 
   Future<Map<String, dynamic>?> getUserDetails() async {
     try {
-      final prefs = await SharedPreferences.getInstance();
-      final userId = prefs.getInt('userId');
+      final prefs = SharedPreferencesAsync();
+      final userId= await prefs.getInt('userId');
       print('User ID: $userId');
       if (userId == null) {
         throw Exception('User ID not found');
       }
-      final token = prefs.getString('token');
       final url = '$baseUrl/user/$userId';
       final response = await http.get(
-        Uri.parse(url),
-        headers: getHeaders(token!),
+        Uri.parse(url)
       );
       var jsonResponse = jsonDecode(response.body);
       if (response.statusCode == 200) {
@@ -141,13 +139,14 @@ Future<int> loginUser(String email, String password) async {
   // "userId": "string"
   // }
   Future logoutUser() async {
-    final prefs = await SharedPreferences.getInstance();
+    final prefs = SharedPreferencesAsync();
     final userId = prefs.getInt('userId');
     final url = '$baseUrl/user/logout';
-    final token = prefs.getString('token');
     await http.post(
       Uri.parse(url),
-      headers: getHeaders(token!),
+      headers: {
+        'Content-Type': 'application/json',
+      },
       body: jsonEncode({
         'userId': userId,
       }),
