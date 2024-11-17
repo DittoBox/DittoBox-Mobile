@@ -23,11 +23,14 @@ class _ContainerBottomSheetState extends State<ContainerBottomSheet> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final textTheme = theme.textTheme;
+
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-      decoration: const BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+      decoration: BoxDecoration(
+        color: theme.bottomSheetTheme.backgroundColor ?? theme.cardColor,
+        borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
       ),
       child: SingleChildScrollView(
         child: Column(
@@ -41,7 +44,7 @@ class _ContainerBottomSheetState extends State<ContainerBottomSheet> {
                 height: 4,
                 margin: const EdgeInsets.only(bottom: 16),
                 decoration: BoxDecoration(
-                  color: Colors.grey[400],
+                  color: theme.dividerColor,
                   borderRadius: BorderRadius.circular(2),
                 ),
               ),
@@ -53,22 +56,14 @@ class _ContainerBottomSheetState extends State<ContainerBottomSheet> {
               children: [
                 Text(
                   widget.container.name,
-                  style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  ),
                 ),
                 Text(
                   widget.container.lastKnownContainerStatus,
-                  style: TextStyle(
-                    color: widget.container.lastKnownContainerStatus == 'Active' ? Colors.green : Colors.grey,
-                    fontWeight: FontWeight.bold,
-                  ),
                 ),
               ],
             ),
             const SizedBox(height: 8),
-            Text(widget.container.description),
+            Text(widget.container.description, style: textTheme.bodyMedium),
             const SizedBox(height: 16),
             
             // Information Rows
@@ -117,7 +112,6 @@ class _ContainerBottomSheetState extends State<ContainerBottomSheet> {
             const SizedBox(height: 8),
             Text(
               S.of(context).templateConfiguration,
-              style: const TextStyle(fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),
 
@@ -130,7 +124,7 @@ class _ContainerBottomSheetState extends State<ContainerBottomSheet> {
                 widget.container.ammoniaMin == null && widget.container.ammoniaMax == null &&
                 widget.container.sulfurDioxideMin == null && widget.container.sulfurDioxideMax == null)
               ...[
-                Text(S.of(context).noTemplateAssigned),
+                Text(S.of(context).noTemplateAssigned, style: textTheme.bodyMedium),
                 const SizedBox(height: 16),
                 Align(
                   alignment: Alignment.centerRight,
@@ -203,68 +197,71 @@ class _ContainerBottomSheetState extends State<ContainerBottomSheet> {
     );
   }
 
-void _showTemplateSelectionModal(BuildContext context) async {
-  final templateService = TemplateService();
-  final templates = await templateService.getTemplates();
+  void _showTemplateSelectionModal(BuildContext context) async {
+    final templateService = TemplateService();
+    final templates = await templateService.getTemplates();
 
-  if (!mounted) return; // Verifica si el widget está montado antes de mostrar el diálogo
+    if (!mounted) return; // Verifica si el widget está montado antes de mostrar el diálogo
 
-  showDialog(
-    // ignore: use_build_context_synchronously
-    context: context,
-    builder: (BuildContext context) {
-      return StatefulBuilder(
-        builder: (context, setState) {
-          return AlertDialog(
-            title: Text(S.of(context).templateConfiguration),
-            content: _isLoading
-                ? const Center(child: CircularProgressIndicator())
-                : SizedBox(
-                    width: double.maxFinite,
-                    child: TemplateSelectionModal(
-                      templates: templates,
-                      onTemplateSelected: (template) async {
-                        setState(() {
-                          _isLoading = true;
-                        });
-                        try {
-                          final containerService = ContainerService();
-                          await containerService.assignTemplateToContainer(widget.container.id, template.id);
-                          if (!mounted) return; // Verifica si el widget está montado antes de actualizar el estado
+    showDialog(
+      // ignore: use_build_context_synchronously
+      context: context,
+      builder: (BuildContext context) {
+        return StatefulBuilder(
+          builder: (context, setState) {
+            return AlertDialog(
+              title: Text(S.of(context).templateConfiguration),
+              content: _isLoading
+                  ? const Center(child: CircularProgressIndicator())
+                  : SizedBox(
+                      width: double.maxFinite,
+                      child: TemplateSelectionModal(
+                        templates: templates,
+                        onTemplateSelected: (template) async {
                           setState(() {
-                            _isLoading = false;
-                            _isSuccess = true;
+                            _isLoading = true;
                           });
-                          Future.delayed(const Duration(seconds: 2), () {
-                            if (!mounted) return; // Verifica si el widget está montado antes de navegar
-                            Navigator.of(context).pop(); // Cierra el modal
-                            widget.onTemplateAssigned(); // Callback para recargar la lista de contenedores
-                          });
-                        } catch (e) {
-                          if (!mounted) return; // Verifica si el widget está montado antes de actualizar el estado
-                          setState(() {
-                            _isLoading = false;
-                          });
-                        }
-                      },
+                          try {
+                            final containerService = ContainerService();
+                            await containerService.assignTemplateToContainer(widget.container.id, template.id);
+                            if (!mounted) return; // Verifica si el widget está montado antes de actualizar el estado
+                            setState(() {
+                              _isLoading = false;
+                              _isSuccess = true;
+                            });
+                            Future.delayed(const Duration(seconds: 2), () {
+                              if (!mounted) return; // Verifica si el widget está montado antes de navegar
+                              Navigator.of(context).pop(); // Cierra el modal
+                              widget.onTemplateAssigned(); // Callback para recargar la lista de contenedores
+                            });
+                          } catch (e) {
+                            if (!mounted) return; // Verifica si el widget está montado antes de actualizar el estado
+                            setState(() {
+                              _isLoading = false;
+                            });
+                          }
+                        },
+                      ),
                     ),
-                  ),
-            actions: [
-              TextButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                child: Text(S.of(context).cancel),
-              ),
-            ],
-          );
-        },
-      );
-    },
-  );
-}
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Text(S.of(context).cancel),
+                ),
+              ],
+            );
+          },
+        );
+      },
+    );
+  }
 
   Widget buildInfoRowWithIcon(IconData icon, String label, dynamic value) {
+    final theme = Theme.of(context);
+    final textTheme = theme.textTheme;
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -272,20 +269,22 @@ void _showTemplateSelectionModal(BuildContext context) async {
           children: [
             Icon(icon, size: 20),
             const SizedBox(width: 8),
-            Text(label),
+            Text(label, style: textTheme.bodyMedium),
           ],
         ),
-        Text(value?.toString() ?? '--'),
+        Text(value?.toString() ?? '--', style: textTheme.bodyMedium),
       ],
     );
   }
 
   Widget _buildTemplateConfigRow(String label, double? minValue, double? maxValue) {
+    final textTheme = Theme.of(context).textTheme;
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(label),
-        Text('${minValue?.toString() ?? '--'} - ${maxValue?.toString() ?? '--'}'),
+        Text(label, style: textTheme.bodyMedium),
+        Text('${minValue?.toString() ?? '--'} - ${maxValue?.toString() ?? '--'}', style: textTheme.bodyMedium),
       ],
     );
   }
