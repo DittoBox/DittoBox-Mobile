@@ -20,6 +20,75 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
+  static String m0(alertType) => "Alert: ${alertType}";
+
+  static String m1(name) => "The container ${name} has been activated.";
+
+  static String m2(name) => "The container ${name} has been deactivated.";
+
+  static String m3(name) => "Health report of the container ${name}.";
+
+  static String m4(name) => "The container ${name} has been linked.";
+
+  static String m5(name) =>
+      "The container ${name} has been manually turned off.";
+
+  static String m6(name) =>
+      "The container ${name} has been manually turned on.";
+
+  static String m7(name) => "The container ${name} is off.";
+
+  static String m8(name) => "The container ${name} is offline.";
+
+  static String m9(name) => "The container ${name} is on.";
+
+  static String m10(name) => "The container ${name} is online.";
+
+  static String m11(name) => "The container ${name} has been opened.";
+
+  static String m12(name) => "Status report of the container ${name}.";
+
+  static String m13(name) => "The container ${name} has been unlinked.";
+
+  static String m14(name) =>
+      "Decomposition gases have been detected in ${name}.";
+
+  static String m15(name) => "Humidity regulation in ${name} has failed.";
+
+  static String m16(name) => "Humidity regulation in ${name} was successful.";
+
+  static String m17(name) =>
+      "Humidity regulation has been triggered in ${name}.";
+
+  static String m18(name) =>
+      "The humidity in ${name} has exceeded the allowed threshold.";
+
+  static String m19(issuedAt) => "Issued at: ${issuedAt}";
+
+  static String m20(name) => "Temperature regulation in ${name} has failed.";
+
+  static String m21(name) =>
+      "Temperature regulation in ${name} was successful.";
+
+  static String m22(name) =>
+      "Temperature regulation has been triggered in ${name}.";
+
+  static String m23(name) =>
+      "The temperature in ${name} has exceeded the allowed threshold.";
+
+  static String m24(name) =>
+      "A template has been assigned to the container ${name}.";
+
+  static String m25(name) => "Unknown alert in ${name}.";
+
+  static String m26(name) => "Ventilation regulation in ${name} has failed.";
+
+  static String m27(name) =>
+      "Ventilation regulation in ${name} was successful.";
+
+  static String m28(name) =>
+      "Ventilation regulation has been triggered in ${name}.";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "aboutYourCompany":
@@ -41,6 +110,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "advancePlan": MessageLookupByLibrary.simpleMessage("Advance Plan"),
         "advancedAutomaticTemplates": MessageLookupByLibrary.simpleMessage(
             "Advanced automatic templates and adjustments for preserving various types of food."),
+        "alert": m0,
         "alerts": MessageLookupByLibrary.simpleMessage("Alerts"),
         "all": MessageLookupByLibrary.simpleMessage("All"),
         "allContainers": MessageLookupByLibrary.simpleMessage("All containers"),
@@ -116,19 +186,33 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
         "confirmPasswordRequired": MessageLookupByLibrary.simpleMessage(
             "Confirm password is required"),
+        "containerActivated": m1,
         "containerCreatedSuccessfully": MessageLookupByLibrary.simpleMessage(
             "Container created successfully"),
+        "containerDeactivated": m2,
         "containerDescription":
             MessageLookupByLibrary.simpleMessage("Container description"),
+        "containerHealthReport": m3,
+        "containerLinked": m4,
+        "containerManualOff": m5,
+        "containerManualOn": m6,
         "containerName": MessageLookupByLibrary.simpleMessage("Container name"),
+        "containerOff": m7,
+        "containerOffline": m8,
+        "containerOn": m9,
+        "containerOnline": m10,
+        "containerOpened": m11,
         "containerSelectionModal": MessageLookupByLibrary.simpleMessage(
             "This change will be recorded in this container’s historial."),
+        "containerStatusReport": m12,
+        "containerUnlinked": m13,
         "containers": MessageLookupByLibrary.simpleMessage("Containers"),
         "containersNotFound": MessageLookupByLibrary.simpleMessage(
             "You don\'t have any Dittobox containers yet"),
         "country": MessageLookupByLibrary.simpleMessage("Country"),
         "currentConfigs":
             MessageLookupByLibrary.simpleMessage("Current configurations"),
+        "decompositionGasesDetected": m14,
         "delete": MessageLookupByLibrary.simpleMessage("Delete"),
         "description": MessageLookupByLibrary.simpleMessage("Description"),
         "details": MessageLookupByLibrary.simpleMessage("Details"),
@@ -170,6 +254,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "humidity": MessageLookupByLibrary.simpleMessage("Humidity"),
         "humidityMax": MessageLookupByLibrary.simpleMessage("Max humidity"),
         "humidityMin": MessageLookupByLibrary.simpleMessage("Min humidity"),
+        "humidityRegulationFailed": m15,
+        "humidityRegulationSuccessful": m16,
+        "humidityRegulationTriggered": m17,
+        "humidityThresholdExceeded": m18,
         "identificationNumber":
             MessageLookupByLibrary.simpleMessage("Identification number"),
         "invalidCardHolderName":
@@ -180,6 +268,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "invalidEmail": MessageLookupByLibrary.simpleMessage("Invalid email"),
         "invalidExpiryDate":
             MessageLookupByLibrary.simpleMessage("Invalid expiry date"),
+        "issuedAt": m19,
         "language": MessageLookupByLibrary.simpleMessage("Language"),
         "lastKnownHealthStatus":
             MessageLookupByLibrary.simpleMessage("Last known health status"),
@@ -333,7 +422,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "tempMax": MessageLookupByLibrary.simpleMessage("Max temperature"),
         "tempMin": MessageLookupByLibrary.simpleMessage("Min temperature"),
         "temperature": MessageLookupByLibrary.simpleMessage("Temperature"),
+        "temperatureRegulationFailed": m20,
+        "temperatureRegulationSuccessful": m21,
+        "temperatureRegulationTriggered": m22,
+        "temperatureThresholdExceeded": m23,
         "template": MessageLookupByLibrary.simpleMessage("Template"),
+        "templateAssigned": m24,
         "templateAssignedSuccessfully": MessageLookupByLibrary.simpleMessage(
             "Template assigned successfully"),
         "templateConfiguration":
@@ -344,6 +438,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "templates": MessageLookupByLibrary.simpleMessage("Templates"),
         "title": MessageLookupByLibrary.simpleMessage("DittoBox"),
         "type": MessageLookupByLibrary.simpleMessage("Type"),
+        "unknownAlert": m25,
         "upTo": MessageLookupByLibrary.simpleMessage("Up to"),
         "updatePaymentInformation":
             MessageLookupByLibrary.simpleMessage("Update"),
@@ -355,6 +450,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "username": MessageLookupByLibrary.simpleMessage("Username"),
         "usernameCannotBeEmpty":
             MessageLookupByLibrary.simpleMessage("Username cannot be empty"),
+        "ventilationRegulationFailed": m26,
+        "ventilationRegulationSuccessful": m27,
+        "ventilationRegulationTriggered": m28,
         "verifyCode": MessageLookupByLibrary.simpleMessage("Verify Code"),
         "viewContainers":
             MessageLookupByLibrary.simpleMessage("View containers"),

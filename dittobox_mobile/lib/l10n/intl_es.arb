@@ -935,5 +935,295 @@
   "errorApplicatingaTemplate": "Error al aplicar la plantilla",
   "@errorApplicatingaTemplate": {
     "description": "Mensaje de error cuando no se puede aplicar la plantilla"
-  }
+  },
+  "temperatureThresholdExceeded": "La temperatura en {name} ha excedido el umbral permitido.",
+  "@temperatureThresholdExceeded": {
+    "description": "Mensaje de error cuando se excede el umbral de temperatura",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "humidityThresholdExceeded": "La humedad en {name} ha excedido el umbral permitido.",
+  "@humidityThresholdExceeded": {
+    "description": "Mensaje de error cuando se excede el umbral de humedad",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "decompositionGasesDetected": "Se han detectado gases de descomposición en {name}.",
+  "@decompositionGasesDetected": {
+    "description": "Mensaje de error cuando se detectan gases de descomposición",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "containerLinked": "El contenedor {name} ha sido vinculado.",
+  "@containerLinked": {
+    "description": "Mensaje de éxito cuando el contenedor está vinculado",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "containerUnlinked": "El contenedor {name} ha sido desvinculado.",
+  "@containerUnlinked": {
+    "description": "Mensaje de éxito cuando el contenedor está desvinculado",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "containerOff": "El contenedor {name} está apagado.",
+  "@containerOff": {
+    "description": "Mensaje de error cuando el contenedor está apagado",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "containerOn": "El contenedor {name} está encendido.",
+  "@containerOn": {
+    "description": "Mensaje de éxito cuando el contenedor está encendido",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "templateAssigned": "Se ha asignado una plantilla al contenedor {name}.",
+  "@templateAssigned": {
+    "description": "Mensaje de éxito cuando se asigna una plantilla",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "containerActivated": "El contenedor {name} ha sido activado.",
+  "@containerActivated": {
+    "description": "Mensaje de éxito cuando el contenedor está activado",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "containerDeactivated": "El contenedor {name} ha sido desactivado.",
+  "@containerDeactivated": {
+    "description": "Mensaje de éxito cuando el contenedor está desactivado",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "temperatureRegulationTriggered": "Se ha iniciado la regulación de temperatura en {name}.",
+  "@temperatureRegulationTriggered": {
+    "description": "Mensaje de error cuando se inicia la regulación de temperatura",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "temperatureRegulationSuccessful": "La regulación de temperatura en {name} fue exitosa.",
+  "@temperatureRegulationSuccessful": {
+    "description": "Mensaje de éxito cuando la regulación de temperatura es exitosa",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "temperatureRegulationFailed": "La regulación de temperatura en {name} ha fallado.",
+  "@temperatureRegulationFailed": {
+    "description": "Mensaje de error cuando la regulación de temperatura falla",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "humidityRegulationTriggered": "Se ha iniciado la regulación de humedad en {name}.",
+  "@humidityRegulationTriggered": {
+    "description": "Mensaje de error cuando se inicia la regulación de humedad",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "humidityRegulationSuccessful": "La regulación de humedad en {name} fue exitosa.",
+  "@humidityRegulationSuccessful": {
+    "description": "Mensaje de éxito cuando la regulación de humedad es exitosa",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "humidityRegulationFailed": "La regulación de humedad en {name} ha fallado.",
+  "@humidityRegulationFailed": {
+    "description": "Mensaje de error cuando la regulación de humedad falla",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "ventilationRegulationTriggered": "Se ha iniciado la regulación de ventilación en {name}.",
+  "@ventilationRegulationTriggered": {
+    "description": "Mensaje de error cuando se inicia la regulación de ventilación",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "ventilationRegulationSuccessful": "La regulación de ventilación en {name} fue exitosa.",
+  "@ventilationRegulationSuccessful": {
+    "description": "Mensaje de éxito cuando la regulación de ventilación es exitosa",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "ventilationRegulationFailed": "La regulación de ventilación en {name} ha fallado.",
+  "@ventilationRegulationFailed": {
+    "description": "Mensaje de error cuando la regulación de ventilación falla",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "containerHealthReport": "Reporte de salud del contenedor {name}.",
+  "@containerHealthReport": {
+    "description": "Etiqueta para el reporte de salud del contenedor",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "containerStatusReport": "Reporte de estado del contenedor {name}.",
+  "@containerStatusReport": {
+    "description": "Etiqueta para el reporte de estado del contenedor",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "containerManualOn": "El contenedor {name} ha sido encendido manualmente.",
+  "@containerManualOn": {
+    "description": "Mensaje de éxito cuando el contenedor se enciende manualmente",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "containerManualOff": "El contenedor {name} ha sido apagado manualmente.",
+  "@containerManualOff": {
+    "description": "Mensaje de éxito cuando el contenedor se apaga manualmente",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "containerOpened": "El contenedor {name} ha sido abierto.",
+  "@containerOpened": {
+    "description": "Mensaje de error cuando el contenedor está abierto",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "containerOnline": "El contenedor {name} está en línea.",
+  "@containerOnline": {
+    "description": "Mensaje de éxito cuando el contenedor está en línea",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "containerOffline": "El contenedor {name} está fuera de línea.",
+  "@containerOffline": {
+    "description": "Mensaje de error cuando el contenedor está fuera de línea",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "unknownAlert": "Alerta desconocida en {name}.",
+    "@unknownAlert": {
+      "description": "Mensaje de error cuando la alerta es desconocida",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Contenedor A"
+        }
+      }
+    },
+    "alert": "Alerta: {alertType}",
+    "@alert": {
+      "description": "Etiqueta para alerta",
+      "placeholders": {
+        "alertType": {
+          "type": "String",
+          "example": "TemperatureThresholdExceeded"
+        }
+      }
+    },
+    "issuedAt": "Emitido a las {issuedAt}",
+    "@issuedAt": {
+      "description": "Etiqueta para emitido a las",
+      "placeholders": {
+        "issuedAt": {
+          "type": "String",
+          "example": "2024-11-17T05:46:11.518Z"
+        }
+      }
+    }
 }

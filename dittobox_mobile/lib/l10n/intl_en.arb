@@ -939,5 +939,295 @@
   "errorApplicatingaTemplate": "Error applicating a template",
   "@errorApplicatingaTemplate": {
     "description": "Error message when applying a template fails"
+  },
+    "temperatureThresholdExceeded": "The temperature in {name} has exceeded the allowed threshold.",
+    "@temperatureThresholdExceeded": {
+      "description": "Error message when temperature threshold is exceeded",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "humidityThresholdExceeded": "The humidity in {name} has exceeded the allowed threshold.",
+    "@humidityThresholdExceeded": {
+      "description": "Error message when humidity threshold is exceeded",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "decompositionGasesDetected": "Decomposition gases have been detected in {name}.",
+    "@decompositionGasesDetected": {
+      "description": "Error message when decomposition gases are detected",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "containerLinked": "The container {name} has been linked.",
+    "@containerLinked": {
+      "description": "Success message when container is linked",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "containerUnlinked": "The container {name} has been unlinked.",
+    "@containerUnlinked": {
+      "description": "Success message when container is unlinked",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "containerOff": "The container {name} is off.",
+    "@containerOff": {
+      "description": "Error message when container is off",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "containerOn": "The container {name} is on.",
+    "@containerOn": {
+      "description": "Success message when container is on",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "templateAssigned": "A template has been assigned to the container {name}.",
+    "@templateAssigned": {
+      "description": "Success message when template is assigned",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "containerActivated": "The container {name} has been activated.",
+    "@containerActivated": {
+      "description": "Success message when container is activated",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "containerDeactivated": "The container {name} has been deactivated.",
+    "@containerDeactivated": {
+      "description": "Success message when container is deactivated",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "temperatureRegulationTriggered": "Temperature regulation has been triggered in {name}.",
+    "@temperatureRegulationTriggered": {
+      "description": "Error message when temperature regulation is triggered",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "temperatureRegulationSuccessful": "Temperature regulation in {name} was successful.",
+    "@temperatureRegulationSuccessful": {
+      "description": "Success message when temperature regulation is successful",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "temperatureRegulationFailed": "Temperature regulation in {name} has failed.",
+    "@temperatureRegulationFailed": {
+      "description": "Error message when temperature regulation fails",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "humidityRegulationTriggered": "Humidity regulation has been triggered in {name}.",
+    "@humidityRegulationTriggered": {
+      "description": "Error message when humidity regulation is triggered",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "humidityRegulationSuccessful": "Humidity regulation in {name} was successful.",
+    "@humidityRegulationSuccessful": {
+      "description": "Success message when humidity regulation is successful",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "humidityRegulationFailed": "Humidity regulation in {name} has failed.",
+    "@humidityRegulationFailed": {
+      "description": "Error message when humidity regulation fails",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "ventilationRegulationTriggered": "Ventilation regulation has been triggered in {name}.",
+    "@ventilationRegulationTriggered": {
+      "description": "Error message when ventilation regulation is triggered",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "ventilationRegulationSuccessful": "Ventilation regulation in {name} was successful.",
+    "@ventilationRegulationSuccessful": {
+      "description": "Success message when ventilation regulation is successful",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "ventilationRegulationFailed": "Ventilation regulation in {name} has failed.",
+    "@ventilationRegulationFailed": {
+      "description": "Error message when ventilation regulation fails",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "containerHealthReport": "Health report of the container {name}.",
+    "@containerHealthReport": {
+      "description": "Label for container health report",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "containerStatusReport": "Status report of the container {name}.",
+    "@containerStatusReport": {
+      "description": "Label for container status report",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "containerManualOn": "The container {name} has been manually turned on.",
+    "@containerManualOn": {
+      "description": "Success message when container is manually turned on",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "containerManualOff": "The container {name} has been manually turned off.",
+    "@containerManualOff": {
+      "description": "Success message when container is manually turned off",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "containerOpened": "The container {name} has been opened.",
+    "@containerOpened": {
+      "description": "Error message when container is opened",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "containerOnline": "The container {name} is online.",
+    "@containerOnline": {
+      "description": "Success message when container is online",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "containerOffline": "The container {name} is offline.",
+    "@containerOffline": {
+      "description": "Error message when container is offline",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "unknownAlert": "Unknown alert in {name}.",
+    "@unknownAlert": {
+      "description": "Error message when alert is unknown",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "alert": "Alert: {alertType}",
+    "@alert": {
+      "description": "Label for alert",
+      "placeholders": {
+        "alertType": {
+          "type": "String",
+          "example": "TemperatureThresholdExceeded"
+        }
+      }
+    },
+    "issuedAt": "Issued at: {issuedAt}",
+    "@issuedAt": {
+      "description": "Label for issued at",
+      "placeholders": {
+        "issuedAt": {
+          "type": "String",
+          "example": "2024-11-17T05:46:11.518Z"
+        }
+      }
+    }
   }
-}

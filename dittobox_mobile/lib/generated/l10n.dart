@@ -2402,6 +2402,296 @@ class S {
       args: [],
     );
   }
+
+  /// `The temperature in {name} has exceeded the allowed threshold.`
+  String temperatureThresholdExceeded(String name) {
+    return Intl.message(
+      'The temperature in $name has exceeded the allowed threshold.',
+      name: 'temperatureThresholdExceeded',
+      desc: 'Error message when temperature threshold is exceeded',
+      args: [name],
+    );
+  }
+
+  /// `The humidity in {name} has exceeded the allowed threshold.`
+  String humidityThresholdExceeded(String name) {
+    return Intl.message(
+      'The humidity in $name has exceeded the allowed threshold.',
+      name: 'humidityThresholdExceeded',
+      desc: 'Error message when humidity threshold is exceeded',
+      args: [name],
+    );
+  }
+
+  /// `Decomposition gases have been detected in {name}.`
+  String decompositionGasesDetected(String name) {
+    return Intl.message(
+      'Decomposition gases have been detected in $name.',
+      name: 'decompositionGasesDetected',
+      desc: 'Error message when decomposition gases are detected',
+      args: [name],
+    );
+  }
+
+  /// `The container {name} has been linked.`
+  String containerLinked(String name) {
+    return Intl.message(
+      'The container $name has been linked.',
+      name: 'containerLinked',
+      desc: 'Success message when container is linked',
+      args: [name],
+    );
+  }
+
+  /// `The container {name} has been unlinked.`
+  String containerUnlinked(String name) {
+    return Intl.message(
+      'The container $name has been unlinked.',
+      name: 'containerUnlinked',
+      desc: 'Success message when container is unlinked',
+      args: [name],
+    );
+  }
+
+  /// `The container {name} is off.`
+  String containerOff(String name) {
+    return Intl.message(
+      'The container $name is off.',
+      name: 'containerOff',
+      desc: 'Error message when container is off',
+      args: [name],
+    );
+  }
+
+  /// `The container {name} is on.`
+  String containerOn(String name) {
+    return Intl.message(
+      'The container $name is on.',
+      name: 'containerOn',
+      desc: 'Success message when container is on',
+      args: [name],
+    );
+  }
+
+  /// `A template has been assigned to the container {name}.`
+  String templateAssigned(String name) {
+    return Intl.message(
+      'A template has been assigned to the container $name.',
+      name: 'templateAssigned',
+      desc: 'Success message when template is assigned',
+      args: [name],
+    );
+  }
+
+  /// `The container {name} has been activated.`
+  String containerActivated(String name) {
+    return Intl.message(
+      'The container $name has been activated.',
+      name: 'containerActivated',
+      desc: 'Success message when container is activated',
+      args: [name],
+    );
+  }
+
+  /// `The container {name} has been deactivated.`
+  String containerDeactivated(String name) {
+    return Intl.message(
+      'The container $name has been deactivated.',
+      name: 'containerDeactivated',
+      desc: 'Success message when container is deactivated',
+      args: [name],
+    );
+  }
+
+  /// `Temperature regulation has been triggered in {name}.`
+  String temperatureRegulationTriggered(String name) {
+    return Intl.message(
+      'Temperature regulation has been triggered in $name.',
+      name: 'temperatureRegulationTriggered',
+      desc: 'Error message when temperature regulation is triggered',
+      args: [name],
+    );
+  }
+
+  /// `Temperature regulation in {name} was successful.`
+  String temperatureRegulationSuccessful(String name) {
+    return Intl.message(
+      'Temperature regulation in $name was successful.',
+      name: 'temperatureRegulationSuccessful',
+      desc: 'Success message when temperature regulation is successful',
+      args: [name],
+    );
+  }
+
+  /// `Temperature regulation in {name} has failed.`
+  String temperatureRegulationFailed(String name) {
+    return Intl.message(
+      'Temperature regulation in $name has failed.',
+      name: 'temperatureRegulationFailed',
+      desc: 'Error message when temperature regulation fails',
+      args: [name],
+    );
+  }
+
+  /// `Humidity regulation has been triggered in {name}.`
+  String humidityRegulationTriggered(String name) {
+    return Intl.message(
+      'Humidity regulation has been triggered in $name.',
+      name: 'humidityRegulationTriggered',
+      desc: 'Error message when humidity regulation is triggered',
+      args: [name],
+    );
+  }
+
+  /// `Humidity regulation in {name} was successful.`
+  String humidityRegulationSuccessful(String name) {
+    return Intl.message(
+      'Humidity regulation in $name was successful.',
+      name: 'humidityRegulationSuccessful',
+      desc: 'Success message when humidity regulation is successful',
+      args: [name],
+    );
+  }
+
+  /// `Humidity regulation in {name} has failed.`
+  String humidityRegulationFailed(String name) {
+    return Intl.message(
+      'Humidity regulation in $name has failed.',
+      name: 'humidityRegulationFailed',
+      desc: 'Error message when humidity regulation fails',
+      args: [name],
+    );
+  }
+
+  /// `Ventilation regulation has been triggered in {name}.`
+  String ventilationRegulationTriggered(String name) {
+    return Intl.message(
+      'Ventilation regulation has been triggered in $name.',
+      name: 'ventilationRegulationTriggered',
+      desc: 'Error message when ventilation regulation is triggered',
+      args: [name],
+    );
+  }
+
+  /// `Ventilation regulation in {name} was successful.`
+  String ventilationRegulationSuccessful(String name) {
+    return Intl.message(
+      'Ventilation regulation in $name was successful.',
+      name: 'ventilationRegulationSuccessful',
+      desc: 'Success message when ventilation regulation is successful',
+      args: [name],
+    );
+  }
+
+  /// `Ventilation regulation in {name} has failed.`
+  String ventilationRegulationFailed(String name) {
+    return Intl.message(
+      'Ventilation regulation in $name has failed.',
+      name: 'ventilationRegulationFailed',
+      desc: 'Error message when ventilation regulation fails',
+      args: [name],
+    );
+  }
+
+  /// `Health report of the container {name}.`
+  String containerHealthReport(String name) {
+    return Intl.message(
+      'Health report of the container $name.',
+      name: 'containerHealthReport',
+      desc: 'Label for container health report',
+      args: [name],
+    );
+  }
+
+  /// `Status report of the container {name}.`
+  String containerStatusReport(String name) {
+    return Intl.message(
+      'Status report of the container $name.',
+      name: 'containerStatusReport',
+      desc: 'Label for container status report',
+      args: [name],
+    );
+  }
+
+  /// `The container {name} has been manually turned on.`
+  String containerManualOn(String name) {
+    return Intl.message(
+      'The container $name has been manually turned on.',
+      name: 'containerManualOn',
+      desc: 'Success message when container is manually turned on',
+      args: [name],
+    );
+  }
+
+  /// `The container {name} has been manually turned off.`
+  String containerManualOff(String name) {
+    return Intl.message(
+      'The container $name has been manually turned off.',
+      name: 'containerManualOff',
+      desc: 'Success message when container is manually turned off',
+      args: [name],
+    );
+  }
+
+  /// `The container {name} has been opened.`
+  String containerOpened(String name) {
+    return Intl.message(
+      'The container $name has been opened.',
+      name: 'containerOpened',
+      desc: 'Error message when container is opened',
+      args: [name],
+    );
+  }
+
+  /// `The container {name} is online.`
+  String containerOnline(String name) {
+    return Intl.message(
+      'The container $name is online.',
+      name: 'containerOnline',
+      desc: 'Success message when container is online',
+      args: [name],
+    );
+  }
+
+  /// `The container {name} is offline.`
+  String containerOffline(String name) {
+    return Intl.message(
+      'The container $name is offline.',
+      name: 'containerOffline',
+      desc: 'Error message when container is offline',
+      args: [name],
+    );
+  }
+
+  /// `Unknown alert in {name}.`
+  String unknownAlert(String name) {
+    return Intl.message(
+      'Unknown alert in $name.',
+      name: 'unknownAlert',
+      desc: 'Error message when alert is unknown',
+      args: [name],
+    );
+  }
+
+  /// `Alert: {alertType}`
+  String alert(String alertType) {
+    return Intl.message(
+      'Alert: $alertType',
+      name: 'alert',
+      desc: 'Label for alert',
+      args: [alertType],
+    );
+  }
+
+  /// `Issued at: {issuedAt}`
+  String issuedAt(String issuedAt) {
+    return Intl.message(
+      'Issued at: $issuedAt',
+      name: 'issuedAt',
+      desc: 'Label for issued at',
+      args: [issuedAt],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
