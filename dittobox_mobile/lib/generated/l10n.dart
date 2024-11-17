@@ -3033,6 +3033,96 @@ class S {
       args: [name],
     );
   }
+
+  /// `No users found`
+  String get notUsersFound {
+    return Intl.message(
+      'No users found',
+      name: 'notUsersFound',
+      desc: 'Error message when no users are found',
+      args: [],
+    );
+  }
+
+  /// `Failed to add worker`
+  String get failedtoAddWorker {
+    return Intl.message(
+      'Failed to add worker',
+      name: 'failedtoAddWorker',
+      desc: 'Error message when failing to add worker',
+      args: [],
+    );
+  }
+
+  /// `Manager`
+  String get manager {
+    return Intl.message(
+      'Manager',
+      name: 'manager',
+      desc: 'Label for manager',
+      args: [],
+    );
+  }
+
+  /// `Facility`
+  String get facility {
+    return Intl.message(
+      'Facility',
+      name: 'facility',
+      desc: 'Label for facility',
+      args: [],
+    );
+  }
+
+  /// `Current Tier`
+  String get currenTier {
+    return Intl.message(
+      'Current Tier',
+      name: 'currenTier',
+      desc: 'Label for current tier',
+      args: [],
+    );
+  }
+
+  /// `Active`
+  String get active {
+    return Intl.message(
+      'Active',
+      name: 'active',
+      desc: 'Label for active',
+      args: [],
+    );
+  }
+
+  /// `Expired`
+  String get expired {
+    return Intl.message(
+      'Expired',
+      name: 'expired',
+      desc: 'Label for expired',
+      args: [],
+    );
+  }
+
+  /// `No location`
+  String get noLocation {
+    return Intl.message(
+      'No location',
+      name: 'noLocation',
+      desc: 'Label for no location',
+      args: [],
+    );
+  }
+
+  /// `None`
+  String get noPoseefacility {
+    return Intl.message(
+      'None',
+      name: 'noPoseefacility',
+      desc: 'Label for none',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

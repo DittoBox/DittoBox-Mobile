@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:dittobox_mobile/goups/infrastructure/models/facilities.dart';
 import 'package:dittobox_mobile/goups/infrastructure/data_sources/facilities_service.dart';
 import 'package:dittobox_mobile/containers/presentation/widgets/add_container_sheet.dart';
+import 'package:intl/intl.dart'; // Importa intl para formatear la fecha
 
 class ContainerListScreen extends StatefulWidget {
   const ContainerListScreen({super.key});
@@ -69,6 +70,8 @@ class _ContainerListScreenState extends State<ContainerListScreen> with SingleTi
       });
     } catch (e) {
       // Manejo de errores
+
+      
       print('Error fetching facilities: $e');
     }
   }
@@ -89,7 +92,7 @@ class _ContainerListScreenState extends State<ContainerListScreen> with SingleTi
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Containers'),
+        title: Text(S.of(context).containers),
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(100.0),
           child: Column(
@@ -97,9 +100,9 @@ class _ContainerListScreenState extends State<ContainerListScreen> with SingleTi
               _buildFacilityChips(),
               TabBar(
                 controller: _tabController,
-                tabs: const [
-                  Tab(text: 'All'),
-                  Tab(text: 'Active'),
+                tabs:  [
+                  Tab(text: S.of(context).all),
+                  Tab(text: S.of(context).active),
                 ],
               ),
             ],
@@ -312,7 +315,7 @@ class ContainerCard extends StatelessWidget {
                       Text(S.of(context).lastSync),
                     ],
                   ),
-                  Text(container.lastSync.toString()),
+                  Text(_formatLastSync(container.lastSync)),
                 ],
               ),
             ],
@@ -320,5 +323,12 @@ class ContainerCard extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  String _formatLastSync(DateTime? lastSync) {
+    if (lastSync == null) {
+      return '--';
+    }
+    return DateFormat('yyyy-MM-dd HH:mm').format(lastSync);
   }
 }

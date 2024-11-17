@@ -110,6 +110,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Account Information"),
         "accountInformationDetails":
             MessageLookupByLibrary.simpleMessage("Account Information Details"),
+        "active": MessageLookupByLibrary.simpleMessage("Active"),
         "addContainer": MessageLookupByLibrary.simpleMessage("Add container"),
         "addContainers": MessageLookupByLibrary.simpleMessage("Add containers"),
         "addTemplate": MessageLookupByLibrary.simpleMessage("Add template"),
@@ -244,6 +245,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "containersNotFound": MessageLookupByLibrary.simpleMessage(
             "You don\'t have any Dittobox containers yet"),
         "country": MessageLookupByLibrary.simpleMessage("Country"),
+        "currenTier": MessageLookupByLibrary.simpleMessage("Current Tier"),
         "currentConfigs":
             MessageLookupByLibrary.simpleMessage("Current configurations"),
         "decompositionGasesDetected": m14,
@@ -272,7 +274,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "ethyleneMin": MessageLookupByLibrary.simpleMessage("Min ethylene"),
         "expirationDate":
             MessageLookupByLibrary.simpleMessage("Expiration date"),
+        "expired": MessageLookupByLibrary.simpleMessage("Expired"),
         "facilities": MessageLookupByLibrary.simpleMessage("Facilities"),
+        "facility": MessageLookupByLibrary.simpleMessage("Facility"),
         "facilityCreatedSuccessfully": MessageLookupByLibrary.simpleMessage(
             "Facility created successfully"),
         "facilityName": MessageLookupByLibrary.simpleMessage("Facility name"),
@@ -280,6 +284,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Failed to fetch facilities"),
         "failedToUpdatePrivileges":
             MessageLookupByLibrary.simpleMessage("Failed to update privileges"),
+        "failedtoAddWorker":
+            MessageLookupByLibrary.simpleMessage("Failed to add worker"),
         "fasterTechnicalSupport": MessageLookupByLibrary.simpleMessage(
             "Faster and more personalized technical support."),
         "forgotPassword":
@@ -325,6 +331,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "loginFailed": MessageLookupByLibrary.simpleMessage("Login failed"),
         "manageSubscription":
             MessageLookupByLibrary.simpleMessage("Manage Subscription"),
+        "manager": MessageLookupByLibrary.simpleMessage("Manager"),
         "meat": MessageLookupByLibrary.simpleMessage("Meat"),
         "meats": MessageLookupByLibrary.simpleMessage("Meats"),
         "menu": MessageLookupByLibrary.simpleMessage("Menu"),
@@ -344,10 +351,13 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("No facilities available"),
         "noFacilitiesFound": MessageLookupByLibrary.simpleMessage(
             "You don\'t have any facilities yet, please add one"),
+        "noLocation": MessageLookupByLibrary.simpleMessage("No location"),
+        "noPoseefacility": MessageLookupByLibrary.simpleMessage("None"),
         "noTemplateAssigned":
             MessageLookupByLibrary.simpleMessage("No template assigned"),
         "noTemplatesFound": MessageLookupByLibrary.simpleMessage(
             "Dittobox isn\'t distributing any templates yet, please look forward to it."),
+        "notUsersFound": MessageLookupByLibrary.simpleMessage("No users found"),
         "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "owner": MessageLookupByLibrary.simpleMessage("Owner"),

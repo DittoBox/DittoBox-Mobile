@@ -1371,5 +1371,41 @@
           "example": "Container A"
         }
       }
+    },
+    "notUsersFound": "No users found",
+    "@notUsersFound": {
+      "description": "Error message when no users are found"
+    },
+    "failedtoAddWorker": "Failed to add worker",
+    "@failedtoAddWorker": {
+      "description": "Error message when failing to add worker"
+    },
+    "manager": "Manager",
+    "@manager": {
+      "description": "Label for manager"
+    },
+    "facility": "Facility",
+    "@facility": {
+      "description": "Label for facility"
+    },
+    "currenTier": "Current Tier",
+    "@currenTier": {
+      "description": "Label for current tier"
+    },
+    "active": "Active",
+    "@active": {
+      "description": "Label for active"
+    },
+    "expired" : "Expired",
+    "@expired": {
+      "description": "Label for expired"
+    },
+    "noLocation": "No location",
+    "@noLocation": {
+      "description": "Label for no location"
+    },
+    "noPoseefacility": "None",
+    "@noPoseefacility": {
+      "description": "Label for none"
     }
-  }
+ }

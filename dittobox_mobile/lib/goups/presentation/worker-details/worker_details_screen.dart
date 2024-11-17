@@ -24,6 +24,11 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
   void initState() {
     super.initState();
     _initializeSwitchStates();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
     _fetchGroupLocation();
   }
 
@@ -39,12 +44,14 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
     final location = widget.worker.groupId != null 
         ? await AccountService().getGroupLocation(widget.worker.groupId!)
         : null;
-    if (location != null) {
-      setState(() {
+    setState(() {
+      if (location != null) {
         final addressParts = location['address'].split(' ');
         _location = addressParts.length > 1 ? '${addressParts[0]} ${addressParts[1]}' : location['address'];
-      });
-    }
+      } else {
+        _location = S.of(context).noLocation;
+      }
+    });
   }
 
   Future<void> _updatePrivileges(int index, bool value) async {
@@ -150,8 +157,8 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
               style: const TextStyle(fontSize: 18),
             ),
             const SizedBox(height: 24),
-            _buildWorkerInfoRow(S.of(context).category, _isOwner(widget.worker) ? 'Owner' : (_isManager() ? 'Manager' : 'Worker')),
-            _buildWorkerInfoRow(S.of(context).location, _location ?? 'Loading...'),
+            _buildWorkerInfoRow(S.of(context).category, _isOwner(widget.worker) ? S.of(context).owner : (_isManager() ? S.of(context).manager : S.of(context).worker)),
+            _buildWorkerInfoRow(S.of(context).location, _location ?? S.of(context).noLocation),
             const SizedBox(height: 16),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
@@ -172,7 +179,7 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
                       builder: (context) {
                         return ReassignWorkerSheet(
                           facilities: const ['Restaurante A', 'Almacén B'], // facilities example list
-                          currentFacility: _location ?? 'Loading...',
+                          currentFacility: _location ?? S.of(context).noLocation,
                           onSave: (newFacility) {
                             Navigator.pop(context); 
 
@@ -222,12 +229,12 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
            widget.worker.privileges.contains('GroupManagement') ||
            widget.worker.privileges.contains('AccountManagement');
   }
-    bool _isOwner(Profile profile) {
+
+  bool _isOwner(Profile profile) {
     return profile.privileges.contains('WorkerManagement') &&
            profile.privileges.contains('GroupManagement') &&
            profile.privileges.contains('AccountManagement');
   }
-
 
   String _getPrivilegeName(int index) {
     switch (index) {

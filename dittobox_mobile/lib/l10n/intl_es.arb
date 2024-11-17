@@ -500,7 +500,7 @@
   "@viewContainers": {
     "description": "Etiqueta para ver contenedores"
   },
-  "lastSync": "Última sincronización",
+  "lastSync": "Últ. sincron.",
   "@lastSync": {
     "description": "Etiqueta para la última sincronización"
   },
@@ -536,7 +536,7 @@
   "@userInformationDetails": {
     "description": "Etiqueta para la sección de detalles de información del usuario"
   },
-  "bankAccountOwner": "Propietario de la Cuenta Bancaria",
+  "bankAccountOwner": "Titular de la cuenta",
   "@bankAccountOwner": {
     "description": "Etiqueta para el propietario de la cuenta bancaria en la sección de información del usuario"
   },
@@ -1367,5 +1367,51 @@
           "example": "Contenedor A"
         }
       }
+    },
+    "noGroupsFound": "No se encontraron grupos",
+    "@noGroupsFound": {
+      "description": "Mensaje de error cuando no se encuentran grupos"
+    },
+    "noUsersFound": "No se encontraron usuarios",
+    "@noUsersFound": {
+      "description": "Mensaje de error cuando no se encuentran usuarios"
+    },
+    "failedToAddWorker": "Error al agregar trabajador: {error}",
+    "@failedToAddWorker": {
+      "description": "Mensaje de error cuando no se puede agregar trabajador",
+      "placeholders": {
+        "error": {
+          "type": "String",
+          "example": "El trabajador ya está asignado"
+        }
+      }
+    },
+    "manager": "Gerente",
+    "@manager": {
+      "description": "etiqueta para gerente"
+    },
+    "facility" : "Instalación",
+    "@facility": {
+      "description": "etiqueta para instalación"
+    },
+    "currenTier" : "Nivel actual",
+    "@currenTier": {
+      "description": "etiqueta para nivel actual"
+    },
+    "expired" : "Expirado",
+    "@expired": {
+      "description": "etiqueta para expirado"
+    },
+    "active" : "Activo",
+    "@active": {
+      "description": "etiqueta para activo"
+    },
+   "noLocation": "No posee",
+   "@noLocation": {
+     "description": "etiqueta para no posee"
+   },
+   "noPoseefacility": "Ninguna",
+    "@noPoseefacility": {
+      "description": "etiqueta para ninguna"
     }
 }

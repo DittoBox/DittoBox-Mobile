@@ -113,6 +113,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Información de la Cuenta"),
         "accountInformationDetails": MessageLookupByLibrary.simpleMessage(
             "Detalles de Información de la Cuenta"),
+        "active": MessageLookupByLibrary.simpleMessage("Activo"),
         "addContainer":
             MessageLookupByLibrary.simpleMessage("Agregar contenedor"),
         "addContainers":
@@ -162,8 +163,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Plantillas automáticas para ajustar la temperatura y la humedad según el tipo de suministro."),
         "backToLogin":
             MessageLookupByLibrary.simpleMessage("Volver al Inicio de Sesión"),
-        "bankAccountOwner": MessageLookupByLibrary.simpleMessage(
-            "Propietario de la Cuenta Bancaria"),
+        "bankAccountOwner":
+            MessageLookupByLibrary.simpleMessage("Titular de la cuenta"),
         "businessName":
             MessageLookupByLibrary.simpleMessage("Nombre del Negocio"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancelar"),
@@ -258,6 +259,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "containersNotFound": MessageLookupByLibrary.simpleMessage(
             "No posees ningún DittoBox por el momento"),
         "country": MessageLookupByLibrary.simpleMessage("País"),
+        "currenTier": MessageLookupByLibrary.simpleMessage("Nivel actual"),
         "currentConfigs":
             MessageLookupByLibrary.simpleMessage("Configuraciones Actuales"),
         "decompositionGasesDetected": m14,
@@ -287,7 +289,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "ethyleneMin": MessageLookupByLibrary.simpleMessage("Etileno Min"),
         "expirationDate":
             MessageLookupByLibrary.simpleMessage("Fecha de Expiración"),
+        "expired": MessageLookupByLibrary.simpleMessage("Expirado"),
         "facilities": MessageLookupByLibrary.simpleMessage("Instalaciones"),
+        "facility": MessageLookupByLibrary.simpleMessage("Instalación"),
         "facilityCreatedSuccessfully": MessageLookupByLibrary.simpleMessage(
             "Instalación creada exitosamente"),
         "facilityName":
@@ -334,8 +338,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "language": MessageLookupByLibrary.simpleMessage("Idioma"),
         "lastKnownHealthStatus": MessageLookupByLibrary.simpleMessage(
             "Último Estado de Salud Conocido"),
-        "lastSync":
-            MessageLookupByLibrary.simpleMessage("Última sincronización"),
+        "lastSync": MessageLookupByLibrary.simpleMessage("Últ. sincron."),
         "location": MessageLookupByLibrary.simpleMessage("Ubicación"),
         "logOut": MessageLookupByLibrary.simpleMessage("Cerrar sesión"),
         "login": MessageLookupByLibrary.simpleMessage("Iniciar sesión"),
@@ -343,6 +346,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Inicio de sesión fallido"),
         "manageSubscription":
             MessageLookupByLibrary.simpleMessage("Administrar Suscripción"),
+        "manager": MessageLookupByLibrary.simpleMessage("Gerente"),
         "meats": MessageLookupByLibrary.simpleMessage("Carnes"),
         "menu": MessageLookupByLibrary.simpleMessage("Menú"),
         "month": MessageLookupByLibrary.simpleMessage("Mes"),
@@ -362,6 +366,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "No hay instalaciones disponibles"),
         "noFacilitiesFound": MessageLookupByLibrary.simpleMessage(
             "Aún no tienes instalaciones, por favor crea una."),
+        "noLocation": MessageLookupByLibrary.simpleMessage("No posee"),
+        "noPoseefacility": MessageLookupByLibrary.simpleMessage("Ninguna"),
         "noTemplateAssigned":
             MessageLookupByLibrary.simpleMessage("No hay plantilla asignada"),
         "noTemplatesFound": MessageLookupByLibrary.simpleMessage(

@@ -35,7 +35,7 @@ class _WorkerListViewState extends State<WorkerListView> {
     } catch (e) {
       // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Failed to add worker: $e')),
+        SnackBar(content: Text(S.of(context).failedtoAddWorker)),
       );
       print('Failed to add worker: $e');
     }
@@ -58,7 +58,7 @@ class _WorkerListViewState extends State<WorkerListView> {
             } else if (groupSnapshot.hasError) {
               return Center(child: Text('Error: ${groupSnapshot.error}'));
             } else if (!groupSnapshot.hasData || groupSnapshot.data!.isEmpty) {
-              return const Center(child: Text('No groups found'));
+              return Center(child: Text(S.of(context).noFacilitiesFound));
             } else {
               final Map<int, String> groupMap = {
                 for (var group in groupSnapshot.data!)
@@ -72,7 +72,7 @@ class _WorkerListViewState extends State<WorkerListView> {
                   } else if (profileSnapshot.hasError) {
                     return Center(child: Text('Error: ${profileSnapshot.error}'));
                   } else if (!profileSnapshot.hasData || profileSnapshot.data!.isEmpty) {
-                    return const Center(child: Text('No users found'));
+                    return Center(child: Text(S.of(context).notUsersFound));
                   } else {
                     return WorkerList(profiles: profileSnapshot.data!, groupMap: groupMap);
                   }
@@ -103,7 +103,7 @@ class WorkerList extends StatelessWidget {
     return ListView.builder(
       itemCount: profiles.length,
       itemBuilder: (context, index) {
-        return WorkerItem(profile: profiles[index], groupName: groupMap[profiles[index].groupId] ?? 'Unknown');
+        return WorkerItem(profile: profiles[index], groupName: groupMap[profiles[index].groupId] ?? S.of(context).noPoseefacility);
       },
     );
   }
@@ -127,8 +127,8 @@ class WorkerItem extends StatelessWidget {
           subtitle: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-                Text(_isOwner(profile) ? 'Owner' : (_isManager(profile) ? 'Manager' : 'Worker')),
-              Text('Group: $groupName'),
+              Text(_getRoleTranslation(context, profile)),
+              Text('${S.of(context).facility}: $groupName'),
             ],
           ),
           onTap: () {
@@ -145,7 +145,16 @@ class WorkerItem extends StatelessWidget {
     );
   }
 
- 
+  String _getRoleTranslation(BuildContext context, Profile profile) {
+    if (_isOwner(profile)) {
+      return S.of(context).owner;
+    } else if (_isManager(profile)) {
+      return S.of(context).manager;
+    } else {
+      return S.of(context).worker;
+    }
+  }
+
   bool _isOwner(Profile profile) {
     return profile.privileges.contains('WorkerManagement') &&
            profile.privileges.contains('GroupManagement') &&
@@ -157,4 +166,4 @@ class WorkerItem extends StatelessWidget {
            profile.privileges.contains('GroupManagement') ||
            profile.privileges.contains('AccountManagement');
   }
-} 
+}
