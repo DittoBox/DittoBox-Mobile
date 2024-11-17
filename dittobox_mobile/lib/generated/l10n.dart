@@ -2362,6 +2362,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Account created successfully`
+  String get accountCreatedSuccessfully {
+    return Intl.message(
+      'Account created successfully',
+      name: 'accountCreatedSuccessfully',
+      desc: 'Success message when account is created successfully',
+      args: [],
+    );
+  }
+
+  /// `Error creating account`
+  String get errorCreatingAccount {
+    return Intl.message(
+      'Error creating account',
+      name: 'errorCreatingAccount',
+      desc: 'Error message when account creation fails',
+      args: [],
+    );
+  }
+
+  /// `You don't have any facilities yet, please add one`
+  String get noFacilitiesFound {
+    return Intl.message(
+      'You don\'t have any facilities yet, please add one',
+      name: 'noFacilitiesFound',
+      desc: 'Error message when no facilities are found',
+      args: [],
+    );
+  }
+
+  /// `Error applicating a template`
+  String get errorApplicatingaTemplate {
+    return Intl.message(
+      'Error applicating a template',
+      name: 'errorApplicatingaTemplate',
+      desc: 'Error message when applying a template fails',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

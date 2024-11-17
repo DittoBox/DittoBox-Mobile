@@ -25,6 +25,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "aboutYourCompany":
             MessageLookupByLibrary.simpleMessage("Sobre tu empresa"),
         "account": MessageLookupByLibrary.simpleMessage("Cuenta"),
+        "accountCreatedSuccessfully":
+            MessageLookupByLibrary.simpleMessage("Cuenta creada exitosamente"),
         "accountDetails":
             MessageLookupByLibrary.simpleMessage("Detalles de la Cuenta"),
         "accountInformation":
@@ -153,6 +155,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "emailRequired": MessageLookupByLibrary.simpleMessage(
             "Correo electrónico requerido"),
         "english": MessageLookupByLibrary.simpleMessage("Inglés"),
+        "errorApplicatingaTemplate": MessageLookupByLibrary.simpleMessage(
+            "Error al aplicar la plantilla"),
+        "errorCreatingAccount":
+            MessageLookupByLibrary.simpleMessage("Error al crear la cuenta"),
         "ethylene": MessageLookupByLibrary.simpleMessage("Etileno"),
         "ethyleneMax": MessageLookupByLibrary.simpleMessage("Etileno Máx"),
         "ethyleneMin": MessageLookupByLibrary.simpleMessage("Etileno Min"),
@@ -216,6 +222,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "newTemplate": MessageLookupByLibrary.simpleMessage("Nueva plantilla"),
         "noFacilitiesAvailable": MessageLookupByLibrary.simpleMessage(
             "No hay instalaciones disponibles"),
+        "noFacilitiesFound": MessageLookupByLibrary.simpleMessage(
+            "Aún no tienes instalaciones, por favor crea una."),
         "noTemplateAssigned":
             MessageLookupByLibrary.simpleMessage("No hay plantilla asignada"),
         "notifications": MessageLookupByLibrary.simpleMessage("Notificaciones"),

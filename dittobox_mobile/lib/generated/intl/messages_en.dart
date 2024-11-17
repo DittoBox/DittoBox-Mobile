@@ -25,6 +25,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "aboutYourCompany":
             MessageLookupByLibrary.simpleMessage("About your company"),
         "account": MessageLookupByLibrary.simpleMessage("Account"),
+        "accountCreatedSuccessfully": MessageLookupByLibrary.simpleMessage(
+            "Account created successfully"),
         "accountDetails":
             MessageLookupByLibrary.simpleMessage("Account Details"),
         "accountInformation":
@@ -141,6 +143,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "emailRequired":
             MessageLookupByLibrary.simpleMessage("Email is required"),
         "english": MessageLookupByLibrary.simpleMessage("English"),
+        "errorApplicatingaTemplate": MessageLookupByLibrary.simpleMessage(
+            "Error applicating a template"),
+        "errorCreatingAccount":
+            MessageLookupByLibrary.simpleMessage("Error creating account"),
         "ethylene": MessageLookupByLibrary.simpleMessage("Ethylene (C₂H₄)"),
         "ethyleneMax": MessageLookupByLibrary.simpleMessage("Max ethylene"),
         "ethyleneMin": MessageLookupByLibrary.simpleMessage("Min ethylene"),
@@ -201,6 +207,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Next payment day"),
         "noFacilitiesAvailable":
             MessageLookupByLibrary.simpleMessage("No facilities available"),
+        "noFacilitiesFound": MessageLookupByLibrary.simpleMessage(
+            "You don\'t have any facilities yet, please add one"),
         "noTemplateAssigned":
             MessageLookupByLibrary.simpleMessage("No template assigned"),
         "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),

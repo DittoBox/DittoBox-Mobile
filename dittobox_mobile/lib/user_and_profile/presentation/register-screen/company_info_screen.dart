@@ -13,10 +13,7 @@ class CompanyInfoScreen extends StatefulWidget {
 class _CompanyInfoScreenState extends State<CompanyInfoScreen> {
   final formKey = GlobalKey<FormState>();
   final TextEditingController _companyNameController = TextEditingController();
-  final TextEditingController _identificationNumberController =
-      TextEditingController();
-  final TextEditingController _countryController = TextEditingController();
-  final TextEditingController _cityController = TextEditingController();
+  final TextEditingController _identificationNumberController = TextEditingController();
   final accountService = AccountService();
 
   @override
@@ -41,9 +38,7 @@ class _CompanyInfoScreenState extends State<CompanyInfoScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  const SizedBox(
-                      height:
-                          -100), // Ajusta este valor para mover el contenido hacia arriba o abajo
+                  const SizedBox(height: 20), // Ajusta este valor según sea necesario
                   Text(
                     S.of(context).aboutYourCompany,
                     textAlign: TextAlign.center,
@@ -86,66 +81,35 @@ class _CompanyInfoScreenState extends State<CompanyInfoScreen> {
                     },
                   ),
                   const SizedBox(height: 20),
-                  TextFormField(
-                    controller: _countryController,
-                    decoration: InputDecoration(
-                      labelText: S.of(context).country,
-                      border: const OutlineInputBorder(),
-                    ),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'The country cannot be empty.';
-                      } else if (!RegExp(r'^[a-zA-Z\s]+$').hasMatch(value)) {
-                        return 'The country can only contain letters and spaces.';
-                      }
-                      return null;
-                    },
-                  ),
-                  const SizedBox(height: 20),
-                  TextFormField(
-                    controller: _cityController,
-                    decoration: InputDecoration(
-                      labelText: S.of(context).city,
-                      border: const OutlineInputBorder(),
-                    ),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'The city cannot be empty.';
-                      } else if (!RegExp(r'^[a-zA-Z\s]+$').hasMatch(value)) {
-                        return 'The city can only contain letters and spaces.';
-                      }
-                      return null;
-                    },
-                  ),
-                  const SizedBox(height: 30),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      FilledButton(
-                        onPressed: () async {
-                          if (formKey.currentState!.validate()) {
-                            var response = await accountService.createAccount(_companyNameController.text, _identificationNumberController.text);
-
-                            if (response == 200) {
-                              // ignore: use_build_context_synchronously
-                              Navigator.pushNamed(context, AppRoutes.facilities);
-                            } else {
-                              // ignore: use_build_context_synchronously
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(
-                                  content: Text('An error occurred. Please try again.'),
-                                ),
-                              );
-                            }
+                  FilledButton(
+                    onPressed: () async {
+                      if (formKey.currentState?.validate() ?? false) {
+                        try {
+                          final businessName = _companyNameController.text;
+                          final businessId = _identificationNumberController.text;
+                          final statusCode = await accountService.createAccount(businessName, businessId);
+                          
+                          if (statusCode == 200 || statusCode == 201) {
+                            // Registro exitoso, puedes navegar a otra pantalla o mostrar un mensaje de éxito
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(content: Text(S.of(context).accountCreatedSuccessfully)),
+                            );
+                            Navigator.popAndPushNamed(context, AppRoutes.facilities);
+                          } else {
+                            // Error en el registro, muestra un mensaje de error
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(content: Text(S.of(context).errorCreatingAccount)),
+                            );
                           }
-                        },
-                        style: FilledButton.styleFrom(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 30, vertical: 10),
-                        ),
-                        child: Text(S.of(context).register),
-                      ),
-                    ],
+                        } catch (e) {
+                          // Manejo de errores
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(content: Text('An error occurred: $e')),
+                          );
+                        }
+                      }
+                    },
+                    child: Text(S.of(context).register),
                   ),
                 ],
               ),

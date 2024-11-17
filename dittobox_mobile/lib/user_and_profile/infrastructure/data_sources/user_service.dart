@@ -15,10 +15,19 @@ class UserService extends BaseService {
   // "email": "string",
   // "password": "string"
   // }
-  Future registerUser(String firstName, String lastName, String username,
+  Future<int> registerUser(String firstName, String lastName, String username,
       String email, String password) async {
     final url = '$baseUrl/user';
-    await http.post(
+    print('Registering user with URL: $url');
+    print('Request body: ${jsonEncode({
+      'firstName': firstName,
+      'lastName': lastName,
+      'username': username,
+      'email': email,
+      'password': password,
+    })}');
+    
+    final response = await http.post(
       Uri.parse(url),
       headers: {'Content-Type': 'application/json'},
       body: jsonEncode({
@@ -29,6 +38,11 @@ class UserService extends BaseService {
         'password': password,
       }),
     );
+
+    print('Response status: ${response.statusCode}');
+    print('Response body: ${response.body}');
+    
+    return response.statusCode;
   }
 
   // Method to login a user

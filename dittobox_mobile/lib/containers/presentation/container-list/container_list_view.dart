@@ -189,6 +189,7 @@ class _ContainerListScreenState extends State<ContainerListScreen> with SingleTi
       return Center(
         child: Text(
           S.of(context).containersNotFound,
+          textAlign: TextAlign.center,
           style: const TextStyle(fontSize: 18, color: Colors.grey),
         ),
       );
