@@ -36,7 +36,9 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
   }
 
   Future<void> _fetchGroupLocation() async {
-    final location = await AccountService().getGroupLocation(widget.worker.groupId);
+    final location = widget.worker.groupId != null 
+        ? await AccountService().getGroupLocation(widget.worker.groupId!)
+        : null;
     if (location != null) {
       setState(() {
         final addressParts = location['address'].split(' ');

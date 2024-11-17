@@ -3,7 +3,7 @@ class Profile{
   String firstName;
   String lastName;
   int accountId;
-  int groupId;
+  int? groupId;
   int userId;
   List<String> privileges;
 
@@ -12,7 +12,7 @@ class Profile{
     required this.firstName,
     required this.lastName,
     required this.accountId,
-    required this.groupId,
+    this.groupId,
     required this.userId,
     required this.privileges,
   });

@@ -51,7 +51,7 @@ class _SubscriptionDetailsScreenState extends State<SubscriptionDetailsScreen> {
   }
 
   Future<void> _loadProfileDetails() async {
-    final profileDetails = await ProfileService().getProfileDetails();
+    final profileDetails = await ProfileService().getProfileDetailsofAccount();
     if (profileDetails != null) {
       setState(() {
         _bankAccountOwner = '${profileDetails.firstName} ${profileDetails.lastName}';

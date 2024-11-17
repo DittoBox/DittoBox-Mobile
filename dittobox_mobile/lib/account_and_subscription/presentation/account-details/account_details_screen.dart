@@ -69,8 +69,8 @@ class _AccountDetailsScreenState extends State<AccountDetailsScreen> {
   }
 
   Future<void> _loadUserDetails() async {
-    final prefs = await SharedPreferences.getInstance();
-    var username = prefs.getString('username');
+    final prefs = SharedPreferencesAsync();
+    var username = await prefs.getString('username');
     setState(() {
       _username = username ?? '';
     });
