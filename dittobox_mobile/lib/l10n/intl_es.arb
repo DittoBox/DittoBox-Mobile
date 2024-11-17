@@ -919,5 +919,21 @@
   "registrationFailed": "Registro fallido",
   "@registrationFailed": {
     "description": "Mensaje de error cuando el registro falla"
+  },
+  "accountCreatedSuccessfully": "Cuenta creada exitosamente",
+  "@accountCreatedSuccessfully": {
+    "description": "Mensaje de éxito cuando la cuenta es creada exitosamente"
+  },
+  "errorCreatingAccount" : "Error al crear la cuenta",
+  "@errorCreatingAccount": {
+    "description": "Mensaje de error cuando no se puede crear la cuenta"
+  },
+  "noFacilitiesFound": "Aún no tienes instalaciones, por favor crea una.",
+  "@noFacilitiesFound": {
+    "description": "Mensaje de error cuando no se encuentran instalaciones"
+  },
+  "errorApplicatingaTemplate": "Error al aplicar la plantilla",
+  "@errorApplicatingaTemplate": {
+    "description": "Mensaje de error cuando no se puede aplicar la plantilla"
   }
 }

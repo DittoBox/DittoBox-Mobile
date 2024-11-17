@@ -87,6 +87,7 @@ class _TemplateListState extends State<TemplateList> {
 
   @override
   void dispose() {
+    _searchController.removeListener(_filterTemplates);
     _searchController.dispose();
     super.dispose();
   }
@@ -179,7 +180,7 @@ class _TemplateListState extends State<TemplateList> {
             itemBuilder: (context, index) {
               return TemplateCard(
                 template: _filteredTemplates[index],
-                onApply: () => _showContainerSelectionModal(_filteredTemplates[index]),
+                onApply: () => _showContainerSelectionModal(context, _filteredTemplates[index]),
                 onTap: () => _showTemplateDetails(context, _filteredTemplates[index]),
               );
             },
@@ -189,9 +190,9 @@ class _TemplateListState extends State<TemplateList> {
     );
   }
 
-  void _showContainerSelectionModal(Template template) {
+  void _showContainerSelectionModal(BuildContext parentContext, Template template) {
     showDialog(
-      context: context,
+      context: parentContext,
       builder: (BuildContext context) {
         return ContainerSelectionModal(
           containers: widget.containers,
@@ -199,15 +200,13 @@ class _TemplateListState extends State<TemplateList> {
             try {
               final containerService = ContainerService();
               await containerService.assignTemplateToContainer(container.id, template.id);
-              // ignore: use_build_context_synchronously
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text('Template assigned to ${container.name}')),
-              );
+              if (mounted) {
+                _showSuccessDialog(parentContext, 'Template assigned to ${container.name}');
+              }
             } catch (e) {
-              // ignore: use_build_context_synchronously
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text('Failed to assign template: $e')),
-              );
+              if (mounted) {
+                _showErrorDialog(parentContext, 'Failed to assign template: $e');
+              }
             }
           },
         );
@@ -220,6 +219,46 @@ class _TemplateListState extends State<TemplateList> {
       context: context,
       builder: (BuildContext context) {
         return TemplateBottomSheet(template: template);
+      },
+    );
+  }
+
+  void _showSuccessDialog(BuildContext context, String message) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(S.of(context).success),
+          content: Text(message),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text(S.of(context).ok),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void _showErrorDialog(BuildContext context, String message) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(S.of(context).errorApplicatingaTemplate),
+          content: Text(message),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text(S.of(context).ok),
+            ),
+          ],
+        );
       },
     );
   }

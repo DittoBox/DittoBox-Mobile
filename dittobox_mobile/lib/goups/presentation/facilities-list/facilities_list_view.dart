@@ -182,22 +182,30 @@ class _FacilitiesListState extends State<FacilitiesList> {
             ),
           ),
           Expanded(
-            child: CustomScrollView(
-              slivers: [
-                SliverList(
-                  delegate: SliverChildBuilderDelegate(
-                    (context, index) {
-                      return FacilitiesCard(
-                        facility: _filteredFacilities[index],
-                        onDelete: () =>
-                            _deleteFacility(_filteredFacilities[index]),
-                      );
-                    },
-                    childCount: _filteredFacilities.length,
+            child: _filteredFacilities.isEmpty
+                ? Center(
+                    child: Text(
+                      S.of(context).noFacilitiesFound,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(fontSize: 18, color: Colors.grey),
+                    ),
+                  )
+                : CustomScrollView(
+                    slivers: [
+                      SliverList(
+                        delegate: SliverChildBuilderDelegate(
+                          (context, index) {
+                            return FacilitiesCard(
+                              facility: _filteredFacilities[index],
+                              onDelete: () =>
+                                  _deleteFacility(_filteredFacilities[index]),
+                            );
+                          },
+                          childCount: _filteredFacilities.length,
+                        ),
+                      ),
+                    ],
                   ),
-                ),
-              ],
-            ),
           ),
         ],
       ),

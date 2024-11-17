@@ -140,15 +140,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return S.of(context).requiredField;
-                      } else if (value.length < 8) {
-                        return 'The password must be at least 8 characters.';
-                      } else if (!RegExp(r'[A-Z]').hasMatch(value)) {
-                        return 'The password must contain at least one capital letter.';
-                      } else if (!RegExp(r'[0-9]').hasMatch(value)) {
-                        return 'The password must contain at least one number.';
-                      } else if (!RegExp(r'[!@#$%^&*(),.?":{}|<>]')
-                          .hasMatch(value)) {
-                        return 'The password must contain at least one special character.';
                       }
                       return null;
                     },
@@ -157,81 +148,77 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      FilledButton(
-                        onPressed: () async {
-                          if (formKey.currentState!.validate()) {
-                            try {
-                              final registerResponse = await userService.registerUser(
-                                _nameController.text,
-                                _nameController.text,
-                                _usernameController.text,
-                                _emailController.text,
-                                _passwordController.text,
-                              );
-                              if (registerResponse == 200) {
-                                final loginResponse = await userService.loginUser(
-                                  _emailController.text,
-                                  _passwordController.text,
-                                );
-                                if (loginResponse == 200) {
-                                  if (userType == 'Owner') {
-                                    Navigator.pushNamed(
-                                        // ignore: use_build_context_synchronously
-                                        context, AppRoutes.companyInfo);
-                                  } else {
-                                    Navigator.pushNamed(
-                                        // ignore: use_build_context_synchronously
-                                        context, AppRoutes.facilities);
-                                  }
-                                } else {
-                                  // ignore: use_build_context_synchronously
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                    SnackBar(
-                                      content: Text(S.of(context).loginFailed)
-                                    ),
-                                  );
-                                }
+                  FilledButton(
+                    onPressed: () async {
+                      if (formKey.currentState!.validate()) {
+                        try {
+                          print('Form validated successfully.');
+                          final registerResponse = await userService.registerUser(
+                            _nameController.text,
+                            _nameController.text,
+                            _usernameController.text,
+                            _emailController.text,
+                            _passwordController.text,
+                          );
+                          print('Register response status: $registerResponse');
+                          if (registerResponse == 200 || registerResponse == 201) {
+                            final loginResponse = await userService.loginUser(
+                              _emailController.text,
+                              _passwordController.text,
+                            );
+                            print('Login response status: $loginResponse');
+                            if (loginResponse == 200 || loginResponse == 201) {
+                              print('Login successful. Navigating to the next screen.');
+                              if (userType == 'Owner') {
+                                print('Navigating to Company Info Screen.');
+                                Navigator.pushReplacementNamed(
+                                  context, AppRoutes.companyInfo);
                               } else {
-                                // ignore: use_build_context_synchronously
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Text(S.of(context).registrationFailed),
-                                  ),
-                                );
+                                print('Navigating to Facilities Screen.');
+                                Navigator.pushReplacementNamed(
+                                  context, AppRoutes.facilities);
                               }
-                            } catch (e) {
-                              // ignore: use_build_context_synchronously
+                            } else {
+                              print('Login failed.');
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(
-                                  content: Text(S.of(context).registrationFailed + ': $e'),
+                                  content: Text(S.of(context).loginFailed)
                                 ),
                               );
                             }
+                          } else {
+                            print('Registration failed.');
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text(S.of(context).registrationFailed),
+                              ),
+                            );
                           }
-                        },
-                        style: FilledButton.styleFrom(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 30, vertical: 10),
-                        ),
-                        child: Text(userType == 'Owner'
-                            ? "Continue"
-                            : S.of(context).register),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 20),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, AppRoutes.login);
+                        } catch (e) {
+                          print('Exception during registration: $e');
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text(S.of(context).registrationFailed + ': $e'),
+                            ),
+                          );
+                        }
+                      } else {
+                        print('Form validation failed.');
+                      }
                     },
-                    child: Text(S.of(context).alreadyHaveAccount),
+                    style: FilledButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+                    ),
+                    child: Text(userType == 'Owner' ? "Continue" : S.of(context).register),
                   ),
                 ],
               ),
-            ),
+            ],
           ),
         ),
       ),
-    );
+    )
+  )
+);
   }
 }
