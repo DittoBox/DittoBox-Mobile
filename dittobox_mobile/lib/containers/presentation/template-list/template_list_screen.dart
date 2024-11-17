@@ -8,7 +8,6 @@ import 'package:dittobox_mobile/containers/infrastructure/models/template.dart';
 import 'package:dittobox_mobile/containers/infrastructure/models/container.dart' as model;
 import 'package:dittobox_mobile/containers/presentation/widgets/container_selection_modal.dart';
 import 'package:dittobox_mobile/containers/presentation/widgets/template_bottom_sheet.dart';
-import 'package:path/path.dart';
 
 class TemplateListScreen extends StatefulWidget {
   const TemplateListScreen({super.key});
@@ -51,7 +50,7 @@ class _TemplateListScreenState extends State<TemplateListScreen> {
       ),
       drawer: const CustomNavigationDrawer(currentRoute: AppRoutes.templates),
       body: _isLoading
-          ? Center(child: CircularProgressIndicator())
+          ? const Center(child: CircularProgressIndicator())
           : Padding(
               padding: const EdgeInsets.all(16.0),
               child: TemplateList(containers: _containers),
@@ -152,7 +151,7 @@ class _TemplateListState extends State<TemplateList> {
               ),
             ),
             if (_isLoading)
-              Positioned(
+              const Positioned(
                 left: 0,
                 right: 0,
                 bottom: 0,
@@ -181,12 +180,12 @@ class _TemplateListState extends State<TemplateList> {
           ),
         Expanded(
           child: _isLoading
-              ? Center(child: CircularProgressIndicator())
+              ? const Center(child: CircularProgressIndicator())
               : _filteredTemplates.isEmpty
                   ? Center(
                       child: Text(
                         S.of(context).noTemplatesFound,
-                        style: TextStyle(fontSize: 16.0),
+                        style: const TextStyle(fontSize: 16.0),
                         textAlign: TextAlign.center,
                       ),
                     )
@@ -232,10 +231,12 @@ class _TemplateListState extends State<TemplateList> {
               final containerService = ContainerService();
               await containerService.assignTemplateToContainer(container.id, template.id);
               if (mounted) {
+                // ignore: use_build_context_synchronously
                 _showSuccessDialog(parentContext, S.of(context).templateAssignedSuccessfullyToContainer(container.name));
               }
             } catch (e) {
               if (mounted) {
+                // ignore: use_build_context_synchronously
                 _showErrorDialog(parentContext, S.of(context).errorApplicatingaTemplate);
               }
             }
