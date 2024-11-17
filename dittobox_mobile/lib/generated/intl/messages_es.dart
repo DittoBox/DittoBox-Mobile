@@ -80,19 +80,28 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m24(name) =>
       "Se ha asignado una plantilla al contenedor ${name}.";
 
-  static String m25(name) => "Alerta desconocida en ${name}.";
+  static String m25(name) =>
+      "Plantilla asignada exitosamente al contenedor ${name}.";
 
-  static String m26(name) =>
-      "La regulación de ventilación en ${name} ha fallado.";
+  static String m26(name) => "Alerta desconocida en ${name}.";
 
   static String m27(name) =>
-      "La regulación de ventilación en ${name} fue exitosa.";
+      "La regulación de ventilación en ${name} ha fallado.";
 
   static String m28(name) =>
+      "La regulación de ventilación en ${name} fue exitosa.";
+
+  static String m29(name) =>
       "Se ha iniciado la regulación de ventilación en ${name}.";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "All": MessageLookupByLibrary.simpleMessage("Todos"),
+        "AnimalDerived": MessageLookupByLibrary.simpleMessage("Derivados"),
+        "Meats": MessageLookupByLibrary.simpleMessage("Carnes"),
+        "ProcessedFood":
+            MessageLookupByLibrary.simpleMessage("Comida procesada"),
+        "Produce": MessageLookupByLibrary.simpleMessage("Frutas y vegetales"),
         "aboutYourCompany":
             MessageLookupByLibrary.simpleMessage("Sobre tu empresa"),
         "account": MessageLookupByLibrary.simpleMessage("Cuenta"),
@@ -355,6 +364,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Aún no tienes instalaciones, por favor crea una."),
         "noTemplateAssigned":
             MessageLookupByLibrary.simpleMessage("No hay plantilla asignada"),
+        "noTemplatesFound": MessageLookupByLibrary.simpleMessage(
+            "Dittobox aún no distribuye ninguna plantilla, por favor esperelo pronto."),
         "notifications": MessageLookupByLibrary.simpleMessage("Notificaciones"),
         "ok": MessageLookupByLibrary.simpleMessage("Aceptar"),
         "owner": MessageLookupByLibrary.simpleMessage("Propietario"),
@@ -492,6 +503,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "templateAssigned": m24,
         "templateAssignedSuccessfully": MessageLookupByLibrary.simpleMessage(
             "Plantilla asignada exitosamente"),
+        "templateAssignedSuccessfullyToContainer": m25,
         "templateAssignedTitle":
             MessageLookupByLibrary.simpleMessage("Plantilla asignada"),
         "templateConfiguration":
@@ -503,7 +515,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "templates": MessageLookupByLibrary.simpleMessage("Plantillas"),
         "title": MessageLookupByLibrary.simpleMessage("DittoBox"),
         "type": MessageLookupByLibrary.simpleMessage("Tipo"),
-        "unknownAlert": m25,
+        "unknownAlert": m26,
         "unknownAlertTitle":
             MessageLookupByLibrary.simpleMessage("Alerta desconocida"),
         "upTo": MessageLookupByLibrary.simpleMessage("Hasta"),
@@ -517,15 +529,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "username": MessageLookupByLibrary.simpleMessage("Nombre de usuario"),
         "usernameCannotBeEmpty": MessageLookupByLibrary.simpleMessage(
             "El nombre de usuario no puede estar vacío"),
-        "ventilationRegulationFailed": m26,
+        "ventilationRegulationFailed": m27,
         "ventilationRegulationFailedTitle":
             MessageLookupByLibrary.simpleMessage(
                 "Regulación de ventilación fallida"),
-        "ventilationRegulationSuccessful": m27,
+        "ventilationRegulationSuccessful": m28,
         "ventilationRegulationSuccessfulTitle":
             MessageLookupByLibrary.simpleMessage(
                 "Regulación de ventilación exitosa"),
-        "ventilationRegulationTriggered": m28,
+        "ventilationRegulationTriggered": m29,
         "ventilationRegulationTriggeredTitle":
             MessageLookupByLibrary.simpleMessage(
                 "Regulación de ventilación activada"),

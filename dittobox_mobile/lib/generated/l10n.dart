@@ -2962,6 +2962,77 @@ class S {
       args: [],
     );
   }
+
+  /// `Dittobox isn't distributing any templates yet, please look forward to it.`
+  String get noTemplatesFound {
+    return Intl.message(
+      'Dittobox isn\'t distributing any templates yet, please look forward to it.',
+      name: 'noTemplatesFound',
+      desc: 'Error message when no templates are found',
+      args: [],
+    );
+  }
+
+  /// `All`
+  String get All {
+    return Intl.message(
+      'All',
+      name: 'All',
+      desc: 'Label for all',
+      args: [],
+    );
+  }
+
+  /// `Produce`
+  String get Produce {
+    return Intl.message(
+      'Produce',
+      name: 'Produce',
+      desc: 'Label for produce',
+      args: [],
+    );
+  }
+
+  /// `Meats`
+  String get Meats {
+    return Intl.message(
+      'Meats',
+      name: 'Meats',
+      desc: 'Label for meats',
+      args: [],
+    );
+  }
+
+  /// `Animal Derived`
+  String get AnimalDerived {
+    return Intl.message(
+      'Animal Derived',
+      name: 'AnimalDerived',
+      desc: 'Label for animal derived',
+      args: [],
+    );
+  }
+
+  /// `Processed Food`
+  String get ProcessedFood {
+    return Intl.message(
+      'Processed Food',
+      name: 'ProcessedFood',
+      desc: 'Label for processed food',
+      args: [],
+    );
+  }
+
+  /// `Template assigned successfully to container {name}.`
+  String templateAssignedSuccessfullyToContainer(String name) {
+    return Intl.message(
+      'Template assigned successfully to container $name.',
+      name: 'templateAssignedSuccessfullyToContainer',
+      desc:
+          'Success message when template is assigned successfully to container',
+      args: [name],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

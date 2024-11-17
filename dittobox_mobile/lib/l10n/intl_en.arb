@@ -1337,5 +1337,39 @@
     "unknownAlertTitle": "Unknown Alert",
     "@unknownAlertTitle": {
       "description": "Title for unknown alert"
+    },
+    "noTemplatesFound": "Dittobox isn't distributing any templates yet, please look forward to it.",
+    "@noTemplatesFound": {
+      "description": "Error message when no templates are found"
+    },
+    "All": "All",
+    "@All": {
+      "description": "Label for all"
+    },
+    "Produce": "Produce",
+    "@Produce": {
+      "description": "Label for produce"
+    },
+    "Meats" : "Meats",
+    "@Meats": {
+      "description": "Label for meats"
+    },
+    "AnimalDerived" : "Animal Derived",
+    "@AnimalDerived": {
+      "description": "Label for animal derived"
+    },
+    "ProcessedFood" : "Processed Food",
+    "@ProcessedFood": {
+      "description": "Label for processed food"
+    },
+    "templateAssignedSuccessfullyToContainer": "Template assigned successfully to container {name}.",
+    "@templateAssignedSuccessfullyToContainer": {
+      "description": "Success message when template is assigned successfully to container",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
     }
   }

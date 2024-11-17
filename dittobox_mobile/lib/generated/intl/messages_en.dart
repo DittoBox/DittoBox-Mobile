@@ -79,18 +79,26 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m24(name) =>
       "A template has been assigned to the container ${name}.";
 
-  static String m25(name) => "Unknown alert in ${name}.";
+  static String m25(name) =>
+      "Template assigned successfully to container ${name}.";
 
-  static String m26(name) => "Ventilation regulation in ${name} has failed.";
+  static String m26(name) => "Unknown alert in ${name}.";
 
-  static String m27(name) =>
-      "Ventilation regulation in ${name} was successful.";
+  static String m27(name) => "Ventilation regulation in ${name} has failed.";
 
   static String m28(name) =>
+      "Ventilation regulation in ${name} was successful.";
+
+  static String m29(name) =>
       "Ventilation regulation has been triggered in ${name}.";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "All": MessageLookupByLibrary.simpleMessage("All"),
+        "AnimalDerived": MessageLookupByLibrary.simpleMessage("Animal Derived"),
+        "Meats": MessageLookupByLibrary.simpleMessage("Meats"),
+        "ProcessedFood": MessageLookupByLibrary.simpleMessage("Processed Food"),
+        "Produce": MessageLookupByLibrary.simpleMessage("Produce"),
         "aboutYourCompany":
             MessageLookupByLibrary.simpleMessage("About your company"),
         "account": MessageLookupByLibrary.simpleMessage("Account"),
@@ -338,6 +346,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "You don\'t have any facilities yet, please add one"),
         "noTemplateAssigned":
             MessageLookupByLibrary.simpleMessage("No template assigned"),
+        "noTemplatesFound": MessageLookupByLibrary.simpleMessage(
+            "Dittobox isn\'t distributing any templates yet, please look forward to it."),
         "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "owner": MessageLookupByLibrary.simpleMessage("Owner"),
@@ -480,6 +490,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "templateAssigned": m24,
         "templateAssignedSuccessfully": MessageLookupByLibrary.simpleMessage(
             "Template assigned successfully"),
+        "templateAssignedSuccessfullyToContainer": m25,
         "templateAssignedTitle":
             MessageLookupByLibrary.simpleMessage("Template Assigned"),
         "templateConfiguration":
@@ -490,7 +501,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "templates": MessageLookupByLibrary.simpleMessage("Templates"),
         "title": MessageLookupByLibrary.simpleMessage("DittoBox"),
         "type": MessageLookupByLibrary.simpleMessage("Type"),
-        "unknownAlert": m25,
+        "unknownAlert": m26,
         "unknownAlertTitle":
             MessageLookupByLibrary.simpleMessage("Unknown Alert"),
         "upTo": MessageLookupByLibrary.simpleMessage("Up to"),
@@ -504,15 +515,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "username": MessageLookupByLibrary.simpleMessage("Username"),
         "usernameCannotBeEmpty":
             MessageLookupByLibrary.simpleMessage("Username cannot be empty"),
-        "ventilationRegulationFailed": m26,
+        "ventilationRegulationFailed": m27,
         "ventilationRegulationFailedTitle":
             MessageLookupByLibrary.simpleMessage(
                 "Ventilation Regulation Failed"),
-        "ventilationRegulationSuccessful": m27,
+        "ventilationRegulationSuccessful": m28,
         "ventilationRegulationSuccessfulTitle":
             MessageLookupByLibrary.simpleMessage(
                 "Ventilation Regulation Successful"),
-        "ventilationRegulationTriggered": m28,
+        "ventilationRegulationTriggered": m29,
         "ventilationRegulationTriggeredTitle":
             MessageLookupByLibrary.simpleMessage(
                 "Ventilation Regulation Triggered"),

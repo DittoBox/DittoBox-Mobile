@@ -1333,6 +1333,39 @@
     "unknownAlertTitle": "Alerta desconocida",
     "@unknownAlertTitle": {
       "description": "Título para alerta desconocida"
+    },
+    "noTemplatesFound": "Dittobox aún no distribuye ninguna plantilla, por favor esperelo pronto.",
+    "@noTemplatesFound": {
+      "description": "Error message when no templates are found"
+    },
+    "All": "Todos",
+    "@All": {
+      "description": "etiqueta para todos"
+    },
+    "Produce": "Frutas y vegetales",
+    "@Produce": {
+      "description": "etiqueta para frutas y vegetales"
+    },
+    "Meats" : "Carnes",
+    "@Meats": {
+      "description": "etiqueta para carnes"
+    },
+    "AnimalDerived" : "Derivados",
+    "@AnimalDerived": {
+      "description": "etiqueta para derivados de animales"
+    },
+    "ProcessedFood" : "Comida procesada",
+    "@ProcessedFood": {
+      "description": "etiqueta para comida procesada"
+    },
+    "templateAssignedSuccessfullyToContainer": "Plantilla asignada exitosamente al contenedor {name}.",
+    "@templateAssignedSuccessfullyToContainer": {
+      "description": "Mensaje de éxito cuando la plantilla es asignada exitosamente al contenedor",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Contenedor A"
+        }
+      }
     }
-
 }
