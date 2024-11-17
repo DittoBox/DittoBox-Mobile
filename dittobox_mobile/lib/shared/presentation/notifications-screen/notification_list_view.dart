@@ -46,6 +46,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
           final notification = notifications[index];
           String formattedTime = DateFormat('dd-MM-yyyy HH:mm').format(DateTime.parse(notification["time"]).toUtc().subtract(const Duration(hours: 5)));
           print('Formatted time: $formattedTime'); // Agregar print para verificar el formato
+          print('Notification description: ${notification["description"]}');
           return Dismissible(
             key: Key(notification["title"]!),
             background: Container(
@@ -67,7 +68,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                 // Acción de descartar
               }
             },
-            child: Card(
+            child: Card.outlined(
               margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
               child: ListTile(
                 leading: const CircleAvatar(
@@ -82,32 +83,9 @@ class _NotificationScreenState extends State<NotificationScreen> {
                   children: [
                     Text(formattedTime), // Usar formattedTime aquí
                     const SizedBox(height: 4),
-                    Text(notification["description"] ?? ""),
-                    const SizedBox(height: 8), // Espacio adicional para separar el texto de los botones
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        if (notification.containsKey("viewAction"))
-                          TextButton(
-                            onPressed: () {
-                              // Acción de ver detalles
-                            },
-                            child: Text(
-                              notification["viewAction"]!,
-                              style: const TextStyle(color: Colors.green, fontSize: 12), // Tamaño de fuente reducido
-                            ),
-                          ),
-                        TextButton(
-                          onPressed: () {
-                            // Acción de descartar
-                          },
-                          child: Text(
-                            notification["dismissAction"]!,
-                            style: const TextStyle(color: Colors.red, fontSize: 12), // Tamaño de fuente reducido
-                          ),
-                        ),
-                      ],
-                    ),
+                    if (notification["description"] != null)
+                      Text(notification["description"] ?? ""),
+                    const SizedBox(height: 8),
                   ],
                 ),
               ),

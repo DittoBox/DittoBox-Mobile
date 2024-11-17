@@ -1225,5 +1225,114 @@
           "example": "2024-11-17T05:46:11.518Z"
         }
       }
+    },
+    "temperatureThresholdExceededTitle": "Umbral de temperatura excedido",
+    "@temperatureThresholdExceededTitle": {
+      "description": "Título para umbral de temperatura excedido"
+    },
+    "humidityThresholdExceededTitle": "Umbral de humedad excedido",
+    "@humidityThresholdExceededTitle": {
+      "description": "Título para umbral de humedad excedido"
+    },
+    "decompositionGasesDetectedTitle": "Gases de descomposición detectados",
+    "@decompositionGasesDetectedTitle": {
+      "description": "Título para gases de descomposición detectados"
+    },
+    "containerLinkedTitle": "Contenedor vinculado",
+    "@containerLinkedTitle": {
+      "description": "Título para contenedor vinculado"
+    },
+    "containerUnlinkedTitle": "Contenedor desvinculado",
+    "@containerUnlinkedTitle": {
+      "description": "Título para contenedor desvinculado"
+    },
+    "containerOffTitle": "Contenedor apagado",
+    "@containerOffTitle": {
+      "description": "Título para contenedor apagado"
+    },
+    "containerOnTitle": "Contenedor encendido",
+    "@containerOnTitle": {
+      "description": "Título para contenedor encendido"
+    },
+    "templateAssignedTitle": "Plantilla asignada",
+    "@templateAssignedTitle": {
+      "description": "Título para plantilla asignada"
+    },
+    "containerActivatedTitle": "Contenedor activado",
+    "@containerActivatedTitle": {
+      "description": "Título para contenedor activado"
+    },
+    "containerDeactivatedTitle": "Contenedor desactivado",
+    "@containerDeactivatedTitle": {
+      "description": "Título para contenedor desactivado"
+    },
+    "temperatureRegulationTriggeredTitle": "Regulación de temperatura activada",
+    "@temperatureRegulationTriggeredTitle": {
+      "description": "Título para regulación de temperatura activada"
+    },
+    "temperatureRegulationSuccessfulTitle": "Regulación de temperatura exitosa",
+    "@temperatureRegulationSuccessfulTitle": {
+      "description": "Título para regulación de temperatura exitosa"
+    },
+    "temperatureRegulationFailedTitle": "Regulación de temperatura fallida",
+    "@temperatureRegulationFailedTitle": {
+      "description": "Título para regulación de temperatura fallida"
+    },
+    "humidityRegulationTriggeredTitle": "Regulación de humedad activada",
+    "@humidityRegulationTriggeredTitle": {
+      "description": "Título para regulación de humedad activada"
+    },
+    "humidityRegulationSuccessfulTitle": "Regulación de humedad exitosa",
+    "@humidityRegulationSuccessfulTitle": {
+      "description": "Título para regulación de humedad exitosa"
+    },
+    "humidityRegulationFailedTitle": "Regulación de humedad fallida",
+    "@humidityRegulationFailedTitle": {
+      "description": "Título para regulación de humedad fallida"
+    },
+    "ventilationRegulationTriggeredTitle": "Regulación de ventilación activada",
+    "@ventilationRegulationTriggeredTitle": {
+      "description": "Título para regulación de ventilación activada"
+    },
+    "ventilationRegulationSuccessfulTitle": "Regulación de ventilación exitosa",
+    "@ventilationRegulationSuccessfulTitle": {
+      "description": "Título para regulación de ventilación exitosa"
+    },
+    "ventilationRegulationFailedTitle": "Regulación de ventilación fallida",
+    "@ventilationRegulationFailedTitle": {
+      "description": "Título para regulación de ventilación fallida"
+    },
+    "containerHealthReportTitle": "Informe de salud del contenedor",
+    "@containerHealthReportTitle": {
+      "description": "Título para informe de salud del contenedor"
+    },
+    "containerStatusReportTitle": "Informe de estado del contenedor",
+    "@containerStatusReportTitle": {
+      "description": "Título para informe de estado del contenedor"
+    },
+    "containerManualOnTitle": "Contenedor manual encendido",
+    "@containerManualOnTitle": {
+      "description": "Título para contenedor manual encendido"
+    },
+    "containerManualOffTitle": "Contenedor manual apagado",
+    "@containerManualOffTitle": {
+      "description": "Título para contenedor manual apagado"
+    },
+    "containerOpenedTitle": "Contenedor abierto",
+    "@containerOpenedTitle": {
+      "description": "Título para contenedor abierto"
+    },
+    "containerOnlineTitle": "Contenedor en línea",
+    "@containerOnlineTitle": {
+      "description": "Título para contenedor en línea"
+    },
+    "containerOfflineTitle": "Contenedor fuera de línea",
+    "@containerOfflineTitle": {
+      "description": "Título para contenedor fuera de línea"
+    },
+    "unknownAlertTitle": "Alerta desconocida",
+    "@unknownAlertTitle": {
+      "description": "Título para alerta desconocida"
     }
+
 }

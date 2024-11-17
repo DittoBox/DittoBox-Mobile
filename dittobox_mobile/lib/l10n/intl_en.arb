@@ -1229,5 +1229,113 @@
           "example": "2024-11-17T05:46:11.518Z"
         }
       }
+    },
+    "temperatureThresholdExceededTitle": "Temperature Threshold Exceeded",
+    "@temperatureThresholdExceededTitle": {
+      "description": "Title for temperature threshold exceeded"
+    },
+    "humidityThresholdExceededTitle": "Humidity Threshold Exceeded",
+    "@humidityThresholdExceededTitle": {
+      "description": "Title for humidity threshold exceeded"
+    },
+    "decompositionGasesDetectedTitle": "Decomposition Gases Detected",
+    "@decompositionGasesDetectedTitle": {
+      "description": "Title for decomposition gases detected"
+    },
+    "containerLinkedTitle": "Container Linked",
+    "@containerLinkedTitle": {
+      "description": "Title for container linked"
+    },
+    "containerUnlinkedTitle": "Container Unlinked",
+    "@containerUnlinkedTitle": {
+      "description": "Title for container unlinked"
+    },
+    "containerOffTitle": "Container Off",
+    "@containerOffTitle": {
+      "description": "Title for container off"
+    },
+    "containerOnTitle": "Container On",
+    "@containerOnTitle": {
+      "description": "Title for container on"
+    },
+    "templateAssignedTitle": "Template Assigned",
+    "@templateAssignedTitle": {
+      "description": "Title for template assigned"
+    },
+    "containerActivatedTitle": "Container Activated",
+    "@containerActivatedTitle": {
+      "description": "Title for container activated"
+    },
+    "containerDeactivatedTitle": "Container Deactivated",
+    "@containerDeactivatedTitle": {
+      "description": "Title for container deactivated"
+    },
+    "temperatureRegulationTriggeredTitle": "Temperature Regulation Triggered",
+    "@temperatureRegulationTriggeredTitle": {
+      "description": "Title for temperature regulation triggered"
+    },
+    "temperatureRegulationSuccessfulTitle": "Temperature Regulation Successful",
+    "@temperatureRegulationSuccessfulTitle": {
+      "description": "Title for temperature regulation successful"
+    },
+    "temperatureRegulationFailedTitle": "Temperature Regulation Failed",
+    "@temperatureRegulationFailedTitle": {
+      "description": "Title for temperature regulation failed"
+    },
+    "humidityRegulationTriggeredTitle": "Humidity Regulation Triggered",
+    "@humidityRegulationTriggeredTitle": {
+      "description": "Title for humidity regulation triggered"
+    },
+    "humidityRegulationSuccessfulTitle": "Humidity Regulation Successful",
+    "@humidityRegulationSuccessfulTitle": {
+      "description": "Title for humidity regulation successful"
+    },
+    "humidityRegulationFailedTitle": "Humidity Regulation Failed",
+    "@humidityRegulationFailedTitle": {
+      "description": "Title for humidity regulation failed"
+    },
+    "ventilationRegulationTriggeredTitle": "Ventilation Regulation Triggered",
+    "@ventilationRegulationTriggeredTitle": {
+      "description": "Title for ventilation regulation triggered"
+    },
+    "ventilationRegulationSuccessfulTitle": "Ventilation Regulation Successful",
+    "@ventilationRegulationSuccessfulTitle": {
+      "description": "Title for ventilation regulation successful"
+    },
+    "ventilationRegulationFailedTitle": "Ventilation Regulation Failed",
+    "@ventilationRegulationFailedTitle": {
+      "description": "Title for ventilation regulation failed"
+    },
+    "containerHealthReportTitle": "Container Health Report",
+    "@containerHealthReportTitle": {
+      "description": "Title for container health report"
+    },
+    "containerStatusReportTitle": "Container Status Report",
+    "@containerStatusReportTitle": {
+      "description": "Title for container status report"
+    },
+    "containerManualOnTitle": "Container Manual On",
+    "@containerManualOnTitle": {
+      "description": "Title for container manual on"
+    },
+    "containerManualOffTitle": "Container Manual Off",
+    "@containerManualOffTitle": {
+      "description": "Title for container manual off"
+    },
+    "containerOpenedTitle": "Container Opened",
+    "@containerOpenedTitle": {
+      "description": "Title for container opened"
+    },
+    "containerOnlineTitle": "Container Online",
+    "@containerOnlineTitle": {
+      "description": "Title for container online"
+    },
+    "containerOfflineTitle": "Container Offline",
+    "@containerOfflineTitle": {
+      "description": "Title for container offline"
+    },
+    "unknownAlertTitle": "Unknown Alert",
+    "@unknownAlertTitle": {
+      "description": "Title for unknown alert"
     }
   }

@@ -1,15 +1,21 @@
 import 'dart:ui';
+import 'package:dittobox_mobile/firebase_options.dart';
 import 'package:dittobox_mobile/generated/l10n.dart';
 import 'package:dittobox_mobile/routes/app_routes.dart';
+import 'package:dittobox_mobile/shared/services/firebase_api.dart';
 import 'package:dittobox_mobile/shared/services/flutter_notification_services.dart';
 import 'package:dittobox_mobile/styles/dittobox_theme.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await initNotifications();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await FirebaseApi().initNotifications();
   runApp(const MainApp());
 }
 
@@ -37,16 +43,11 @@ class _MainAppState extends State<MainApp> {
   final textTheme = GoogleFonts.poppinsTextTheme();
 
   @override
-  void initState() {
-    super.initState();
-    startNotificationService(context);
-  }
-
-  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'DittoBox',
       initialRoute: AppRoutes.login,
+      navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,
       theme: MediaQuery.of(context).platformBrightness == Brightness.dark
           ? DittoBoxTheme(textTheme).dark()

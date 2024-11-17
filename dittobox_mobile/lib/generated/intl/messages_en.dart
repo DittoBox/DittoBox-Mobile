@@ -187,25 +187,51 @@ class MessageLookup extends MessageLookupByLibrary {
         "confirmPasswordRequired": MessageLookupByLibrary.simpleMessage(
             "Confirm password is required"),
         "containerActivated": m1,
+        "containerActivatedTitle":
+            MessageLookupByLibrary.simpleMessage("Container Activated"),
         "containerCreatedSuccessfully": MessageLookupByLibrary.simpleMessage(
             "Container created successfully"),
         "containerDeactivated": m2,
+        "containerDeactivatedTitle":
+            MessageLookupByLibrary.simpleMessage("Container Deactivated"),
         "containerDescription":
             MessageLookupByLibrary.simpleMessage("Container description"),
         "containerHealthReport": m3,
+        "containerHealthReportTitle":
+            MessageLookupByLibrary.simpleMessage("Container Health Report"),
         "containerLinked": m4,
+        "containerLinkedTitle":
+            MessageLookupByLibrary.simpleMessage("Container Linked"),
         "containerManualOff": m5,
+        "containerManualOffTitle":
+            MessageLookupByLibrary.simpleMessage("Container Manual Off"),
         "containerManualOn": m6,
+        "containerManualOnTitle":
+            MessageLookupByLibrary.simpleMessage("Container Manual On"),
         "containerName": MessageLookupByLibrary.simpleMessage("Container name"),
         "containerOff": m7,
+        "containerOffTitle":
+            MessageLookupByLibrary.simpleMessage("Container Off"),
         "containerOffline": m8,
+        "containerOfflineTitle":
+            MessageLookupByLibrary.simpleMessage("Container Offline"),
         "containerOn": m9,
+        "containerOnTitle":
+            MessageLookupByLibrary.simpleMessage("Container On"),
         "containerOnline": m10,
+        "containerOnlineTitle":
+            MessageLookupByLibrary.simpleMessage("Container Online"),
         "containerOpened": m11,
+        "containerOpenedTitle":
+            MessageLookupByLibrary.simpleMessage("Container Opened"),
         "containerSelectionModal": MessageLookupByLibrary.simpleMessage(
             "This change will be recorded in this container’s historial."),
         "containerStatusReport": m12,
+        "containerStatusReportTitle":
+            MessageLookupByLibrary.simpleMessage("Container Status Report"),
         "containerUnlinked": m13,
+        "containerUnlinkedTitle":
+            MessageLookupByLibrary.simpleMessage("Container Unlinked"),
         "containers": MessageLookupByLibrary.simpleMessage("Containers"),
         "containersNotFound": MessageLookupByLibrary.simpleMessage(
             "You don\'t have any Dittobox containers yet"),
@@ -213,6 +239,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "currentConfigs":
             MessageLookupByLibrary.simpleMessage("Current configurations"),
         "decompositionGasesDetected": m14,
+        "decompositionGasesDetectedTitle": MessageLookupByLibrary.simpleMessage(
+            "Decomposition Gases Detected"),
         "delete": MessageLookupByLibrary.simpleMessage("Delete"),
         "description": MessageLookupByLibrary.simpleMessage("Description"),
         "details": MessageLookupByLibrary.simpleMessage("Details"),
@@ -255,9 +283,19 @@ class MessageLookup extends MessageLookupByLibrary {
         "humidityMax": MessageLookupByLibrary.simpleMessage("Max humidity"),
         "humidityMin": MessageLookupByLibrary.simpleMessage("Min humidity"),
         "humidityRegulationFailed": m15,
+        "humidityRegulationFailedTitle":
+            MessageLookupByLibrary.simpleMessage("Humidity Regulation Failed"),
         "humidityRegulationSuccessful": m16,
+        "humidityRegulationSuccessfulTitle":
+            MessageLookupByLibrary.simpleMessage(
+                "Humidity Regulation Successful"),
         "humidityRegulationTriggered": m17,
+        "humidityRegulationTriggeredTitle":
+            MessageLookupByLibrary.simpleMessage(
+                "Humidity Regulation Triggered"),
         "humidityThresholdExceeded": m18,
+        "humidityThresholdExceededTitle":
+            MessageLookupByLibrary.simpleMessage("Humidity Threshold Exceeded"),
         "identificationNumber":
             MessageLookupByLibrary.simpleMessage("Identification number"),
         "invalidCardHolderName":
@@ -423,13 +461,27 @@ class MessageLookup extends MessageLookupByLibrary {
         "tempMin": MessageLookupByLibrary.simpleMessage("Min temperature"),
         "temperature": MessageLookupByLibrary.simpleMessage("Temperature"),
         "temperatureRegulationFailed": m20,
+        "temperatureRegulationFailedTitle":
+            MessageLookupByLibrary.simpleMessage(
+                "Temperature Regulation Failed"),
         "temperatureRegulationSuccessful": m21,
+        "temperatureRegulationSuccessfulTitle":
+            MessageLookupByLibrary.simpleMessage(
+                "Temperature Regulation Successful"),
         "temperatureRegulationTriggered": m22,
+        "temperatureRegulationTriggeredTitle":
+            MessageLookupByLibrary.simpleMessage(
+                "Temperature Regulation Triggered"),
         "temperatureThresholdExceeded": m23,
+        "temperatureThresholdExceededTitle":
+            MessageLookupByLibrary.simpleMessage(
+                "Temperature Threshold Exceeded"),
         "template": MessageLookupByLibrary.simpleMessage("Template"),
         "templateAssigned": m24,
         "templateAssignedSuccessfully": MessageLookupByLibrary.simpleMessage(
             "Template assigned successfully"),
+        "templateAssignedTitle":
+            MessageLookupByLibrary.simpleMessage("Template Assigned"),
         "templateConfiguration":
             MessageLookupByLibrary.simpleMessage("Template Configuration"),
         "templateLibrary":
@@ -439,6 +491,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "title": MessageLookupByLibrary.simpleMessage("DittoBox"),
         "type": MessageLookupByLibrary.simpleMessage("Type"),
         "unknownAlert": m25,
+        "unknownAlertTitle":
+            MessageLookupByLibrary.simpleMessage("Unknown Alert"),
         "upTo": MessageLookupByLibrary.simpleMessage("Up to"),
         "updatePaymentInformation":
             MessageLookupByLibrary.simpleMessage("Update"),
@@ -451,8 +505,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "usernameCannotBeEmpty":
             MessageLookupByLibrary.simpleMessage("Username cannot be empty"),
         "ventilationRegulationFailed": m26,
+        "ventilationRegulationFailedTitle":
+            MessageLookupByLibrary.simpleMessage(
+                "Ventilation Regulation Failed"),
         "ventilationRegulationSuccessful": m27,
+        "ventilationRegulationSuccessfulTitle":
+            MessageLookupByLibrary.simpleMessage(
+                "Ventilation Regulation Successful"),
         "ventilationRegulationTriggered": m28,
+        "ventilationRegulationTriggeredTitle":
+            MessageLookupByLibrary.simpleMessage(
+                "Ventilation Regulation Triggered"),
         "verifyCode": MessageLookupByLibrary.simpleMessage("Verify Code"),
         "viewContainers":
             MessageLookupByLibrary.simpleMessage("View containers"),

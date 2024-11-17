@@ -2692,6 +2692,276 @@ class S {
       args: [issuedAt],
     );
   }
+
+  /// `Temperature Threshold Exceeded`
+  String get temperatureThresholdExceededTitle {
+    return Intl.message(
+      'Temperature Threshold Exceeded',
+      name: 'temperatureThresholdExceededTitle',
+      desc: 'Title for temperature threshold exceeded',
+      args: [],
+    );
+  }
+
+  /// `Humidity Threshold Exceeded`
+  String get humidityThresholdExceededTitle {
+    return Intl.message(
+      'Humidity Threshold Exceeded',
+      name: 'humidityThresholdExceededTitle',
+      desc: 'Title for humidity threshold exceeded',
+      args: [],
+    );
+  }
+
+  /// `Decomposition Gases Detected`
+  String get decompositionGasesDetectedTitle {
+    return Intl.message(
+      'Decomposition Gases Detected',
+      name: 'decompositionGasesDetectedTitle',
+      desc: 'Title for decomposition gases detected',
+      args: [],
+    );
+  }
+
+  /// `Container Linked`
+  String get containerLinkedTitle {
+    return Intl.message(
+      'Container Linked',
+      name: 'containerLinkedTitle',
+      desc: 'Title for container linked',
+      args: [],
+    );
+  }
+
+  /// `Container Unlinked`
+  String get containerUnlinkedTitle {
+    return Intl.message(
+      'Container Unlinked',
+      name: 'containerUnlinkedTitle',
+      desc: 'Title for container unlinked',
+      args: [],
+    );
+  }
+
+  /// `Container Off`
+  String get containerOffTitle {
+    return Intl.message(
+      'Container Off',
+      name: 'containerOffTitle',
+      desc: 'Title for container off',
+      args: [],
+    );
+  }
+
+  /// `Container On`
+  String get containerOnTitle {
+    return Intl.message(
+      'Container On',
+      name: 'containerOnTitle',
+      desc: 'Title for container on',
+      args: [],
+    );
+  }
+
+  /// `Template Assigned`
+  String get templateAssignedTitle {
+    return Intl.message(
+      'Template Assigned',
+      name: 'templateAssignedTitle',
+      desc: 'Title for template assigned',
+      args: [],
+    );
+  }
+
+  /// `Container Activated`
+  String get containerActivatedTitle {
+    return Intl.message(
+      'Container Activated',
+      name: 'containerActivatedTitle',
+      desc: 'Title for container activated',
+      args: [],
+    );
+  }
+
+  /// `Container Deactivated`
+  String get containerDeactivatedTitle {
+    return Intl.message(
+      'Container Deactivated',
+      name: 'containerDeactivatedTitle',
+      desc: 'Title for container deactivated',
+      args: [],
+    );
+  }
+
+  /// `Temperature Regulation Triggered`
+  String get temperatureRegulationTriggeredTitle {
+    return Intl.message(
+      'Temperature Regulation Triggered',
+      name: 'temperatureRegulationTriggeredTitle',
+      desc: 'Title for temperature regulation triggered',
+      args: [],
+    );
+  }
+
+  /// `Temperature Regulation Successful`
+  String get temperatureRegulationSuccessfulTitle {
+    return Intl.message(
+      'Temperature Regulation Successful',
+      name: 'temperatureRegulationSuccessfulTitle',
+      desc: 'Title for temperature regulation successful',
+      args: [],
+    );
+  }
+
+  /// `Temperature Regulation Failed`
+  String get temperatureRegulationFailedTitle {
+    return Intl.message(
+      'Temperature Regulation Failed',
+      name: 'temperatureRegulationFailedTitle',
+      desc: 'Title for temperature regulation failed',
+      args: [],
+    );
+  }
+
+  /// `Humidity Regulation Triggered`
+  String get humidityRegulationTriggeredTitle {
+    return Intl.message(
+      'Humidity Regulation Triggered',
+      name: 'humidityRegulationTriggeredTitle',
+      desc: 'Title for humidity regulation triggered',
+      args: [],
+    );
+  }
+
+  /// `Humidity Regulation Successful`
+  String get humidityRegulationSuccessfulTitle {
+    return Intl.message(
+      'Humidity Regulation Successful',
+      name: 'humidityRegulationSuccessfulTitle',
+      desc: 'Title for humidity regulation successful',
+      args: [],
+    );
+  }
+
+  /// `Humidity Regulation Failed`
+  String get humidityRegulationFailedTitle {
+    return Intl.message(
+      'Humidity Regulation Failed',
+      name: 'humidityRegulationFailedTitle',
+      desc: 'Title for humidity regulation failed',
+      args: [],
+    );
+  }
+
+  /// `Ventilation Regulation Triggered`
+  String get ventilationRegulationTriggeredTitle {
+    return Intl.message(
+      'Ventilation Regulation Triggered',
+      name: 'ventilationRegulationTriggeredTitle',
+      desc: 'Title for ventilation regulation triggered',
+      args: [],
+    );
+  }
+
+  /// `Ventilation Regulation Successful`
+  String get ventilationRegulationSuccessfulTitle {
+    return Intl.message(
+      'Ventilation Regulation Successful',
+      name: 'ventilationRegulationSuccessfulTitle',
+      desc: 'Title for ventilation regulation successful',
+      args: [],
+    );
+  }
+
+  /// `Ventilation Regulation Failed`
+  String get ventilationRegulationFailedTitle {
+    return Intl.message(
+      'Ventilation Regulation Failed',
+      name: 'ventilationRegulationFailedTitle',
+      desc: 'Title for ventilation regulation failed',
+      args: [],
+    );
+  }
+
+  /// `Container Health Report`
+  String get containerHealthReportTitle {
+    return Intl.message(
+      'Container Health Report',
+      name: 'containerHealthReportTitle',
+      desc: 'Title for container health report',
+      args: [],
+    );
+  }
+
+  /// `Container Status Report`
+  String get containerStatusReportTitle {
+    return Intl.message(
+      'Container Status Report',
+      name: 'containerStatusReportTitle',
+      desc: 'Title for container status report',
+      args: [],
+    );
+  }
+
+  /// `Container Manual On`
+  String get containerManualOnTitle {
+    return Intl.message(
+      'Container Manual On',
+      name: 'containerManualOnTitle',
+      desc: 'Title for container manual on',
+      args: [],
+    );
+  }
+
+  /// `Container Manual Off`
+  String get containerManualOffTitle {
+    return Intl.message(
+      'Container Manual Off',
+      name: 'containerManualOffTitle',
+      desc: 'Title for container manual off',
+      args: [],
+    );
+  }
+
+  /// `Container Opened`
+  String get containerOpenedTitle {
+    return Intl.message(
+      'Container Opened',
+      name: 'containerOpenedTitle',
+      desc: 'Title for container opened',
+      args: [],
+    );
+  }
+
+  /// `Container Online`
+  String get containerOnlineTitle {
+    return Intl.message(
+      'Container Online',
+      name: 'containerOnlineTitle',
+      desc: 'Title for container online',
+      args: [],
+    );
+  }
+
+  /// `Container Offline`
+  String get containerOfflineTitle {
+    return Intl.message(
+      'Container Offline',
+      name: 'containerOfflineTitle',
+      desc: 'Title for container offline',
+      args: [],
+    );
+  }
+
+  /// `Unknown Alert`
+  String get unknownAlertTitle {
+    return Intl.message(
+      'Unknown Alert',
+      name: 'unknownAlertTitle',
+      desc: 'Title for unknown alert',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
