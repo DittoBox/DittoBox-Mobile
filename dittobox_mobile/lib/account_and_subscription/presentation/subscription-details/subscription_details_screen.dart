@@ -44,19 +44,20 @@ class _SubscriptionDetailsScreenState extends State<SubscriptionDetailsScreen> {
     if (subscriptionDetails != null) {
       setState(() {
         _currentTier = subscriptionDetails.tier;
-        _status = subscriptionDetails.subscriptionStatusId == 1 ? 'Active' : 'Expired';
+        _status = subscriptionDetails.subscriptionStatusId == 1 ? S.of(context).active : S.of(context).expired;
         _nextPaymentDay = DateFormat('yyyy-MM-dd').format(subscriptionDetails.lastPaidPeriod); // Formatea la fecha
       });
     }
   }
 
   Future<void> _loadProfileDetails() async {
-    final profileDetails = await ProfileService().getProfileDetails();
+    final profileDetails = await ProfileService().getProfileDetailsofAccount();
     if (profileDetails != null) {
       setState(() {
         _bankAccountOwner = '${profileDetails.firstName} ${profileDetails.lastName}';
       });
     }
+    print('Bank account owner: $_bankAccountOwner');
   }
 
   Future<void> _loadAccountDetails() async {
@@ -130,17 +131,17 @@ class SubscriptionDetails extends StatelessWidget {
           style: const TextStyle(fontSize: 22),
         ),
         const SizedBox(height: 24),
-        _buildInfoRow('Current tier', currentTier),
+        _buildInfoRow(S.of(context).currenTier, currentTier),
         const SizedBox(height: 16),
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-          FilledButton(
-            onPressed: () {
-              Navigator.pushNamed(context, AppRoutes.subscriptionPlans);
-            },
-            child: Text(S.of(context).upgradePlan),
-          ),
+            FilledButton(
+              onPressed: () {
+                Navigator.pushNamed(context, AppRoutes.subscriptionPlans);
+              },
+              child: Text(S.of(context).upgradePlan),
+            ),
           ],
         ),
       ],

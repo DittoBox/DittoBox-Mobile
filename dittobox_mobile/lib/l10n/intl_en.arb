@@ -939,5 +939,473 @@
   "errorApplicatingaTemplate": "Error applicating a template",
   "@errorApplicatingaTemplate": {
     "description": "Error message when applying a template fails"
-  }
-}
+  },
+    "temperatureThresholdExceeded": "The temperature in {name} has exceeded the allowed threshold.",
+    "@temperatureThresholdExceeded": {
+      "description": "Error message when temperature threshold is exceeded",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "humidityThresholdExceeded": "The humidity in {name} has exceeded the allowed threshold.",
+    "@humidityThresholdExceeded": {
+      "description": "Error message when humidity threshold is exceeded",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "decompositionGasesDetected": "Decomposition gases have been detected in {name}.",
+    "@decompositionGasesDetected": {
+      "description": "Error message when decomposition gases are detected",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "containerLinked": "The container {name} has been linked.",
+    "@containerLinked": {
+      "description": "Success message when container is linked",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "containerUnlinked": "The container {name} has been unlinked.",
+    "@containerUnlinked": {
+      "description": "Success message when container is unlinked",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "containerOff": "The container {name} is off.",
+    "@containerOff": {
+      "description": "Error message when container is off",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "containerOn": "The container {name} is on.",
+    "@containerOn": {
+      "description": "Success message when container is on",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "templateAssigned": "A template has been assigned to the container {name}.",
+    "@templateAssigned": {
+      "description": "Success message when template is assigned",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "containerActivated": "The container {name} has been activated.",
+    "@containerActivated": {
+      "description": "Success message when container is activated",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "containerDeactivated": "The container {name} has been deactivated.",
+    "@containerDeactivated": {
+      "description": "Success message when container is deactivated",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "temperatureRegulationTriggered": "Temperature regulation has been triggered in {name}.",
+    "@temperatureRegulationTriggered": {
+      "description": "Error message when temperature regulation is triggered",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "temperatureRegulationSuccessful": "Temperature regulation in {name} was successful.",
+    "@temperatureRegulationSuccessful": {
+      "description": "Success message when temperature regulation is successful",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "temperatureRegulationFailed": "Temperature regulation in {name} has failed.",
+    "@temperatureRegulationFailed": {
+      "description": "Error message when temperature regulation fails",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "humidityRegulationTriggered": "Humidity regulation has been triggered in {name}.",
+    "@humidityRegulationTriggered": {
+      "description": "Error message when humidity regulation is triggered",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "humidityRegulationSuccessful": "Humidity regulation in {name} was successful.",
+    "@humidityRegulationSuccessful": {
+      "description": "Success message when humidity regulation is successful",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "humidityRegulationFailed": "Humidity regulation in {name} has failed.",
+    "@humidityRegulationFailed": {
+      "description": "Error message when humidity regulation fails",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "ventilationRegulationTriggered": "Ventilation regulation has been triggered in {name}.",
+    "@ventilationRegulationTriggered": {
+      "description": "Error message when ventilation regulation is triggered",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "ventilationRegulationSuccessful": "Ventilation regulation in {name} was successful.",
+    "@ventilationRegulationSuccessful": {
+      "description": "Success message when ventilation regulation is successful",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "ventilationRegulationFailed": "Ventilation regulation in {name} has failed.",
+    "@ventilationRegulationFailed": {
+      "description": "Error message when ventilation regulation fails",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "containerHealthReport": "Health report of the container {name}.",
+    "@containerHealthReport": {
+      "description": "Label for container health report",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "containerStatusReport": "Status report of the container {name}.",
+    "@containerStatusReport": {
+      "description": "Label for container status report",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "containerManualOn": "The container {name} has been manually turned on.",
+    "@containerManualOn": {
+      "description": "Success message when container is manually turned on",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "containerManualOff": "The container {name} has been manually turned off.",
+    "@containerManualOff": {
+      "description": "Success message when container is manually turned off",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "containerOpened": "The container {name} has been opened.",
+    "@containerOpened": {
+      "description": "Error message when container is opened",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "containerOnline": "The container {name} is online.",
+    "@containerOnline": {
+      "description": "Success message when container is online",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "containerOffline": "The container {name} is offline.",
+    "@containerOffline": {
+      "description": "Error message when container is offline",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "unknownAlert": "Unknown alert in {name}.",
+    "@unknownAlert": {
+      "description": "Error message when alert is unknown",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "alert": "Alert: {alertType}",
+    "@alert": {
+      "description": "Label for alert",
+      "placeholders": {
+        "alertType": {
+          "type": "String",
+          "example": "TemperatureThresholdExceeded"
+        }
+      }
+    },
+    "issuedAt": "Issued at: {issuedAt}",
+    "@issuedAt": {
+      "description": "Label for issued at",
+      "placeholders": {
+        "issuedAt": {
+          "type": "String",
+          "example": "2024-11-17T05:46:11.518Z"
+        }
+      }
+    },
+    "temperatureThresholdExceededTitle": "Temperature Threshold Exceeded",
+    "@temperatureThresholdExceededTitle": {
+      "description": "Title for temperature threshold exceeded"
+    },
+    "humidityThresholdExceededTitle": "Humidity Threshold Exceeded",
+    "@humidityThresholdExceededTitle": {
+      "description": "Title for humidity threshold exceeded"
+    },
+    "decompositionGasesDetectedTitle": "Decomposition Gases Detected",
+    "@decompositionGasesDetectedTitle": {
+      "description": "Title for decomposition gases detected"
+    },
+    "containerLinkedTitle": "Container Linked",
+    "@containerLinkedTitle": {
+      "description": "Title for container linked"
+    },
+    "containerUnlinkedTitle": "Container Unlinked",
+    "@containerUnlinkedTitle": {
+      "description": "Title for container unlinked"
+    },
+    "containerOffTitle": "Container Off",
+    "@containerOffTitle": {
+      "description": "Title for container off"
+    },
+    "containerOnTitle": "Container On",
+    "@containerOnTitle": {
+      "description": "Title for container on"
+    },
+    "templateAssignedTitle": "Template Assigned",
+    "@templateAssignedTitle": {
+      "description": "Title for template assigned"
+    },
+    "containerActivatedTitle": "Container Activated",
+    "@containerActivatedTitle": {
+      "description": "Title for container activated"
+    },
+    "containerDeactivatedTitle": "Container Deactivated",
+    "@containerDeactivatedTitle": {
+      "description": "Title for container deactivated"
+    },
+    "temperatureRegulationTriggeredTitle": "Temperature Regulation Triggered",
+    "@temperatureRegulationTriggeredTitle": {
+      "description": "Title for temperature regulation triggered"
+    },
+    "temperatureRegulationSuccessfulTitle": "Temperature Regulation Successful",
+    "@temperatureRegulationSuccessfulTitle": {
+      "description": "Title for temperature regulation successful"
+    },
+    "temperatureRegulationFailedTitle": "Temperature Regulation Failed",
+    "@temperatureRegulationFailedTitle": {
+      "description": "Title for temperature regulation failed"
+    },
+    "humidityRegulationTriggeredTitle": "Humidity Regulation Triggered",
+    "@humidityRegulationTriggeredTitle": {
+      "description": "Title for humidity regulation triggered"
+    },
+    "humidityRegulationSuccessfulTitle": "Humidity Regulation Successful",
+    "@humidityRegulationSuccessfulTitle": {
+      "description": "Title for humidity regulation successful"
+    },
+    "humidityRegulationFailedTitle": "Humidity Regulation Failed",
+    "@humidityRegulationFailedTitle": {
+      "description": "Title for humidity regulation failed"
+    },
+    "ventilationRegulationTriggeredTitle": "Ventilation Regulation Triggered",
+    "@ventilationRegulationTriggeredTitle": {
+      "description": "Title for ventilation regulation triggered"
+    },
+    "ventilationRegulationSuccessfulTitle": "Ventilation Regulation Successful",
+    "@ventilationRegulationSuccessfulTitle": {
+      "description": "Title for ventilation regulation successful"
+    },
+    "ventilationRegulationFailedTitle": "Ventilation Regulation Failed",
+    "@ventilationRegulationFailedTitle": {
+      "description": "Title for ventilation regulation failed"
+    },
+    "containerHealthReportTitle": "Container Health Report",
+    "@containerHealthReportTitle": {
+      "description": "Title for container health report"
+    },
+    "containerStatusReportTitle": "Container Status Report",
+    "@containerStatusReportTitle": {
+      "description": "Title for container status report"
+    },
+    "containerManualOnTitle": "Container Manual On",
+    "@containerManualOnTitle": {
+      "description": "Title for container manual on"
+    },
+    "containerManualOffTitle": "Container Manual Off",
+    "@containerManualOffTitle": {
+      "description": "Title for container manual off"
+    },
+    "containerOpenedTitle": "Container Opened",
+    "@containerOpenedTitle": {
+      "description": "Title for container opened"
+    },
+    "containerOnlineTitle": "Container Online",
+    "@containerOnlineTitle": {
+      "description": "Title for container online"
+    },
+    "containerOfflineTitle": "Container Offline",
+    "@containerOfflineTitle": {
+      "description": "Title for container offline"
+    },
+    "unknownAlertTitle": "Unknown Alert",
+    "@unknownAlertTitle": {
+      "description": "Title for unknown alert"
+    },
+    "noTemplatesFound": "Dittobox isn't distributing any templates yet, please look forward to it.",
+    "@noTemplatesFound": {
+      "description": "Error message when no templates are found"
+    },
+    "All": "All",
+    "@All": {
+      "description": "Label for all"
+    },
+    "Produce": "Produce",
+    "@Produce": {
+      "description": "Label for produce"
+    },
+    "Meats" : "Meats",
+    "@Meats": {
+      "description": "Label for meats"
+    },
+    "AnimalDerived" : "Animal Derived",
+    "@AnimalDerived": {
+      "description": "Label for animal derived"
+    },
+    "ProcessedFood" : "Processed Food",
+    "@ProcessedFood": {
+      "description": "Label for processed food"
+    },
+    "templateAssignedSuccessfullyToContainer": "Template assigned successfully to container {name}.",
+    "@templateAssignedSuccessfullyToContainer": {
+      "description": "Success message when template is assigned successfully to container",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "notUsersFound": "No users found",
+    "@notUsersFound": {
+      "description": "Error message when no users are found"
+    },
+    "failedtoAddWorker": "Failed to add worker",
+    "@failedtoAddWorker": {
+      "description": "Error message when failing to add worker"
+    },
+    "manager": "Manager",
+    "@manager": {
+      "description": "Label for manager"
+    },
+    "facility": "Facility",
+    "@facility": {
+      "description": "Label for facility"
+    },
+    "currenTier": "Current Tier",
+    "@currenTier": {
+      "description": "Label for current tier"
+    },
+    "active": "Active",
+    "@active": {
+      "description": "Label for active"
+    },
+    "expired" : "Expired",
+    "@expired": {
+      "description": "Label for expired"
+    },
+    "noLocation": "No location",
+    "@noLocation": {
+      "description": "Label for no location"
+    },
+    "noPoseefacility": "None",
+    "@noPoseefacility": {
+      "description": "Label for none"
+    }
+ }

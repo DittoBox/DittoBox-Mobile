@@ -174,7 +174,7 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
                     child: TextFormField(
                       controller: _tempMinController,
                       decoration: InputDecoration(
-                        labelText: '${S.of(context).tempMin} (%)',
+                        labelText: '${S.of(context).tempMin} (°C)',
                         border: const OutlineInputBorder(),
                       ),
                       keyboardType: TextInputType.number,
@@ -191,7 +191,7 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
                     child: TextFormField(
                       controller: _tempMaxController,
                       decoration: InputDecoration(
-                        labelText: '${S.of(context).tempMax} (%)',
+                        labelText: '${S.of(context).tempMax} (°C)',
                         border: const OutlineInputBorder(),
                       ),
                       keyboardType: TextInputType.number,
@@ -203,14 +203,6 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
                       },
                     ),
                   ),
-                ],
-              ),
-              const SizedBox(height: 16),
-              Row(
-                children: [
-                  const Icon(Icons.water_drop_outlined),
-                  const SizedBox(width: 8),
-                  Text(S.of(context).humidity, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
                 ],
               ),
               const SizedBox(height: 16),
@@ -254,265 +246,193 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
               const SizedBox(height: 16),
               Row(
                 children: [
-                  const Icon(Icons.cloud_outlined),
+                  Expanded(
+                    child: TextFormField(
+                      controller: _oxygenMinController,
+                      decoration: InputDecoration(
+                        labelText: '${S.of(context).oxygenMin} (ppm)',
+                        border: const OutlineInputBorder(),
+                      ),
+                      keyboardType: TextInputType.number,
+                      validator: (value) {
+                        if (_detectOxygen && (value == null || value.isEmpty)) {
+                          return S.of(context).requiredField;
+                        }
+                        return null;
+                      },
+                    ),
+                  ),
                   const SizedBox(width: 8),
-                  Text(S.of(context).gasDetection, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                  Expanded(
+                    child: TextFormField(
+                      controller: _oxygenMaxController,
+                      decoration: InputDecoration(
+                        labelText: '${S.of(context).oxygenMax} (ppm)',
+                        border: const OutlineInputBorder(),
+                      ),
+                      keyboardType: TextInputType.number,
+                      validator: (value) {
+                        if (_detectOxygen && (value == null || value.isEmpty)) {
+                          return S.of(context).requiredField;
+                        }
+                        return null;
+                      },
+                    ),
+                  ),
                 ],
               ),
-              SwitchListTile(
-                title: Text(S.of(context).detectAllGases),
-                value: _detectAllGases,
-                onChanged: (bool value) {
-                  setState(() {
-                    _detectAllGases = value;
-                    _detectOxygen = value;
-                    _detectCO2 = value;
-                    _detectEthylene = value;
-                    _detectAmmonia = value;
-                    _detectSulfurDioxide = value;
-                  });
-                },
+              const SizedBox(height: 16),
+              Row(
+                children: [
+                  Expanded(
+                    child: TextFormField(
+                      controller: _co2MinController,
+                      decoration: InputDecoration(
+                        labelText: '${S.of(context).carbonDioxideMin} (ppm)',
+                        border: const OutlineInputBorder(),
+                      ),
+                      keyboardType: TextInputType.number,
+                      validator: (value) {
+                        if (_detectCO2 && (value == null || value.isEmpty)) {
+                          return S.of(context).requiredField;
+                        }
+                        return null;
+                      },
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: TextFormField(
+                      controller: _co2MaxController,
+                      decoration: InputDecoration(
+                        labelText: '${S.of(context).carbonDioxideMax} (ppm)',
+                        border: const OutlineInputBorder(),
+                      ),
+                      keyboardType: TextInputType.number,
+                      validator: (value) {
+                        if (_detectCO2 && (value == null || value.isEmpty)) {
+                          return S.of(context).requiredField;
+                        }
+                        return null;
+                      },
+                    ),
+                  ),
+                ],
               ),
-              SwitchListTile(
-                title: Text(S.of(context).oxygen),
-                value: _detectOxygen && _detectAllGases,
-                onChanged: _detectAllGases ? (bool value) {
-                  setState(() {
-                    _detectOxygen = value;
-                  });
-                } : null,
+              const SizedBox(height: 16),
+              Row(
+                children: [
+                  Expanded(
+                    child: TextFormField(
+                      controller: _ethyleneMinController,
+                      decoration: InputDecoration(
+                        labelText: '${S.of(context).ethyleneMin} (ppm)',
+                        border: const OutlineInputBorder(),
+                      ),
+                      keyboardType: TextInputType.number,
+                      validator: (value) {
+                        if (_detectEthylene && (value == null || value.isEmpty)) {
+                          return S.of(context).requiredField;
+                        }
+                        return null;
+                      },
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: TextFormField(
+                      controller: _ethyleneMaxController,
+                      decoration: InputDecoration(
+                        labelText: '${S.of(context).ethyleneMax} (ppm)',
+                        border: const OutlineInputBorder(),
+                      ),
+                      keyboardType: TextInputType.number,
+                      validator: (value) {
+                        if (_detectEthylene && (value == null || value.isEmpty)) {
+                          return S.of(context).requiredField;
+                        }
+                        return null;
+                      },
+                    ),
+                  ),
+                ],
               ),
-              if (_detectOxygen && _detectAllGases) ...[
-                Row(
-                  children: [
-                    Expanded(
-                      child: TextFormField(
-                        controller: _oxygenMinController,
-                        decoration: InputDecoration(
-                          labelText: '${S.of(context).oxygenMin} (%)',
-                          border: const OutlineInputBorder(),
-                        ),
-                        keyboardType: TextInputType.number,
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return S.of(context).requiredField;
-                          }
-                          return null;
-                        },
+              const SizedBox(height: 16),
+              Row(
+                children: [
+                  Expanded(
+                    child: TextFormField(
+                      controller: _ammoniaMinController,
+                      decoration: InputDecoration(
+                        labelText: '${S.of(context).ammoniaMin} (ppm)',
+                        border: const OutlineInputBorder(),
                       ),
+                      keyboardType: TextInputType.number,
+                      validator: (value) {
+                        if (_detectAmmonia && (value == null || value.isEmpty)) {
+                          return S.of(context).requiredField;
+                        }
+                        return null;
+                      },
                     ),
-                    const SizedBox(width: 8),
-                    Expanded(
-                      child: TextFormField(
-                        controller: _oxygenMaxController,
-                        decoration: InputDecoration(
-                          labelText: '${S.of(context).oxygenMax} (%)',
-                          border: const OutlineInputBorder(),
-                        ),
-                        keyboardType: TextInputType.number,
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return S.of(context).requiredField;
-                          }
-                          return null;
-                        },
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: TextFormField(
+                      controller: _ammoniaMaxController,
+                      decoration: InputDecoration(
+                        labelText: '${S.of(context).ammoniaMax} (ppm)',
+                        border: const OutlineInputBorder(),
                       ),
+                      keyboardType: TextInputType.number,
+                      validator: (value) {
+                        if (_detectAmmonia && (value == null || value.isEmpty)) {
+                          return S.of(context).requiredField;
+                        }
+                        return null;
+                      },
                     ),
-                  ],
-                ),
-              ],
-              SwitchListTile(
-                title: Text(S.of(context).carbonDioxide),
-                value: _detectCO2 && _detectAllGases,
-                onChanged: _detectAllGases ? (bool value) {
-                  setState(() {
-                    _detectCO2 = value;
-                  });
-                } : null,
+                  ),
+                ],
               ),
-              if (_detectCO2 && _detectAllGases) ...[
-                Row(
-                  children: [
-                    Expanded(
-                      child: TextFormField(
-                        controller: _co2MinController,
-                        decoration: InputDecoration(
-                          labelText: '${S.of(context).carbonDioxideMin} (%)',
-                          border: const OutlineInputBorder(),
-                        ),
-                        keyboardType: TextInputType.number,
-                        validator: (value) {
-                          if (_detectCO2 && (value == null || value.isEmpty)) {
-                            return S.of(context).requiredField;
-                          }
-                          return null;
-                        },
+              const SizedBox(height: 16),
+              Row(
+                children: [
+                  Expanded(
+                    child: TextFormField(
+                      controller: _sulfurDioxideMinController,
+                      decoration: InputDecoration(
+                        labelText: '${S.of(context).sulfurDioxideMin} (ppm)',
+                        border: const OutlineInputBorder(),
                       ),
+                      keyboardType: TextInputType.number,
+                      validator: (value) {
+                        if (_detectSulfurDioxide && (value == null || value.isEmpty)) {
+                          return S.of(context).requiredField;
+                        }
+                        return null;
+                      },
                     ),
-                    const SizedBox(width: 8),
-                    Expanded(
-                      child: TextFormField(
-                        controller: _co2MaxController,
-                        decoration: InputDecoration(
-                          labelText: '${S.of(context).carbonDioxideMax} (%)',
-                          border: const OutlineInputBorder(),
-                        ),
-                        keyboardType: TextInputType.number,
-                        validator: (value) {
-                          if (_detectCO2 && (value == null || value.isEmpty)) {
-                            return S.of(context).requiredField;
-                          }
-                          return null;
-                        },
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: TextFormField(
+                      controller: _sulfurDioxideMaxController,
+                      decoration: InputDecoration(
+                        labelText: '${S.of(context).sulfurDioxideMax} (ppm)',
+                        border: const OutlineInputBorder(),
                       ),
+                      keyboardType: TextInputType.number,
+                      validator: (value) {
+                        if (_detectSulfurDioxide && (value == null || value.isEmpty)) {
+                          return S.of(context).requiredField;
+                        }
+                        return null;
+                      },
                     ),
-                  ],
-                ),
-              ],
-              SwitchListTile(
-                title: Text(S.of(context).ethylene),
-                value: _detectEthylene && _detectAllGases,
-                onChanged: _detectAllGases ? (bool value) {
-                  setState(() {
-                    _detectEthylene = value;
-                  });
-                } : null,
+                  ),
+                ],
               ),
-              if (_detectEthylene && _detectAllGases) ...[
-                Row(
-                  children: [
-                    Expanded(
-                      child: TextFormField(
-                        controller: _ethyleneMinController,
-                        decoration: InputDecoration(
-                          labelText: '${S.of(context).ethyleneMin} (%)',
-                          border: const OutlineInputBorder(),
-                        ),
-                        keyboardType: TextInputType.number,
-                        validator: (value) {
-                          if (_detectEthylene && (value == null || value.isEmpty)) {
-                            return S.of(context).requiredField;
-                          }
-                          return null;
-                        },
-                      ),
-                    ),
-                    const SizedBox(width: 8),
-                    Expanded(
-                      child: TextFormField(
-                        controller: _ethyleneMaxController,
-                        decoration: InputDecoration(
-                          labelText: '${S.of(context).ethyleneMax} (%)',
-                          border: const OutlineInputBorder(),
-                        ),
-                        keyboardType: TextInputType.number,
-                        validator: (value) {
-                          if (_detectEthylene && (value == null || value.isEmpty)) {
-                            return S.of(context).requiredField;
-                          }
-                          return null;
-                        },
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-              SwitchListTile(
-                title: Text(S.of(context).ammonia),
-                value: _detectAmmonia && _detectAllGases,
-                onChanged: _detectAllGases ? (bool value) {
-                  setState(() {
-                    _detectAmmonia = value;
-                  });
-                } : null,
-              ),
-              if (_detectAmmonia && _detectAllGases) ...[
-                Row(
-                  children: [
-                    Expanded(
-                      child: TextFormField(
-                        controller: _ammoniaMinController,
-                        decoration: InputDecoration(
-                          labelText: '${S.of(context).ammoniaMin} (%)',
-                          border: const OutlineInputBorder(),
-                        ),
-                        keyboardType: TextInputType.number,
-                        validator: (value) {
-                          if (_detectAmmonia && (value == null || value.isEmpty)) {
-                            return S.of(context).requiredField;
-                          }
-                          return null;
-                        },
-                      ),
-                    ),
-                    const SizedBox(width: 8),
-                    Expanded(
-                      child: TextFormField(
-                        controller: _ammoniaMaxController,
-                        decoration: InputDecoration(
-                          labelText: '${S.of(context).ammoniaMax} (%)',
-                          border: const OutlineInputBorder(),
-                        ),
-                        keyboardType: TextInputType.number,
-                        validator: (value) {
-                          if (_detectAmmonia && (value == null || value.isEmpty)) {
-                            return S.of(context).requiredField;
-                          }
-                          return null;
-                        },
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-              SwitchListTile(
-                title: Text(S.of(context).sulfurDioxide),
-                value: _detectSulfurDioxide && _detectAllGases,
-                onChanged: _detectAllGases ? (bool value) {
-                  setState(() {
-                    _detectSulfurDioxide = value;
-                  });
-                } : null,
-              ),
-              if (_detectSulfurDioxide && _detectAllGases) ...[
-                Row(
-                  children: [
-                    Expanded(
-                      child: TextFormField(
-                        controller: _sulfurDioxideMinController,
-                        decoration: InputDecoration(
-                          labelText: '${S.of(context).sulfurDioxideMin} (%)',
-                          border: const OutlineInputBorder(),
-                        ),
-                        keyboardType: TextInputType.number,
-                        validator: (value) {
-                          if (_detectSulfurDioxide && (value == null || value.isEmpty)) {
-                            return S.of(context).requiredField;
-                          }
-                          return null;
-                        },
-                      ),
-                    ),
-                    const SizedBox(width: 8),
-                    Expanded(
-                      child: TextFormField(
-                        controller: _sulfurDioxideMaxController,
-                        decoration: InputDecoration(
-                          labelText: '${S.of(context).sulfurDioxideMax} (%)',
-                          border: const OutlineInputBorder(),
-                        ),
-                        keyboardType: TextInputType.number,
-                        validator: (value) {
-                          if (_detectSulfurDioxide && (value == null || value.isEmpty)) {
-                            return S.of(context).requiredField;
-                          }
-                          return null;
-                        },
-                      ),
-                    ),
-                  ],
-                ),
-              ],
               const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,

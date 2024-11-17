@@ -20,8 +20,88 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'es';
 
+  static String m0(alertType) => "Alerta: ${alertType}";
+
+  static String m1(name) => "El contenedor ${name} ha sido activado.";
+
+  static String m2(name) => "El contenedor ${name} ha sido desactivado.";
+
+  static String m3(name) => "Reporte de salud del contenedor ${name}.";
+
+  static String m4(name) => "El contenedor ${name} ha sido vinculado.";
+
+  static String m5(name) =>
+      "El contenedor ${name} ha sido apagado manualmente.";
+
+  static String m6(name) =>
+      "El contenedor ${name} ha sido encendido manualmente.";
+
+  static String m7(name) => "El contenedor ${name} está apagado.";
+
+  static String m8(name) => "El contenedor ${name} está fuera de línea.";
+
+  static String m9(name) => "El contenedor ${name} está encendido.";
+
+  static String m10(name) => "El contenedor ${name} está en línea.";
+
+  static String m11(name) => "El contenedor ${name} ha sido abierto.";
+
+  static String m12(name) => "Reporte de estado del contenedor ${name}.";
+
+  static String m13(name) => "El contenedor ${name} ha sido desvinculado.";
+
+  static String m14(name) =>
+      "Se han detectado gases de descomposición en ${name}.";
+
+  static String m15(name) => "La regulación de humedad en ${name} ha fallado.";
+
+  static String m16(name) => "La regulación de humedad en ${name} fue exitosa.";
+
+  static String m17(name) =>
+      "Se ha iniciado la regulación de humedad en ${name}.";
+
+  static String m18(name) =>
+      "La humedad en ${name} ha excedido el umbral permitido.";
+
+  static String m19(issuedAt) => "Emitido a las ${issuedAt}";
+
+  static String m20(name) =>
+      "La regulación de temperatura en ${name} ha fallado.";
+
+  static String m21(name) =>
+      "La regulación de temperatura en ${name} fue exitosa.";
+
+  static String m22(name) =>
+      "Se ha iniciado la regulación de temperatura en ${name}.";
+
+  static String m23(name) =>
+      "La temperatura en ${name} ha excedido el umbral permitido.";
+
+  static String m24(name) =>
+      "Se ha asignado una plantilla al contenedor ${name}.";
+
+  static String m25(name) =>
+      "Plantilla asignada exitosamente al contenedor ${name}.";
+
+  static String m26(name) => "Alerta desconocida en ${name}.";
+
+  static String m27(name) =>
+      "La regulación de ventilación en ${name} ha fallado.";
+
+  static String m28(name) =>
+      "La regulación de ventilación en ${name} fue exitosa.";
+
+  static String m29(name) =>
+      "Se ha iniciado la regulación de ventilación en ${name}.";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "All": MessageLookupByLibrary.simpleMessage("Todos"),
+        "AnimalDerived": MessageLookupByLibrary.simpleMessage("Derivados"),
+        "Meats": MessageLookupByLibrary.simpleMessage("Carnes"),
+        "ProcessedFood":
+            MessageLookupByLibrary.simpleMessage("Comida procesada"),
+        "Produce": MessageLookupByLibrary.simpleMessage("Frutas y vegetales"),
         "aboutYourCompany":
             MessageLookupByLibrary.simpleMessage("Sobre tu empresa"),
         "account": MessageLookupByLibrary.simpleMessage("Cuenta"),
@@ -33,6 +113,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Información de la Cuenta"),
         "accountInformationDetails": MessageLookupByLibrary.simpleMessage(
             "Detalles de Información de la Cuenta"),
+        "active": MessageLookupByLibrary.simpleMessage("Activo"),
         "addContainer":
             MessageLookupByLibrary.simpleMessage("Agregar contenedor"),
         "addContainers":
@@ -45,6 +126,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "advancePlan": MessageLookupByLibrary.simpleMessage("Plan Avanzado"),
         "advancedAutomaticTemplates": MessageLookupByLibrary.simpleMessage(
             "Plantillas y ajustes automáticos avanzados para preservar varios tipos de alimentos."),
+        "alert": m0,
         "alerts": MessageLookupByLibrary.simpleMessage("Alertas"),
         "all": MessageLookupByLibrary.simpleMessage("Todos"),
         "allContainers":
@@ -81,8 +163,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Plantillas automáticas para ajustar la temperatura y la humedad según el tipo de suministro."),
         "backToLogin":
             MessageLookupByLibrary.simpleMessage("Volver al Inicio de Sesión"),
-        "bankAccountOwner": MessageLookupByLibrary.simpleMessage(
-            "Propietario de la Cuenta Bancaria"),
+        "bankAccountOwner":
+            MessageLookupByLibrary.simpleMessage("Titular de la cuenta"),
         "businessName":
             MessageLookupByLibrary.simpleMessage("Nombre del Negocio"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancelar"),
@@ -126,20 +208,63 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Confirmar Contraseña"),
         "confirmPasswordRequired": MessageLookupByLibrary.simpleMessage(
             "Confirmar contraseña requerida"),
+        "containerActivated": m1,
+        "containerActivatedTitle":
+            MessageLookupByLibrary.simpleMessage("Contenedor activado"),
         "containerCreatedSuccessfully": MessageLookupByLibrary.simpleMessage(
             "Contenedor creado exitosamente"),
+        "containerDeactivated": m2,
+        "containerDeactivatedTitle":
+            MessageLookupByLibrary.simpleMessage("Contenedor desactivado"),
         "containerDescription":
             MessageLookupByLibrary.simpleMessage("Descripción del Contenedor"),
+        "containerHealthReport": m3,
+        "containerHealthReportTitle": MessageLookupByLibrary.simpleMessage(
+            "Informe de salud del contenedor"),
+        "containerLinked": m4,
+        "containerLinkedTitle":
+            MessageLookupByLibrary.simpleMessage("Contenedor vinculado"),
+        "containerManualOff": m5,
+        "containerManualOffTitle":
+            MessageLookupByLibrary.simpleMessage("Contenedor manual apagado"),
+        "containerManualOn": m6,
+        "containerManualOnTitle":
+            MessageLookupByLibrary.simpleMessage("Contenedor manual encendido"),
         "containerName":
             MessageLookupByLibrary.simpleMessage("Nombre del contenedor"),
+        "containerOff": m7,
+        "containerOffTitle":
+            MessageLookupByLibrary.simpleMessage("Contenedor apagado"),
+        "containerOffline": m8,
+        "containerOfflineTitle":
+            MessageLookupByLibrary.simpleMessage("Contenedor fuera de línea"),
+        "containerOn": m9,
+        "containerOnTitle":
+            MessageLookupByLibrary.simpleMessage("Contenedor encendido"),
+        "containerOnline": m10,
+        "containerOnlineTitle":
+            MessageLookupByLibrary.simpleMessage("Contenedor en línea"),
+        "containerOpened": m11,
+        "containerOpenedTitle":
+            MessageLookupByLibrary.simpleMessage("Contenedor abierto"),
         "containerSelectionModal": MessageLookupByLibrary.simpleMessage(
             "Este cambio quedará registrado en el historial de este contenedor."),
+        "containerStatusReport": m12,
+        "containerStatusReportTitle": MessageLookupByLibrary.simpleMessage(
+            "Informe de estado del contenedor"),
+        "containerUnlinked": m13,
+        "containerUnlinkedTitle":
+            MessageLookupByLibrary.simpleMessage("Contenedor desvinculado"),
         "containers": MessageLookupByLibrary.simpleMessage("Contenedores"),
         "containersNotFound": MessageLookupByLibrary.simpleMessage(
             "No posees ningún DittoBox por el momento"),
         "country": MessageLookupByLibrary.simpleMessage("País"),
+        "currenTier": MessageLookupByLibrary.simpleMessage("Nivel actual"),
         "currentConfigs":
             MessageLookupByLibrary.simpleMessage("Configuraciones Actuales"),
+        "decompositionGasesDetected": m14,
+        "decompositionGasesDetectedTitle": MessageLookupByLibrary.simpleMessage(
+            "Gases de descomposición detectados"),
         "delete": MessageLookupByLibrary.simpleMessage("Eliminar"),
         "description": MessageLookupByLibrary.simpleMessage("Descripción"),
         "details": MessageLookupByLibrary.simpleMessage("Detalles"),
@@ -164,7 +289,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "ethyleneMin": MessageLookupByLibrary.simpleMessage("Etileno Min"),
         "expirationDate":
             MessageLookupByLibrary.simpleMessage("Fecha de Expiración"),
+        "expired": MessageLookupByLibrary.simpleMessage("Expirado"),
         "facilities": MessageLookupByLibrary.simpleMessage("Instalaciones"),
+        "facility": MessageLookupByLibrary.simpleMessage("Instalación"),
         "facilityCreatedSuccessfully": MessageLookupByLibrary.simpleMessage(
             "Instalación creada exitosamente"),
         "facilityName":
@@ -184,6 +311,20 @@ class MessageLookup extends MessageLookupByLibrary {
         "humidity": MessageLookupByLibrary.simpleMessage("Humedad"),
         "humidityMax": MessageLookupByLibrary.simpleMessage("Humedad máxima"),
         "humidityMin": MessageLookupByLibrary.simpleMessage("Humedad mínima"),
+        "humidityRegulationFailed": m15,
+        "humidityRegulationFailedTitle": MessageLookupByLibrary.simpleMessage(
+            "Regulación de humedad fallida"),
+        "humidityRegulationSuccessful": m16,
+        "humidityRegulationSuccessfulTitle":
+            MessageLookupByLibrary.simpleMessage(
+                "Regulación de humedad exitosa"),
+        "humidityRegulationTriggered": m17,
+        "humidityRegulationTriggeredTitle":
+            MessageLookupByLibrary.simpleMessage(
+                "Regulación de humedad activada"),
+        "humidityThresholdExceeded": m18,
+        "humidityThresholdExceededTitle":
+            MessageLookupByLibrary.simpleMessage("Umbral de humedad excedido"),
         "identificationNumber":
             MessageLookupByLibrary.simpleMessage("Número de identificación"),
         "invalidCardHolderName": MessageLookupByLibrary.simpleMessage(
@@ -193,11 +334,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "invalidCvv": MessageLookupByLibrary.simpleMessage("CVV inválido"),
         "invalidEmail":
             MessageLookupByLibrary.simpleMessage("Correo electrónico inválido"),
+        "issuedAt": m19,
         "language": MessageLookupByLibrary.simpleMessage("Idioma"),
         "lastKnownHealthStatus": MessageLookupByLibrary.simpleMessage(
             "Último Estado de Salud Conocido"),
-        "lastSync":
-            MessageLookupByLibrary.simpleMessage("Última sincronización"),
+        "lastSync": MessageLookupByLibrary.simpleMessage("Últ. sincron."),
         "location": MessageLookupByLibrary.simpleMessage("Ubicación"),
         "logOut": MessageLookupByLibrary.simpleMessage("Cerrar sesión"),
         "login": MessageLookupByLibrary.simpleMessage("Iniciar sesión"),
@@ -205,6 +346,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Inicio de sesión fallido"),
         "manageSubscription":
             MessageLookupByLibrary.simpleMessage("Administrar Suscripción"),
+        "manager": MessageLookupByLibrary.simpleMessage("Gerente"),
         "meats": MessageLookupByLibrary.simpleMessage("Carnes"),
         "menu": MessageLookupByLibrary.simpleMessage("Menú"),
         "month": MessageLookupByLibrary.simpleMessage("Mes"),
@@ -224,8 +366,12 @@ class MessageLookup extends MessageLookupByLibrary {
             "No hay instalaciones disponibles"),
         "noFacilitiesFound": MessageLookupByLibrary.simpleMessage(
             "Aún no tienes instalaciones, por favor crea una."),
+        "noLocation": MessageLookupByLibrary.simpleMessage("No posee"),
+        "noPoseefacility": MessageLookupByLibrary.simpleMessage("Ninguna"),
         "noTemplateAssigned":
             MessageLookupByLibrary.simpleMessage("No hay plantilla asignada"),
+        "noTemplatesFound": MessageLookupByLibrary.simpleMessage(
+            "Dittobox aún no distribuye ninguna plantilla, por favor esperelo pronto."),
         "notifications": MessageLookupByLibrary.simpleMessage("Notificaciones"),
         "ok": MessageLookupByLibrary.simpleMessage("Aceptar"),
         "owner": MessageLookupByLibrary.simpleMessage("Propietario"),
@@ -343,9 +489,29 @@ class MessageLookup extends MessageLookupByLibrary {
         "tempMax": MessageLookupByLibrary.simpleMessage("Temperatura máxima"),
         "tempMin": MessageLookupByLibrary.simpleMessage("Temperatura mínima"),
         "temperature": MessageLookupByLibrary.simpleMessage("Temperatura"),
+        "temperatureRegulationFailed": m20,
+        "temperatureRegulationFailedTitle":
+            MessageLookupByLibrary.simpleMessage(
+                "Regulación de temperatura fallida"),
+        "temperatureRegulationSuccessful": m21,
+        "temperatureRegulationSuccessfulTitle":
+            MessageLookupByLibrary.simpleMessage(
+                "Regulación de temperatura exitosa"),
+        "temperatureRegulationTriggered": m22,
+        "temperatureRegulationTriggeredTitle":
+            MessageLookupByLibrary.simpleMessage(
+                "Regulación de temperatura activada"),
+        "temperatureThresholdExceeded": m23,
+        "temperatureThresholdExceededTitle":
+            MessageLookupByLibrary.simpleMessage(
+                "Umbral de temperatura excedido"),
         "template": MessageLookupByLibrary.simpleMessage("Plantilla"),
+        "templateAssigned": m24,
         "templateAssignedSuccessfully": MessageLookupByLibrary.simpleMessage(
             "Plantilla asignada exitosamente"),
+        "templateAssignedSuccessfullyToContainer": m25,
+        "templateAssignedTitle":
+            MessageLookupByLibrary.simpleMessage("Plantilla asignada"),
         "templateConfiguration":
             MessageLookupByLibrary.simpleMessage("Configuración de Plantilla"),
         "templateLibrary":
@@ -355,6 +521,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "templates": MessageLookupByLibrary.simpleMessage("Plantillas"),
         "title": MessageLookupByLibrary.simpleMessage("DittoBox"),
         "type": MessageLookupByLibrary.simpleMessage("Tipo"),
+        "unknownAlert": m26,
+        "unknownAlertTitle":
+            MessageLookupByLibrary.simpleMessage("Alerta desconocida"),
         "upTo": MessageLookupByLibrary.simpleMessage("Hasta"),
         "updatePaymentInformation":
             MessageLookupByLibrary.simpleMessage("Actualizar"),
@@ -366,6 +535,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "username": MessageLookupByLibrary.simpleMessage("Nombre de usuario"),
         "usernameCannotBeEmpty": MessageLookupByLibrary.simpleMessage(
             "El nombre de usuario no puede estar vacío"),
+        "ventilationRegulationFailed": m27,
+        "ventilationRegulationFailedTitle":
+            MessageLookupByLibrary.simpleMessage(
+                "Regulación de ventilación fallida"),
+        "ventilationRegulationSuccessful": m28,
+        "ventilationRegulationSuccessfulTitle":
+            MessageLookupByLibrary.simpleMessage(
+                "Regulación de ventilación exitosa"),
+        "ventilationRegulationTriggered": m29,
+        "ventilationRegulationTriggeredTitle":
+            MessageLookupByLibrary.simpleMessage(
+                "Regulación de ventilación activada"),
         "verifyCode": MessageLookupByLibrary.simpleMessage("Verificar Código"),
         "viewContainers":
             MessageLookupByLibrary.simpleMessage("Ver contenedores"),

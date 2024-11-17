@@ -1,4 +1,5 @@
 import 'package:dittobox_mobile/generated/l10n.dart';
+import 'package:dittobox_mobile/routes/app_routes.dart';
 import 'package:dittobox_mobile/shared/presentation/widgets/custom_navigator_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:dittobox_mobile/main.dart'; // Importa el archivo donde está definido MainApp
@@ -26,7 +27,7 @@ class _LanguageSelectionScreenState extends State<LanguageSelectionScreen> {
       appBar: AppBar(
         title: Text(S.of(context).selectLanguage),
       ),
-      drawer: const CustomNavigationDrawer(currentRoute: '/language-selection'), // Añade el CustomNavigationDrawer
+      drawer: const CustomNavigationDrawer(currentRoute: AppRoutes.languageSelection), // Añade el CustomNavigationDrawer
       body: Stack(
         children: [
           Column(

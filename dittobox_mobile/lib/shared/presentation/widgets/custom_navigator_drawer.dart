@@ -287,7 +287,7 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
       return index;
     }
     index++;
-    if (widget.currentRoute == '/language-selection') {
+    if (widget.currentRoute == AppRoutes.languageSelection) {
       return index;
     }
     return -1;
@@ -310,14 +310,14 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
       routes.add(AppRoutes.subscriptionDetails);
     }
     routes.add(AppRoutes.notifications);
-    routes.add('/language-selection');
+    routes.add(AppRoutes.languageSelection);
     routes.add(AppRoutes.login); // Ruta para logout
 
     return routes[index];
   }
 
   void _navigateTo(String route) {
-    if (route == '/language-selection') {
+    if (route == AppRoutes.languageSelection) {
       Navigator.of(context).push(
         MaterialPageRoute(
           builder: (context) => const LanguageSelectionScreen(),

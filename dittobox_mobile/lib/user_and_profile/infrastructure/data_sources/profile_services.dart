@@ -17,6 +17,8 @@ class ProfileService extends BaseService {
           'Content-Type': 'application/json',
         },
       );
+      print('Response status: ${response.statusCode}');
+      print('Response body: ${response.body}');
 
       if (response.statusCode == 200) {
         return Profile.fromJson(jsonDecode(response.body));
@@ -76,6 +78,8 @@ class ProfileService extends BaseService {
 
     Future<Profile?> getProfileDetailsById(int userId) async {
     try {
+      final prefs = SharedPreferencesAsync();
+      final userId = await prefs.getInt('userId');
       final url = '$baseUrl/profile/$userId';
       final response = await http.get(
         Uri.parse(url),
@@ -94,4 +98,38 @@ class ProfileService extends BaseService {
       return null;
     }
   }
+
+    Future<Profile?> getProfileDetailsofAccount() async {
+      try {
+        final prefs = SharedPreferencesAsync();
+        final accountId = await prefs.getInt('accountId');
+        if (accountId == null) {
+          throw Exception('Account ID is null');
+        }
+    
+        print('accountId: $accountId');
+        final url = '$baseUrl/profile/$accountId';
+        final response = await http.get(
+          Uri.parse(url),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        );
+        print('Response status: ${response.statusCode}');
+        print('Response body: ${response.body}');
+    
+        if (response.statusCode == 200) {
+          try {
+            return Profile.fromJson(jsonDecode(response.body));
+          } catch (e) {
+            throw Exception('Failed to decode profile details: $e');
+          }
+        } else {
+          throw Exception('Failed to load profile details: ${response.statusCode}');
+        }
+      } catch (e) {
+        print('Error: $e');
+        return null;
+      }
+    }
 }

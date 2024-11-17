@@ -18,6 +18,7 @@ class TemplateListScreen extends StatefulWidget {
 
 class _TemplateListScreenState extends State<TemplateListScreen> {
   List<model.Container> _containers = [];
+  bool _isLoading = true;
 
   @override
   void initState() {
@@ -31,9 +32,13 @@ class _TemplateListScreenState extends State<TemplateListScreen> {
       final containers = await containerService.getContainersByAccountId();
       setState(() {
         _containers = containers;
+        _isLoading = false;
       });
     } catch (e) {
       print('Error loading containers: $e');
+      setState(() {
+        _isLoading = false;
+      });
     }
   }
 
@@ -44,19 +49,13 @@ class _TemplateListScreenState extends State<TemplateListScreen> {
         title: Text(S.of(context).templateLibrary),
       ),
       drawer: const CustomNavigationDrawer(currentRoute: AppRoutes.templates),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: TemplateList(containers: _containers),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _addTemplate,
-        child: const Icon(Icons.add),
-      ),
+      body: _isLoading
+          ? const Center(child: CircularProgressIndicator())
+          : Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: TemplateList(containers: _containers),
+            ),
     );
-  }
-
-  void _addTemplate() {
-    Navigator.pushNamed(context, AppRoutes.addTemplate);
   }
 }
 
@@ -77,6 +76,7 @@ class _TemplateListState extends State<TemplateList> {
   final TextEditingController _searchController = TextEditingController();
   final List<String> _categories = ['All', 'Produce', 'Meats', 'AnimalDerived', 'ProcessedFood'];
   String _selectedCategory = 'All';
+  bool _isLoading = true;
 
   @override
   void initState() {
@@ -98,10 +98,13 @@ class _TemplateListState extends State<TemplateList> {
       setState(() {
         _templates = templates;
         _filteredTemplates = templates;
+        _isLoading = false;
       });
     } catch (e) {
-      // Manejar el error de carga de templates
       print('Error loading templates: $e');
+      setState(() {
+        _isLoading = false;
+      });
     }
   }
 
@@ -109,9 +112,8 @@ class _TemplateListState extends State<TemplateList> {
     final query = _searchController.text.toLowerCase();
     setState(() {
       _filteredTemplates = _templates.where((template) {
-        final matchesCategory = _selectedCategory == 'All' || getCategoryName(template.category) == _selectedCategory;
-        final matchesQuery = template.name.toLowerCase().contains(query) || template.description.toLowerCase().contains(query);
-        return matchesCategory && matchesQuery;
+        final templateName = template.name.toLowerCase();
+        return templateName.contains(query);
       }).toList();
     });
   }
@@ -119,77 +121,105 @@ class _TemplateListState extends State<TemplateList> {
   void _selectCategory(String category) {
     setState(() {
       _selectedCategory = category;
-      _filterTemplates();
+      if (category == 'All') {
+        _filteredTemplates = _templates;
+      } else {
+        _filteredTemplates = _templates.where((template) {
+          return template.category == category;
+        }).toList();
+      }
     });
-  }
-
-  String getCategoryName(String? category) {
-    switch (category) {
-      case '0':
-        return 'Produce';
-      case '1':
-        return 'Meats';
-      case '2':
-        return 'AnimalDerived';
-      case '3':
-        return 'ProcessedFood';
-      default:
-        return 'Unknown';
-    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: TextField(
-            controller: _searchController,
-            decoration: InputDecoration(
-              labelText: S.of(context).search,
-              prefixIcon: const Icon(Icons.search),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8.0),
+        Stack(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextField(
+                controller: _searchController,
+                decoration: InputDecoration(
+                  labelText: S.of(context).search,
+                  prefixIcon: const Icon(Icons.search),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                ),
               ),
             ),
-          ),
+            if (_isLoading)
+              const Positioned(
+                left: 0,
+                right: 0,
+                bottom: 0,
+                child: LinearProgressIndicator(),
+              ),
+          ],
         ),
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            children: _categories.map((category) {
-              return Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                child: ChoiceChip(
-                  label: Text(category),
-                  selected: _selectedCategory == category,
-                  onSelected: (selected) {
-                    if (selected) {
-                      _selectCategory(category);
-                    }
-                  },
-                ),
-              );
-            }).toList(),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: _categories.map((category) {
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                  child: ChoiceChip(
+                    label: Text(_getCategoryTranslation(context, category)),
+                    selected: _selectedCategory == category,
+                    onSelected: (selected) {
+                      if (selected) {
+                        _selectCategory(category);
+                      }
+                    },
+                  ),
+                );
+              }).toList(),
+            ),
           ),
-        ),
         Expanded(
-          child: ListView.builder(
-            itemCount: _filteredTemplates.length,
-            itemBuilder: (context, index) {
-              return TemplateCard(
-                template: _filteredTemplates[index],
-                onApply: () => _showContainerSelectionModal(context, _filteredTemplates[index]),
-                onTap: () => _showTemplateDetails(context, _filteredTemplates[index]),
-              );
-            },
-          ),
+          child: _isLoading
+              ? const Center(child: CircularProgressIndicator())
+              : _filteredTemplates.isEmpty
+                  ? Center(
+                      child: Text(
+                        S.of(context).noTemplatesFound,
+                        style: const TextStyle(fontSize: 16.0),
+                        textAlign: TextAlign.center,
+                      ),
+                    )
+                  : ListView.builder(
+                      itemCount: _filteredTemplates.length,
+                      itemBuilder: (context, index) {
+                        return TemplateCard(
+                          template: _filteredTemplates[index],
+                          onApply: () => _showContainerSelectionModal(context, _filteredTemplates[index]),
+                          onTap: () => _showTemplateDetails(context, _filteredTemplates[index]),
+                        );
+                      },
+                    ),
         ),
       ],
     );
   }
 
+  String _getCategoryTranslation(BuildContext context, String category) {
+    switch (category) {
+      case 'All':
+        return S.of(context).all;
+      case 'Produce':
+        return S.of(context).Produce;
+      case 'Meats':
+        return S.of(context).meats;
+      case 'AnimalDerived':
+        return S.of(context).animalDerived;
+      case 'ProcessedFood':
+        return S.of(context).ProcessedFood;
+      default:
+        return category;
+    }
+  }
   void _showContainerSelectionModal(BuildContext parentContext, Template template) {
     showDialog(
       context: parentContext,
@@ -201,11 +231,13 @@ class _TemplateListState extends State<TemplateList> {
               final containerService = ContainerService();
               await containerService.assignTemplateToContainer(container.id, template.id);
               if (mounted) {
-                _showSuccessDialog(parentContext, 'Template assigned to ${container.name}');
+                // ignore: use_build_context_synchronously
+                _showSuccessDialog(parentContext, S.of(context).templateAssignedSuccessfullyToContainer(container.name));
               }
             } catch (e) {
               if (mounted) {
-                _showErrorDialog(parentContext, 'Failed to assign template: $e');
+                // ignore: use_build_context_synchronously
+                _showErrorDialog(parentContext, S.of(context).errorApplicatingaTemplate);
               }
             }
           },
@@ -272,18 +304,18 @@ class TemplateCard extends StatelessWidget {
 
   const TemplateCard({super.key, required this.template, required this.onApply, required this.onTap});
 
-  String getCategoryName(String? category) {
+  String getCategoryName(BuildContext context, String? category) {
     switch (category) {
       case '0':
-        return 'Produce';
+        return S.of(context).produce;
       case '1':
-        return 'Meats';
+        return S.of(context).meats;
       case '2':
-        return 'AnimalDerived';
+        return S.of(context).animalDerived;
       case '3':
-        return 'ProcessedFood';
+        return S.of(context).processedFood;
       default:
-        return 'Unknown';
+        return '';
     }
   }
 
@@ -304,9 +336,9 @@ class TemplateCard extends StatelessWidget {
                   subtitle: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Category: ${getCategoryName(template.category)}'),
-                      Text('Temperature: ${template.tempMin} - ${template.tempMax}'),
-                      Text('Humidity: ${template.humidityMin} - ${template.humidityMax}')
+                      Text('${S.of(context).category}: ${getCategoryName(context, template.category)}'),
+                      Text('${S.of(context).temperature}: ${template.tempMin} - ${template.tempMax}'),
+                      Text('${S.of(context).humidity}: ${template.humidityMin} - ${template.humidityMax}')
                     ],
                   ),
                   trailing: OutlinedButton(

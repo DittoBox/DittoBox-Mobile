@@ -59,6 +59,7 @@ class _FacilitiesListState extends State<FacilitiesList> {
   bool _showAll = true;
   bool _showWarehouse = true;
   bool _showRestaurant = true;
+  bool _isLoading = true; // Añadir variable de estado de carga
 
   @override
   void initState() {
@@ -79,12 +80,14 @@ class _FacilitiesListState extends State<FacilitiesList> {
       setState(() {
         _facilities = facilities;
         _filteredFacilities = facilities;
+        _isLoading = false; // Actualizar estado de carga
       });
     } catch (e) {
-      // ignore: use_build_context_synchronously
+      setState(() {
+        _isLoading = false; // Actualizar estado de carga
+      });
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          // ignore: use_build_context_synchronously
           content: Text('${S.of(context).failedToFetchFacilities}: $e'),
         ),
       );
@@ -134,7 +137,6 @@ class _FacilitiesListState extends State<FacilitiesList> {
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
-              // Alinea los chips a la izquierda
               children: [
                 FilterChip(
                   label: Text(S.of(context).all),
@@ -182,30 +184,32 @@ class _FacilitiesListState extends State<FacilitiesList> {
             ),
           ),
           Expanded(
-            child: _filteredFacilities.isEmpty
-                ? Center(
-                    child: Text(
-                      S.of(context).noFacilitiesFound,
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(fontSize: 18, color: Colors.grey),
-                    ),
-                  )
-                : CustomScrollView(
-                    slivers: [
-                      SliverList(
-                        delegate: SliverChildBuilderDelegate(
-                          (context, index) {
-                            return FacilitiesCard(
-                              facility: _filteredFacilities[index],
-                              onDelete: () =>
-                                  _deleteFacility(_filteredFacilities[index]),
-                            );
-                          },
-                          childCount: _filteredFacilities.length,
+            child: _isLoading
+                ? Center(child: CircularProgressIndicator()) // Mostrar indicador de progreso
+                : _filteredFacilities.isEmpty
+                    ? Center(
+                        child: Text(
+                          S.of(context).noFacilitiesFound,
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(fontSize: 18, color: Colors.grey),
                         ),
+                      )
+                    : CustomScrollView(
+                        slivers: [
+                          SliverList(
+                            delegate: SliverChildBuilderDelegate(
+                              (context, index) {
+                                return FacilitiesCard(
+                                  facility: _filteredFacilities[index],
+                                  onDelete: () =>
+                                      _deleteFacility(_filteredFacilities[index]),
+                                );
+                              },
+                              childCount: _filteredFacilities.length,
+                            ),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
           ),
         ],
       ),
