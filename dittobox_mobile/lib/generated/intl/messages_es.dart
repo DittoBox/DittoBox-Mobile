@@ -444,6 +444,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Soporte técnico prioritario."),
         "privilegesUpdatedSuccessfully": MessageLookupByLibrary.simpleMessage(
             "Privilegios actualizados exitosamente"),
+        "processedFood":
+            MessageLookupByLibrary.simpleMessage("Comida procesada"),
         "processedFoods":
             MessageLookupByLibrary.simpleMessage("Alimentos procesados"),
         "produce": MessageLookupByLibrary.simpleMessage("Productos"),

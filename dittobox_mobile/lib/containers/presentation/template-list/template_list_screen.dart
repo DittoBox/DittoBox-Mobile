@@ -110,10 +110,14 @@ class _TemplateListState extends State<TemplateList> {
 
   void _filterTemplates() {
     final query = _searchController.text.toLowerCase();
+    print('Filtering templates with query: $query and category: $_selectedCategory');
     setState(() {
       _filteredTemplates = _templates.where((template) {
         final templateName = template.name.toLowerCase();
-        return templateName.contains(query);
+        final matchesQuery = templateName.contains(query);
+        final matchesCategory = _selectedCategory == 'All' || _getCategoryName(template.category) == _selectedCategory;
+        print('Template: ${template.name}, Category: ${template.category}, Matches Query: $matchesQuery, Matches Category: $matchesCategory');
+        return matchesQuery && matchesCategory;
       }).toList();
     });
   }
@@ -121,14 +125,23 @@ class _TemplateListState extends State<TemplateList> {
   void _selectCategory(String category) {
     setState(() {
       _selectedCategory = category;
-      if (category == 'All') {
-        _filteredTemplates = _templates;
-      } else {
-        _filteredTemplates = _templates.where((template) {
-          return template.category == category;
-        }).toList();
-      }
+      _filterTemplates();
     });
+  }
+
+  String _getCategoryName(String? category) {
+    switch (category) {
+      case '0':
+        return 'Produce';
+      case '1':
+        return 'Meats';
+      case '2':
+        return 'AnimalDerived';
+      case '3':
+        return 'ProcessedFood';
+      default:
+        return 'Unknown';
+    }
   }
 
   @override
@@ -159,25 +172,25 @@ class _TemplateListState extends State<TemplateList> {
               ),
           ],
         ),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: _categories.map((category) {
-                return Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                  child: ChoiceChip(
-                    label: Text(_getCategoryTranslation(context, category)),
-                    selected: _selectedCategory == category,
-                    onSelected: (selected) {
-                      if (selected) {
-                        _selectCategory(category);
-                      }
-                    },
-                  ),
-                );
-              }).toList(),
-            ),
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: _categories.map((category) {
+              return Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                child: ChoiceChip(
+                  label: Text(_getCategoryTranslation(context, category)),
+                  selected: _selectedCategory == category,
+                  onSelected: (selected) {
+                    if (selected) {
+                      _selectCategory(category);
+                    }
+                  },
+                ),
+              );
+            }).toList(),
           ),
+        ),
         Expanded(
           child: _isLoading
               ? const Center(child: CircularProgressIndicator())
@@ -209,17 +222,18 @@ class _TemplateListState extends State<TemplateList> {
       case 'All':
         return S.of(context).all;
       case 'Produce':
-        return S.of(context).Produce;
+        return S.of(context).produce;
       case 'Meats':
         return S.of(context).meats;
       case 'AnimalDerived':
         return S.of(context).animalDerived;
       case 'ProcessedFood':
-        return S.of(context).ProcessedFood;
+        return S.of(context).processedFood;
       default:
         return category;
     }
   }
+
   void _showContainerSelectionModal(BuildContext parentContext, Template template) {
     showDialog(
       context: parentContext,
@@ -337,8 +351,8 @@ class TemplateCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text('${S.of(context).category}: ${getCategoryName(context, template.category)}'),
-                      Text('${S.of(context).temperature}: ${template.tempMin} - ${template.tempMax}'),
-                      Text('${S.of(context).humidity}: ${template.humidityMin} - ${template.humidityMax}')
+                      Text('${S.of(context).temperature}: ${template.tempMin} - ${template.tempMax} °C'),
+                      Text('${S.of(context).humidity}: ${template.humidityMin} - ${template.humidityMax} %')
                     ],
                   ),
                   trailing: OutlinedButton(

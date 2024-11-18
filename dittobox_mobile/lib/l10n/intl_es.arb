@@ -1473,5 +1473,9 @@
           "example": "5"
         }
       }
+    },
+    "processedFood": "Comida procesada",
+    "@processedFood": {
+      "description": "etiqueta para comida procesada"
     }
 }
