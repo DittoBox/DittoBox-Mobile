@@ -245,7 +245,7 @@ Future<List<Map<String, dynamic>>> fetchAccountNotifications(BuildContext contex
     throw Exception('Account ID is null');
   }
 
-  String endpoint = '${baseService.baseUrl}/notification/account/$accountId';
+  String endpoint = '${baseService.baseUrl}/notification/account/$accountId?priority=1&limit=10';
   final response = await http.get(Uri.parse(endpoint));
   print('Response status code: ${response.statusCode}');
 
