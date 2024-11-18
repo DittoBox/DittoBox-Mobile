@@ -1,4 +1,6 @@
 import 'package:dittobox_mobile/generated/l10n.dart';
+import 'package:dittobox_mobile/goups/infrastructure/data_sources/facilities_service.dart';
+import 'package:dittobox_mobile/goups/infrastructure/models/location.dart';
 import 'package:flutter/material.dart';
 
 class AddFacilitySheet extends StatefulWidget {
@@ -144,8 +146,24 @@ class _AddFacilitySheetState extends State<AddFacilitySheet> {
               ),
               const SizedBox(width: 8),
               FilledButton(
-                onPressed: () {
-                  // Acción para guardar la instalación
+                onPressed: () async {
+                  final location = Location(
+                    city: _cityController.text,
+                    state: _regionController.text,
+                  );
+
+                  await FacilitiesService().createFacility(
+                    _facilityNameController.text,
+                    location,
+                    facilityType == 'Restaurant' ? 0 : 1,
+                  );
+
+                  Navigator.pop(context);
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(S.of(context).facilityCreatedSuccessfully),
+                    ),
+                  );
                 },
                 child: Text(S.of(context).save),
               ),

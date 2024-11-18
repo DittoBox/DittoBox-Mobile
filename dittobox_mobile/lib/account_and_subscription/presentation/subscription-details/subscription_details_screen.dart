@@ -1,7 +1,11 @@
+import 'package:dittobox_mobile/account_and_subscription/infrastructure/data_sources/account_service.dart';
+import 'package:dittobox_mobile/account_and_subscription/infrastructure/data_sources/subscription_service.dart';
+import 'package:dittobox_mobile/user_and_profile/infrastructure/data_sources/profile_services.dart';
 import 'package:dittobox_mobile/generated/l10n.dart';
 import 'package:dittobox_mobile/routes/app_routes.dart';
 import 'package:dittobox_mobile/shared/presentation/widgets/custom_navigator_drawer.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart'; // Importa intl para formatear la fecha
 
 class SubscriptionDetailsScreen extends StatefulWidget {
   const SubscriptionDetailsScreen({super.key});
@@ -11,6 +15,60 @@ class SubscriptionDetailsScreen extends StatefulWidget {
 }
 
 class _SubscriptionDetailsScreenState extends State<SubscriptionDetailsScreen> {
+  String _currentTier = '';
+  String _status = '';
+  String _nextPaymentDay = '';
+  String _identificationNumber = '';
+  String _bankAccountOwner = '';
+  bool _isLoading = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadAllDetails();
+  }
+
+  Future<void> _loadAllDetails() async {
+    await Future.wait([
+      _loadSubscriptionDetails(),
+      _loadProfileDetails(),
+      _loadAccountDetails(),
+    ]);
+    setState(() {
+      _isLoading = false;
+    });
+  }
+
+  Future<void> _loadSubscriptionDetails() async {
+    final subscriptionDetails = await SubscriptionService().getSubscriptionDetails();
+    if (subscriptionDetails != null) {
+      setState(() {
+        _currentTier = subscriptionDetails.tier;
+        _status = subscriptionDetails.subscriptionStatusId == 1 ? S.of(context).active : S.of(context).expired;
+        _nextPaymentDay = DateFormat('yyyy-MM-dd').format(subscriptionDetails.lastPaidPeriod); // Formatea la fecha
+      });
+    }
+  }
+
+  Future<void> _loadProfileDetails() async {
+    final profileDetails = await ProfileService().getProfileDetailsofAccount();
+    if (profileDetails != null) {
+      setState(() {
+        _bankAccountOwner = '${profileDetails.firstName} ${profileDetails.lastName}';
+      });
+    }
+    print('Bank account owner: $_bankAccountOwner');
+  }
+
+  Future<void> _loadAccountDetails() async {
+    final accountDetails = await AccountService().getAccountDetails();
+    if (accountDetails != null) {
+      setState(() {
+        _identificationNumber = accountDetails.businessId;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,25 +76,39 @@ class _SubscriptionDetailsScreenState extends State<SubscriptionDetailsScreen> {
         title: Text(S.of(context).subscriptionDetails),
       ),
       drawer: const CustomNavigationDrawer(currentRoute: AppRoutes.subscriptionDetails),
-      body: const Padding(
-        padding: EdgeInsets.all(32.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SubscriptionDetails(),
-            SizedBox(height: 32),
-            Divider(),
-            SizedBox(height: 32),
-            PaymentInformation(),
-          ],
-        ),
-      ),
+      body: _isLoading
+          ? const Center(child: CircularProgressIndicator()) // Spinner de carga
+          : Padding(
+              padding: const EdgeInsets.all(32.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SubscriptionDetails(
+                    currentTier: _currentTier,
+                  ),
+                  const SizedBox(height: 32),
+                  const Divider(),
+                  const SizedBox(height: 32),
+                  PaymentInformation(
+                    status: _status,
+                    nextPaymentDay: _nextPaymentDay,
+                    identificationNumber: _identificationNumber,
+                    bankAccountOwner: _bankAccountOwner,
+                  ),
+                ],
+              ),
+            ),
     );
   }
 }
 
 class SubscriptionDetails extends StatelessWidget {
-  const SubscriptionDetails({super.key});
+  final String currentTier;
+
+  const SubscriptionDetails({
+    super.key,
+    required this.currentTier,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +118,7 @@ class SubscriptionDetails extends StatelessWidget {
         Row(
           children: [
             Text(
-             S.of(context).subscription,
+              S.of(context).subscription,
               style: const TextStyle(fontSize: 16),
             ),
             const Icon(Icons.chevron_right_outlined),
@@ -54,21 +126,19 @@ class SubscriptionDetails extends StatelessWidget {
         ),
         const SizedBox(height: 8),
         const SizedBox(height: 16),
-         Text(S.of(context).subscriptionDetails,
+        Text(
+          S.of(context).subscriptionDetails,
           style: const TextStyle(fontSize: 22),
         ),
         const SizedBox(height: 24),
-        _buildInfoRow('Current tier', 'Advance'),
-        _buildInfoRow('Facilities', 'Used 5 out of 5'),
-        _buildInfoRow('Containers', 'Used 4 out of 25'),
-        _buildInfoRow('Users', 'Used 7 out of 20'),
+        _buildInfoRow(S.of(context).currenTier, currentTier),
         const SizedBox(height: 16),
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             FilledButton(
               onPressed: () {
-                // Lógica para actualizar el plan
+                Navigator.pushNamed(context, AppRoutes.subscriptionPlans);
               },
               child: Text(S.of(context).upgradePlan),
             ),
@@ -99,41 +169,34 @@ class SubscriptionDetails extends StatelessWidget {
 }
 
 class PaymentInformation extends StatelessWidget {
-  const PaymentInformation({super.key});
+  final String status;
+  final String nextPaymentDay;
+  final String identificationNumber;
+  final String bankAccountOwner;
+
+  const PaymentInformation({
+    super.key,
+    required this.status,
+    required this.nextPaymentDay,
+    required this.identificationNumber,
+    required this.bankAccountOwner,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-       Text(
+        Text(
           S.of(context).paymentInformation,
           style: const TextStyle(fontSize: 22),
         ),
         const SizedBox(height: 24),
-        _buildInfoRow('Status', 'Active'),
-        _buildInfoRow('Next Payment Day', '2023-12-01'),
-        _buildInfoRow('Identification Number', '123456789'),
-        _buildInfoRow('Bank Account Owner', 'John Doe'),
-        const SizedBox(height: 16),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            FilledButton(
-              onPressed: () {
-                // Lógica para actualizar la información de pago
-              },
-              child: const Text('Update'),
-            ),
-            const SizedBox(width: 8),
-            TextButton(
-              onPressed: () {
-                // Lógica para cancelar la suscripción
-              },
-              child: Text(S.of(context).cancelSubscription),
-            ),
-          ],
-        ),
+        _buildInfoRow(S.of(context).status, status),
+        _buildInfoRow(S.of(context).nextPaymentDay, nextPaymentDay),
+        _buildInfoRow(S.of(context).identificationNumber, identificationNumber),
+        _buildInfoRow(S.of(context).bankAccountOwner, bankAccountOwner),
+        const SizedBox(height: 16)
       ],
     );
   }

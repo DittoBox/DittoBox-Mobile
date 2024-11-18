@@ -7,11 +7,13 @@ environment:
   sdk: ">=3.4.0 <4.0.0"
 
 dependencies:
-  firebase_auth: ^5.3.1
-  firebase_core: ^3.6.0
+  firebase_core: ^3.8.0
+  firebase_messaging: ^15.1.5
   flutter:
     sdk: flutter
+  flutter_credit_card: ^4.0.1
   flutter_keyboard_visibility: ^6.0.0
+  flutter_local_notifications: ^18.0.1
   flutter_localizations:
     sdk: flutter
   flutter_spinkit: ^5.2.1
@@ -25,10 +27,17 @@ dependencies:
   sqflite: ^2.3.3+1
 
 dev_dependencies:
+  flutter_launcher_icons: ^0.14.1
   flutter_lints: ^3.0.0
   flutter_test:
     sdk: flutter
   intl_utils: ^2.0.0
+
+flutter_launcher_icons:
+  android: true
+  image_path: "assets/logo.png"
+  adaptive_icon_background: "#abb1b0"
+  adaptive_icon_foreground: "assets/logo_foreground.png"
 
 flutter:
   uses-material-design: true

@@ -500,7 +500,7 @@
   "@viewContainers": {
     "description": "Etiqueta para ver contenedores"
   },
-  "lastSync": "Última sincronización",
+  "lastSync": "Últ. sincron.",
   "@lastSync": {
     "description": "Etiqueta para la última sincronización"
   },
@@ -536,7 +536,7 @@
   "@userInformationDetails": {
     "description": "Etiqueta para la sección de detalles de información del usuario"
   },
-  "bankAccountOwner": "Propietario de la Cuenta Bancaria",
+  "bankAccountOwner": "Titular de la cuenta",
   "@bankAccountOwner": {
     "description": "Etiqueta para el propietario de la cuenta bancaria en la sección de información del usuario"
   },
@@ -575,5 +575,859 @@
   "userDetails": "Detalles del Usuario",
   "@userDetails": {
     "description": "Etiqueta para la sección de detalles del usuario"
-  }
+  },
+  "workerAssignedSuccessfully": "Trabajador asignado exitosamente",
+  "@workerAssignedSuccessfully": {
+    "description": "Mensaje de éxito cuando el trabajador es asignado exitosamente"
+  },
+  "confirmAssignWorker": "¿Estás seguro de que deseas asignar este trabajador?",
+  "@confirmAssignWorker": {
+    "description": "Mensaje de confirmación para asignar trabajador"
+  },
+  "confirmAssignWorkerMessage": "Este cambio quedará registrado en el historial de este contenedor.",
+  "@confirmAssignWorkerMessage": {
+    "description": "Mensaje de confirmación para asignar trabajador"
+  },
+  "workerUnassignedSuccessfully": "Trabajador desasignado exitosamente",
+  "@workerUnassignedSuccessfully": {
+    "description": "Mensaje de éxito cuando el trabajador es desasignado exitosamente"
+  },
+  "workerAssignConfirm": "Confirmar",
+  "@workerAssignConfirm": {
+    "description": "Mensaje de confirmación para desasignar trabajador"
+  },
+  "reassignWorker": "Reasignar trabajador",
+  "@reassignWorker": {
+    "description": "Etiqueta para reasignar trabajador"
+  },
+  "workerReassigned": "Trabajador reasignado",
+  "@workerReassigned": {
+    "description": "Mensaje de éxito cuando el trabajador es reasignado"
+  },
+  "resetPassword": "Restablecer Contraseña",
+  "@resetPassword": {
+    "description": "Etiqueta para restablecer contraseña"
+  },
+  "backToLogin": "Volver atrás",
+  "@backToLogin": {
+    "description": "Texto para volver al inicio de sesión"
+  },
+  "passwordResetCodeTitle": "Código de Restablecimiento de Contraseña",
+  "@passwordResetCodeTitle": {
+    "description": "Título para el código de restablecimiento de contraseña"
+  },
+  "passwordResetCode": "Código de Restablecimiento",
+  "@passwordResetCode": {
+    "description": "Etiqueta para el código de restablecimiento"
+  },
+  "verifyCode": "Verificar Código",
+  "@verifyCode": {
+    "description": "Etiqueta para verificar código"
+  },
+  "forgotPasswordTitle": "¿Olvidaste tu Contraseña?",
+  "@forgotPasswordTitle": {
+    "description": "Título para contraseña olvidada"
+  },
+  "setNewPasswordTitle": "Establecer Nueva Contraseña",
+  "@setNewPasswordTitle": {
+    "description": "Título para establecer nueva contraseña"
+  },
+  "newPassword": "Nueva Contraseña",
+  "@newPassword": {
+    "description": "Etiqueta para nueva contraseña"
+  },
+  "confirmPassword": "Confirmar Contraseña",
+  "@confirmPassword": {
+    "description": "Etiqueta para confirmar contraseña"
+  },
+  "setNewPassword": "Establecer Nueva Contraseña",
+  "@setNewPassword": {
+    "description": "Etiqueta para establecer nueva contraseña"
+  },
+  "emailRequired": "Correo electrónico requerido",
+  "@emailRequired": {
+    "description": "Mensaje de error para correo electrónico requerido"
+  },
+  "codeRequired": "Código requerido",
+  "@codeRequired": {
+    "description": "Mensaje de error para código requerido"
+  },
+  "codeLength": "El código debe tener 5 dígitos",
+  "@codeLength": {
+    "description": "Mensaje de error para longitud de código"
+  },
+  "newPasswordRequired": "Nueva contraseña requerida",
+  "@newPasswordRequired": {
+    "description": "Mensaje de error para nueva contraseña requerida"
+  },
+  "passwordLength": "La contraseña debe tener al menos 8 caracteres",
+  "@passwordLength": {
+    "description": "Mensaje de error para longitud de contraseña"
+  },
+  "passwordsDoNotMatch": "Las contraseñas no coinciden",
+  "@passwordsDoNotMatch": {
+    "description": "Mensaje de error para contraseñas no coinciden"
+  },
+  "confirmPasswordRequired": "Confirmar contraseña requerida",
+  "@confirmPasswordRequired": {
+    "description": "Mensaje de error para confirmar contraseña requerida"
+  },
+  "changeTemplate": "Cambiar Plantilla",
+  "@changeTemplate": {
+    "description": "Etiqueta para cambiar plantilla"
+  },
+  "ammonia": "Amoníaco (NH₃)",
+  "@ammonia": {
+    "description": "Etiqueta para amoníaco y dióxido de azufre"
+  },
+  "sulfurDioxide": "Dióxido de azufre (SO₂)",
+  "@sulfurDioxide": {
+    "description": "Etiqueta para dióxido de azufre"
+  },
+  "templateConfiguration": "Configuración de Plantilla",
+  "@templateConfiguration": {
+    "description": "Etiqueta para configuración de plantilla"
+  },
+  "editContainer": "Editar Contenedor",
+  "@editContainer": {
+    "description": "Etiqueta para editar contenedor"
+  },
+  "containerDescription": "Descripción del Contenedor",
+  "@containerDescription": {
+    "description": "Etiqueta para descripción del contenedor"
+  },
+  "detectGases": "Detectar Gases",
+  "@detectGases": {
+    "description": "Etiqueta para detectar gases"
+  },
+  "lastKnownHealthStatus": "Último Estado de Salud Conocido",
+  "@lastKnownHealthStatus": {
+    "description": "Etiqueta para último estado de salud conocido"
+  },
+  "containersNotFound": "No posees ningún DittoBox por el momento",
+  "@containersNotFound": {
+    "description": "Mensaje de error cuando no se poseen contenedores"
+  },
+  "noFacilitiesAvailable": "No hay instalaciones disponibles",
+  "@noFacilitiesAvailable": {
+    "description": "Mensaje de error cuando no hay instalaciones disponibles"
+  },
+  "containerCreatedSuccessfully": "Contenedor creado exitosamente",
+  "@containerCreatedSuccessfully": {
+    "description": "Mensaje de éxito cuando el contenedor es creado exitosamente"
+  },
+  "allContainers": "Todos los contenedores",
+  "@allContainers": {
+    "description": "Etiqueta para todos los contenedores"
+  },
+  "details": "Detalles",
+  "@details": {
+    "description": "Etiqueta para detalles"
+  },
+  "sulfurDioxideMax": "Dióxido de azufre Máx",
+  "@sulfurDioxideMax": {
+    "description": "Etiqueta para dióxido de azufre Máx"
+  },
+  "sulfurDioxideMin": "Dióxido de azufre Min",
+  "@sulfurDioxideMin": {
+    "description": "Etiqueta para dióxido de azufre Min"
+  },
+  "viewCurrentConfigs": "Ver Config Actuales",
+  "@viewCurrentConfigs": {
+    "description": "Etiqueta para ver configuraciones actuales"
+  },
+  "currentConfigs": "Configuraciones Actuales",
+  "@currentConfigs": {
+    "description": "Etiqueta para configuraciones actuales"
+  },
+  "close": "Cerrar",
+  "@close": {
+    "description": "Etiqueta para cerrar"
+  },
+  "noTemplateAssigned": "No hay plantilla asignada",
+  "@noTemplateAssigned": {
+    "description": "Mensaje de error cuando no hay plantilla asignada"
+  },
+  "assignTemplate": "Asignar Plantilla?",
+  "@assignTemplate": {
+    "description": "Etiqueta para asignar plantilla"
+  },
+  "selectTemplate": "Seleccionar Plantilla",
+  "@selectTemplate": {
+    "description": "Etiqueta para seleccionar plantilla"
+  },
+  "templateAssignedSuccessfully": "Plantilla asignada exitosamente",
+  "@templateAssignedSuccessfully": {
+    "description": "Mensaje de éxito cuando la plantilla es asignada exitosamente"
+  },
+  "success": "Éxito",
+  "@success": {
+    "description": "Mensaje de éxito"
+  },
+  "ok": "Aceptar",
+  "@ok": {
+    "description": "Etiqueta para aceptar"
+  },
+  "areYouSureYouWantToGrantThisPrivilege": "¿Estás seguro de que deseas otorgar este privilegio?",
+  "@areYouSureYouWantToGrantThisPrivilege": {
+    "description": "Mensaje de confirmación para otorgar privilegio"
+  },
+  "areYouSureYouWantToRevokeThisPrivilege": "¿Estás seguro de que deseas revocar este privilegio?",
+  "@areYouSureYouWantToRevokeThisPrivilege": {
+    "description": "Mensaje de confirmación para revocar privilegio"
+  },
+  "confirm": "Confirmar",
+  "@confirm": {
+    "description": "Etiqueta para confirmar"
+  },
+  "location": "Ubicación",
+  "@location": {
+    "description": "Etiqueta para ubicación"
+  },
+  "privilegesUpdatedSuccessfully": "Privilegios actualizados exitosamente",
+  "@privilegesUpdatedSuccessfully": {
+    "description": "Mensaje de éxito cuando los privilegios son actualizados exitosamente"
+  },
+  "failedToUpdatePrivileges": "Error al actualizar los privilegios",
+  "@failedToUpdatePrivileges": {
+    "description": "Mensaje de error cuando no se pueden actualizar los privilegios"
+  },
+  "status": "Estado",
+  "@status": {
+    "description": "Etiqueta para estado"
+  },
+  "updatePaymentInformation": "Actualizar",
+  "@updatePaymentInformation": {
+    "description": "Etiqueta para actualizar información de pago"
+  },
+  "cardNumber": "Número de Tarjeta",
+  "@cardNumber": {
+    "description": "Etiqueta para número de tarjeta"
+  },
+  "expirationDate": "Fecha de Expiración",
+  "@expirationDate": {
+    "description": "Etiqueta para fecha de expiración"
+  },
+  "paymentSuccessful": "Pago exitoso",
+  "@paymentSuccessful": {
+    "description": "Mensaje de éxito cuando el pago es exitoso"
+  },
+  "advancePlan": "Plan Avanzado",
+  "@advancePlan": {
+    "description": "Etiqueta para plan avanzado"
+  },
+  "premiumPlan": "Plan Premium",
+  "@premiumPlan": {
+    "description": "Etiqueta para plan premium"
+  },
+  "upTo": "Hasta",
+  "@upTo": {
+    "description": "Etiqueta para hasta"
+  },
+  "restaurants": "restaurantes",
+  "@restaurants": {
+    "description": "Etiqueta para restaurantes"
+  },
+  "month": "Mes",
+  "@month": {
+    "description": "Etiqueta para mes"
+  },
+  "yearly": "Anual",
+  "@yearly": {
+    "description": "Etiqueta para anual"
+  },
+  "allFromStarterPlan": "Todo del Plan Inicial.",
+  "@allFromStarterPlan": {
+    "description": "Etiqueta para todo del plan inicial"
+  },
+  "priorityTechnicalSupport": "Soporte técnico prioritario.",
+  "@priorityTechnicalSupport": {
+    "description": "Etiqueta para soporte técnico prioritario"
+  },
+  "automaticTemplates": "Plantillas automáticas para ajustar la temperatura y la humedad según el tipo de suministro.",
+  "@automaticTemplates": {
+    "description": "Etiqueta para plantillas automáticas"
+  },
+  "simultaneousMonitoring": "Monitoreo simultáneo de hasta 5 DittoBoxes para múltiples restaurantes.",
+  "@simultaneousMonitoring": {
+    "description": "Etiqueta para monitoreo simultáneo"
+  },
+  "allFromAdvancePlan": "Todo del Plan Avanzado.",
+  "@allFromAdvancePlan": {
+    "description": "Etiqueta para todo del plan avanzado"
+  },
+  "supportForLargerChains": "Soporte para cadenas más grandes (hasta 10 restaurantes).",
+  "@supportForLargerChains": {
+    "description": "Etiqueta para soporte para cadenas más grandes"
+  },
+  "fasterTechnicalSupport": "Soporte técnico más rápido y personalizado.",
+  "@fasterTechnicalSupport": {
+    "description": "Etiqueta para soporte técnico más rápido"
+  },
+  "advancedAutomaticTemplates": "Plantillas y ajustes automáticos avanzados para preservar varios tipos de alimentos.",
+  "@advancedAutomaticTemplates": {
+    "description": "Etiqueta para plantillas automáticas avanzadas"
+  },
+  "pay": "Pagar",
+  "@pay": {
+    "description": "Etiqueta para pagar"
+  },
+  "subscriptionPlans": "Planes de Suscripción",
+  "@subscriptionPlans": {
+    "description": "Etiqueta para planes de suscripción"
+  },
+  "subscribe": "Suscribirse",
+  "@subscribe": {
+    "description": "Etiqueta para suscribirse"
+  },
+  "choosePlan": "Elegir Plan",
+  "@choosePlan": {
+    "description": "Etiqueta para elegir plan"
+  },
+  "yearlyPlans": "Planes Anuales",
+  "@yearlyPlans": {
+    "description": "Etiqueta para planes anuales"
+  },
+  "monthlyPlans": "Planes Mensuales",
+  "@monthlyPlans": {
+    "description": "Etiqueta para planes mensuales"
+  },
+  "invalidCardNumber": "Número de tarjeta inválido",
+  "@invalidCardNumber": {
+    "description": "Mensaje de error para número de tarjeta inválido"
+  },
+  "InvalidExpirationDate": "Fecha de expiración inválida",
+  "@InvalidExpirationDate": {
+    "description": "Mensaje de error para fecha de expiración inválida"
+  },
+  "invalidCvv": "CVV inválido",
+  "@invalidCvv": {
+    "description": "Mensaje de error para CVV inválido"
+  },
+  "invalidCardHolderName": "Nombre del titular de la tarjeta inválido",
+  "@invalidCardHolderName": {
+    "description": "Mensaje de error para nombre del titular de la tarjeta inválido"
+  },
+  "facilityCreatedSuccessfully": "Instalación creada exitosamente",
+  "@facilityCreatedSuccessfully": {
+    "description": "Mensaje de éxito cuando la instalación es creada exitosamente"
+  },
+  "loginFailed": "Inicio de sesión fallido",
+  "@loginFailed": {
+    "description": "Mensaje de error cuando el inicio de sesión falla"
+  },
+  "registrationFailed": "Registro fallido",
+  "@registrationFailed": {
+    "description": "Mensaje de error cuando el registro falla"
+  },
+  "accountCreatedSuccessfully": "Cuenta creada exitosamente",
+  "@accountCreatedSuccessfully": {
+    "description": "Mensaje de éxito cuando la cuenta es creada exitosamente"
+  },
+  "errorCreatingAccount" : "Error al crear la cuenta",
+  "@errorCreatingAccount": {
+    "description": "Mensaje de error cuando no se puede crear la cuenta"
+  },
+  "noFacilitiesFound": "Aún no tienes instalaciones, por favor crea una.",
+  "@noFacilitiesFound": {
+    "description": "Mensaje de error cuando no se encuentran instalaciones"
+  },
+  "errorApplicatingaTemplate": "Error al aplicar la plantilla",
+  "@errorApplicatingaTemplate": {
+    "description": "Mensaje de error cuando no se puede aplicar la plantilla"
+  },
+  "temperatureThresholdExceeded": "La temperatura en {name} ha excedido el umbral permitido.",
+  "@temperatureThresholdExceeded": {
+    "description": "Mensaje de error cuando se excede el umbral de temperatura",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "humidityThresholdExceeded": "La humedad en {name} ha excedido el umbral permitido.",
+  "@humidityThresholdExceeded": {
+    "description": "Mensaje de error cuando se excede el umbral de humedad",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "decompositionGasesDetected": "Se han detectado gases de descomposición en {name}.",
+  "@decompositionGasesDetected": {
+    "description": "Mensaje de error cuando se detectan gases de descomposición",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "containerLinked": "El contenedor {name} ha sido vinculado.",
+  "@containerLinked": {
+    "description": "Mensaje de éxito cuando el contenedor está vinculado",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "containerUnlinked": "El contenedor {name} ha sido desvinculado.",
+  "@containerUnlinked": {
+    "description": "Mensaje de éxito cuando el contenedor está desvinculado",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "containerOff": "El contenedor {name} está apagado.",
+  "@containerOff": {
+    "description": "Mensaje de error cuando el contenedor está apagado",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "containerOn": "El contenedor {name} está encendido.",
+  "@containerOn": {
+    "description": "Mensaje de éxito cuando el contenedor está encendido",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "templateAssigned": "Se ha asignado una plantilla al contenedor {name}.",
+  "@templateAssigned": {
+    "description": "Mensaje de éxito cuando se asigna una plantilla",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "containerActivated": "El contenedor {name} ha sido activado.",
+  "@containerActivated": {
+    "description": "Mensaje de éxito cuando el contenedor está activado",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "containerDeactivated": "El contenedor {name} ha sido desactivado.",
+  "@containerDeactivated": {
+    "description": "Mensaje de éxito cuando el contenedor está desactivado",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "temperatureRegulationTriggered": "Se ha iniciado la regulación de temperatura en {name}.",
+  "@temperatureRegulationTriggered": {
+    "description": "Mensaje de error cuando se inicia la regulación de temperatura",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "temperatureRegulationSuccessful": "La regulación de temperatura en {name} fue exitosa.",
+  "@temperatureRegulationSuccessful": {
+    "description": "Mensaje de éxito cuando la regulación de temperatura es exitosa",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "temperatureRegulationFailed": "La regulación de temperatura en {name} ha fallado.",
+  "@temperatureRegulationFailed": {
+    "description": "Mensaje de error cuando la regulación de temperatura falla",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "humidityRegulationTriggered": "Se ha iniciado la regulación de humedad en {name}.",
+  "@humidityRegulationTriggered": {
+    "description": "Mensaje de error cuando se inicia la regulación de humedad",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "humidityRegulationSuccessful": "La regulación de humedad en {name} fue exitosa.",
+  "@humidityRegulationSuccessful": {
+    "description": "Mensaje de éxito cuando la regulación de humedad es exitosa",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "humidityRegulationFailed": "La regulación de humedad en {name} ha fallado.",
+  "@humidityRegulationFailed": {
+    "description": "Mensaje de error cuando la regulación de humedad falla",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "ventilationRegulationTriggered": "Se ha iniciado la regulación de ventilación en {name}.",
+  "@ventilationRegulationTriggered": {
+    "description": "Mensaje de error cuando se inicia la regulación de ventilación",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "ventilationRegulationSuccessful": "La regulación de ventilación en {name} fue exitosa.",
+  "@ventilationRegulationSuccessful": {
+    "description": "Mensaje de éxito cuando la regulación de ventilación es exitosa",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "ventilationRegulationFailed": "La regulación de ventilación en {name} ha fallado.",
+  "@ventilationRegulationFailed": {
+    "description": "Mensaje de error cuando la regulación de ventilación falla",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "containerHealthReport": "Reporte de salud del contenedor {name}.",
+  "@containerHealthReport": {
+    "description": "Etiqueta para el reporte de salud del contenedor",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "containerStatusReport": "Reporte de estado del contenedor {name}.",
+  "@containerStatusReport": {
+    "description": "Etiqueta para el reporte de estado del contenedor",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "containerManualOn": "El contenedor {name} ha sido encendido manualmente.",
+  "@containerManualOn": {
+    "description": "Mensaje de éxito cuando el contenedor se enciende manualmente",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "containerManualOff": "El contenedor {name} ha sido apagado manualmente.",
+  "@containerManualOff": {
+    "description": "Mensaje de éxito cuando el contenedor se apaga manualmente",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "containerOpened": "El contenedor {name} ha sido abierto.",
+  "@containerOpened": {
+    "description": "Mensaje de error cuando el contenedor está abierto",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "containerOnline": "El contenedor {name} está en línea.",
+  "@containerOnline": {
+    "description": "Mensaje de éxito cuando el contenedor está en línea",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "containerOffline": "El contenedor {name} está fuera de línea.",
+  "@containerOffline": {
+    "description": "Mensaje de error cuando el contenedor está fuera de línea",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Contenedor A"
+      }
+    }
+  },
+  "unknownAlert": "Alerta desconocida en {name}.",
+    "@unknownAlert": {
+      "description": "Mensaje de error cuando la alerta es desconocida",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Contenedor A"
+        }
+      }
+    },
+    "alert": "Alerta: {alertType}",
+    "@alert": {
+      "description": "Etiqueta para alerta",
+      "placeholders": {
+        "alertType": {
+          "type": "String",
+          "example": "TemperatureThresholdExceeded"
+        }
+      }
+    },
+    "issuedAt": "Emitido a las {issuedAt}",
+    "@issuedAt": {
+      "description": "Etiqueta para emitido a las",
+      "placeholders": {
+        "issuedAt": {
+          "type": "String",
+          "example": "2024-11-17T05:46:11.518Z"
+        }
+      }
+    },
+    "temperatureThresholdExceededTitle": "Umbral de temperatura excedido",
+    "@temperatureThresholdExceededTitle": {
+      "description": "Título para umbral de temperatura excedido"
+    },
+    "humidityThresholdExceededTitle": "Umbral de humedad excedido",
+    "@humidityThresholdExceededTitle": {
+      "description": "Título para umbral de humedad excedido"
+    },
+    "decompositionGasesDetectedTitle": "Gases de descomposición detectados",
+    "@decompositionGasesDetectedTitle": {
+      "description": "Título para gases de descomposición detectados"
+    },
+    "containerLinkedTitle": "Contenedor vinculado",
+    "@containerLinkedTitle": {
+      "description": "Título para contenedor vinculado"
+    },
+    "containerUnlinkedTitle": "Contenedor desvinculado",
+    "@containerUnlinkedTitle": {
+      "description": "Título para contenedor desvinculado"
+    },
+    "containerOffTitle": "Contenedor apagado",
+    "@containerOffTitle": {
+      "description": "Título para contenedor apagado"
+    },
+    "containerOnTitle": "Contenedor encendido",
+    "@containerOnTitle": {
+      "description": "Título para contenedor encendido"
+    },
+    "templateAssignedTitle": "Plantilla asignada",
+    "@templateAssignedTitle": {
+      "description": "Título para plantilla asignada"
+    },
+    "containerActivatedTitle": "Contenedor activado",
+    "@containerActivatedTitle": {
+      "description": "Título para contenedor activado"
+    },
+    "containerDeactivatedTitle": "Contenedor desactivado",
+    "@containerDeactivatedTitle": {
+      "description": "Título para contenedor desactivado"
+    },
+    "temperatureRegulationTriggeredTitle": "Regulación de temperatura activada",
+    "@temperatureRegulationTriggeredTitle": {
+      "description": "Título para regulación de temperatura activada"
+    },
+    "temperatureRegulationSuccessfulTitle": "Regulación de temperatura exitosa",
+    "@temperatureRegulationSuccessfulTitle": {
+      "description": "Título para regulación de temperatura exitosa"
+    },
+    "temperatureRegulationFailedTitle": "Regulación de temperatura fallida",
+    "@temperatureRegulationFailedTitle": {
+      "description": "Título para regulación de temperatura fallida"
+    },
+    "humidityRegulationTriggeredTitle": "Regulación de humedad activada",
+    "@humidityRegulationTriggeredTitle": {
+      "description": "Título para regulación de humedad activada"
+    },
+    "humidityRegulationSuccessfulTitle": "Regulación de humedad exitosa",
+    "@humidityRegulationSuccessfulTitle": {
+      "description": "Título para regulación de humedad exitosa"
+    },
+    "humidityRegulationFailedTitle": "Regulación de humedad fallida",
+    "@humidityRegulationFailedTitle": {
+      "description": "Título para regulación de humedad fallida"
+    },
+    "ventilationRegulationTriggeredTitle": "Regulación de ventilación activada",
+    "@ventilationRegulationTriggeredTitle": {
+      "description": "Título para regulación de ventilación activada"
+    },
+    "ventilationRegulationSuccessfulTitle": "Regulación de ventilación exitosa",
+    "@ventilationRegulationSuccessfulTitle": {
+      "description": "Título para regulación de ventilación exitosa"
+    },
+    "ventilationRegulationFailedTitle": "Regulación de ventilación fallida",
+    "@ventilationRegulationFailedTitle": {
+      "description": "Título para regulación de ventilación fallida"
+    },
+    "containerHealthReportTitle": "Informe de salud del contenedor",
+    "@containerHealthReportTitle": {
+      "description": "Título para informe de salud del contenedor"
+    },
+    "containerStatusReportTitle": "Informe de estado del contenedor",
+    "@containerStatusReportTitle": {
+      "description": "Título para informe de estado del contenedor"
+    },
+    "containerManualOnTitle": "Contenedor manual encendido",
+    "@containerManualOnTitle": {
+      "description": "Título para contenedor manual encendido"
+    },
+    "containerManualOffTitle": "Contenedor manual apagado",
+    "@containerManualOffTitle": {
+      "description": "Título para contenedor manual apagado"
+    },
+    "containerOpenedTitle": "Contenedor abierto",
+    "@containerOpenedTitle": {
+      "description": "Título para contenedor abierto"
+    },
+    "containerOnlineTitle": "Contenedor en línea",
+    "@containerOnlineTitle": {
+      "description": "Título para contenedor en línea"
+    },
+    "containerOfflineTitle": "Contenedor fuera de línea",
+    "@containerOfflineTitle": {
+      "description": "Título para contenedor fuera de línea"
+    },
+    "unknownAlertTitle": "Alerta desconocida",
+    "@unknownAlertTitle": {
+      "description": "Título para alerta desconocida"
+    },
+    "noTemplatesFound": "Dittobox aún no distribuye ninguna plantilla, por favor esperelo pronto.",
+    "@noTemplatesFound": {
+      "description": "Error message when no templates are found"
+    },
+    "All": "Todos",
+    "@All": {
+      "description": "etiqueta para todos"
+    },
+    "Produce": "Frutas y vegetales",
+    "@Produce": {
+      "description": "etiqueta para frutas y vegetales"
+    },
+    "Meats" : "Carnes",
+    "@Meats": {
+      "description": "etiqueta para carnes"
+    },
+    "AnimalDerived" : "Derivados",
+    "@AnimalDerived": {
+      "description": "etiqueta para derivados de animales"
+    },
+    "ProcessedFood" : "Comida procesada",
+    "@ProcessedFood": {
+      "description": "etiqueta para comida procesada"
+    },
+    "templateAssignedSuccessfullyToContainer": "Plantilla asignada exitosamente al contenedor {name}.",
+    "@templateAssignedSuccessfullyToContainer": {
+      "description": "Mensaje de éxito cuando la plantilla es asignada exitosamente al contenedor",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Contenedor A"
+        }
+      }
+    },
+    "noGroupsFound": "No se encontraron grupos",
+    "@noGroupsFound": {
+      "description": "Mensaje de error cuando no se encuentran grupos"
+    },
+    "noUsersFound": "No se encontraron usuarios",
+    "@noUsersFound": {
+      "description": "Mensaje de error cuando no se encuentran usuarios"
+    },
+    "failedToAddWorker": "Error al agregar trabajador: {error}",
+    "@failedToAddWorker": {
+      "description": "Mensaje de error cuando no se puede agregar trabajador",
+      "placeholders": {
+        "error": {
+          "type": "String",
+          "example": "El trabajador ya está asignado"
+        }
+      }
+    },
+    "manager": "Gerente",
+    "@manager": {
+      "description": "etiqueta para gerente"
+    },
+    "facility" : "Instalación",
+    "@facility": {
+      "description": "etiqueta para instalación"
+    },
+    "currenTier" : "Nivel actual",
+    "@currenTier": {
+      "description": "etiqueta para nivel actual"
+    },
+    "expired" : "Expirado",
+    "@expired": {
+      "description": "etiqueta para expirado"
+    },
+    "active" : "Activo",
+    "@active": {
+      "description": "etiqueta para activo"
+    },
+   "noLocation": "No posee",
+   "@noLocation": {
+     "description": "etiqueta para no posee"
+   },
+   "noPoseefacility": "Ninguna",
+    "@noPoseefacility": {
+      "description": "etiqueta para ninguna"
+    },
+    "firstName": "Nombres",
+    "@firstName": {
+      "description": "etiqueta para nombre"
+    },
+    "lasName": "Apellidos",
+    "@lasName": {
+      "description": "etiqueta para apellido"
+    },
+    "noNotifications": "No posee notificaciones",
+    "@noNotifications": {
+      "description": "Mensaje de error cuando no se poseen notificaciones"
+    },
+    "passwordChangeFailed": "Error al cambiar la contraseña",
+    "@passwordChangeFailed": {
+      "description": "Mensaje de error cuando no se puede cambiar la contraseña"
+    }
 }

@@ -18,13 +18,13 @@ class ConfirmAssignWorkerDialog extends StatelessWidget {
           onPressed: () => Navigator.of(context).pop(), 
           child: Text(S.of(context).cancel)
         ),
-        ElevatedButton(
+        FilledButton(
           onPressed: () => {
             Navigator.of(context).pop(),
             Navigator.of(context).pop(),
             onConfirm()
           }, 
-          child: Text(S.of(context).confirm)
+          child: Text(S.of(context).workerAssignConfirm),
         )
       ],
     );

@@ -1,8 +1,10 @@
 import 'package:dittobox_mobile/containers/presentation/widgets/add_container_sheet.dart';
 import 'package:dittobox_mobile/generated/l10n.dart';
+import 'package:dittobox_mobile/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:dittobox_mobile/goups/infrastructure/models/facilities.dart';
 import 'package:dittobox_mobile/goups/presentation/widgets/add_worker_sheet.dart';
+import 'package:dittobox_mobile/goups/infrastructure/data_sources/facilities_service.dart';
 
 void showFacilityDetailsBottomSheet(BuildContext context, Facility facility, VoidCallback onDelete) {
   showModalBottomSheet(
@@ -43,16 +45,16 @@ void showFacilityDetailsBottomSheet(BuildContext context, Facility facility, Voi
                       ),
                     ),
                     const Icon(Icons.chevron_right_outlined),
-                    if (facility.location.split(', ').length > 1) ...[
+                    if (facility.location.city!.split(', ').length > 1) ...[
                       Text(
-                        facility.location.split(', ')[0],
+                        facility.location.city!.split(', ')[0],
                         style: const TextStyle(
                           fontSize: 16,
                         ),
                       ),
                       const Icon(Icons.chevron_right_outlined),
                       Text(
-                        facility.location.split(', ')[1],
+                        facility.location.city!.split(', ')[1],
                         style: const TextStyle(
                           fontSize: 16,
                         ),
@@ -60,7 +62,7 @@ void showFacilityDetailsBottomSheet(BuildContext context, Facility facility, Voi
                       const Icon(Icons.chevron_right_outlined),
                     ] else ...[
                       Text(
-                        facility.location,
+                        facility.location.city!,
                         style: const TextStyle(
                           fontSize: 16,
                         ),
@@ -79,7 +81,7 @@ void showFacilityDetailsBottomSheet(BuildContext context, Facility facility, Voi
                       ),
                     ),
                     Text(
-                      facility.type,
+                      facility.facilityType.toString(),
                       style: const TextStyle(
                         fontSize: 16,
                       ),
@@ -91,7 +93,7 @@ void showFacilityDetailsBottomSheet(BuildContext context, Facility facility, Voi
             const SizedBox(height: 16),
 
             // Contenido del BottomSheet
-            buildInfoRowWithIcon(Icons.widgets_outlined, S.of(context).containers, facility.containers),
+            buildInfoRowWithIcon(Icons.widgets_outlined, S.of(context).containers, facility.containerCount),
             Row(
               children: [
                 TextButton(
@@ -100,23 +102,16 @@ void showFacilityDetailsBottomSheet(BuildContext context, Facility facility, Voi
                   },
                   child: Text(S.of(context).addContainers),
                 ),
-                TextButton(
-                  onPressed: () {
-                    // Navegar a la vista de contenedores del facility
-                    Navigator.pushNamed(context, '/containers', arguments: facility);
-                  },
-                  child: Text(S.of(context).viewContainers),
-                ),
               ],
             ),
             const SizedBox(height: 8),
 
-            buildInfoRowWithIcon(Icons.person_2_outlined, S.of(context).workers, facility.workers),
+            buildInfoRowWithIcon(Icons.person_2_outlined, S.of(context).workers, facility.profileCount),
             Row(
               children: [
                 TextButton(
                   onPressed: () {
-                    showAddWorkerSheet(context, facility); // Pasa la instalación seleccionada
+                    showAddWorkerSheet(context, facility as Function(String p1, int p2)?); // Pasa la instalación seleccionada
                   },
                   child: Text(S.of(context).addWorkers),
                 ),
@@ -131,35 +126,29 @@ void showFacilityDetailsBottomSheet(BuildContext context, Facility facility, Voi
             ),
             const SizedBox(height: 8),
 
-            buildInfoRowWithIcon(Icons.notifications_none_outlined, S.of(context).pendingAlerts, facility.alerts),
+            FutureBuilder<int>(
+              future: FacilitiesService().countNotificationsByGroupId(facility.id),
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  print('Esperando respuesta de countNotificationsByGroupId');
+                  return buildInfoRowWithIcon(Icons.notifications_none_outlined, S.of(context).pendingAlerts, 0);
+                } else if (snapshot.hasError) {
+                  print('Error en countNotificationsByGroupId: ${snapshot.error}');
+                  return buildInfoRowWithIcon(Icons.notifications_none_outlined, S.of(context).pendingAlerts, 0);
+                } else {
+                  print('Facility Details - Notificaciones recibidas: ${snapshot.data}');
+                  return buildInfoRowWithIcon(Icons.notifications_none_outlined, S.of(context).pendingAlerts, snapshot.data ?? 0);
+                }
+              },
+            ),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                // Navegar a la vista de alertas del facility
+                Navigator.pushNamed(context, AppRoutes.notifications, arguments: facility);
+              },
               child: Text(S.of(context).checkAlerts),
             ),
             const SizedBox(height: 16),
-
-            // Botones de editar y eliminar
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end, // Alinea los botones al extremo derecho
-              children: [
-                FilledButton(
-                  onPressed: () {
-                    // Lógica para editar la instalación
-                  },
-                  child: Text(S.of(context).edit),
-                ),
-                const SizedBox(width: 8), // Espacio entre los botones
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pop(); // Cierra el BottomSheet
-                    onDelete(); // Llama a la función de eliminación
-                  },
-                  child: Text(
-                    S.of(context).delete,
-                  ),
-                ),
-              ],
-            ),
           ],
         ),
       );

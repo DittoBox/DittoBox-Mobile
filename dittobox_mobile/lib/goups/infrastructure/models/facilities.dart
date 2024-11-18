@@ -1,40 +1,35 @@
-// Facility Model
+import 'package:dittobox_mobile/goups/infrastructure/models/location.dart';
+
 class Facility {
+  final int id;
   final String title;
-  final String location;
-  final int containers;
-  final int alerts;
-  final int workers;
-  final String type; // Nueva propiedad
+  final Location location;
+  final int accountId;
+  final int facilityType;
+  final int containerCount; // Nueva propiedad
+  final int profileCount; // Nueva propiedad
 
   Facility({
+    required this.id,
     required this.title,
     required this.location,
-    required this.containers,
-    required this.alerts,
-    required this.workers,
-    required this.type, // Nuevo parámetro
+    required this.accountId,
+    required this.facilityType,
+    required this.containerCount, // Nueva propiedad
+    required this.profileCount, // Nueva propiedad
   });
 
   factory Facility.fromJson(Map<String, dynamic> json) {
+    print('containerCount: ${json['containerCount']}'); // Agrega esta línea para depurar
+    print('profileCount: ${json['profileCount']}'); // Agrega esta línea para depurar
     return Facility(
-      title: json['title'],
-      location: json['location'],
-      containers: json['containers'],
-      alerts: json['alerts'],
-      workers: json['workers'],
-      type: json['type'], // Nuevo campo
+      id: json['id'],
+      title: json['name'],
+      location: Location.fromJson(json['location']),
+      accountId: json['accountId'],
+      facilityType: json['facilityType'],
+      containerCount: json['containerCount'] ?? 0, // Manejo de null
+      profileCount: json['profileCount'] ?? 0, // Manejo de null
     );
-  }
-
-  Map<String, dynamic> toJson() {
-    return {
-      'title': title,
-      'location': location,
-      'containers': containers,
-      'alerts': alerts,
-      'workers': workers,
-      'type': type, // Nuevo campo
-    };
   }
 }

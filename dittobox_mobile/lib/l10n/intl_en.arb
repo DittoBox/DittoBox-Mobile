@@ -260,7 +260,7 @@
   "@humidityMax": {
     "description": "Label for Max humidity section"
   },
-  "ethylene": "Ethylene",
+  "ethylene": "Ethylene (C₂H₄)",
   "@ethylene": {
     "description": "Label for ethylene section"
   },
@@ -296,11 +296,11 @@
   "@gasDetection": {
     "description": "Label for gas detection section"
   },
-  "oxygen": "Oxygen",
+  "oxygen": "Oxygen (O₂)",
   "@oxygen": {
     "description": "Label for oxygen section"
   },
-  "carbonDioxide": "Carbon dioxide",
+  "carbonDioxide": "Carbon dioxide (CO₂)",
   "@carbonDioxide": {
     "description": "Label for carbon dioxide section"
   },
@@ -575,5 +575,853 @@
   "accountDetails": "Account Details",
   "@accountDetails": {
     "description": "Label for account details section"
-  }
-}
+  },
+  "forgotPasswordTitle": "Forgot Password?",
+  "@forgotPasswordTitle": {
+    "description": "Title for forgot password section"
+  },
+  "workerAssignedSuccessfully": "Worker assigned successfully",
+  "@workerAssignedSuccessfully": {
+    "description": "Success message when worker is assigned successfully"
+  },
+  "confirmAssignWorker": "Are you sure you want to assign this worker?",
+  "@confirmAssignWorker": {
+    "description": "Confirmation message for assigning worker"
+  },
+  "confirmAssignWorkerMessage": "This change will be recorded in this worker’s historial.",
+  "@confirmAssignWorkerMessage": {
+    "description": "Confirmation message for assigning worker"
+  },
+  "workerUnassignedSuccessfully": "Worker unassigned successfully",
+  "@workerUnassignedSuccessfully": {
+    "description": "Success message when worker is unassigned successfully"
+  },
+  "workerAssignConfirm": "Confirm",
+  "@workerAssignConfirm": {
+    "description": "Confirmation message for unassigning worker"
+  },
+  "reassignWorker": "Reassign worker",
+  "@reassignWorker": {
+    "description": "Label for reassigning worker"
+  },
+  "workerReassigned": "Worker reassigned successfully",
+  "@workerReassigned": {
+    "description": "Success message when worker is reassigned successfully"
+  },
+  "resetPassword": "Reset Password",
+  "@resetPassword": {
+    "description": "Label for reset password button"
+  },
+  "backToLogin": "Back",
+  "@backToLogin": {
+    "description": "Label for back to login button"
+  },
+  "passwordResetCodeTitle": "Password Reset Code",
+  "@passwordResetCodeTitle": {
+    "description": "Title for password reset code section"
+  },
+  "passwordResetCode": "Password Reset Code",
+  "@passwordResetCode": {
+    "description": "Label for password reset code section"
+  },
+  "verifyCode": "Verify Code",
+  "@verifyCode": {
+    "description": "Label for verify code button"
+  },
+  "setNewPasswordTitle": "Set New Password",
+  "@setNewPasswordTitle": {
+    "description": "Title for set new password section"
+  },
+  "newPassword": "New Password",
+  "@newPassword": {
+    "description": "Label for new password section"
+  },
+  "confirmPassword": "Confirm Password",
+  "@confirmPassword": {
+    "description": "Label for confirm password section"
+  },
+  "setNewPassword": "Set New Password",
+  "@setNewPassword": {
+    "description": "Label for set new password button"
+  },
+  "emailRequired": "Email is required",
+  "@emailRequired": {
+    "description": "Error message when email is required"
+  },
+  "codeLength": "Code must be 5 characters long",
+  "@codeLength": {
+    "description": "Error message when code is not 5 characters long"
+  },
+  "codeRequired": "Code is required",
+  "@codeRequired": {
+    "description": "Error message when code is required"
+  },
+  "newPasswordRequired": "New password is required",
+  "@newPasswordRequired": {
+    "description": "Error message when new password is required"
+  },
+  "passwordLength": "Password must be at least 8 characters long",
+  "@passwordLength": {
+    "description": "Error message when password is less than 8 characters long"
+  },
+  "passwordsDoNotMatch": "Passwords do not match",
+  "@passwordsDoNotMatch": {
+    "description": "Error message when passwords do not match"
+  },
+  "confirmPasswordRequired": "Confirm password is required",
+  "@confirmPasswordRequired": {
+    "description": "Error message when confirm password is required"
+  },
+  "changeTemplate": "Change template",
+  "@changeTemplate": {
+    "description": "Label for changing template"
+  },
+  "ammonia": "Ammonia (NH₃)",
+  "@ammonia": {
+    "description": "Label for ammonia and sulfer dioxide"
+  },
+  "sulfurDioxide": "Sulfur dioxide (SO₂)",
+  "@sulfurDioxide": {
+    "description": "Label for ammonia and sulfer dioxide"
+  },
+  "templateConfiguration": "Template Configuration",
+  "@templateConfiguration": {
+    "description": "Label for template configuration"
+  },
+  "editContainer": "Edit container",
+  "@editContainer": {
+    "description": "Label for editing container"
+  },
+  "containerDescription": "Container description",
+  "@containerDescription": {
+    "description": "Label for container description"
+  },
+  "detectGases": "Detect gases",
+  "@detectGases": {
+    "description": "Label for detecting gases"
+  },
+  "lastKnownHealthStatus": "Last known health status",
+  "@lastKnownHealthStatus": {
+    "description": "Label for last known health status"
+  },
+  "containersNotFound": "You don't have any Dittobox containers yet",
+  "@containersNotFound": {
+    "description": "Error message when containers are not found"
+  },
+  "noFacilitiesAvailable": "No facilities available",
+  "@noFacilitiesAvailable": {
+    "description": "Error message when no facilities are available"
+  },
+  "containerCreatedSuccessfully": "Container created successfully",
+  "@containerCreatedSuccessfully": {
+    "description": "Success message when container is created successfully"
+  },
+  "allContainers": "All containers",
+  "@allContainers": {
+    "description": "Label for all containers"
+  },
+  "details": "Details",
+  "@details": {
+    "description": "Label for details"
+  },
+  "sulfurDioxideMax": "Max sulfur dioxide",
+  "@sulfurDioxideMax": {
+    "description": "Label for Max sulfur dioxide section"
+  },
+  "sulfurDioxideMin": "Min sulfur dioxide",
+  "@sulfurDioxideMin": {
+    "description": "Label for Min sulfur dioxide section"
+  },
+  "viewCurrentConfigs": "View current configs",
+  "@viewCurrentConfigs": {
+    "description": "Label for viewing current configurations"
+  },
+  "currentConfigs": "Current configurations",
+  "@currentConfigs": {
+    "description": "Label for current configurations"
+  },
+  "close": "Close",
+  "@close": {
+    "description": "Button label for closing"
+  },
+  "noTemplateAssigned": "No template assigned",
+  "@noTemplateAssigned": {
+    "description": "Error message when no template is assigned"
+  },
+  "assignTemplate": "Assign template?",
+  "@assignTemplate": {
+    "description": "Label for assigning template"
+  },
+  "selectTemplate": "Select template",
+  "@selectTemplate": {
+    "description": "Label for selecting template"
+  },
+  "templateAssignedSuccessfully": "Template assigned successfully",
+  "@templateAssignedSuccessfully": {
+    "description": "Success message when template is assigned successfully"
+  },
+  "success": "Success",
+  "@success": {
+    "description": "Label for success"
+  },
+  "ok": "Ok",
+  "@ok": {
+    "description": "Button label for ok"
+  },
+  "areYouSureYouWantToGrantThisPrivilege" : "Are you sure you want to grant this privilege?",
+  "@areYouSureYouWantToGrantThisPrivilege": {
+    "description": "Confirmation message for granting privilege"
+  },
+  "areYouSureYouWantToRevokeThisPrivilege" : "Are you sure you want to revoke this privilege?",
+  "@areYouSureYouWantToRevokeThisPrivilege": {
+    "description": "Confirmation message for revoking privilege"
+  },
+  "confirm": "Confirm",
+  "@confirm": {
+    "description": "Button label for confirming"
+  },
+  "location": "Location",
+  "@location": {
+    "description": "Label for location"
+  },
+  "privilegesUpdatedSuccessfully" : "Privileges updated successfully",
+  "@privilegesUpdatedSuccessfully": {
+    "description": "Success message when privileges are updated successfully"
+  },
+  "failedToUpdatePrivileges" : "Failed to update privileges",
+  "@failedToUpdatePrivileges": {
+    "description": "Error message when failing to update privileges"
+  },
+  "status": "Status",
+  "@status": {
+    "description": "Label for status"
+  },
+  "nextPaymentDay": "Next payment day",
+  "@nextPaymentDay": {
+    "description": "Label for next payment day"
+  },
+  "updatePaymentInformation": "Update",
+  "@updatePaymentInformation": {
+    "description": "Button label for updating payment information"
+  },
+  "cardNumber": "Card number",
+  "@cardNumber": {
+    "description": "Label for card number"
+  },
+  "expirationDate": "Expiration date",
+  "@expirationDate": {
+    "description": "Label for expiration date"
+  },
+  "paymentSuccessful": "Payment successful",
+  "@paymentSuccessful": {
+    "description": "Success message when payment is successful"
+  },
+  "advancePlan": "Advance Plan",
+  "@advancePlan": {
+    "description": "Label for Advance Plan"
+  },
+  "premiumPlan": "Premium Plan",
+  "@premiumPlan": {
+    "description": "Label for Premium Plan"
+  },
+  "upTo": "Up to",
+  "@upTo": {
+    "description": "Label for up to"
+  },
+  "restaurants": "Restaurants",
+  "@restaurants": {
+    "description": "Label for restaurants"
+  },
+  "month": "Month",
+  "@month": {
+    "description": "Label for month"
+  },
+  "yearly": "Yearly",
+  "@yearly": {
+    "description": "Label for yearly"
+  },
+  "allFromStarterPlan": "All from Starter Plan",
+  "@allFromStarterPlan": {
+    "description": "Label for all from Starter Plan"
+  },
+  "priorityTechnicalSupport": "Priority technical support",
+  "@priorityTechnicalSupport": {
+    "description": "Label for priority technical support"
+  },
+  "automaticTemplates": "Automatic templates to adjust temperature and humidity according to the type of supply.",
+  "@automaticTemplates": {
+    "description": "Label for automatic templates to adjust temperature and humidity according to the type of supply"
+  },
+  "simultaneousMonitoring": "Simultaneous monitoring of up to 5 DittoBoxes for multiple restaurants.",
+  "@simultaneousMonitoring": {
+    "description": "Label for simultaneous monitoring of up to 5 DittoBoxes for multiple restaurants"
+  },
+  "allFromAdvancePlan": "All from Advance Plan",
+  "@allFromAdvancePlan": {
+    "description": "Label for all from Advance Plan"
+  },
+  "supportForLargerChains": "Support for larger chains (up to 10 restaurants).",
+  "@supportForLargerChains": {
+    "description": "Label for support for larger chains (up to 10 restaurants)"
+  },
+  "fasterTechnicalSupport": "Faster and more personalized technical support.",
+  "@fasterTechnicalSupport": {
+    "description": "Label for faster and more personalized technical support"
+  },
+  "advancedAutomaticTemplates": "Advanced automatic templates and adjustments for preserving various types of food.",
+  "@advancedAutomaticTemplates": {
+    "description": "Label for advanced automatic templates and adjustments for preserving various types of food"
+  },
+  "pay": "Pay",
+  "@pay": {
+    "description": "Button label for paying"
+  },
+  "subscriptionPlans": "Subscription Plans",
+  "@subscriptionPlans": {
+    "description": "Label for subscription plans"
+  },
+  "subscribe": "Subscribe",
+  "@subscribe": {
+    "description": "Button label for subscribing"
+  },
+  "choosePlan": "Choose plan",
+  "@choosePlan": {
+    "description": "Label for choosing plan"
+  },
+  "yearlyPlans": "Yearly plans",
+  "@yearlyPlans": {
+    "description": "Label for yearly plans"
+  },
+  "monthlyPlans": "Monthly plans",
+  "@monthlyPlans": {
+    "description": "Label for monthly plans"
+  },
+  "invalidCardNumber": "Invalid card number",
+  "@invalidCardNumber": {
+    "description": "Error message when card number is invalid"
+  },
+  "invalidExpiryDate": "Invalid expiry date",
+  "@invalidExpiryDate": {
+    "description": "Error message when expiry date is invalid"
+  },
+  "invalidCvv": "Invalid CVV",
+  "@invalidCvv": {
+    "description": "Error message when CVV is invalid"
+  },
+  "invalidCardHolderName": "Invalid card holder name",
+  "@invalidCardHolderName": {
+    "description": "Error message when card holder name is invalid"
+  },
+  "facilityCreatedSuccessfully": "Facility created successfully",
+  "@facilityCreatedSuccessfully": {
+    "description": "Success message when facility is created successfully"
+  },
+  "loginFailed": "Login failed",
+  "@loginFailed": {
+    "description": "Error message when login fails"
+  },
+  "registrationFailed": "Registration failed",
+  "@registrationFailed": {
+    "description": "Error message when registration fails"
+  },
+  "accountCreatedSuccessfully": "Account created successfully",
+  "@accountCreatedSuccessfully": {
+    "description": "Success message when account is created successfully"
+  },
+  "errorCreatingAccount": "Error creating account",
+  "@errorCreatingAccount": {
+    "description": "Error message when account creation fails"
+  },
+  "noFacilitiesFound": "You don't have any facilities yet, please add one",
+  "@noFacilitiesFound": {
+    "description": "Error message when no facilities are found"
+  },
+  "errorApplicatingaTemplate": "Error applicating a template",
+  "@errorApplicatingaTemplate": {
+    "description": "Error message when applying a template fails"
+  },
+    "temperatureThresholdExceeded": "The temperature in {name} has exceeded the allowed threshold.",
+    "@temperatureThresholdExceeded": {
+      "description": "Error message when temperature threshold is exceeded",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "humidityThresholdExceeded": "The humidity in {name} has exceeded the allowed threshold.",
+    "@humidityThresholdExceeded": {
+      "description": "Error message when humidity threshold is exceeded",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "decompositionGasesDetected": "Decomposition gases have been detected in {name}.",
+    "@decompositionGasesDetected": {
+      "description": "Error message when decomposition gases are detected",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "containerLinked": "The container {name} has been linked.",
+    "@containerLinked": {
+      "description": "Success message when container is linked",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "containerUnlinked": "The container {name} has been unlinked.",
+    "@containerUnlinked": {
+      "description": "Success message when container is unlinked",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "containerOff": "The container {name} is off.",
+    "@containerOff": {
+      "description": "Error message when container is off",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "containerOn": "The container {name} is on.",
+    "@containerOn": {
+      "description": "Success message when container is on",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "templateAssigned": "A template has been assigned to the container {name}.",
+    "@templateAssigned": {
+      "description": "Success message when template is assigned",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "containerActivated": "The container {name} has been activated.",
+    "@containerActivated": {
+      "description": "Success message when container is activated",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "containerDeactivated": "The container {name} has been deactivated.",
+    "@containerDeactivated": {
+      "description": "Success message when container is deactivated",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "temperatureRegulationTriggered": "Temperature regulation has been triggered in {name}.",
+    "@temperatureRegulationTriggered": {
+      "description": "Error message when temperature regulation is triggered",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "temperatureRegulationSuccessful": "Temperature regulation in {name} was successful.",
+    "@temperatureRegulationSuccessful": {
+      "description": "Success message when temperature regulation is successful",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "temperatureRegulationFailed": "Temperature regulation in {name} has failed.",
+    "@temperatureRegulationFailed": {
+      "description": "Error message when temperature regulation fails",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "humidityRegulationTriggered": "Humidity regulation has been triggered in {name}.",
+    "@humidityRegulationTriggered": {
+      "description": "Error message when humidity regulation is triggered",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "humidityRegulationSuccessful": "Humidity regulation in {name} was successful.",
+    "@humidityRegulationSuccessful": {
+      "description": "Success message when humidity regulation is successful",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "humidityRegulationFailed": "Humidity regulation in {name} has failed.",
+    "@humidityRegulationFailed": {
+      "description": "Error message when humidity regulation fails",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "ventilationRegulationTriggered": "Ventilation regulation has been triggered in {name}.",
+    "@ventilationRegulationTriggered": {
+      "description": "Error message when ventilation regulation is triggered",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "ventilationRegulationSuccessful": "Ventilation regulation in {name} was successful.",
+    "@ventilationRegulationSuccessful": {
+      "description": "Success message when ventilation regulation is successful",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "ventilationRegulationFailed": "Ventilation regulation in {name} has failed.",
+    "@ventilationRegulationFailed": {
+      "description": "Error message when ventilation regulation fails",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "containerHealthReport": "Health report of the container {name}.",
+    "@containerHealthReport": {
+      "description": "Label for container health report",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "containerStatusReport": "Status report of the container {name}.",
+    "@containerStatusReport": {
+      "description": "Label for container status report",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "containerManualOn": "The container {name} has been manually turned on.",
+    "@containerManualOn": {
+      "description": "Success message when container is manually turned on",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "containerManualOff": "The container {name} has been manually turned off.",
+    "@containerManualOff": {
+      "description": "Success message when container is manually turned off",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "containerOpened": "The container {name} has been opened.",
+    "@containerOpened": {
+      "description": "Error message when container is opened",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "containerOnline": "The container {name} is online.",
+    "@containerOnline": {
+      "description": "Success message when container is online",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "containerOffline": "The container {name} is offline.",
+    "@containerOffline": {
+      "description": "Error message when container is offline",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "unknownAlert": "Unknown alert in {name}.",
+    "@unknownAlert": {
+      "description": "Error message when alert is unknown",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "alert": "Alert: {alertType}",
+    "@alert": {
+      "description": "Label for alert",
+      "placeholders": {
+        "alertType": {
+          "type": "String",
+          "example": "TemperatureThresholdExceeded"
+        }
+      }
+    },
+    "issuedAt": "Issued at: {issuedAt}",
+    "@issuedAt": {
+      "description": "Label for issued at",
+      "placeholders": {
+        "issuedAt": {
+          "type": "String",
+          "example": "2024-11-17T05:46:11.518Z"
+        }
+      }
+    },
+    "temperatureThresholdExceededTitle": "Temperature Threshold Exceeded",
+    "@temperatureThresholdExceededTitle": {
+      "description": "Title for temperature threshold exceeded"
+    },
+    "humidityThresholdExceededTitle": "Humidity Threshold Exceeded",
+    "@humidityThresholdExceededTitle": {
+      "description": "Title for humidity threshold exceeded"
+    },
+    "decompositionGasesDetectedTitle": "Decomposition Gases Detected",
+    "@decompositionGasesDetectedTitle": {
+      "description": "Title for decomposition gases detected"
+    },
+    "containerLinkedTitle": "Container Linked",
+    "@containerLinkedTitle": {
+      "description": "Title for container linked"
+    },
+    "containerUnlinkedTitle": "Container Unlinked",
+    "@containerUnlinkedTitle": {
+      "description": "Title for container unlinked"
+    },
+    "containerOffTitle": "Container Off",
+    "@containerOffTitle": {
+      "description": "Title for container off"
+    },
+    "containerOnTitle": "Container On",
+    "@containerOnTitle": {
+      "description": "Title for container on"
+    },
+    "templateAssignedTitle": "Template Assigned",
+    "@templateAssignedTitle": {
+      "description": "Title for template assigned"
+    },
+    "containerActivatedTitle": "Container Activated",
+    "@containerActivatedTitle": {
+      "description": "Title for container activated"
+    },
+    "containerDeactivatedTitle": "Container Deactivated",
+    "@containerDeactivatedTitle": {
+      "description": "Title for container deactivated"
+    },
+    "temperatureRegulationTriggeredTitle": "Temperature Regulation Triggered",
+    "@temperatureRegulationTriggeredTitle": {
+      "description": "Title for temperature regulation triggered"
+    },
+    "temperatureRegulationSuccessfulTitle": "Temperature Regulation Successful",
+    "@temperatureRegulationSuccessfulTitle": {
+      "description": "Title for temperature regulation successful"
+    },
+    "temperatureRegulationFailedTitle": "Temperature Regulation Failed",
+    "@temperatureRegulationFailedTitle": {
+      "description": "Title for temperature regulation failed"
+    },
+    "humidityRegulationTriggeredTitle": "Humidity Regulation Triggered",
+    "@humidityRegulationTriggeredTitle": {
+      "description": "Title for humidity regulation triggered"
+    },
+    "humidityRegulationSuccessfulTitle": "Humidity Regulation Successful",
+    "@humidityRegulationSuccessfulTitle": {
+      "description": "Title for humidity regulation successful"
+    },
+    "humidityRegulationFailedTitle": "Humidity Regulation Failed",
+    "@humidityRegulationFailedTitle": {
+      "description": "Title for humidity regulation failed"
+    },
+    "ventilationRegulationTriggeredTitle": "Ventilation Regulation Triggered",
+    "@ventilationRegulationTriggeredTitle": {
+      "description": "Title for ventilation regulation triggered"
+    },
+    "ventilationRegulationSuccessfulTitle": "Ventilation Regulation Successful",
+    "@ventilationRegulationSuccessfulTitle": {
+      "description": "Title for ventilation regulation successful"
+    },
+    "ventilationRegulationFailedTitle": "Ventilation Regulation Failed",
+    "@ventilationRegulationFailedTitle": {
+      "description": "Title for ventilation regulation failed"
+    },
+    "containerHealthReportTitle": "Container Health Report",
+    "@containerHealthReportTitle": {
+      "description": "Title for container health report"
+    },
+    "containerStatusReportTitle": "Container Status Report",
+    "@containerStatusReportTitle": {
+      "description": "Title for container status report"
+    },
+    "containerManualOnTitle": "Container Manual On",
+    "@containerManualOnTitle": {
+      "description": "Title for container manual on"
+    },
+    "containerManualOffTitle": "Container Manual Off",
+    "@containerManualOffTitle": {
+      "description": "Title for container manual off"
+    },
+    "containerOpenedTitle": "Container Opened",
+    "@containerOpenedTitle": {
+      "description": "Title for container opened"
+    },
+    "containerOnlineTitle": "Container Online",
+    "@containerOnlineTitle": {
+      "description": "Title for container online"
+    },
+    "containerOfflineTitle": "Container Offline",
+    "@containerOfflineTitle": {
+      "description": "Title for container offline"
+    },
+    "unknownAlertTitle": "Unknown Alert",
+    "@unknownAlertTitle": {
+      "description": "Title for unknown alert"
+    },
+    "noTemplatesFound": "Dittobox isn't distributing any templates yet, please look forward to it.",
+    "@noTemplatesFound": {
+      "description": "Error message when no templates are found"
+    },
+    "All": "All",
+    "@All": {
+      "description": "Label for all"
+    },
+    "Produce": "Produce",
+    "@Produce": {
+      "description": "Label for produce"
+    },
+    "Meats" : "Meats",
+    "@Meats": {
+      "description": "Label for meats"
+    },
+    "AnimalDerived" : "Animal Derived",
+    "@AnimalDerived": {
+      "description": "Label for animal derived"
+    },
+    "ProcessedFood" : "Processed Food",
+    "@ProcessedFood": {
+      "description": "Label for processed food"
+    },
+    "templateAssignedSuccessfullyToContainer": "Template assigned successfully to container {name}.",
+    "@templateAssignedSuccessfullyToContainer": {
+      "description": "Success message when template is assigned successfully to container",
+      "placeholders": {
+        "name": {
+          "type": "String",
+          "example": "Container A"
+        }
+      }
+    },
+    "notUsersFound": "No users found",
+    "@notUsersFound": {
+      "description": "Error message when no users are found"
+    },
+    "failedtoAddWorker": "Failed to add worker",
+    "@failedtoAddWorker": {
+      "description": "Error message when failing to add worker"
+    },
+    "manager": "Manager",
+    "@manager": {
+      "description": "Label for manager"
+    },
+    "facility": "Facility",
+    "@facility": {
+      "description": "Label for facility"
+    },
+    "currenTier": "Current Tier",
+    "@currenTier": {
+      "description": "Label for current tier"
+    },
+    "active": "Active",
+    "@active": {
+      "description": "Label for active"
+    },
+    "expired" : "Expired",
+    "@expired": {
+      "description": "Label for expired"
+    },
+    "noLocation": "No location",
+    "@noLocation": {
+      "description": "Label for no location"
+    },
+    "noPoseefacility": "None",
+    "@noPoseefacility": {
+      "description": "Label for none"
+    },
+    "firstName": "First Name",
+    "@firstName": {
+      "description": "Label for first name"
+    },
+    "lastName": "Last Name",
+    "@lastName": {
+      "description": "Label for last name"
+    },
+    "noNotifications": "You don't have any notifications yet",
+    "@noNotifications": {
+      "description": "Error message when no notifications"
+    },
+    "passwordChangeFailed": "Password change failed",
+    "@passwordChangeFailed": {
+      "description": "Error message when password change fails"
+    }
+ }

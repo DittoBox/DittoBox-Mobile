@@ -1,5 +1,6 @@
 import 'package:dittobox_mobile/generated/l10n.dart';
 import 'package:dittobox_mobile/routes/app_routes.dart';
+import 'package:dittobox_mobile/user_and_profile/infrastructure/data_sources/user_service.dart';
 import 'package:flutter/material.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -11,12 +12,14 @@ class RegisterScreen extends StatefulWidget {
 
 class _RegisterScreenState extends State<RegisterScreen> {
   final formKey = GlobalKey<FormState>();
-  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _firstNameController = TextEditingController();
+  final TextEditingController _lastNameController = TextEditingController();
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   bool isPasswordVisible = false;
   String userType = 'Worker';
+  final userService = UserService();
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +45,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                   const SizedBox(height: 20, width: 20),
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 80),
+                    padding: const EdgeInsets.symmetric(horizontal: 70),
                     child: SegmentedButton<String>(
                       segments: <ButtonSegment<String>>[
                         ButtonSegment<String>(
@@ -65,16 +68,32 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                   const SizedBox(height: 20),
                   TextFormField(
-                    controller: _nameController,
+                    controller: _firstNameController,
                     decoration: InputDecoration(
-                      labelText: S.of(context).name,
+                      labelText: S.of(context).firstName,
                       border: const OutlineInputBorder(),
                     ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Name cannot be empty.';
+                        return 'First name cannot be empty.';
                       } else if (!RegExp(r'^[a-zA-Z\s]+$').hasMatch(value)) {
-                        return 'The name can only contain letters and spaces.';
+                        return 'The first name can only contain letters and spaces.';
+                      }
+                      return null;
+                    },
+                  ),
+                  const SizedBox(height: 20),
+                  TextFormField(
+                    controller: _lastNameController,
+                    decoration: InputDecoration(
+                      labelText: S.of(context).lastName,
+                      border: const OutlineInputBorder(),
+                    ),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Last name cannot be empty.';
+                      } else if (!RegExp(r'^[a-zA-Z\s]+$').hasMatch(value)) {
+                        return 'The last name can only contain letters and spaces.';
                       }
                       return null;
                     },
@@ -108,8 +127,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       if (value == null || value.isEmpty) {
                         return S.of(context).requiredField;
                       }
-                      final emailRegex = RegExp(
-                          r'^[^@]+@[^@]+\.[^@]+');
+                      final emailRegex = RegExp(r'^[^@]+@[^@]+\.[^@]+');
                       if (!emailRegex.hasMatch(value)) {
                         return S.of(context).invalidEmail;
                       }
@@ -125,7 +143,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       border: const OutlineInputBorder(),
                       suffixIcon: IconButton(
                         icon: Icon(
-                          isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+                          isPasswordVisible
+                              ? Icons.visibility
+                              : Icons.visibility_off,
                         ),
                         onPressed: () {
                           setState(() {
@@ -137,14 +157,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return S.of(context).requiredField;
-                      } else if (value.length < 8) {
-                        return 'The password must be at least 8 characters.';
-                      } else if (!RegExp(r'[A-Z]').hasMatch(value)) {
-                        return 'The password must contain at least one capital letter.';
-                      } else if (!RegExp(r'[0-9]').hasMatch(value)) {
-                        return 'The password must contain at least one number.';
-                      } else if (!RegExp(r'[!@#$%^&*(),.?":{}|<>]').hasMatch(value)) {
-                        return 'The password must contain at least one special character.';
                       }
                       return null;
                     },
@@ -154,13 +166,61 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       FilledButton(
-                        onPressed: () {
+                        onPressed: () async {
                           if (formKey.currentState!.validate()) {
-                            if (userType == 'Owner') {
-                              Navigator.pushNamed(context, AppRoutes.companyInfo);
-                            } else {
-                              // Navigator.pushNamed(context, AppRoutes.home);
+                            try {
+                              print('Form validated successfully.');
+                              final registerResponse = await userService.registerUser(
+                                _firstNameController.text,
+                                _lastNameController.text,
+                                _usernameController.text,
+                                _emailController.text,
+                                _passwordController.text,
+                              );
+                              print('Register response status: $registerResponse');
+                              if (registerResponse == 200 || registerResponse == 201) {
+                                final loginResponse = await userService.loginUser(
+                                  _emailController.text,
+                                  _passwordController.text,
+                                );
+                                print('Login response status: $loginResponse');
+                                if (loginResponse == 200 || loginResponse == 201) {
+                                  print('Login successful. Navigating to the next screen.');
+                                  if (userType == 'Owner') {
+                                    print('Navigating to Company Info Screen.');
+                                    Navigator.pushReplacementNamed(
+                                      context, AppRoutes.companyInfo);
+                                  } else {
+                                    print('Navigating to Facilities Screen.');
+                                    Navigator.pushReplacementNamed(
+                                      context, AppRoutes.accountDetails);
+                                  }
+                                } else {
+                                  print('Login failed.');
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      content: Text(S.of(context).loginFailed)
+                                    ),
+                                  );
+                                }
+                              } else {
+                                print('Registration failed.');
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(S.of(context).registrationFailed),
+                                  ),
+                                );
+                              }
+                            } catch (e) {
+                              print('Exception during registration: $e');
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text(S.of(context).registrationFailed + ': $e'),
+                                ),
+                              );
                             }
+                          } else {
+                            print('Form validation failed.');
                           }
                         },
                         style: FilledButton.styleFrom(
@@ -169,13 +229,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         child: Text(userType == 'Owner' ? "Continue" : S.of(context).register),
                       ),
                     ],
-                  ),
-                  const SizedBox(height: 20),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, AppRoutes.login);
-                    },
-                    child: Text(S.of(context).alreadyHaveAccount),
                   ),
                 ],
               ),

@@ -1,3 +1,4 @@
+import 'package:dittobox_mobile/containers/infrastructure/data_sources/container_service.dart';
 import 'package:dittobox_mobile/generated/l10n.dart';
 import 'package:dittobox_mobile/goups/infrastructure/data_sources/facilities_service.dart';
 import 'package:flutter/material.dart';
@@ -15,16 +16,17 @@ class AddContainerSheet extends StatefulWidget {
 
 class _AddContainerSheetState extends State<AddContainerSheet> {
   final TextEditingController _containerNameController = TextEditingController();
+  final TextEditingController _descriptionController = TextEditingController();
   final TextEditingController _codeController = TextEditingController();
-  String? selectedFacility; // Valor por defecto
+  int? selectedFacilityId; // Valor por defecto
   List<Facility> facilities = []; // Lista de instalaciones
   final FacilitiesService _facilitiesService = FacilitiesService();
+  final ContainerService _containerService = ContainerService();
   bool isLoading = true; // Indicador de carga
 
   @override
   void initState() {
     super.initState();
-    selectedFacility = widget.facility.title; // Selecciona automáticamente la instalación
     _loadFacilities();
   }
 
@@ -33,6 +35,11 @@ class _AddContainerSheetState extends State<AddContainerSheet> {
       final facilitiesList = await _facilitiesService.getFacilities();
       setState(() {
         facilities = facilitiesList;
+        selectedFacilityId = facilities.any((facility) => facility.id == widget.facility.id)
+            ? widget.facility.id
+            : facilities.isNotEmpty
+                ? facilities.first.id
+                : null;
         isLoading = false; // Finaliza la carga
       });
     } catch (e) {
@@ -40,6 +47,30 @@ class _AddContainerSheetState extends State<AddContainerSheet> {
         isLoading = false; // Finaliza la carga incluso si hay un error
       });
       // Manejar errores
+    }
+  }
+
+  Future<void> _createContainer() async {
+    try {
+      final selectedFacilityObj = facilities.firstWhere((facility) => facility.id == selectedFacilityId);
+      await _containerService.createContainer(
+        _codeController.text, // Usar el código como deviceId
+        _containerNameController.text,
+        _descriptionController.text,
+        selectedFacilityObj.id,
+      );
+      // ignore: use_build_context_synchronously
+      Navigator.pop(context);
+      // ignore: use_build_context_synchronously
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          // ignore: use_build_context_synchronously
+          content: Text(S.of(context).containerCreatedSuccessfully),
+        ),
+      );
+    } catch (e) {
+      // Manejar errores
+      print('Error creating container: $e');
     }
   }
 
@@ -110,6 +141,20 @@ class _AddContainerSheetState extends State<AddContainerSheet> {
               },
             ),
             const SizedBox(height: 26),
+            TextFormField(
+              controller: _descriptionController,
+              decoration: InputDecoration(
+                labelText: S.of(context).description,
+                border: const OutlineInputBorder(),
+              ),
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return S.of(context).requiredField;
+                }
+                return null;
+              },
+            ),
+            const SizedBox(height: 26),
             // Separador para el código
             Align(
               alignment: Alignment.centerLeft,
@@ -139,17 +184,17 @@ class _AddContainerSheetState extends State<AddContainerSheet> {
             const SizedBox(height: 26),
             isLoading
                 ? const CircularProgressIndicator() // Muestra un indicador de carga mientras se cargan las instalaciones
-                : DropdownButtonFormField<String>(
-                    value: selectedFacility,
+                : DropdownButtonFormField<int>(
+                    value: selectedFacilityId,
                     items: facilities.map((Facility facility) {
-                      return DropdownMenuItem<String>(
-                        value: facility.title, // Asignar el valor del título
+                      return DropdownMenuItem<int>(
+                        value: facility.id, // Asignar el valor del id
                         child: Text(facility.title), // Mostrar el título
                       );
                     }).toList(),
-                    onChanged: (String? newValue) {
+                    onChanged: (int? newValue) {
                       setState(() {
-                        selectedFacility = newValue;
+                        selectedFacilityId = newValue;
                       });
                     },
                     decoration: InputDecoration(
@@ -169,9 +214,7 @@ class _AddContainerSheetState extends State<AddContainerSheet> {
                 ),
                 const SizedBox(width: 8),
                 FilledButton(
-                  onPressed: () {
-                    // Acción para guardar el contenedor
-                  },
+                  onPressed: _createContainer,
                   child: Text(S.of(context).save),
                 ),
               ],
