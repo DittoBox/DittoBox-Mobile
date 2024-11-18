@@ -5,6 +5,7 @@ import 'package:dittobox_mobile/shared/presentation/widgets/custom_navigator_dra
 import 'package:dittobox_mobile/containers/infrastructure/models/template.dart';
 import 'package:dittobox_mobile/containers/presentation/widgets/container_selection_modal.dart';
 
+
 class TemplateListScreen extends StatefulWidget {
   const TemplateListScreen({super.key});
 
