@@ -3,6 +3,7 @@ import 'package:dittobox_mobile/containers/infrastructure/data_sources/template_
 import 'package:dittobox_mobile/containers/infrastructure/data_sources/container_service.dart';
 import 'package:dittobox_mobile/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'edit_container_modal.dart';
 import 'current_configs_modal.dart';
 import 'template_selection_modal.dart';
@@ -258,33 +259,77 @@ class _ContainerBottomSheetState extends State<ContainerBottomSheet> {
     );
   }
 
-  Widget buildInfoRowWithIcon(IconData icon, String label, dynamic value) {
-    final theme = Theme.of(context);
-    final textTheme = theme.textTheme;
+Widget buildInfoRowWithIcon(IconData icon, String label, dynamic value) {
+  final theme = Theme.of(context);
+  final textTheme = theme.textTheme;
+  final numberFormat = NumberFormat('##0.00'); // Formato para dos decimales
+  final integerFormat = NumberFormat('##0'); // Formato para enteros
 
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Row(
-          children: [
-            Icon(icon, size: 20),
-            const SizedBox(width: 8),
-            Text(label, style: textTheme.bodyMedium),
-          ],
-        ),
-        Text(value?.toString() ?? '--', style: textTheme.bodyMedium),
-      ],
-    );
+  String formattedValue;
+  if (value == null) {
+    formattedValue = '--';
+  } else if (value is num) {
+    if (label == S.of(context).temperature) {
+      formattedValue = '${numberFormat.format(value)} °C';
+    } else if (label == S.of(context).humidity) {
+      formattedValue = '${numberFormat.format(value)} %';
+    } else if (label == S.of(context).oxygen || label == S.of(context).carbonDioxide) {
+      if (value >= 1000) {
+        formattedValue = '${numberFormat.format(value / 1000)} %';
+      } else {
+        formattedValue = '${numberFormat.format(value)} ppm';
+      }
+    } else {
+      formattedValue = '${integerFormat.format(value)} ppm';
+    }
+  } else {
+    formattedValue = value.toString();
   }
 
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+      Row(
+        children: [
+          Icon(icon, size: 20),
+          const SizedBox(width: 8),
+          Text(label, style: textTheme.bodyMedium),
+        ],
+      ),
+      Text(formattedValue, style: textTheme.bodyMedium),
+    ],
+  );
+}
   Widget _buildTemplateConfigRow(String label, double? minValue, double? maxValue) {
     final textTheme = Theme.of(context).textTheme;
+    final numberFormat = NumberFormat('##0.00'); // Formato para dos decimales
+
+    String formatValue(double? value, String label) {
+      if (value == null) {
+        return '--';
+      } else if (label == S.of(context).temperature) {
+        return '${numberFormat.format(value)} °C';
+      } else if (label == S.of(context).humidity) {
+        return '${numberFormat.format(value)} %';
+      } else if (label == S.of(context).oxygen || label == S.of(context).carbonDioxide) {
+        if (value >= 1000) {
+          return '${numberFormat.format(value / 1000)} %';
+        } else {
+          return '${numberFormat.format(value)} ppm';
+        }
+      } else {
+        return '${numberFormat.format(value)} ppm';
+      }
+    }
+
+    String formattedMinValue = formatValue(minValue, label);
+    String formattedMaxValue = formatValue(maxValue, label);
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(label, style: textTheme.bodyMedium),
-        Text('${minValue?.toString() ?? '--'} - ${maxValue?.toString() ?? '--'}', style: textTheme.bodyMedium),
+        Text('$formattedMinValue - $formattedMaxValue', style: textTheme.bodyMedium),
       ],
     );
   }
