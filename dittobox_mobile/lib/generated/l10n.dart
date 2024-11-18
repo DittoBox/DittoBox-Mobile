@@ -3163,6 +3163,46 @@ class S {
       args: [],
     );
   }
+
+  /// `{minutes} minutes ago`
+  String minutesAgo(String minutes) {
+    return Intl.message(
+      '$minutes minutes ago',
+      name: 'minutesAgo',
+      desc: 'Label for minutes ago',
+      args: [minutes],
+    );
+  }
+
+  /// `{hours} hours ago`
+  String hoursAgo(String hours) {
+    return Intl.message(
+      '$hours hours ago',
+      name: 'hoursAgo',
+      desc: 'Label for hours ago',
+      args: [hours],
+    );
+  }
+
+  /// `{days} days ago`
+  String daysAgo(String days) {
+    return Intl.message(
+      '$days days ago',
+      name: 'daysAgo',
+      desc: 'Label for days ago',
+      args: [days],
+    );
+  }
+
+  /// `{seconds} seconds ago`
+  String secondsAgo(String seconds) {
+    return Intl.message(
+      '$seconds seconds ago',
+      name: 'secondsAgo',
+      desc: 'Label for seconds ago',
+      args: [seconds],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

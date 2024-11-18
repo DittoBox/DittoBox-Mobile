@@ -1429,5 +1429,45 @@
     "passwordChangeFailed": "Error al cambiar la contraseña",
     "@passwordChangeFailed": {
       "description": "Mensaje de error cuando no se puede cambiar la contraseña"
+    },
+    "minutesAgo": "Hace {minutes} minutos",
+    "@minutesAgo": {
+      "description": "etiqueta para minutos atrás",
+      "placeholders": {
+        "minutes": {
+          "type": "String",
+          "example": "5"
+        }
+      }
+    },
+    "hoursAgo": "Hace {hours} horas",
+    "@hoursAgo": {
+      "description": "etiqueta para horas atrás",
+      "placeholders": {
+        "hours": {
+          "type": "String",
+          "example": "5"
+        }
+      }
+    },
+    "daysAgo": "Hace {days} días",
+    "@daysAgo": {
+      "description": "etiqueta para días atrás",
+      "placeholders": {
+        "days": {
+          "type": "String",
+          "example": "5"
+        }
+      }
+    },
+    "secondsAgo": "Hace {seconds} segundos",
+    "@secondsAgo": {
+      "description": "etiqueta para segundos atrás",
+      "placeholders": {
+        "seconds": {
+          "type": "String",
+          "example": "5"
+        }
+      }
     }
 }

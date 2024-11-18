@@ -84,7 +84,7 @@ class _ContainerBottomSheetState extends State<ContainerBottomSheet> {
             const SizedBox(height: 16),
             buildInfoRowWithIcon(Icons.health_and_safety_outlined, S.of(context).lastKnownHealthStatus, widget.container.lastKnownHealthStatus),
             const SizedBox(height: 8),
-            buildInfoRowWithIcon(Icons.sync_outlined, S.of(context).lastSync, widget.container.lastSync.toString()),
+            buildInfoRowWithIcon(Icons.sync_outlined, S.of(context).lastSync, widget.container.lastSync),
             const SizedBox(height: 16),
 
             // Buttons for Edit and View Current Configs
@@ -264,6 +264,8 @@ Widget buildInfoRowWithIcon(IconData icon, String label, dynamic value) {
   final textTheme = theme.textTheme;
   final numberFormat = NumberFormat('##0.00'); // Formato para dos decimales
   final integerFormat = NumberFormat('##0'); // Formato para enteros
+  final dateFormat = DateFormat('dd-MM-yy HH:mm'); // Formato para la fecha
+  final timeFormat = DateFormat('HH:mm'); // Formato para la hora
 
   String formattedValue;
   if (value == null) {
@@ -281,6 +283,14 @@ Widget buildInfoRowWithIcon(IconData icon, String label, dynamic value) {
       }
     } else {
       formattedValue = '${integerFormat.format(value)} ppm';
+    }
+  } else if (value is DateTime) {
+    final now = DateTime.now();
+    if (value.year == now.year && value.month == now.month && value.day == now.day) {
+      final difference = now.difference(value).inMinutes;
+      formattedValue = S.of(context).minutesAgo(difference.toString());
+    } else {
+      formattedValue = dateFormat.format(value);
     }
   } else {
     formattedValue = value.toString();
@@ -300,37 +310,38 @@ Widget buildInfoRowWithIcon(IconData icon, String label, dynamic value) {
     ],
   );
 }
-  Widget _buildTemplateConfigRow(String label, double? minValue, double? maxValue) {
-    final textTheme = Theme.of(context).textTheme;
-    final numberFormat = NumberFormat('##0.00'); // Formato para dos decimales
 
-    String formatValue(double? value, String label) {
-      if (value == null) {
-        return '--';
-      } else if (label == S.of(context).temperature) {
-        return '${numberFormat.format(value)} °C';
-      } else if (label == S.of(context).humidity) {
-        return '${numberFormat.format(value)} %';
-      } else if (label == S.of(context).oxygen || label == S.of(context).carbonDioxide) {
-        if (value >= 1000) {
-          return '${numberFormat.format(value / 1000)} %';
-        } else {
-          return '${numberFormat.format(value)} ppm';
-        }
+Widget _buildTemplateConfigRow(String label, double? minValue, double? maxValue) {
+  final textTheme = Theme.of(context).textTheme;
+  final numberFormat = NumberFormat('##0.00'); // Formato para dos decimales
+
+  String formatValue(double? value, String label) {
+    if (value == null) {
+      return '--';
+    } else if (label == S.of(context).temperature) {
+      return '${numberFormat.format(value)} °C';
+    } else if (label == S.of(context).humidity) {
+      return '${numberFormat.format(value)} %';
+    } else if (label == S.of(context).oxygen || label == S.of(context).carbonDioxide) {
+      if (value >= 1000) {
+        return '${numberFormat.format(value / 1000)} %';
       } else {
         return '${numberFormat.format(value)} ppm';
       }
+    } else {
+      return '${numberFormat.format(value)} ppm';
     }
-
-    String formattedMinValue = formatValue(minValue, label);
-    String formattedMaxValue = formatValue(maxValue, label);
-
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(label, style: textTheme.bodyMedium),
-        Text('$formattedMinValue - $formattedMaxValue', style: textTheme.bodyMedium),
-      ],
-    );
   }
+
+  String formattedMinValue = formatValue(minValue, label);
+  String formattedMaxValue = formatValue(maxValue, label);
+
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+      Text(label, style: textTheme.bodyMedium),
+      Text('$formattedMinValue - $formattedMaxValue', style: textTheme.bodyMedium),
+    ],
+  );
+}
 }

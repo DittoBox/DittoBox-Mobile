@@ -1423,5 +1423,45 @@
     "passwordChangeFailed": "Password change failed",
     "@passwordChangeFailed": {
       "description": "Error message when password change fails"
+    },
+    "minutesAgo": "{minutes} minutes ago",
+    "@minutesAgo": {
+      "description": "Label for minutes ago",
+      "placeholders": {
+        "minutes": {
+          "type": "String",
+          "example": "5"
+        }
+      }
+    },
+    "hoursAgo": "{hours} hours ago",
+    "@hoursAgo": {
+      "description": "Label for hours ago",
+      "placeholders": {
+        "hours": {
+          "type": "String",
+          "example": "5"
+        }
+      }
+    },
+    "daysAgo": "{days} days ago",
+    "@daysAgo": {
+      "description": "Label for days ago",
+      "placeholders": {
+        "days": {
+          "type": "String",
+          "example": "5"
+        }
+      }
+    },
+    "secondsAgo": "{seconds} seconds ago",
+    "@secondsAgo": {
+      "description": "Label for seconds ago",
+      "placeholders": {
+        "seconds": {
+          "type": "String",
+          "example": "5"
+        }
+      }
     }
  }
