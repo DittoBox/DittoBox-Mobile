@@ -12,7 +12,8 @@ class RegisterScreen extends StatefulWidget {
 
 class _RegisterScreenState extends State<RegisterScreen> {
   final formKey = GlobalKey<FormState>();
-  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _firstNameController = TextEditingController();
+  final TextEditingController _lastNameController = TextEditingController();
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -67,16 +68,32 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                   const SizedBox(height: 20),
                   TextFormField(
-                    controller: _nameController,
+                    controller: _firstNameController,
                     decoration: InputDecoration(
-                      labelText: S.of(context).name,
+                      labelText: S.of(context).firstName,
                       border: const OutlineInputBorder(),
                     ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Name cannot be empty.';
+                        return 'First name cannot be empty.';
                       } else if (!RegExp(r'^[a-zA-Z\s]+$').hasMatch(value)) {
-                        return 'The name can only contain letters and spaces.';
+                        return 'The first name can only contain letters and spaces.';
+                      }
+                      return null;
+                    },
+                  ),
+                  const SizedBox(height: 20),
+                  TextFormField(
+                    controller: _lastNameController,
+                    decoration: InputDecoration(
+                      labelText: S.of(context).lastName,
+                      border: const OutlineInputBorder(),
+                    ),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Last name cannot be empty.';
+                      } else if (!RegExp(r'^[a-zA-Z\s]+$').hasMatch(value)) {
+                        return 'The last name can only contain letters and spaces.';
                       }
                       return null;
                     },
@@ -148,77 +165,77 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                  FilledButton(
-                    onPressed: () async {
-                      if (formKey.currentState!.validate()) {
-                        try {
-                          print('Form validated successfully.');
-                          final registerResponse = await userService.registerUser(
-                            _nameController.text,
-                            _nameController.text,
-                            _usernameController.text,
-                            _emailController.text,
-                            _passwordController.text,
-                          );
-                          print('Register response status: $registerResponse');
-                          if (registerResponse == 200 || registerResponse == 201) {
-                            final loginResponse = await userService.loginUser(
-                              _emailController.text,
-                              _passwordController.text,
-                            );
-                            print('Login response status: $loginResponse');
-                            if (loginResponse == 200 || loginResponse == 201) {
-                              print('Login successful. Navigating to the next screen.');
-                              if (userType == 'Owner') {
-                                print('Navigating to Company Info Screen.');
-                                Navigator.pushReplacementNamed(
-                                  context, AppRoutes.companyInfo);
+                      FilledButton(
+                        onPressed: () async {
+                          if (formKey.currentState!.validate()) {
+                            try {
+                              print('Form validated successfully.');
+                              final registerResponse = await userService.registerUser(
+                                _firstNameController.text,
+                                _lastNameController.text,
+                                _usernameController.text,
+                                _emailController.text,
+                                _passwordController.text,
+                              );
+                              print('Register response status: $registerResponse');
+                              if (registerResponse == 200 || registerResponse == 201) {
+                                final loginResponse = await userService.loginUser(
+                                  _emailController.text,
+                                  _passwordController.text,
+                                );
+                                print('Login response status: $loginResponse');
+                                if (loginResponse == 200 || loginResponse == 201) {
+                                  print('Login successful. Navigating to the next screen.');
+                                  if (userType == 'Owner') {
+                                    print('Navigating to Company Info Screen.');
+                                    Navigator.pushReplacementNamed(
+                                      context, AppRoutes.companyInfo);
+                                  } else {
+                                    print('Navigating to Facilities Screen.');
+                                    Navigator.pushReplacementNamed(
+                                      context, AppRoutes.accountDetails);
+                                  }
+                                } else {
+                                  print('Login failed.');
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      content: Text(S.of(context).loginFailed)
+                                    ),
+                                  );
+                                }
                               } else {
-                                print('Navigating to Facilities Screen.');
-                                Navigator.pushReplacementNamed(
-                                  context, AppRoutes.facilities);
+                                print('Registration failed.');
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(S.of(context).registrationFailed),
+                                  ),
+                                );
                               }
-                            } else {
-                              print('Login failed.');
+                            } catch (e) {
+                              print('Exception during registration: $e');
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(
-                                  content: Text(S.of(context).loginFailed)
+                                  content: Text(S.of(context).registrationFailed + ': $e'),
                                 ),
                               );
                             }
                           } else {
-                            print('Registration failed.');
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(
-                                content: Text(S.of(context).registrationFailed),
-                              ),
-                            );
+                            print('Form validation failed.');
                           }
-                        } catch (e) {
-                          print('Exception during registration: $e');
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              content: Text(S.of(context).registrationFailed + ': $e'),
-                            ),
-                          );
-                        }
-                      } else {
-                        print('Form validation failed.');
-                      }
-                    },
-                    style: FilledButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-                    ),
-                    child: Text(userType == 'Owner' ? "Continue" : S.of(context).register),
+                        },
+                        style: FilledButton.styleFrom(
+                          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+                        ),
+                        child: Text(userType == 'Owner' ? "Continue" : S.of(context).register),
+                      ),
+                    ],
                   ),
                 ],
               ),
-            ],
+            ),
           ),
         ),
       ),
-    )
-  )
-);
+    );
   }
 }

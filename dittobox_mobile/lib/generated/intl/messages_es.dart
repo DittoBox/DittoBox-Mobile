@@ -161,8 +161,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Asignar Plantilla?"),
         "automaticTemplates": MessageLookupByLibrary.simpleMessage(
             "Plantillas automáticas para ajustar la temperatura y la humedad según el tipo de suministro."),
-        "backToLogin":
-            MessageLookupByLibrary.simpleMessage("Volver al Inicio de Sesión"),
+        "backToLogin": MessageLookupByLibrary.simpleMessage("Volver atrás"),
         "bankAccountOwner":
             MessageLookupByLibrary.simpleMessage("Titular de la cuenta"),
         "businessName":
@@ -302,6 +301,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Error al actualizar los privilegios"),
         "fasterTechnicalSupport": MessageLookupByLibrary.simpleMessage(
             "Soporte técnico más rápido y personalizado."),
+        "firstName": MessageLookupByLibrary.simpleMessage("Nombres"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("¿Olvidaste tu contraseña?"),
         "forgotPasswordTitle":
@@ -367,6 +367,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noFacilitiesFound": MessageLookupByLibrary.simpleMessage(
             "Aún no tienes instalaciones, por favor crea una."),
         "noLocation": MessageLookupByLibrary.simpleMessage("No posee"),
+        "noNotifications":
+            MessageLookupByLibrary.simpleMessage("No posee notificaciones"),
         "noPoseefacility": MessageLookupByLibrary.simpleMessage("Ninguna"),
         "noTemplateAssigned":
             MessageLookupByLibrary.simpleMessage("No hay plantilla asignada"),
@@ -381,6 +383,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "password": MessageLookupByLibrary.simpleMessage("Contraseña"),
         "passwordCannotBeEmpty": MessageLookupByLibrary.simpleMessage(
             "La contraseña no puede estar vacía"),
+        "passwordChangeFailed": MessageLookupByLibrary.simpleMessage(
+            "Error al cambiar la contraseña"),
         "passwordLength": MessageLookupByLibrary.simpleMessage(
             "La contraseña debe tener al menos 8 caracteres"),
         "passwordMustBeAtLeast8Characters":

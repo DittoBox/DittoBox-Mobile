@@ -1,7 +1,8 @@
 import 'package:dittobox_mobile/generated/l10n.dart';
 import 'package:dittobox_mobile/user_and_profile/infrastructure/data_sources/user_service.dart';
 import 'package:flutter/material.dart';
-import 'package:dittobox_mobile/routes/app_routes.dart'; 
+import 'package:dittobox_mobile/routes/app_routes.dart';
+import 'package:shared_preferences/shared_preferences.dart'; 
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -88,8 +89,16 @@ class _LoginScreenState extends State<LoginScreen> {
                         try {
                           final statusCode = await userService.loginUser(_emailController.text, _passwordController.text);
                           if (statusCode == 200) {
-                            // ignore: use_build_context_synchronously
-                            Navigator.pushNamed(context, AppRoutes.facilities);
+                            final prefs = SharedPreferencesAsync();
+                            final accountId = await prefs.getInt('accountId');
+                            print('accountId login: $accountId');
+                            if (accountId != null && accountId != 0 && accountId != -1) {
+                              // ignore: use_build_context_synchronously
+                              Navigator.pushNamed(context, AppRoutes.facilities);
+                            } else {
+                              // ignore: use_build_context_synchronously
+                              Navigator.pushNamed(context, AppRoutes.accountDetails); // Ruta si no hay userId
+                            }
                           } else {
                             // ignore: use_build_context_synchronously
                             ScaffoldMessenger.of(context).showSnackBar(
@@ -113,12 +122,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 ],
               ),
               const SizedBox(height: 10),
-              TextButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, AppRoutes.forgotPassword);
-                },
-                child: Text(S.of(context).forgotPassword),
-              ),
+              // TextButton(
+              //   onPressed: () {
+              //     Navigator.pushNamed(context, AppRoutes.forgotPassword);
+              //   },
+              //   child: Text(S.of(context).forgotPassword),
+              // ),
               TextButton(
                 onPressed: () {
                   Navigator.pushNamed(context, AppRoutes.register);

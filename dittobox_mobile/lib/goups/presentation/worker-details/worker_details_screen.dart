@@ -171,31 +171,6 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
                   },
                   child: Text(S.of(context).roleManagement),
                 ),
-                const SizedBox(width: 16),
-                TextButton(
-                  onPressed: () {
-                    showModalBottomSheet(
-                      context: context,
-                      builder: (context) {
-                        return ReassignWorkerSheet(
-                          facilities: const ['Restaurante A', 'Almacén B'], // facilities example list
-                          currentFacility: _location ?? S.of(context).noLocation,
-                          onSave: (newFacility) {
-                            Navigator.pop(context); 
-
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(
-                                content: Text(S.of(context).workerReassigned),
-                              ),
-                            );
-                          },
-                        );
-                      },
-                    );
-                  },
-                  child: Text(
-                    S.of(context).reassign),
-                ),
               ],
             ),
             if (_showRoleManagement) ...[

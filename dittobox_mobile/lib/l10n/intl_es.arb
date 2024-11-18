@@ -608,7 +608,7 @@
   "@resetPassword": {
     "description": "Etiqueta para restablecer contraseña"
   },
-  "backToLogin": "Volver al Inicio de Sesión",
+  "backToLogin": "Volver atrás",
   "@backToLogin": {
     "description": "Texto para volver al inicio de sesión"
   },
@@ -1413,5 +1413,21 @@
    "noPoseefacility": "Ninguna",
     "@noPoseefacility": {
       "description": "etiqueta para ninguna"
+    },
+    "firstName": "Nombres",
+    "@firstName": {
+      "description": "etiqueta para nombre"
+    },
+    "lasName": "Apellidos",
+    "@lasName": {
+      "description": "etiqueta para apellido"
+    },
+    "noNotifications": "No posee notificaciones",
+    "@noNotifications": {
+      "description": "Mensaje de error cuando no se poseen notificaciones"
+    },
+    "passwordChangeFailed": "Error al cambiar la contraseña",
+    "@passwordChangeFailed": {
+      "description": "Mensaje de error cuando no se puede cambiar la contraseña"
     }
 }

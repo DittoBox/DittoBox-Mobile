@@ -2,7 +2,7 @@ class Profile{
   int id;
   String firstName;
   String lastName;
-  int accountId;
+  int? accountId;
   int? groupId;
   int userId;
   List<String> privileges;
@@ -11,7 +11,7 @@ class Profile{
     required this.id,
     required this.firstName,
     required this.lastName,
-    required this.accountId,
+    this.accountId,
     this.groupId,
     required this.userId,
     required this.privileges,

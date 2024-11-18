@@ -46,6 +46,8 @@ final Map<String, Widget Function(BuildContext)> appRoutes = {
   '/subscription_plans': (context) => const SubscriptionPlansScreen(),
   '/notifications': (context) => const NotificationScreen(),
   '/language_selection': (context) => const LanguageSelectionScreen(),
+  '/change_password': (context) => const ForgotPasswordScreen(),
+  '/set_new_password': (context) => const SetNewPasswordScreen(),
 };
 
 class AppRoutes {
@@ -63,8 +65,9 @@ class AppRoutes {
   static const String containers = '/containers';
   static const String forgotPassword = '/forgotPassword';
   static const String passwordResetCode = '/password_reset_code';
-  static const String setNewPassword = '/set_new_password';
   static const String subscriptionPlans = '/subscription_plans';
   static const String notifications = '/notifications';
   static const String languageSelection = '/language_selection';
+  static const String changePassword = '/change_password';
+  static const String setNewPassword = '/set_new_password';
 }

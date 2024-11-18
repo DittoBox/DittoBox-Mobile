@@ -1580,10 +1580,10 @@ class S {
     );
   }
 
-  /// `Back to login`
+  /// `Back`
   String get backToLogin {
     return Intl.message(
-      'Back to login',
+      'Back',
       name: 'backToLogin',
       desc: 'Label for back to login button',
       args: [],
@@ -3120,6 +3120,46 @@ class S {
       'None',
       name: 'noPoseefacility',
       desc: 'Label for none',
+      args: [],
+    );
+  }
+
+  /// `First Name`
+  String get firstName {
+    return Intl.message(
+      'First Name',
+      name: 'firstName',
+      desc: 'Label for first name',
+      args: [],
+    );
+  }
+
+  /// `Last Name`
+  String get lastName {
+    return Intl.message(
+      'Last Name',
+      name: 'lastName',
+      desc: 'Label for last name',
+      args: [],
+    );
+  }
+
+  /// `You don't have any notifications yet`
+  String get noNotifications {
+    return Intl.message(
+      'You don\'t have any notifications yet',
+      name: 'noNotifications',
+      desc: 'Error message when no notifications',
+      args: [],
+    );
+  }
+
+  /// `Password change failed`
+  String get passwordChangeFailed {
+    return Intl.message(
+      'Password change failed',
+      name: 'passwordChangeFailed',
+      desc: 'Error message when password change fails',
       args: [],
     );
   }
