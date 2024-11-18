@@ -16,14 +16,14 @@ class WorkerDetailScreen extends StatefulWidget {
 
 class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
   bool _showRoleManagement = false;
-  final List<bool> _switchStates = List.filled(3, false); // Inicializar con 3 elementos
+  final List<bool> _checkboxStates = List.filled(3, false); // Inicializar con 3 elementos
   String? _location;
   final ProfileService _profileService = ProfileService(); // Crea una instancia de ProfileService
 
   @override
   void initState() {
     super.initState();
-    _initializeSwitchStates();
+    _initializeCheckboxStates();
   }
 
   @override
@@ -32,11 +32,11 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
     _fetchGroupLocation();
   }
 
-  void _initializeSwitchStates() {
+  void _initializeCheckboxStates() {
     setState(() {
-      _switchStates[0] = widget.worker.privileges.contains('WorkerManagement');
-      _switchStates[1] = widget.worker.privileges.contains('GroupManagement');
-      _switchStates[2] = widget.worker.privileges.contains('AccountManagement');
+      _checkboxStates[0] = widget.worker.privileges.contains('WorkerManagement');
+      _checkboxStates[1] = widget.worker.privileges.contains('GroupManagement');
+      _checkboxStates[2] = widget.worker.privileges.contains('AccountManagement');
     });
   }
 
@@ -64,35 +64,19 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
       } else {
         await _profileService.revokePrivileges(widget.worker.id, index);
       }
-      // Actualiza el estado del interruptor
-      setState(() {
-        _switchStates[index] = value;
-      });
       // Vuelve a cargar los datos del perfil
-      await _reloadProfile();
+      final updatedProfile = await _profileService.getProfileDetailsById(widget.worker.id);
+      if (updatedProfile != null) {
+        setState(() {
+          widget.worker.privileges = updatedProfile.privileges;
+          _initializeCheckboxStates();
+        });
+      }
       print('Privileges updated');
-      // ignore: use_build_context_synchronously
-      ScaffoldMessenger.of(context).showSnackBar(
-        // ignore: use_build_context_synchronously
-        SnackBar(content: Text(S.of(context).privilegesUpdatedSuccessfully)),
-      );
+      // Regresa a la lista de trabajadores
+      Navigator.pop(context, true);
     } catch (e) {
-      // ignore: use_build_context_synchronously
-      ScaffoldMessenger.of(context).showSnackBar(
-        // ignore: use_build_context_synchronously
-        SnackBar(content: Text(S.of(context).failedToUpdatePrivileges)),
-      );
       print('Failed to update privileges: $e');
-    }
-  }
-
-  Future<void> _reloadProfile() async {
-    final updatedProfile = await _profileService.getProfileDetailsById(widget.worker.id);
-    if (updatedProfile != null) {
-      setState(() {
-        widget.worker.privileges = updatedProfile.privileges;
-        _initializeSwitchStates();
-      });
     }
   }
 
@@ -128,7 +112,7 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.pop(context, true);
           },
         ),
       ),
@@ -182,11 +166,13 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
                 child: ListView.builder(
                   itemCount: 3,
                   itemBuilder: (context, index) {
-                    return SwitchListTile(
+                    return CheckboxListTile(
                       title: Text(_getPrivilegeName(index)),
-                      value: _switchStates[index],
-                      onChanged: (bool value) {
-                        _updatePrivileges(index, value);
+                      value: _checkboxStates[index],
+                      onChanged: (bool? value) {
+                        if (value != null) {
+                          _updatePrivilege(index, value);
+                        }
                       },
                     );
                   },
@@ -197,6 +183,13 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
         ),
       ),
     );
+  }
+
+  void _updatePrivilege(int index, bool value) {
+    setState(() {
+      _checkboxStates[index] = value;
+    });
+    _updatePrivileges(index, value);
   }
 
   bool _isManager() {

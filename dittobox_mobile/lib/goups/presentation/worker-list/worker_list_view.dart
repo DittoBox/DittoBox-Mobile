@@ -41,6 +41,12 @@ class _WorkerListViewState extends State<WorkerListView> {
     }
   }
 
+  Future<void> _refreshProfiles() async {
+    setState(() {
+      _profilesFuture = AccountService().getUsersByAccountId();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,7 +80,7 @@ class _WorkerListViewState extends State<WorkerListView> {
                   } else if (!profileSnapshot.hasData || profileSnapshot.data!.isEmpty) {
                     return Center(child: Text(S.of(context).notUsersFound));
                   } else {
-                    return WorkerList(profiles: profileSnapshot.data!, groupMap: groupMap);
+                    return WorkerList(profiles: profileSnapshot.data!, groupMap: groupMap, refreshProfiles: _refreshProfiles);
                   }
                 },
               );
@@ -95,15 +101,16 @@ class _WorkerListViewState extends State<WorkerListView> {
 class WorkerList extends StatelessWidget {
   final List<Profile> profiles;
   final Map<int, String> groupMap;
+  final Future<void> Function() refreshProfiles;
 
-  const WorkerList({super.key, required this.profiles, required this.groupMap});
+  const WorkerList({super.key, required this.profiles, required this.groupMap, required this.refreshProfiles});
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
       itemCount: profiles.length,
       itemBuilder: (context, index) {
-        return WorkerItem(profile: profiles[index], groupName: groupMap[profiles[index].groupId] ?? S.of(context).noPoseefacility);
+        return WorkerItem(profile: profiles[index], groupName: groupMap[profiles[index].groupId] ?? S.of(context).noPoseefacility, refreshProfiles: refreshProfiles);
       },
     );
   }
@@ -112,8 +119,9 @@ class WorkerList extends StatelessWidget {
 class WorkerItem extends StatelessWidget {
   final Profile profile;
   final String groupName;
+  final Future<void> Function() refreshProfiles;
 
-  const WorkerItem({super.key, required this.profile, required this.groupName});
+  const WorkerItem({super.key, required this.profile, required this.groupName, required this.refreshProfiles});
 
   @override
   Widget build(BuildContext context) {
@@ -131,13 +139,16 @@ class WorkerItem extends StatelessWidget {
               Text('${S.of(context).facility}: $groupName'),
             ],
           ),
-          onTap: () {
-            Navigator.push(
+          onTap: () async {
+            final result = await Navigator.push(
               context,
               MaterialPageRoute(
                 builder: (context) => WorkerDetailScreen(worker: profile),
               ),
             );
+            if (result == true) {
+              await refreshProfiles();
+            }
           },
         ),
         const Divider(),

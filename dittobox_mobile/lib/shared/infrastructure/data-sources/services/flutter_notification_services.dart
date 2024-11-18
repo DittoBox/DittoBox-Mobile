@@ -40,9 +40,7 @@ Future<void> cancelNotification() async {
   await flutterLocalNotificationsPlugin.cancel(0);
 }
 Future selectNotification(String payload) async {
-  if (payload != null) {
-    debugPrint('notification payload: $payload');
-  }
+  debugPrint('notification payload: $payload');
 }
 
 
