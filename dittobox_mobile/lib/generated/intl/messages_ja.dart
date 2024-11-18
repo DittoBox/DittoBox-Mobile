@@ -1,5 +1,5 @@
 // DO NOT EDIT. This is code generated via package:intl/generate_localized.dart
-// This is a library that provides messages for a en locale. All the
+// This is a library that provides messages for a ja locale. All the
 // messages from the main program should be duplicated here with the same
 // function name.
 
@@ -18,7 +18,7 @@ final messages = new MessageLookup();
 typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 
 class MessageLookup extends MessageLookupByLibrary {
-  String get localeName => 'en';
+  String get localeName => 'ja';
 
   static String m0(alertType) => "Alert: ${alertType}";
 
@@ -50,12 +50,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m13(name) => "The container ${name} has been unlinked.";
 
-  static String m14(days) => "${days} days ago";
-
   static String m15(name) =>
       "Decomposition gases have been detected in ${name}.";
-
-  static String m16(hours) => "${hours} hours ago";
 
   static String m17(name) => "Humidity regulation in ${name} has failed.";
 
@@ -68,10 +64,6 @@ class MessageLookup extends MessageLookupByLibrary {
       "The humidity in ${name} has exceeded the allowed threshold.";
 
   static String m21(issuedAt) => "Issued at: ${issuedAt}";
-
-  static String m22(minutes) => "${minutes} minutes ago";
-
-  static String m23(seconds) => "${seconds} seconds ago";
 
   static String m24(name) => "Temperature regulation in ${name} has failed.";
 
@@ -106,50 +98,47 @@ class MessageLookup extends MessageLookupByLibrary {
         "AnimalDerived": MessageLookupByLibrary.simpleMessage("Animal Derived"),
         "Meats": MessageLookupByLibrary.simpleMessage("Meats"),
         "ProcessedFood": MessageLookupByLibrary.simpleMessage("Processed Food"),
-        "Produce": MessageLookupByLibrary.simpleMessage("Produce"),
-        "aboutYourCompany":
-            MessageLookupByLibrary.simpleMessage("About your company"),
-        "account": MessageLookupByLibrary.simpleMessage("Account"),
+        "Produce": MessageLookupByLibrary.simpleMessage("生産物"),
+        "aboutYourCompany": MessageLookupByLibrary.simpleMessage("会社情報"),
+        "account": MessageLookupByLibrary.simpleMessage("アカウント"),
         "accountCreatedSuccessfully": MessageLookupByLibrary.simpleMessage(
             "Account created successfully"),
-        "accountDetails":
-            MessageLookupByLibrary.simpleMessage("Account Details"),
-        "accountInformation":
-            MessageLookupByLibrary.simpleMessage("Account Information"),
+        "accountDetails": MessageLookupByLibrary.simpleMessage("アカウント詳細"),
+        "accountInformation": MessageLookupByLibrary.simpleMessage("アカウント情報"),
         "accountInformationDetails":
-            MessageLookupByLibrary.simpleMessage("Account Information Details"),
-        "active": MessageLookupByLibrary.simpleMessage("Active"),
-        "addContainer": MessageLookupByLibrary.simpleMessage("Add container"),
-        "addContainers": MessageLookupByLibrary.simpleMessage("Add containers"),
-        "addTemplate": MessageLookupByLibrary.simpleMessage("Add template"),
-        "addWorker": MessageLookupByLibrary.simpleMessage("Add worker"),
-        "addWorkers": MessageLookupByLibrary.simpleMessage("Add workers"),
+            MessageLookupByLibrary.simpleMessage("アカウント情報の詳細"),
+        "active": MessageLookupByLibrary.simpleMessage("アクティブ"),
+        "addContainer": MessageLookupByLibrary.simpleMessage("コンテナーを追加"),
+        "addContainers": MessageLookupByLibrary.simpleMessage("コンテナーを追加"),
+        "addTemplate": MessageLookupByLibrary.simpleMessage("テンプレートを追加"),
+        "addWorker": MessageLookupByLibrary.simpleMessage("労働者を追加"),
+        "addWorkers": MessageLookupByLibrary.simpleMessage("労働者を追加"),
         "advancePlan": MessageLookupByLibrary.simpleMessage("Advance Plan"),
         "advancedAutomaticTemplates": MessageLookupByLibrary.simpleMessage(
             "Advanced automatic templates and adjustments for preserving various types of food."),
         "alert": m0,
-        "alerts": MessageLookupByLibrary.simpleMessage("Alerts"),
-        "all": MessageLookupByLibrary.simpleMessage("All"),
+        "alerts": MessageLookupByLibrary.simpleMessage("アラート"),
+        "all": MessageLookupByLibrary.simpleMessage("すべて"),
         "allContainers": MessageLookupByLibrary.simpleMessage("All containers"),
         "allFromAdvancePlan":
             MessageLookupByLibrary.simpleMessage("All from Advance Plan"),
         "allFromStarterPlan":
             MessageLookupByLibrary.simpleMessage("All from Starter Plan"),
-        "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
-            "Already have an account? Login instead"),
+        "alreadyHaveAccount":
+            MessageLookupByLibrary.simpleMessage("すでにアカウントをお持ちですか？"),
         "ammonia": MessageLookupByLibrary.simpleMessage("Ammonia (NH₃)"),
         "ammoniaAndSulfurDioxide":
-            MessageLookupByLibrary.simpleMessage("Ammonia and sulfur dioxide"),
-        "ammoniaAndSulfurDioxideMax": MessageLookupByLibrary.simpleMessage(
-            "Max ammonia and sulfur dioxide"),
-        "ammoniaAndSulfurDioxideMin": MessageLookupByLibrary.simpleMessage(
-            "Min ammonia and sulfur dioxide"),
-        "ammoniaMax": MessageLookupByLibrary.simpleMessage("Max ammonia"),
-        "ammoniaMin": MessageLookupByLibrary.simpleMessage("Min ammonia"),
-        "animalDerived": MessageLookupByLibrary.simpleMessage("Animal derived"),
-        "applyTemplate": MessageLookupByLibrary.simpleMessage("Apply"),
-        "areYouSureDelete": MessageLookupByLibrary.simpleMessage(
-            "Are you sure you want to delete this?"),
+            MessageLookupByLibrary.simpleMessage("アンモニアと二酸化硫黄"),
+        "ammoniaAndSulfurDioxideMax":
+            MessageLookupByLibrary.simpleMessage("最高アンモニアと二酸化硫黄"),
+        "ammoniaAndSulfurDioxideMin":
+            MessageLookupByLibrary.simpleMessage("最低アンモニアと二酸化硫黄"),
+        "ammoniaMax": MessageLookupByLibrary.simpleMessage("最高アンモニア"),
+        "ammoniaMin": MessageLookupByLibrary.simpleMessage("最低アンモニア"),
+        "animalDerived": MessageLookupByLibrary.simpleMessage("動物由来"),
+        "applyTemplate": MessageLookupByLibrary.simpleMessage("テンプレートを適用"),
+        "areYouSureDelete":
+            MessageLookupByLibrary.simpleMessage("削除してもよろしいですか？"),
         "areYouSureYouWantToGrantThisPrivilege":
             MessageLookupByLibrary.simpleMessage(
                 "Are you sure you want to grant this privilege?"),
@@ -161,44 +150,37 @@ class MessageLookup extends MessageLookupByLibrary {
         "automaticTemplates": MessageLookupByLibrary.simpleMessage(
             "Automatic templates to adjust temperature and humidity according to the type of supply."),
         "backToLogin": MessageLookupByLibrary.simpleMessage("Back"),
-        "bankAccountOwner":
-            MessageLookupByLibrary.simpleMessage("Bank Account Owner"),
-        "businessName": MessageLookupByLibrary.simpleMessage("Business Name"),
-        "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+        "bankAccountOwner": MessageLookupByLibrary.simpleMessage("銀行口座の所有者"),
+        "businessName": MessageLookupByLibrary.simpleMessage("ビジネス名"),
+        "cancel": MessageLookupByLibrary.simpleMessage("キャンセル"),
         "cancelSubscription":
-            MessageLookupByLibrary.simpleMessage("Cancel subscription"),
-        "carbonDioxide":
-            MessageLookupByLibrary.simpleMessage("Carbon dioxide (CO₂)"),
-        "carbonDioxideMax":
-            MessageLookupByLibrary.simpleMessage("Max carbon dioxide"),
-        "carbonDioxideMin":
-            MessageLookupByLibrary.simpleMessage("Min carbon dioxide"),
+            MessageLookupByLibrary.simpleMessage("サブスクリプションをキャンセル"),
+        "carbonDioxide": MessageLookupByLibrary.simpleMessage("二酸化炭素 (CO₂)"),
+        "carbonDioxideMax": MessageLookupByLibrary.simpleMessage("最高二酸化炭素"),
+        "carbonDioxideMin": MessageLookupByLibrary.simpleMessage("最低二酸化炭素"),
         "cardNumber": MessageLookupByLibrary.simpleMessage("Card number"),
-        "category": MessageLookupByLibrary.simpleMessage("Category"),
-        "changePassword":
-            MessageLookupByLibrary.simpleMessage("Change Password"),
+        "category": MessageLookupByLibrary.simpleMessage("カテゴリ"),
+        "changePassword": MessageLookupByLibrary.simpleMessage("パスワードを変更"),
         "changeTemplate":
             MessageLookupByLibrary.simpleMessage("Change template"),
-        "changeToEnglish":
-            MessageLookupByLibrary.simpleMessage("Change to English"),
-        "changeToSpanish":
-            MessageLookupByLibrary.simpleMessage("Change to Spanish"),
-        "checkAlerts": MessageLookupByLibrary.simpleMessage("Check alerts"),
+        "changeToEnglish": MessageLookupByLibrary.simpleMessage("英語に変更"),
+        "changeToSpanish": MessageLookupByLibrary.simpleMessage("スペイン語に変更"),
+        "checkAlerts": MessageLookupByLibrary.simpleMessage("アラートを確認"),
         "choosePlan": MessageLookupByLibrary.simpleMessage("Choose plan"),
-        "city": MessageLookupByLibrary.simpleMessage("City"),
+        "city": MessageLookupByLibrary.simpleMessage("市"),
         "close": MessageLookupByLibrary.simpleMessage("Close"),
-        "code": MessageLookupByLibrary.simpleMessage("Code"),
+        "code": MessageLookupByLibrary.simpleMessage("コード"),
         "codeLength": MessageLookupByLibrary.simpleMessage(
             "Code must be 5 characters long"),
         "codeRequired":
             MessageLookupByLibrary.simpleMessage("Code is required"),
-        "companyName": MessageLookupByLibrary.simpleMessage("Company name"),
+        "companyName": MessageLookupByLibrary.simpleMessage("会社名"),
         "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
         "confirmAssignWorker": MessageLookupByLibrary.simpleMessage(
             "Are you sure you want to assign this worker?"),
         "confirmAssignWorkerMessage": MessageLookupByLibrary.simpleMessage(
             "This change will be recorded in this worker’s historial."),
-        "confirmDelete": MessageLookupByLibrary.simpleMessage("Confirm delete"),
+        "confirmDelete": MessageLookupByLibrary.simpleMessage("削除を確認"),
         "confirmPassword":
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
         "confirmPasswordRequired": MessageLookupByLibrary.simpleMessage(
@@ -225,7 +207,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "containerManualOn": m6,
         "containerManualOnTitle":
             MessageLookupByLibrary.simpleMessage("Container Manual On"),
-        "containerName": MessageLookupByLibrary.simpleMessage("Container name"),
+        "containerName": MessageLookupByLibrary.simpleMessage("コンテナー名"),
         "containerOff": m7,
         "containerOffTitle":
             MessageLookupByLibrary.simpleMessage("Container Off"),
@@ -241,72 +223,67 @@ class MessageLookup extends MessageLookupByLibrary {
         "containerOpened": m11,
         "containerOpenedTitle":
             MessageLookupByLibrary.simpleMessage("Container Opened"),
-        "containerSelectionModal": MessageLookupByLibrary.simpleMessage(
-            "This change will be recorded in this container’s historial."),
+        "containerSelectionModal":
+            MessageLookupByLibrary.simpleMessage("この変更はこのコンテナの履歴に記録されます"),
         "containerStatusReport": m12,
         "containerStatusReportTitle":
             MessageLookupByLibrary.simpleMessage("Container Status Report"),
         "containerUnlinked": m13,
         "containerUnlinkedTitle":
             MessageLookupByLibrary.simpleMessage("Container Unlinked"),
-        "containers": MessageLookupByLibrary.simpleMessage("Containers"),
-        "containersNotFound": MessageLookupByLibrary.simpleMessage(
-            "You don\'t have any Dittobox containers yet"),
-        "country": MessageLookupByLibrary.simpleMessage("Country"),
-        "currenTier": MessageLookupByLibrary.simpleMessage("Current Tier"),
+        "containers": MessageLookupByLibrary.simpleMessage("コンテナー"),
+        "containersNotFound": MessageLookupByLibrary.simpleMessage("コンテナーなし"),
+        "country": MessageLookupByLibrary.simpleMessage("国"),
+        "currenTier": MessageLookupByLibrary.simpleMessage("現在のティア"),
         "currentConfigs":
             MessageLookupByLibrary.simpleMessage("Current configurations"),
-        "daysAgo": m14,
         "decompositionGasesDetected": m15,
         "decompositionGasesDetectedTitle": MessageLookupByLibrary.simpleMessage(
             "Decomposition Gases Detected"),
-        "delete": MessageLookupByLibrary.simpleMessage("Delete"),
-        "description": MessageLookupByLibrary.simpleMessage("Description"),
+        "delete": MessageLookupByLibrary.simpleMessage("削除"),
+        "description": MessageLookupByLibrary.simpleMessage("説明"),
         "details": MessageLookupByLibrary.simpleMessage("Details"),
-        "detectAllGases":
-            MessageLookupByLibrary.simpleMessage("Detect all gases"),
+        "detectAllGases": MessageLookupByLibrary.simpleMessage("すべてのガスを検知"),
         "detectGases": MessageLookupByLibrary.simpleMessage("Detect gases"),
-        "discard": MessageLookupByLibrary.simpleMessage("Discard"),
-        "edit": MessageLookupByLibrary.simpleMessage("Edit"),
+        "discard": MessageLookupByLibrary.simpleMessage("破棄"),
+        "edit": MessageLookupByLibrary.simpleMessage("編集"),
         "editContainer": MessageLookupByLibrary.simpleMessage("Edit container"),
-        "editData": MessageLookupByLibrary.simpleMessage("Edit Data"),
-        "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "editData": MessageLookupByLibrary.simpleMessage("データを編集"),
+        "email": MessageLookupByLibrary.simpleMessage("Eメール"),
         "emailRequired":
             MessageLookupByLibrary.simpleMessage("Email is required"),
-        "english": MessageLookupByLibrary.simpleMessage("English"),
+        "english": MessageLookupByLibrary.simpleMessage("英語"),
         "errorApplicatingaTemplate": MessageLookupByLibrary.simpleMessage(
             "Error applicating a template"),
         "errorCreatingAccount":
             MessageLookupByLibrary.simpleMessage("Error creating account"),
-        "ethylene": MessageLookupByLibrary.simpleMessage("Ethylene (C₂H₄)"),
-        "ethyleneMax": MessageLookupByLibrary.simpleMessage("Max ethylene"),
-        "ethyleneMin": MessageLookupByLibrary.simpleMessage("Min ethylene"),
+        "ethylene": MessageLookupByLibrary.simpleMessage("エチレン (C₂H₄)"),
+        "ethyleneMax": MessageLookupByLibrary.simpleMessage("最高エチレン"),
+        "ethyleneMin": MessageLookupByLibrary.simpleMessage("最低エチレン"),
         "expirationDate":
             MessageLookupByLibrary.simpleMessage("Expiration date"),
-        "expired": MessageLookupByLibrary.simpleMessage("Expired"),
-        "facilities": MessageLookupByLibrary.simpleMessage("Facilities"),
-        "facility": MessageLookupByLibrary.simpleMessage("Facility"),
+        "expired": MessageLookupByLibrary.simpleMessage("期限切れ"),
+        "facilities": MessageLookupByLibrary.simpleMessage("施設"),
+        "facility": MessageLookupByLibrary.simpleMessage("施設"),
         "facilityCreatedSuccessfully": MessageLookupByLibrary.simpleMessage(
             "Facility created successfully"),
-        "facilityName": MessageLookupByLibrary.simpleMessage("Facility name"),
+        "facilityName": MessageLookupByLibrary.simpleMessage("施設名"),
         "failedToFetchFacilities":
-            MessageLookupByLibrary.simpleMessage("Failed to fetch facilities"),
+            MessageLookupByLibrary.simpleMessage("施設の取得に失敗しました"),
         "failedToUpdatePrivileges":
             MessageLookupByLibrary.simpleMessage("Failed to update privileges"),
         "failedtoAddWorker":
             MessageLookupByLibrary.simpleMessage("Failed to add worker"),
         "fasterTechnicalSupport": MessageLookupByLibrary.simpleMessage(
             "Faster and more personalized technical support."),
-        "firstName": MessageLookupByLibrary.simpleMessage("First Name"),
-        "forgotPassword":
-            MessageLookupByLibrary.simpleMessage("Forgot your password?"),
+        "firstName": MessageLookupByLibrary.simpleMessage("名"),
+        "forgotPassword": MessageLookupByLibrary.simpleMessage("パスワードをお忘れですか？"),
         "forgotPasswordTitle":
             MessageLookupByLibrary.simpleMessage("Forgot Password?"),
-        "gasDetection": MessageLookupByLibrary.simpleMessage("Gas detection"),
-        "hoursAgo": m16,
-        "humidity": MessageLookupByLibrary.simpleMessage("Humidity"),
-        "humidityMax": MessageLookupByLibrary.simpleMessage("Max humidity"),
-        "humidityMin": MessageLookupByLibrary.simpleMessage("Min humidity"),
+        "gasDetection": MessageLookupByLibrary.simpleMessage("ガス検知"),
+        "humidity": MessageLookupByLibrary.simpleMessage("湿度"),
+        "humidityMax": MessageLookupByLibrary.simpleMessage("最高湿度"),
+        "humidityMin": MessageLookupByLibrary.simpleMessage("最低湿度"),
         "humidityRegulationFailed": m17,
         "humidityRegulationFailedTitle":
             MessageLookupByLibrary.simpleMessage("Humidity Regulation Failed"),
@@ -321,75 +298,70 @@ class MessageLookup extends MessageLookupByLibrary {
         "humidityThresholdExceeded": m20,
         "humidityThresholdExceededTitle":
             MessageLookupByLibrary.simpleMessage("Humidity Threshold Exceeded"),
-        "identificationNumber":
-            MessageLookupByLibrary.simpleMessage("Identification number"),
+        "identificationNumber": MessageLookupByLibrary.simpleMessage("ID番号"),
         "invalidCardHolderName":
             MessageLookupByLibrary.simpleMessage("Invalid card holder name"),
         "invalidCardNumber":
             MessageLookupByLibrary.simpleMessage("Invalid card number"),
         "invalidCvv": MessageLookupByLibrary.simpleMessage("Invalid CVV"),
-        "invalidEmail": MessageLookupByLibrary.simpleMessage("Invalid email"),
+        "invalidEmail": MessageLookupByLibrary.simpleMessage("無効なメール"),
         "invalidExpiryDate":
             MessageLookupByLibrary.simpleMessage("Invalid expiry date"),
         "issuedAt": m21,
-        "japanese": MessageLookupByLibrary.simpleMessage("Japanese"),
-        "language": MessageLookupByLibrary.simpleMessage("Language"),
+        "japanese": MessageLookupByLibrary.simpleMessage("日本語　「べ－た」"),
+        "language": MessageLookupByLibrary.simpleMessage("言語"),
         "lastKnownHealthStatus":
             MessageLookupByLibrary.simpleMessage("Last known health status"),
-        "lastName": MessageLookupByLibrary.simpleMessage("Last Name"),
-        "lastSync": MessageLookupByLibrary.simpleMessage("Last sync"),
+        "lastName": MessageLookupByLibrary.simpleMessage("姓"),
+        "lastSync": MessageLookupByLibrary.simpleMessage("最終同期"),
         "location": MessageLookupByLibrary.simpleMessage("Location"),
-        "logOut": MessageLookupByLibrary.simpleMessage("Log out"),
-        "login": MessageLookupByLibrary.simpleMessage("Login"),
+        "logOut": MessageLookupByLibrary.simpleMessage("ログアウト"),
+        "login": MessageLookupByLibrary.simpleMessage("ログイン"),
         "loginFailed": MessageLookupByLibrary.simpleMessage("Login failed"),
         "manageSubscription":
-            MessageLookupByLibrary.simpleMessage("Manage Subscription"),
-        "manager": MessageLookupByLibrary.simpleMessage("Manager"),
-        "meat": MessageLookupByLibrary.simpleMessage("Meat"),
-        "meats": MessageLookupByLibrary.simpleMessage("Meats"),
-        "menu": MessageLookupByLibrary.simpleMessage("Menu"),
-        "minutesAgo": m22,
+            MessageLookupByLibrary.simpleMessage("サブスクリプションを管理"),
+        "manager": MessageLookupByLibrary.simpleMessage("マネージャー"),
+        "meat": MessageLookupByLibrary.simpleMessage("肉"),
+        "meats": MessageLookupByLibrary.simpleMessage("肉"),
+        "menu": MessageLookupByLibrary.simpleMessage("メニュー"),
         "month": MessageLookupByLibrary.simpleMessage("Month"),
         "monthlyPlans": MessageLookupByLibrary.simpleMessage("Monthly plans"),
-        "more": MessageLookupByLibrary.simpleMessage("More"),
-        "name": MessageLookupByLibrary.simpleMessage("Name"),
-        "newContainer": MessageLookupByLibrary.simpleMessage("New container"),
-        "newFacility": MessageLookupByLibrary.simpleMessage("New facility"),
+        "more": MessageLookupByLibrary.simpleMessage("もっと"),
+        "name": MessageLookupByLibrary.simpleMessage("名前"),
+        "newContainer": MessageLookupByLibrary.simpleMessage("新しいコンテナ"),
+        "newFacility": MessageLookupByLibrary.simpleMessage("新しい施設"),
         "newPassword": MessageLookupByLibrary.simpleMessage("New Password"),
         "newPasswordRequired":
             MessageLookupByLibrary.simpleMessage("New password is required"),
-        "newTemplate": MessageLookupByLibrary.simpleMessage("New template"),
-        "nextPaymentDay":
-            MessageLookupByLibrary.simpleMessage("Next payment day"),
+        "newTemplate": MessageLookupByLibrary.simpleMessage("新しいテンプレート"),
+        "nextPaymentDay": MessageLookupByLibrary.simpleMessage("次の支払日"),
         "noFacilitiesAvailable":
             MessageLookupByLibrary.simpleMessage("No facilities available"),
         "noFacilitiesFound": MessageLookupByLibrary.simpleMessage(
             "You don\'t have any facilities yet, please add one"),
-        "noLocation": MessageLookupByLibrary.simpleMessage("No location"),
-        "noNotifications": MessageLookupByLibrary.simpleMessage(
-            "You don\'t have any notifications yet"),
-        "noPoseefacility": MessageLookupByLibrary.simpleMessage("None"),
+        "noLocation": MessageLookupByLibrary.simpleMessage("なし"),
+        "noNotifications": MessageLookupByLibrary.simpleMessage("通知なし"),
+        "noPoseefacility": MessageLookupByLibrary.simpleMessage("なし"),
         "noTemplateAssigned":
             MessageLookupByLibrary.simpleMessage("No template assigned"),
         "noTemplatesFound": MessageLookupByLibrary.simpleMessage(
             "Dittobox isn\'t distributing any templates yet, please look forward to it."),
         "notUsersFound": MessageLookupByLibrary.simpleMessage("No users found"),
-        "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
+        "notifications": MessageLookupByLibrary.simpleMessage("通知"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
-        "owner": MessageLookupByLibrary.simpleMessage("Owner"),
-        "oxygen": MessageLookupByLibrary.simpleMessage("Oxygen (O₂)"),
-        "oxygenMax": MessageLookupByLibrary.simpleMessage("Max oxygen"),
-        "oxygenMin": MessageLookupByLibrary.simpleMessage("Min oxygen"),
-        "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "owner": MessageLookupByLibrary.simpleMessage("オーナー"),
+        "oxygen": MessageLookupByLibrary.simpleMessage("酸素 (O₂)"),
+        "oxygenMax": MessageLookupByLibrary.simpleMessage("最高酸素"),
+        "oxygenMin": MessageLookupByLibrary.simpleMessage("最低酸素"),
+        "password": MessageLookupByLibrary.simpleMessage("パスワード"),
         "passwordCannotBeEmpty":
-            MessageLookupByLibrary.simpleMessage("Password cannot be empty"),
+            MessageLookupByLibrary.simpleMessage("パスワードは空にできません"),
         "passwordChangeFailed":
-            MessageLookupByLibrary.simpleMessage("Password change failed"),
+            MessageLookupByLibrary.simpleMessage("パスワードの変更に失敗しました"),
         "passwordLength": MessageLookupByLibrary.simpleMessage(
             "Password must be at least 8 characters long"),
         "passwordMustBeAtLeast8Characters":
-            MessageLookupByLibrary.simpleMessage(
-                "Password must be at least 8 characters"),
+            MessageLookupByLibrary.simpleMessage("パスワードは少なくとも8文字である必要があります"),
         "passwordResetCode":
             MessageLookupByLibrary.simpleMessage("Password Reset Code"),
         "passwordResetCodeTitle":
@@ -397,96 +369,84 @@ class MessageLookup extends MessageLookupByLibrary {
         "passwordsDoNotMatch":
             MessageLookupByLibrary.simpleMessage("Passwords do not match"),
         "pay": MessageLookupByLibrary.simpleMessage("Pay"),
-        "paymentInformation":
-            MessageLookupByLibrary.simpleMessage("Payment information"),
+        "paymentInformation": MessageLookupByLibrary.simpleMessage("支払い情報"),
         "paymentSuccessful":
             MessageLookupByLibrary.simpleMessage("Payment successful"),
-        "pendingAlerts": MessageLookupByLibrary.simpleMessage("Pending Alerts"),
+        "pendingAlerts": MessageLookupByLibrary.simpleMessage("保留中のアラート"),
         "pleaseEnterCategory":
-            MessageLookupByLibrary.simpleMessage("Please enter a category"),
-        "pleaseEnterContainerName": MessageLookupByLibrary.simpleMessage(
-            "Please enter a container name"),
+            MessageLookupByLibrary.simpleMessage("カテゴリを入力してください"),
+        "pleaseEnterContainerName":
+            MessageLookupByLibrary.simpleMessage("コンテナー名を入力してください"),
         "pleaseEnterDescription":
-            MessageLookupByLibrary.simpleMessage("Please enter a description"),
+            MessageLookupByLibrary.simpleMessage("説明を入力してください"),
         "pleaseEnterEthylene":
-            MessageLookupByLibrary.simpleMessage("Pleasse enter an ethylene"),
+            MessageLookupByLibrary.simpleMessage("エチレンを入力してください"),
         "pleaseEnterHumidity":
-            MessageLookupByLibrary.simpleMessage("Please enter a humidity"),
+            MessageLookupByLibrary.simpleMessage("湿度を入力してください"),
         "pleaseEnterHumidityMax":
-            MessageLookupByLibrary.simpleMessage("Please enter a Max humidity"),
+            MessageLookupByLibrary.simpleMessage("最高湿度を入力してください"),
         "pleaseEnterHumidityMin":
-            MessageLookupByLibrary.simpleMessage("Please enter a Min humidity"),
-        "pleaseEnterName":
-            MessageLookupByLibrary.simpleMessage("Please enter a name"),
+            MessageLookupByLibrary.simpleMessage("最低湿度を入力してください"),
+        "pleaseEnterName": MessageLookupByLibrary.simpleMessage("名前を入力してください"),
         "pleaseEnterOxygenMin":
-            MessageLookupByLibrary.simpleMessage("Please enter a Min oxygen"),
-        "pleaseEnterTemp":
-            MessageLookupByLibrary.simpleMessage("Please enter a temperature"),
-        "pleaseEnterTempMax": MessageLookupByLibrary.simpleMessage(
-            "Please enter a Max temperature"),
-        "pleaseEnterTempMin": MessageLookupByLibrary.simpleMessage(
-            "Please enter a Min temperature"),
-        "pleaseEnterTemplateName": MessageLookupByLibrary.simpleMessage(
-            "Please enter a template name"),
+            MessageLookupByLibrary.simpleMessage("最低酸素を入力してください"),
+        "pleaseEnterTemp": MessageLookupByLibrary.simpleMessage("温度を入力してください"),
+        "pleaseEnterTempMax":
+            MessageLookupByLibrary.simpleMessage("最高温度を入力してください"),
+        "pleaseEnterTempMin":
+            MessageLookupByLibrary.simpleMessage("最低温度を入力してください"),
+        "pleaseEnterTemplateName":
+            MessageLookupByLibrary.simpleMessage("テンプレート名を入力してください"),
         "pleaseSelectCategory":
-            MessageLookupByLibrary.simpleMessage("Please select a category"),
+            MessageLookupByLibrary.simpleMessage("カテゴリを選択してください"),
         "premiumPlan": MessageLookupByLibrary.simpleMessage("Premium Plan"),
         "priorityTechnicalSupport":
             MessageLookupByLibrary.simpleMessage("Priority technical support"),
         "privilegesUpdatedSuccessfully": MessageLookupByLibrary.simpleMessage(
             "Privileges updated successfully"),
-        "proccessedFood":
-            MessageLookupByLibrary.simpleMessage("Processed food"),
-        "processedFood": MessageLookupByLibrary.simpleMessage("Processed food"),
-        "processedFoods":
-            MessageLookupByLibrary.simpleMessage("Processed foods"),
-        "produce": MessageLookupByLibrary.simpleMessage("Produce"),
-        "reassign": MessageLookupByLibrary.simpleMessage("Reassign"),
+        "proccessedFood": MessageLookupByLibrary.simpleMessage("加工食品"),
+        "processedFood": MessageLookupByLibrary.simpleMessage("加工食品"),
+        "processedFoods": MessageLookupByLibrary.simpleMessage("加工食品"),
+        "produce": MessageLookupByLibrary.simpleMessage("生産物"),
+        "reassign": MessageLookupByLibrary.simpleMessage("再割り当て"),
         "reassignWorker":
             MessageLookupByLibrary.simpleMessage("Reassign worker"),
-        "region": MessageLookupByLibrary.simpleMessage("Region"),
-        "register": MessageLookupByLibrary.simpleMessage("Register"),
-        "registerInstead":
-            MessageLookupByLibrary.simpleMessage("Register instead"),
+        "region": MessageLookupByLibrary.simpleMessage("地域"),
+        "register": MessageLookupByLibrary.simpleMessage("登録"),
+        "registerInstead": MessageLookupByLibrary.simpleMessage("代わりに登録"),
         "registrationFailed":
             MessageLookupByLibrary.simpleMessage("Registration failed"),
-        "requiredField":
-            MessageLookupByLibrary.simpleMessage("This is a required field"),
+        "requiredField": MessageLookupByLibrary.simpleMessage("必須フィールド"),
         "resetPassword": MessageLookupByLibrary.simpleMessage("Reset Password"),
-        "restaurant": MessageLookupByLibrary.simpleMessage("Restaurant"),
+        "restaurant": MessageLookupByLibrary.simpleMessage("レストラン"),
         "restaurants": MessageLookupByLibrary.simpleMessage("Restaurants"),
-        "role": MessageLookupByLibrary.simpleMessage("Role"),
-        "roleManagement":
-            MessageLookupByLibrary.simpleMessage("Role management"),
-        "save": MessageLookupByLibrary.simpleMessage("Save"),
-        "search": MessageLookupByLibrary.simpleMessage("Search"),
-        "secondsAgo": m23,
-        "selectContainers":
-            MessageLookupByLibrary.simpleMessage("Select containers"),
-        "selectFacility":
-            MessageLookupByLibrary.simpleMessage("Select facility"),
-        "selectLanguage":
-            MessageLookupByLibrary.simpleMessage("Select language"),
+        "role": MessageLookupByLibrary.simpleMessage("役割"),
+        "roleManagement": MessageLookupByLibrary.simpleMessage("役割管理"),
+        "save": MessageLookupByLibrary.simpleMessage("保存"),
+        "search": MessageLookupByLibrary.simpleMessage("検索"),
+        "selectContainers": MessageLookupByLibrary.simpleMessage("コンテナーを選択"),
+        "selectFacility": MessageLookupByLibrary.simpleMessage("施設を選択"),
+        "selectLanguage": MessageLookupByLibrary.simpleMessage("言語を選択"),
         "selectTemplate":
             MessageLookupByLibrary.simpleMessage("Select template"),
         "setNewPassword":
             MessageLookupByLibrary.simpleMessage("Set New Password"),
         "setNewPasswordTitle":
             MessageLookupByLibrary.simpleMessage("Set New Password"),
-        "settings": MessageLookupByLibrary.simpleMessage("Settings"),
+        "settings": MessageLookupByLibrary.simpleMessage("設定"),
         "simultaneousMonitoring": MessageLookupByLibrary.simpleMessage(
             "Simultaneous monitoring of up to 5 DittoBoxes for multiple restaurants."),
-        "spanish": MessageLookupByLibrary.simpleMessage("Spanish"),
-        "status": MessageLookupByLibrary.simpleMessage("Status"),
-        "statusContainer": MessageLookupByLibrary.simpleMessage("Status"),
+        "spanish": MessageLookupByLibrary.simpleMessage("スペイン語"),
+        "status": MessageLookupByLibrary.simpleMessage("ステータス"),
+        "statusContainer":
+            MessageLookupByLibrary.simpleMessage("ステータスセクションのラベル"),
         "subscribe": MessageLookupByLibrary.simpleMessage("Subscribe"),
-        "subscription": MessageLookupByLibrary.simpleMessage("Subscription"),
+        "subscription": MessageLookupByLibrary.simpleMessage("サブスクリプション"),
         "subscriptionDetails":
-            MessageLookupByLibrary.simpleMessage("Subscription details"),
+            MessageLookupByLibrary.simpleMessage("サブスクリプションの詳細"),
         "subscriptionPlans":
             MessageLookupByLibrary.simpleMessage("Subscription Plans"),
-        "subscriptionTier":
-            MessageLookupByLibrary.simpleMessage("Subscription Tier"),
+        "subscriptionTier": MessageLookupByLibrary.simpleMessage("サブスクリプション層"),
         "success": MessageLookupByLibrary.simpleMessage("Success"),
         "sulfurDioxide":
             MessageLookupByLibrary.simpleMessage("Sulfur dioxide (SO₂)"),
@@ -496,9 +456,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Min sulfur dioxide"),
         "supportForLargerChains": MessageLookupByLibrary.simpleMessage(
             "Support for larger chains (up to 10 restaurants)."),
-        "tempMax": MessageLookupByLibrary.simpleMessage("Max temperature"),
-        "tempMin": MessageLookupByLibrary.simpleMessage("Min temperature"),
-        "temperature": MessageLookupByLibrary.simpleMessage("Temperature"),
+        "tempMax": MessageLookupByLibrary.simpleMessage("最高温度"),
+        "tempMin": MessageLookupByLibrary.simpleMessage("最低温度"),
+        "temperature": MessageLookupByLibrary.simpleMessage("温度"),
         "temperatureRegulationFailed": m24,
         "temperatureRegulationFailedTitle":
             MessageLookupByLibrary.simpleMessage(
@@ -515,7 +475,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "temperatureThresholdExceededTitle":
             MessageLookupByLibrary.simpleMessage(
                 "Temperature Threshold Exceeded"),
-        "template": MessageLookupByLibrary.simpleMessage("Template"),
+        "template": MessageLookupByLibrary.simpleMessage("テンプレート"),
         "templateAssigned": m28,
         "templateAssignedSuccessfully": MessageLookupByLibrary.simpleMessage(
             "Template assigned successfully"),
@@ -524,26 +484,24 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Template Assigned"),
         "templateConfiguration":
             MessageLookupByLibrary.simpleMessage("Template Configuration"),
-        "templateLibrary":
-            MessageLookupByLibrary.simpleMessage("Template Library"),
-        "templateName": MessageLookupByLibrary.simpleMessage("Template name"),
-        "templates": MessageLookupByLibrary.simpleMessage("Templates"),
+        "templateLibrary": MessageLookupByLibrary.simpleMessage("テンプレートライブラリ"),
+        "templateName": MessageLookupByLibrary.simpleMessage("テンプレート名"),
+        "templates": MessageLookupByLibrary.simpleMessage("テンプレート"),
         "title": MessageLookupByLibrary.simpleMessage("DittoBox"),
-        "type": MessageLookupByLibrary.simpleMessage("Type"),
+        "type": MessageLookupByLibrary.simpleMessage("タイプ"),
         "unknownAlert": m30,
         "unknownAlertTitle":
             MessageLookupByLibrary.simpleMessage("Unknown Alert"),
         "upTo": MessageLookupByLibrary.simpleMessage("Up to"),
         "updatePaymentInformation":
             MessageLookupByLibrary.simpleMessage("Update"),
-        "upgradePlan": MessageLookupByLibrary.simpleMessage("Upgrade plan"),
-        "userInformation":
-            MessageLookupByLibrary.simpleMessage("User Information"),
+        "upgradePlan": MessageLookupByLibrary.simpleMessage("プランをアップグレード"),
+        "userInformation": MessageLookupByLibrary.simpleMessage("ユーザー情報"),
         "userInformationDetails":
-            MessageLookupByLibrary.simpleMessage("User Information Details"),
-        "username": MessageLookupByLibrary.simpleMessage("Username"),
+            MessageLookupByLibrary.simpleMessage("ユーザー情報の詳細"),
+        "username": MessageLookupByLibrary.simpleMessage("ユーザー名"),
         "usernameCannotBeEmpty":
-            MessageLookupByLibrary.simpleMessage("Username cannot be empty"),
+            MessageLookupByLibrary.simpleMessage("ユーザー名は空にできません"),
         "ventilationRegulationFailed": m31,
         "ventilationRegulationFailedTitle":
             MessageLookupByLibrary.simpleMessage(
@@ -557,24 +515,23 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "Ventilation Regulation Triggered"),
         "verifyCode": MessageLookupByLibrary.simpleMessage("Verify Code"),
-        "viewContainers":
-            MessageLookupByLibrary.simpleMessage("View containers"),
+        "viewContainers": MessageLookupByLibrary.simpleMessage("コンテナーを表示"),
         "viewCurrentConfigs":
             MessageLookupByLibrary.simpleMessage("View current configs"),
-        "viewWorkers": MessageLookupByLibrary.simpleMessage("View workers"),
-        "warehouse": MessageLookupByLibrary.simpleMessage("Warehouse"),
-        "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
-        "worker": MessageLookupByLibrary.simpleMessage("Worker"),
+        "viewWorkers": MessageLookupByLibrary.simpleMessage("労働者を表示"),
+        "warehouse": MessageLookupByLibrary.simpleMessage("倉庫"),
+        "welcome": MessageLookupByLibrary.simpleMessage("ようこそ"),
+        "worker": MessageLookupByLibrary.simpleMessage("労働者"),
         "workerAssignConfirm": MessageLookupByLibrary.simpleMessage("Confirm"),
         "workerAssignedSuccessfully": MessageLookupByLibrary.simpleMessage(
             "Worker assigned successfully"),
-        "workerDetails": MessageLookupByLibrary.simpleMessage("Worker details"),
-        "workerList": MessageLookupByLibrary.simpleMessage("Worker List"),
+        "workerDetails": MessageLookupByLibrary.simpleMessage("労働者の詳細"),
+        "workerList": MessageLookupByLibrary.simpleMessage("労働者リスト"),
         "workerReassigned": MessageLookupByLibrary.simpleMessage(
             "Worker reassigned successfully"),
         "workerUnassignedSuccessfully": MessageLookupByLibrary.simpleMessage(
             "Worker unassigned successfully"),
-        "workers": MessageLookupByLibrary.simpleMessage("Workers"),
+        "workers": MessageLookupByLibrary.simpleMessage("労働者"),
         "yearly": MessageLookupByLibrary.simpleMessage("Yearly"),
         "yearlyPlans": MessageLookupByLibrary.simpleMessage("Yearly plans")
       };

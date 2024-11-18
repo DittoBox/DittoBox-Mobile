@@ -50,6 +50,15 @@ class _LanguageSelectionScreenState extends State<LanguageSelectionScreen> {
                   _changeLanguage(context, const Locale('es'));
                 },
               ),
+              ListTile(
+                title: Text(S.of(context).japanese),
+                trailing: _selectedLocale == const Locale('ja')
+                    ? const Icon(Icons.check, color: Colors.green)
+                    : null,
+                onTap: () {
+                  _changeLanguage(context, const Locale('ja'));
+                },
+              ),
             ],
           ),
           if (_isChangingLanguage)

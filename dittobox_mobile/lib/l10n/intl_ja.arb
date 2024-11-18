@@ -1,158 +1,158 @@
 {
-  "@@locale": "en",
+  "@@locale": "ja",
   "title": "DittoBox",
   "@title": {
     "description": "The title of the application"
   },
-  "welcome": "Welcome",
+  "welcome": "ようこそ",
   "@welcome": {
     "description": "Welcome message for the user"
   },
-  "facilities": "Facilities",
+  "facilities": "施設",
   "@facilities": {
     "description": "Label for facilities section"
   },
-  "newFacility": "New facility",
+  "newFacility": "新しい施設",
   "@newFacility": {
     "description": "Label for adding a new facility"
   },
-  "containers": "Containers",
+  "containers": "コンテナー",
   "@containers": {
     "description": "Label for containers section"
   },
-  "workers": "Workers",
+  "workers": "労働者",
   "@workers": {
     "description": "Label for workers section"
   },
-  "pendingAlerts": "Pending Alerts",
+  "pendingAlerts": "保留中のアラート",
   "@pendingAlerts": {
     "description": "Label for pending alerts section"
   },
-  "addContainers": "Add containers",
+  "addContainers": "コンテナーを追加",
   "@addContainers": {
     "description": "Button label for adding containers"
   },
-  "addWorkers": "Add workers",
+  "addWorkers": "労働者を追加",
   "@addWorkers": {
     "description": "Button label for adding workers"
   },
-  "checkAlerts": "Check alerts",
+  "checkAlerts": "アラートを確認",
   "@checkAlerts": {
     "description": "Button label for checking alerts"
   },
-  "menu": "Menu",
+  "menu": "メニュー",
   "@menu": {
     "description": "Label for menu"
   },
-  "settings": "Settings",
+  "settings": "設定",
   "@settings": {
     "description": "Label for settings"
   },
-  "account": "Account",
+  "account": "アカウント",
   "@account": {
     "description": "Label for account section"
   },
-  "subscription": "Subscription",
+  "subscription": "サブスクリプション",
   "@subscription": {
     "description": "Label for subscription section"
   },
-  "notifications": "Notifications",
+  "notifications": "通知",
   "@notifications": {
     "description": "Label for notifications section"
   },
-  "logOut": "Log out",
+  "logOut": "ログアウト",
   "@logOut": {
     "description": "Button label for logging out"
   },
-  "facilityName": "Facility name",
+  "facilityName": "施設名",
   "@facilityName": {
     "description": "Label for facility name input field"
   },
-  "city": "City",
+  "city": "市",
   "@city": {
     "description": "Label for city input field"
   },
-  "region": "Region",
+  "region": "地域",
   "@region": {
     "description": "Label for region input field"
   },
-  "cancel": "Cancel",
+  "cancel": "キャンセル",
   "@cancel": {
     "description": "Button label for canceling an action"
   },
-  "save": "Save",
+  "save": "保存",
   "@save": {
     "description": "Button label for saving an action"
   },
-  "aboutYourCompany": "About your company",
+  "aboutYourCompany": "会社情報",
   "@aboutYourCompany": {
     "description": "Label for company information section"
   },
-  "companyName": "Company name",
+  "companyName": "会社名",
   "@companyName": {
     "description": "Label for company name input field"
   },
-  "identificationNumber": "Identification number",
+  "identificationNumber": "ID番号",
   "@identificationNumber": {
     "description": "Label for company identification number input field"
   },
-  "country": "Country",
+  "country": "国",
   "@country": {
     "description": "Label for country input field"
   },
-  "register": "Register",
+  "register": "登録",
   "@register": {
     "description": "Button label for registering"
   },
-  "login": "Login",
+  "login": "ログイン",
   "@login": {
     "description": "Button label for logging in"
   },
-  "username": "Username",
+  "username": "ユーザー名",
   "@username": {
     "description": "Label for username input field"
   },
-  "password": "Password",
+  "password": "パスワード",
   "@password": {
     "description": "Label for password input field"
   },
-  "forgotPassword": "Forgot your password?",
+  "forgotPassword": "パスワードをお忘れですか？",
   "@forgotPassword": {
     "description": "Link text for forgotten password"
   },
-  "registerInstead": "Register instead",
+  "registerInstead": "代わりに登録",
   "@registerInstead": {
     "description": "Link text for switching to registration"
   },
-  "search": "Search",
+  "search": "検索",
   "@search": {
     "description": "Button label for searching"
   },
-  "more": "More",
+  "more": "もっと",
   "@more": {
     "description": "Label for more options"
   },
-  "failedToFetchFacilities": "Failed to fetch facilities",
+  "failedToFetchFacilities": "施設の取得に失敗しました",
   "@failedToFetchFacilities": {
     "description": "Error message when failing to fetch facilities"
   },
-  "alerts": "Alerts",
+  "alerts": "アラート",
   "@alerts": {
     "description": "Label for alerts"
   },
-  "warehouse": "Warehouse",
+  "warehouse": "倉庫",
   "@warehouse": {
     "description": "Label for werehouse section"
   },
-  "restaurant": "Restaurant",
+  "restaurant": "レストラン",
   "@restaurant": {
     "description": "Label for restaurant section"
   },
-  "name": "Name",
-  "email": "Email",
-  "worker": "Worker",
-  "owner": "Owner",
-  "alreadyHaveAccount": "Already have an account? Login instead",
+  "name": "名前",
+  "email": "Eメール",
+  "worker": "労働者",
+  "owner": "オーナー",
+  "alreadyHaveAccount": "すでにアカウントをお持ちですか？",
   "@name": {
     "description": "Label for name input field"
   },
@@ -168,415 +168,415 @@
   "@alreadyHaveAccount": {
     "description": "Text for already have an account link"
   },
-  "changeToSpanish": "Change to Spanish",
+  "changeToSpanish": "スペイン語に変更",
   "@changeToSpanish": {
     "description": "Button label for changing the language to Spanish"
   },
-  "templates": "Templates",
+  "templates": "テンプレート",
   "@templates": {
     "description": "Label for templates section"
   },
-  "template": "Template",
+  "template": "テンプレート",
   "@template": {
     "description": "Label for template section"
   },
-  "changeToEnglish": "Change to English",
+  "changeToEnglish": "英語に変更",
   "@changeToEnglish": {
     "description": "Button label for changing the language to English"
   },
-  "templateLibrary": "Template Library",
+  "templateLibrary": "テンプレートライブラリ",
   "@templateLibrary": {
     "description": "Label for template library section"
   },
-  "applyTemplate": "Apply",
+  "applyTemplate": "テンプレートを適用",
   "@applyTemplate": {
     "description": "Button label for applying a template"
   },
-  "addTemplate": "Add template",
+  "addTemplate": "テンプレートを追加",
   "@addTemplate": {
     "description": "Button label for adding a template"
   },
-  "pleaseEnterName": "Please enter a name",
+  "pleaseEnterName": "名前を入力してください",
   "@pleaseEnterName": {
     "description": "Error message when name is not entered"
   },
-  "pleaseEnterDescription": "Please enter a description",
+  "pleaseEnterDescription": "説明を入力してください",
   "@pleaseEnterDescription": {
     "description": "Error message when description is not entered"
   },
-  "pleaseEnterCategory": "Please enter a category",
+  "pleaseEnterCategory": "カテゴリを入力してください",
   "@pleaseEnterCategory": {
     "description": "Error message when category is not entered"
   },
-  "pleaseEnterTempMin": "Please enter a Min temperature",
+  "pleaseEnterTempMin": "最低温度を入力してください",
   "@pleaseEnterTempMin": {
     "description": "Error message when Min temperature is not entered"
   },
-  "pleaseEnterTempMax": "Please enter a Max temperature",
+  "pleaseEnterTempMax": "最高温度を入力してください",
   "@pleaseEnterTempMax": {
     "description": "Error message when Max temperature is not entered"
   },
-  "pleaseEnterHumidityMin": "Please enter a Min humidity",
+  "pleaseEnterHumidityMin": "最低湿度を入力してください",
   "@pleaseEnterHumidityMin": {
     "description": "Error message when Min humidity is not entered"
   },
-  "pleaseEnterHumidityMax": "Please enter a Max humidity",
+  "pleaseEnterHumidityMax": "最高湿度を入力してください",
   "@pleaseEnterHumidityMax": {
     "description": "Error message when Max humidity is not entered"
   },
-  "pleaseEnterTemp": "Please enter a temperature",
+  "pleaseEnterTemp": "温度を入力してください",
   "@pleaseEnterTemp": {
     "description": "Error message when temperature is not entered"
   },
-  "pleaseEnterHumidity": "Please enter a humidity",
+  "pleaseEnterHumidity": "湿度を入力してください",
   "@pleaseEnterHumidity": {
     "description": "Error message when humidity is not entered"
   },
-  "pleaseEnterEthylene": "Pleasse enter an ethylene",
+  "pleaseEnterEthylene": "エチレンを入力してください",
   "@pleaseEnterEthylene": {
     "description": "Error message when ethylene is not entered"
   },
-  "description": "Description",
+  "description": "説明",
   "@description": {
     "description": "Label for description section"
   },
-  "category": "Category",
+  "category": "カテゴリ",
   "@category": {
     "description": "Label for category section"
   },
-  "tempMin": "Min temperature",
+  "tempMin": "最低温度",
   "@tempMin": {
     "description": "Label for Min temperature section"
   },
-  "tempMax": "Max temperature",
+  "tempMax": "最高温度",
   "@tempMax": {
     "description": "Label for Max temperature section"
   },
-  "humidityMin": "Min humidity",
+  "humidityMin": "最低湿度",
   "@humidityMin": {
     "description": "Label for Min humidity section"
   },
-  "humidityMax": "Max humidity",
+  "humidityMax": "最高湿度",
   "@humidityMax": {
     "description": "Label for Max humidity section"
   },
-  "ethylene": "Ethylene (C₂H₄)",
+  "ethylene": "エチレン (C₂H₄)",
   "@ethylene": {
     "description": "Label for ethylene section"
   },
-  "templateName": "Template name",
+  "templateName": "テンプレート名",
   "@templateName": {
     "description": "Label for template name section"
   },
-  "produce": "Produce",
+  "produce": "生産物",
   "@produce": {
     "description": "Label for produce section"
   },
-  "meat": "Meat",
+  "meat": "肉",
   "@meat": {
     "description": "Label for meat section"
   },
-  "animalDerived": "Animal derived",
+  "animalDerived": "動物由来",
   "@animalDerived": {
     "description": "Label for animal derived section"
   },
-  "processedFood": "Processed food",
+  "processedFood": "加工食品",
   "@processedFood": {
     "description": "Label for processed food section"
   },
-  "pleaseSelectCategory": "Please select a category",
+  "pleaseSelectCategory": "カテゴリを選択してください",
   "@pleaseSelectCategory": {
     "description": "Error message when category is not selected"
   },
-  "pleaseEnterTemplateName": "Please enter a template name",
+  "pleaseEnterTemplateName": "テンプレート名を入力してください",
   "@pleaseEnterTemplateName": {
     "description": "Error message when template name is not entered"
   },
-  "gasDetection": "Gas detection",
+  "gasDetection": "ガス検知",
   "@gasDetection": {
     "description": "Label for gas detection section"
   },
-  "oxygen": "Oxygen (O₂)",
+  "oxygen": "酸素 (O₂)",
   "@oxygen": {
     "description": "Label for oxygen section"
   },
-  "carbonDioxide": "Carbon dioxide (CO₂)",
+  "carbonDioxide": "二酸化炭素 (CO₂)",
   "@carbonDioxide": {
     "description": "Label for carbon dioxide section"
   },
-  "ammoniaAndSulfurDioxide": "Ammonia and sulfur dioxide",
+  "ammoniaAndSulfurDioxide": "アンモニアと二酸化硫黄",
   "@ammoniaAndSulfurDioxide": {
     "description": "Label for ammonia and sulfur dioxide section"
   },
-  "discard": "Discard",
+  "discard": "破棄",
   "@discard": {
     "description": "Button label for discarding an action"
   },
-  "proccessedFood": "Processed food",
+  "proccessedFood": "加工食品",
   "@proccessedFood": {
     "description": "Label for processed food section"
   },
-  "meats": "Meats",
+  "meats": "肉",
   "@meats": {
     "description": "Label for meats section"
   },
-  "processedFoods": "Processed foods",
+  "processedFoods": "加工食品",
   "@processedFoods": {
     "description": "Label for processed foods section"
   },
-  "type": "Type",
+  "type": "タイプ",
   "@type": {
     "description": "Label for type section"
   },
-  "language": "Language",
+  "language": "言語",
   "@language": {
     "description": "Label for language section"
   },
-  "english": "English",
+  "english": "英語",
   "@english": {
     "description": "Label for English language"
   },
-  "spanish": "Spanish",
+  "spanish": "スペイン語",
   "@spanish": {
     "description": "Label for Spanish language"
   },
-  "japanese": "Japanese",
+  "japanese": "日本語　「べ－た」",
   "@japanese": {
 	"description": "Label for Japanese language"
   },
-  "selectLanguage": "Select language",
+  "selectLanguage": "言語を選択",
   "@selectLanguage": {
     "description": "Label for selecting language"
   },
-  "carbonDioxideMin": "Min carbon dioxide",
+  "carbonDioxideMin": "最低二酸化炭素",
   "@carbonDioxideMin": {
     "description": "Label for Min carbon dioxide section"
   },
-  "carbonDioxideMax": "Max carbon dioxide",
+  "carbonDioxideMax": "最高二酸化炭素",
   "@carbonDioxideMax": {
     "description": "Label for Max carbon dioxide section"
   },
-  "ammoniaAndSulfurDioxideMin": "Min ammonia and sulfur dioxide",
+  "ammoniaAndSulfurDioxideMin": "最低アンモニアと二酸化硫黄",
   "@ammoniaAndSulfurDioxideMin": {
     "description": "Label for Min ammonia and sulfur dioxide section"
   },
-  "ammoniaAndSulfurDioxideMax": "Max ammonia and sulfur dioxide",
+  "ammoniaAndSulfurDioxideMax": "最高アンモニアと二酸化硫黄",
   "@ammoniaAndSulfurDioxideMax": {
     "description": "Label for Max ammonia and sulfur dioxide section"
   },
-  "pleaseEnterOxygenMin": "Please enter a Min oxygen",
+  "pleaseEnterOxygenMin": "最低酸素を入力してください",
   "@pleaseEnterOxygenMin": {
     "description": "Error message when Min oxygen is not entered"
   },
-  "ethyleneMin": "Min ethylene",
+  "ethyleneMin": "最低エチレン",
   "@ethyleneMin": {
     "description": "Label for Min ethylene section"
   },
-  "ethyleneMax": "Max ethylene",
+  "ethyleneMax": "最高エチレン",
   "@ethyleneMax": {
     "description": "Label for Max ethylene section"
   },
-  "ammoniaMin": "Min ammonia",
+  "ammoniaMin": "最低アンモニア",
   "@ammoniaMin": {
     "description": "Label for Min ammonia section"
   },
-  "ammoniaMax": "Max ammonia",
+  "ammoniaMax": "最高アンモニア",
   "@ammoniaMax": {
     "description": "Label for Max ammonia section"
   },
-  "oxygenMin": "Min oxygen",
+  "oxygenMin": "最低酸素",
   "@oxygenMin": {
     "description": "Label for Min oxygen section"
   },
-  "oxygenMax": "Max oxygen",
+  "oxygenMax": "最高酸素",
   "@oxygenMax": {
     "description": "Label for Max oxygen section"
   },
-  "detectAllGases": "Detect all gases",
+  "detectAllGases": "すべてのガスを検知",
   "@detectAllGases": {
     "description": "Label for detecting all gases"
   },
-  "newTemplate": "New template",
+  "newTemplate": "新しいテンプレート",
   "@newTemplate": {
     "description": "Label for adding a new template"
   },
-  "humidity": "Humidity",
+  "humidity": "湿度",
   "@humidity": {
     "description": "Label for humidity section"
   },
-  "temperature": "Temperature",
+  "temperature": "温度",
   "@temperature": {
     "description": "Label for temperature section"
   },
-  "selectContainers": "Select containers",
+  "selectContainers": "コンテナーを選択",
   "@selectContainers": {
     "description": "Label for selecting containers"
   },
-  "containerSelectionModal": "This change will be recorded in this container’s historial.",
+  "containerSelectionModal": "この変更はこのコンテナの履歴に記録されます",
   "@containerSelectionModal": {
     "description": "Modal message for container selection"
   },
-  "newContainer": "New container",
+  "newContainer": "新しいコンテナ",
   "@newContainer": {
     "description": "Label for adding a new container"
   },
-  "containerName": "Container name",
+  "containerName": "コンテナー名",
   "@containerName": {
     "description": "Label for container name section"
   },
-  "code": "Code",
+  "code": "コード",
   "@code": {
     "description": "Label for code section"
   },
-  "pleaseEnterContainerName": "Please enter a container name",
+  "pleaseEnterContainerName": "コンテナー名を入力してください",
   "@pleaseEnterContainerName": {
     "description": "Error message when container name is not entered"
   },
-  "selectFacility": "Select facility",
+  "selectFacility": "施設を選択",
   "@selectFacility": {
     "description": "Label for selecting facility"
   },
-  "role": "Role",
+  "role": "役割",
   "@role": {
     "description": "Label for role section"
   },
-  "addWorker": "Add worker",
+  "addWorker": "労働者を追加",
   "@addWorker": {
     "description": "Button label for adding a worker"
   },
-  "workerList": "Worker List",
+  "workerList": "労働者リスト",
   "@workerList": {
     "description": "Label for Worker List"
   },
-  "addContainer": "Add container",
+  "addContainer": "コンテナーを追加",
   "@addContainer": {
     "description": "Button label for adding a container"
   },
-  "delete": "Delete",
+  "delete": "削除",
   "@delete": {
     "description": "Button label for deleting"
   },
-  "areYouSureDelete": "Are you sure you want to delete this?",
+  "areYouSureDelete": "削除してもよろしいですか？",
   "@areYouSureDelete": {
     "description": "Confirmation message for deleting"
   },
-  "confirmDelete": "Confirm delete",
+  "confirmDelete": "削除を確認",
   "@confirmDelete": {
     "description": "Button label for confirming deletion"
   },
-  "all": "All",
+  "all": "すべて",
   "@all": {
     "description": "Label for all section"
   },
-  "edit": "Edit",
+  "edit": "編集",
   "@edit": {
     "description": "Button label for editing"
   },
-  "workerDetails": "Worker details",
+  "workerDetails": "労働者の詳細",
   "@workerDetails": {
     "description": "Label for worker details section"
   },
-  "roleManagement": "Role management",
+  "roleManagement": "役割管理",
   "@roleManagement": {
     "description": "Label for role management section"
   },
-  "reassign": "Reassign",
+  "reassign": "再割り当て",
   "@reassign": {
     "description": "Button label for reassigning"
   },
-  "subscriptionDetails": "Subscription details",
+  "subscriptionDetails": "サブスクリプションの詳細",
   "@subscriptionDetails": {
     "description": "Label for subscription details section"
   },
-  "upgradePlan": "Upgrade plan",
+  "upgradePlan": "プランをアップグレード",
   "@upgradePlan": {
     "description": "Button label for upgrading plan"
   },
-  "paymentInformation": "Payment information",
+  "paymentInformation": "支払い情報",
   "@paymentInformation": {
     "description": "Label for payment information section"
   },
-  "cancelSubscription": "Cancel subscription",
+  "cancelSubscription": "サブスクリプションをキャンセル",
   "@cancelSubscription": {
     "description": "Button label for canceling subscription"
   },
-  "viewWorkers": "View workers",
+  "viewWorkers": "労働者を表示",
   "@viewWorkers": {
     "description": "Button label for viewing workers"
   },
-  "viewContainers": "View containers",
+  "viewContainers": "コンテナーを表示",
   "@viewContainers": {
     "description": "Button label for viewing containers"
   },
-  "lastSync": "Last sync",
+  "lastSync": "最終同期",
   "@lastSync": {
     "description": "Label for last sync section"
   },
-  "statusContainer": "Status",
+  "statusContainer": "ステータスセクションのラベル",
   "@statusContainer": {
     "description": "Label for status section"
   },
-  "passwordCannotBeEmpty": "Password cannot be empty",
+  "passwordCannotBeEmpty": "パスワードは空にできません",
   "@passwordCannotBeEmpty": {
     "description": "Error message when password is empty"
   },
-  "passwordMustBeAtLeast8Characters": "Password must be at least 8 characters",
+  "passwordMustBeAtLeast8Characters": "パスワードは少なくとも8文字である必要があります",
   "@passwordMustBeAtLeast8Characters": {
     "description": "Error message when password is less than 8 characters"
   },
-  "usernameCannotBeEmpty": "Username cannot be empty",
+  "usernameCannotBeEmpty": "ユーザー名は空にできません",
   "@usernameCannotBeEmpty": {
     "description": "Error message when username is empty"
   },
-  "requiredField": "This is a required field",
+  "requiredField": "必須フィールド",
   "@requiredField": {
 	"description": "Error message when field is required"
   },
-  "invalidEmail": "Invalid email",
+  "invalidEmail": "無効なメール",
   "@invalidEmail": {
 	"description": "Error message when email is invalid"
   },
-   "userInformation": "User Information",
+   "userInformation": "ユーザー情報",
   "@userInformation": {
     "description": "Label for user information section"
   },
-  "userInformationDetails": "User Information Details",
+  "userInformationDetails": "ユーザー情報の詳細",
   "@userInformationDetails": {
     "description": "Label for user information details section"
   },
-  "bankAccountOwner": "Bank Account Owner",
+  "bankAccountOwner": "銀行口座の所有者",
   "@bankAccountOwner": {
     "description": "Label for bank account owner in user information section"
   },
-  "editData": "Edit Data",
+  "editData": "データを編集",
   "@editData": {
     "description": "Label for editing data button"
   },
-  "changePassword": "Change Password",
+  "changePassword": "パスワードを変更",
   "@changePassword": {
     "description": "Label for changing password button"
   },
-  "accountInformation": "Account Information",
+  "accountInformation": "アカウント情報",
   "@accountInformation": {
     "description": "Label for account information section"
   },
-  "accountInformationDetails": "Account Information Details",
+  "accountInformationDetails": "アカウント情報の詳細",
   "@accountInformationDetails": {
     "description": "Label for account information details section"
   },
-  "businessName": "Business Name",
+  "businessName": "ビジネス名",
   "@businessName": {
     "description": "Label for business name in account information section"
   },
-  "subscriptionTier": "Subscription Tier",
+  "subscriptionTier": "サブスクリプション層",
   "@subscriptionTier": {
     "description": "Label for subscription tier in account information section"
   },
-  "manageSubscription": "Manage Subscription",
+  "manageSubscription": "サブスクリプションを管理",
   "@manageSubscription": {
     "description": "Label for manage subscription button"
   },
-  "accountDetails": "Account Details",
+  "accountDetails": "アカウント詳細",
   "@accountDetails": {
     "description": "Label for account details section"
   },
@@ -708,7 +708,7 @@
   "@lastKnownHealthStatus": {
     "description": "Label for last known health status"
   },
-  "containersNotFound": "You don't have any Dittobox containers yet",
+  "containersNotFound": "コンテナーなし",
   "@containersNotFound": {
     "description": "Error message when containers are not found"
   },
@@ -796,11 +796,11 @@
   "@failedToUpdatePrivileges": {
     "description": "Error message when failing to update privileges"
   },
-  "status": "Status",
+  "status": "ステータス",
   "@status": {
     "description": "Label for status"
   },
-  "nextPaymentDay": "Next payment day",
+  "nextPaymentDay": "次の支払日",
   "@nextPaymentDay": {
     "description": "Label for next payment day"
   },
@@ -1350,7 +1350,7 @@
     "@All": {
       "description": "Label for all"
     },
-    "Produce": "Produce",
+    "Produce": "生産物",
     "@Produce": {
       "description": "Label for produce"
     },
@@ -1384,88 +1384,48 @@
     "@failedtoAddWorker": {
       "description": "Error message when failing to add worker"
     },
-    "manager": "Manager",
+    "manager": "マネージャー",
     "@manager": {
       "description": "Label for manager"
     },
-    "facility": "Facility",
+    "facility": "施設",
     "@facility": {
       "description": "Label for facility"
     },
-    "currenTier": "Current Tier",
+    "currenTier": "現在のティア",
     "@currenTier": {
       "description": "Label for current tier"
     },
-    "active": "Active",
+    "active": "アクティブ",
     "@active": {
       "description": "Label for active"
     },
-    "expired" : "Expired",
+    "expired" : "期限切れ",
     "@expired": {
       "description": "Label for expired"
     },
-    "noLocation": "No location",
+    "noLocation": "なし",
     "@noLocation": {
       "description": "Label for no location"
     },
-    "noPoseefacility": "None",
+    "noPoseefacility": "なし",
     "@noPoseefacility": {
       "description": "Label for none"
     },
-    "firstName": "First Name",
+    "firstName": "名",
     "@firstName": {
       "description": "Label for first name"
     },
-    "lastName": "Last Name",
+    "lastName": "姓",
     "@lastName": {
       "description": "Label for last name"
     },
-    "noNotifications": "You don't have any notifications yet",
+    "noNotifications": "通知なし",
     "@noNotifications": {
       "description": "Error message when no notifications"
     },
-    "passwordChangeFailed": "Password change failed",
+    "passwordChangeFailed": "パスワードの変更に失敗しました",
     "@passwordChangeFailed": {
       "description": "Error message when password change fails"
-    },
-    "minutesAgo": "{minutes} minutes ago",
-    "@minutesAgo": {
-      "description": "Label for minutes ago",
-      "placeholders": {
-        "minutes": {
-          "type": "String",
-          "example": "5"
-        }
-      }
-    },
-    "hoursAgo": "{hours} hours ago",
-    "@hoursAgo": {
-      "description": "Label for hours ago",
-      "placeholders": {
-        "hours": {
-          "type": "String",
-          "example": "5"
-        }
-      }
-    },
-    "daysAgo": "{days} days ago",
-    "@daysAgo": {
-      "description": "Label for days ago",
-      "placeholders": {
-        "days": {
-          "type": "String",
-          "example": "5"
-        }
-      }
-    },
-    "secondsAgo": "{seconds} seconds ago",
-    "@secondsAgo": {
-      "description": "Label for seconds ago",
-      "placeholders": {
-        "seconds": {
-          "type": "String",
-          "example": "5"
-        }
-      }
     }
  }

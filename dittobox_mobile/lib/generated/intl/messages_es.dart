@@ -345,6 +345,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "invalidEmail":
             MessageLookupByLibrary.simpleMessage("Correo electrónico inválido"),
         "issuedAt": m21,
+        "japanese": MessageLookupByLibrary.simpleMessage("Japonés (Beta)"),
         "language": MessageLookupByLibrary.simpleMessage("Idioma"),
         "lastKnownHealthStatus": MessageLookupByLibrary.simpleMessage(
             "Último Estado de Salud Conocido"),

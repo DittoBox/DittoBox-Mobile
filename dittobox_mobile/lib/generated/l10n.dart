@@ -900,6 +900,16 @@ class S {
     );
   }
 
+  /// `Japanese`
+  String get japanese {
+    return Intl.message(
+      'Japanese',
+      name: 'japanese',
+      desc: 'Label for Japanese language',
+      args: [],
+    );
+  }
+
   /// `Select language`
   String get selectLanguage {
     return Intl.message(
@@ -3212,6 +3222,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
       Locale.fromSubtags(languageCode: 'es'),
+      Locale.fromSubtags(languageCode: 'ja'),
     ];
   }
 

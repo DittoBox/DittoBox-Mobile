@@ -344,6 +344,10 @@
   "@spanish": {
     "description": "Etiqueta para el idioma español"
   },
+  "japanese": "Japonés (Beta)",
+  "@japanese": {
+	"description": "Etiqueta para el idioma japonés"
+  },
   "selectledLanguage": "Idioma seleccionado",
   "@selectledLanguage": {
     "description": "Etiqueta para el idioma seleccionado"
