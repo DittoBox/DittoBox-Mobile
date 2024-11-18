@@ -1,8 +1,10 @@
 import 'package:dittobox_mobile/containers/presentation/widgets/add_container_sheet.dart';
 import 'package:dittobox_mobile/generated/l10n.dart';
+import 'package:dittobox_mobile/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:dittobox_mobile/goups/infrastructure/models/facilities.dart';
 import 'package:dittobox_mobile/goups/presentation/widgets/add_worker_sheet.dart';
+import 'package:dittobox_mobile/goups/infrastructure/data_sources/facilities_service.dart';
 
 void showFacilityDetailsBottomSheet(BuildContext context, Facility facility, VoidCallback onDelete) {
   showModalBottomSheet(
@@ -131,9 +133,26 @@ void showFacilityDetailsBottomSheet(BuildContext context, Facility facility, Voi
             ),
             const SizedBox(height: 8),
 
-            buildInfoRowWithIcon(Icons.notifications_none_outlined, S.of(context).pendingAlerts, 3),
+            FutureBuilder<int>(
+              future: FacilitiesService().countNotificationsByGroupId(facility.id),
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  print('Esperando respuesta de countNotificationsByGroupId');
+                  return buildInfoRowWithIcon(Icons.notifications_none_outlined, S.of(context).pendingAlerts, 0);
+                } else if (snapshot.hasError) {
+                  print('Error en countNotificationsByGroupId: ${snapshot.error}');
+                  return buildInfoRowWithIcon(Icons.notifications_none_outlined, S.of(context).pendingAlerts, 0);
+                } else {
+                  print('Notificaciones recibidas: ${snapshot.data}');
+                  return buildInfoRowWithIcon(Icons.notifications_none_outlined, S.of(context).pendingAlerts, snapshot.data ?? 0);
+                }
+              },
+            ),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                // Navegar a la vista de alertas del facility
+                Navigator.pushNamed(context, AppRoutes.notifications, arguments: facility);
+              },
               child: Text(S.of(context).checkAlerts),
             ),
             const SizedBox(height: 16),

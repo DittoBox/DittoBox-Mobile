@@ -2,7 +2,7 @@ import 'package:dittobox_mobile/generated/l10n.dart';
 import 'package:dittobox_mobile/routes/app_routes.dart';
 import 'package:dittobox_mobile/shared/presentation/widgets/custom_navigator_drawer.dart';
 import 'package:flutter/material.dart';
-import 'package:dittobox_mobile/shared/services/flutter_notification_services.dart';
+import 'package:dittobox_mobile/shared/infrastructure/data-sources/services/flutter_notification_services.dart';
 import 'package:intl/intl.dart';
 
 class NotificationScreen extends StatefulWidget {
@@ -45,7 +45,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
       ),
       drawer: const CustomNavigationDrawer(currentRoute: AppRoutes.notifications),
       body: _isLoading
-          ? Center(child: CircularProgressIndicator()) // Mostrar indicador de progreso
+          ? const Center(child: CircularProgressIndicator()) // Mostrar indicador de progreso
           : ListView.builder(
               itemCount: notifications.length,
               itemBuilder: (context, index) {

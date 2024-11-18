@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:dittobox_mobile/goups/infrastructure/models/facilities.dart';
 import 'package:dittobox_mobile/goups/infrastructure/models/location.dart';
-import 'package:dittobox_mobile/shared/services/base_service.dart';
+import 'package:dittobox_mobile/shared/infrastructure/data-sources/services/base_service.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -22,7 +22,6 @@ class FacilitiesService extends BaseService {
         final response = await http.get(Uri.parse('$baseUrl/account/$accountId/groups'));
         if (response.statusCode == 200) {
           final List<dynamic> data = json.decode(response.body);
-          print(data); // Agrega esta línea para depurar
           return data.map((e) => Facility.fromJson(e)).toList();
         } else {
           throw Exception('Failed to load facilities');
@@ -89,5 +88,27 @@ class FacilitiesService extends BaseService {
       print('User registered successfully: ${response.body}'); // Agrega esta línea para confirmar éxito
     }
   }
-}
 
+    Future<int> countNotificationsByGroupId(int groupid) async {
+      try {
+        final url = '$baseUrl/notification/group/$groupid/amount';
+        print('Requesting URL: $url'); // Depuración
+        final response = await http.get(Uri.parse(url));
+
+        print('Response status: ${response.statusCode}'); // Depuración
+        print('Response body: ${response.body}'); // Depuración
+
+        if (response.statusCode == 200) {
+          final int notificationCount = int.parse(response.body);
+          print('Group ID: $groupid');
+          print('Notification count: $notificationCount'); // Depuración
+          return notificationCount;
+        } else {
+          throw Exception('Failed to load notifications: ${response.body}');
+        }
+      } catch (e) {
+        print('Error occurred: $e');
+        throw Exception('Failed to load notifications');
+      }
+    }
+}
