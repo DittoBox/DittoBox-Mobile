@@ -153,4 +153,25 @@ Future<int> loginUser(String email, String password) async {
     );
     await prefs.clear();
   }
+    Future<int> changePassword(String newPassword) async {
+    final prefs = SharedPreferencesAsync();
+    final userId = await prefs.getInt('userId') ?? 0;
+
+    final url = '$baseUrl/user/change-password';
+    final response = await http.put(
+      Uri.parse(url),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: jsonEncode({
+        'userId': userId,
+        'newPassword': newPassword,
+      }),
+    );
+    print('Response status: ${response.statusCode}');
+
+    return response.statusCode;
+  }
+
+
 }

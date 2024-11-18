@@ -102,13 +102,6 @@ void showFacilityDetailsBottomSheet(BuildContext context, Facility facility, Voi
                   },
                   child: Text(S.of(context).addContainers),
                 ),
-                TextButton(
-                  onPressed: () {
-                    // Navegar a la vista de contenedores del facility
-                    Navigator.pushNamed(context, '/containers', arguments: facility);
-                  },
-                  child: Text(S.of(context).viewContainers),
-                ),
               ],
             ),
             const SizedBox(height: 8),
@@ -143,7 +136,7 @@ void showFacilityDetailsBottomSheet(BuildContext context, Facility facility, Voi
                   print('Error en countNotificationsByGroupId: ${snapshot.error}');
                   return buildInfoRowWithIcon(Icons.notifications_none_outlined, S.of(context).pendingAlerts, 0);
                 } else {
-                  print('Notificaciones recibidas: ${snapshot.data}');
+                  print('Facility Details - Notificaciones recibidas: ${snapshot.data}');
                   return buildInfoRowWithIcon(Icons.notifications_none_outlined, S.of(context).pendingAlerts, snapshot.data ?? 0);
                 }
               },
@@ -156,29 +149,6 @@ void showFacilityDetailsBottomSheet(BuildContext context, Facility facility, Voi
               child: Text(S.of(context).checkAlerts),
             ),
             const SizedBox(height: 16),
-
-            // Botones de editar y eliminar
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end, // Alinea los botones al extremo derecho
-              children: [
-                FilledButton(
-                  onPressed: () {
-                    // Lógica para editar la instalación
-                  },
-                  child: Text(S.of(context).edit),
-                ),
-                const SizedBox(width: 8), // Espacio entre los botones
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pop(); // Cierra el BottomSheet
-                    onDelete(); // Llama a la función de eliminación
-                  },
-                  child: Text(
-                    S.of(context).delete,
-                  ),
-                ),
-              ],
-            ),
           ],
         ),
       );

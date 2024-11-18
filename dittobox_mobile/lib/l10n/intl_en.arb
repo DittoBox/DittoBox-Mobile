@@ -612,7 +612,7 @@
   "@resetPassword": {
     "description": "Label for reset password button"
   },
-  "backToLogin": "Back to login",
+  "backToLogin": "Back",
   "@backToLogin": {
     "description": "Label for back to login button"
   },
@@ -1407,5 +1407,21 @@
     "noPoseefacility": "None",
     "@noPoseefacility": {
       "description": "Label for none"
+    },
+    "firstName": "First Name",
+    "@firstName": {
+      "description": "Label for first name"
+    },
+    "lastName": "Last Name",
+    "@lastName": {
+      "description": "Label for last name"
+    },
+    "noNotifications": "You don't have any notifications yet",
+    "@noNotifications": {
+      "description": "Error message when no notifications"
+    },
+    "passwordChangeFailed": "Password change failed",
+    "@passwordChangeFailed": {
+      "description": "Error message when password change fails"
     }
  }

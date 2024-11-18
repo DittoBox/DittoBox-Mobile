@@ -196,25 +196,7 @@ class PaymentInformation extends StatelessWidget {
         _buildInfoRow(S.of(context).nextPaymentDay, nextPaymentDay),
         _buildInfoRow(S.of(context).identificationNumber, identificationNumber),
         _buildInfoRow(S.of(context).bankAccountOwner, bankAccountOwner),
-        const SizedBox(height: 16),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            FilledButton(
-              onPressed: () {
-                // Lógica para actualizar la información de pago
-              },
-              child: Text(S.of(context).updatePaymentInformation),
-            ),
-            const SizedBox(width: 8),
-            TextButton(
-              onPressed: () {
-                // Lógica para cancelar la suscripción
-              },
-              child: Text(S.of(context).cancelSubscription),
-            ),
-          ],
-        ),
+        const SizedBox(height: 16)
       ],
     );
   }

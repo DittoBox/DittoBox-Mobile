@@ -94,8 +94,6 @@ class _FacilitiesListState extends State<FacilitiesList> {
     }
   }
 
-
-
   void _filterFacilities() {
     final query = _searchController.text.toLowerCase();
     setState(() {
@@ -219,9 +217,6 @@ class _FacilitiesListState extends State<FacilitiesList> {
   }
 }
 
-
-
-
 // Facilities Card Widget
 class FacilitiesCard extends StatefulWidget {
   final Facility facility;
@@ -241,7 +236,9 @@ class _FacilitiesCardState extends State<FacilitiesCard> {
     super.initState();
     _notificationCount = FacilitiesService().countNotificationsByGroupId(widget.facility.id);
     print('Facility ID: ${widget.facility.id}');
-    print('Notification count: $_notificationCount');
+    _notificationCount.then((count) {
+      print('Facilities List - Notificaciones recibidas: $count');
+    });
   }
 
   IconData getFacilityIcon(String type) {

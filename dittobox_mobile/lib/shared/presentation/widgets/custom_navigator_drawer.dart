@@ -207,48 +207,50 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
       ),
     ];
   }
-
-  List<Widget> _buildDrawerItemsNoPrivileges() {
-    return [
-      Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Text(
-          S.of(context).menu,
-          style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-        ),
+List<Widget> _buildDrawerItemsNoPrivileges() {
+  return [
+    Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Text(
+        S.of(context).menu,
+        style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
       ),
-      NavigationDrawerDestination(
-        icon: const Icon(Icons.widgets_outlined),
-        label: Text(S.of(context).containers),
+    ),
+    NavigationDrawerDestination(
+      icon: const Icon(Icons.widgets_outlined),
+      label: Text(S.of(context).containers),
+    ),
+    NavigationDrawerDestination(
+      icon: const Icon(Icons.text_snippet_outlined),
+      label: Text(S.of(context).templates),
+    ),
+    const Divider(),
+    Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Text(
+        S.of(context).settings,
+        style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
       ),
-      NavigationDrawerDestination(
-        icon: const Icon(Icons.text_snippet_outlined),
-        label: Text(S.of(context).templates),
-      ),
-      const Divider(),
-      Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Text(
-          S.of(context).settings,
-          style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-        ),
-      ),
-      NavigationDrawerDestination(
-        icon: const Icon(Icons.notifications_none),
-        label: Text(S.of(context).notifications),
-      ),
-      NavigationDrawerDestination(
-        icon: const Icon(Icons.language),
-        label: Text(S.of(context).language),
-      ),
-      const Divider(),
-      NavigationDrawerDestination(
-        icon: const Icon(Icons.logout),
-        label: Text(S.of(context).logOut),
-      ),
-    ];
-  }
-
+    ),
+    NavigationDrawerDestination(
+      icon: const Icon(Icons.account_circle),
+      label: Text(S.of(context).account),
+    ),
+    NavigationDrawerDestination(
+      icon: const Icon(Icons.notifications_none),
+      label: Text(S.of(context).notifications),
+    ),
+    NavigationDrawerDestination(
+      icon: const Icon(Icons.language),
+      label: Text(S.of(context).language),
+    ),
+    const Divider(),
+    NavigationDrawerDestination(
+      icon: const Icon(Icons.logout),
+      label: Text(S.of(context).logOut),
+    ),
+  ];
+}
   int _getSelectedIndex() {
     int index = 0;
     if (hasGroupManagementPrivilege || hasWorkerManagementPrivilege || hasAccountManagementPrivilege) {
@@ -271,12 +273,10 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
       return index;
     }
     index++;
-    if (hasAccountManagementPrivilege) {
-      if (widget.currentRoute == AppRoutes.accountDetails) {
-        return index;
-      }
-      index++;
+    if (widget.currentRoute == AppRoutes.accountDetails) {
+      return index;
     }
+    index++;
     if (hasGroupManagementPrivilege) {
       if (widget.currentRoute == AppRoutes.subscriptionDetails) {
         return index;
@@ -293,28 +293,26 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
     return -1;
   }
 
-  String _getRouteFromIndex(int index) {
-    List<String> routes = [];
-    if (hasGroupManagementPrivilege || hasWorkerManagementPrivilege || hasAccountManagementPrivilege) {
-      routes.add(AppRoutes.facilities);
-    }
-    routes.add(AppRoutes.containers);
-    if (hasWorkerManagementPrivilege) {
-      routes.add(AppRoutes.workerlist);
-    }
-    routes.add(AppRoutes.templates);
-    if (hasAccountManagementPrivilege) {
+    String _getRouteFromIndex(int index) {
+      List<String> routes = [];
+      if (hasGroupManagementPrivilege || hasWorkerManagementPrivilege || hasAccountManagementPrivilege) {
+        routes.add(AppRoutes.facilities);
+      }
+      routes.add(AppRoutes.containers);
+      if (hasWorkerManagementPrivilege) {
+        routes.add(AppRoutes.workerlist);
+      }
+      routes.add(AppRoutes.templates);
       routes.add(AppRoutes.accountDetails);
+      if (hasGroupManagementPrivilege) {
+        routes.add(AppRoutes.subscriptionDetails);
+      }
+      routes.add(AppRoutes.notifications);
+      routes.add(AppRoutes.languageSelection);
+      routes.add(AppRoutes.login); // Ruta para logout
+    
+      return routes[index];
     }
-    if (hasGroupManagementPrivilege) {
-      routes.add(AppRoutes.subscriptionDetails);
-    }
-    routes.add(AppRoutes.notifications);
-    routes.add(AppRoutes.languageSelection);
-    routes.add(AppRoutes.login); // Ruta para logout
-
-    return routes[index];
-  }
 
   void _navigateTo(String route) {
     if (route == AppRoutes.languageSelection) {

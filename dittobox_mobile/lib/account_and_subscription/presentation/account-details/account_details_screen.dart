@@ -15,12 +15,13 @@ class AccountDetailsScreen extends StatefulWidget {
 }
 
 class _AccountDetailsScreenState extends State<AccountDetailsScreen> {
-  String _businessName = '';
+  String _businessName = '';  
   String identificationNumber = '';
   String _subscriptionTier = '';
   String _username = '';
   String _name = '';
   bool _isLoading = true;
+  String _nameUser = '';
 
   @override
   void initState() {
@@ -34,6 +35,7 @@ class _AccountDetailsScreenState extends State<AccountDetailsScreen> {
       _loadUserDetails(),
       _getProfileDetails(),
       _loadSubscriptionDetails(),
+      getProfileDetailsAccount(),
     ]);
     setState(() {
       _isLoading = false;
@@ -51,11 +53,32 @@ class _AccountDetailsScreenState extends State<AccountDetailsScreen> {
   }
 
   Future<void> _getProfileDetails() async {
-    final profileDetails = await ProfileService().getProfileDetails();
-    if (profileDetails != null) {
-      setState(() {
-        _name = '${profileDetails.firstName} ${profileDetails.lastName}';
-      });
+    try {
+      final profileDetails = await ProfileService().getProfileDetails();
+      if (profileDetails != null) {
+        setState(() {
+          _name = '${profileDetails.firstName} ${profileDetails.lastName}';
+        });
+      } else {
+        print('Profile details are null');
+      }
+      print('Name: $_name');
+    } catch (e) {
+      print('Error: $e');
+    }
+  }
+
+   Future<void> getProfileDetailsAccount() async {
+    try {
+      final profileAccountDetails = await ProfileService().getProfileDetailsofAccount();
+      if (profileAccountDetails != null && mounted) {
+        setState(() {
+          _nameUser = '${profileAccountDetails.firstName} ${profileAccountDetails.lastName}';
+        });
+        print('Name User: $_nameUser');
+      }
+    } catch (e) {
+      print('Error fetching profile details: $e');
     }
   }
 
@@ -97,7 +120,7 @@ class _AccountDetailsScreenState extends State<AccountDetailsScreen> {
                   AccountInformation(
                     businessName: _businessName,
                     subscriptionTier: _subscriptionTier,
-                    identificationNumber: identificationNumber,
+                    identificationNumber: identificationNumber, bankAccountOwner: _nameUser,
                   ),
                 ],
               ),
@@ -116,6 +139,7 @@ class UserInformation extends StatelessWidget {
     required this.username,
     required this.name,
     required this.subscriptionTier,
+
   });
 
   @override
@@ -139,23 +163,16 @@ class UserInformation extends StatelessWidget {
         ),
         const SizedBox(height: 24),
         _buildInfoRow(S.of(context).username, username),
-        _buildInfoRow(S.of(context).name, subscriptionTier),
-        _buildInfoRow(S.of(context).identificationNumber, '20124578963'),
-        _buildInfoRow(S.of(context).bankAccountOwner, name),
+        _buildInfoRow(S.of(context).name, name),
         const SizedBox(height: 16),
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            TextButton(
-              onPressed: () {
-                // Lógica para editar datos
-              },
-              child: Text(S.of(context).editData),
-            ),
             const SizedBox(width: 8),
             TextButton(
               onPressed: () {
-                // Lógica para cambiar contraseña
+                // Lógica para cambiar la contraseña
+                 Navigator.of(context).pushNamed(AppRoutes.setNewPassword);
               },
               child: Text(S.of(context).changePassword),
             ),
@@ -184,56 +201,73 @@ class UserInformation extends StatelessWidget {
     );
   }
 }
-
 class AccountInformation extends StatelessWidget {
   final String businessName;
   final String subscriptionTier;
   final String identificationNumber;
+  final String bankAccountOwner;
 
   const AccountInformation({
     super.key,
     required this.businessName,
     required this.subscriptionTier,
     required this.identificationNumber,
+    required this.bankAccountOwner,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
+    return FutureBuilder<int?>(
+      future: _getAccountId(),
+      builder: (context, snapshot) {
+        if (!snapshot.hasData || snapshot.data == null || snapshot.data == -1) {
+          return Container(); // Retorna un contenedor vacío si no hay accountId
+        }
+
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Row(
+              children: [
+                Text(
+                  S.of(context).accountInformation,
+                  style: const TextStyle(fontSize: 16),
+                ),
+                const Icon(Icons.chevron_right_outlined),
+              ],
+            ),
+            const SizedBox(height: 16),
             Text(
-              S.of(context).accountInformation,
-              style: const TextStyle(fontSize: 16),
+              S.of(context).accountInformationDetails,
+              style: const TextStyle(fontSize: 22),
             ),
-            const Icon(Icons.chevron_right_outlined),
-          ],
-        ),
-        const SizedBox(height: 16),
-        Text(
-          S.of(context).accountInformationDetails,
-          style: const TextStyle(fontSize: 22),
-        ),
-        const SizedBox(height: 24),
-        _buildInfoRow(S.of(context).businessName, businessName),
-        _buildInfoRow(S.of(context).subscriptionTier, subscriptionTier),
-        _buildInfoRow(S.of(context).identificationNumber, identificationNumber),
-        const SizedBox(height: 16),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            FilledButton(
-              onPressed: () {
-                // Lógica para gestionar la suscripción
-              },
-              child: Text(S.of(context).manageSubscription),
+            const SizedBox(height: 24),
+            _buildInfoRow(S.of(context).businessName, businessName),
+            _buildInfoRow(S.of(context).subscriptionTier, subscriptionTier),
+            _buildInfoRow(S.of(context).identificationNumber, identificationNumber),
+            _buildInfoRow(S.of(context).bankAccountOwner, bankAccountOwner),
+            const SizedBox(height: 16),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                FilledButton(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(AppRoutes.subscriptionDetails);
+                  },
+                  child: Text(S.of(context).manageSubscription),
+                ),
+              ],
             ),
           ],
-        ),
-      ],
+        );
+      },
     );
+  }
+
+  Future<int?> _getAccountId() async {
+    final prefs = SharedPreferencesAsync();
+    final accountId = await prefs.getInt('accountId');
+    return accountId;
   }
 
   static Widget _buildInfoRow(String title, String value) {

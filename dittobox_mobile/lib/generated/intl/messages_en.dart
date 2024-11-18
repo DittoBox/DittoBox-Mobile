@@ -152,7 +152,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Assign template?"),
         "automaticTemplates": MessageLookupByLibrary.simpleMessage(
             "Automatic templates to adjust temperature and humidity according to the type of supply."),
-        "backToLogin": MessageLookupByLibrary.simpleMessage("Back to login"),
+        "backToLogin": MessageLookupByLibrary.simpleMessage("Back"),
         "bankAccountOwner":
             MessageLookupByLibrary.simpleMessage("Bank Account Owner"),
         "businessName": MessageLookupByLibrary.simpleMessage("Business Name"),
@@ -288,6 +288,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Failed to add worker"),
         "fasterTechnicalSupport": MessageLookupByLibrary.simpleMessage(
             "Faster and more personalized technical support."),
+        "firstName": MessageLookupByLibrary.simpleMessage("First Name"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot your password?"),
         "forgotPasswordTitle":
@@ -324,6 +325,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "language": MessageLookupByLibrary.simpleMessage("Language"),
         "lastKnownHealthStatus":
             MessageLookupByLibrary.simpleMessage("Last known health status"),
+        "lastName": MessageLookupByLibrary.simpleMessage("Last Name"),
         "lastSync": MessageLookupByLibrary.simpleMessage("Last sync"),
         "location": MessageLookupByLibrary.simpleMessage("Location"),
         "logOut": MessageLookupByLibrary.simpleMessage("Log out"),
@@ -352,6 +354,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noFacilitiesFound": MessageLookupByLibrary.simpleMessage(
             "You don\'t have any facilities yet, please add one"),
         "noLocation": MessageLookupByLibrary.simpleMessage("No location"),
+        "noNotifications": MessageLookupByLibrary.simpleMessage(
+            "You don\'t have any notifications yet"),
         "noPoseefacility": MessageLookupByLibrary.simpleMessage("None"),
         "noTemplateAssigned":
             MessageLookupByLibrary.simpleMessage("No template assigned"),
@@ -367,6 +371,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "passwordCannotBeEmpty":
             MessageLookupByLibrary.simpleMessage("Password cannot be empty"),
+        "passwordChangeFailed":
+            MessageLookupByLibrary.simpleMessage("Password change failed"),
         "passwordLength": MessageLookupByLibrary.simpleMessage(
             "Password must be at least 8 characters long"),
         "passwordMustBeAtLeast8Characters":

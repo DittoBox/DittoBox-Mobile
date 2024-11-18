@@ -1,4 +1,6 @@
+import 'package:dittobox_mobile/account_and_subscription/infrastructure/data_sources/account_service.dart';
 import 'package:dittobox_mobile/generated/l10n.dart';
+import 'package:dittobox_mobile/user_and_profile/infrastructure/data_sources/user_service.dart';
 import 'package:flutter/material.dart';
 
 class SetNewPasswordScreen extends StatefulWidget {
@@ -7,11 +9,11 @@ class SetNewPasswordScreen extends StatefulWidget {
   @override
   _SetNewPasswordScreenState createState() => _SetNewPasswordScreenState();
 }
-
 class _SetNewPasswordScreenState extends State<SetNewPasswordScreen> {
   final _formKey = GlobalKey<FormState>();
   final _newPasswordController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
+  final _userService = UserService();
 
   @override
   void dispose() {
@@ -73,10 +75,17 @@ class _SetNewPasswordScreenState extends State<SetNewPasswordScreen> {
                 ),
                 const SizedBox(height: 24),
                 FilledButton(
-                  onPressed: () {
+                  onPressed: () async {
                     if (_formKey.currentState?.validate() ?? false) {
-                      // Handle password reset completion logic
-                      Navigator.pushNamed(context, '/login');
+                      final statusCode = await _userService.changePassword(_newPasswordController.text);
+                      if (statusCode == 200) {
+                        Navigator.pushNamed(context, '/login');
+                      } else {
+                        // Manejar error
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text(S.of(context).passwordChangeFailed)),
+                        );
+                      }
                     }
                   },
                   child: Text(S.of(context).setNewPassword),
