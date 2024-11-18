@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:dittobox_mobile/user_and_profile/infrastructure/models/profile_model.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:dittobox_mobile/shared/services/base_service.dart';
+import 'package:dittobox_mobile/shared/infrastructure/data-sources/services/base_service.dart';
 
 class ProfileService extends BaseService {
   Future<Profile?> getProfileDetails() async {

@@ -250,8 +250,6 @@ class _ContainerListScreenState extends State<ContainerListScreen> with SingleTi
     );
   }
 }
-
-// Container Card Widget
 class ContainerCard extends StatelessWidget {
   final model.Container container;
   final VoidCallback onTap;
@@ -277,33 +275,9 @@ class ContainerCard extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 8),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      const Icon(Icons.thermostat_outlined, size: 20),
-                      const SizedBox(width: 8),
-                      Text(S.of(context).temperature),
-                    ],
-                  ),
-                  Text(container.temperature?.toString() ?? '--'),
-                ],
-              ),
+              _buildInfoRow(Icons.thermostat_outlined, S.of(context).temperature, container.temperature, context),
               const SizedBox(height: 8),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      const Icon(Icons.water_drop_outlined, size: 20),
-                      const SizedBox(width: 8),
-                      Text(S.of(context).humidity),
-                    ],
-                  ),
-                  Text(container.humidity?.toString() ?? '--'),
-                ],
-              ),
+              _buildInfoRow(Icons.water_drop_outlined, S.of(context).humidity, container.humidity, context),
               const SizedBox(height: 8),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -322,6 +296,41 @@ class ContainerCard extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+
+  Widget _buildInfoRow(IconData icon, String label, dynamic value, BuildContext context) {
+    final theme = Theme.of(context);
+    final textTheme = theme.textTheme;
+    final numberFormat = NumberFormat('##0.00'); // Formato para dos decimales
+
+    String formattedValue;
+    if (value == null) {
+      formattedValue = '--';
+    } else if (value is num) {
+      if (label == S.of(context).temperature) {
+        formattedValue = '${numberFormat.format(value)} °C';
+      } else if (label == S.of(context).humidity) {
+        formattedValue = '${numberFormat.format(value)} %';
+      } else {
+        formattedValue = value.toString();
+      }
+    } else {
+      formattedValue = value.toString();
+    }
+
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Row(
+          children: [
+            Icon(icon, size: 20),
+            const SizedBox(width: 8),
+            Text(label, style: textTheme.bodyMedium),
+          ],
+        ),
+        Text(formattedValue, style: textTheme.bodyMedium),
+      ],
     );
   }
 

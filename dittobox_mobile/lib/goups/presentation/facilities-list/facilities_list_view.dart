@@ -94,6 +94,8 @@ class _FacilitiesListState extends State<FacilitiesList> {
     }
   }
 
+
+
   void _filterFacilities() {
     final query = _searchController.text.toLowerCase();
     setState(() {
@@ -185,7 +187,7 @@ class _FacilitiesListState extends State<FacilitiesList> {
           ),
           Expanded(
             child: _isLoading
-                ? Center(child: CircularProgressIndicator()) // Mostrar indicador de progreso
+                ? const Center(child: CircularProgressIndicator()) // Mostrar indicador de progreso
                 : _filteredFacilities.isEmpty
                     ? Center(
                         child: Text(
@@ -217,19 +219,31 @@ class _FacilitiesListState extends State<FacilitiesList> {
   }
 }
 
-// Facility Card Widget
+
+
+
+// Facilities Card Widget
 class FacilitiesCard extends StatefulWidget {
   final Facility facility;
   final VoidCallback onDelete;
 
-  const FacilitiesCard(
-      {super.key, required this.facility, required this.onDelete});
+  const FacilitiesCard({super.key, required this.facility, required this.onDelete});
 
   @override
   State<FacilitiesCard> createState() => _FacilitiesCardState();
 }
 
 class _FacilitiesCardState extends State<FacilitiesCard> {
+  late Future<int> _notificationCount;
+
+  @override
+  void initState() {
+    super.initState();
+    _notificationCount = FacilitiesService().countNotificationsByGroupId(widget.facility.id);
+    print('Facility ID: ${widget.facility.id}');
+    print('Notification count: $_notificationCount');
+  }
+
   IconData getFacilityIcon(String type) {
     switch (type) {
       case 'restaurant':
@@ -245,14 +259,11 @@ class _FacilitiesCardState extends State<FacilitiesCard> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        showFacilityDetailsBottomSheet(
-            context, widget.facility, widget.onDelete); // Usa el nuevo archivo
+        showFacilityDetailsBottomSheet(context, widget.facility, widget.onDelete);
       },
       child: Center(
         child: Card.outlined(
-          margin: const EdgeInsets.symmetric(
-              vertical: 10.0,
-              horizontal: 10.0), // Ajusta el margen horizontal a 0
+          margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
@@ -274,9 +285,7 @@ class _FacilitiesCardState extends State<FacilitiesCard> {
                         Text(widget.facility.location.city ?? ''),
                       ],
                     ),
-                    Icon(getFacilityIcon(widget.facility.facilityType == 0
-                        ? 'restaurant'
-                        : 'warehouse')), // Icono dinámico
+                    Icon(getFacilityIcon(widget.facility.facilityType == 0 ? 'restaurant' : 'warehouse')),
                   ],
                 ),
                 const SizedBox(height: 16),
@@ -285,32 +294,36 @@ class _FacilitiesCardState extends State<FacilitiesCard> {
                   children: [
                     Padding(
                       padding: const EdgeInsets.all(4.0),
-                      child: buildInfoRowWithIcon(Icons.widgets_outlined,
-                          S.of(context).containers, widget.facility.containerCount),
+                      child: buildInfoRowWithIcon(Icons.widgets_outlined, S.of(context).containers, widget.facility.containerCount),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(4.0),
-                      child: buildInfoRowWithIcon(
-                          Icons.notifications_none_outlined,
-                          S.of(context).alerts,
-                          3),
+                      child: FutureBuilder<int>(
+                        future: _notificationCount,
+                        builder: (context, snapshot) {
+                          if (snapshot.connectionState == ConnectionState.waiting) {
+                            return buildInfoRowWithIcon(Icons.notifications_none_outlined, S.of(context).alerts, 0);
+                          } else if (snapshot.hasError) {
+                            return buildInfoRowWithIcon(Icons.notifications_none_outlined, S.of(context).alerts, 0);
+                          } else {
+                            return buildInfoRowWithIcon(Icons.notifications_none_outlined, S.of(context).alerts, snapshot.data ?? 0);
+                          }
+                        },
+                      ),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(4.0),
-                      child: buildInfoRowWithIcon(Icons.person_2_outlined,
-                          S.of(context).workers, widget.facility.profileCount),
+                      child: buildInfoRowWithIcon(Icons.person_2_outlined, S.of(context).workers, widget.facility.profileCount),
                     ),
                   ],
                 ),
                 const SizedBox(height: 20),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment
-                      .end, // Mueve el botón al extremo derecho
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     OutlinedButton(
                       onPressed: () {
-                        showFacilityDetailsBottomSheet(context, widget.facility,
-                            widget.onDelete); // Usa el nuevo archivo
+                        showFacilityDetailsBottomSheet(context, widget.facility, widget.onDelete);
                       },
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
@@ -332,8 +345,7 @@ class _FacilitiesCardState extends State<FacilitiesCard> {
 
 Widget buildInfoRowWithIcon(IconData icon, String label, int value) {
   return Row(
-    mainAxisAlignment:
-        MainAxisAlignment.spaceBetween, // Alinea los elementos a los extremos
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: [
       Row(
         children: [
@@ -342,7 +354,7 @@ Widget buildInfoRowWithIcon(IconData icon, String label, int value) {
           Text(label),
         ],
       ),
-      Text('$value'), // Mueve el valor al extremo derecho
+      Text('$value'),
     ],
   );
 }

@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'dart:developer';
-import 'package:dittobox_mobile/shared/services/base_service.dart';
+import 'package:dittobox_mobile/shared/infrastructure/data-sources/services/base_service.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 

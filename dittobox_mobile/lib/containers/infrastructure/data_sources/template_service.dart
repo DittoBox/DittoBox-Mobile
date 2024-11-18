@@ -1,5 +1,5 @@
 import 'package:dittobox_mobile/containers/infrastructure/models/template.dart';
-import 'package:dittobox_mobile/shared/services/base_service.dart';
+import 'package:dittobox_mobile/shared/infrastructure/data-sources/services/base_service.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
