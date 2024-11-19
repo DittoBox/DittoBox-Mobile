@@ -3,7 +3,7 @@ import 'package:dittobox_mobile/generated/l10n.dart';
 import 'package:dittobox_mobile/goups/infrastructure/data_sources/facilities_service.dart';
 import 'package:flutter/material.dart';
 import 'package:dittobox_mobile/goups/infrastructure/models/facilities.dart';
-import 'package:pin_code_fields/pin_code_fields.dart'; // Importa el paquete
+import 'package:flutter/services.dart'; // Importa el paquete
 
 class AddContainerSheet extends StatefulWidget {
   final Facility facility; // Añadir el parámetro facility
@@ -51,14 +51,17 @@ class _AddContainerSheetState extends State<AddContainerSheet> {
   }
 
   Future<void> _createContainer() async {
+    print('Iniciando creación de contenedor');
     try {
       final selectedFacilityObj = facilities.firstWhere((facility) => facility.id == selectedFacilityId);
+      print('Facility seleccionada: ${selectedFacilityObj.id}');
       await _containerService.createContainer(
         _codeController.text, // Usar el código como deviceId
         _containerNameController.text,
         _descriptionController.text,
         selectedFacilityObj.id,
       );
+      print('Contenedor creado exitosamente');
       // ignore: use_build_context_synchronously
       Navigator.pop(context);
       // ignore: use_build_context_synchronously
@@ -69,8 +72,7 @@ class _AddContainerSheetState extends State<AddContainerSheet> {
         ),
       );
     } catch (e) {
-      // Manejar errores
-      print('Error creating container: $e');
+      print('Error creando contenedor: $e');
     }
   }
 
@@ -155,31 +157,16 @@ class _AddContainerSheetState extends State<AddContainerSheet> {
               },
             ),
             const SizedBox(height: 26),
-            // Separador para el código
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                S.of(context).code,
-                style: const TextStyle(
-                  fontSize: 16,
-                ),
-              ),
-            ),
-            const SizedBox(height: 8),
-            PinCodeTextField(
-              appContext: context,
-              length: 5, // Longitud del código
+            TextFormField(
               controller: _codeController,
-              onChanged: (value) {
-                // Manejar cambios
-              },
-              pinTheme: PinTheme(
-                shape: PinCodeFieldShape.box,
-                borderRadius: BorderRadius.circular(5),
-                fieldHeight: 50,
-                fieldWidth: 40,
-                activeFillColor: Colors.white,
+              decoration: InputDecoration(
+                labelText: S.of(context).code,
+                border: const OutlineInputBorder(),
               ),
+              inputFormatters: [
+                FilteringTextInputFormatter.allow(RegExp(r'[a-zA-Z0-9]')), // Permitir solo caracteres alfanuméricos
+                LengthLimitingTextInputFormatter(10), // Limitar a 9 caracteres
+              ],
             ),
             const SizedBox(height: 26),
             isLoading
@@ -214,7 +201,10 @@ class _AddContainerSheetState extends State<AddContainerSheet> {
                 ),
                 const SizedBox(width: 8),
                 FilledButton(
-                  onPressed: _createContainer,
+                  onPressed: () {
+                    print('Botón de guardar presionado');
+                    _createContainer();
+                  },
                   child: Text(S.of(context).save),
                 ),
               ],
