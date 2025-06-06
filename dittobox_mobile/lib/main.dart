@@ -1,8 +1,8 @@
 import 'dart:ui';
-import 'package:dittobox_mobile/firebase_options.dart';
+// import 'package:dittobox_mobile/firebase_options.dart';
 import 'package:dittobox_mobile/generated/l10n.dart';
 import 'package:dittobox_mobile/routes/app_routes.dart';
-import 'package:dittobox_mobile/shared/infrastructure/data-sources/services/firebase_api.dart';
+// import 'package:dittobox_mobile/shared/infrastructure/data-sources/services/firebase_api.dart';
 import 'package:dittobox_mobile/styles/dittobox_theme.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -13,8 +13,8 @@ final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  await FirebaseApi().initNotifications();
+  // await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  // await FirebaseApi().initNotifications();
   runApp(const MainApp());
 }
 
