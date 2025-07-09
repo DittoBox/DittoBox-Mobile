@@ -170,44 +170,51 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           if (formKey.currentState!.validate()) {
                             try {
                               print('Form validated successfully.');
-                              final registerResponse = await userService.registerUser(
+                              final registerResponse =
+                                  await userService.registerUser(
                                 _firstNameController.text,
                                 _lastNameController.text,
                                 _usernameController.text,
                                 _emailController.text,
                                 _passwordController.text,
                               );
-                              print('Register response status: $registerResponse');
-                              if (registerResponse == 200 || registerResponse == 201) {
-                                final loginResponse = await userService.loginUser(
+                              print(
+                                  'Register response status: $registerResponse');
+                              if (registerResponse == 200 ||
+                                  registerResponse == 201) {
+                                final loginResponse =
+                                    await userService.loginUser(
                                   _emailController.text,
                                   _passwordController.text,
                                 );
                                 print('Login response status: $loginResponse');
-                                if (loginResponse == 200 || loginResponse == 201) {
-                                  print('Login successful. Navigating to the next screen.');
+                                if (loginResponse == 200 ||
+                                    loginResponse == 201) {
+                                  print(
+                                      'Login successful. Navigating to the next screen.');
                                   if (userType == 'Owner') {
                                     print('Navigating to Company Info Screen.');
                                     Navigator.pushReplacementNamed(
-                                      context, AppRoutes.companyInfo);
+                                        context, AppRoutes.companyInfo);
                                   } else {
                                     print('Navigating to Facilities Screen.');
                                     Navigator.pushReplacementNamed(
-                                      context, AppRoutes.accountDetails);
+                                        context, AppRoutes.accountDetails);
                                   }
                                 } else {
                                   print('Login failed.');
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     SnackBar(
-                                      content: Text(S.of(context).loginFailed)
-                                    ),
+                                        content:
+                                            Text(S.of(context).loginFailed)),
                                   );
                                 }
                               } else {
                                 print('Registration failed.');
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
-                                    content: Text(S.of(context).registrationFailed),
+                                    content:
+                                        Text(S.of(context).registrationFailed),
                                   ),
                                 );
                               }
@@ -215,7 +222,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               print('Exception during registration: $e');
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(
-                                  content: Text(S.of(context).registrationFailed + ': $e'),
+                                  content: Text(
+                                      '${S.of(context).registrationFailed}: $e'),
                                 ),
                               );
                             }
@@ -224,9 +232,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           }
                         },
                         style: FilledButton.styleFrom(
-                          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 30, vertical: 10),
                         ),
-                        child: Text(userType == 'Owner' ? "Continue" : S.of(context).register),
+                        child: Text(userType == 'Owner'
+                            ? "Continue"
+                            : S.of(context).register),
                       ),
                     ],
                   ),

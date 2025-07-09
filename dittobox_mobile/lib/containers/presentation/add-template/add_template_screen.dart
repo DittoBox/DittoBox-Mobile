@@ -27,12 +27,12 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
   final _sulfurDioxideMinController = TextEditingController();
   final _sulfurDioxideMaxController = TextEditingController();
   int? _selectedCategory;
-  bool _detectAllGases = true;
-  bool _detectOxygen = true;
-  bool _detectCO2 = true;
-  bool _detectEthylene = true;
-  bool _detectAmmonia = false;
-  bool _detectSulfurDioxide = false;
+  final bool _detectAllGases = true;
+  final bool _detectOxygen = true;
+  final bool _detectCO2 = true;
+  final bool _detectEthylene = true;
+  final bool _detectAmmonia = false;
+  final bool _detectSulfurDioxide = false;
 
   final TemplateService _templateService = TemplateService();
 
@@ -164,7 +164,9 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
                 children: [
                   const Icon(Icons.thermostat_outlined),
                   const SizedBox(width: 8),
-                  Text(S.of(context).temperature, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                  Text(S.of(context).temperature,
+                      style: const TextStyle(
+                          fontSize: 16, fontWeight: FontWeight.bold)),
                 ],
               ),
               const SizedBox(height: 16),
@@ -331,7 +333,8 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
                       ),
                       keyboardType: TextInputType.number,
                       validator: (value) {
-                        if (_detectEthylene && (value == null || value.isEmpty)) {
+                        if (_detectEthylene &&
+                            (value == null || value.isEmpty)) {
                           return S.of(context).requiredField;
                         }
                         return null;
@@ -348,7 +351,8 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
                       ),
                       keyboardType: TextInputType.number,
                       validator: (value) {
-                        if (_detectEthylene && (value == null || value.isEmpty)) {
+                        if (_detectEthylene &&
+                            (value == null || value.isEmpty)) {
                           return S.of(context).requiredField;
                         }
                         return null;
@@ -369,7 +373,8 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
                       ),
                       keyboardType: TextInputType.number,
                       validator: (value) {
-                        if (_detectAmmonia && (value == null || value.isEmpty)) {
+                        if (_detectAmmonia &&
+                            (value == null || value.isEmpty)) {
                           return S.of(context).requiredField;
                         }
                         return null;
@@ -386,7 +391,8 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
                       ),
                       keyboardType: TextInputType.number,
                       validator: (value) {
-                        if (_detectAmmonia && (value == null || value.isEmpty)) {
+                        if (_detectAmmonia &&
+                            (value == null || value.isEmpty)) {
                           return S.of(context).requiredField;
                         }
                         return null;
@@ -407,7 +413,8 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
                       ),
                       keyboardType: TextInputType.number,
                       validator: (value) {
-                        if (_detectSulfurDioxide && (value == null || value.isEmpty)) {
+                        if (_detectSulfurDioxide &&
+                            (value == null || value.isEmpty)) {
                           return S.of(context).requiredField;
                         }
                         return null;
@@ -424,7 +431,8 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
                       ),
                       keyboardType: TextInputType.number,
                       validator: (value) {
-                        if (_detectSulfurDioxide && (value == null || value.isEmpty)) {
+                        if (_detectSulfurDioxide &&
+                            (value == null || value.isEmpty)) {
                           return S.of(context).requiredField;
                         }
                         return null;
@@ -440,7 +448,8 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
                   FilledButton(
                     onPressed: _saveTemplate,
                     style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 25, vertical: 10),
                     ),
                     child: Text(S.of(context).save),
                   ),
@@ -450,7 +459,8 @@ class _AddTemplateScreenState extends State<AddTemplateScreen> {
                       Navigator.of(context).pop();
                     },
                     style: OutlinedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 25, vertical: 10),
                     ),
                     child: Text(S.of(context).discard),
                   ),

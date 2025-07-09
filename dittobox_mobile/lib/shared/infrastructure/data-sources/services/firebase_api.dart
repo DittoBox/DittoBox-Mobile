@@ -1,10 +1,8 @@
 import 'package:dittobox_mobile/routes/app_routes.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:flutter/material.dart';
 import 'package:dittobox_mobile/main.dart';
 
 class FirebaseApi {
-
   final FirebaseMessaging _firebaseMessaging = FirebaseMessaging.instance;
 
   Future<void> initNotifications() async {
@@ -29,7 +27,8 @@ class FirebaseApi {
   void HandleMessage(RemoteMessage? message) {
     if (message == null) return;
 
-    navigatorKey.currentState?.pushNamed(AppRoutes.notifications, arguments: message);
+    navigatorKey.currentState
+        ?.pushNamed(AppRoutes.notifications, arguments: message);
   }
 
   Future<void> initPushNotifications() async {

@@ -1,6 +1,5 @@
 import 'package:dittobox_mobile/account_and_subscription/infrastructure/data_sources/account_service.dart';
 import 'package:dittobox_mobile/generated/l10n.dart';
-import 'package:dittobox_mobile/goups/presentation/widgets/reassign_worker_sheet.dart';
 import 'package:dittobox_mobile/user_and_profile/infrastructure/data_sources/profile_services.dart';
 import 'package:dittobox_mobile/user_and_profile/infrastructure/models/profile_model.dart';
 import 'package:flutter/material.dart';
@@ -16,9 +15,11 @@ class WorkerDetailScreen extends StatefulWidget {
 
 class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
   bool _showRoleManagement = false;
-  final List<bool> _switchStates = List.filled(3, false); // Inicializar con 3 elementos
+  final List<bool> _switchStates =
+      List.filled(3, false); // Inicializar con 3 elementos
   String? _location;
-  final ProfileService _profileService = ProfileService(); // Crea una instancia de ProfileService
+  final ProfileService _profileService =
+      ProfileService(); // Crea una instancia de ProfileService
 
   @override
   void initState() {
@@ -41,13 +42,15 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
   }
 
   Future<void> _fetchGroupLocation() async {
-    final location = widget.worker.groupId != null 
+    final location = widget.worker.groupId != null
         ? await AccountService().getGroupLocation(widget.worker.groupId!)
         : null;
     setState(() {
       if (location != null) {
         final addressParts = location['address'].split(' ');
-        _location = addressParts.length > 1 ? '${addressParts[0]} ${addressParts[1]}' : location['address'];
+        _location = addressParts.length > 1
+            ? '${addressParts[0]} ${addressParts[1]}'
+            : location['address'];
       } else {
         _location = S.of(context).noLocation;
       }
@@ -87,7 +90,8 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
   }
 
   Future<void> _reloadProfile() async {
-    final updatedProfile = await _profileService.getProfileDetailsById(widget.worker.id);
+    final updatedProfile =
+        await _profileService.getProfileDetailsById(widget.worker.id);
     if (updatedProfile != null) {
       setState(() {
         widget.worker.privileges = updatedProfile.privileges;
@@ -98,26 +102,27 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
 
   Future<bool> _showConfirmationDialog(bool value) async {
     return await showDialog<bool>(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          title: Text(value ? 'Grant Privilege' : 'Revoke Privilege'),
-          content: Text(value
-              ? S.of(context).areYouSureYouWantToGrantThisPrivilege
-              : S.of(context).areYouSureYouWantToRevokeThisPrivilege),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(false),
-              child: Text(S.of(context).cancel),
-            ),
-            FilledButton(
-              onPressed: () => Navigator.of(context).pop(true),
-              child: Text(S.of(context).confirm),
-            ),
-          ],
-        );
-      },
-    ) ?? false;
+          context: context,
+          builder: (context) {
+            return AlertDialog(
+              title: Text(value ? 'Grant Privilege' : 'Revoke Privilege'),
+              content: Text(value
+                  ? S.of(context).areYouSureYouWantToGrantThisPrivilege
+                  : S.of(context).areYouSureYouWantToRevokeThisPrivilege),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.of(context).pop(false),
+                  child: Text(S.of(context).cancel),
+                ),
+                FilledButton(
+                  onPressed: () => Navigator.of(context).pop(true),
+                  child: Text(S.of(context).confirm),
+                ),
+              ],
+            );
+          },
+        ) ??
+        false;
   }
 
   @override
@@ -157,8 +162,15 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
               style: const TextStyle(fontSize: 18),
             ),
             const SizedBox(height: 24),
-            _buildWorkerInfoRow(S.of(context).category, _isOwner(widget.worker) ? S.of(context).owner : (_isManager() ? S.of(context).manager : S.of(context).worker)),
-            _buildWorkerInfoRow(S.of(context).location, _location ?? S.of(context).noLocation),
+            _buildWorkerInfoRow(
+                S.of(context).category,
+                _isOwner(widget.worker)
+                    ? S.of(context).owner
+                    : (_isManager()
+                        ? S.of(context).manager
+                        : S.of(context).worker)),
+            _buildWorkerInfoRow(
+                S.of(context).location, _location ?? S.of(context).noLocation),
             const SizedBox(height: 16),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
@@ -175,7 +187,9 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
             ),
             if (_showRoleManagement) ...[
               const SizedBox(height: 24),
-              Text(S.of(context).roleManagement, style: const TextStyle(fontSize: 18),
+              Text(
+                S.of(context).roleManagement,
+                style: const TextStyle(fontSize: 18),
               ),
               const SizedBox(height: 8),
               Expanded(
@@ -201,14 +215,14 @@ class _WorkerDetailScreenState extends State<WorkerDetailScreen> {
 
   bool _isManager() {
     return widget.worker.privileges.contains('WorkerManagement') ||
-           widget.worker.privileges.contains('GroupManagement') ||
-           widget.worker.privileges.contains('AccountManagement');
+        widget.worker.privileges.contains('GroupManagement') ||
+        widget.worker.privileges.contains('AccountManagement');
   }
 
   bool _isOwner(Profile profile) {
     return profile.privileges.contains('WorkerManagement') &&
-           profile.privileges.contains('GroupManagement') &&
-           profile.privileges.contains('AccountManagement');
+        profile.privileges.contains('GroupManagement') &&
+        profile.privileges.contains('AccountManagement');
   }
 
   String _getPrivilegeName(int index) {

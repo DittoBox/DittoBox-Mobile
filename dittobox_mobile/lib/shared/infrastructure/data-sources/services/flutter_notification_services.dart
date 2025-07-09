@@ -8,11 +8,13 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:dittobox_mobile/generated/l10n.dart';
 import 'package:dittobox_mobile/shared/infrastructure/data-sources/services/base_service.dart';
 
-final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
+final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+    FlutterLocalNotificationsPlugin();
 BaseService baseService = BaseService();
 
 Future<void> initNotifications() async {
-  const AndroidInitializationSettings initializationSettingsAndroid = AndroidInitializationSettings('app_icon');
+  const AndroidInitializationSettings initializationSettingsAndroid =
+      AndroidInitializationSettings('app_icon');
   const InitializationSettings initializationSettings = InitializationSettings(
     android: initializationSettingsAndroid,
   );
@@ -20,14 +22,16 @@ Future<void> initNotifications() async {
 }
 
 Future<void> showNotification(String title, String body) async {
-  const AndroidNotificationDetails androidPlatformChannelSpecifics = AndroidNotificationDetails(
+  const AndroidNotificationDetails androidPlatformChannelSpecifics =
+      AndroidNotificationDetails(
     'your channel id',
     'your channel name',
     channelDescription: 'your channel description',
     importance: Importance.max,
     priority: Priority.high,
   );
-  const NotificationDetails notificationDetails = NotificationDetails(android: androidPlatformChannelSpecifics);
+  const NotificationDetails notificationDetails =
+      NotificationDetails(android: androidPlatformChannelSpecifics);
   await flutterLocalNotificationsPlugin.show(
     0,
     title,
@@ -39,21 +43,20 @@ Future<void> showNotification(String title, String body) async {
 Future<void> cancelNotification() async {
   await flutterLocalNotificationsPlugin.cancel(0);
 }
+
 Future selectNotification(String payload) async {
-  if (payload != null) {
-    debugPrint('notification payload: $payload');
-  }
+  debugPrint('notification payload: $payload');
 }
 
-
 String getPeruTime() {
-  final now = DateTime.now().toUtc().subtract(Duration(hours: 5));
+  final now = DateTime.now().toUtc().subtract(const Duration(hours: 5));
   final formatter = DateFormat('dd-MM-yyyy HH:mm');
   return formatter.format(now);
 }
 
 Future<String> getContainerName(int containerId) async {
-  final response = await http.get(Uri.parse('${baseService.baseUrl}/container/$containerId'));
+  final response = await http
+      .get(Uri.parse('${baseService.baseUrl}/container/$containerId'));
   print('Response status code: ${response.statusCode}');
   if (response.statusCode == 200) {
     final container = json.decode(response.body);
@@ -66,7 +69,8 @@ Future<String> getContainerName(int containerId) async {
 }
 
 Future<String> getGroupName(int groupId) async {
-  final response = await http.get(Uri.parse('${baseService.baseUrl}/group/$groupId'));
+  final response =
+      await http.get(Uri.parse('${baseService.baseUrl}/group/$groupId'));
   print('Response status code: ${response.statusCode}');
   if (response.statusCode == 200) {
     final group = json.decode(response.body);
@@ -77,7 +81,6 @@ Future<String> getGroupName(int groupId) async {
     throw Exception('Error al obtener el nombre del grupo');
   }
 }
-
 
 String getAlertDescription(BuildContext context, int alertType, String name) {
   switch (alertType) {
@@ -197,7 +200,8 @@ String getAlertTitle(BuildContext context, int alertType) {
   }
 }
 
-Future<void> fetchAndShowNotification(BuildContext context, String endpoint) async {
+Future<void> fetchAndShowNotification(
+    BuildContext context, String endpoint) async {
   print('Fetching notifications from endpoint: $endpoint');
   final response = await http.get(Uri.parse(endpoint));
   print('Response status code: ${response.statusCode}');
@@ -211,7 +215,8 @@ Future<void> fetchAndShowNotification(BuildContext context, String endpoint) asy
       print('Notification title: $title');
       String body;
       if (notification.containsKey('containerId')) {
-        String containerName = await getContainerName(notification['containerId']);
+        String containerName =
+            await getContainerName(notification['containerId']);
         print('Container name: $containerName');
         body = getAlertDescription(context, alertType, containerName);
       } else if (notification.containsKey('groupId')) {
@@ -221,8 +226,10 @@ Future<void> fetchAndShowNotification(BuildContext context, String endpoint) asy
       } else {
         // Convertir la hora recibida del API al formato deseado
         String issuedAt = notification['issuedAt'];
-        DateTime issuedAtDateTime = DateTime.parse(issuedAt).toUtc().subtract(Duration(hours: 5));
-        String formattedIssuedAt = DateFormat('dd-MM-yyyy HH:mm').format(issuedAtDateTime);
+        DateTime issuedAtDateTime =
+            DateTime.parse(issuedAt).toUtc().subtract(const Duration(hours: 5));
+        String formattedIssuedAt =
+            DateFormat('dd-MM-yyyy HH:mm').format(issuedAtDateTime);
         body = S.of(context).issuedAt(formattedIssuedAt);
       }
       print('Notification body: $body');
@@ -234,29 +241,33 @@ Future<void> fetchAndShowNotification(BuildContext context, String endpoint) asy
   }
 }
 
-Future<List<Map<String, dynamic>>> fetchAccountNotifications(BuildContext context) async {
+Future<List<Map<String, dynamic>>> fetchAccountNotifications(
+    BuildContext context) async {
   print('Fetching account notifications');
   final prefs = SharedPreferencesAsync();
   final accountId = await prefs.getInt('accountId');
   print('Account ID: $accountId');
-  
+
   if (accountId == null) {
     print('Error: Account ID is null');
     throw Exception('Account ID is null');
   }
 
-  String endpoint = '${baseService.baseUrl}/notification/account/$accountId?priority=1&limit=10';
+  String endpoint =
+      '${baseService.baseUrl}/notification/account/$accountId?priority=1&limit=10';
   final response = await http.get(Uri.parse(endpoint));
   print('Response status code: ${response.statusCode}');
 
   if (response.statusCode == 200) {
     List<dynamic> notifications = json.decode(response.body);
     print('Notifications fetched: $notifications');
-    List<Map<String, dynamic>> mappedNotifications = await Future.wait(notifications.map((notification) async {
+    List<Map<String, dynamic>> mappedNotifications =
+        await Future.wait(notifications.map((notification) async {
       int alertType = notification['alertType'];
       String description;
       if (notification.containsKey('containerId')) {
-        String containerName = await getContainerName(notification['containerId']);
+        String containerName =
+            await getContainerName(notification['containerId']);
         description = getAlertDescription(context, alertType, containerName);
       } else if (notification.containsKey('groupId')) {
         String groupName = await getGroupName(notification['groupId']);
@@ -280,8 +291,8 @@ Future<List<Map<String, dynamic>>> fetchAccountNotifications(BuildContext contex
   }
 }
 
-
-Future<List<Map<String, dynamic>>> fetchGroupNotifications(BuildContext context, int groupId) async {
+Future<List<Map<String, dynamic>>> fetchGroupNotifications(
+    BuildContext context, int groupId) async {
   print('Fetching group notifications for group ID: $groupId');
   String endpoint = '${baseService.baseUrl}/notification/group/$groupId';
   final response = await http.get(Uri.parse(endpoint));
@@ -289,11 +300,13 @@ Future<List<Map<String, dynamic>>> fetchGroupNotifications(BuildContext context,
 
   if (response.statusCode == 200) {
     List<dynamic> notifications = json.decode(response.body);
-    List<Map<String, dynamic>> mappedNotifications = await Future.wait(notifications.map((notification) async {
+    List<Map<String, dynamic>> mappedNotifications =
+        await Future.wait(notifications.map((notification) async {
       int alertType = notification['alertType'];
       String description;
       if (notification.containsKey('containerId')) {
-        String containerName = await getContainerName(notification['containerId']);
+        String containerName =
+            await getContainerName(notification['containerId']);
         description = getAlertDescription(context, alertType, containerName);
       } else if (notification.containsKey('groupId')) {
         String groupName = await getGroupName(notification['groupId']);
@@ -316,19 +329,23 @@ Future<List<Map<String, dynamic>>> fetchGroupNotifications(BuildContext context,
   }
 }
 
-Future<List<Map<String, dynamic>>> fetchContainerNotifications(BuildContext context, int containerId) async {
+Future<List<Map<String, dynamic>>> fetchContainerNotifications(
+    BuildContext context, int containerId) async {
   print('Fetching container notifications for container ID: $containerId');
-  String endpoint = '${baseService.baseUrl}/notification/container/$containerId';
+  String endpoint =
+      '${baseService.baseUrl}/notification/container/$containerId';
   final response = await http.get(Uri.parse(endpoint));
   print('Response status code: ${response.statusCode}');
 
   if (response.statusCode == 200) {
     List<dynamic> notifications = json.decode(response.body);
-    List<Map<String, dynamic>> mappedNotifications = await Future.wait(notifications.map((notification) async {
+    List<Map<String, dynamic>> mappedNotifications =
+        await Future.wait(notifications.map((notification) async {
       int alertType = notification['alertType'];
       String description;
       if (notification.containsKey('containerId')) {
-        String containerName = await getContainerName(notification['containerId']);
+        String containerName =
+            await getContainerName(notification['containerId']);
         description = getAlertDescription(context, alertType, containerName);
       } else if (notification.containsKey('groupId')) {
         String groupName = await getGroupName(notification['groupId']);
@@ -351,22 +368,28 @@ Future<List<Map<String, dynamic>>> fetchContainerNotifications(BuildContext cont
   }
 }
 
-
-Future<void> fetchLatestContainerNotification(BuildContext context, int containerId) async {
-  String endpoint = '${baseService.baseUrl}/notification/container/$containerId/latest';
+Future<void> fetchLatestContainerNotification(
+    BuildContext context, int containerId) async {
+  String endpoint =
+      '${baseService.baseUrl}/notification/container/$containerId/latest';
   await fetchAndShowLatestNotification(context, endpoint);
 }
 
-Future<void> fetchLatestGroupNotification(BuildContext context, int groupId) async {
+Future<void> fetchLatestGroupNotification(
+    BuildContext context, int groupId) async {
   String endpoint = '${baseService.baseUrl}/notification/group/$groupId/latest';
   await fetchAndShowLatestNotification(context, endpoint);
 }
-Future<void> fetchLatestAccountNotification(BuildContext context, int accountId) async {
-  String endpoint = '${baseService.baseUrl}/notification/account/$accountId/latest';
+
+Future<void> fetchLatestAccountNotification(
+    BuildContext context, int accountId) async {
+  String endpoint =
+      '${baseService.baseUrl}/notification/account/$accountId/latest';
   await fetchAndShowLatestNotification(context, endpoint);
 }
 
-Future<void> fetchAndShowLatestNotification(BuildContext context, String endpoint) async {
+Future<void> fetchAndShowLatestNotification(
+    BuildContext context, String endpoint) async {
   print('Fetching latest notification from endpoint: $endpoint');
   final response = await http.get(Uri.parse(endpoint));
   print('Response status code: ${response.statusCode}');
@@ -380,7 +403,8 @@ Future<void> fetchAndShowLatestNotification(BuildContext context, String endpoin
     String body;
 
     if (notification.containsKey('containerId')) {
-      String containerName = await getContainerName(notification['containerId']);
+      String containerName =
+          await getContainerName(notification['containerId']);
       body = getAlertDescription(context, alertType, containerName);
     } else if (notification.containsKey('groupId')) {
       String groupName = await getGroupName(notification['groupId']);
@@ -388,8 +412,10 @@ Future<void> fetchAndShowLatestNotification(BuildContext context, String endpoin
     } else {
       // Convertir la hora recibida del API al formato deseado
       String issuedAt = notification['issuedAt'];
-      DateTime issuedAtDateTime = DateTime.parse(issuedAt).toUtc().subtract(Duration(hours: 5));
-      String formattedIssuedAt = DateFormat('dd-MM-yyyy HH:mm').format(issuedAtDateTime);
+      DateTime issuedAtDateTime =
+          DateTime.parse(issuedAt).toUtc().subtract(const Duration(hours: 5));
+      String formattedIssuedAt =
+          DateFormat('dd-MM-yyyy HH:mm').format(issuedAtDateTime);
       body = S.of(context).issuedAt(formattedIssuedAt);
     }
 
