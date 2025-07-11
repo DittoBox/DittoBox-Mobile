@@ -16,8 +16,7 @@ class AccountService extends BaseService {
   // "businessId": "string",
   // "representativeId": 0
   // }
-  Future<int> createAccount(
-      String businessName, String businessId) async {
+  Future<int> createAccount(String businessName, String businessId) async {
     final prefs = SharedPreferencesAsync();
     final representativeId = await prefs.getInt('userId') ?? 0;
     final token = await prefs.getString('token') ?? '';
@@ -33,7 +32,7 @@ class AccountService extends BaseService {
       }),
     );
     var jsonResponse = jsonDecode(response.body);
-  
+
     if (response.statusCode == 200) {
       await prefs.setInt('accountId', jsonResponse['id']);
       return 200;
@@ -56,12 +55,9 @@ class AccountService extends BaseService {
       // ignore: avoid_print
       print('Account ID: $accountId');
       final url = '$baseUrl/account/$accountId';
-      final response = await http.get(
-        Uri.parse(url),
-        headers: {
-          'Content-Type': 'application/json',
-        }
-      );
+      final response = await http.get(Uri.parse(url), headers: {
+        'Content-Type': 'application/json',
+      });
       if (response.statusCode == 200) {
         final responseBody = response.body;
         print('Response body: $responseBody');
@@ -82,13 +78,10 @@ class AccountService extends BaseService {
       if (accountId == null) {
         throw Exception('Account ID is null');
       }
-      final url = '$baseUrl/account/$accountId/users';
-      final response = await http.get(
-        Uri.parse(url),
-        headers: {
-          'Content-Type': 'application/json',
-        }
-      );
+      final url = '$baseUrl/user/workers/$accountId';
+      final response = await http.get(Uri.parse(url), headers: {
+        'Content-Type': 'application/json',
+      });
       if (response.statusCode == 200) {
         final responseBody = response.body;
         final List<dynamic> users = jsonDecode(responseBody);
@@ -101,7 +94,8 @@ class AccountService extends BaseService {
       return [];
     }
   }
-   Future<Map<String, dynamic>?> getGroupLocation(int groupId) async {
+
+  Future<Map<String, dynamic>?> getGroupLocation(int groupId) async {
     final prefs = SharedPreferencesAsync();
     final accountId = await prefs.getInt('accountId');
     final url = '$baseUrl/account/$accountId/groups';
@@ -114,7 +108,8 @@ class AccountService extends BaseService {
 
     if (response.statusCode == 200) {
       final List<dynamic> groups = jsonDecode(response.body);
-      final group = groups.firstWhere((group) => group['id'] == groupId, orElse: () => null);
+      final group = groups.firstWhere((group) => group['id'] == groupId,
+          orElse: () => null);
       return group != null ? group['location'] : null;
     } else {
       throw Exception('Failed to load group location');
@@ -124,13 +119,10 @@ class AccountService extends BaseService {
   Future<List<Map<String, dynamic>>> getGroups() async {
     final prefs = SharedPreferencesAsync();
     final accountId = await prefs.getInt('accountId');
-    final url = '$baseUrl/account/$accountId/groups';
-    final response = await http.get(
-      Uri.parse(url),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    );
+    final url = '$baseUrl/group/by-account';
+    final response = await http.post(Uri.parse(url),
+        headers: {'Content-Type': 'application/json'},
+        body: jsonEncode({'accountId': accountId}));
 
     if (response.statusCode == 200) {
       final List<dynamic> groups = jsonDecode(response.body);

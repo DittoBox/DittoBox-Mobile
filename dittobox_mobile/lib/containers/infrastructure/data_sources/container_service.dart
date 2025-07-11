@@ -5,7 +5,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 
 class ContainerService extends BaseService {
-
   Future<List<Container>> getContainersByAccountId() async {
     try {
       final prefs = SharedPreferencesAsync();
@@ -13,9 +12,10 @@ class ContainerService extends BaseService {
       if (accountId == null) {
         throw Exception('Account ID not found');
       }
-      
-      final response = await http.get(Uri.parse('$baseUrl/account/$accountId/containers'));
-      
+
+      final response =
+          await http.get(Uri.parse('$baseUrl/container/by-account/$accountId'));
+
       if (response.statusCode == 200) {
         final List<dynamic> data = json.decode(response.body);
         return data.map((container) => Container.fromJson(container)).toList();
@@ -28,11 +28,12 @@ class ContainerService extends BaseService {
     }
   }
 
-  Future<void> createContainer(String deviceId ,String name, String description, int groupId) async {
+  Future<void> createContainer(
+      String deviceId, String name, String description, int groupId) async {
     try {
-        final prefs = SharedPreferencesAsync();
-        final accountId = await prefs.getInt('accountId');
-       if (accountId == null) {
+      final prefs = SharedPreferencesAsync();
+      final accountId = await prefs.getInt('accountId');
+      if (accountId == null) {
         throw Exception('Account ID not found');
       }
       // Create the container
@@ -63,10 +64,6 @@ class ContainerService extends BaseService {
     }
   }
 
-
-
-
-
   Future<Container> getContainerById(String containerId) async {
     final response = await http.get(Uri.parse('/containers/$containerId'));
     final Map<String, dynamic> data = json.decode(response.body);
@@ -74,12 +71,14 @@ class ContainerService extends BaseService {
   }
 
   Future<List<Container>> getContainersByFacilityId(int facilityId) async {
-    final response = await http.get(Uri.parse('$baseUrl/group/$facilityId/containers'));
+    final response =
+        await http.get(Uri.parse('$baseUrl/group/$facilityId/containers'));
     final List<dynamic> data = json.decode(response.body);
     return data.map((json) => Container.fromJson(json)).toList();
   }
 
-    Future<void> updateContainerParameters(int containerId, Map<String, dynamic> parameters) async {
+  Future<void> updateContainerParameters(
+      int containerId, Map<String, dynamic> parameters) async {
     try {
       final response = await http.put(
         Uri.parse('$baseUrl/api/v1/container/$containerId/parameters'),
@@ -95,7 +94,9 @@ class ContainerService extends BaseService {
       throw Exception('Failed to update container parameters: $e');
     }
   }
-    Future<void> assignTemplateToContainer(int containerId, int templateId) async {
+
+  Future<void> assignTemplateToContainer(
+      int containerId, int templateId) async {
     try {
       final response = await http.post(
         Uri.parse('$baseUrl/container/$containerId/assign/$templateId'),

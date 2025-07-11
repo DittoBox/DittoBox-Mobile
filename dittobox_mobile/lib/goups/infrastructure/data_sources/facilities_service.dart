@@ -15,21 +15,23 @@ class FacilitiesService extends BaseService {
 
   FacilitiesService._internal();
 
-    Future<List<Facility>> getFacilities() async {
-      try {
-        final prefs = SharedPreferencesAsync();
-        final accountId = await prefs.getInt('accountId');
-        final response = await http.get(Uri.parse('$baseUrl/account/$accountId/groups'));
-        if (response.statusCode == 200) {
-          final List<dynamic> data = json.decode(response.body);
-          return data.map((e) => Facility.fromJson(e)).toList();
-        } else {
-          throw Exception('Failed to load facilities');
-        }
-      } catch (e) {
-        throw Exception('Failed to load facilities: $e');
+  Future<List<Facility>> getFacilities() async {
+    try {
+      final prefs = SharedPreferencesAsync();
+      final accountId = await prefs.getInt('accountId');
+      final response = await http.post(Uri.parse('$baseUrl/group/by-account'),
+          headers: {'Content-Type': 'application/json'},
+          body: jsonEncode({'accountId': accountId}));
+      if (response.statusCode == 200) {
+        final List<dynamic> data = json.decode(response.body);
+        return data.map((e) => Facility.fromJson(e)).toList();
+      } else {
+        throw Exception('Failed to load facilities');
       }
+    } catch (e) {
+      throw Exception('Failed to load facilities: $e');
     }
+  }
 
   Future<int> createFacility(
       String name, Location location, int facilityType) async {
@@ -82,33 +84,35 @@ class FacilitiesService extends BaseService {
     );
 
     if (response.statusCode != 200 && response.statusCode != 201) {
-      print('Failed to register user: ${response.body}'); // Agrega esta línea para depurar
+      print(
+          'Failed to register user: ${response.body}'); // Agrega esta línea para depurar
       throw Exception('Failed to register user: ${response.body}');
     } else {
-      print('User registered successfully: ${response.body}'); // Agrega esta línea para confirmar éxito
+      print(
+          'User registered successfully: ${response.body}'); // Agrega esta línea para confirmar éxito
     }
   }
 
-    Future<int> countNotificationsByGroupId(int groupid) async {
-      try {
-        final url = '$baseUrl/notification/group/$groupid/amount';
-        print('Requesting URL: $url'); // Depuración
-        final response = await http.get(Uri.parse(url));
+  Future<int> countNotificationsByGroupId(int groupid) async {
+    try {
+      final url = '$baseUrl/notification/group/$groupid/amount';
+      print('Requesting URL: $url'); // Depuración
+      final response = await http.get(Uri.parse(url));
 
-        print('Response status: ${response.statusCode}'); // Depuración
-        print('Response body: ${response.body}'); // Depuración
+      print('Response status: ${response.statusCode}'); // Depuración
+      print('Response body: ${response.body}'); // Depuración
 
-        if (response.statusCode == 200) {
-          final int notificationCount = int.parse(response.body);
-          print('Group ID: $groupid');
-          print('Notification count: $notificationCount'); // Depuración
-          return notificationCount;
-        } else {
-          throw Exception('Failed to load notifications: ${response.body}');
-        }
-      } catch (e) {
-        print('Error occurred: $e');
-        throw Exception('Failed to load notifications');
+      if (response.statusCode == 200) {
+        final int notificationCount = int.parse(response.body);
+        print('Group ID: $groupid');
+        print('Notification count: $notificationCount'); // Depuración
+        return notificationCount;
+      } else {
+        throw Exception('Failed to load notifications: ${response.body}');
       }
+    } catch (e) {
+      print('Error occurred: $e');
+      throw Exception('Failed to load notifications');
     }
+  }
 }
