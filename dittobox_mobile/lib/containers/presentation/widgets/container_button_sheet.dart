@@ -58,9 +58,7 @@ class _ContainerBottomSheetState extends State<ContainerBottomSheet> {
                 Text(
                   widget.container.name,
                 ),
-                Text(
-                  widget.container.lastKnownContainerStatus,
-                ),
+                 Text(S.of(context).registered),
               ],
             ),
             const SizedBox(height: 8),
@@ -82,8 +80,8 @@ class _ContainerBottomSheetState extends State<ContainerBottomSheet> {
             const SizedBox(height: 8),
             buildInfoRowWithIcon(Icons.warning_amber_outlined, S.of(context).sulfurDioxide, widget.container.sulfurDioxide),
             const SizedBox(height: 16),
-            buildInfoRowWithIcon(Icons.health_and_safety_outlined, S.of(context).lastKnownHealthStatus, widget.container.lastKnownHealthStatus),
-            const SizedBox(height: 8),
+            // buildInfoRowWithIcon(Icons.health_and_safety_outlined, S.of(context).lastKnownHealthStatus, widget.container.lastKnownHealthStatus),
+            // const SizedBox(height: 8),
             buildInfoRowWithIcon(Icons.sync_outlined, S.of(context).lastSync, widget.container.lastSync),
             const SizedBox(height: 16),
 

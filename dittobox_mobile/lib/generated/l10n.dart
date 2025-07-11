@@ -3213,6 +3213,26 @@ class S {
       args: [seconds],
     );
   }
+
+  /// `Error registering container`
+  String get errorCreatingContainer {
+    return Intl.message(
+      'Error registering container',
+      name: 'errorCreatingContainer',
+      desc: 'Error message when registering container fails',
+      args: [],
+    );
+  }
+
+  /// `Registered`
+  String get registered {
+    return Intl.message(
+      'Registered',
+      name: 'registered',
+      desc: 'Label for registered',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

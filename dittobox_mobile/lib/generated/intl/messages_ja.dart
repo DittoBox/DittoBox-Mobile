@@ -257,6 +257,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Error applicating a template"),
         "errorCreatingAccount":
             MessageLookupByLibrary.simpleMessage("Error creating account"),
+        "errorCreatingContainer":
+            MessageLookupByLibrary.simpleMessage("コンテナーの作成に失敗しました"),
         "ethylene": MessageLookupByLibrary.simpleMessage("エチレン (C₂H₄)"),
         "ethyleneMax": MessageLookupByLibrary.simpleMessage("最高エチレン"),
         "ethyleneMin": MessageLookupByLibrary.simpleMessage("最低エチレン"),
@@ -414,6 +416,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "region": MessageLookupByLibrary.simpleMessage("地域"),
         "register": MessageLookupByLibrary.simpleMessage("登録"),
         "registerInstead": MessageLookupByLibrary.simpleMessage("代わりに登録"),
+        "registered": MessageLookupByLibrary.simpleMessage("登録済み"),
         "registrationFailed":
             MessageLookupByLibrary.simpleMessage("Registration failed"),
         "requiredField": MessageLookupByLibrary.simpleMessage("必須フィールド"),

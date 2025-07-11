@@ -94,11 +94,40 @@ void showFacilityDetailsBottomSheet(BuildContext context, Facility facility, Voi
 
             // Contenido del BottomSheet
             buildInfoRowWithIcon(Icons.widgets_outlined, S.of(context).containers, facility.containerCount),
+            // ...existing code...
             Row(
               children: [
                 TextButton(
                   onPressed: () {
-                    showAddContainerSheet(context, facility); // Pasa la instalación seleccionada
+                    // Modificamos la llamada para manejar el resultado
+                    Navigator.pop(context); // Cerramos primero el FacilityDetailsSheet
+                    showAddContainerSheet(context, facility).then((result) {
+                      // Verificamos si se creó un contenedor exitosamente
+                      if (result == true) {
+                        // Mostramos el SnackBar en el contexto de la pantalla principal
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Row(
+                              children: [
+                                const Icon(Icons.check_circle, color: Colors.white),
+                                const SizedBox(width: 10),
+                                Text(S.of(context).containerCreatedSuccessfully),
+                              ],
+                            ),
+                            backgroundColor: Colors.green,
+                            duration: const Duration(seconds: 3),
+                            behavior: SnackBarBehavior.floating,
+                            margin: const EdgeInsets.all(10),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                          ),
+                        );
+                        
+                        // Recargar la vista de facilities para reflejar los cambios
+                        Navigator.pushReplacementNamed(context, '/facilities');
+                      }
+                    });
                   },
                   child: Text(S.of(context).addContainers),
                 ),

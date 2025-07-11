@@ -49,7 +49,6 @@ class _AddContainerSheetState extends State<AddContainerSheet> {
       // Manejar errores
     }
   }
-
   Future<void> _createContainer() async {
     print('Iniciando creación de contenedor');
     try {
@@ -62,17 +61,65 @@ class _AddContainerSheetState extends State<AddContainerSheet> {
         selectedFacilityObj.id,
       );
       print('Contenedor creado exitosamente');
-      // ignore: use_build_context_synchronously
-      Navigator.pop(context);
+      
+      // Retrasar un poco el cierre para dar feedback visual
       // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          // ignore: use_build_context_synchronously
-          content: Text(S.of(context).containerCreatedSuccessfully),
+          content: Row(
+            children: [
+              Icon(Icons.check_circle, color: Theme.of(context).colorScheme.onPrimaryContainer),
+              const SizedBox(width: 10),
+              Text(
+                S.of(context).containerCreatedSuccessfully,
+                style: TextStyle(color: Theme.of(context).colorScheme.onPrimaryContainer),
+              ),
+            ],
+          ),
+          backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+          duration: const Duration(seconds: 3),
+          behavior: SnackBarBehavior.floating,
+          margin: const EdgeInsets.all(10),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
         ),
       );
+      
+      // Notificar que se creó un contenedor (para actualizar la lista)
+      // ignore: use_build_context_synchronously
+      Navigator.pop(context, true);  // Retornar 'true' para indicar creación exitosa
     } catch (e) {
       print('Error creando contenedor: $e');
+      // ignore: use_build_context_synchronously
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Row(
+            children: [
+              // ignore: use_build_context_synchronously
+              Icon(Icons.error_outline, color: Theme.of(context).colorScheme.onErrorContainer),
+              const SizedBox(width: 10),
+              Expanded(
+                child: Text(
+                  '${S.of(context).errorCreatingContainer}: $e',
+                  // ignore: use_build_context_synchronously
+                  style: TextStyle(color: Theme.of(context).colorScheme.onErrorContainer),
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 2,
+                ),
+              ),
+            ],
+          ),
+          // ignore: use_build_context_synchronously
+          backgroundColor: Theme.of(context).colorScheme.errorContainer,
+          duration: const Duration(seconds: 3),
+          behavior: SnackBarBehavior.floating,
+          margin: const EdgeInsets.all(10),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+        ),
+      );
     }
   }
 
@@ -216,8 +263,8 @@ class _AddContainerSheetState extends State<AddContainerSheet> {
   }
 }
 
-void showAddContainerSheet(BuildContext context, Facility facility) {
-  showModalBottomSheet(
+Future<bool?> showAddContainerSheet(BuildContext context, Facility facility) {
+  return showModalBottomSheet<bool>(
     context: context,
     isScrollControlled: true,
     shape: const RoundedRectangleBorder(

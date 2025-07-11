@@ -1427,5 +1427,13 @@
     "passwordChangeFailed": "パスワードの変更に失敗しました",
     "@passwordChangeFailed": {
       "description": "Error message when password change fails"
+    },
+    "errorCreatingContainer": "コンテナーの作成に失敗しました",
+    "@errorCreatingContainer": {
+      "description": "Error message when creating container fails"
+    },
+    "registered": "登録済み",
+    "@registered": {
+      "description": "Label for registered"
     }
- }
+  }

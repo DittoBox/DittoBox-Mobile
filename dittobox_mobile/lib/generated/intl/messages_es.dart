@@ -292,6 +292,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Error al aplicar la plantilla"),
         "errorCreatingAccount":
             MessageLookupByLibrary.simpleMessage("Error al crear la cuenta"),
+        "errorCreatingContainer": MessageLookupByLibrary.simpleMessage(
+            "Error al registrar contenedor"),
         "ethylene": MessageLookupByLibrary.simpleMessage("Etileno"),
         "ethyleneMax": MessageLookupByLibrary.simpleMessage("Etileno Máx"),
         "ethyleneMin": MessageLookupByLibrary.simpleMessage("Etileno Min"),
@@ -456,6 +458,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "register": MessageLookupByLibrary.simpleMessage("Registrar"),
         "registerInstead":
             MessageLookupByLibrary.simpleMessage("Registrarse en su lugar"),
+        "registered": MessageLookupByLibrary.simpleMessage("Registrado"),
         "registrationFailed":
             MessageLookupByLibrary.simpleMessage("Registro fallido"),
         "requiredField":

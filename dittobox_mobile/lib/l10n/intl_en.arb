@@ -1467,5 +1467,13 @@
           "example": "5"
         }
       }
+    },
+    "errorCreatingContainer": "Error registering container",
+    "@errorCreatingContainer": {
+      "description": "Error message when registering container fails"
+    },
+    "registered": "Registered",
+    "@registered": {
+      "description": "Label for registered"
     }
- }
+  }

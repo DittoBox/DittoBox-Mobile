@@ -1477,5 +1477,13 @@
     "processedFood": "Comida procesada",
     "@processedFood": {
       "description": "etiqueta para comida procesada"
+    },
+    "errorCreatingContainer": "Error al registrar contenedor",
+    "@errorCreatingContainer": {
+      "description": "Mensaje de error cuando falla la creación del contenedor"
+    },
+    "registered": "Registrado",
+    "@registered": {
+      "description": "Etiqueta para registrado"
     }
 }
